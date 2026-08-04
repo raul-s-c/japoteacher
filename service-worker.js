@@ -1,4 +1,4 @@
-const CACHE='japoteacher-v21';
+const CACHE='japoteacher-v22';
 const ASSETS=['./','index.html','styles.css','app.js','manifest.webmanifest','assets/app-icon.svg','data/exercises.full.csv','src/supabase-config.js','src/db.js','src/cloud-sync.js','src/pwa-update.js','src/schema-validation.js','src/srs.js','src/topic-progression.js','src/session-planner.js','src/furigana.js','src/evaluators/ai-evaluator.js','src/evaluators/mock-evaluator.js','src/evaluators/openai-evaluator.js','src/evaluators/evaluator-router.js','src/ai-connection-test.js','src/navigation-fix.js','src/csv-import.js','src/csv-export.js','src/analytics.js','src/ui.js','src/history-ui.js','src/extra-study.js'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
