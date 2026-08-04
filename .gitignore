@@ -1,0 +1,9 @@
+secrets.local.js
+.DS_Store
+Thumbs.db
+node_modules/
+coverage/
+playwright-report/
+test-results/
+worker/.dev.vars
+worker/.wrangler/

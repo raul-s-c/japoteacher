@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#b52b21">
+  <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <title>Japoteacher</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#hoy" aria-label="Japoteacher, inicio">
+        <span class="brand-mark" aria-hidden="true">日</span>
+        <span><strong>Japoteacher</strong><small>Traducción con propósito</small></span>
+      </a>
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="hoy"><span>⌂</span>Hoy</button>
+        <button class="nav-item" data-view="practicar"><span>✎</span>Practicar</button>
+        <button class="nav-item" data-view="progreso"><span>▥</span>Progreso</button>
+        <button class="nav-item" data-view="ajustes"><span>⚙</span>Ajustes</button>
+      </nav>
+      <p class="sidebar-quote"><span>継続は力なり</span>La constancia se convierte en fuerza.</p>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <header class="topbar">
+        <div><p class="date-label" id="dateLabel"></p><h1 id="viewTitle">Hoy</h1></div>
+        <div class="top-actions"><span id="profileBadge">Perfil local</span><button class="icon-button" id="installButton" hidden>Instalar</button></div>
+      </header>
+
+      <section class="view active" id="view-hoy" aria-labelledby="viewTitle">
+        <div class="intro"><div><h2>Tu práctica diaria</h2><p>Dos direcciones, dos habilidades distintas. Avanza a tu ritmo.</p></div><button class="primary" id="continueButton">Comenzar sesión</button></div>
+        <div class="direction-grid" id="directionCards"></div>
+        <div class="dashboard-grid">
+          <section class="panel priority-panel"><div class="section-heading"><div><p class="section-kicker">Enfoque</p><h3>Tags prioritarios</h3></div></div><div id="priorityTags" class="tag-list"></div></section>
+          <section class="panel"><div class="section-heading"><div><p class="section-kicker">SRS</p><h3>Próximos repasos</h3></div><span class="metric" id="dueCount">0</span></div><div id="reviewQueue" class="review-list"></div></section>
+          <section class="panel activity-panel"><div class="section-heading"><div><p class="section-kicker">Actividad</p><h3>Últimos 14 días</h3></div><span class="streak" id="streakLabel">0 días</span></div><div class="activity-calendar" id="activityCalendar"></div></section>
+        </div>
+        <div class="notice" id="bankNotice" role="status"></div>
+      </section>
+
+      <section class="view" id="view-practicar" aria-labelledby="practiceHeading">
+        <div class="practice-layout">
+          <section class="exercise-panel">
+            <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span></div>
+            <div class="progress-row"><span id="practiceCount">Ejercicio 1 de 5</span><span id="practicePercent">0%</span></div><div class="progress-track"><span id="practiceBar"></span></div>
+            <p class="instruction" id="practiceInstruction">Traduce al español</p>
+            <div class="source-text" id="sourceText">Selecciona una sesión para comenzar.</div>
+            <div class="source-details"><span id="topicLabel"></span><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div>
+            <label class="answer-label" for="answerInput">Tu respuesta</label>
+            <textarea id="answerInput" rows="5" maxlength="500" placeholder="Escribe aquí tu traducción…"></textarea>
+            <div class="answer-actions"><button class="secondary" id="saveDraftButton">Guardar borrador</button><button class="primary" id="evaluateButton">Corregir</button></div>
+          </section>
+          <aside class="feedback-panel" id="feedbackPanel" aria-live="polite">
+            <div class="feedback-empty"><span>添</span><h3>Tu corrección aparecerá aquí</h3><p>Evaluaremos significado, comprensión, naturalidad, gramática y escritura por separado.</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-progreso" aria-labelledby="progressHeading">
+        <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div>
+        <div class="stats-grid" id="summaryStats"></div>
+        <div class="analytics-grid">
+          <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
+          <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
+          <section class="panel wide"><h3>Fortalezas y oportunidades por tag</h3><div id="tagAnalytics"></div></section>
+          <section class="panel wide"><h3>Historial reciente</h3><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Dirección</th><th>Ejercicio</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
+        </div>
+      </section>
+
+      <section class="view" id="view-ajustes" aria-labelledby="settingsHeading">
+        <div class="intro"><div><h2 id="settingsHeading">Ajustes</h2><p>El progreso se guarda localmente y, al iniciar sesión, también en tu cuenta.</p></div><span class="save-state" id="saveState">Guardado</span></div>
+        <form id="settingsForm" class="settings-layout">
+          <section class="panel settings-section account-panel"><h3>Cuenta y sincronización</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="syncNowButton">Sincronizar ahora</button><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Inicia sesión para sincronizar</div><p class="security-note">Tu progreso se sincroniza con Supabase. El token de OpenAI permanece solamente en este dispositivo.</p></section>
+          <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
+          <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
+          <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><label>URL del Worker<input name="aiEndpoint" type="url" inputmode="url" placeholder="https://japoteacher-ai.tu-cuenta.workers.dev/evaluate"></label><label>Token privado del proxy<input name="proxyToken" type="password" autocomplete="new-password" placeholder="Token configurado también en Cloudflare"></label><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">Configuración: GPT-5.4 mini, razonamiento bajo y JSON Schema estricto. La clave de OpenAI se configura como secreto del Worker; nunca se pega en esta página. El token del proxy permanece solo en este navegador y no se incluye en las copias.</div></section>
+          <section class="panel settings-section"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegación móvil">
+      <button class="nav-item active" data-view="hoy"><span>⌂</span>Hoy</button><button class="nav-item" data-view="practicar"><span>✎</span>Practicar</button><button class="nav-item" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" data-view="ajustes"><span>⚙</span>Ajustes</button>
+    </nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="src/supabase-config.js?v=10"></script>
+  <script src="src/db.js?v=10"></script>
+  <script src="src/cloud-sync.js?v=10"></script>
+  <script src="src/schema-validation.js"></script>
+  <script src="src/srs.js"></script>
+  <script src="src/session-planner.js?v=4"></script>
+  <script src="src/furigana.js?v=9"></script>
+  <script src="src/evaluators/ai-evaluator.js"></script>
+  <script src="src/evaluators/mock-evaluator.js"></script>
+  <script src="src/evaluators/openai-evaluator.js"></script>
+  <script src="src/evaluators/evaluator-router.js"></script>
+  <script src="src/ai-connection-test.js?v=9"></script>
+  <script src="src/navigation-fix.js?v=9"></script>
+  <script src="src/csv-import.js"></script>
+  <script src="src/csv-export.js"></script>
+  <script src="src/analytics.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="app.js?v=10"></script>
+</body>
+</html>
