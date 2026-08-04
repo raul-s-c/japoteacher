@@ -94,6 +94,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="session-lock" id="sessionLock" hidden><section class="session-lock-card" role="dialog" aria-modal="true" aria-labelledby="sessionLockTitle"><span class="brand-mark" aria-hidden="true">日</span><h2 id="sessionLockTitle">Sesión activa en otro dispositivo</h2><p id="sessionLockMessage"></p><button class="primary" id="takeSessionButton">Cerrar allí y traer aquí</button><button class="secondary" id="sessionLockSignOut">Cerrar sesión</button></section></div>
   <div class="detail-modal" id="historyDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="historyDetailTitle"><div class="section-heading"><h2 id="historyDetailTitle">Detalle del intento</h2><button class="icon-button" id="closeHistoryDetail" aria-label="Cerrar detalle">✕</button></div><div id="historyDetailBody"></div></section></div>
+  <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
   <script src="src/db.js?v=15"></script>
@@ -101,9 +102,9 @@
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
-  <script src="src/topic-progression.js?v=17"></script>
+  <script src="src/topic-progression.js?v=24"></script>
   <script src="src/session-planner.js?v=22"></script>
-  <script src="src/furigana.js?v=9"></script>
+  <script src="src/furigana.js?v=24"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js?v=19"></script>
   <script src="src/evaluators/openai-evaluator.js?v=20"></script>
@@ -115,7 +116,8 @@
   <script src="src/analytics.js"></script>
   <script src="src/ui.js?v=19"></script>
   <script src="src/history-ui.js?v=19"></script>
-  <script src="app.js?v=23"></script>
+  <script src="app.js?v=24"></script>
   <script src="src/extra-study.js?v=22"></script>
+  <script src="src/topic-drill.js?v=24"></script>
 </body>
 </html>
