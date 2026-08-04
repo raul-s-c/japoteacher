@@ -2,6 +2,7 @@ secrets.local.js
 .DS_Store
 Thumbs.db
 node_modules/
+.wrangler-deploy.log
 coverage/
 playwright-report/
 test-results/
