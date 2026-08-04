@@ -8,7 +8,7 @@
       for(let attempt=0;attempt<=this.retries;attempt++){
         const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),this.timeoutMs);
         try{
-          const response=await fetch(this.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${accessToken}`},body:JSON.stringify(payload),signal:controller.signal});
+          const response=await fetch(this.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${accessToken}`,'X-Device-ID':window.CloudSync.getDeviceId()},body:JSON.stringify(payload),signal:controller.signal});
           const text=await response.text();this.lastRawResponse=text;
           let data;try{data=JSON.parse(text)}catch{throw new Error(`El Worker devolvió una respuesta no JSON (${response.status}).`)}
           if(!response.ok)throw new Error(data.error?.message||data.error||`Error HTTP ${response.status}`);

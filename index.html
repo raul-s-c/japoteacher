@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=15">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -76,7 +76,7 @@
       <section class="view" id="view-ajustes" aria-labelledby="settingsHeading">
         <div class="intro"><div><h2 id="settingsHeading">Ajustes</h2><p>El progreso se guarda localmente y, al iniciar sesión, también en tu cuenta.</p></div><span class="save-state" id="saveState">Guardado</span></div>
         <form id="settingsForm" class="settings-layout">
-          <section class="panel settings-section account-panel"><h3>Cuenta y sincronización</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="syncNowButton">Sincronizar ahora</button><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Inicia sesión para sincronizar</div><p class="security-note">Tu progreso se sincroniza con Supabase. El token de OpenAI permanece solamente en este dispositivo.</p></section>
+          <section class="panel settings-section account-panel"><h3>Cuenta y progreso</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Comprobando estado remoto…</div><p class="security-note">Cada cambio se confirma en Supabase antes de continuar. Esta pantalla siempre representa el estado consolidado de tu cuenta.</p></section>
           <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
           <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
           <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></section>
@@ -90,18 +90,19 @@
     </nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="session-lock" id="sessionLock" hidden><section class="session-lock-card" role="dialog" aria-modal="true" aria-labelledby="sessionLockTitle"><span class="brand-mark" aria-hidden="true">日</span><h2 id="sessionLockTitle">Sesión activa en otro dispositivo</h2><p id="sessionLockMessage"></p><button class="primary" id="takeSessionButton">Cerrar allí y traer aquí</button><button class="secondary" id="sessionLockSignOut">Cerrar sesión</button></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=11"></script>
-  <script src="src/cloud-sync.js?v=14"></script>
-  <script src="src/pwa-update.js?v=14"></script>
+  <script src="src/db.js?v=15"></script>
+  <script src="src/cloud-sync.js?v=15"></script>
+  <script src="src/pwa-update.js?v=15"></script>
   <script src="src/schema-validation.js"></script>
   <script src="src/srs.js"></script>
   <script src="src/session-planner.js?v=4"></script>
   <script src="src/furigana.js?v=9"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js"></script>
-  <script src="src/evaluators/openai-evaluator.js"></script>
+  <script src="src/evaluators/openai-evaluator.js?v=15"></script>
   <script src="src/evaluators/evaluator-router.js"></script>
   <script src="src/ai-connection-test.js?v=11"></script>
   <script src="src/navigation-fix.js?v=9"></script>
@@ -109,6 +110,6 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js"></script>
   <script src="src/ui.js"></script>
-  <script src="app.js?v=14"></script>
+  <script src="app.js?v=15"></script>
 </body>
 </html>
