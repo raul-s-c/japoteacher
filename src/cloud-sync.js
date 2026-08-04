@@ -1,7 +1,8 @@
 (function(){
   const config=window.JAPOTEACHER_SUPABASE;
   const client=window.supabase.createClient(config.url,config.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
-  let user=null,timer=null,syncing=false,ready=false;
+  let user=null,timer=null,syncing=false,ready=false,resolveInitialSync;
+  const initialSync=new Promise(resolve=>{resolveInitialSync=resolve});
   const $=s=>document.querySelector(s);
   const keyFor={exercises:'exercise_id',attempts:'attempt_id',exercise_progress:'progress_id',tag_progress:'tag_progress_id',daily_sessions:'session_id',settings:'key',import_history:'import_id'};
   function status(message,tone=''){const el=$('#cloudStatus');if(el){el.textContent=message;el.dataset.tone=tone}}
@@ -33,6 +34,6 @@
   async function signOut(){ready=false;await client.auth.signOut()}
   async function getAccessToken(){const {data}=await client.auth.getSession();return data.session?.access_token||''}
   async function beginSync(){await synchronize({reload:true})}
-  async function init(){const {data}=await client.auth.getSession();user=data.session?.user||null;render();$('#signUpButton').addEventListener('click',signUp);$('#signInButton').addEventListener('click',signIn);$('#signOutButton').addEventListener('click',signOut);$('#syncNowButton').addEventListener('click',()=>synchronize({reload:true}));client.auth.onAuthStateChange((event,session)=>{const previous=user?.id;user=session?.user||null;render();if(user&&user.id!==previous)setTimeout(()=>beginSync(),0)});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&user&&ready)synchronize({reload:true})});if(user)await beginSync()}
-  window.CloudSync={schedule,push,getAccessToken,synchronize};document.addEventListener('DOMContentLoaded',()=>init().catch(e=>status(e.message,'error')));
+  async function init(){try{const {data}=await client.auth.getSession();user=data.session?.user||null;render();$('#signUpButton').addEventListener('click',signUp);$('#signInButton').addEventListener('click',signIn);$('#signOutButton').addEventListener('click',signOut);$('#syncNowButton').addEventListener('click',()=>synchronize({reload:true}));client.auth.onAuthStateChange((event,session)=>{const previous=user?.id;user=session?.user||null;render();if(user&&user.id!==previous)setTimeout(()=>beginSync(),0)});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&user&&ready)synchronize({reload:true})});if(user)await synchronize({reload:false})}finally{resolveInitialSync()}}
+  window.CloudSync={schedule,push,getAccessToken,synchronize,initialSync};document.addEventListener('DOMContentLoaded',()=>init().catch(e=>status(e.message,'error')));
 })();
