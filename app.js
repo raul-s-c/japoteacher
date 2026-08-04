@@ -4,7 +4,7 @@
   const { $, $$, toast, showView, directionName, feedback }=UI;
   async function settings(){const saved=await JapoDB.get('settings','app'),old=saved?.value||{};const migrated=(old.settingsSchemaVersion||0)<3;const value={...DEFAULTS,...old,...(migrated?{aiProvider:'openai',aiModel:'gpt-5.4-mini',aiEndpoint:DEFAULTS.aiEndpoint,proxyToken:'',settingsSchemaVersion:3}:{})};if(migrated)await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()});return value}
   async function saveSettings(value){state.settings=value;await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()})}
-  async function seed(){const current=await JapoDB.all('exercises');if(current.length)return current.length;const response=await fetch('data/exercises.sample.csv');if(!response.ok)throw new Error('No se pudo cargar el banco inicial');const report=await CsvImport.importText(await response.text());return report.created+report.updated}
+  async function seed(){const current=await JapoDB.all('exercises');if(current.some(e=>e.exercise_id==='ESJA-N4-EXP-0110'))return current.length;const response=await fetch('data/exercises.full.csv');if(!response.ok)throw new Error('No se pudo cargar la ampliación del banco');const report=await CsvImport.importText(await response.text());return report.created+report.updated}
   async function loadSession(){state.session=await SessionPlanner.getOrCreate(state.settings.profileId,state.settings);return state.session}
   const ids=(direction)=>JSON.parse(state.session[direction==='ja_es'?'exercise_ids_ja_es_json':'exercise_ids_es_ja_json']||'[]');
   const done=()=>JSON.parse(state.session.completed_exercise_ids_json||'[]');
