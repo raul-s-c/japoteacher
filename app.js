@@ -6,6 +6,8 @@
   async function saveSettings(value){state.settings=value;await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()})}
   async function seed(){const current=await JapoDB.all('exercises');if(current.some(e=>e.exercise_id==='ESJA-N4-EXP-0110'))return current.length;const response=await fetch('data/exercises.full.csv');if(!response.ok)throw new Error('No se pudo cargar la ampliación del banco');const report=await CsvImport.importText(await response.text());return report.created+report.updated}
   async function loadSession(){state.session=await SessionPlanner.getOrCreate(state.settings.profileId,state.settings);return state.session}
+  async function startExtraStudy(){state.session=await SessionPlanner.createExtra(state.settings.profileId,state.settings);await renderToday();$('#exerciseChooser .section-kicker').textContent='Práctica adicional';showExerciseChooser()}
+  window.JapoStartExtraStudy=startExtraStudy;
   const ids=(direction)=>JSON.parse(state.session[direction==='ja_es'?'exercise_ids_ja_es_json':'exercise_ids_es_ja_json']||'[]');
   const done=()=>JSON.parse(state.session.completed_exercise_ids_json||'[]');
   function nextId(preferred){const completed=new Set(done()),order=preferred?[...ids(preferred),...ids(preferred==='ja_es'?'es_ja':'ja_es')]:[...ids('ja_es'),...ids('es_ja')];return order.find(id=>!completed.has(id))||null}
