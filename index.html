@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -45,7 +45,8 @@
       </section>
 
       <section class="view" id="view-practicar" aria-labelledby="practiceHeading">
-        <div class="practice-layout">
+        <section class="exercise-chooser panel" id="exerciseChooser" hidden><div class="section-heading"><div><p class="section-kicker">Sesión de hoy</p><h2>Elige una frase</h2></div><button class="secondary" id="closeExerciseChooser">Volver a Hoy</button></div><p class="chooser-help">Puedes empezar por cualquiera. Después continuaremos por orden con las pendientes.</p><div class="exercise-choice-list" id="exerciseChoiceList"></div></section>
+        <div class="practice-layout" id="practiceLayout">
           <section class="exercise-panel">
             <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span></div>
             <div class="progress-row"><span id="practiceCount">Ejercicio 1 de 5</span><span id="practicePercent">0%</span></div><div class="progress-track"><span id="practiceBar"></span></div>
@@ -69,7 +70,7 @@
           <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
           <section class="panel wide"><h3>Fortalezas y oportunidades por tag</h3><div id="tagAnalytics"></div></section>
-          <section class="panel wide"><h3>Historial reciente</h3><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Dirección</th><th>Ejercicio</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
+          <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Todos los intentos</p><h3>Historial</h3></div><span class="metric-small" id="historyCount"></span></div><div class="history-filters"><label>Buscar<input id="historySearch" type="search" placeholder="Frase o respuesta"></label><label>Dirección<select id="historyDirection"><option value="all">Todas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><label>Resultado<select id="historyResult"><option value="all">Todos</option><option value="acceptable">Aceptables</option><option value="review">A revisar</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Frase</th><th>Dirección</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
         </div>
       </section>
 
@@ -91,11 +92,12 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="session-lock" id="sessionLock" hidden><section class="session-lock-card" role="dialog" aria-modal="true" aria-labelledby="sessionLockTitle"><span class="brand-mark" aria-hidden="true">日</span><h2 id="sessionLockTitle">Sesión activa en otro dispositivo</h2><p id="sessionLockMessage"></p><button class="primary" id="takeSessionButton">Cerrar allí y traer aquí</button><button class="secondary" id="sessionLockSignOut">Cerrar sesión</button></section></div>
+  <div class="detail-modal" id="historyDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="historyDetailTitle"><div class="section-heading"><h2 id="historyDetailTitle">Detalle del intento</h2><button class="icon-button" id="closeHistoryDetail" aria-label="Cerrar detalle">✕</button></div><div id="historyDetailBody"></div></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
   <script src="src/db.js?v=15"></script>
-  <script src="src/cloud-sync.js?v=15"></script>
-  <script src="src/pwa-update.js?v=15"></script>
+  <script src="src/cloud-sync.js?v=16"></script>
+  <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js"></script>
   <script src="src/srs.js"></script>
   <script src="src/session-planner.js?v=4"></script>
@@ -110,6 +112,7 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js"></script>
   <script src="src/ui.js"></script>
-  <script src="app.js?v=15"></script>
+  <script src="src/history-ui.js?v=16"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>
