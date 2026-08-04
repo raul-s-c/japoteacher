@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=16">
+  <link rel="stylesheet" href="styles.css?v=17">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -69,6 +69,7 @@
         <div class="analytics-grid">
           <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
+          <section class="panel wide topic-roadmap-panel"><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
           <section class="panel wide"><h3>Fortalezas y oportunidades por tag</h3><div id="tagAnalytics"></div></section>
           <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Todos los intentos</p><h3>Historial</h3></div><span class="metric-small" id="historyCount"></span></div><div class="history-filters"><label>Buscar<input id="historySearch" type="search" placeholder="Frase o respuesta"></label><label>Dirección<select id="historyDirection"><option value="all">Todas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><label>Resultado<select id="historyResult"><option value="all">Todos</option><option value="acceptable">Aceptables</option><option value="review">A revisar</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Frase</th><th>Dirección</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
         </div>
@@ -81,7 +82,7 @@
           <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
           <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
           <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></section>
-          <section class="panel settings-section"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
+          <section class="panel settings-section"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
         </form>
       </section>
     </main>
@@ -100,7 +101,8 @@
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js"></script>
   <script src="src/srs.js"></script>
-  <script src="src/session-planner.js?v=4"></script>
+  <script src="src/topic-progression.js?v=17"></script>
+  <script src="src/session-planner.js?v=17"></script>
   <script src="src/furigana.js?v=9"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js"></script>
@@ -113,6 +115,6 @@
   <script src="src/analytics.js"></script>
   <script src="src/ui.js"></script>
   <script src="src/history-ui.js?v=16"></script>
-  <script src="app.js?v=16"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>
