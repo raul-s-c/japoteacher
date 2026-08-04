@@ -12,5 +12,6 @@
   async function signIn(){const email=$('#authEmail').value.trim(),password=$('#authPassword').value;status('Iniciando sesión…');const {error}=await client.auth.signInWithPassword({email,password});if(error)status(error.message,'error')}
   async function signOut(){sessionStorage.removeItem('japoteacher_restored');await client.auth.signOut()}
   async function init(){const {data}=await client.auth.getSession();user=data.session?.user||null;render();$('#signUpButton').addEventListener('click',signUp);$('#signInButton').addEventListener('click',signIn);$('#signOutButton').addEventListener('click',signOut);$('#syncNowButton').addEventListener('click',push);client.auth.onAuthStateChange((event,session)=>{const previous=user?.id;user=session?.user||null;render();if(user&&user.id!==previous)setTimeout(()=>reconcile().catch(e=>status(e.message,'error')),0)});if(user)await reconcile()}
-  window.CloudSync={schedule,push};document.addEventListener('DOMContentLoaded',()=>init().catch(e=>status(e.message,'error')));
+  async function getAccessToken(){const {data}=await client.auth.getSession();return data.session?.access_token||''}
+  window.CloudSync={schedule,push,getAccessToken};document.addEventListener('DOMContentLoaded',()=>init().catch(e=>status(e.message,'error')));
 })();

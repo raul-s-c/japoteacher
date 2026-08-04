@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -79,7 +79,7 @@
           <section class="panel settings-section account-panel"><h3>Cuenta y sincronización</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="syncNowButton">Sincronizar ahora</button><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Inicia sesión para sincronizar</div><p class="security-note">Tu progreso se sincroniza con Supabase. El token de OpenAI permanece solamente en este dispositivo.</p></section>
           <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
           <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
-          <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><label>URL del Worker<input name="aiEndpoint" type="url" inputmode="url" placeholder="https://japoteacher-ai.tu-cuenta.workers.dev/evaluate"></label><label>Token privado del proxy<input name="proxyToken" type="password" autocomplete="new-password" placeholder="Token configurado también en Cloudflare"></label><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">Configuración: GPT-5.4 mini, razonamiento bajo y JSON Schema estricto. La clave de OpenAI se configura como secreto del Worker; nunca se pega en esta página. El token del proxy permanece solo en este navegador y no se incluye en las copias.</div></section>
+          <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></section>
           <section class="panel settings-section"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
         </form>
       </section>
@@ -91,9 +91,9 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="src/supabase-config.js?v=10"></script>
-  <script src="src/db.js?v=10"></script>
-  <script src="src/cloud-sync.js?v=10"></script>
+  <script src="src/supabase-config.js?v=11"></script>
+  <script src="src/db.js?v=11"></script>
+  <script src="src/cloud-sync.js?v=11"></script>
   <script src="src/schema-validation.js"></script>
   <script src="src/srs.js"></script>
   <script src="src/session-planner.js?v=4"></script>
@@ -102,12 +102,12 @@
   <script src="src/evaluators/mock-evaluator.js"></script>
   <script src="src/evaluators/openai-evaluator.js"></script>
   <script src="src/evaluators/evaluator-router.js"></script>
-  <script src="src/ai-connection-test.js?v=9"></script>
+  <script src="src/ai-connection-test.js?v=11"></script>
   <script src="src/navigation-fix.js?v=9"></script>
   <script src="src/csv-import.js"></script>
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js"></script>
   <script src="src/ui.js"></script>
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

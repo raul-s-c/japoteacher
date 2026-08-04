@@ -4,3 +4,5 @@ compatibility_date = "2026-08-04"
 
 [vars]
 APP_ORIGINS = "https://raul-s-c.github.io"
+SUPABASE_URL = "https://kvcptfbmhuagzauwoluh.supabase.co"
+SUPABASE_PUBLISHABLE_KEY = "sb_publishable_J1c8UPtt3ZedSu8pObN7_w_sjYxDMxG"

@@ -1,8 +1,8 @@
 (function(){
-  const DEFAULTS={profileId:'local-default',profileName:'Estudiante',dailyJaEs:5,dailyEsJa:5,levels:['N5','N4'],cooldownDays:14,newRatio:60,furigana:false,aiProvider:'openai',aiModel:'gpt-5.4-mini',aiEndpoint:'',proxyToken:''};
+  const DEFAULTS={profileId:'local-default',profileName:'Estudiante',dailyJaEs:5,dailyEsJa:5,levels:['N5','N4'],cooldownDays:14,newRatio:60,furigana:false,aiProvider:'openai',aiModel:'gpt-5.4-mini',aiEndpoint:'https://japoteacher-ai.raul-nihongo.workers.dev/evaluate',proxyToken:''};
   const state={settings:null,session:null,exercises:new Map(),currentId:null,deferredPrompt:null};
   const { $, $$, toast, showView, directionName, feedback }=UI;
-  async function settings(){const saved=await JapoDB.get('settings','app'),old=saved?.value||{};const migrated=(old.settingsSchemaVersion||0)<2;const value={...DEFAULTS,...old,...(migrated?{aiProvider:'openai',aiModel:'gpt-5.4-mini',aiEndpoint:'',proxyToken:'',settingsSchemaVersion:2}:{})};if(migrated)await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()});return value}
+  async function settings(){const saved=await JapoDB.get('settings','app'),old=saved?.value||{};const migrated=(old.settingsSchemaVersion||0)<3;const value={...DEFAULTS,...old,...(migrated?{aiProvider:'openai',aiModel:'gpt-5.4-mini',aiEndpoint:DEFAULTS.aiEndpoint,proxyToken:'',settingsSchemaVersion:3}:{})};if(migrated)await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()});return value}
   async function saveSettings(value){state.settings=value;await JapoDB.put('settings',{key:'app',value,updated_at:new Date().toISOString()})}
   async function seed(){const current=await JapoDB.all('exercises');if(current.length)return current.length;const response=await fetch('data/exercises.sample.csv');if(!response.ok)throw new Error('No se pudo cargar el banco inicial');const report=await CsvImport.importText(await response.text());return report.created+report.updated}
   async function loadSession(){state.session=await SessionPlanner.getOrCreate(state.settings.profileId,state.settings);return state.session}
