@@ -12,6 +12,11 @@ from pykakasi import kakasi
 
 converter = kakasi()
 readings = {}
+CURATED_CORRECTIONS = {
+    "今日は": "きょうは",
+    "止まり": "とまり",
+    "飯": "はん",
+}
 with (ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="") as source:
     for exercise in csv.DictReader(source):
         if exercise["source_language"] != "ja":
@@ -21,7 +26,10 @@ with (ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="
             original = token["orig"]
             escaped = html.escape(original)
             if any("\u3400" <= char <= "\u9fff" for char in original):
-                pieces.append(f'<ruby>{escaped}<rt>{html.escape(token["hira"])}</rt></ruby>')
+                reading = token["hira"]
+                if "-N5-CURATED-" in exercise["exercise_id"]:
+                    reading = CURATED_CORRECTIONS.get(original, reading)
+                pieces.append(f'<ruby>{escaped}<rt>{html.escape(reading)}</rt></ruby>')
             else:
                 pieces.append(escaped)
         readings[exercise["exercise_id"]] = "".join(pieces)
