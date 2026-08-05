@@ -15,6 +15,29 @@
       "fields": {
         "accepted_alternatives_ja": []
       }
+    },
+    "156": {
+      "reason": "Sustituir un condicional superior a N5 por una escena natural que practique la partícula と de compañía.",
+      "fields": {
+        "japanese": "弟と川の近くを歩きましたが、雨が降りました。",
+        "spanish": "Caminé cerca del río con mi hermano, pero empezó a llover.",
+        "scenario_es": "Una persona pasea con su hermano cerca de un río y cuenta que empezó a llover.",
+        "topic_secondary": ["familia", "tiempo atmosférico"],
+        "situation_tag": "paseo_interrumpido_por_lluvia",
+        "grammar_tags": ["と", "が（contraste）", "過去形"],
+        "particle_tags": ["と", "の", "を", "が"],
+        "vocabulary_tags": ["弟", "川", "近く", "歩く", "雨", "降る"],
+        "communicative_function": "contrastar una actividad con un cambio del tiempo",
+        "tense_aspect": "pasado",
+        "polarity": "afirmativa",
+        "sentence_type": "declarativa",
+        "accepted_alternatives_es": ["Paseé cerca del río con mi hermano, pero empezó a llover."],
+        "accepted_alternatives_ja": [],
+        "ambiguity_notes": "弟 indica un hermano menor del hablante; が introduce aquí un contraste sencillo.",
+        "critical_meaning_units": ["弟と", "川の近くを", "歩きました", "が", "雨が降りました"],
+        "difficulty_rationale": "Practica と de compañía, pasado cortés y un contraste básico con vocabulario cotidiano N5.",
+        "naturalness_rationale": "Es una situación autosuficiente y habitual durante un paseo al aire libre."
+      }
     }
   }
 }

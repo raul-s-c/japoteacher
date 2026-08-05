@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "authority_note": "Los descriptores y tipos de ítem proceden del JLPT oficial. Los inventarios de gramática son una taxonomía pedagógica interna, no una lista oficial del JLPT.",
   "topics": ["vida_diaria", "hogar", "comida", "compras", "transporte", "viajes", "salud", "estudio", "trabajo", "relaciones", "ocio", "naturaleza", "servicios", "tecnologia", "sociedad", "cultura"],
   "levels": {
@@ -28,7 +28,7 @@
   },
   "batch": {
     "semantic_pairs": 25,
-    "generation_group": 5,
+    "generation_group": 1,
     "length_mix": {"short": 25, "standard": 50, "long": 25},
     "sentence_function_mix": {"statement": 12, "question": 4, "social_action": 3, "negative_or_correction": 3, "reason_contrast_condition": 3},
     "max_topic_share_percent": 20,

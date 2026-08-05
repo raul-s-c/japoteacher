@@ -28,6 +28,18 @@ def record_usage(payload, response):
     with path.open("a", encoding="utf-8") as output:
         output.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
+def recorded_total_usage():
+    path = ROOT / "data" / "editorial" / "usage.jsonl"
+    if not path.exists():
+        return 0
+    total = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        usage = json.loads(line).get("usage", {})
+        total += usage.get("total_tokens", usage.get("input_tokens", 0) + usage.get("output_tokens", 0))
+    return total
+
 def normalize_japanese(value):
     return re.sub(r"[\s。、！？「」『』（）・,.!?]", "", value)
 
@@ -72,6 +84,10 @@ def validate_slot(item, slot):
     es_min, es_max = max(1, int(slot["es_word_range"][0] * 0.75)), slot["es_word_range"][1] + 2
     if not es_min <= es_words <= es_max: errors.append(f"longitud española {es_words}")
     if re.search(r"(?:です|ます|ません|ました)[。！？]?$", item.get("japanese", "")) and item.get("register") != "cortés": errors.append("registro cortés mal etiquetado")
+    if slot.get("level") == "N5":
+        advanced_n5 = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|学べ)")
+        if advanced_n5.search(item.get("japanese", "")):
+            errors.append("construcción superior a N5 detectada")
     covered = "".join(reading.get("characters", "") for reading in item.get("kanji_readings", []))
     missing_kanji = sorted({character for character in item.get("japanese", "") if is_kanji(character) and character not in covered})
     if missing_kanji: errors.append(f"kanji sin lectura {''.join(missing_kanji)}")
@@ -136,9 +152,9 @@ def request_editorial(payload, key, retries=6):
             if attempt == retries - 1:
                 raise RuntimeError(f"El endpoint editorial respondió {error.code}: {detail}") from error
             time.sleep(2 ** attempt)
-        except (urllib.error.URLError, http.client.RemoteDisconnected, ConnectionResetError, TimeoutError, RuntimeError):
+        except (urllib.error.URLError, http.client.RemoteDisconnected, ConnectionResetError, TimeoutError, RuntimeError) as error:
             if attempt == retries - 1:
-                raise
+                raise RuntimeError(f"La llamada editorial falló tras {retries} intentos: {error}") from error
             time.sleep(2 ** attempt)
 
 def existing_pairs(level):
@@ -219,7 +235,7 @@ def review_until_approved(items, level, key, slots=None, operation="review"):
     reason = local_rejection or review_rejection or "el revisor no aprobó la versión corregida"
     raise RuntimeError(f"El grupo no superó tres revisiones: {reason}")
 
-def run(level, limit=None):
+def run(level, limit=None, usage_baseline=None, token_budget=None):
     key = os.environ.get("JAPOTEACHER_EDITORIAL_KEY", "")
     if not key:
         raise SystemExit("Falta JAPOTEACHER_EDITORIAL_KEY en el entorno.")
@@ -231,13 +247,18 @@ def run(level, limit=None):
     if limit is not None:
         remaining = min(remaining, limit)
     known = {normalize_japanese(row["source_text"]) for row in existing} | {normalize_japanese(item["japanese"]) for item in approved}
+    used_slots = {item["slot"] for item in approved}
     generated = 0
     while generated < remaining:
-        group_size = min(5, remaining - generated)
-        if group_size != 5:
-            break
-        offset = len(existing) + len(approved) + generated
-        slots = make_slots(level, offset, 5)
+        if usage_baseline is not None and token_budget is not None:
+            spent = recorded_total_usage() - usage_baseline
+            if spent >= token_budget:
+                print(json.dumps({"token_budget_reached": True, "usage_baseline": usage_baseline, "spent": spent, "budget": token_budget}, ensure_ascii=False), flush=True)
+                break
+        group_size = 1
+        next_slot = next(slot for slot in range(len(existing) + 1, config["target_pairs"] + 1) if slot not in used_slots)
+        offset = next_slot - 1
+        slots = make_slots(level, offset, group_size)
         last_rejection = ""
         for generation_attempt in range(1, 5):
             try:
@@ -251,7 +272,7 @@ def run(level, limit=None):
                 for item, slot in zip(final, slots):
                     validate_slot(item, slot)
                 signatures = [normalize_japanese(item["japanese"]) for item in final]
-                if len(set(signatures)) != 5 or any(signature in known for signature in signatures):
+                if len(set(signatures)) != group_size or any(signature in known for signature in signatures):
                     raise RuntimeError("El grupo contiene una frase duplicada.")
                 break
             except RuntimeError as error:
@@ -260,14 +281,17 @@ def run(level, limit=None):
                     raise RuntimeError(f"El lote se rechazó cuatro veces. Último motivo: {last_rejection}") from error
                 print(json.dumps({"level": level, "group_offset": offset, "rejected_attempt": generation_attempt, "reason": last_rejection}, ensure_ascii=False), flush=True)
         for slot, item, signature in zip(slots, final, signatures):
-            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 3, **item})
+            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 4, **item})
             known.add(signature)
-        generated += 5
+            used_slots.add(item["slot"])
+        generated += group_size
         print(json.dumps({"level": level, "approved_total": len(approved) + generated, "remaining_this_run": remaining - generated}, ensure_ascii=False), flush=True)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("level", choices=["N5", "N4"])
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--usage-baseline", type=int)
+    parser.add_argument("--token-budget", type=int)
     args = parser.parse_args()
-    run(args.level, args.limit)
+    run(args.level, args.limit, args.usage_baseline, args.token_budget)
