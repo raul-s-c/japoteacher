@@ -8,3 +8,4 @@ playwright-report/
 test-results/
 worker/.dev.vars
 worker/.wrangler/
+data/editorial/usage.jsonl

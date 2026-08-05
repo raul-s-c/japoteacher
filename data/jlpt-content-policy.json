@@ -5,7 +5,6 @@
   "levels": {
     "N5": {
       "target_pairs": 300,
-      "item_targets": {"kanji_reading": 120, "orthography": 80, "context_expression": 80, "paraphrase": 60, "grammar_form": 100, "sentence_composition": 80, "text_grammar": 50, "reading_short": 30, "reading_medium": 20, "information_retrieval": 20, "listening_task": 40, "listening_key_points": 40, "listening_verbal_expression": 30, "listening_quick_response": 50},
       "jp_chars": [8, 22],
       "es_words": [4, 12],
       "sentence_length_bands": {"short": {"jp_chars": [6, 16], "es_words": [2, 7]}, "standard": {"jp_chars": [10, 24], "es_words": [5, 12]}, "long": {"jp_chars": [16, 32], "es_words": [8, 18]}},
@@ -17,7 +16,6 @@
     },
     "N4": {
       "target_pairs": 450,
-      "item_targets": {"kanji_reading": 160, "orthography": 100, "context_expression": 100, "paraphrase": 80, "vocabulary_usage": 80, "grammar_form": 140, "sentence_composition": 100, "text_grammar": 70, "reading_short": 40, "reading_medium": 25, "information_retrieval": 25, "listening_task": 50, "listening_key_points": 50, "listening_verbal_expression": 40, "listening_quick_response": 60},
       "jp_chars": [12, 32],
       "es_words": [7, 18],
       "sentence_length_bands": {"short": {"jp_chars": [10, 22], "es_words": [4, 10]}, "standard": {"jp_chars": [16, 36], "es_words": [8, 18]}, "long": {"jp_chars": [26, 52], "es_words": [14, 28]}},
@@ -36,6 +34,6 @@
     "max_topic_share_percent": 20,
     "max_same_skeleton": 2,
     "similarity_review_threshold": 0.8,
-    "editorial_gates": ["schema", "jlpt_level", "semantic_accuracy", "realism", "naturalness", "single_best_answer", "distractor_quality", "tag_accuracy", "kanji_readings", "duplicate_detection", "independent_review"]
+    "editorial_gates": ["schema", "jlpt_level", "semantic_accuracy", "realism", "naturalness", "logical_relations", "accepted_alternatives", "tag_accuracy", "kanji_readings", "duplicate_detection", "independent_review"]
   }
 }

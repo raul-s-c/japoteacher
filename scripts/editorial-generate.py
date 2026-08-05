@@ -36,21 +36,34 @@ def normalize_spacing(item):
     if not re.search(r"[。！？]$", item["japanese"]):
         item["japanese"] += "？" if item.get("sentence_type") == "pregunta" else "。"
     item["spanish"] = re.sub(r"\s+", " ", item["spanish"]).strip()
-    item["accepted_alternatives_ja"] = [re.sub(r"\s+", "", value).strip() for value in item["accepted_alternatives_ja"]]
-    item["accepted_alternatives_es"] = [re.sub(r"\s+", " ", value).strip() for value in item["accepted_alternatives_es"]]
+    japanese_alternatives = [re.sub(r"\s+", "", value).strip() for value in item["accepted_alternatives_ja"]]
+    spanish_alternatives = [re.sub(r"\s+", " ", value).strip() for value in item["accepted_alternatives_es"]]
+    item["accepted_alternatives_ja"] = list(dict.fromkeys(value for value in japanese_alternatives if normalize_japanese(value) != normalize_japanese(item["japanese"])))
+    item["accepted_alternatives_es"] = list(dict.fromkeys(value for value in spanish_alternatives if value.casefold().rstrip(".!?¿¡") != item["spanish"].casefold().rstrip(".!?¿¡")))
     for field in ["grammar_tags", "particle_tags", "vocabulary_tags"]:
         item[field] = [value for value in item[field] if value not in {"grammar_focus", "topic_primary", "required_distinction"}]
     return item
 
-def grammar_focus_present(focus, tags):
+def grammar_focus_present(focus, tags, japanese):
+    evidence_patterns = {
+        "位置表現": r"(?:上|下|中|外|前|後ろ|隣|となり|近く|そば|右|左)に",
+        "頻度表現": r"(?:いつも|よく|ときどき|時々|あまり|ぜんぜん|全然|毎日|毎週|毎月)",
+        "疑問詞": r"(?:だれ|誰|なに|何|どこ|いつ|どう|どの|どれ|どちら|いくつ|いくら)",
+        "数量・助数詞": r"(?:[一二三四五六七八九十百千何0-9]+(?:人|本|枚|台|匹|冊|個|つ|回|階|歳|時|分|日|月|年|駅|錠))",
+    }
+    if focus in evidence_patterns and re.search(evidence_patterns[focus], japanese):
+        return True
     alternatives = [value.strip() for value in focus.split("・") if value.strip()]
     return any(alternative == tag or alternative in tag or tag in alternative for alternative in alternatives for tag in tags)
+
+def is_kanji(character):
+    return "\u3400" <= character <= "\u9fff" or "\uf900" <= character <= "\ufaff"
 
 def validate_slot(item, slot):
     errors = []
     if item.get("slot") != slot["slot"]: errors.append("slot alterado")
     if item.get("topic_primary") != slot["topic_primary"]: errors.append("tema primario alterado")
-    if not all(grammar_focus_present(focus, item.get("grammar_tags", [])) for focus in slot["grammar_focus"]): errors.append("foco gramatical ausente")
+    if not all(grammar_focus_present(focus, item.get("grammar_tags", []), item.get("japanese", "")) for focus in slot["grammar_focus"]): errors.append("foco gramatical ausente")
     jp_chars = len(normalize_japanese(item.get("japanese", "")))
     jp_min, jp_max = max(1, int(slot["jp_char_range"][0] * 0.8)), slot["jp_char_range"][1] + 4
     if not jp_min <= jp_chars <= jp_max: errors.append(f"longitud japonesa {jp_chars}")
@@ -58,8 +71,18 @@ def validate_slot(item, slot):
     es_min, es_max = max(1, int(slot["es_word_range"][0] * 0.75)), slot["es_word_range"][1] + 2
     if not es_min <= es_words <= es_max: errors.append(f"longitud española {es_words}")
     if re.search(r"(?:です|ます|ません|ました)[。！？]?$", item.get("japanese", "")) and item.get("register") != "cortés": errors.append("registro cortés mal etiquetado")
+    covered = "".join(reading.get("characters", "") for reading in item.get("kanji_readings", []))
+    missing_kanji = sorted({character for character in item.get("japanese", "") if is_kanji(character) and character not in covered})
+    if missing_kanji: errors.append(f"kanji sin lectura {''.join(missing_kanji)}")
     if errors:
         raise RuntimeError(f"Slot {slot['slot']} inválido: {', '.join(errors)}")
+
+def repair_kanji_readings(items, level, key):
+    result = request_editorial({"operation": "repair_kanji", "level": level, "items": [{"slot": item["slot"], "japanese": item["japanese"]} for item in items]}, key)
+    by_slot = {item["slot"]: item["kanji_readings"] for item in result["items"]}
+    if set(by_slot) != {item["slot"] for item in items}:
+        raise RuntimeError("La reparación de kanji perdió identidades de slot.")
+    return [{**item, "kanji_readings": by_slot[item["slot"]]} for item in items]
 
 def request_editorial(payload, key, retries=4):
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
@@ -127,15 +150,43 @@ def append_jsonl(path, item):
     with path.open("a", encoding="utf-8") as output:
         output.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-def review_until_approved(items, level, key):
+def review_until_approved(items, level, key, slots=None):
     current = items
+    local_rejection = ""
+    review_rejection = ""
     for review_round in range(3):
-        result = request_editorial({"operation": "review", "level": level, "round": review_round + 1, "items": current}, key)
+        result = request_editorial({"operation": "review", "level": level, "round": review_round + 1, "items": current, "mandatory_local_fixes": local_rejection}, key)
         reviewed = sorted(result["items"], key=lambda item: item["index"])
-        current = [item["corrected"] for item in reviewed]
-        if all(item["approved"] for item in reviewed):
+        current = [normalize_spacing(item["corrected"]) for item in reviewed]
+        local_errors = []
+        if slots:
+            by_slot = {item.get("slot"): item for item in current}
+            if set(by_slot) != {slot["slot"] for slot in slots}:
+                local_errors.append("Se perdieron o duplicaron identidades de slot.")
+            else:
+                current = [by_slot[slot["slot"]] for slot in slots]
+                for item, slot in zip(current, slots):
+                    try:
+                        validate_slot(item, slot)
+                    except RuntimeError as error:
+                        local_errors.append(str(error))
+        if all(item["approved"] for item in reviewed) and not local_errors:
             return current, review_round + 1
-    raise RuntimeError("El grupo no superó tres revisiones editoriales; se conserva fuera del banco.")
+        if any("kanji sin lectura" in error for error in local_errors):
+            current = repair_kanji_readings(current, level, key)
+            repaired_errors = []
+            for item, slot in zip(current, slots):
+                try:
+                    validate_slot(item, slot)
+                except RuntimeError as error:
+                    repaired_errors.append(str(error))
+            if all(item["approved"] for item in reviewed) and not repaired_errors:
+                return current, review_round + 1
+            local_errors = repaired_errors
+        local_rejection = " | ".join(local_errors)
+        review_rejection = " | ".join(issue for item in reviewed if not item["approved"] for issue in item.get("issues", []))
+    reason = local_rejection or review_rejection or "el revisor no aprobó la versión corregida"
+    raise RuntimeError(f"El grupo no superó tres revisiones: {reason}")
 
 def run(level, limit=None):
     key = os.environ.get("JAPOTEACHER_EDITORIAL_KEY", "")
@@ -160,7 +211,7 @@ def run(level, limit=None):
         for generation_attempt in range(1, 5):
             try:
                 result = request_editorial({"operation": "generate", "level": level, "slots": slots, "avoid_japanese": list(known)[-200:], "previous_rejection": last_rejection}, key)
-                final, rounds = review_until_approved(result["items"], level, key)
+                final, rounds = review_until_approved(result["items"], level, key, slots)
                 final_by_slot = {item.get("slot"): normalize_spacing(item) for item in final}
                 if set(final_by_slot) != {slot["slot"] for slot in slots}:
                     raise RuntimeError("La revisión perdió o duplicó identidades de slot.")
@@ -177,7 +228,7 @@ def run(level, limit=None):
                     raise RuntimeError(f"El lote se rechazó cuatro veces. Último motivo: {last_rejection}") from error
                 print(json.dumps({"level": level, "group_offset": offset, "rejected_attempt": generation_attempt, "reason": last_rejection}, ensure_ascii=False), flush=True)
         for slot, item, signature in zip(slots, final, signatures):
-            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, **item})
+            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 2, **item})
             known.add(signature)
         generated += 5
         print(json.dumps({"level": level, "approved_total": len(approved) + generated, "remaining_this_run": remaining - generated}, ensure_ascii=False), flush=True)

@@ -9,9 +9,6 @@
     daily_sessions: "session_id",
     settings: "key",
     import_history: "import_id",
-    jlpt_items: "item_id",
-    jlpt_attempts: "attempt_id",
-    jlpt_progress: "progress_id",
   };
   let dbPromise;
   function open() {
@@ -76,8 +73,6 @@
         "exercise_progress",
         "tag_progress",
         "daily_sessions",
-        "jlpt_attempts",
-        "jlpt_progress",
       ])
         await api.clear(s);
     },

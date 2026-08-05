@@ -35,9 +35,6 @@
     daily_sessions: "session_id",
     settings: "key",
     import_history: "import_id",
-    jlpt_items: "item_id",
-    jlpt_attempts: "attempt_id",
-    jlpt_progress: "progress_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -134,14 +131,12 @@
       if (
         store === "attempts" ||
         store === "exercises" ||
-        store === "import_history" ||
-        store === "jlpt_items" ||
-        store === "jlpt_attempts"
+        store === "import_history"
       )
         out.stores[store] = unionRows(l, r, key);
       else if (store === "daily_sessions")
         out.stores[store] = unionRows(l, r, key, mergeSession);
-      else if (store === "exercise_progress" || store === "jlpt_progress")
+      else if (store === "exercise_progress")
         out.stores[store] = unionRows(l, r, key, (a, b) =>
           newer(a, b, "last_seen_at"),
         );
