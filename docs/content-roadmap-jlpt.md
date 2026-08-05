@@ -1,5 +1,70 @@
 # Estrategia de contenidos N5 → N1
 
+## Base oficial y alcance exacto
+
+Esta estrategia usa como autoridad la descripción de competencias y los tipos de ítems publicados por el JLPT. El examen actual no publica una lista oficial cerrada de palabras, kanji o puntos gramaticales; por tanto, ninguna lista comercial se tratará como si fuera oficial. Las listas pedagógicas auxiliares solo podrán usarse como índices de cobertura y deberán contrastarse con muestras y descriptores oficiales.
+
+El JLPT mide recepción y conocimiento lingüístico, no traducción, conversación ni redacción. JapoTeacher utilizará la traducción como práctica productiva de alto valor, pero distinguirá siempre entre:
+
+- `jlpt_aligned`: entrena una competencia que aparece en los tipos de ítem oficiales.
+- `jlpt_supporting`: producción que refuerza esa competencia, aunque no sea un formato del examen.
+- `general_japanese`: aprendizaje útil que no debe contabilizarse como cobertura JLPT.
+
+## Definición no ambigua de «nivel completo»
+
+N5 o N4 solo se marcará como completo cuando se cumplan simultáneamente las cinco capas siguientes:
+
+1. **Banco de oraciones:** pares naturales en ambas direcciones, con significado, gramática, vocabulario, kanji y registro controlados.
+2. **Conocimiento lingüístico:** lectura de kanji, ortografía, expresión contextual, paráfrasis y uso; N5 no exige el tipo oficial de «uso» independiente, N4 sí.
+3. **Gramática:** selección de forma, composición de oración y coherencia gramatical dentro de un texto.
+4. **Lectura:** textos originales y materiales informativos con longitudes alineadas con los propósitos oficiales.
+5. **Escucha:** guiones y audio para comprensión orientada a tareas, puntos clave, expresiones verbales y respuesta rápida.
+
+Una capa con cobertura incompleta impide declarar completo el nivel, aunque el número total de ejercicios sea alto.
+
+### Matriz de entrega N5
+
+| Capa | Entrega mínima aprobada |
+|---|---:|
+| Pares de oraciones | 300 |
+| Lectura de kanji | 120 ítems |
+| Ortografía kanji/katakana | 80 ítems |
+| Expresiones definidas por contexto | 80 ítems |
+| Paráfrasis | 60 ítems |
+| Gramática: selección de forma | 100 ítems |
+| Gramática: composición de oración | 80 ítems |
+| Gramática textual | 50 ítems |
+| Lecturas cortas, alrededor de 80 caracteres | 30 textos |
+| Lecturas medias, alrededor de 250 caracteres | 20 textos |
+| Recuperación de información, alrededor de 250 caracteres | 20 materiales |
+| Escucha orientada a tareas | 40 guiones/audio |
+| Escucha de puntos clave | 40 guiones/audio |
+| Expresiones verbales | 30 guiones/audio |
+| Respuesta rápida | 50 guiones/audio |
+
+### Matriz de entrega N4
+
+| Capa | Entrega mínima aprobada |
+|---|---:|
+| Pares de oraciones | 450 |
+| Lectura de kanji | 160 ítems |
+| Ortografía | 100 ítems |
+| Expresiones definidas por contexto | 100 ítems |
+| Paráfrasis | 80 ítems |
+| Uso de vocabulario en oraciones | 80 ítems |
+| Gramática: selección de forma | 140 ítems |
+| Gramática: composición de oración | 100 ítems |
+| Gramática textual | 70 ítems |
+| Lecturas cortas de 100–200 caracteres | 40 textos |
+| Lecturas medias de unos 450 caracteres | 25 textos |
+| Recuperación de información de unos 400 caracteres | 25 materiales |
+| Escucha orientada a tareas | 50 guiones/audio |
+| Escucha de puntos clave | 50 guiones/audio |
+| Expresiones verbales | 40 guiones/audio |
+| Respuesta rápida | 60 guiones/audio |
+
+Las cifras son mínimos editoriales de cobertura, no una afirmación de que exista un temario numérico oficial. Cada conjunto debe superar además las distribuciones y puertas de calidad de este documento.
+
 ## Principios innegociables
 
 1. Una frase debe describir una situación humana plausible; no se generan combinaciones cartesianas de lugares, objetos y acciones.
