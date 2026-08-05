@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "authority_note": "Los descriptores y tipos de ítem proceden del JLPT oficial. Los inventarios de gramática son una taxonomía pedagógica interna, no una lista oficial del JLPT.",
+  "topics": ["vida_diaria", "hogar", "comida", "compras", "transporte", "viajes", "salud", "estudio", "trabajo", "relaciones", "ocio", "naturaleza", "servicios", "tecnologia", "sociedad", "cultura"],
+  "levels": {
+    "N5": {
+      "target_pairs": 300,
+      "jp_chars": [8, 22],
+      "es_words": [4, 12],
+      "topic_count": [1, 2],
+      "grammar_count": [1, 2],
+      "tag_count": [6, 10],
+      "register_mix": {"cortés": 70, "neutro": 30},
+      "grammar_inventory": ["です・ます", "は・が", "を", "に・へ", "で", "と", "から・まで", "の", "も", "か", "ある・いる", "い形容詞", "な形容詞", "て形", "てください", "てもいい", "てはいけない", "ない形", "過去形", "たい", "ましょう", "ませんか", "より・ほうが", "から（理由）", "前に・後で", "もう・まだ", "頻度表現", "数量・助数詞", "疑問詞", "位置表現"]
+    },
+    "N4": {
+      "target_pairs": 450,
+      "jp_chars": [12, 32],
+      "es_words": [7, 18],
+      "topic_count": [1, 2],
+      "grammar_count": [1, 3],
+      "tag_count": [8, 13],
+      "register_mix": {"cortés": 60, "neutro": 35, "formal": 5},
+      "grammar_inventory": ["たら", "ても", "ので", "のに", "ながら", "てから", "ように", "ようになる", "そうだ（様態）", "そうだ（伝聞）", "と思う", "と言う", "かもしれない", "でしょう", "つもり", "予定", "ことがある", "ことにする", "ことになる", "なければならない", "なくてもいい", "てしまう", "ておく", "てみる", "てあげる・くれる・もらう", "可能形", "受身", "使役", "連体修飾", "名詞化の・こと", "ために", "ようと思う", "ば", "なら", "し", "たり〜たり", "しか〜ない", "やすい・にくい", "すぎる", "ほうがいい", "間・間に", "ところ", "ばかり", "はず", "かどうか", "という", "について", "によると"]
+    }
+  },
+  "batch": {
+    "semantic_pairs": 25,
+    "generation_group": 5,
+    "length_mix": {"short": 25, "standard": 50, "long": 25},
+    "sentence_function_mix": {"statement": 12, "question": 4, "social_action": 3, "negative_or_correction": 3, "reason_contrast_condition": 3},
+    "max_topic_share_percent": 20,
+    "max_same_skeleton": 2,
+    "similarity_review_threshold": 0.8
+  }
+}
