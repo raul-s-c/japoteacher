@@ -1,0 +1,20 @@
+{
+  "N5": {
+    "113": {
+      "reason": "Distinguir de forma inequívoca los dos objetos de la comparación.",
+      "fields": {
+        "japanese": "あっちより、こっちのほうが安い。",
+        "accepted_alternatives_ja": ["あちらより、こちらのほうが安い。"]
+      }
+    },
+    "138": {
+      "reason": "Alinear el pasado causal japonés con la traducción española.",
+      "replacements": {
+        "会えない": "会えなかった"
+      },
+      "fields": {
+        "accepted_alternatives_ja": []
+      }
+    }
+  }
+}

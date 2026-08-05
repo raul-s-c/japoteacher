@@ -1,6 +1,7 @@
 import argparse
 import csv
 import datetime
+import http.client
 import json
 import os
 import pathlib
@@ -84,10 +85,40 @@ def repair_kanji_readings(items, level, key):
         raise RuntimeError("La reparación de kanji perdió identidades de slot.")
     return [{**item, "kanji_readings": by_slot[item["slot"]]} for item in items]
 
-def request_editorial(payload, key, retries=4):
+def equivalence_check(items, level, key, slots):
+    corrections = {}
+    for source in items:
+        editorial_item = {"slot": source["slot"], "japanese": source["japanese"], "spanish": source["spanish"], "accepted_alternatives_es": source["accepted_alternatives_es"], "accepted_alternatives_ja": source["accepted_alternatives_ja"], "critical_meaning_units": source["critical_meaning_units"]}
+        for attempt in range(3):
+            result = request_editorial({"operation": "equivalence_check", "level": level, "items": [editorial_item]}, key)
+            correction = result["items"][0]
+            if correction["approved"]:
+                corrections[correction["slot"]] = correction
+                break
+            editorial_item = {
+                **editorial_item,
+                "japanese": correction["japanese"],
+                "spanish": correction["spanish"],
+                "accepted_alternatives_es": correction["accepted_alternatives_es"],
+                "accepted_alternatives_ja": correction["accepted_alternatives_ja"],
+            }
+        else:
+            raise RuntimeError(f"Equivalencia no aprobada en slot {source['slot']} tras tres correcciones: {'; '.join(correction['issues'])}")
+    if set(corrections) != {item["slot"] for item in items}:
+        raise RuntimeError("La comprobación de equivalencia perdió identidades de slot.")
+    merged = []
+    by_slot = {slot["slot"]: slot for slot in slots}
+    for item in items:
+        correction = corrections[item["slot"]]
+        final = normalize_spacing({**item, "japanese": correction["japanese"], "spanish": correction["spanish"], "accepted_alternatives_es": correction["accepted_alternatives_es"], "accepted_alternatives_ja": correction["accepted_alternatives_ja"]})
+        validate_slot(final, by_slot[item["slot"]])
+        merged.append(final)
+    return merged
+
+def request_editorial(payload, key, retries=6):
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     for attempt in range(retries):
-        request = urllib.request.Request(ENDPOINT, data=body, method="POST", headers={"Content-Type": "application/json", "X-Editorial-Key": key, "User-Agent": "JapoTeacher-Editorial/1.0"})
+        request = urllib.request.Request(ENDPOINT, data=body, method="POST", headers={"Content-Type": "application/json", "Accept": "application/json", "Accept-Encoding": "identity", "Connection": "close", "X-Editorial-Key": key, "User-Agent": "JapoTeacher-Editorial/1.0"})
         try:
             with urllib.request.urlopen(request, timeout=180) as response:
                 data = json.loads(response.read().decode("utf-8"))
@@ -105,7 +136,7 @@ def request_editorial(payload, key, retries=4):
             if attempt == retries - 1:
                 raise RuntimeError(f"El endpoint editorial respondió {error.code}: {detail}") from error
             time.sleep(2 ** attempt)
-        except (urllib.error.URLError, TimeoutError, RuntimeError):
+        except (urllib.error.URLError, http.client.RemoteDisconnected, ConnectionResetError, TimeoutError, RuntimeError):
             if attempt == retries - 1:
                 raise
             time.sleep(2 ** attempt)
@@ -150,12 +181,12 @@ def append_jsonl(path, item):
     with path.open("a", encoding="utf-8") as output:
         output.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-def review_until_approved(items, level, key, slots=None):
+def review_until_approved(items, level, key, slots=None, operation="review"):
     current = items
     local_rejection = ""
     review_rejection = ""
     for review_round in range(3):
-        result = request_editorial({"operation": "review", "level": level, "round": review_round + 1, "items": current, "mandatory_local_fixes": local_rejection}, key)
+        result = request_editorial({"operation": operation, "level": level, "round": review_round + 1, "items": current, "mandatory_local_fixes": local_rejection}, key)
         reviewed = sorted(result["items"], key=lambda item: item["index"])
         current = [normalize_spacing(item["corrected"]) for item in reviewed]
         local_errors = []
@@ -212,6 +243,7 @@ def run(level, limit=None):
             try:
                 result = request_editorial({"operation": "generate", "level": level, "slots": slots, "avoid_japanese": list(known)[-200:], "previous_rejection": last_rejection}, key)
                 final, rounds = review_until_approved(result["items"], level, key, slots)
+                final = equivalence_check(final, level, key, slots)
                 final_by_slot = {item.get("slot"): normalize_spacing(item) for item in final}
                 if set(final_by_slot) != {slot["slot"] for slot in slots}:
                     raise RuntimeError("La revisión perdió o duplicó identidades de slot.")
@@ -228,7 +260,7 @@ def run(level, limit=None):
                     raise RuntimeError(f"El lote se rechazó cuatro veces. Último motivo: {last_rejection}") from error
                 print(json.dumps({"level": level, "group_offset": offset, "rejected_attempt": generation_attempt, "reason": last_rejection}, ensure_ascii=False), flush=True)
         for slot, item, signature in zip(slots, final, signatures):
-            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 2, **item})
+            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 3, **item})
             known.add(signature)
         generated += 5
         print(json.dumps({"level": level, "approved_total": len(approved) + generated, "remaining_this_run": remaining - generated}, ensure_ascii=False), flush=True)

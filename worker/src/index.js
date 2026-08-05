@@ -228,6 +228,32 @@ const kanjiRepairSchema = {
     },
   },
 };
+const equivalenceCheckSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["items"],
+  properties: {
+    items: {
+      type: "array",
+      minItems: 1,
+      maxItems: 5,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["slot", "approved", "issues", "japanese", "spanish", "accepted_alternatives_es", "accepted_alternatives_ja"],
+        properties: {
+          slot: { type: "integer", minimum: 1 },
+          approved: { type: "boolean" },
+          issues: stringList,
+          japanese: { type: "string" },
+          spanish: { type: "string" },
+          accepted_alternatives_es: stringList,
+          accepted_alternatives_ja: stringList,
+        },
+      },
+    },
+  },
+};
 
 function cors(origin, env) {
   const allowed = (env.APP_ORIGINS || "")
@@ -297,7 +323,7 @@ async function secretMatches(provided, expected) {
 function editorialInstructions(operation) {
   const common = `Actúas como comité editorial bilingüe de japonés para hispanohablantes. El contenido debe ser natural, autosuficiente, realista y adecuado al nivel JLPT indicado. El JLPT no tiene listas oficiales cerradas: juzga por competencia, muestras oficiales y uso básico real. Prohibido generar por sustitución mecánica de lugares, personas u objetos. Cada escena debe ser plausible sin contexto oculto; japonés y español deben coincidir en sujeto recuperable, acción, tiempo, lugar, polaridad, modalidad, registro e intención. Toda causa, condición, contraste, finalidad y secuencia debe ser lógicamente válida por sí misma: comprueba explícitamente que la causa apoya la consecuencia y rechaza inversiones como «porque no llueve, no voy de excursión» sin una razón adicional visible. La referencia española usa el equivalente directo, estándar y no marcado; no sustituye sopa por caldo, escuela por universidad ni añade información inferida. Las alternativas tampoco pueden añadir tiempo, lugar, sujeto ni matices ausentes. Los tags solo incluyen elementos realmente presentes y practicados; nunca escribas nombres de campos o marcadores internos como grammar_focus. topic_primary debe estar evidenciado explícitamente por el contenido japonés y español, no solo por scenario_es. kanji_readings cubre sin omisiones cada carácter kanji visible, incluido el de verbos flexionados, numerales y palabras muy básicas; characters reproduce el bloque exacto que aparece en la frase. N5 usa expresiones típicas, kana y kanji básicos en vida diaria o aula; N4 usa japonés básico sobre estudio, vida diaria y trabajo, con razones, secuencias y relaciones sencillas. Sigue exactamente los slots de cobertura recibidos. Copia sin alterar el número slot de cada entrada y conserva la correspondencia uno a uno aunque reordenes la salida. topic_primary debe ser exactamente el del slot y grammar_tags debe incluir la construcción real indicada por grammar_focus, sin copiar el nombre del campo. No insertes espacios entre palabras japonesas y termina con puntuación japonesa. Una frase con です o ます tiene registro cortés, no neutro.`;
   return operation === "review"
-    ? `${common} Revisa adversarialmente cinco pares ya creados. Busca situaciones absurdas, colocaciones impropias, traducciones literales, ambigüedad, dificultad mal nivelada, tags inflados, lecturas incorrectas y duplicación estructural. Si el payload contiene mandatory_local_fixes, corrected debe resolver literalmente todos esos diagnósticos sin excepción, sobre todo kanji omitidos y focos de cobertura. issues describe los defectos encontrados en la entrada recibida, pero approved evalúa exclusivamente corrected: debe ser true cuando tu versión corrected ya ha resuelto todos los defectos y está lista para publicar. Usa false solo si ni siquiera corrected queda publicable y necesitaría otra revisión.`
+    ? `${common} Revisa adversarialmente cinco pares ya creados. Compara japanese con spanish y con cada accepted_alternatives_es, y spanish con cada accepted_alternatives_ja. Comprueba hablante o sujeto recuperable, singular/plural, persona, acción, objeto, tiempo, aspecto, momento, lugar, dirección, cantidad, polaridad, capacidad, obligación, permiso, deseo, condición, causa, consecuencia, registro e intención. Elimina cualquier alternativa que omita o añada una unidad crítica. Busca además situaciones absurdas, colocaciones impropias, traducciones literales, ambigüedad, dificultad mal nivelada, tags inflados, lecturas incorrectas y duplicación estructural. Si el payload contiene mandatory_local_fixes, corrected debe resolver literalmente todos esos diagnósticos sin excepción. issues describe los defectos encontrados en la entrada recibida, pero approved evalúa exclusivamente corrected: debe ser true cuando tu versión corrected ya ha resuelto todos los defectos y está lista para publicar. Usa false solo si ni siquiera corrected queda publicable y necesitaría otra revisión.`
     : `${common} Redacta exactamente cinco pares independientes. Primero imagina la microescena y después escribe la frase; no reutilices el mismo esqueleto sintáctico dentro del lote. Respeta los límites y objetivos de cada slot.`;
 }
 
@@ -305,16 +331,22 @@ function kanjiRepairInstructions() {
   return `Eres lexicógrafo japonés. Para cada una de las cinco frases recibidas, devuelve el mismo slot y una cobertura exhaustiva de kanji_readings. Cada carácter kanji visible debe aparecer dentro de characters al menos una vez, incluidos verbos flexionados, números, nombres y kanji elementales. characters reproduce el bloque exacto tal como aparece en japanese, con su okurigana cuando corresponda. reading_hiragana contiene la lectura contextual completa del bloque; meaning_es su significado en esa frase; explanation_es explica brevemente por qué se lee así en contexto. No cambies la frase ni omitas kanji por considerarlos fáciles.`;
 }
 
+function equivalenceCheckInstructions() {
+  return `Eres un revisor bilingüe final. Compara japanese con spanish y con cada alternativa española, y spanish con cada alternativa japonesa. Comprueba sujeto recuperable, persona, número, acción, objeto, tiempo, aspecto, momento, lugar, dirección, cantidad, polaridad, modalidad, registro, intención, condición, causa y consecuencia. Elimina alternativas que añadan u omitan cualquier unidad crítica. Corrige equivalentes imprecisos y relaciones ilógicas. Devuelve el mismo slot. japanese y spanish contienen la mejor pareja final; las listas solo conservan alternativas plenamente equivalentes. issues describe la entrada recibida. approved evalúa la salida corregida y debe ser true si ya es publicable.`;
+}
+
 async function callEditorialOpenAI(operation, payload, env) {
   const schema = operation === "review"
     ? editorialReviewSchema
     : operation === "repair_kanji"
       ? kanjiRepairSchema
+      : operation === "equivalence_check"
+        ? equivalenceCheckSchema
       : editorialGenerationSchema;
   const body = {
     model: "gpt-5.4-mini",
     reasoning: { effort: "low" },
-    instructions: operation === "repair_kanji" ? kanjiRepairInstructions() : editorialInstructions(operation),
+    instructions: operation === "repair_kanji" ? kanjiRepairInstructions() : operation === "equivalence_check" ? equivalenceCheckInstructions() : editorialInstructions(operation),
     input: JSON.stringify(payload),
     max_output_tokens: 12000,
     text: {
@@ -354,7 +386,7 @@ async function editorial(request, env) {
     return json({ error: "JSON inválido." }, 400);
   }
   const operation = payload?.operation;
-  if (!["generate", "review", "repair_kanji"].includes(operation))
+  if (!["generate", "review", "equivalence_check", "repair_kanji"].includes(operation))
     return json({ error: "Operación editorial inválida." }, 400);
   try {
     const response = await callEditorialOpenAI(operation, payload, env),
