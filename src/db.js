@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "japoteacher";
-  const VERSION = 3;
+  const VERSION = 4;
   const stores = {
     exercises: "exercise_id",
     attempts: "attempt_id",
