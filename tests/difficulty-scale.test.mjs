@@ -17,6 +17,13 @@ test("difficulty is scaled inside each JLPT level", () => {
   assert.equal(scale.score({ jlpt_level: "N4", difficulty: 7 }), 100);
 });
 
+test("a calibrated dataset keeps its 0-100 score inside each JLPT", () => {
+  const scale = difficulty();
+  assert.equal(scale.score({ jlpt_level: "N5", difficulty: 91, dataset_version: "4.0" }), 91);
+  assert.equal(scale.score({ jlpt_level: "N4", difficulty: 20, dataset_version: "4.0" }), 20);
+  assert.equal(scale.score({ jlpt_level: "N5", difficulty: 0, dataset_version: "4.0" }), 0);
+});
+
 test("a JLPT level takes priority over its local difficulty", () => {
   const scale = difficulty();
   assert.ok(scale.levelIndex({ jlpt_level: "N5" }) < scale.levelIndex({ jlpt_level: "N4" }));

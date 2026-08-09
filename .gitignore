@@ -9,3 +9,4 @@ test-results/
 worker/.dev.vars
 worker/.wrangler/
 data/editorial/usage.jsonl
+data/editorial/difficulty-review-checkpoint.jsonl

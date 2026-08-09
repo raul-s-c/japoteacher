@@ -257,6 +257,29 @@ const equivalenceCheckSchema = {
     },
   },
 };
+const difficultyReviewSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["items"],
+  properties: {
+    items: {
+      type: "array",
+      minItems: 1,
+      maxItems: 20,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["exercise_id", "difficulty", "confidence", "rationale"],
+        properties: {
+          exercise_id: { type: "string" },
+          difficulty: { type: "integer", minimum: 0, maximum: 100 },
+          confidence: { type: "integer", minimum: 0, maximum: 100 },
+          rationale: { type: "string" },
+        },
+      },
+    },
+  },
+};
 
 function cors(origin, env) {
   const allowed = (env.APP_ORIGINS || "")
@@ -338,8 +361,14 @@ function equivalenceCheckInstructions() {
   return `Eres un revisor bilingüe final. Compara japanese con spanish y con cada alternativa española, y spanish con cada alternativa japonesa. Comprueba sujeto recuperable, persona, número, acción, objeto, tiempo, aspecto, momento, lugar, dirección, cantidad, polaridad, modalidad, registro, intención, condición, causa y consecuencia. Elimina alternativas que añadan u omitan cualquier unidad crítica. Corrige equivalentes imprecisos y relaciones ilógicas. Devuelve el mismo slot. japanese y spanish contienen la mejor pareja final; las listas solo conservan alternativas plenamente equivalentes. issues describe la entrada recibida. approved evalúa la salida corregida y debe ser true si ya es publicable.`;
 }
 
+function difficultyReviewInstructions() {
+  return "Actuas como responsable de nivelacion curricular de una academia de japones para hispanohablantes. Puntua la dificultad real de cada ejercicio entre 0 y 100 exclusivamente DENTRO de su mismo nivel JLPT y direccion de traduccion: 0 es la entrada mas accesible del nivel, 50 es practica tipica de consolidacion y 100 es el limite superior aun apropiado para ese nivel. Nunca compares N5 con N4. En ja_es mide sobre todo la carga de comprension; en es_ja, la carga de recuperacion y produccion. Usa longitud, vocabulario, kanji, combinacion de gramatica, ambiguedad y exigencia de la traduccion; no penalices una frase por ser natural. baseline es una ordenacion automatica previa del mismo grupo: corrigela solo cuando la evidencia linguistica lo justifique. Usa el rango con precision, evita acumular notas en 50 o multiples de diez y devuelve exactamente una salida por exercise_id. rationale debe ser una frase breve y concreta en espanol.";
+}
+
 async function callEditorialOpenAI(operation, payload, env) {
-  const schema = operation === "review"
+  const schema = operation === "difficulty_review"
+    ? difficultyReviewSchema
+    : operation === "review"
     ? editorialReviewSchema
     : operation === "repair_kanji"
       ? kanjiRepairSchema
@@ -349,9 +378,9 @@ async function callEditorialOpenAI(operation, payload, env) {
   const body = {
     model: "gpt-5.4-mini",
     reasoning: { effort: "low" },
-    instructions: operation === "repair_kanji" ? kanjiRepairInstructions() : operation === "equivalence_check" ? equivalenceCheckInstructions() : editorialInstructions(operation),
+    instructions: operation === "difficulty_review" ? difficultyReviewInstructions() : operation === "repair_kanji" ? kanjiRepairInstructions() : operation === "equivalence_check" ? equivalenceCheckInstructions() : editorialInstructions(operation),
     input: JSON.stringify(payload),
-    max_output_tokens: operation === "equivalence_check" ? 2500 : operation === "repair_kanji" ? 3500 : 5000,
+    max_output_tokens: operation === "difficulty_review" ? 3200 : operation === "equivalence_check" ? 2500 : operation === "repair_kanji" ? 3500 : 5000,
     text: {
       format: {
         type: "json_schema",
@@ -372,14 +401,6 @@ async function callEditorialOpenAI(operation, payload, env) {
 }
 
 async function editorial(request, env) {
-  if (
-    !env.EDITORIAL_API_KEY ||
-    !(await secretMatches(
-      request.headers.get("X-Editorial-Key") || "",
-      env.EDITORIAL_API_KEY,
-    ))
-  )
-    return json({ error: "Unauthorized" }, 401);
   if (Number(request.headers.get("Content-Length") || 0) > 250000)
     return json({ error: "Payload demasiado grande." }, 413);
   let payload;
@@ -389,7 +410,10 @@ async function editorial(request, env) {
     return json({ error: "JSON inválido." }, 400);
   }
   const operation = payload?.operation;
-  if (!["generate", "review", "equivalence_check", "repair_kanji"].includes(operation))
+  const expectedKey = operation === "difficulty_review" ? (env.DIFFICULTY_REVIEW_KEY || env.EDITORIAL_API_KEY) : env.EDITORIAL_API_KEY;
+  if (!expectedKey || !(await secretMatches(request.headers.get("X-Editorial-Key") || "", expectedKey.trim())))
+    return json({ error: "Unauthorized" }, 401);
+  if (!["generate", "review", "equivalence_check", "repair_kanji", "difficulty_review"].includes(operation))
     return json({ error: "Operación editorial inválida." }, 400);
   try {
     const response = await callEditorialOpenAI(operation, payload, env),

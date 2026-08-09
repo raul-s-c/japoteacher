@@ -27,7 +27,7 @@ def main():
                 continue
             difficulty = number(row.get("difficulty"))
             level = row.get("jlpt_level", "")
-            if level not in LEVELS or difficulty is None or not 1 <= difficulty <= 7:
+            if level not in LEVELS or difficulty is None or not 0 <= difficulty <= 100:
                 invalid.append(row.get("exercise_id", "<missing>"))
                 continue
             key = (level, row.get("direction", ""))
