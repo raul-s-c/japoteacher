@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "japoteacher";
-  const VERSION = 2;
+  const VERSION = 3;
   const stores = {
     exercises: "exercise_id",
     attempts: "attempt_id",
@@ -9,6 +9,7 @@
     daily_sessions: "session_id",
     settings: "key",
     import_history: "import_id",
+    learning_reports: "report_id",
   };
   let dbPromise;
   function open() {
@@ -73,6 +74,7 @@
         "exercise_progress",
         "tag_progress",
         "daily_sessions",
+        "learning_reports",
       ])
         await api.clear(s);
     },

@@ -64,9 +64,10 @@
       </section>
 
       <section class="view" id="view-progreso" aria-labelledby="progressHeading">
-        <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div>
+        <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="stats-grid" id="summaryStats"></div>
         <div class="analytics-grid">
+          <section class="panel wide reports-panel"><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><span class="metric-small">Domingos · día 1</span></div><div id="learningReports"></div></section>
           <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
           <section class="panel wide topic-roadmap-panel"><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
@@ -106,6 +107,8 @@
   <script src="src/session-planner.js?v=26"></script>
   <script src="src/furigana-generated.js?v=26"></script>
   <script src="src/furigana.js?v=26"></script>
+  <script src="src/difficulty.js?v=32"></script>
+  <script src="src/reports.js?v=32"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js?v=19"></script>
   <script src="src/evaluators/openai-evaluator.js?v=20"></script>
@@ -117,7 +120,7 @@
   <script src="src/analytics.js"></script>
   <script src="src/ui.js?v=19"></script>
   <script src="src/history-ui.js?v=19"></script>
-  <script src="app.js?v=26"></script>
+  <script src="app.js?v=32"></script>
   <script src="src/bank-status.js?v=26"></script>
   <script src="src/extra-study.js?v=22"></script>
   <script src="src/topic-drill.js?v=24"></script>

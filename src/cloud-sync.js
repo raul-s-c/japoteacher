@@ -35,6 +35,7 @@
     daily_sessions: "session_id",
     settings: "key",
     import_history: "import_id",
+    learning_reports: "report_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -131,7 +132,8 @@
       if (
         store === "attempts" ||
         store === "exercises" ||
-        store === "import_history"
+        store === "import_history" ||
+        store === "learning_reports"
       )
         out.stores[store] = unionRows(l, r, key);
       else if (store === "daily_sessions")
