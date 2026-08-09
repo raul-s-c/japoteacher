@@ -1,4 +1,5 @@
 import { normalizeEvaluation } from "./evaluation-policy.js";
+import { allUserStates, generateReport, localReport, reportPeriod, reportsForUser, userPayload } from "./report-generation.js";
 
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
 
@@ -446,6 +447,14 @@ async function authenticated(request, env) {
   }
 }
 
+async function authenticatedUser(request, env) {
+  if (!(await authenticated(request, env))) return null;
+  const response = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, { headers: { Authorization: request.headers.get("Authorization") || "", apikey: env.SUPABASE_PUBLISHABLE_KEY } });
+  if (!response.ok) return null;
+  const user = await response.json();
+  return user?.id || null;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url),
@@ -468,6 +477,25 @@ export default {
       return json({ ok: true, model: "gpt-5.4-mini" }, 200, origin, env);
     if (url.pathname === "/editorial/generate" && request.method === "POST")
       return editorial(request, env);
+    if (url.pathname.startsWith("/reports/")) {
+      if (!env.SUPABASE_SERVICE_ROLE_KEY)
+        return json({ error: "El servicio de informes no esta configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      const userId = await authenticatedUser(request, env);
+      if (!userId) return json({ error: "Sesion no valida o activa en otro dispositivo." }, 409, origin, env);
+      try {
+        if (url.pathname === "/reports/list" && request.method === "POST") {
+          const reports = await reportsForUser(env, userId);
+          return json({ reports: reports.map(localReport) }, 200, origin, env);
+        }
+        if (url.pathname === "/reports/generate" && request.method === "POST") {
+          const body = await request.json(), type = body?.report_type === "monthly" ? "monthly" : "weekly", now = new Date(), period = body?.ad_hoc ? (() => { const start = new Date(now); start.setDate(start.getDate() - 6); start.setHours(0, 0, 0, 0); now.setHours(23, 59, 59, 999); return { start: start.toISOString(), end: now.toISOString() }; })() : reportPeriod(type);
+          const report = await generateReport(env, userId, await userPayload(env, userId), type, period);
+          return json({ report: localReport(report) }, 200, origin, env);
+        }
+      } catch (error) { return json({ error: error.message || "No se pudo generar el informe." }, 500, origin, env); }
+      return json({ error: "Not found" }, 404, origin, env);
+    }
     if (url.pathname !== "/evaluate" || request.method !== "POST")
       return json({ error: "Not found" }, 404, origin, env);
     if (
@@ -552,5 +580,17 @@ export default {
         env,
       );
     }
+  },
+  async scheduled(event, env, ctx) {
+    const run = async () => {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_SERVICE_ROLE_KEY) return;
+      const now = new Date(event.scheduledTime || Date.now()), types = [];
+      if (now.getUTCDay() === 1) types.push(["weekly", true]);
+      if (now.getUTCDate() === 1) types.push(["monthly", true]);
+      if (!types.length) return;
+      const users = await allUserStates(env);
+      await Promise.allSettled(users.flatMap(user => types.map(([type, closed]) => generateReport(env, user.user_id, user.payload, type, reportPeriod(type, now, closed)))));
+    };
+    ctx.waitUntil(run());
   },
 };

@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=40">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -48,7 +48,7 @@
         <section class="exercise-chooser panel" id="exerciseChooser" hidden><div class="section-heading"><div><p class="section-kicker">Sesión de hoy</p><h2>Elige una frase</h2></div><button class="secondary" id="closeExerciseChooser">Volver a Hoy</button></div><p class="chooser-help">Puedes empezar por cualquiera. Después continuaremos por orden con las pendientes.</p><div class="exercise-choice-list" id="exerciseChoiceList"></div></section>
         <div class="practice-layout" id="practiceLayout">
           <section class="exercise-panel">
-            <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span></div>
+            <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span><span id="practiceDifficulty"></span></div>
             <div class="progress-row"><span id="practiceCount">Ejercicio 1 de 5</span><span id="practicePercent">0%</span></div><div class="progress-track"><span id="practiceBar"></span></div>
             <p class="instruction" id="practiceInstruction">Traduce al español</p>
             <div class="source-text" id="sourceText">Selecciona una sesión para comenzar.</div>
@@ -67,11 +67,11 @@
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="stats-grid" id="summaryStats"></div>
         <div class="analytics-grid">
-          <section class="panel wide reports-panel"><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><span class="metric-small">Domingos · día 1</span></div><div id="learningReports"></div></section>
+          <section class="panel wide reports-panel"><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Semana actual</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button></div></div><div id="learningReports"></div></section>
           <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
           <section class="panel wide topic-roadmap-panel"><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
-          <section class="panel wide"><h3>Fortalezas y oportunidades por tag</h3><div id="tagAnalytics"></div></section>
+          <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Foco de estudio</p><h3>Prioridades por categoría</h3></div></div><div id="tagAnalytics"></div></section>
           <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Todos los intentos</p><h3>Historial</h3></div><span class="metric-small" id="historyCount"></span></div><div class="history-filters"><label>Buscar<input id="historySearch" type="search" placeholder="Frase o respuesta"></label><label>Dirección<select id="historyDirection"><option value="all">Todas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><label>Resultado<select id="historyResult"><option value="all">Todos</option><option value="acceptable">Aceptables</option><option value="review">A revisar</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Frase</th><th>Dirección</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
         </div>
       </section>
@@ -103,12 +103,12 @@
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
-  <script src="src/topic-progression.js?v=26"></script>
-  <script src="src/session-planner.js?v=26"></script>
+  <script src="src/topic-progression.js?v=33"></script>
+  <script src="src/session-planner.js?v=34"></script>
   <script src="src/furigana-generated.js?v=26"></script>
   <script src="src/furigana.js?v=26"></script>
-  <script src="src/difficulty.js?v=32"></script>
-  <script src="src/reports.js?v=32"></script>
+  <script src="src/difficulty.js?v=35"></script>
+  <script src="src/reports.js?v=41"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js?v=19"></script>
   <script src="src/evaluators/openai-evaluator.js?v=20"></script>
@@ -117,12 +117,12 @@
   <script src="src/navigation-fix.js?v=9"></script>
   <script src="src/csv-import.js"></script>
   <script src="src/csv-export.js"></script>
-  <script src="src/analytics.js"></script>
-  <script src="src/ui.js?v=19"></script>
-  <script src="src/history-ui.js?v=19"></script>
-  <script src="app.js?v=32"></script>
+  <script src="src/analytics.js?v=35"></script>
+  <script src="src/ui.js?v=35"></script>
+  <script src="src/history-ui.js?v=35"></script>
+  <script src="app.js?v=40"></script>
   <script src="src/bank-status.js?v=26"></script>
   <script src="src/extra-study.js?v=22"></script>
-  <script src="src/topic-drill.js?v=24"></script>
+  <script src="src/topic-drill.js?v=33"></script>
 </body>
 </html>
