@@ -478,19 +478,18 @@ export default {
     if (url.pathname === "/editorial/generate" && request.method === "POST")
       return editorial(request, env);
     if (url.pathname.startsWith("/reports/")) {
-      if (!env.SUPABASE_SERVICE_ROLE_KEY)
-        return json({ error: "El servicio de informes no esta configurado." }, 503, origin, env);
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
       const userId = await authenticatedUser(request, env);
       if (!userId) return json({ error: "Sesion no valida o activa en otro dispositivo." }, 409, origin, env);
+      const accessToken = request.headers.get("Authorization");
       try {
         if (url.pathname === "/reports/list" && request.method === "POST") {
-          const reports = await reportsForUser(env, userId);
+          const reports = await reportsForUser(env, userId, accessToken);
           return json({ reports: reports.map(localReport) }, 200, origin, env);
         }
         if (url.pathname === "/reports/generate" && request.method === "POST") {
           const body = await request.json(), type = body?.report_type === "monthly" ? "monthly" : "weekly", now = new Date(), period = body?.ad_hoc ? (() => { const start = new Date(now); start.setDate(start.getDate() - 6); start.setHours(0, 0, 0, 0); now.setHours(23, 59, 59, 999); return { start: start.toISOString(), end: now.toISOString() }; })() : reportPeriod(type);
-          const report = await generateReport(env, userId, await userPayload(env, userId), type, period);
+          const report = await generateReport(env, userId, await userPayload(env, userId, accessToken), type, period, accessToken);
           return json({ report: localReport(report) }, 200, origin, env);
         }
       } catch (error) { return json({ error: error.message || "No se pudo generar el informe." }, 500, origin, env); }
