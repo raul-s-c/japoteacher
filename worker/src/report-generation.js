@@ -35,7 +35,10 @@ function aggregate(payload, period) {
 }
 function instructions() { return "Eres un profesor de japones para hispanohablantes. Redacta un informe pedagogico concreto y breve basado exclusivamente en las metricas y tags recibidos. Distingue siempre ja_es de es_ja; no inventes tendencias ni errores. Da acciones medibles y aplicables. Responde solo al JSON del esquema."; }
 async function admin(env, path, options = {}) {
-  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/${path}`, { ...options, headers: { apikey: env.SUPABASE_SERVICE_ROLE_KEY, Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`, "Content-Type": "application/json", ...(options.headers || {}) } });
+  const key = env.SUPABASE_SERVICE_ROLE_KEY;
+  // Modern sb_secret keys authenticate through apikey; legacy service_role keys are JWTs.
+  const authorization = key.startsWith("eyJ") ? { Authorization: `Bearer ${key}` } : {};
+  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/${path}`, { ...options, headers: { apikey: key, ...authorization, "Content-Type": "application/json", ...(options.headers || {}) } });
   if (!response.ok) throw new Error(`Supabase reports: ${await response.text()}`);
   return response.status === 204 ? null : response.json();
 }
