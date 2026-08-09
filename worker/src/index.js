@@ -1,5 +1,5 @@
 import { normalizeEvaluation } from "./evaluation-policy.js";
-import { allUserStates, generateReport, localReport, reportPeriod, reportsForUser, userPayload } from "./report-generation.js";
+import { allUserStates, deleteReport, generateReport, localReport, reportPeriod, reportsForUser, userPayload } from "./report-generation.js";
 
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
 
@@ -515,6 +515,13 @@ export default {
           const body = await request.json(), type = body?.report_type === "monthly" ? "monthly" : "weekly", now = new Date(), period = body?.ad_hoc ? (() => { const start = new Date(now); start.setDate(start.getDate() - 6); start.setHours(0, 0, 0, 0); now.setHours(23, 59, 59, 999); return { start: start.toISOString(), end: now.toISOString() }; })() : reportPeriod(type);
           const report = await generateReport(env, userId, await userPayload(env, userId, accessToken), type, period, accessToken, Boolean(body?.force));
           return json({ report: localReport(report) }, 200, origin, env);
+        }
+        if (url.pathname === "/reports/delete" && request.method === "POST") {
+          const body = await request.json(), reportId = String(body?.report_id || "");
+          if (!/^[0-9a-f-]{36}$/i.test(reportId)) return json({ error: "Informe no valido." }, 400, origin, env);
+          const deleted = await deleteReport(env, userId, reportId, accessToken);
+          if (!deleted) return json({ error: "Informe no encontrado." }, 404, origin, env);
+          return json({ deleted_report_id: deleted.report_id }, 200, origin, env);
         }
       } catch (error) { return json({ error: error.message || "No se pudo generar el informe." }, 500, origin, env); }
       return json({ error: "Not found" }, 404, origin, env);
