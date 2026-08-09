@@ -11,7 +11,8 @@
     const eligible=exercises.filter(e=>e.direction===direction&&e.active!==false&&(settings.levels.includes(e.jlpt_level)||(e.topic_tags||[]).some(topic=>roadmap.find(x=>x.topic===topic)?.target===e.jlpt_level))).filter(e=>{const p=pMap.get(e.exercise_id);return !p||!p.cooldown_until||new Date(p.cooldown_until).getTime()<=now||new Date(p.next_review_at).getTime()<=now});
     const recentAverage=recent.length?recent.reduce((sum,a)=>sum+(a.overall_score||0),0)/recent.length:75;
     const targetDifficulty=recentAverage<65?35:recentAverage>88?70:55;
-    const difficultyBonus=e=>20-Math.min(40,Math.abs(Difficulty.score(e)-targetDifficulty)*.8);
+    const activeLevelIndexes=settings.levels.map(level=>Difficulty.levelIndex({jlpt_level:level})).filter(Number.isFinite),recentLevelIndexes=recent.map(attempt=>Difficulty.levelIndex(eMap.get(attempt.exercise_id))).filter(index=>index<5),preferredLevel=recentLevelIndexes.length?Math.min(...recentLevelIndexes):Math.min(...activeLevelIndexes);
+    const difficultyBonus=e=>20-Math.min(40,Math.abs(Difficulty.score(e)-targetDifficulty)*.8)-Math.max(0,Difficulty.levelIndex(e)-preferredLevel)*45;
     const score=e=>{const p=pMap.get(e.exercise_id),srs=p?(new Date(p.next_review_at).getTime()<=now?100:0)+(100-(p.average_score||0)):55;return srs+TopicProgression.bonus(e,roadmap)+adaptiveBonus(e)+difficultyBonus(e)};
     const ranked=seededSort(eligible,date+direction).sort((a,b)=>score(b)-score(a)),selected=[];
     for(const e of ranked){if(selected.some(x=>similarity(x,e)>.8))continue;selected.push(e);if(selected.length===count)break}
