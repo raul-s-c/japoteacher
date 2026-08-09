@@ -32,3 +32,15 @@ test("a direction only unlocks its own topic route", () => {
   assert.equal(progression.analyze(exercises, attempts, "ja_es")[0].target, "N4");
   assert.equal(progression.analyze(exercises, attempts, "es_ja")[0].target, "N5");
 });
+
+test("topic routes are grouped into learning families", () => {
+  const progression = topicProgression();
+  const groups = progression.groupByFamily([
+    { topic: "viajes", totalAttempts: 4 },
+    { topic: "tren", totalAttempts: 2 },
+    { topic: "familia", totalAttempts: 1 },
+  ]);
+
+  assert.equal(groups.find((group) => group.family === "Viajes y desplazamientos").items.length, 2);
+  assert.equal(groups.find((group) => group.family === "Personas y relaciones").items.length, 1);
+});
