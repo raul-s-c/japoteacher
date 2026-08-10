@@ -10,6 +10,7 @@ const endpoint = process.env.EDITORIAL_ENDPOINT || "https://japoteacher-ai.raul-
 const editorialKey = process.env.EDITORIAL_API_KEY;
 const batchSize = Math.max(1, Math.min(20, Number(process.env.DIFFICULTY_REVIEW_BATCH_SIZE || 16)));
 const shouldApply = process.argv.includes("--apply");
+const applyReviewed = process.argv.includes("--apply-reviewed");
 const limitFlag = process.argv.indexOf("--limit");
 const limit = limitFlag >= 0 ? Number(process.argv[limitFlag + 1]) : Infinity;
 const levelsFlag = process.argv.indexOf("--levels");
@@ -106,11 +107,11 @@ for (const [group, queue] of queues) {
 }
 
 const activeRows = rows.filter(row => active(row) && levels.has(row.jlpt_level));
-if (!shouldApply) {
+if (!shouldApply && !applyReviewed) {
   console.log(`Checkpoint now contains ${activeRows.filter(row => reviewed.has(row.exercise_id)).length}/${activeRows.length} scoped exercises.${stoppedForBudget ? " Token budget reached." : ""} Run again to resume, then use --apply when complete.`);
   process.exit(0);
 }
-if (activeRows.some(row => !reviewed.has(row.exercise_id))) throw new Error(`Refusing to apply a partial review (${activeRows.filter(row => reviewed.has(row.exercise_id)).length}/${activeRows.length}).`);
-for (const row of activeRows) row.difficulty = String(reviewed.get(row.exercise_id).difficulty);
+if (shouldApply && activeRows.some(row => !reviewed.has(row.exercise_id))) throw new Error(`Refusing to apply a partial review (${activeRows.filter(row => reviewed.has(row.exercise_id)).length}/${activeRows.length}).`);
+for (const row of activeRows) if (reviewed.has(row.exercise_id)) row.difficulty = String(reviewed.get(row.exercise_id).difficulty);
 fs.writeFileSync(csvPath, encodeCsv([headers, ...rows.map(row => headers.map(header => row[header] || ""))]), "utf8");
-console.log(`Applied AI-reviewed difficulty scores to ${activeRows.length} active exercises.`);
+console.log(`Applied AI-reviewed difficulty scores to ${activeRows.filter(row => reviewed.has(row.exercise_id)).length}/${activeRows.length} active exercises.`);
