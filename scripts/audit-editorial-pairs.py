@@ -19,7 +19,7 @@ def main(level):
     path = ROOT / "data" / "editorial" / f"{level.lower()}-approved.jsonl"
     items = EDITORIAL.read_jsonl(path)
     existing = list(csv.DictReader((ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="")))
-    known = {EDITORIAL.normalize_japanese(row["source_text"]) for row in existing if row["direction"] == "ja_es"}
+    known = {EDITORIAL.normalize_japanese(row["source_text"]) for row in existing if row["direction"] == "ja_es" and "-EDITORIAL-" not in row["exercise_id"]}
     signatures = []
     issues = []
     for index, item in enumerate(items, 1):

@@ -83,16 +83,18 @@ for (const [group, queue] of queues) {
       sentence_type: row.sentence_type,
       baseline: Number(row.difficulty),
     }));
-    let response;
+    let response, body, items;
+    const requested = new Set(batch.map(row => row.exercise_id));
     for (let attempt = 0; attempt < 3; attempt += 1) {
       response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", "X-Editorial-Key": editorialKey }, body: JSON.stringify({ operation: "difficulty_review", group, exercises }) });
-      if (response.ok) break;
-      if (attempt === 2) throw new Error(`Editorial review failed (${response.status}): ${await response.text()}`);
+      if (response.ok) {
+        body = await response.json();
+        items = body?.result?.items || [];
+        if (items.length === batch.length && items.every(item => requested.has(item.exercise_id))) break;
+      }
+      if (attempt === 2) throw new Error(`Editorial review returned an incomplete batch for ${group}.`);
       await sleep(1500 * (attempt + 1));
     }
-    const body = await response.json(), items = body?.result?.items || [];
-    const requested = new Set(batch.map(row => row.exercise_id));
-    if (items.length !== batch.length || items.some(item => !requested.has(item.exercise_id))) throw new Error(`Incomplete editorial response for ${group}.`);
     fs.mkdirSync(path.dirname(checkpointPath), { recursive: true });
     fs.appendFileSync(checkpointPath, items.map(item => JSON.stringify({ ...item, group, reviewed_at: new Date().toISOString(), response_id: body.response_id })).join("\n") + "\n", "utf8");
     fs.appendFileSync(usagePath, JSON.stringify({ recorded_at: new Date().toISOString(), operation: "difficulty_review", level: group.split(":")[0], model: body.model, response_id: body.response_id, usage: body.usage || {} }) + "\n", "utf8");
