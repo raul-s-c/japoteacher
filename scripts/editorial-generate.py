@@ -157,9 +157,12 @@ def request_editorial(payload, key, retries=6):
                 raise RuntimeError(f"La llamada editorial falló tras {retries} intentos: {error}") from error
             time.sleep(2 ** attempt)
 
-def existing_pairs(level):
+def active_pairs(level):
     rows = list(csv.DictReader((ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="")))
     return [row for row in rows if row["active"].lower() == "true" and row["jlpt_level"] == level and row["direction"] == "ja_es"]
+
+def existing_pairs(level):
+    return [row for row in active_pairs(level) if "-EDITORIAL-" not in row["exercise_id"]]
 
 def make_slots(level, start, count):
     config = POLICY["levels"][level]
@@ -246,7 +249,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None):
     remaining = max(0, config["target_pairs"] - len(existing) - len(approved))
     if limit is not None:
         remaining = min(remaining, limit)
-    known = {normalize_japanese(row["source_text"]) for row in existing} | {normalize_japanese(item["japanese"]) for item in approved}
+    known = {normalize_japanese(row["source_text"]) for row in active_pairs(level)} | {normalize_japanese(item["japanese"]) for item in approved}
     used_slots = {item["slot"] for item in approved}
     generated = 0
     while generated < remaining:
