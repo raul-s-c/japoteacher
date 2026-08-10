@@ -8,10 +8,25 @@ CSV_PATH = ROOT / "data" / "exercises.full.csv"
 def packed(values):
     return "|".join(dict.fromkeys(value for value in values if value))
 
+def reviewed_difficulties(rows):
+    values = {}
+    for row in rows:
+        exercise_id = row.get("exercise_id", "")
+        if "-EDITORIAL-" not in exercise_id:
+            continue
+        try:
+            difficulty = int(float(row.get("difficulty", "")))
+        except ValueError:
+            continue
+        if 0 <= difficulty <= 100:
+            values[exercise_id] = difficulty
+    return values
+
 def main():
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
         fields, rows = reader.fieldnames, list(reader)
+    preserved_difficulty = reviewed_difficulties(rows)
     rows = [row for row in rows if "-EDITORIAL-" not in row["exercise_id"]]
     added = 0
     for level in ("N5", "N4"):
@@ -42,10 +57,11 @@ def main():
             }
             for direction in ("ja_es", "es_ja"):
                 ja_es = direction == "ja_es"
+                exercise_id = f"{'JAES' if ja_es else 'ESJA'}-{level}-EDITORIAL-{slot:04d}"
                 row = {field: "" for field in fields}
                 row.update(common)
                 row.update({
-                    "exercise_id": f"{'JAES' if ja_es else 'ESJA'}-{level}-EDITORIAL-{slot:04d}",
+                    "exercise_id": exercise_id,
                     "source_language": "ja" if ja_es else "es",
                     "target_language": "es" if ja_es else "ja",
                     "direction": direction,
@@ -53,6 +69,8 @@ def main():
                     "reference_translation": item["spanish"] if ja_es else item["japanese"],
                     "accepted_alternatives_json": json.dumps(item["accepted_alternatives_es" if ja_es else "accepted_alternatives_ja"], ensure_ascii=False),
                 })
+                if exercise_id in preserved_difficulty:
+                    row["difficulty"] = str(preserved_difficulty[exercise_id])
                 rows.append(row); added += 1
     with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as output:
         writer = csv.DictWriter(output, fieldnames=fields)

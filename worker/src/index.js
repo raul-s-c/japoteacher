@@ -410,8 +410,14 @@ async function editorial(request, env) {
     return json({ error: "JSON inválido." }, 400);
   }
   const operation = payload?.operation;
-  const expectedKey = operation === "difficulty_review" ? (env.DIFFICULTY_REVIEW_KEY || env.EDITORIAL_API_KEY) : env.EDITORIAL_API_KEY;
-  if (!expectedKey || !(await secretMatches(request.headers.get("X-Editorial-Key") || "", expectedKey.trim())))
+  const providedKey = request.headers.get("X-Editorial-Key") || "";
+  const acceptedKeys = [
+    operation === "difficulty_review" ? env.DIFFICULTY_REVIEW_KEY : "",
+    env.EDITORIAL_API_KEY,
+    env.PROXY_TOKEN,
+  ].filter(Boolean);
+  const authorized = (await Promise.all(acceptedKeys.map(key => secretMatches(providedKey, String(key).trim())))).some(Boolean);
+  if (!authorized)
     return json({ error: "Unauthorized" }, 401);
   if (!["generate", "review", "equivalence_check", "repair_kanji", "difficulty_review"].includes(operation))
     return json({ error: "Operación editorial inválida." }, 400);
