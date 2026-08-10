@@ -12,6 +12,8 @@
     learning_reports: "report_id",
   };
   let dbPromise;
+  let syncBatchDepth = 0;
+  let syncPending = false;
   function open() {
     if (dbPromise) return dbPromise;
     dbPromise = new Promise((resolve, reject) => {
@@ -50,9 +52,17 @@
       t.onabort = () => reject(t.error);
     });
   }
+  async function syncAfterWrite() {
+    if (!window.CloudSync?.commit) return;
+    if (syncBatchDepth) {
+      syncPending = true;
+      return;
+    }
+    await window.CloudSync.commit();
+  }
   const write = async (store, action) => {
     const result = await tx(store, "readwrite", action);
-    if (window.CloudSync?.commit) await window.CloudSync.commit();
+    await syncAfterWrite();
     return result;
   };
   const api = {
@@ -67,6 +77,18 @@
       }),
     delete: (s, k) => write(s, (o) => o.delete(k)),
     clear: (s) => write(s, (o) => o.clear()),
+    async batch(action) {
+      syncBatchDepth++;
+      try {
+        return await action();
+      } finally {
+        syncBatchDepth--;
+        if (!syncBatchDepth && syncPending) {
+          syncPending = false;
+          await syncAfterWrite();
+        }
+      }
+    },
     stores: Object.keys(stores),
     async clearProfileData() {
       for (const s of [
