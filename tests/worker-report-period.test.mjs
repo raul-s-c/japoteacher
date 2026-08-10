@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { localReport, reportPeriod } from "../worker/src/report-generation.js";
+import { localReport, reportContentPatch, reportPeriod } from "../worker/src/report-generation.js";
 
 function localDateKey(value) {
   const date = new Date(value);
@@ -18,4 +18,17 @@ test("report versions preserve their remote identity", () => {
   const second = localReport({ report_id: "22222222-2222-2222-2222-222222222222", report_type: "weekly", period_start: "2026-08-03T00:00:00.000Z", period_end: "2026-08-09T23:59:59.999Z", revision: 2 });
   assert.notEqual(first.report_id, second.report_id);
   assert.equal(second.remote_report_id, second.report_id);
+});
+
+test("vocabulary evidence remains in the report JSON payload", () => {
+  const vocabulary_focus = [{ term: "ておく", diagnosis: "omision", practice: "usar en tres frases" }];
+  const patch = reportContentPatch({
+    summary: "Informe",
+    vocabulary_focus,
+    cumulative_progress: { trend: "estable", resolved: [], persistent: [] },
+    teacher_assessment: { headline: "Lectura", narrative: "Narrativa" },
+  });
+  assert.equal(patch.vocabulary_focus, undefined);
+  assert.deepEqual(patch.cumulative_progress.vocabulary_focus, vocabulary_focus);
+  assert.deepEqual(patch.cumulative_progress.teacher_assessment, { headline: "Lectura", narrative: "Narrativa" });
 });

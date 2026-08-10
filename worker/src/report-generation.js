@@ -53,6 +53,13 @@ async function createReportContent(env, evidence, type, period) {
   }
   throw new Error("El modelo devolvio un informe incompleto tras dos intentos. Vuelve a generarlo.");
 }
+export function reportContentPatch(content) {
+  const { teacher_assessment, cumulative_progress, vocabulary_focus, ...report } = content;
+  return {
+    ...report,
+    cumulative_progress: { ...cumulative_progress, teacher_assessment, vocabulary_focus },
+  };
+}
 export async function generateReport(env, userId, payload, type, period, accessToken = null, force = false) {
   if (!env.OPENAI_API_KEY || (!accessToken && !env.SUPABASE_SERVICE_ROLE_KEY)) throw new Error("El Worker necesita una sesion valida o SUPABASE_SERVICE_ROLE_KEY.");
   const existing = await admin(env, `learning_reports?user_id=eq.${userId}&report_type=eq.${type}&period_start=eq.${encodeURIComponent(period.start)}&period_end=eq.${encodeURIComponent(period.end)}&order=revision.desc&select=*&limit=1`, {}, accessToken); if (existing[0]?.status === "ready" && !force) return existing[0];
@@ -60,7 +67,7 @@ export async function generateReport(env, userId, payload, type, period, accessT
   if (evidence.attempts.length < 3) return save(env, userId, type, period, { status: "ready", attempt_count: evidence.attempts.length, direction_metrics: evidence.direction_metrics, summary: "Todavia no hay evidencia suficiente para un informe fiable. Completa al menos tres ejercicios en este periodo.", cumulative_progress: { trend: "Sin evidencia suficiente", resolved: [], persistent: [] }, generated_at: new Date().toISOString() }, accessToken, revision);
   await save(env, userId, type, period, { status: "generating", attempt_count: evidence.attempts.length, direction_metrics: evidence.direction_metrics, error_message: null }, accessToken, revision);
   try {
-    const content = await createReportContent(env, evidence, type, period), { teacher_assessment, cumulative_progress, ...report } = content.report; return save(env, userId, type, period, { status: "ready", attempt_count: evidence.attempts.length, direction_metrics: evidence.direction_metrics, ...report, cumulative_progress: { ...cumulative_progress, teacher_assessment }, evidence_attempt_ids: evidence.attempts.slice(0, 30).map(item => item.attempt_id), token_usage: content.usage, generated_at: new Date().toISOString() }, accessToken, revision);
+    const content = await createReportContent(env, evidence, type, period); return save(env, userId, type, period, { status: "ready", attempt_count: evidence.attempts.length, direction_metrics: evidence.direction_metrics, ...reportContentPatch(content.report), evidence_attempt_ids: evidence.attempts.slice(0, 30).map(item => item.attempt_id), token_usage: content.usage, generated_at: new Date().toISOString() }, accessToken, revision);
   } catch (error) { await save(env, userId, type, period, { status: "failed", attempt_count: evidence.attempts.length, direction_metrics: evidence.direction_metrics, error_message: error.message || "Error al generar el informe." }, accessToken, revision); throw error; }
 }
 export async function reportsForUser(env, userId, accessToken = null) { return admin(env, `learning_reports?user_id=eq.${userId}&order=period_end.desc,revision.desc&select=*`, {}, accessToken); }
