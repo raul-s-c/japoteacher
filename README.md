@@ -128,6 +128,49 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 
 ## Trabajo en curso: informes, dificultad y direcciones
 
+### Requisitos funcionales que no deben perderse
+
+Este bloque recoge literalmente la intención del producto. Se considera la fuente de verdad para continuar estas tres funciones.
+
+#### Informes pedagógicos automáticos
+
+- La app generará mediante la API un informe semanal cada domingo, usando todos los ejercicios realizados durante la semana cerrada.
+- El día 1 de cada mes generará otro informe correspondiente al mes natural que acaba de cerrarse. No será una suma superficial de semanas.
+- Ambos analizarán errores reales del usuario, estructuras gramaticales, vocabulario, kanji, patrones recurrentes, fortalezas y evolución.
+- El resultado no puede ser un mensaje genérico ni un bloque de texto sin diseño. Debe seguir una plantilla visual cuidada, integrada en la app, con tarjetas, gráficos, comparaciones, conclusiones dinámicas y recomendaciones accionables concretas.
+- Las recomendaciones deben indicar qué estudiar, por qué, con qué prioridad y qué objetivo medible perseguir durante el siguiente periodo.
+- Todo informe distinguirá JP→ES de ES→JP. También incluirá una comparación conjunta, pero nunca mezclará ambas competencias para calcular dominio.
+- Cada informe tendrá un apartado de progreso acumulado. Para construirlo, la API recibirá resúmenes estructurados de informes anteriores y comparará tendencias, problemas resueltos, problemas persistentes y nuevos problemas.
+- Los informes y sus datos estructurados se almacenarán en la cuenta del usuario y estarán disponibles dentro de la app como historial navegable.
+- La ejecución debe ser automática, idempotente y recuperable: un reintento no puede crear ni cobrar dos informes para el mismo usuario y periodo.
+- Si no hay suficiente práctica, la app debe indicarlo claramente y evitar conclusiones inventadas. Se definirá un umbral mínimo de evidencia antes de llamar a la API.
+- “Enviar el informe” significa, como requisito mínimo, generarlo y dejarlo disponible en la app el domingo o el día 1. Una notificación push o email podrá añadirse posteriormente, pero no debe confundirse con la generación y almacenamiento del informe.
+
+#### Termómetro continuo de dificultad
+
+- Todos los ejercicios del dataset, sin excepciones, tendrán una dificultad continua además de su nivel JLPT.
+- El JLPT seguirá siendo la categoría curricular (`N5`, `N4`, `N3`, `N2`, `N1`), pero no será tratado como un único bloque homogéneo.
+- El termómetro permitirá distinguir, por ejemplo, un N4 accesible, un N4 medio y un N4 que sirve de puente hacia N3.
+- La dificultad no puede calcularse solo por longitud. Debe considerar gramática, vocabulario, kanji, ambigüedad, número de proposiciones, naturalidad exigida, carga de producción y evidencia empírica de los usuarios.
+- Existirá una puntuación editorial inicial y, cuando haya evidencia suficiente, una calibración estadística. La calibración nunca sobrescribirá silenciosamente el nivel JLPT curricular.
+- El termómetro se mostrará en el selector de frases, durante la práctica, en el historial, en los detalles temáticos y en los informes.
+- El planificador adaptativo utilizará esa dificultad para subir o bajar gradualmente dentro de un nivel y para probar el siguiente nivel sin saltos bruscos.
+- Antes de darlo por terminado se auditará la distribución completa del banco y se revisarán los valores anómalos.
+
+#### Dominio y SRS independientes por dirección
+
+- JP→ES y ES→JP son dos habilidades distintas. Acertar una frase en JP→ES no puede aumentar el dominio, intervalo SRS, racha, desbloqueo ni estadísticas de su pareja ES→JP.
+- Cada dirección mantendrá por separado intentos, score, dificultad observada, estado SRS, próxima revisión, tags, dominio temático y desbloqueos JLPT.
+- La selección adaptativa de la siguiente frase se calculará usando únicamente la evidencia de la dirección que se está practicando.
+- En Progreso se podrá filtrar toda la información por JP→ES, ES→JP o comparación de ambas.
+- La vista comparativa mostrará dos series o barras claramente separadas; no utilizará una media conjunta que oculte diferencias.
+- Historial, gráficos, tags, ruta temática, informes semanales/mensuales y progreso acumulado respetarán el mismo filtro.
+- Deben existir pruebas automáticas que demuestren que completar o dominar una dirección no modifica la otra.
+
+### Criterio global de finalización
+
+Esta línea de trabajo solo se considerará terminada cuando los tres requisitos funcionen con una cuenta sincronizada entre PC y móvil, sobrevivan a cerrar sesión/reinstalar la PWA, tengan pruebas de independencia direccional y muestren el mismo estado consolidado en ambos dispositivos.
+
 ### 1. Informes semanales y mensuales
 
 Ya existe una base local:
