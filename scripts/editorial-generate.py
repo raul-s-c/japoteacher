@@ -147,7 +147,8 @@ def request_editorial(payload, key, retries=6):
                 detail = json.loads(error.read().decode("utf-8")).get("error", str(error))
             except (UnicodeDecodeError, json.JSONDecodeError):
                 detail = str(error)
-            if 400 <= error.code < 500:
+            transient_client_errors = {401, 403, 408, 409, 425, 429}
+            if 400 <= error.code < 500 and error.code not in transient_client_errors:
                 raise RuntimeError(f"El endpoint editorial respondió {error.code}: {detail}") from error
             if attempt == retries - 1:
                 raise RuntimeError(f"El endpoint editorial respondió {error.code}: {detail}") from error
