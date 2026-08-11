@@ -15,7 +15,16 @@ La versión publicada y estable está en `main`, commit `c4f381c`. El árbol de 
 2. termómetro continuo de dificultad;
 3. analítica y dominio separados por dirección.
 
-Estas mejoras se han guardado como trabajo en curso para continuarlas desde otro PC. Antes de desplegar, completa y prueba la lista de “Trabajo pendiente inmediato”.
+Estas mejoras se han completado en la PWA local y quedan pendientes de validación final con una cuenta sincronizada en PC y móvil. La generación automática de informes con IA sigue deliberadamente desactivada hasta autorizar presupuesto.
+
+### Actualización de implementación — 9 de agosto de 2026
+
+- El termómetro se muestra en selector, práctica, historial y detalle temático. El planificador lo usa como ajuste gradual dentro del nivel JLPT, sin sustituir el nivel curricular.
+- El progreso, historial, informes y drill-down temático respetan el filtro de dirección. La comparativa muestra dos rutas temáticas independientes y los desbloqueos se calculan por dirección.
+- La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
+- Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
+- `supabase/migrations/003_learning_reports.sql` crea el almacenamiento normalizado, RLS, índice e idempotencia por usuario, tipo y periodo. Aplícala después de `002_atomic_sync.sql` antes de activar el backend de informes.
+- Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
 
 ### Banco editorial actual
 
@@ -46,6 +55,7 @@ git log -5 --oneline
 node --check app.js
 node --check src/reports.js
 node --check src/difficulty.js
+node --test tests/directional-progress.test.mjs tests/reports-period.test.mjs
 ```
 
 ## Arquitectura actual
@@ -91,7 +101,7 @@ En un proyecto Supabase nuevo, ejecuta en SQL Editor, por orden:
 
 1. `supabase/schema.sql`;
 2. `supabase/migrations/002_atomic_sync.sql`;
-3. la futura migración de informes, todavía pendiente.
+3. `supabase/migrations/003_learning_reports.sql`.
 
 En Auth configura la URL pública correcta y las redirect URLs. El error de correo hacia `localhost:3000` se evita configurando el Site URL de producción, actualmente `https://raul-s-c.github.io/japoteacher/`.
 
@@ -102,6 +112,7 @@ cd worker
 npm.cmd install
 npx.cmd wrangler login
 npx.cmd wrangler secret put OPENAI_API_KEY
+npx.cmd wrangler secret put SUPABASE_SERVICE_ROLE_KEY
 npx.cmd wrangler deploy
 ```
 
@@ -205,17 +216,7 @@ Cron diario del Worker
        └─ la PWA lo muestra y sincroniza localmente
 ```
 
-Pendiente:
-
-- crear `supabase/migrations/003_learning_reports.sql` con tabla normalizada, RLS, índice `(user_id, period_end desc)` y restricción única por periodo;
-- decidir si el Worker lee provisionalmente `user_state.payload` o si se normalizan intentos en Supabase; para empezar, leer el payload evita una migración grande;
-- añadir trigger cron a `worker/wrangler.toml` y handler `scheduled()`;
-- guardar la service-role key únicamente como secreto del Worker;
-- definir el JSON Schema del informe y el prompt editorial;
-- implementar reclamación de trabajos, reintentos y estados `pending/generating/ready/failed`;
-- completar la UI con gráficos, detalle y estados de error;
-- medir tokens y no enviar respuestas completas antiguas: usar agregados y resúmenes previos;
-- no activar llamadas automáticas hasta volver a autorizar presupuesto API.
+Implementado: el Worker usa el payload consolidado como fuente inicial, tiene cron diario (cierra la semana el lunes y el mes el día 1), estados `pending/generating/ready/failed`, JSON Schema estricto y guardado idempotente. Antes de desplegar solo debes aplicar la migración y configurar `SUPABASE_SERVICE_ROLE_KEY` como secreto del Worker; nunca en el frontend.
 
 ### 2. Termómetro continuo de dificultad
 
@@ -227,13 +228,10 @@ Ya existe `src/difficulty.js`. Convierte la dificultad editorial 1–7 en una es
 - N2: 75–89;
 - N1: 90–100.
 
-El selector de frases ya empieza a mostrarlo. Pendiente:
+El termómetro se muestra en selector, ejercicio, historial y detalle temático, y el planificador lo usa como preferencia gradual por dirección. Pendiente:
 
-- añadir estilos CSS para `.difficulty-meter`;
-- mostrarlo también dentro del ejercicio, historial y detalle temático;
 - revisar todos los datos para que `difficulty` sea editorialmente coherente, no solo derivado mecánicamente;
-- crear auditoría de distribución por JLPT, longitud, gramática, kanji y número de tags;
-- usar el score continuo en el planificador adaptativo sin sustituir el nivel JLPT oficial;
+- revisar los valores anómalos que señale `python scripts/audit-difficulty.py`; la auditoría ya informa distribución por JLPT, longitud, gramática, kanji y número de tags;
 - documentar que es una estimación pedagógica, no una nota oficial JLPT.
 
 ### 3. Progreso independiente por dirección
@@ -245,31 +243,25 @@ El almacenamiento ya es independiente:
 - `tag_progress` incluye la dirección en su clave;
 - los intentos guardan `direction`.
 
-Lo que mezclaba datos era principalmente la agregación visual. En el trabajo en curso:
+La agregación visual ya respeta el filtro:
 
 - Progreso incorpora el selector “Comparar ambas / JP→ES / ES→JP”;
-- `renderProgress()` filtra intentos, tags, ruta y gráficos.
+- `renderProgress()` filtra intentos, progreso, tags, ruta, historial e informes;
+- la comparativa muestra dos rutas temáticas separadas y el drill-down conserva la dirección elegida;
+- el planificador crea objetivos y desbloqueos por dirección.
 
 Pendiente:
 
-- enlazar el evento `change` del selector para refrescar inmediatamente;
-- comprobar que “dominados” cuenta el progreso correcto incluso con cero intentos locales tras una sincronización;
-- adaptar todos los gráficos, informes y drill-downs al filtro;
-- mostrar dos barras paralelas por tema cuando se comparen ambas direcciones;
-- añadir tests que prueben que acertar JP→ES no modifica dominio, intervalo SRS ni desbloqueos de ES→JP.
+- ejecutar la prueba manual de sincronización real en dos dispositivos;
+- ampliar la cobertura automatizada al intervalo SRS por dirección, además de la ruta temática ya cubierta.
 
-## Trabajo pendiente inmediato antes de desplegar el WIP
+## Antes de desplegar
 
-1. Añadir el listener de `#progressDirection` en `bind()`.
-2. Hacer que `LearningReports.ensureDue()` se ejecute después de abrir IndexedDB y sincronizar.
-3. Añadir estilos de informes, selector de dirección y termómetro.
-4. Mostrar el termómetro en la tarjeta activa de práctica.
-5. Crear la migración `003_learning_reports.sql`.
-6. Añadir tests unitarios de separación direccional y periodos de informe.
-7. Ejecutar `node --check` sobre todo JS modificado.
-8. Probar con navegador a 1440 px y móvil, incluyendo PWA instalada.
-9. Incrementar la versión de caché si se hacen más cambios de assets.
-10. Solo después, commit, push y verificación de GitHub Pages.
+1. Ejecutar las pruebas y comprobaciones de sintaxis indicadas abajo.
+2. Aplicar `003_learning_reports.sql` en Supabase.
+3. Probar el filtro de dirección, el termómetro y la PWA en escritorio y móvil.
+4. Probar sincronización entre dos dispositivos con una misma cuenta.
+5. Confirmar presupuesto antes de habilitar cron, secreto service-role y llamadas de IA para informes.
 
 ## Continuación de la generación editorial
 
@@ -283,6 +275,7 @@ python scripts/editorial-revalidate-pairs.py
 python scripts/audit-editorial-pairs.py
 python scripts/publish-editorial-bank.py
 python scripts/audit-jlpt-bank.py
+python scripts/audit-difficulty.py
 ```
 
 Consulta antes:
@@ -294,6 +287,12 @@ Consulta antes:
 - `data/editorial/manual-overrides.json`.
 
 La reanudación debe continuar desde los JSONL aprobados, no volver a generar los slots existentes. Mantén separada la fase de generación, revisión, equivalencia bilingüe y publicación. El secreto editorial temporal no debe conservarse al terminar.
+
+## Próxima ampliación: frases desde material real
+
+La siguiente ampliación prioritaria será una entrada de texto, noticia o documento para convertir material auténtico en ejercicios. El flujo deberá extraer primero contenido legible, proponer frases autocontenidas y luego pasar cada par por la misma revisión editorial, asignación JLPT, tags, furigana y termómetro de dificultad del banco actual. No se publicará ninguna frase importada directamente ni se mezclará con el banco sin validación humana o editorial.
+
+El alcance inicial debe aceptar texto pegado y URLs de noticias; después podrá incorporar documentos PDF y DOCX. La interfaz debe permitir revisar, editar, descartar y aprobar cada frase antes de añadirla al perfil o al banco compartido. El modo examen queda expresamente fuera de esta fase.
 
 ## Pruebas y auditorías
 

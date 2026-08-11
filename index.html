@@ -67,6 +67,7 @@
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="stats-grid" id="summaryStats"></div>
         <div class="analytics-grid">
+          <div class="wide" id="teacherDiagnosis"></div>
           <section class="panel wide reports-panel"><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Semana actual</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button><button class="icon-button report-print" id="printReportButton" type="button" title="Imprimir o guardar en PDF" aria-label="Imprimir o guardar en PDF">⎙</button></div></div><div id="learningReports"></div></section>
           <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
@@ -117,6 +118,7 @@
   <script src="src/csv-import.js"></script>
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=35"></script>
+  <script src="src/teacher-diagnosis.js?v=1"></script>
   <script src="src/ui.js?v=36"></script>
   <script src="src/history-ui.js?v=35"></script>
   <script src="app.js?v=41"></script>
