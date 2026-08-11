@@ -1,17 +1,17 @@
 {
-  "active_rows": 1066,
-  "semantic_pairs": 533,
+  "active_rows": 1500,
+  "semantic_pairs": 750,
   "by_level_direction": {
-    "N4/es_ja": 233,
-    "N4/ja_es": 233,
+    "N4/es_ja": 450,
+    "N4/ja_es": 450,
     "N5/es_ja": 300,
     "N5/ja_es": 300
   },
-  "structural_issues": 886,
+  "structural_issues": 1226,
   "issues_by_type": {
-    "tag_count": 704,
-    "es_length": 147,
-    "jp_length": 35
+    "tag_count": 920,
+    "es_length": 232,
+    "jp_length": 74
   },
   "duplicate_signatures": 0,
   "invalid_direction_pairs": 0,
@@ -20,17 +20,17 @@
     [
       "JAES-N5-0001",
       "tag_count",
-      15
+      13
     ],
     [
       "JAES-N5-0002",
       "tag_count",
-      18
+      17
     ],
     [
       "JAES-N5-0004",
       "tag_count",
-      21
+      18
     ],
     [
       "JAES-N4-0006",
@@ -45,7 +45,7 @@
     [
       "JAES-N4-0007",
       "tag_count",
-      19
+      18
     ],
     [
       "JAES-N4-0008",
@@ -60,57 +60,57 @@
     [
       "JAES-N4-0009",
       "tag_count",
-      20
+      19
     ],
     [
       "JAES-N4-0010",
       "tag_count",
-      18
+      15
     ],
     [
       "ESJA-N5-0001",
       "tag_count",
-      18
+      13
     ],
     [
       "ESJA-N5-0002",
       "tag_count",
-      15
-    ],
-    [
-      "ESJA-N5-0003",
-      "tag_count",
-      16
+      17
     ],
     [
       "ESJA-N5-0004",
       "tag_count",
-      15
+      18
+    ],
+    [
+      "ESJA-N4-0006",
+      "es_length",
+      4
     ],
     [
       "ESJA-N4-0006",
       "tag_count",
-      17
+      14
     ],
     [
       "ESJA-N4-0007",
-      "jp_length",
-      11
+      "tag_count",
+      18
     ],
     [
-      "ESJA-N4-0007",
+      "ESJA-N4-0008",
       "es_length",
-      5
+      6
     ],
     [
       "ESJA-N4-0008",
       "tag_count",
-      14
+      17
     ],
     [
       "ESJA-N4-0009",
       "tag_count",
-      18
+      19
     ],
     [
       "ESJA-N4-0010",
@@ -120,100 +120,110 @@
     [
       "JAES-N5-EXP-0011",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N5-EXP-0011",
       "tag_count",
-      5
+      15
     ],
     [
       "JAES-N5-EXP-0012",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N5-EXP-0012",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N5-EXP-0013",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N5-EXP-0013",
-      "tag_count",
-      5
+      15
     ],
     [
       "JAES-N5-EXP-0014",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N5-EXP-0014",
       "tag_count",
-      5
+      15
     ],
     [
       "JAES-N5-EXP-0015",
       "tag_count",
-      5
+      16
     ],
     [
       "ESJA-N5-EXP-0015",
       "tag_count",
-      5
+      16
     ],
     [
-      "JAES-N5-EXP-0021",
+      "JAES-N5-EXP-0016",
       "tag_count",
-      5
+      11
     ],
     [
-      "ESJA-N5-EXP-0021",
+      "ESJA-N5-EXP-0016",
       "tag_count",
-      5
+      11
     ],
     [
-      "JAES-N5-EXP-0022",
+      "JAES-N5-EXP-0017",
       "tag_count",
-      5
+      11
     ],
     [
-      "ESJA-N5-EXP-0022",
+      "ESJA-N5-EXP-0017",
       "tag_count",
-      5
+      11
+    ],
+    [
+      "JAES-N5-EXP-0019",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-EXP-0019",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-EXP-0020",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EXP-0020",
+      "tag_count",
+      16
     ],
     [
       "JAES-N5-EXP-0023",
       "tag_count",
-      5
+      11
     ],
     [
       "ESJA-N5-EXP-0023",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N5-EXP-0024",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N5-EXP-0024",
-      "tag_count",
-      5
+      11
     ],
     [
       "JAES-N5-EXP-0025",
       "tag_count",
-      5
+      11
     ],
     [
       "ESJA-N5-EXP-0025",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EXP-0027",
+      "tag_count",
+      5
+    ],
+    [
+      "ESJA-N5-EXP-0027",
       "tag_count",
       5
     ],
@@ -223,9 +233,119 @@
       3
     ],
     [
+      "JAES-N5-EXP-0029",
+      "tag_count",
+      13
+    ],
+    [
       "ESJA-N5-EXP-0029",
       "es_length",
       3
+    ],
+    [
+      "ESJA-N5-EXP-0029",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EXP-0031",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EXP-0031",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EXP-0033",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EXP-0033",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EXP-0036",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EXP-0036",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EXP-0037",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EXP-0037",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EXP-0038",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EXP-0038",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EXP-0040",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EXP-0040",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EXP-0041",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EXP-0041",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EXP-0042",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EXP-0042",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-EXP-0043",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EXP-0043",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EXP-0044",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EXP-0044",
+      "tag_count",
+      14
     ],
     [
       "JAES-N5-EXP-0045",
@@ -238,9 +358,24 @@
       7
     ],
     [
+      "JAES-N5-EXP-0046",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EXP-0046",
+      "tag_count",
+      11
+    ],
+    [
       "JAES-N5-EXP-0047",
       "es_length",
       3
+    ],
+    [
+      "JAES-N5-EXP-0047",
+      "tag_count",
+      11
     ],
     [
       "ESJA-N5-EXP-0047",
@@ -248,53 +383,93 @@
       3
     ],
     [
-      "JAES-N5-EXP-0051",
+      "ESJA-N5-EXP-0047",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EXP-0048",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EXP-0048",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EXP-0050",
+      "jp_length",
+      7
+    ],
+    [
+      "JAES-N5-EXP-0050",
       "es_length",
       3
     ],
     [
-      "ESJA-N5-EXP-0051",
+      "ESJA-N5-EXP-0050",
+      "jp_length",
+      7
+    ],
+    [
+      "ESJA-N5-EXP-0050",
       "es_length",
       3
     ],
     [
-      "JAES-N4-EXP-0011",
-      "es_length",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0011",
+      "JAES-N5-EXP-0052",
       "tag_count",
-      5
+      13
     ],
     [
-      "ESJA-N4-EXP-0011",
-      "es_length",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0011",
+      "ESJA-N5-EXP-0052",
       "tag_count",
-      5
+      13
     ],
     [
-      "JAES-N4-EXP-0012",
+      "JAES-N5-EXP-0053",
       "tag_count",
-      5
+      13
     ],
     [
-      "ESJA-N4-EXP-0012",
+      "ESJA-N5-EXP-0053",
       "tag_count",
-      5
+      13
+    ],
+    [
+      "JAES-N5-EXP-0054",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EXP-0054",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EXP-0055",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EXP-0055",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EXP-0060",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-EXP-0060",
+      "tag_count",
+      12
     ],
     [
       "JAES-N4-EXP-0013",
       "es_length",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0013",
-      "tag_count",
       5
     ],
     [
@@ -303,139 +478,34 @@
       5
     ],
     [
-      "ESJA-N4-EXP-0013",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0014",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0014",
-      "tag_count",
-      5
-    ],
-    [
       "JAES-N4-EXP-0015",
       "es_length",
       6
     ],
     [
-      "JAES-N4-EXP-0015",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0015",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0015",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0016",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0016",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0017",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0017",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0018",
       "tag_count",
-      5
+      16
     ],
     [
       "ESJA-N4-EXP-0018",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0019",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0019",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0020",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0020",
-      "tag_count",
-      5
+      16
     ],
     [
       "JAES-N4-EXP-0021",
       "tag_count",
-      5
+      17
     ],
     [
       "ESJA-N4-EXP-0021",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0022",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0022",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0023",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0023",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0024",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0024",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0025",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0025",
-      "tag_count",
-      5
+      17
     ],
     [
       "JAES-N4-EXP-0026",
@@ -443,99 +513,29 @@
       6
     ],
     [
-      "JAES-N4-EXP-0026",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0026",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0026",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0027",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0027",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0028",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0028",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0029",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0029",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0030",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0030",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0031",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0031",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0032",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0032",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0033",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0033",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0034",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0034",
       "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0035",
@@ -543,19 +543,9 @@
       6
     ],
     [
-      "JAES-N4-EXP-0035",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0035",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0035",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0036",
@@ -563,99 +553,54 @@
       6
     ],
     [
-      "JAES-N4-EXP-0036",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0036",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0036",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0037",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0037",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0038",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0038",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0039",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0039",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0040",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N4-EXP-0040",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0041",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0041",
-      "tag_count",
-      5
+      15
     ],
     [
       "JAES-N4-EXP-0042",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0042",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0043",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0043",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0044",
       "tag_count",
-      5
+      16
     ],
     [
       "ESJA-N4-EXP-0044",
       "tag_count",
-      5
+      16
+    ],
+    [
+      "JAES-N4-EXP-0045",
+      "jp_length",
+      11
     ],
     [
       "JAES-N4-EXP-0045",
@@ -665,7 +610,12 @@
     [
       "JAES-N4-EXP-0045",
       "tag_count",
-      5
+      14
+    ],
+    [
+      "ESJA-N4-EXP-0045",
+      "jp_length",
+      11
     ],
     [
       "ESJA-N4-EXP-0045",
@@ -675,97 +625,37 @@
     [
       "ESJA-N4-EXP-0045",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0046",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0046",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0047",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N4-EXP-0047",
       "tag_count",
-      5
+      15
     ],
     [
       "JAES-N4-EXP-0048",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0048",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0049",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0049",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0050",
       "tag_count",
-      5
+      16
     ],
     [
       "ESJA-N4-EXP-0050",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0051",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0051",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0052",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0052",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0053",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0053",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0054",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0054",
-      "tag_count",
-      5
+      16
     ],
     [
       "JAES-N4-EXP-0055",
@@ -795,7 +685,7 @@
     [
       "JAES-N4-EXP-0056",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N4-EXP-0056",
@@ -805,7 +695,7 @@
     [
       "ESJA-N4-EXP-0056",
       "tag_count",
-      5
+      15
     ],
     [
       "JAES-N4-EXP-0057",
@@ -813,99 +703,19 @@
       6
     ],
     [
-      "JAES-N4-EXP-0057",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0057",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0057",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0058",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0058",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0059",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0059",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0060",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0060",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0061",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0061",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0062",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0062",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0063",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0063",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0064",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0064",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0065",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0065",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0066",
@@ -913,69 +723,19 @@
       6
     ],
     [
-      "JAES-N4-EXP-0066",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0066",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0066",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0067",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0067",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0068",
       "tag_count",
-      5
+      14
     ],
     [
       "ESJA-N4-EXP-0068",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0069",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0069",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0070",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0070",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0071",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0071",
-      "tag_count",
-      5
+      14
     ],
     [
       "JAES-N4-EXP-0072",
@@ -985,7 +745,7 @@
     [
       "JAES-N4-EXP-0072",
       "tag_count",
-      5
+      6
     ],
     [
       "ESJA-N4-EXP-0072",
@@ -995,47 +755,27 @@
     [
       "ESJA-N4-EXP-0072",
       "tag_count",
-      5
+      6
     ],
     [
       "JAES-N4-EXP-0073",
       "tag_count",
-      5
+      6
     ],
     [
       "ESJA-N4-EXP-0073",
       "tag_count",
-      5
+      6
     ],
     [
       "JAES-N4-EXP-0074",
       "tag_count",
-      5
+      4
     ],
     [
       "ESJA-N4-EXP-0074",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0075",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0075",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0076",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0076",
-      "tag_count",
-      5
+      4
     ],
     [
       "JAES-N4-EXP-0077",
@@ -1043,79 +783,39 @@
       6
     ],
     [
-      "JAES-N4-EXP-0077",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0077",
       "es_length",
       6
     ],
     [
-      "ESJA-N4-EXP-0077",
-      "tag_count",
-      5
-    ],
-    [
       "JAES-N4-EXP-0078",
       "es_length",
       4
     ],
     [
-      "JAES-N4-EXP-0078",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0078",
       "es_length",
       4
-    ],
-    [
-      "ESJA-N4-EXP-0078",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0079",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0079",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0080",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N4-EXP-0080",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0081",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0081",
-      "tag_count",
-      5
+      15
     ],
     [
       "JAES-N4-EXP-0082",
       "tag_count",
-      5
+      15
     ],
     [
       "ESJA-N4-EXP-0082",
       "tag_count",
-      5
+      15
     ],
     [
       "JAES-N4-EXP-0083",
@@ -1123,19 +823,9 @@
       6
     ],
     [
-      "JAES-N4-EXP-0083",
-      "tag_count",
-      5
-    ],
-    [
       "ESJA-N4-EXP-0083",
       "es_length",
       6
-    ],
-    [
-      "ESJA-N4-EXP-0083",
-      "tag_count",
-      5
     ],
     [
       "JAES-N4-EXP-0084",
@@ -1145,7 +835,7 @@
     [
       "JAES-N4-EXP-0084",
       "tag_count",
-      5
+      7
     ],
     [
       "ESJA-N4-EXP-0084",
@@ -1155,27 +845,7 @@
     [
       "ESJA-N4-EXP-0084",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0085",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0085",
-      "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0086",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0086",
-      "tag_count",
-      5
+      7
     ],
     [
       "JAES-N4-EXP-0087",
@@ -1183,259 +853,229 @@
       5
     ],
     [
-      "JAES-N4-EXP-0087",
-      "tag_count",
-      6
-    ],
-    [
       "ESJA-N4-EXP-0087",
       "es_length",
       5
-    ],
-    [
-      "ESJA-N4-EXP-0087",
-      "tag_count",
-      6
     ],
     [
       "JAES-N4-EXP-0088",
       "tag_count",
-      6
+      18
     ],
     [
       "ESJA-N4-EXP-0088",
       "tag_count",
-      6
+      18
     ],
     [
       "JAES-N4-EXP-0089",
       "tag_count",
-      6
+      15
     ],
     [
       "ESJA-N4-EXP-0089",
       "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0090",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0090",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0091",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0091",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0092",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0092",
-      "tag_count",
-      6
+      15
     ],
     [
       "JAES-N4-EXP-0093",
       "tag_count",
-      6
+      14
     ],
     [
       "ESJA-N4-EXP-0093",
       "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0094",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0094",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0095",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0095",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0096",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0096",
-      "tag_count",
-      6
+      14
     ],
     [
       "JAES-N4-EXP-0097",
       "tag_count",
-      6
+      14
     ],
     [
       "ESJA-N4-EXP-0097",
       "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0098",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0098",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0099",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0099",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0100",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0100",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0101",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0101",
-      "tag_count",
-      6
+      14
     ],
     [
       "JAES-N4-EXP-0102",
       "tag_count",
-      6
+      15
     ],
     [
       "ESJA-N4-EXP-0102",
       "tag_count",
-      6
+      15
     ],
     [
       "JAES-N4-EXP-0103",
       "tag_count",
-      5
+      17
     ],
     [
       "ESJA-N4-EXP-0103",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0104",
-      "tag_count",
-      5
-    ],
-    [
-      "ESJA-N4-EXP-0104",
-      "tag_count",
-      5
+      17
     ],
     [
       "JAES-N4-EXP-0105",
       "tag_count",
-      5
+      17
     ],
     [
       "ESJA-N4-EXP-0105",
       "tag_count",
-      5
+      17
     ],
     [
       "JAES-N4-EXP-0106",
       "tag_count",
-      5
+      17
     ],
     [
       "ESJA-N4-EXP-0106",
       "tag_count",
-      5
-    ],
-    [
-      "JAES-N4-EXP-0107",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0107",
-      "tag_count",
-      6
-    ],
-    [
-      "JAES-N4-EXP-0108",
-      "tag_count",
-      6
-    ],
-    [
-      "ESJA-N4-EXP-0108",
-      "tag_count",
-      6
+      17
     ],
     [
       "JAES-N4-EXP-0109",
       "tag_count",
-      6
+      15
     ],
     [
       "ESJA-N4-EXP-0109",
       "tag_count",
-      6
+      15
     ],
     [
       "JAES-N4-EXP-0110",
       "tag_count",
-      6
+      14
     ],
     [
       "ESJA-N4-EXP-0110",
       "tag_count",
-      6
+      14
+    ],
+    [
+      "JAES-N5-CURATED-0001",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-CURATED-0001",
+      "tag_count",
+      12
+    ],
+    [
+      "JAES-N5-CURATED-0002",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-CURATED-0002",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-CURATED-0003",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-CURATED-0003",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-CURATED-0004",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N5-CURATED-0004",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N5-CURATED-0005",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-CURATED-0005",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-CURATED-0006",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-CURATED-0006",
+      "tag_count",
+      12
+    ],
+    [
+      "JAES-N5-CURATED-0007",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-CURATED-0007",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-CURATED-0009",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-CURATED-0009",
+      "tag_count",
+      11
     ],
     [
       "JAES-N5-CURATED-0010",
       "tag_count",
-      5
+      13
     ],
     [
       "ESJA-N5-CURATED-0010",
       "tag_count",
-      5
+      13
+    ],
+    [
+      "JAES-N5-CURATED-0011",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-CURATED-0011",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-CURATED-0012",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-CURATED-0012",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-CURATED-0013",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-CURATED-0013",
+      "tag_count",
+      12
     ],
     [
       "JAES-N5-CURATED-0014",
@@ -1446,6 +1086,76 @@
       "ESJA-N5-CURATED-0014",
       "tag_count",
       5
+    ],
+    [
+      "JAES-N5-CURATED-0015",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-CURATED-0015",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-CURATED-0016",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-CURATED-0016",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-CURATED-0021",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-CURATED-0021",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-CURATED-0022",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-CURATED-0022",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-CURATED-0023",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-CURATED-0023",
+      "tag_count",
+      12
+    ],
+    [
+      "JAES-N5-CURATED-0024",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-CURATED-0024",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-CURATED-0025",
+      "tag_count",
+      12
+    ],
+    [
+      "ESJA-N5-CURATED-0025",
+      "tag_count",
+      12
     ],
     [
       "JAES-N5-EDITORIAL-0081",
@@ -4446,6 +4156,1996 @@
       "ESJA-N4-EDITORIAL-0233",
       "es_length",
       6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0234",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0234",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0236",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0236",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0238",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0238",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0240",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0240",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0242",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0242",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0243",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0243",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0247",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0247",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0248",
+      "tag_count",
+      26
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0248",
+      "tag_count",
+      26
+    ],
+    [
+      "JAES-N4-EDITORIAL-0249",
+      "jp_length",
+      10
+    ],
+    [
+      "JAES-N4-EDITORIAL-0249",
+      "es_length",
+      5
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0249",
+      "jp_length",
+      10
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0249",
+      "es_length",
+      5
+    ],
+    [
+      "JAES-N4-EDITORIAL-0251",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0251",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0252",
+      "jp_length",
+      33
+    ],
+    [
+      "JAES-N4-EDITORIAL-0252",
+      "tag_count",
+      21
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0252",
+      "jp_length",
+      33
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0252",
+      "tag_count",
+      21
+    ],
+    [
+      "JAES-N4-EDITORIAL-0253",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0253",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0254",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0254",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0255",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0255",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0256",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0256",
+      "tag_count",
+      21
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0256",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0256",
+      "tag_count",
+      21
+    ],
+    [
+      "JAES-N4-EDITORIAL-0257",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0257",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0258",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0258",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0260",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0260",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0263",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0263",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0264",
+      "jp_length",
+      40
+    ],
+    [
+      "JAES-N4-EDITORIAL-0264",
+      "es_length",
+      23
+    ],
+    [
+      "JAES-N4-EDITORIAL-0264",
+      "tag_count",
+      31
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0264",
+      "jp_length",
+      40
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0264",
+      "es_length",
+      23
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0264",
+      "tag_count",
+      31
+    ],
+    [
+      "JAES-N4-EDITORIAL-0265",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0265",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0266",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0266",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0267",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0267",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0268",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0268",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0269",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0269",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0270",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0270",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0271",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0271",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0272",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0272",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0273",
+      "es_length",
+      4
+    ],
+    [
+      "JAES-N4-EDITORIAL-0273",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0273",
+      "es_length",
+      4
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0273",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0274",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0274",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0275",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0275",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0276",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0276",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0280",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0280",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0281",
+      "es_length",
+      5
+    ],
+    [
+      "JAES-N4-EDITORIAL-0281",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0281",
+      "es_length",
+      5
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0281",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0282",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0282",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0284",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0284",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0286",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0286",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0288",
+      "tag_count",
+      23
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0288",
+      "tag_count",
+      23
+    ],
+    [
+      "JAES-N4-EDITORIAL-0290",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0290",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0291",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0291",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0292",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0292",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0293",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0293",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0294",
+      "tag_count",
+      21
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0294",
+      "tag_count",
+      21
+    ],
+    [
+      "JAES-N4-EDITORIAL-0296",
+      "es_length",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0296",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0296",
+      "es_length",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0296",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-0297",
+      "jp_length",
+      10
+    ],
+    [
+      "JAES-N4-EDITORIAL-0297",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0297",
+      "jp_length",
+      10
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0297",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0299",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0299",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0300",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0300",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0301",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0301",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0302",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0302",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0304",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0304",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0304",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0304",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0306",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0306",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0307",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0307",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0308",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0308",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0311",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0311",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0312",
+      "jp_length",
+      40
+    ],
+    [
+      "JAES-N4-EDITORIAL-0312",
+      "es_length",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0312",
+      "tag_count",
+      30
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0312",
+      "jp_length",
+      40
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0312",
+      "es_length",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0312",
+      "tag_count",
+      30
+    ],
+    [
+      "JAES-N4-EDITORIAL-0313",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0313",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0314",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0314",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0316",
+      "tag_count",
+      21
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0316",
+      "tag_count",
+      21
+    ],
+    [
+      "JAES-N4-EDITORIAL-0317",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0317",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0318",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0318",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0319",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0319",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0320",
+      "tag_count",
+      28
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0320",
+      "tag_count",
+      28
+    ],
+    [
+      "JAES-N4-EDITORIAL-0321",
+      "jp_length",
+      10
+    ],
+    [
+      "JAES-N4-EDITORIAL-0321",
+      "es_length",
+      4
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0321",
+      "jp_length",
+      10
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0321",
+      "es_length",
+      4
+    ],
+    [
+      "JAES-N4-EDITORIAL-0322",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0322",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0324",
+      "jp_length",
+      33
+    ],
+    [
+      "JAES-N4-EDITORIAL-0324",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0324",
+      "jp_length",
+      33
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0324",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0325",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0325",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0327",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0327",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0328",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0328",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0328",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0328",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0329",
+      "jp_length",
+      10
+    ],
+    [
+      "JAES-N4-EDITORIAL-0329",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0329",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0329",
+      "jp_length",
+      10
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0329",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0329",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0331",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0331",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0332",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0332",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0333",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0333",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0333",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0333",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0336",
+      "jp_length",
+      33
+    ],
+    [
+      "JAES-N4-EDITORIAL-0336",
+      "tag_count",
+      29
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0336",
+      "jp_length",
+      33
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0336",
+      "tag_count",
+      29
+    ],
+    [
+      "JAES-N4-EDITORIAL-0338",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0338",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0339",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0339",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0341",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0341",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0342",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0342",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0343",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0343",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0344",
+      "tag_count",
+      23
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0344",
+      "tag_count",
+      23
+    ],
+    [
+      "JAES-N4-EDITORIAL-0345",
+      "es_length",
+      5
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0345",
+      "es_length",
+      5
+    ],
+    [
+      "JAES-N4-EDITORIAL-0347",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0347",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0348",
+      "jp_length",
+      37
+    ],
+    [
+      "JAES-N4-EDITORIAL-0348",
+      "es_length",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0348",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0348",
+      "jp_length",
+      37
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0348",
+      "es_length",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0348",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-0350",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0350",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0351",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0351",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0352",
+      "es_length",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0352",
+      "tag_count",
+      24
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0352",
+      "es_length",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0352",
+      "tag_count",
+      24
+    ],
+    [
+      "JAES-N4-EDITORIAL-0353",
+      "es_length",
+      5
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0353",
+      "es_length",
+      5
+    ],
+    [
+      "JAES-N4-EDITORIAL-0354",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0354",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0355",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0355",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0356",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0356",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0357",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0357",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0359",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0359",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0360",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0360",
+      "tag_count",
+      24
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0360",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0360",
+      "tag_count",
+      24
+    ],
+    [
+      "JAES-N4-EDITORIAL-0362",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0362",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0364",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0364",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0365",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0365",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0366",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0366",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0367",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0367",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0368",
+      "tag_count",
+      24
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0368",
+      "tag_count",
+      24
+    ],
+    [
+      "JAES-N4-EDITORIAL-0369",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0369",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0370",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0370",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0372",
+      "jp_length",
+      38
+    ],
+    [
+      "JAES-N4-EDITORIAL-0372",
+      "es_length",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0372",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0372",
+      "jp_length",
+      38
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0372",
+      "es_length",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0372",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-0373",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0373",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0374",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0374",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0375",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0375",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0376",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0376",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0377",
+      "jp_length",
+      11
+    ],
+    [
+      "JAES-N4-EDITORIAL-0377",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0377",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0377",
+      "jp_length",
+      11
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0377",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0377",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0380",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0380",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-0381",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0381",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0381",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0381",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0382",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0382",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0383",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0383",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0384",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0384",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-0386",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0386",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0387",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0387",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0390",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0390",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0391",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0391",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0392",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0392",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0393",
+      "es_length",
+      3
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0393",
+      "es_length",
+      3
+    ],
+    [
+      "JAES-N4-EDITORIAL-0396",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0396",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0399",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0399",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0400",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0400",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0400",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0400",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0402",
+      "tag_count",
+      21
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0402",
+      "tag_count",
+      21
+    ],
+    [
+      "JAES-N4-EDITORIAL-0403",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0403",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0403",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0403",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0404",
+      "jp_length",
+      34
+    ],
+    [
+      "JAES-N4-EDITORIAL-0404",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0404",
+      "jp_length",
+      34
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0404",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0406",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0406",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0408",
+      "jp_length",
+      33
+    ],
+    [
+      "JAES-N4-EDITORIAL-0408",
+      "tag_count",
+      26
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0408",
+      "jp_length",
+      33
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0408",
+      "tag_count",
+      26
+    ],
+    [
+      "JAES-N4-EDITORIAL-0409",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0409",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0409",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0409",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0410",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0410",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0411",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0411",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0412",
+      "tag_count",
+      23
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0412",
+      "tag_count",
+      23
+    ],
+    [
+      "JAES-N4-EDITORIAL-0414",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0414",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0415",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0415",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0416",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0416",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0417",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0417",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0419",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0419",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0420",
+      "jp_length",
+      41
+    ],
+    [
+      "JAES-N4-EDITORIAL-0420",
+      "es_length",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0420",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0420",
+      "jp_length",
+      41
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0420",
+      "es_length",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0420",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-0421",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0421",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0422",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0422",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0423",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0423",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0424",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0424",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0425",
+      "jp_length",
+      11
+    ],
+    [
+      "JAES-N4-EDITORIAL-0425",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0425",
+      "jp_length",
+      11
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0425",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0428",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0428",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-0429",
+      "es_length",
+      5
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0429",
+      "es_length",
+      5
+    ],
+    [
+      "JAES-N4-EDITORIAL-0430",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0430",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N4-EDITORIAL-0431",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0431",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0432",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0432",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0434",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0434",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0435",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0435",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N4-EDITORIAL-0436",
+      "jp_length",
+      43
+    ],
+    [
+      "JAES-N4-EDITORIAL-0436",
+      "es_length",
+      24
+    ],
+    [
+      "JAES-N4-EDITORIAL-0436",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0436",
+      "jp_length",
+      43
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0436",
+      "es_length",
+      24
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0436",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0437",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0437",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N4-EDITORIAL-0438",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0438",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0439",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0439",
+      "tag_count",
+      7
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0439",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0439",
+      "tag_count",
+      7
+    ],
+    [
+      "JAES-N4-EDITORIAL-0440",
+      "jp_length",
+      34
+    ],
+    [
+      "JAES-N4-EDITORIAL-0440",
+      "tag_count",
+      24
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0440",
+      "jp_length",
+      34
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0440",
+      "tag_count",
+      24
+    ],
+    [
+      "JAES-N4-EDITORIAL-0441",
+      "es_length",
+      6
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0441",
+      "es_length",
+      6
+    ],
+    [
+      "JAES-N4-EDITORIAL-0444",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0444",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0444",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0444",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0447",
+      "tag_count",
+      17
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0447",
+      "tag_count",
+      17
+    ],
+    [
+      "JAES-N4-EDITORIAL-0448",
+      "es_length",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-0448",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0448",
+      "es_length",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0448",
+      "tag_count",
+      22
+    ],
+    [
+      "JAES-N4-EDITORIAL-0450",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-0450",
+      "tag_count",
+      19
     ]
   ],
   "duplicates": {},
