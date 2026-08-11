@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=46">
+  <link rel="stylesheet" href="styles.css?v=47">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -55,7 +55,8 @@
             <div class="source-details"><span id="topicLabel"></span><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div>
             <label class="answer-label" for="answerInput">Tu respuesta</label>
             <textarea id="answerInput" rows="5" maxlength="500" placeholder="Escribe aquí tu traducción…"></textarea>
-            <div class="answer-actions"><button class="secondary" id="saveDraftButton">Guardar borrador</button><button class="primary" id="evaluateButton">Corregir</button></div>
+            <div class="answer-actions"><button class="secondary" id="saveDraftButton">Guardar borrador</button><button class="secondary" id="replaceExerciseButton" type="button">Cambiar frase</button><button class="primary" id="evaluateButton">Corregir</button></div>
+            <div class="replace-reasons" id="replaceReasons" hidden><span>¿Por qué quieres cambiarla?</span><div><button type="button" data-replace-reason="too_hard">Muy difícil</button><button type="button" data-replace-reason="recent">La hice hace poco</button><button type="button" data-replace-reason="too_easy">Muy fácil</button></div></div>
           </section>
           <aside class="feedback-panel" id="feedbackPanel" aria-live="polite">
             <div class="feedback-empty"><span>添</span><h3>Tu corrección aparecerá aquí</h3><p>Evaluaremos significado, comprensión, naturalidad, gramática y escritura por separado.</p></div>
@@ -94,6 +95,7 @@
     </nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="route-loader" id="routeLoader" aria-live="polite" aria-hidden="true"><span></span><strong>Preparando tu estudio</strong></div>
   <div class="session-lock" id="sessionLock" hidden><section class="session-lock-card" role="dialog" aria-modal="true" aria-labelledby="sessionLockTitle"><span class="brand-mark" aria-hidden="true">日</span><h2 id="sessionLockTitle">Sesión activa en otro dispositivo</h2><p id="sessionLockMessage"></p><button class="primary" id="takeSessionButton">Cerrar allí y traer aquí</button><button class="secondary" id="sessionLockSignOut">Cerrar sesión</button></section></div>
   <div class="detail-modal" id="historyDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="historyDetailTitle"><div class="section-heading"><h2 id="historyDetailTitle">Detalle del intento</h2><button class="icon-button" id="closeHistoryDetail" aria-label="Cerrar detalle">✕</button></div><div id="historyDetailBody"></div></section></div>
   <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
@@ -105,7 +107,7 @@
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
   <script src="src/topic-progression.js?v=36"></script>
-  <script src="src/session-planner.js?v=35"></script>
+  <script src="src/session-planner.js?v=36"></script>
   <script src="src/furigana-generated.js?v=27"></script>
   <script src="src/furigana.js?v=26"></script>
   <script src="src/difficulty.js?v=36"></script>
@@ -119,9 +121,9 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=35"></script>
   <script src="src/teacher-diagnosis.js?v=1"></script>
-  <script src="src/ui.js?v=36"></script>
+  <script src="src/ui.js?v=37"></script>
   <script src="src/history-ui.js?v=35"></script>
-  <script src="app.js?v=41"></script>
+  <script src="app.js?v=42"></script>
   <script src="src/navigation-fix.js?v=2"></script>
   <script src="src/bank-status.js?v=26"></script>
   <script src="src/extra-study.js?v=22"></script>
