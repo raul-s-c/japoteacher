@@ -264,7 +264,9 @@ def run(level, limit=None, usage_baseline=None, token_budget=None):
         offset = next_slot - 1
         slots = make_slots(level, offset, group_size)
         last_rejection = ""
-        for generation_attempt in range(1, 5):
+        # Difficult coverage slots may need constrained rewrites to meet both
+        # grammar and uniqueness gates without accepting a weak fallback.
+        for generation_attempt in range(1, 9):
             try:
                 result = request_editorial({"operation": "generate", "level": level, "slots": slots, "avoid_japanese": list(known)[-200:], "previous_rejection": last_rejection}, key)
                 final, rounds = review_until_approved(result["items"], level, key, slots)
@@ -276,13 +278,16 @@ def run(level, limit=None, usage_baseline=None, token_budget=None):
                 for item, slot in zip(final, slots):
                     validate_slot(item, slot)
                 signatures = [normalize_japanese(item["japanese"]) for item in final]
-                if len(set(signatures)) != group_size or any(signature in known for signature in signatures):
-                    raise RuntimeError("El grupo contiene una frase duplicada.")
+                duplicates = [item["japanese"] for item, signature in zip(final, signatures) if signature in known]
+                if len(set(signatures)) != group_size:
+                    raise RuntimeError("El grupo contiene frases duplicadas entre sí.")
+                if duplicates:
+                    raise RuntimeError(f"La frase propuesta ya existe en el banco y debe reescribirse: {duplicates[0]}")
                 break
             except RuntimeError as error:
                 last_rejection = str(error)
-                if generation_attempt == 4:
-                    raise RuntimeError(f"El lote se rechazó cuatro veces. Último motivo: {last_rejection}") from error
+                if generation_attempt == 8:
+                    raise RuntimeError(f"El lote se rechazó ocho veces. Último motivo: {last_rejection}") from error
                 print(json.dumps({"level": level, "group_offset": offset, "rejected_attempt": generation_attempt, "reason": last_rejection}, ensure_ascii=False), flush=True)
         for slot, item, signature in zip(slots, final, signatures):
             append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 4, **item})

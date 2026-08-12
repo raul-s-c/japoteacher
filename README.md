@@ -28,10 +28,10 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- N5: 300 pares semánticos aprobados, 600 ejercicios direccionales.
-- N4: 233 pares semánticos aprobados, 466 ejercicios direccionales.
-- Total publicado en `data/exercises.full.csv`: 1.066 ejercicios.
-- La generación editorial con API quedó pausada por presupuesto de tokens.
+- N5: 330 pares semánticos publicados, 660 ejercicios direccionales.
+- N4: 530 pares semánticos publicados, 1.060 ejercicios direccionales. La tanda del 12 de agosto añadió 50 pares N4 aprobados tras generación, revisión, equivalencia y deduplicación.
+- Total publicado en `data/exercises.full.csv`: 2.220 ejercicios, de los que 1.720 están activos y 500 se conservan archivados.
+- La generación editorial tiene un presupuesto diario registrable. La tanda del 12 de agosto consumió 959.991 tokens; quedan 70 plazas N4 dentro del objetivo editorial actual de 600 pares.
 - Fuentes editoriales aprobadas: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
 
@@ -220,13 +220,7 @@ Implementado: el Worker usa el payload consolidado como fuente inicial, tiene cr
 
 ### 2. Termómetro continuo de dificultad
 
-Ya existe `src/difficulty.js`. Convierte la dificultad editorial 1–7 en una escala global 0–100 dentro de bandas solapadas/progresivas:
-
-- N5: 5–39;
-- N4: 40–59;
-- N3: 60–74;
-- N2: 75–89;
-- N1: 90–100.
+La dificultad se calibra en una escala 0–100 independiente para cada combinación de JLPT y dirección. Por tanto, un N5 con 100 sigue siendo más accesible que un N4 con 20; las escalas no se comparan entre niveles.
 
 El termómetro se muestra en selector, ejercicio, historial y detalle temático, y el planificador lo usa como preferencia gradual por dirección. Pendiente:
 
@@ -270,9 +264,8 @@ No generar frases mecánicamente. Cada par debe ser natural, útil, coherente po
 Flujo recomendado:
 
 ```powershell
-python scripts/editorial-generate.py
-python scripts/editorial-revalidate-pairs.py
-python scripts/audit-editorial-pairs.py
+python scripts/editorial-generate.py N4 --token-budget 950000 --usage-baseline <TOTAL_PREVIO>
+python scripts/audit-editorial-pairs.py N4
 python scripts/publish-editorial-bank.py
 python scripts/audit-jlpt-bank.py
 python scripts/audit-difficulty.py
