@@ -127,6 +127,17 @@ const evaluationSchema = {
     next_practice_tags: stringList,
   },
 };
+const contextExplanationSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["reading_hiragana", "meaning_es", "context_es", "usage_note_es"],
+  properties: {
+    reading_hiragana: { type: "string" },
+    meaning_es: { type: "string" },
+    context_es: { type: "string" },
+    usage_note_es: { type: "string" },
+  },
+};
 
 const editorialKanjiSchema = {
   type: "object",
@@ -331,6 +342,26 @@ async function callOpenAI(payload, env) {
     body: JSON.stringify(body),
   });
 }
+function contextExplanationPrompt() {
+  return "Eres un profesor de japonés para hispanohablantes. Explica un único término dentro de la frase proporcionada. Responde en español, sin listas, de forma breve y pedagógica. meaning_es da el significado preciso en este contexto; reading_hiragana da la lectura contextual si el término es japonés con kanji y usa — si no procede; context_es explica en una frase su papel o matiz aquí; usage_note_es añade una observación de uso de una frase como máximo. Si se trata de una etiqueta de gramática, partícula o contador, explica su función en esa frase en vez de inventar una traducción literal. No evalúes al alumno ni reescribas toda la frase.";
+}
+async function callContextExplainer(payload, env) {
+  return fetch(OPENAI_RESPONSES_URL, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      reasoning: { effort: "none" },
+      instructions: contextExplanationPrompt(),
+      input: JSON.stringify(payload),
+      max_output_tokens: 500,
+      text: { format: { type: "json_schema", name: "japoteacher_context_explanation", strict: true, schema: contextExplanationSchema } },
+    }),
+  });
+}
+function outputText(raw) {
+  return [raw.output_text || "", ...(raw.output || []).flatMap(item => item.content || []).filter(item => item.type === "output_text").map(item => item.text || "")].sort((left, right) => right.length - left.length)[0];
+}
 
 async function secretMatches(provided, expected) {
   if (!provided || !expected) return false;
@@ -507,6 +538,22 @@ export default {
       return json({ ok: true, model: "gpt-5.4-mini" }, 200, origin, env);
     if (url.pathname === "/editorial/generate" && request.method === "POST")
       return editorial(request, env);
+    if (url.pathname === "/explain" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión en el dispositivo activo para usar la explicación con IA." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de explicación inválida." }, 400, origin, env); }
+      const term = String(body?.term || "").trim(), type = String(body?.type || "").trim(), japanese = String(body?.japanese_sentence || "").trim(), spanish = String(body?.spanish_sentence || "").trim(), level = String(body?.jlpt_level || "").trim();
+      if (!term || term.length > 120 || type.length > 40 || japanese.length > 800 || spanish.length > 800 || level.length > 8) return json({ error: "La consulta de explicación no es válida." }, 400, origin, env);
+      try {
+        const response = await callContextExplainer({ term, type, japanese_sentence: japanese, spanish_sentence: spanish, jlpt_level: level }, env), raw = await response.json();
+        if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la explicación." }, response.status, origin, env);
+        const text = outputText(raw);
+        if (!text) return json({ error: "OpenAI no devolvió una explicación." }, 502, origin, env);
+        return json({ explanation: JSON.parse(text), usage: raw.usage || {} }, 200, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo explicar el término." }, 500, origin, env); }
+    }
     if (url.pathname.startsWith("/reports/")) {
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
       const userId = await authenticatedUser(request, env);
