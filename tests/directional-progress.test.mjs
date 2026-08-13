@@ -41,6 +41,6 @@ test("topic routes are grouped into learning families", () => {
     { topic: "familia", totalAttempts: 1 },
   ]);
 
-  assert.equal(groups.find((group) => group.family === "Viajes y desplazamientos").items.length, 2);
-  assert.equal(groups.find((group) => group.family === "Personas y relaciones").items.length, 1);
+  assert.equal(groups.find((group) => group.family === "Ocio y vida diaria").items.length, 2);
+  assert.equal(groups.find((group) => group.family === "Familia y amigos").items.length, 1);
 });
