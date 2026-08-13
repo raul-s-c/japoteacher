@@ -125,6 +125,8 @@ npx.cmd wrangler deploy
 
 El boton `!` de la barra superior abre un formulario para describir una incidencia y adjuntar hasta cinco pantallazos de la galeria. El navegador los reduce antes de enviarlos y conserva una cola local cuando no hay red. Al recuperarla, registra una fila privada en `public.user_issue_reports` y guarda los adjuntos en el bucket privado `issue-reports`, segregado por usuario. Este buzon es la fuente de trabajo para revisar y resolver incidencias posteriores; no se exporta en las copias de aprendizaje para no mezclar capturas con el progreso.
 
+Para recuperar la cola desde el entorno editorial, usa `node scripts/fetch-issue-reports.mjs` con `JAPOTEACHER_EDITORIAL_KEY` o `PROXY_TOKEN` en el entorno. El endpoint no es publico y usa el secreto del Worker para leer la tabla; las imagenes siguen siendo privadas en Storage.
+
 No guardes `OPENAI_API_KEY`, service-role keys ni secretos editoriales en Git, JavaScript o documentación. La configuración detallada está en `worker/README.md`.
 
 ### Publicación

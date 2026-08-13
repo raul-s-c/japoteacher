@@ -531,6 +531,23 @@ async function saveIssueReport(env, userId, accessToken, report) {
   return (await response.json())[0];
 }
 
+async function editorialKeyAuthorized(request, env) {
+  const providedKey = request.headers.get("X-Editorial-Key") || "";
+  const acceptedKeys = [env.EDITORIAL_API_KEY, env.PROXY_TOKEN].filter(Boolean);
+  return (await Promise.all(acceptedKeys.map((key) => secretMatches(providedKey, String(key).trim())))).some(Boolean);
+}
+
+async function issueInbox(request, env) {
+  if (!(await editorialKeyAuthorized(request, env))) return json({ error: "Unauthorized" }, 401);
+  if (!env.SUPABASE_SERVICE_ROLE_KEY) return json({ error: "Falta SUPABASE_SERVICE_ROLE_KEY." }, 503);
+  const limit = Math.max(1, Math.min(100, Number(new URL(request.url).searchParams.get("limit")) || 50));
+  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/user_issue_reports?select=*&order=created_at.desc&limit=${limit}`, {
+    headers: { Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`, apikey: env.SUPABASE_SERVICE_ROLE_KEY },
+  });
+  if (!response.ok) return json({ error: `Supabase issues: ${await response.text()}` }, 502);
+  return json({ reports: await response.json() });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url),
@@ -553,6 +570,8 @@ export default {
       return json({ ok: true, model: "gpt-5.4-mini" }, 200, origin, env);
     if (url.pathname === "/editorial/generate" && request.method === "POST")
       return editorial(request, env);
+    if (url.pathname === "/editorial/issues" && request.method === "GET")
+      return issueInbox(request, env);
     if (url.pathname === "/explain" && request.method === "POST") {
       if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
