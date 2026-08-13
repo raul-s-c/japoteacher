@@ -18,9 +18,9 @@
   }
   const emptyLevelPoints=()=>Object.fromEntries(levels.map(level=>[level,0]));
   const emptyEvidence=()=>Object.fromEntries(levels.map(level=>[level,{attempts:0,acceptable:0,totalScore:0,exerciseIds:new Set()}]));
-  function emptyRating(direction,family){return {direction,family,points:0,pointsByLevel:emptyLevelPoints(),evidence:emptyEvidence(),level:'N5',percent:0,attempts:0,lastDelta:0,lastChallenge:0,lastEarnedLevel:'N5'}}
+  function emptyRating(direction,family){return {direction,family,points:0,pointsByLevel:emptyLevelPoints(),evidence:emptyEvidence(),availableLevels:new Set(),level:'N5',percent:0,attempts:0,lastDelta:0,lastChallenge:0,lastEarnedLevel:'N5'}}
   function mastered(evidence){return evidence.attempts>=12&&evidence.exerciseIds.size>=8&&evidence.totalScore/evidence.attempts>=80&&evidence.acceptable/evidence.attempts>=.75}
-  function rankFromEvidence(rating){let index=0;while(index<levels.length-1&&mastered(rating.evidence[levels[index]]))index++;const level=levels[index],points=clamp(Math.round(rating.pointsByLevel[level]||0),0,99);return {points:levels.reduce((sum,current)=>sum+(rating.pointsByLevel[current]||0),0),level,percent:points,next:levels[index+1]||null}}
+  function rankFromEvidence(rating){let index=0;while(index<levels.length-1&&mastered(rating.evidence[levels[index]])&&rating.availableLevels.has(levels[index+1]))index++;const level=levels[index],points=clamp(Math.round(rating.pointsByLevel[level]||0),0,99);return {points:levels.reduce((sum,current)=>sum+(rating.pointsByLevel[current]||0),0),level,percent:points,next:rating.availableLevels.has(levels[index+1])?levels[index+1]:null}}
   function deltaFor(current,exercise,attempt){
     const score=Number(attempt?.overall_score);
     if(!Number.isFinite(score))return 0;
@@ -43,6 +43,7 @@
       rating.pointsByLevel[level]=clamp(rating.pointsByLevel[level]+delta,0,99);evidence.attempts++;evidence.totalScore+=Number(attempt.overall_score)||0;evidence.acceptable+=attempt.is_acceptable?1:0;evidence.exerciseIds.add(exercise.exercise_id);rating.attempts++;rating.lastDelta=delta;rating.lastChallenge=exerciseChallenge(exercise);rating.lastEarnedLevel=level;
       Object.assign(rating,rankFromEvidence(rating));ratings.set(key,rating);
     }
+    for(const exercise of exercises||[]){if(exercise.active===false)continue;const family=familyForExercise(exercise),key=`${exercise.direction}::${family}`,rating=ratings.get(key)||emptyRating(exercise.direction,family);rating.availableLevels.add(exercise.jlpt_level);Object.assign(rating,rankFromEvidence(rating));ratings.set(key,rating)}
     return {ratings,levels,families};
   }
   function get(snapshot,direction,family){return snapshot.ratings.get(`${direction}::${family}`)||emptyRating(direction,family)}

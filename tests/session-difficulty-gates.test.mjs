@@ -34,3 +34,9 @@ test("a higher N4 band opens only after the preceding band is mastered", () => {
   assert.equal(plan.difficultyRoadmap(exercises, attempts, "ja_es").N4.unlockedBand, 2);
   assert.ok(plan.choose(exercises, [], attempts, 20, settings, "ja_es", "seed", []).includes("high-01"));
 });
+
+test("daily sessions reserve most slots for unseen material when the bank is large", () => {
+  const plan = planner(), exercises = Array.from({ length: 20 }, (_, index) => exercise(`known-${String(index).padStart(2,"0")}`, 10)).concat(Array.from({ length: 30 }, (_, index) => exercise(`new-${String(index).padStart(2,"0")}`, 10))), attempts = exercises.slice(0,20).map(item => attempt(item.exercise_id, 55)), progress = exercises.slice(0,20).map(item => ({ exercise_id:item.exercise_id, cooldown_until:"2000-01-01T00:00:00.000Z", next_review_at:"2000-01-01T00:00:00.000Z", average_score:55 }));
+  const picked = plan.choose(exercises, progress, attempts, 10, settings, "ja_es", "seed", []);
+  assert.ok(picked.filter(id=>id.startsWith("new-")).length >= 6);
+});
