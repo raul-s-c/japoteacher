@@ -48,3 +48,26 @@ test("ratings are independent by direction and conversation family", () => {
   assert.equal(xp.get(snapshot, "ja_es", "Ocio y vida diaria").points, 0);
   assert.ok(xp.get(snapshot, "es_ja", "Ocio y vida diaria").points > 0);
 });
+
+test("N5 experience cannot promote a family to N1", () => {
+  const xp = ranked();
+  const exercises = Array.from({ length: 30 }, (_, index) => ({
+    exercise_id: `n5-${index}`, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: ["gaming"],
+  }));
+  const attempts = exercises.map((exercise, index) => ({
+    exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true,
+  }));
+  const rating = xp.get(xp.snapshot(exercises, attempts), "es_ja", "Ocio y vida diaria");
+  assert.equal(rating.level, "N4");
+  assert.equal(rating.percent, 0);
+});
+
+test("the next JLPT only gains its own experience after the previous level is mastered", () => {
+  const xp = ranked();
+  const n5 = Array.from({ length: 12 }, (_, index) => ({ exercise_id: `n5-${index}`, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: ["gaming"] }));
+  const n4 = { exercise_id: "n4-1", direction: "es_ja", jlpt_level: "N4", difficulty: 20, topic_tags: ["gaming"] };
+  const attempts = [...n5.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true })), { exercise_id: n4.exercise_id, direction: "es_ja", attempted_at: "2026-08-13T09:00:00Z", evaluation_status: "valid", overall_score: 100, is_acceptable: true }];
+  const rating = xp.get(xp.snapshot([...n5, n4], attempts), "es_ja", "Ocio y vida diaria");
+  assert.equal(rating.level, "N4");
+  assert.ok(rating.percent > 0);
+});
