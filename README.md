@@ -23,7 +23,7 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - El progreso, historial, informes y drill-down temático respetan el filtro de dirección. La comparativa muestra dos rutas temáticas independientes y los desbloqueos se calculan por dirección.
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
-- `supabase/migrations/003_learning_reports.sql` crea el almacenamiento normalizado, RLS, índice e idempotencia por usuario, tipo y periodo. Aplícala después de `002_atomic_sync.sql` antes de activar el backend de informes.
+- Las migraciones `003` a `006` crean el almacenamiento, permisos, historial y borrado de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
 
 ### Banco editorial actual
@@ -73,7 +73,7 @@ GitHub Pages (PWA estática)
 
 ### Persistencia y sincronización
 
-- `src/db.js`: IndexedDB local. La versión en curso es la 3.
+- `src/db.js`: IndexedDB local. La versión en curso es la 4.
 - `src/cloud-sync.js`: sincronización automática y consolidación con Supabase.
 - `supabase/schema.sql`: instalación inicial.
 - `supabase/migrations/002_atomic_sync.sql`: revisión optimista y sesión activa única.
@@ -101,7 +101,10 @@ En un proyecto Supabase nuevo, ejecuta en SQL Editor, por orden:
 
 1. `supabase/schema.sql`;
 2. `supabase/migrations/002_atomic_sync.sql`;
-3. `supabase/migrations/003_learning_reports.sql`.
+3. `supabase/migrations/003_learning_reports.sql`;
+4. `supabase/migrations/004_learning_reports_service_role.sql`;
+5. `supabase/migrations/005_authenticated_learning_reports.sql`;
+6. `supabase/migrations/006_learning_report_history.sql`.
 
 En Auth configura la URL pública correcta y las redirect URLs. El error de correo hacia `localhost:3000` se evita configurando el Site URL de producción, actualmente `https://raul-s-c.github.io/japoteacher/`.
 
@@ -252,7 +255,7 @@ Pendiente:
 ## Antes de desplegar
 
 1. Ejecutar las pruebas y comprobaciones de sintaxis indicadas abajo.
-2. Aplicar `003_learning_reports.sql` en Supabase.
+2. Aplicar las migraciones `003_learning_reports.sql` a `006_learning_report_history.sql` en Supabase.
 3. Probar el filtro de dirección, el termómetro y la PWA en escritorio y móvil.
 4. Probar sincronización entre dos dispositivos con una misma cuenta.
 5. Confirmar presupuesto antes de habilitar cron, secreto service-role y llamadas de IA para informes.

@@ -28,3 +28,10 @@ test("monthly report closes the previous natural month", () => {
   assert.equal(localDateKey(period.start), "2026-07-01");
   assert.equal(localDateKey(period.end), "2026-07-31");
 });
+
+test("report UI has one implementation of each core action", () => {
+  const source = fs.readFileSync(new URL("../src/reports.js", import.meta.url), "utf8");
+  for (const name of ["sync", "render", "reportCard", "readyBody", "drawProfiles"]) {
+    assert.equal((source.match(new RegExp(`(?:async )?function ${name}\\(`, "g")) || []).length, 1, name);
+  }
+});

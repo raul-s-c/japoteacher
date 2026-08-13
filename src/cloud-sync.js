@@ -25,6 +25,7 @@
   const platform =
     navigator.userAgentData?.platform || navigator.platform || "Dispositivo";
   const deviceName = `${/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? "Móvil" : "Ordenador"} · ${platform}`;
+  const ACCOUNT_KEY = "japoteacher_last_account_id";
   const initialSync = new Promise((resolve) => {
     resolveInitialSync = resolve;
   });
@@ -56,6 +57,13 @@
         ? "Comprobando estado remoto…"
         : "Inicia sesión para guardar el progreso",
     );
+  }
+  async function prepareAccount(nextUser) {
+    if (!nextUser) return;
+    const previousAccount = localStorage.getItem(ACCOUNT_KEY);
+    if (previousAccount && previousAccount !== nextUser.id)
+      await JapoDB.clearUserData();
+    localStorage.setItem(ACCOUNT_KEY, nextUser.id);
   }
   function lock(owner) {
     ready = false;
@@ -145,11 +153,11 @@
   }
   function merge(local, remote) {
     const out = {
-      schema_version: 2,
+      schema_version: 3,
       exported_at: new Date().toISOString(),
       stores: {},
     };
-    for (const store of JapoDB.stores) {
+    for (const store of JapoDB.syncStores) {
       const l = local.stores[store] || [],
         r = remote.stores[store] || [],
         key = keyFor[store];
@@ -206,7 +214,7 @@
     if (!user || !ready || restoring) return;
     commitPending = false;
     status("Guardando en la nube…");
-    let payload = await JapoDB.backup();
+    let payload = await JapoDB.syncBackup();
     for (let attempt = 0; attempt < 4; attempt++) {
       const { data, error } = await client.rpc("commit_user_state", {
         p_expected_revision: revision,
@@ -229,7 +237,7 @@
       }
       payload = merge(payload, result.out_payload);
       restoring = true;
-      await JapoDB.restore(payload);
+      await JapoDB.restoreSync(payload);
       restoring = false;
     }
     throw new Error("No se pudo consolidar el cambio tras varios reintentos.");
@@ -268,12 +276,12 @@
   }
   async function initializeState() {
     if (!(await claim(false))) return;
-    const local = await JapoDB.backup(),
+    const local = await JapoDB.syncBackup(),
       remote = await remoteState();
     revision = Number(remote?.revision || 0);
     const combined = merge(local, remote?.payload || { stores: {} });
     restoring = true;
-    await JapoDB.restore(combined);
+    await JapoDB.restoreSync(combined);
     restoring = false;
     ready = true;
     if (
@@ -293,9 +301,9 @@
     }
     if (!remote || Number(remote.revision) <= revision) return;
     revision = Number(remote.revision);
-    const combined = merge(await JapoDB.backup(), remote.payload);
+    const combined = merge(await JapoDB.syncBackup(), remote.payload);
     restoring = true;
-    await JapoDB.restore(combined);
+    await JapoDB.restoreSync(combined);
     restoring = false;
     status(`Actualizado · revisión ${revision}`, "ok");
     location.reload();
@@ -341,6 +349,7 @@
     try {
       const { data } = await client.auth.getSession();
       user = data.session?.user || null;
+      await prepareAccount(user);
       render();
       $("#signUpButton").addEventListener("click", signUp);
       $("#signInButton").addEventListener("click", signIn);
@@ -359,7 +368,7 @@
         if (user && user.id !== previous)
           setTimeout(
             () =>
-              initializeState()
+              prepareAccount(user).then(initializeState)
                 .then(() => {
                   if (ready) location.reload();
                 })

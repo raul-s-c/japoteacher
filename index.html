@@ -73,7 +73,7 @@
         <div class="stats-grid" id="summaryStats" data-progress-section="resumen"></div>
         <div class="analytics-grid">
           <div class="wide" id="teacherDiagnosis" data-progress-section="resumen"></div>
-          <section class="panel wide reports-panel" data-progress-section="informes" hidden><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Semana actual</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button><button class="icon-button report-print" id="printReportButton" type="button" title="Imprimir o guardar en PDF" aria-label="Imprimir o guardar en PDF">⎙</button></div></div><div id="learningReports"></div></section>
+        <section class="panel wide reports-panel" data-progress-section="informes" hidden><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Últimos 7 días</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button><button class="icon-button report-print" id="printReportButton" type="button" title="Imprimir o guardar en PDF" aria-label="Imprimir o guardar en PDF">⎙</button></div></div><div id="learningReports"></div></section>
           <section class="panel" data-progress-section="resumen"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
           <section class="panel" data-progress-section="resumen"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
           <section class="panel wide topic-roadmap-panel" data-progress-section="ruta" hidden><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
@@ -105,8 +105,8 @@
   <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=28"></script>
-  <script src="src/cloud-sync.js?v=29"></script>
+  <script src="src/db.js?v=29"></script>
+  <script src="src/cloud-sync.js?v=30"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
@@ -116,19 +116,19 @@
   <script src="src/furigana-generated.js?v=29"></script>
   <script src="src/furigana.js?v=26"></script>
   <script src="src/difficulty.js?v=36"></script>
-  <script src="src/reports.js?v=47"></script>
+  <script src="src/reports.js?v=48"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js?v=19"></script>
   <script src="src/evaluators/openai-evaluator.js?v=20"></script>
   <script src="src/evaluators/evaluator-router.js"></script>
   <script src="src/ai-connection-test.js?v=11"></script>
-  <script src="src/csv-import.js"></script>
+  <script src="src/csv-import.js?v=2"></script>
   <script src="src/csv-export.js"></script>
-  <script src="src/analytics.js?v=35"></script>
+  <script src="src/analytics.js?v=36"></script>
   <script src="src/teacher-diagnosis.js?v=1"></script>
   <script src="src/ui.js?v=38"></script>
   <script src="src/history-ui.js?v=35"></script>
-  <script src="app.js?v=52"></script>
+  <script src="app.js?v=53"></script>
   <script src="src/navigation-fix.js?v=2"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>

@@ -14,6 +14,9 @@
   let dbPromise;
   let syncBatchDepth = 0;
   let syncPending = false;
+  const syncStores = ["exercises", "attempts", "exercise_progress", "tag_progress", "daily_sessions", "settings"];
+  const isEditorialExercise = (row) => row.sync_scope === "editorial" || /^(?:JAES|ESJA)-N[1-5]-(?:\d{4}|(?:EXP|MORE|CURATED|ORGANIC|EDITORIAL)-)/.test(String(row.exercise_id || ""));
+  const changed = () => document.dispatchEvent(new CustomEvent("japoteacher:db-write"));
   function open() {
     if (dbPromise) return dbPromise;
     dbPromise = new Promise((resolve, reject) => {
@@ -62,7 +65,8 @@
   }
   const write = async (store, action) => {
     const result = await tx(store, "readwrite", action);
-    await syncAfterWrite();
+    changed();
+    if (store !== "import_history" && store !== "learning_reports") await syncAfterWrite();
     return result;
   };
   const api = {
@@ -90,6 +94,7 @@
       }
     },
     stores: Object.keys(stores),
+    syncStores,
     async clearProfileData() {
       for (const s of [
         "attempts",
@@ -99,6 +104,10 @@
         "learning_reports",
       ])
         await api.clear(s);
+    },
+    async clearUserData() {
+      for (const store of ["attempts", "exercise_progress", "tag_progress", "daily_sessions", "learning_reports", "settings"])
+        await api.clear(store);
     },
     async backup() {
       const out = {
@@ -120,6 +129,14 @@
       }
       return out;
     },
+    async syncBackup() {
+      const out = { schema_version: 3, exported_at: new Date().toISOString(), stores: {} };
+      for (const store of syncStores) {
+        const rows = await api.all(store);
+        out.stores[store] = store === "exercises" ? rows.filter((row) => !isEditorialExercise(row)) : store === "settings" ? rows.map((row) => { const value = { ...(row.value || {}) }; delete value.apiKey; delete value.proxyToken; return { ...row, value }; }) : rows;
+      }
+      return out;
+    },
     async restore(data) {
       if (!data?.stores) throw new Error("Copia remota no válida");
       for (const store of api.stores) {
@@ -128,6 +145,22 @@
           for (const row of data.stores[store] || []) o.put(row);
         });
       }
+      changed();
+    },
+    async restoreSync(data) {
+      if (!data?.stores) throw new Error("Copia remota no válida");
+      for (const store of syncStores) {
+        const rows = data.stores[store] || [];
+        if (store === "exercises") {
+          await tx(store, "readwrite", (objectStore) => rows.forEach((row) => objectStore.put(row)));
+          continue;
+        }
+        await tx(store, "readwrite", (objectStore) => {
+          objectStore.clear();
+          rows.forEach((row) => objectStore.put(row));
+        });
+      }
+      changed();
     },
   };
   document.documentElement.dataset.dbVersion = String(VERSION);
