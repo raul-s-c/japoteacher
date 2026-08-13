@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=50">
+  <link rel="stylesheet" href="styles.css?v=51">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -50,6 +50,7 @@
           <section class="exercise-panel">
             <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span><span id="practiceDifficulty"></span></div>
             <div class="progress-row"><span id="practiceCount">Ejercicio 1 de 5</span><span id="practicePercent">0%</span></div><div class="progress-track"><span id="practiceBar"></span></div>
+            <div class="practice-reason" id="practiceReason" aria-live="polite"></div>
             <p class="instruction" id="practiceInstruction">Traduce al español</p>
             <div class="source-text" id="sourceText">Selecciona una sesión para comenzar.</div>
             <div class="source-details"><span id="topicLabel"></span><div class="source-tools"><button class="text-button" id="dictionaryToggle" type="button" aria-expanded="false" aria-controls="dictionaryPanel">Diccionario</button><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div></div>
@@ -87,7 +88,7 @@
           <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
           <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
           <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></section>
-          <section class="panel settings-section"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
+          <section class="panel settings-section bank-panel"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><div id="bankDashboard" class="bank-dashboard"></div><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
         </form>
       </section>
     </main>
@@ -109,7 +110,7 @@
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
   <script src="src/topic-progression.js?v=36"></script>
-  <script src="src/session-planner.js?v=36"></script>
+  <script src="src/session-planner.js?v=37"></script>
   <script src="src/furigana-generated.js?v=29"></script>
   <script src="src/furigana.js?v=26"></script>
   <script src="src/difficulty.js?v=36"></script>
@@ -125,9 +126,9 @@
   <script src="src/teacher-diagnosis.js?v=1"></script>
   <script src="src/ui.js?v=38"></script>
   <script src="src/history-ui.js?v=35"></script>
-  <script src="app.js?v=50"></script>
+  <script src="app.js?v=51"></script>
   <script src="src/navigation-fix.js?v=2"></script>
-  <script src="src/bank-status.js?v=26"></script>
+  <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
   <link rel="stylesheet" href="src/practice-history.css?v=1">
   <script src="src/practice-history.js?v=2"></script>
