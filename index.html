@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=49">
+  <link rel="stylesheet" href="styles.css?v=50">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -67,15 +67,16 @@
 
       <section class="view" id="view-progreso" aria-labelledby="progressHeading">
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
-        <div class="stats-grid" id="summaryStats"></div>
+        <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Tags</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
+        <div class="stats-grid" id="summaryStats" data-progress-section="resumen"></div>
         <div class="analytics-grid">
-          <div class="wide" id="teacherDiagnosis"></div>
-          <section class="panel wide reports-panel"><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Semana actual</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button><button class="icon-button report-print" id="printReportButton" type="button" title="Imprimir o guardar en PDF" aria-label="Imprimir o guardar en PDF">⎙</button></div></div><div id="learningReports"></div></section>
-          <section class="panel"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
-          <section class="panel"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
-          <section class="panel wide topic-roadmap-panel"><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
-          <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Foco de estudio</p><h3>Prioridades por categoría</h3></div></div><div id="tagAnalytics"></div></section>
-          <section class="panel wide"><div class="section-heading"><div><p class="section-kicker">Todos los intentos</p><h3>Historial</h3></div><span class="metric-small" id="historyCount"></span></div><div class="history-filters"><label>Buscar<input id="historySearch" type="search" placeholder="Frase o respuesta"></label><label>Dirección<select id="historyDirection"><option value="all">Todas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><label>Resultado<select id="historyResult"><option value="all">Todos</option><option value="acceptable">Aceptables</option><option value="review">A revisar</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Frase</th><th>Dirección</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
+          <div class="wide" id="teacherDiagnosis" data-progress-section="resumen"></div>
+          <section class="panel wide reports-panel" data-progress-section="informes" hidden><div class="section-heading"><div><p class="section-kicker">Seguimiento periódico</p><h3>Informes de aprendizaje</h3></div><div class="report-toolbar"><select id="reportType" aria-label="Periodo del informe"><option value="weekly">Semana actual</option><option value="monthly">Mes cerrado</option></select><button class="secondary" id="generateReportButton" data-report-type="weekly">Generar informe</button><button class="icon-button report-print" id="printReportButton" type="button" title="Imprimir o guardar en PDF" aria-label="Imprimir o guardar en PDF">⎙</button></div></div><div id="learningReports"></div></section>
+          <section class="panel" data-progress-section="resumen"><h3>Por dirección</h3><div id="directionAnalytics"></div></section>
+          <section class="panel" data-progress-section="resumen"><h3>Corrección objetiva vs. comprensión</h3><div class="scatter" id="scoreScatter"></div></section>
+          <section class="panel wide topic-roadmap-panel" data-progress-section="ruta" hidden><div class="section-heading"><div><p class="section-kicker">Progresión adaptativa</p><h3>Ruta temática JLPT</h3></div><span class="metric-small" id="topicRoadmapSummary"></span></div><p class="roadmap-help">Cada temática avanza de N5 a N1 por separado. Tres evidencias con media ≥80 desbloquean la prueba del nivel siguiente; dos resultados inferiores a 65 activan refuerzo.</p><div class="topic-roadmap" id="topicRoadmap"></div><div class="roadmap-legend"><span><i class="mastered"></i>Consolidado</span><span><i class="current"></i>Objetivo actual</span><span><i class="struggle"></i>Refuerzo</span><span><i class="unavailable"></i>Sin ejercicios</span></div></section>
+          <section class="panel wide" data-progress-section="tags" hidden><div class="section-heading"><div><p class="section-kicker">Foco de estudio</p><h3>Prioridades por categoría</h3></div></div><div id="tagAnalytics"></div></section>
+          <section class="panel wide" data-progress-section="historial" hidden><div class="section-heading"><div><p class="section-kicker">Todos los intentos</p><h3>Historial</h3></div><span class="metric-small" id="historyCount"></span></div><div class="history-filters"><label>Buscar<input id="historySearch" type="search" placeholder="Frase o respuesta"></label><label>Dirección<select id="historyDirection"><option value="all">Todas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><label>Resultado<select id="historyResult"><option value="all">Todos</option><option value="acceptable">Aceptables</option><option value="review">A revisar</option></select></label></div><div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Frase</th><th>Dirección</th><th>Nota</th><th>Resultado</th></tr></thead><tbody id="historyTable"></tbody></table></div></section>
         </div>
       </section>
 
@@ -103,7 +104,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
   <script src="src/db.js?v=28"></script>
-  <script src="src/cloud-sync.js?v=27"></script>
+  <script src="src/cloud-sync.js?v=28"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js"></script>
@@ -124,7 +125,7 @@
   <script src="src/teacher-diagnosis.js?v=1"></script>
   <script src="src/ui.js?v=38"></script>
   <script src="src/history-ui.js?v=35"></script>
-  <script src="app.js?v=49"></script>
+  <script src="app.js?v=50"></script>
   <script src="src/navigation-fix.js?v=2"></script>
   <script src="src/bank-status.js?v=26"></script>
   <script src="src/extra-study.js?v=22"></script>

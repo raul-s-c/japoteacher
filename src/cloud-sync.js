@@ -69,6 +69,28 @@
     if (!b) return a;
     return String(a[field] || "") >= String(b[field] || "") ? a : b;
   }
+  function defaultSettings(value = {}) {
+    const levels = JSON.stringify(value.levels || []);
+    return (
+      !value.settingsTouchedAt &&
+      (value.profileName || "Estudiante") === "Estudiante" &&
+      Number(value.dailyJaEs || 5) === 5 &&
+      Number(value.dailyEsJa || 5) === 5 &&
+      Number(value.cooldownDays || 14) === 14 &&
+      Number(value.newRatio || 60) === 60 &&
+      value.furigana !== true &&
+      levels === JSON.stringify(["N5", "N4"])
+    );
+  }
+  function mergeSettings(local, remote) {
+    if (!local) return remote;
+    if (!remote) return local;
+    if (defaultSettings(local.value) && !defaultSettings(remote.value))
+      return remote;
+    if (!defaultSettings(local.value) && defaultSettings(remote.value))
+      return local;
+    return newer(local, remote, "updated_at");
+  }
   function unionRows(local = [], remote = [], key, chooser) {
     const rows = new Map(remote.map((row) => [row[key], row]));
     for (const row of local) {
@@ -147,9 +169,7 @@
           (a.attempts_count || 0) >= (b.attempts_count || 0) ? a : b,
         );
       else if (store === "settings")
-        out.stores[store] = unionRows(l, r, key, (a, b) =>
-          newer(a, b, "updated_at"),
-        );
+        out.stores[store] = unionRows(l, r, key, mergeSettings);
     }
     return out;
   }
