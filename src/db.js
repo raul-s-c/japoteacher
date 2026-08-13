@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "japoteacher";
-  const VERSION = 4;
+  const VERSION = 5;
   const stores = {
     exercises: "exercise_id",
     attempts: "attempt_id",
@@ -10,6 +10,7 @@
     settings: "key",
     import_history: "import_id",
     learning_reports: "report_id",
+    issue_reports: "report_id",
   };
   let dbPromise;
   let syncBatchDepth = 0;
@@ -66,7 +67,7 @@
   const write = async (store, action) => {
     const result = await tx(store, "readwrite", action);
     changed();
-    if (store !== "import_history" && store !== "learning_reports") await syncAfterWrite();
+    if (store !== "import_history" && store !== "learning_reports" && store !== "issue_reports") await syncAfterWrite();
     return result;
   };
   const api = {
@@ -116,6 +117,7 @@
         stores: {},
       };
       for (const s of api.stores) {
+        if (s === "issue_reports") continue;
         const rows = await api.all(s);
         out.stores[s] =
           s === "settings"
@@ -140,6 +142,7 @@
     async restore(data) {
       if (!data?.stores) throw new Error("Copia remota no válida");
       for (const store of api.stores) {
+        if (store === "issue_reports") continue;
         await tx(store, "readwrite", (o) => {
           o.clear();
           for (const row of data.stores[store] || []) o.put(row);

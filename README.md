@@ -74,7 +74,7 @@ GitHub Pages (PWA estática)
 
 ### Persistencia y sincronización
 
-- `src/db.js`: IndexedDB local. La versión en curso es la 4.
+- `src/db.js`: IndexedDB local. La versión en curso es la 5.
 - `src/cloud-sync.js`: sincronización automática y consolidación con Supabase.
 - `supabase/schema.sql`: instalación inicial.
 - `supabase/migrations/002_atomic_sync.sql`: revisión optimista y sesión activa única.
@@ -105,7 +105,8 @@ En un proyecto Supabase nuevo, ejecuta en SQL Editor, por orden:
 3. `supabase/migrations/003_learning_reports.sql`;
 4. `supabase/migrations/004_learning_reports_service_role.sql`;
 5. `supabase/migrations/005_authenticated_learning_reports.sql`;
-6. `supabase/migrations/006_learning_report_history.sql`.
+6. `supabase/migrations/006_learning_report_history.sql`;
+7. `supabase/migrations/007_issue_reports.sql`.
 
 En Auth configura la URL pública correcta y las redirect URLs. El error de correo hacia `localhost:3000` se evita configurando el Site URL de producción, actualmente `https://raul-s-c.github.io/japoteacher/`.
 
@@ -119,6 +120,10 @@ npx.cmd wrangler secret put OPENAI_API_KEY
 npx.cmd wrangler secret put SUPABASE_SERVICE_ROLE_KEY
 npx.cmd wrangler deploy
 ```
+
+### Buzon de incidencias
+
+El boton `!` de la barra superior abre un formulario para describir una incidencia y adjuntar hasta cinco pantallazos de la galeria. El navegador los reduce antes de enviarlos y conserva una cola local cuando no hay red. Al recuperarla, registra una fila privada en `public.user_issue_reports` y guarda los adjuntos en el bucket privado `issue-reports`, segregado por usuario. Este buzon es la fuente de trabajo para revisar y resolver incidencias posteriores; no se exporta en las copias de aprendizaje para no mezclar capturas con el progreso.
 
 No guardes `OPENAI_API_KEY`, service-role keys ni secretos editoriales en Git, JavaScript o documentación. La configuración detallada está en `worker/README.md`.
 

@@ -521,6 +521,16 @@ async function authenticatedUser(request, env) {
   return user?.id || null;
 }
 
+async function saveIssueReport(env, userId, accessToken, report) {
+  const response = await fetch(`${env.SUPABASE_URL}/rest/v1/user_issue_reports?on_conflict=report_id`, {
+    method: "POST",
+    headers: { Authorization: accessToken, apikey: env.SUPABASE_PUBLISHABLE_KEY, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=representation" },
+    body: JSON.stringify({ ...report, user_id: userId }),
+  });
+  if (!response.ok) throw new Error(`Supabase issues: ${await response.text()}`);
+  return (await response.json())[0];
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url),
@@ -583,6 +593,25 @@ export default {
         }
       } catch (error) { return json({ error: error.message || "No se pudo generar el informe." }, 500, origin, env); }
       return json({ error: "Not found" }, 404, origin, env);
+    }
+    if (url.pathname === "/issue-reports" && request.method === "POST") {
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      const userId = await authenticatedUser(request, env);
+      if (!userId) return json({ error: "Inicia sesión en el dispositivo activo para enviar incidencias." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de incidencia inválida." }, 400, origin, env); }
+      const reportId = String(body?.report_id || ""), comment = String(body?.comment || "").trim(), page = String(body?.page || "hoy").trim(), appVersion = String(body?.app_version || "").trim(), attachments = Array.isArray(body?.attachments) ? body.attachments : [];
+      if (!/^[0-9a-f-]{36}$/i.test(reportId) || !comment || comment.length > 2000 || page.length > 40 || appVersion.length > 40 || attachments.length > 5) return json({ error: "Los datos de la incidencia no son válidos." }, 400, origin, env);
+      const safeAttachments = [];
+      for (const item of attachments) {
+        const path = String(item?.path || ""), name = String(item?.name || ""), contentType = String(item?.content_type || "");
+        if (!path.startsWith(`${userId}/${reportId}/`) || path.length > 500 || name.length > 160 || !["image/jpeg", "image/png", "image/webp"].includes(contentType)) return json({ error: "Uno de los pantallazos no es válido." }, 400, origin, env);
+        safeAttachments.push({ path, name, content_type: contentType });
+      }
+      try {
+        const report = await saveIssueReport(env, userId, request.headers.get("Authorization") || "", { report_id: reportId, comment, page, app_version: appVersion || null, attachments: safeAttachments });
+        return json({ report_id: report.report_id, created_at: report.created_at }, 201, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo guardar la incidencia." }, 500, origin, env); }
     }
     if (url.pathname !== "/evaluate" || request.method !== "POST")
       return json({ error: "Not found" }, 404, origin, env);

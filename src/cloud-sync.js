@@ -405,6 +405,8 @@
     commit,
     flush,
     getAccessToken,
+    getClient: () => client,
+    getUserId: () => user?.id || "",
     getDeviceId: () => deviceId,
     refresh,
     initialSync,
