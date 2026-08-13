@@ -6,6 +6,7 @@ import json
 import os
 import pathlib
 import re
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -13,6 +14,11 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POLICY = json.loads((ROOT / "data" / "jlpt-content-policy.json").read_text(encoding="utf-8"))
 ENDPOINT = "https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate"
+
+# Windows PowerShell can default to cp1252, which cannot print Japanese
+# rejection diagnostics and should never abort a resumable editorial run.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
 
 def record_usage(payload, response):
     path = ROOT / "data" / "editorial" / "usage.jsonl"

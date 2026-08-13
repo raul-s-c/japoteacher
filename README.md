@@ -28,10 +28,11 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- N5: 330 pares semánticos publicados, 660 ejercicios direccionales.
-- N4: 530 pares semánticos publicados, 1.060 ejercicios direccionales. La tanda del 12 de agosto añadió 50 pares N4 aprobados tras generación, revisión, equivalencia y deduplicación.
-- Total publicado en `data/exercises.full.csv`: 2.220 ejercicios, de los que 1.720 están activos y 500 se conservan archivados.
-- La generación editorial tiene un presupuesto diario registrable. La tanda del 12 de agosto consumió 959.991 tokens; quedan 70 plazas N4 dentro del objetivo editorial actual de 600 pares.
+- N5: 337 pares semánticos publicados, 674 ejercicios direccionales.
+- N4: 547 pares semánticos publicados, 1.094 ejercicios direccionales.
+- Total publicado en `data/exercises.full.csv`: 2.268 ejercicios, de los que 1.768 están activos y 500 se conservan archivados.
+- La tanda editorial del 13 de agosto añadió 7 pares N5 y 17 N4 en `Dinero y proyectos` (ahorro, banco, pagos, precio, inversión y negocio). Pasó generación, revisión adversarial, equivalencia bilingüe, deduplicación y furigana; consumió 507.105 tokens.
+- La siguiente ampliación debe seguir reforzando `Dinero y proyectos`: quedan 10 ejercicios N5 y 26 N4 por dirección, todavía por debajo de las demás familias.
 - Fuentes editoriales aprobadas: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
 

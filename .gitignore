@@ -8,5 +8,7 @@ playwright-report/
 test-results/
 worker/.dev.vars
 worker/.wrangler/
+__pycache__/
+.codex-remote-attachments/
 data/editorial/usage.jsonl
 data/editorial/difficulty-review-checkpoint.jsonl
