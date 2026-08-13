@@ -55,11 +55,11 @@
     return {...emptyRating(direction,'General'),level,percent,points:Math.round(active.reduce((sum,row)=>sum+row.points,0)/active.length),attempts:active.reduce((sum,row)=>sum+row.attempts,0)};
   }
   function snapshot(exercises,attempts){return compute(exercises,attempts)}
-  function badgeHtml(rating){return `<span class="rank-badge"><b>${rating.level}</b><em>${rating.percent}%</em></span>`}
+  function badgeHtml(rating){return `<span class="rank-badge" title="${rating.percent} puntos EXP dentro de ${rating.level}"><b>${rating.level}</b><em>${rating.percent} EXP</em></span>`}
   function miniHtml(rating,label='EXP contextual'){return `<div class="rank-mini"><div><span>${esc(label)}</span>${badgeHtml(rating)}</div><div class="rank-track"><span style="width:${rating.percent}%"></span></div></div>`}
   function deltaHtml(before,after,exercise,attempt){
     const family=familyForExercise(exercise),oldRating=get(before,attempt.direction,family),newRating=get(after,attempt.direction,family),delta=newRating.lastDelta,challenge=exerciseChallenge(exercise),verb=delta>=0?'ganas':'pierdes',sameLevel=oldRating.level===newRating.level;
-    return `<section class="xp-feedback" data-xp-from="${sameLevel?oldRating.percent:0}" data-xp-to="${newRating.percent}"><div class="xp-head"><p class="section-kicker">EXP ranked</p><strong>${esc(newRating.level)} ${newRating.percent}%</strong></div><div class="rank-track xp-animated"><span style="width:${sameLevel?oldRating.percent:0}%"></span></div><p>${delta>=0?'+':''}${delta} EXP ${esc(newRating.lastEarnedLevel)}: ${verb} ${Math.abs(delta)} por una frase ${esc(exercise.jlpt_level)} ${Math.round(Number(exercise.difficulty)||0)}% en ${esc(family)}. Reto contextual ${challenge}/500.</p></section>`;
+    return `<section class="xp-feedback" data-xp-from="${sameLevel?oldRating.percent:0}" data-xp-to="${newRating.percent}"><div class="xp-head"><p class="section-kicker">EXP ranked</p><strong>${esc(newRating.level)} ${newRating.percent} EXP</strong></div><div class="rank-track xp-animated"><span style="width:${sameLevel?oldRating.percent:0}%"></span></div><p>${delta>=0?'+':''}${delta} EXP ${esc(newRating.lastEarnedLevel)}: ${verb} ${Math.abs(delta)} por una frase ${esc(exercise.jlpt_level)} ${Math.round(Number(exercise.difficulty)||0)}% en ${esc(family)}. Reto contextual ${challenge}/500.</p></section>`;
   }
   function animate(root=document){root.querySelectorAll('.xp-feedback[data-xp-to]').forEach(panel=>{const bar=panel.querySelector('.xp-animated span');if(!bar)return;const to=Number(panel.dataset.xpTo)||0;requestAnimationFrame(()=>{bar.style.width=`${to}%`})})}
   function panelHtml(snapshot,direction='all'){

@@ -78,3 +78,9 @@ test("a family cannot display a JLPT level that has no exercises", () => {
   const attempts = exercises.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true }));
   assert.equal(xp.get(xp.snapshot(exercises, attempts), "es_ja", "Ocio y vida diaria").level, "N5");
 });
+
+test("rank badges label points as EXP instead of an accuracy percentage", () => {
+  const xp = ranked();
+  assert.match(xp.badgeHtml({ level: "N4", percent: 95 }), /95 EXP/);
+  assert.doesNotMatch(xp.badgeHtml({ level: "N4", percent: 95 }), /95%/);
+});
