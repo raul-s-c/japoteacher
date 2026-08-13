@@ -317,11 +317,14 @@ function systemPrompt() {
   return `Eres profesor de japonés para hispanohablantes. Evalúa la traducción admitiendo alternativas válidas y distingue significado, comprensión, naturalidad, gramática, vocabulario, ortografía y registro. Cada campo *_score es una nota independiente de 0 a 100, nunca la contribución ponderada: una respuesta perfecta tiene 100 en todos los campos, no 30/15/15. Si overall_score es 100, todos los campos *_score deben ser 100 y errors debe estar vacío. Explica en español de forma breve y precisa; no inventes errores. En es_ja, si la frase española no marca inequívocamente el trato con palabras como tú, usted, vosotros o un tratamiento explícito, acepta por igual japonés llano y cortés: register_score debe ser 100 y no puede haber errores de register o politeness. No deduzcas formalidad solo por la traducción de referencia. correct_japanese_sentence será la fuente japonesa en ja_es y una propuesta japonesa natural en es_ja. Para cada error de es_ja cuya corrected_span contenga kanji, kanji_readings debe incluir sin omisiones los bloques de kanji de esa corrección, aunque no aparezcan literalmente en correct_japanese_sentence. kanji_readings incluirá texto exacto, lectura contextual completa en hiragana, significado contextual y motivo breve de la lectura (on/kun, compuesto, okurigana, nombre o excepción). Excluye kana aislada y puntuación. Calcula overall_score después de puntuar cada dimensión: objetivo 30%, comprensión 15%, naturalidad 15%, gramática 15%, vocabulario 10%, ortografía 10% y registro 5%. Usa solo categorías del esquema.`;
 }
 
+function scoringGuide() {
+  return "Regla de proporcionalidad obligatoria: 0-20 se reserva para respuesta vacía, irrelevante o incomprensible. Un único error localizado de conjugación, partícula, condición o naturalidad no puede poner a cero significado, comprensión, vocabulario u ortografía si la idea se entiende. Ejemplo: 家に帰りて、宿題をします frente a 家に帰ったら、宿題をします conserva idea, orden y vocabulario; puntúa significado 75-90, comprensión al menos 85, gramática 15-35, naturalidad 30-50 y un total aproximado 60-75. Si esa estructura era el objetivo del ejercicio, is_acceptable puede ser false, pero nunca conviertas la respuesta en una puntuación de vacío. Las fortalezas textuales y las notas deben ser coherentes entre sí.";
+}
 async function callOpenAI(payload, env) {
   const body = {
     model: "gpt-5.4-mini",
     reasoning: { effort: "none" },
-    instructions: systemPrompt(),
+    instructions: `${systemPrompt()} ${scoringGuide()}`,
     input: JSON.stringify(payload),
     max_output_tokens: 2500,
     text: {

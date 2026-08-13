@@ -46,4 +46,20 @@ function evaluation(overrides = {}) {
   assert.equal(spanishSourceMarksRegister("Ven mañana."), false);
 }
 
+{
+  const result = normalizeEvaluation(evaluation({
+    objective_score: 0, comprehensibility_score: 0, naturalness_score: 0,
+    grammar_score: 0, vocabulary_score: 0, orthography_score: 0,
+    register_score: 100, overall_score: 5, is_acceptable: false,
+    meaning_changed: true, strengths: ["La idea y el vocabulario son correctos."],
+    errors: [{ category: "condition" }],
+  }), { exercise: { direction: "es_ja", source_text: "Al llegar a casa, haré la tarea." }, attempt: { user_answer: "家に帰りて、宿題をします。" } });
+  assert.equal(result.objective_score, 75);
+  assert.equal(result.comprehensibility_score, 85);
+  assert.equal(result.grammar_score, 20);
+  assert.equal(result.overall_score, 65);
+  assert.equal(result.is_acceptable, false);
+  assert.equal(result.meaning_changed, false);
+}
+
 console.log("evaluation-policy: ok");
