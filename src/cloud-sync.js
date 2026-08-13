@@ -16,7 +16,9 @@
     ready = false,
     restoring = false,
     resolveInitialSync;
-  let commitQueue = Promise.resolve();
+  let commitQueue = Promise.resolve(),
+    commitTimer = null,
+    commitPending = false;
   const deviceId =
     localStorage.getItem("japoteacher_device_id") || crypto.randomUUID();
   localStorage.setItem("japoteacher_device_id", deviceId);
@@ -202,6 +204,7 @@
   }
   async function atomicCommit() {
     if (!user || !ready || restoring) return;
+    commitPending = false;
     status("Guardando en la nube…");
     let payload = await JapoDB.backup();
     for (let attempt = 0; attempt < 4; attempt++) {
@@ -231,15 +234,37 @@
     }
     throw new Error("No se pudo consolidar el cambio tras varios reintentos.");
   }
-  function commit() {
+  function runCommit() {
     if (!user || !ready || restoring) return Promise.resolve();
     commitQueue = commitQueue
       .then(atomicCommit, atomicCommit)
       .catch((error) => {
+        commitPending = true;
         status(error.message || "No se pudo guardar", "error");
-        throw error;
+        console.warn(error);
       });
     return commitQueue;
+  }
+  function commit() {
+    if (!user || !ready || restoring) return Promise.resolve();
+    commitPending = true;
+    status("Cambios guardados en este dispositivo; sincronizando…");
+    if (commitTimer) clearTimeout(commitTimer);
+    commitTimer = setTimeout(() => {
+      commitTimer = null;
+      runCommit();
+    }, 1200);
+    return Promise.resolve();
+  }
+  async function flush() {
+    if (commitTimer) {
+      clearTimeout(commitTimer);
+      commitTimer = null;
+      await runCommit();
+    } else if (commitPending) {
+      await runCommit();
+    }
+    await commitQueue;
   }
   async function initializeState() {
     if (!(await claim(false))) return;
@@ -255,12 +280,12 @@
       JSON.stringify(combined.stores) !==
       JSON.stringify(remote?.payload?.stores || {})
     )
-      await commit();
+      await runCommit();
     else status(`Todo guardado · revisión ${revision}`, "ok");
   }
   async function refresh() {
     if (!user || !ready || restoring) return;
-    await commitQueue;
+    await flush();
     const remote = await remoteState();
     if (remote?.active_device_id && remote.active_device_id !== deviceId) {
       lock(remote.active_device_name);
@@ -301,6 +326,7 @@
     if (error) status(error.message, "error");
   }
   async function signOut() {
+    await flush();
     ready = false;
     if (user)
       await client.rpc("release_user_session", { p_device_id: deviceId });
@@ -344,10 +370,14 @@
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible")
           refresh().catch((e) => status(e.message, "error"));
+        else if (commitPending) flush().catch(() => {});
       });
       window.addEventListener("online", () =>
         refresh().catch((e) => status(e.message, "error")),
       );
+      window.addEventListener("pagehide", () => {
+        if (commitPending) flush().catch(() => {});
+      });
       setInterval(() => {
         if (user && ready)
           client
@@ -364,6 +394,7 @@
   }
   window.CloudSync = {
     commit,
+    flush,
     getAccessToken,
     getDeviceId: () => deviceId,
     refresh,
