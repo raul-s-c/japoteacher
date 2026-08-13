@@ -107,6 +107,7 @@ En un proyecto Supabase nuevo, ejecuta en SQL Editor, por orden:
 5. `supabase/migrations/005_authenticated_learning_reports.sql`;
 6. `supabase/migrations/006_learning_report_history.sql`;
 7. `supabase/migrations/007_issue_reports.sql`.
+8. `supabase/migrations/008_issue_reports_service_role.sql`.
 
 En Auth configura la URL pública correcta y las redirect URLs. El error de correo hacia `localhost:3000` se evita configurando el Site URL de producción, actualmente `https://raul-s-c.github.io/japoteacher/`.
 
