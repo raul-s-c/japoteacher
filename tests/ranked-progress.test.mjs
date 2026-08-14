@@ -87,4 +87,5 @@ test("the next JLPT appears only at 80 EXP and adequate evidence in every family
 test("rank badges show the concrete EXP goal", () => {
   const xp = ranked();
   assert.match(xp.badgeHtml({ level: "N4", points: 95, goal: 200 }), /95\/200 EXP/);
+  assert.match(xp.badgeHtml({ level: "N5", points: 4.749, goal: 100 }), /4,75\/100 EXP/);
 });
