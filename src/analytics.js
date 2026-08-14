@@ -16,7 +16,7 @@
     const [attempts,progress,exercises,sessions,tagProgress]=await Promise.all(['attempts','exercise_progress','exercises','daily_sessions','tag_progress'].map(JapoDB.all));
     const eMap=new Map(exercises.map(e=>[e.exercise_id,e]));
     const dirs={ja_es:{count:0,total:0,acceptable:0},es_ja:{count:0,total:0,acceptable:0}};
-    const validAttempts=attempts.filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score)));
+    const validAttempts=attempts.filter(attempt=>attempt.evaluation_status!=='invalid'&&Number.isFinite(Number(attempt.overall_score)));
     for(const attempt of validAttempts){const direction=dirs[attempt.direction];if(!direction)continue;direction.count++;direction.total+=attempt.overall_score||0;if(attempt.is_acceptable)direction.acceptable++}
     Object.values(dirs).forEach(direction=>direction.average=direction.count?Math.round(direction.total/direction.count):0);
     const tags=tagProgress.map(tag=>({direction:tag.direction,type:tag.tag_type,value:tag.tag_value,count:tag.attempts_count||0,average:tagAverage(tag)})).map(tag=>({...tag,priority:tagPriority(tag)})).sort((a,b)=>b.priority-a.priority||b.count-a.count||a.value.localeCompare(b.value,'es'));

@@ -72,6 +72,15 @@ test("direction tracks are independent and family evidence stays separate", () =
   assert.equal(xp.get(snapshot, "ja_es", "Ocio y vida diaria").attempts, 0);
 });
 
+test("scored legacy attempts contribute to EXP and family evidence", () => {
+  const xp = ranked();
+  const exercises = [{ exercise_id: "legacy-money", direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["dinero"] }];
+  const attempts = [{ exercise_id: "legacy-money", direction: "ja_es", attempted_at: "2026-08-14T12:00:00Z", evaluation_status: "legacy_import", overall_score: 94, is_acceptable: true }];
+  const snapshot = xp.snapshot(exercises, attempts);
+  assert.equal(xp.get(snapshot, "ja_es", "Dinero y proyectos").attempts, 1);
+  assert.ok(xp.primaryForDirection(snapshot, "ja_es").points > 0);
+});
+
 test("the next JLPT appears only at 80 EXP and adequate evidence in every family", () => {
   const xp = ranked();
   const topics = ["familia", "trabajo", "dinero", "ocio", "consulta"];

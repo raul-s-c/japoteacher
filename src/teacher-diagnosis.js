@@ -3,7 +3,7 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const directionName=direction=>direction==='ja_es'?'Japonés a español':'Español a japonés';
   const average=values=>values.length?Math.round(values.reduce((sum,value)=>sum+value,0)/values.length):null;
-  const eligible=attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score));
+  const eligible=attempt=>attempt.evaluation_status!=='invalid'&&Number.isFinite(Number(attempt.overall_score));
   function evidenceByLevel(attempts,exercises){
     const exerciseById=new Map(exercises.map(exercise=>[exercise.exercise_id,exercise]));
     return levels.map(level=>{

@@ -3,7 +3,7 @@
   const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
   const seededSort=(items,seed)=>[...items].sort((a,b)=>hash(seed+a.exercise_id)-hash(seed+b.exercise_id));
   const similarity=(a,b)=>{const at=new Set([...(a.grammar_tags||[]),...(a.vocabulary_tags||[])]),bt=new Set([...(b.grammar_tags||[]),...(b.vocabulary_tags||[])]);let n=0;at.forEach(x=>{if(bt.has(x))n++});return n/Math.max(1,Math.min(at.size,bt.size))};
-  const validAttempts=attempts=>attempts.filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score)));
+  const validAttempts=attempts=>attempts.filter(attempt=>attempt.evaluation_status!=='invalid'&&Number.isFinite(Number(attempt.overall_score)));
 
   // The 0-100 difficulty scale advances independently in every JLPT and direction.
   function difficultyRoadmap(exercises,attempts,direction){
