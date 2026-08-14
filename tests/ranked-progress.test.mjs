@@ -81,6 +81,15 @@ test("scored legacy attempts contribute to EXP and family evidence", () => {
   assert.ok(xp.primaryForDirection(snapshot, "ja_es").points > 0);
 });
 
+test("a cross-family sentence supplies evidence to every tagged family", () => {
+  const xp = ranked();
+  const exercises = [{ exercise_id: "travel-money", direction: "ja_es", jlpt_level: "N5", difficulty: 78, topic_tags: ["viajes", "dinero"] }];
+  const attempts = [{ exercise_id: "travel-money", direction: "ja_es", attempted_at: "2026-08-12T11:28:18.877Z", evaluation_status: "valid", overall_score: 100, is_acceptable: true }];
+  const snapshot = xp.snapshot(exercises, attempts);
+  assert.equal(xp.get(snapshot, "ja_es", "Ocio y vida diaria").attempts, 1);
+  assert.equal(xp.get(snapshot, "ja_es", "Dinero y proyectos").attempts, 1);
+});
+
 test("the next JLPT appears only at 80 EXP and adequate evidence in every family", () => {
   const xp = ranked();
   const topics = ["familia", "trabajo", "dinero", "ocio", "consulta"];
