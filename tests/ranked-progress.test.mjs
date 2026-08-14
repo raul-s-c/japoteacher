@@ -39,6 +39,17 @@ test("failing an above-level sentence is penalized softly", () => {
   assert.ok(Math.abs(hardMiss) < Math.abs(easyMiss));
 });
 
+test("fifty is the minimum passing score for EXP", () => {
+  const xp = ranked();
+  const exercise = { direction: "ja_es", jlpt_level: "N5", difficulty: 50 };
+  const atFifty = xp.deltaFor(0, exercise, { overall_score: 50 }, { currentLevel: "N5" });
+  const belowFifty = xp.deltaFor(0, exercise, { overall_score: 49 }, { currentLevel: "N5" });
+  const solid = xp.deltaFor(0, exercise, { overall_score: 70 }, { currentLevel: "N5" });
+  assert.ok(atFifty > 0);
+  assert.ok(atFifty < solid / 5);
+  assert.ok(belowFifty < 0);
+});
+
 test("direction tracks are independent and family evidence stays separate", () => {
   const xp = ranked();
   const exercises = [{ exercise_id: "a", direction: "ja_es", jlpt_level: "N5", difficulty: 70, topic_tags: ["trabajo"] }, { exercise_id: "b", direction: "es_ja", jlpt_level: "N5", difficulty: 70, topic_tags: ["ocio"] }];

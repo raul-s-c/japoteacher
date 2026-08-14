@@ -25,8 +25,10 @@
   function deltaFor(_currentPoints,exercise,attempt,context={}){
     const score=Number(attempt?.overall_score);if(!Number.isFinite(score))return 0;
     const currentLevel=context.currentLevel||exercise?.jlpt_level||'N5',exerciseLevel=exercise?.jlpt_level||'N5',relative=levelIndex(exerciseLevel)-levelIndex(currentLevel),previousScore=Number(context.previousScore),timesSeen=Number(context.timesSeen)||0,base=baseExperience(exercise),repeat=timesSeen===0?1:Math.max(.12,(previousScore>=85?.22:previousScore>=70?.5:.9)*Math.pow(.72,Math.max(0,timesSeen-1)));
-    if(score>=70){const quality=.68+(score-70)/30*.82,levelFactor=relative>0?1.22:relative<0?.18:1;return roundXp(base*quality*levelFactor*repeat)}
-    const miss=(70-score)/70,penaltyFactor=relative>0?.12:relative<0?1.05:.55;return -roundXp(base*miss*penaltyFactor*Math.max(.35,repeat));
+    // Fifty is the pedagogical minimum: it earns only a token amount of EXP.
+    // Below it, the answer has not reached the minimum and reduces the level bar.
+    if(score>=50){const quality=.08+(score-50)/50*1.42,levelFactor=relative>0?1.22:relative<0?.18:1;return roundXp(base*quality*levelFactor*repeat)}
+    const miss=(50-score)/50,penaltyFactor=relative>0?.12:relative<0?1.05:.55;return -roundXp(base*miss*penaltyFactor*Math.max(.35,repeat));
   }
   function compute(exercises,attempts){
     const byId=new Map((exercises||[]).map(exercise=>[exercise.exercise_id,exercise])),ratings=new Map(),history=new Map(),valid=(attempts||[]).filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score))).sort((a,b)=>String(a.attempted_at).localeCompare(String(b.attempted_at)));
