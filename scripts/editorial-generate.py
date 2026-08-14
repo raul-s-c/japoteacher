@@ -215,6 +215,12 @@ def review_until_approved(items, level, key, slots=None, operation="review"):
         result = request_editorial({"operation": operation, "level": level, "round": review_round + 1, "items": current, "mandatory_local_fixes": local_rejection}, key)
         reviewed = sorted(result["items"], key=lambda item: item["index"])
         current = [normalize_spacing(item["corrected"]) for item in reviewed]
+        if slots:
+            # The slot taxonomy is selected by the bank planner. Models sometimes
+            # rename an equivalent subtopic (for example, ahorro/inversiones),
+            # which must not break family coverage or retry the same pair forever.
+            by_slot = {slot["slot"]: slot for slot in slots}
+            current = [{**item, "topic_primary": by_slot.get(item.get("slot"), {}).get("topic_primary", item.get("topic_primary", ""))} for item in current]
         local_errors = []
         if slots:
             by_slot = {item.get("slot"): item for item in current}
@@ -252,12 +258,14 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
     config = POLICY["levels"][level]
     existing = existing_pairs(level)
     output_path = ROOT / "data" / "editorial" / f"{level.lower()}-approved.jsonl"
+    rejected_path = ROOT / "data" / "editorial" / f"{level.lower()}-rejected-slots.jsonl"
     approved = read_jsonl(output_path)
     remaining = append if append is not None else max(0, config["target_pairs"] - len(existing) - len(approved))
     if limit is not None:
         remaining = min(remaining, limit)
     known = {normalize_japanese(row["source_text"]) for row in active_pairs(level)} | {normalize_japanese(item["japanese"]) for item in approved}
-    used_slots = {item["slot"] for item in approved}
+    rejected_slots = {item["slot"] for item in read_jsonl(rejected_path)}
+    used_slots = {item["slot"] for item in approved} | rejected_slots
     generated = 0
     while generated < remaining:
         if usage_baseline is not None and token_budget is not None:
@@ -272,6 +280,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
         last_rejection = ""
         # Difficult coverage slots may need constrained rewrites to meet both
         # grammar and uniqueness gates without accepting a weak fallback.
+        final = None
         for generation_attempt in range(1, 9):
             try:
                 result = request_editorial({"operation": "generate", "level": level, "slots": slots, "avoid_japanese": list(known)[-200:], "previous_rejection": last_rejection}, key)
@@ -293,8 +302,13 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
             except RuntimeError as error:
                 last_rejection = str(error)
                 if generation_attempt == 8:
-                    raise RuntimeError(f"El lote se rechazó ocho veces. Último motivo: {last_rejection}") from error
+                    append_jsonl(rejected_path, {"level": level, "slot": slots[0]["slot"], "coverage_slot": slots[0], "reason": last_rejection})
+                    used_slots.add(slots[0]["slot"])
+                    print(json.dumps({"level": level, "skipped_slot": slots[0]["slot"], "reason": last_rejection}, ensure_ascii=False), flush=True)
+                    break
                 print(json.dumps({"level": level, "group_offset": offset, "rejected_attempt": generation_attempt, "reason": last_rejection}, ensure_ascii=False), flush=True)
+        if final is None:
+            continue
         for slot, item, signature in zip(slots, final, signatures):
             append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 4, **item})
             known.add(signature)

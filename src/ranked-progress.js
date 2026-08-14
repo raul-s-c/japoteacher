@@ -1,70 +1,46 @@
 (function(){
   const levels=['N5','N4','N3','N2','N1'];
-  const families=[
-    'Familia y amigos',
-    'Trabajo y carrera',
-    'Dinero y proyectos',
-    'Ocio y vida diaria',
-    'Conocimiento y consultas',
-  ];
+  const families=['Familia y amigos','Trabajo y carrera','Dinero y proyectos','Ocio y vida diaria','Conocimiento y consultas'];
+  const goals={N5:100,N4:200,N3:400,N2:800,N1:1600};
+  // At the requested cadence, goal/base yields roughly 1, 1.5, 2, 4 and 8 years.
+  // The score, difficulty and repetition multipliers apply equally to every level.
+  const levelBase={N5:.022,N4:.0293,N3:.044,N2:.044,N1:.044};
+  const directionPace={ja_es:1,es_ja:20/7};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
-  const levelBase=level=>Math.max(0,levels.indexOf(level))*100;
-  const exerciseChallenge=exercise=>levelBase(exercise?.jlpt_level||'N5')+clamp(Number(exercise?.difficulty)||0,0,100);
-  function familyForExercise(exercise){
-    const topics=exercise?.topic_tags||[];
-    for(const topic of topics){const family=window.TopicProgression?.familyFor?.(topic);if(family)return family}
-    return 'Conocimiento y consultas';
-  }
-  const emptyLevelPoints=()=>Object.fromEntries(levels.map(level=>[level,0]));
-  const emptyEvidence=()=>Object.fromEntries(levels.map(level=>[level,{attempts:0,acceptable:0,totalScore:0,exerciseIds:new Set()}]));
-  function emptyRating(direction,family){return {direction,family,points:0,pointsByLevel:emptyLevelPoints(),evidence:emptyEvidence(),availableLevels:new Set(),level:'N5',percent:0,attempts:0,lastDelta:0,lastChallenge:0,lastEarnedLevel:'N5'}}
-  function mastered(evidence){return evidence.attempts>=12&&evidence.exerciseIds.size>=8&&evidence.totalScore/evidence.attempts>=80&&evidence.acceptable/evidence.attempts>=.75}
-  function rankFromEvidence(rating){let index=0;while(index<levels.length-1&&mastered(rating.evidence[levels[index]])&&rating.availableLevels.has(levels[index+1]))index++;const level=levels[index],points=clamp(Math.round(rating.pointsByLevel[level]||0),0,99);return {points:levels.reduce((sum,current)=>sum+(rating.pointsByLevel[current]||0),0),level,percent:points,next:rating.availableLevels.has(levels[index+1])?levels[index+1]:null}}
-  function deltaFor(current,exercise,attempt){
-    const score=Number(attempt?.overall_score);
-    if(!Number.isFinite(score))return 0;
-    const challenge=exerciseChallenge(exercise),gap=challenge-current;
-    if(score>=70){
-      const quality=(score-70)/30,challengeFactor=clamp(.72+gap/130,.55,1.85);
-      return Math.round(26*quality*challengeFactor);
-    }
-    const miss=(70-score)/70,penaltyFactor=clamp(.95-gap/150,.15,1.45);
-    return -Math.round(24*miss*penaltyFactor);
+  const levelIndex=level=>Math.max(0,levels.indexOf(level));
+  const goalFor=level=>goals[level]||goals.N5;
+  const roundXp=value=>Math.round((Number(value)||0)*1000)/1000;
+  function familyForExercise(exercise){for(const topic of exercise?.topic_tags||[]){const family=window.TopicProgression?.familyFor?.(topic);if(family)return family}return 'Conocimiento y consultas'}
+  const emptyPoints=()=>Object.fromEntries(levels.map(level=>[level,0]));
+  const emptyEvidence=()=>Object.fromEntries(levels.map(level=>[level,{attempts:0,totalScore:0,acceptable:0,exerciseIds:new Set()}]));
+  function emptyRating(direction){return {direction,pointsByLevel:emptyPoints(),evidenceByFamily:Object.fromEntries(families.map(family=>[family,emptyEvidence()])),availableLevels:new Set(),attempts:0,level:'N5',points:0,goal:goalFor('N5'),percent:0,lastDelta:0,lastEarnedLevel:'N5',lastBreakdown:null}}
+  function evidenceScore(evidence){if(!evidence?.attempts)return 0;return Math.round(evidence.totalScore/evidence.attempts)}
+  function rankFrom(rating){let index=0;while(index<levels.length-1&&rating.availableLevels.has(levels[index+1])&&(rating.pointsByLevel[levels[index]]||0)>=goalFor(levels[index])&&familyReady(rating,levels[index]))index++;const level=levels[index],points=roundXp(Math.min(goalFor(level),rating.pointsByLevel[level]||0));return {level,points,goal:goalFor(level),percent:Math.round(points/goalFor(level)*100),next:rating.availableLevels.has(levels[index+1])?levels[index+1]:null}}
+  function familySnapshot(rating,family,level=rating.level){const evidence=rating.evidenceByFamily[family]?.[level]||{attempts:0,totalScore:0,acceptable:0,exerciseIds:new Set()},score=evidenceScore(evidence);return {family,level,score,attempts:evidence.attempts,acceptable:evidence.acceptable,distinct:evidence.exerciseIds.size,points:score,goal:100}}
+  function familyReady(rating,level){return families.every(family=>{const evidence=rating.evidenceByFamily[family]?.[level];return evidence?.attempts>=4&&evidenceScore(evidence)>=50})}
+  function previewUnlocked(rating){const rank=rankFrom(rating);return Boolean(rank.next)&&rank.points>=rank.goal*.8&&familyReady(rating,rank.level)}
+  function accessForDirection(snapshot,direction){const rating=snapshot.ratings.get(direction)||emptyRating(direction),rank=rankFrom(rating),index=levelIndex(rank.level);return {level:rank.level,preview:previewUnlocked(rating),allowedLevels:levels.filter((level,position)=>position<=index||(position===index+1&&previewUnlocked(rating)&&rating.availableLevels.has(level))),requirements:{exp:rank.points,goal:rank.goal,familiesReady:familyReady(rating,rank.level)}}}
+  function baseExperience(exercise){const level=levels.includes(exercise?.jlpt_level)?exercise.jlpt_level:'N5',difficulty=clamp(Number(exercise?.difficulty)||0,0,100);return levelBase[level]*(.72+difficulty/100*.56)*(directionPace[exercise?.direction]||1)}
+  function deltaFor(_currentPoints,exercise,attempt,context={}){
+    const score=Number(attempt?.overall_score);if(!Number.isFinite(score))return 0;
+    const currentLevel=context.currentLevel||exercise?.jlpt_level||'N5',exerciseLevel=exercise?.jlpt_level||'N5',relative=levelIndex(exerciseLevel)-levelIndex(currentLevel),previousScore=Number(context.previousScore),timesSeen=Number(context.timesSeen)||0,base=baseExperience(exercise),repeat=timesSeen===0?1:Math.max(.12,(previousScore>=85?.22:previousScore>=70?.5:.9)*Math.pow(.72,Math.max(0,timesSeen-1)));
+    if(score>=70){const quality=.68+(score-70)/30*.82,levelFactor=relative>0?1.22:relative<0?.18:1;return roundXp(base*quality*levelFactor*repeat)}
+    const miss=(70-score)/70,penaltyFactor=relative>0?.12:relative<0?1.05:.55;return -roundXp(base*miss*penaltyFactor*Math.max(.35,repeat));
   }
   function compute(exercises,attempts){
-    const byId=new Map((exercises||[]).map(exercise=>[exercise.exercise_id,exercise]));
-    const ratings=new Map();
-    const valid=(attempts||[]).filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score))).sort((a,b)=>String(a.attempted_at).localeCompare(String(b.attempted_at)));
-    for(const attempt of valid){
-      const exercise=byId.get(attempt.exercise_id);
-      if(!exercise||exercise.active===false)continue;
-      const family=familyForExercise(exercise),key=`${attempt.direction}::${family}`,rating=ratings.get(key)||emptyRating(attempt.direction,family),level=levels.includes(exercise.jlpt_level)?exercise.jlpt_level:'N5',delta=deltaFor(rating.pointsByLevel[level],exercise,attempt),evidence=rating.evidence[level];
-      rating.pointsByLevel[level]=clamp(rating.pointsByLevel[level]+delta,0,99);evidence.attempts++;evidence.totalScore+=Number(attempt.overall_score)||0;evidence.acceptable+=attempt.is_acceptable?1:0;evidence.exerciseIds.add(exercise.exercise_id);rating.attempts++;rating.lastDelta=delta;rating.lastChallenge=exerciseChallenge(exercise);rating.lastEarnedLevel=level;
-      Object.assign(rating,rankFromEvidence(rating));ratings.set(key,rating);
-    }
-    for(const exercise of exercises||[]){if(exercise.active===false)continue;const family=familyForExercise(exercise),key=`${exercise.direction}::${family}`,rating=ratings.get(key)||emptyRating(exercise.direction,family);rating.availableLevels.add(exercise.jlpt_level);Object.assign(rating,rankFromEvidence(rating));ratings.set(key,rating)}
-    return {ratings,levels,families};
+    const byId=new Map((exercises||[]).map(exercise=>[exercise.exercise_id,exercise])),ratings=new Map(),history=new Map(),valid=(attempts||[]).filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score))).sort((a,b)=>String(a.attempted_at).localeCompare(String(b.attempted_at)));
+    for(const exercise of exercises||[]){if(exercise.active===false)continue;const rating=ratings.get(exercise.direction)||emptyRating(exercise.direction);rating.availableLevels.add(exercise.jlpt_level);ratings.set(exercise.direction,rating)}
+    for(const attempt of valid){const exercise=byId.get(attempt.exercise_id);if(!exercise||exercise.active===false)continue;const rating=ratings.get(attempt.direction)||emptyRating(attempt.direction),before=rankFrom(rating),level=levels.includes(exercise.jlpt_level)?exercise.jlpt_level:'N5',family=familyForExercise(exercise),previous=history.get(exercise.exercise_id)||{timesSeen:0,previousScore:null},delta=deltaFor(rating.pointsByLevel[level],exercise,attempt,{...previous,currentLevel:before.level});rating.pointsByLevel[level]=clamp(roundXp((rating.pointsByLevel[level]||0)+delta),0,goalFor(level));const evidence=rating.evidenceByFamily[family][level];evidence.attempts++;evidence.totalScore+=Number(attempt.overall_score)||0;evidence.acceptable+=attempt.is_acceptable?1:0;evidence.exerciseIds.add(exercise.exercise_id);rating.attempts++;rating.lastDelta=delta;rating.lastEarnedLevel=level;rating.lastBreakdown={base:baseExperience(exercise),timesSeen:previous.timesSeen,difficulty:Number(exercise.difficulty)||0,previousScore:previous.previousScore};history.set(exercise.exercise_id,{timesSeen:previous.timesSeen+1,previousScore:Number(attempt.overall_score)});Object.assign(rating,rankFrom(rating));ratings.set(attempt.direction,rating)}
+    for(const direction of ['ja_es','es_ja']){const rating=ratings.get(direction)||emptyRating(direction);Object.assign(rating,rankFrom(rating));ratings.set(direction,rating)}return {ratings,levels,families};
   }
-  function get(snapshot,direction,family){return snapshot.ratings.get(`${direction}::${family}`)||emptyRating(direction,family)}
-  function primaryForDirection(snapshot,direction){
-    const rows=families.map(family=>get(snapshot,direction,family));
-    const active=rows.filter(row=>row.attempts);
-    if(!active.length)return emptyRating(direction,'General');
-    const lowestIndex=Math.min(...active.map(row=>levels.indexOf(row.level))),sameLevelRows=active.filter(row=>levels.indexOf(row.level)===lowestIndex),level=levels[lowestIndex],percent=Math.round(sameLevelRows.reduce((sum,row)=>sum+row.percent,0)/sameLevelRows.length);
-    return {...emptyRating(direction,'General'),level,percent,points:Math.round(active.reduce((sum,row)=>sum+row.points,0)/active.length),attempts:active.reduce((sum,row)=>sum+row.attempts,0)};
-  }
-  function snapshot(exercises,attempts){return compute(exercises,attempts)}
-  function badgeHtml(rating){return `<span class="rank-badge" title="${rating.percent} puntos EXP dentro de ${rating.level}"><b>${rating.level}</b><em>${rating.percent} EXP</em></span>`}
-  function miniHtml(rating,label='EXP contextual'){return `<div class="rank-mini"><div><span>${esc(label)}</span>${badgeHtml(rating)}</div><div class="rank-track"><span style="width:${rating.percent}%"></span></div></div>`}
-  function deltaHtml(before,after,exercise,attempt){
-    const family=familyForExercise(exercise),oldRating=get(before,attempt.direction,family),newRating=get(after,attempt.direction,family),delta=newRating.lastDelta,challenge=exerciseChallenge(exercise),verb=delta>=0?'ganas':'pierdes',sameLevel=oldRating.level===newRating.level;
-    return `<section class="xp-feedback" data-xp-from="${sameLevel?oldRating.percent:0}" data-xp-to="${newRating.percent}"><div class="xp-head"><p class="section-kicker">EXP ranked</p><strong>${esc(newRating.level)} ${newRating.percent} EXP</strong></div><div class="rank-track xp-animated"><span style="width:${sameLevel?oldRating.percent:0}%"></span></div><p>${delta>=0?'+':''}${delta} EXP ${esc(newRating.lastEarnedLevel)}: ${verb} ${Math.abs(delta)} por una frase ${esc(exercise.jlpt_level)} ${Math.round(Number(exercise.difficulty)||0)}% en ${esc(family)}. Reto contextual ${challenge}/500.</p></section>`;
-  }
-  function animate(root=document){root.querySelectorAll('.xp-feedback[data-xp-to]').forEach(panel=>{const bar=panel.querySelector('.xp-animated span');if(!bar)return;const to=Number(panel.dataset.xpTo)||0;requestAnimationFrame(()=>{bar.style.width=`${to}%`})})}
-  function panelHtml(snapshot,direction='all'){
-    const directions=direction==='all'?['ja_es','es_ja']:[direction];
-    return `<div class="ranked-grid">${directions.map(current=>`<article class="ranked-column"><header><span>${current==='ja_es'?'JP → ES':'ES → JP'}</span>${badgeHtml(primaryForDirection(snapshot,current))}</header>${families.map(family=>miniHtml(get(snapshot,current,family),family)).join('')}</article>`).join('')}</div>`;
-  }
-  window.RankedProgress={levels,families,snapshot,get,primaryForDirection,deltaFor,exerciseChallenge,familyForExercise,badgeHtml,miniHtml,deltaHtml,animate,panelHtml};
+  function get(snapshot,direction,family){const rating=snapshot.ratings.get(direction)||emptyRating(direction);return family?familySnapshot(rating,family):rating}
+  function primaryForDirection(snapshot,direction){return snapshot.ratings.get(direction)||emptyRating(direction)}
+  function badgeHtml(rating){const level=rating.level||'N5',goal=rating.goal||goalFor(level),points=roundXp(rating.points??rating.percent??0);return `<span class="rank-badge" title="${points}/${goal} EXP en ${level}"><b>${level}</b><em>${points}/${goal} EXP</em></span>`}
+  function miniHtml(rating,label='Rango actual'){return `<div class="rank-mini"><div><span>${esc(label)}</span>${badgeHtml(rating)}</div><div class="rank-track"><span style="width:${rating.percent}%"></span></div></div>`}
+  function familyHtml(snapshot,direction,family){const rating=primaryForDirection(snapshot,direction),item=familySnapshot(rating,family);return `<div class="rank-mini family-evidence"><div><span>${esc(family)}</span><b>${item.level} ${item.score}% <small>${item.attempts} evid.</small></b></div><div class="rank-track"><span style="width:${item.score}%"></span></div></div>`}
+  function deltaHtml(before,after,exercise,attempt){const family=familyForExercise(exercise),oldRating=primaryForDirection(before,attempt.direction),newRating=primaryForDirection(after,attempt.direction),delta=newRating.lastDelta,sameLevel=oldRating.level===newRating.level,detail=newRating.lastBreakdown||{},repeat=detail.timesSeen?`repetición ${detail.timesSeen + 1}`:'primera vez',verb=delta>=0?'ganas':'pierdes';return `<section class="xp-feedback" data-xp-from="${sameLevel?oldRating.percent:0}" data-xp-to="${newRating.percent}"><div class="xp-head"><p class="section-kicker">EXP ranked</p><strong>${esc(newRating.level)} ${roundXp(newRating.points)}/${newRating.goal} EXP</strong></div><div class="rank-track xp-animated"><span style="width:${sameLevel?oldRating.percent:0}%"></span></div><p>${delta>=0?'+':''}${roundXp(delta)} EXP: ${verb} ${Math.abs(roundXp(delta))} por ${repeat}, dificultad ${Math.round(detail.difficulty||0)}/100 y resultado ${attempt.overall_score}/100. ${esc(family)} se usa para el desbloqueo del siguiente JLPT.</p></section>`}
+  function animate(root=document){root.querySelectorAll('.xp-feedback[data-xp-to]').forEach(panel=>{const bar=panel.querySelector('.xp-animated span');if(bar)requestAnimationFrame(()=>{bar.style.width=`${Number(panel.dataset.xpTo)||0}%`})})}
+  function panelHtml(snapshot,direction='all'){const directions=direction==='all'?['ja_es','es_ja']:[direction];return `<div class="ranked-grid">${directions.map(current=>{const rating=primaryForDirection(snapshot,current),access=accessForDirection(snapshot,current),next=rating.next?access.preview?`Niv. ${rating.next} disponible en práctica.`:`Para abrir ${rating.next}: 80% EXP y 50% en cada familia.`:'Ruta completada';return `<article class="ranked-column"><header><span>${current==='ja_es'?'JP → ES':'ES → JP'}</span>${badgeHtml(rating)}</header><p class="ranked-unlock">${esc(next)}</p>${families.map(family=>familyHtml(snapshot,current,family)).join('')}</article>`}).join('')}</div>`}
+  window.RankedProgress={levels,families,goals,snapshot:compute,get,primaryForDirection,accessForDirection,deltaFor,baseExperience,familyForExercise,badgeHtml,miniHtml,deltaHtml,animate,panelHtml};
 })();

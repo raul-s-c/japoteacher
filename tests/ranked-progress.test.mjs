@@ -5,82 +5,64 @@ import vm from "node:vm";
 
 function ranked() {
   const context = { window: {} };
-  context.window.TopicProgression = {
-    familyFor(topic) {
-      return String(topic).includes("trabajo")
-        ? "Trabajo y carrera"
-        : "Ocio y vida diaria";
-    },
-  };
-  vm.runInNewContext(
-    fs.readFileSync(new URL("../src/ranked-progress.js", import.meta.url), "utf8"),
-    context,
-  );
+  context.window.TopicProgression = { familyFor(topic) { return String(topic).includes("trabajo") ? "Trabajo y carrera" : String(topic).includes("familia") ? "Familia y amigos" : String(topic).includes("dinero") ? "Dinero y proyectos" : String(topic).includes("consulta") ? "Conocimiento y consultas" : "Ocio y vida diaria"; } };
+  vm.runInNewContext(fs.readFileSync(new URL("../src/ranked-progress.js", import.meta.url), "utf8"), context);
   return context.window.RankedProgress;
 }
 
-test("harder JLPT material rewards more than an easier sentence at the same score", () => {
+test("JLPT EXP goals grow exponentially instead of sharing one cumulative bar", () => {
   const xp = ranked();
-  const n5 = xp.deltaFor(0, { jlpt_level: "N5", difficulty: 50 }, { overall_score: 82 });
-  const n4 = xp.deltaFor(0, { jlpt_level: "N4", difficulty: 40 }, { overall_score: 82 });
-  assert.ok(n4 > n5);
+  assert.deepEqual(JSON.parse(JSON.stringify(xp.goals)), { N5: 100, N4: 200, N3: 400, N2: 800, N1: 1600 });
 });
 
-test("failing far above the current rating is penalized softly", () => {
+test("EXP pace follows the intended longer calendar path at higher JLPT levels", () => {
   const xp = ranked();
-  const hardMiss = xp.deltaFor(20, { jlpt_level: "N4", difficulty: 90 }, { overall_score: 45 });
-  const easyMiss = xp.deltaFor(120, { jlpt_level: "N5", difficulty: 35 }, { overall_score: 45 });
+  const duration = level => xp.goals[level] / xp.baseExperience({ direction: "ja_es", jlpt_level: level, difficulty: 50 });
+  const n5 = duration("N5");
+  assert.ok(Math.abs(duration("N4") / n5 - 1.5) < .02);
+  assert.ok(Math.abs(duration("N3") / n5 - 2) < .02);
+  assert.ok(Math.abs(duration("N2") / n5 - 4) < .02);
+  assert.ok(Math.abs(duration("N1") / n5 - 8) < .02);
+});
+
+test("a difficult new sentence gives more EXP than an easy repeated one", () => {
+  const xp = ranked();
+  const hardNew = xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N4", difficulty: 90 }, { overall_score: 95 }, { currentLevel: "N4", timesSeen: 0 });
+  const easyRepeat = xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N4", difficulty: 15 }, { overall_score: 95 }, { currentLevel: "N4", timesSeen: 2, previousScore: 95 });
+  assert.ok(hardNew > easyRepeat * 4);
+});
+
+test("failing an above-level sentence is penalized softly", () => {
+  const xp = ranked();
+  const hardMiss = xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N4", difficulty: 90 }, { overall_score: 45 }, { currentLevel: "N5" });
+  const easyMiss = xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N5", difficulty: 35 }, { overall_score: 45 }, { currentLevel: "N5" });
   assert.ok(Math.abs(hardMiss) < Math.abs(easyMiss));
 });
 
-test("ratings are independent by direction and conversation family", () => {
+test("direction tracks are independent and family evidence stays separate", () => {
   const xp = ranked();
-  const exercises = [
-    { exercise_id: "a", direction: "ja_es", jlpt_level: "N4", difficulty: 40, topic_tags: ["trabajo"] },
-    { exercise_id: "b", direction: "es_ja", jlpt_level: "N5", difficulty: 55, topic_tags: ["gaming"] },
-  ];
-  const attempts = [
-    { exercise_id: "a", direction: "ja_es", attempted_at: "2026-08-13T08:00:00Z", evaluation_status: "valid", overall_score: 85 },
-    { exercise_id: "b", direction: "es_ja", attempted_at: "2026-08-13T08:01:00Z", evaluation_status: "valid", overall_score: 85 },
-  ];
+  const exercises = [{ exercise_id: "a", direction: "ja_es", jlpt_level: "N5", difficulty: 70, topic_tags: ["trabajo"] }, { exercise_id: "b", direction: "es_ja", jlpt_level: "N5", difficulty: 70, topic_tags: ["ocio"] }];
+  const attempts = exercises.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: exercise.direction, attempted_at: `2026-08-13T08:0${index}:00Z`, evaluation_status: "valid", overall_score: 90, is_acceptable: true }));
   const snapshot = xp.snapshot(exercises, attempts);
-  assert.ok(xp.get(snapshot, "ja_es", "Trabajo y carrera").points > 0);
-  assert.equal(xp.get(snapshot, "ja_es", "Ocio y vida diaria").points, 0);
-  assert.ok(xp.get(snapshot, "es_ja", "Ocio y vida diaria").points > 0);
+  assert.ok(xp.primaryForDirection(snapshot, "ja_es").points > 0);
+  assert.equal(xp.primaryForDirection(snapshot, "es_ja").points > xp.primaryForDirection(snapshot, "ja_es").points, true);
+  assert.equal(xp.get(snapshot, "ja_es", "Trabajo y carrera").attempts, 1);
+  assert.equal(xp.get(snapshot, "ja_es", "Ocio y vida diaria").attempts, 0);
 });
 
-test("N5 experience cannot promote a family to N1", () => {
+test("the next JLPT appears only at 80 EXP and adequate evidence in every family", () => {
   const xp = ranked();
-  const exercises = Array.from({ length: 30 }, (_, index) => ({
-    exercise_id: `n5-${index}`, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: ["gaming"],
-  }));
-  const attempts = exercises.map((exercise, index) => ({
-    exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true,
-  }));
-  const rating = xp.get(xp.snapshot(exercises, attempts), "es_ja", "Ocio y vida diaria");
-  assert.equal(rating.level, "N5");
-  assert.equal(rating.percent, 99);
+  const topics = ["familia", "trabajo", "dinero", "ocio", "consulta"];
+  const exercises = Array.from({ length: 2600 }, (_, index) => ({
+    exercise_id: `n5-${index}`, direction: "ja_es", jlpt_level: "N5", difficulty: 100, topic_tags: [topics[index % topics.length]],
+  })).concat({ exercise_id: "n4", direction: "ja_es", jlpt_level: "N4", difficulty: 20, topic_tags: ["trabajo"] });
+  const attempts = exercises.slice(0, -1).map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: exercise.direction, attempted_at: new Date(Date.UTC(2026, 0, 1, 0, index)).toISOString(), evaluation_status: "valid", overall_score: 100, is_acceptable: true }));
+  const access = xp.accessForDirection(xp.snapshot(exercises, attempts), "ja_es");
+  assert.equal(access.level, "N4");
+  assert.ok(access.allowedLevels.includes("N4"));
 });
 
-test("the next JLPT only gains its own experience after the previous level is mastered", () => {
+test("rank badges show the concrete EXP goal", () => {
   const xp = ranked();
-  const n5 = Array.from({ length: 12 }, (_, index) => ({ exercise_id: `n5-${index}`, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: ["gaming"] }));
-  const n4 = { exercise_id: "n4-1", direction: "es_ja", jlpt_level: "N4", difficulty: 20, topic_tags: ["gaming"] };
-  const attempts = [...n5.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true })), { exercise_id: n4.exercise_id, direction: "es_ja", attempted_at: "2026-08-13T09:00:00Z", evaluation_status: "valid", overall_score: 100, is_acceptable: true }];
-  const rating = xp.get(xp.snapshot([...n5, n4], attempts), "es_ja", "Ocio y vida diaria");
-  assert.equal(rating.level, "N4");
-  assert.ok(rating.percent > 0);
-});
-
-test("a family cannot display a JLPT level that has no exercises", () => {
-  const xp = ranked();
-  const exercises = Array.from({ length: 20 }, (_, index) => ({ exercise_id: `n5-${index}`, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: ["gaming"] }));
-  const attempts = exercises.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: "es_ja", attempted_at: `2026-08-13T08:${String(index).padStart(2, "0")}:00Z`, evaluation_status: "valid", overall_score: 100, is_acceptable: true }));
-  assert.equal(xp.get(xp.snapshot(exercises, attempts), "es_ja", "Ocio y vida diaria").level, "N5");
-});
-
-test("rank badges label points as EXP instead of an accuracy percentage", () => {
-  const xp = ranked();
-  assert.match(xp.badgeHtml({ level: "N4", percent: 95 }), /95 EXP/);
-  assert.doesNotMatch(xp.badgeHtml({ level: "N4", percent: 95 }), /95%/);
+  assert.match(xp.badgeHtml({ level: "N4", points: 95, goal: 200 }), /95\/200 EXP/);
 });
