@@ -28,7 +28,7 @@
     // Fifty is the pedagogical minimum: it earns only a token amount of EXP.
     // Below it, the answer has not reached the minimum and reduces the level bar.
     if(score>=50){const quality=.08+(score-50)/50*1.42,levelFactor=relative>0?1.22:relative<0?.18:1;return roundXp(base*quality*levelFactor*repeat)}
-    const miss=(50-score)/50,penaltyFactor=relative>0?.12:relative<0?1.05:.55;return -roundXp(base*miss*penaltyFactor*Math.max(.35,repeat));
+    const miss=(50-score)/50,penaltyFactor=relative>0?.12:relative<0?1.05:.55,penalty=roundXp(base*miss*penaltyFactor*Math.max(.35,repeat));return -Math.max(.001,penalty);
   }
   function compute(exercises,attempts){
     const byId=new Map((exercises||[]).map(exercise=>[exercise.exercise_id,exercise])),ratings=new Map(),history=new Map(),valid=(attempts||[]).filter(attempt=>attempt.evaluation_status==='valid'&&Number.isFinite(Number(attempt.overall_score))).sort((a,b)=>String(a.attempted_at).localeCompare(String(b.attempted_at)));
