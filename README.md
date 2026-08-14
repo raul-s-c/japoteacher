@@ -199,6 +199,12 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 - El siguiente nivel solo se desbloquea al completar la EXP del actual y demostrar al menos un 50% con evidencia mínima en las cinco familias de conversación. Desde el 80% de EXP, si se cumplen esas familias, pueden aparecer frases puente del nivel siguiente.
 - Las familias muestran evidencia de aprendizaje (resultado y muestras), no una conversión engañosa de EXP. JP→ES y ES→JP nunca comparten EXP ni desbloqueos.
 
+#### SRS equilibrado
+
+- El SRS mantiene revisiones vencidas y una mayoría de material nuevo cuando el banco lo permite, pero puntúa además el desequilibrio por familia de conversación y registro.
+- Las familias o registros con pocas muestras, peor media o escasa práctica reciben prioridad. Dentro de la misma sesión, cada selección reduce temporalmente la prioridad de su propia familia y registro para evitar bloques monocordes.
+- El equilibrio se calcula por dirección y solo entre material permitido por la ruta JLPT, por lo que JP→ES y ES→JP siguen siendo rutas independientes.
+
 ### Criterio global de finalización
 
 Esta línea de trabajo solo se considerará terminada cuando los tres requisitos funcionen con una cuenta sincronizada entre PC y móvil, sobrevivan a cerrar sesión/reinstalar la PWA, tengan pruebas de independencia direccional y muestren el mismo estado consolidado en ambos dispositivos.
