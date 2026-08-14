@@ -23,7 +23,7 @@
 
   const familyFor=exercise=>window.TopicProgression?.familyFor?.((exercise.topic_tags||[])[0]||'')||'Conocimiento y consultas';
   const registerFor=exercise=>String(exercise.register||'neutro').trim().toLowerCase()||'neutro';
-  const selectionStrategy='balanced_srs_families_registers_v8';
+  const selectionStrategy='balanced_srs_families_registers_v9';
   function needsRebalance(session){try{return JSON.parse(session?.selection_reason_json||'{}').strategy!==selectionStrategy}catch{return true}}
   function coverageProfile(exercises,attempts,direction){
     const byId=new Map(exercises.map(exercise=>[exercise.exercise_id,exercise])),buckets=new Map();
@@ -45,8 +45,11 @@
     const recentAverage=recent.length?recent.reduce((sum,item)=>sum+(item.overall_score||0),0)/recent.length:75,targetDifficulty=recentAverage<65?35:recentAverage>88?70:55,activeLevelIndexes=settings.levels.map(level=>Difficulty.levelIndex({jlpt_level:level})).filter(Number.isFinite),recentLevelIndexes=recent.map(attempt=>Difficulty.levelIndex(eMap.get(attempt.exercise_id))).filter(index=>index<5),preferredLevel=recentLevelIndexes.length?Math.min(...recentLevelIndexes):Math.min(...activeLevelIndexes);
     const difficultyBonus=exercise=>{const band=Difficulty.bandFor(exercise),unlocked=(gates[exercise.jlpt_level]?.unlockedBand)??0,bandFocus=band===unlocked?30:band<unlocked?8:-80;return bandFocus+20-Math.min(40,Math.abs(Difficulty.score(exercise)-targetDifficulty)*.8)-Math.max(0,Difficulty.levelIndex(exercise)-preferredLevel)*45};
     const score=exercise=>{const progressItem=pMap.get(exercise.exercise_id),srs=progressItem?(new Date(progressItem.next_review_at).getTime()<=now?70:0)+(100-(progressItem.average_score||0)):55;return srs+TopicProgression.bonus(exercise,roadmap)+adaptiveBonus(exercise)+difficultyBonus(exercise)+coverage.bonus(exercise)},ranked=seededSort(eligible,date+direction).sort((a,b)=>score(b)-score(a)),selected=[],reviewLimit=Math.max(1,Math.floor(count*.4)),reviews=ranked.filter(exercise=>!isNewExercise(exercise)),fresh=ranked.filter(isNewExercise),selectedFamilies=new Map(),selectedRegisters=new Map();
-    const add=pool=>{while(selected.length<count){const candidates=pool.filter(exercise=>!selected.includes(exercise)&&!selected.some(item=>similarity(item,exercise)>.8));if(!candidates.length)break;const next=candidates.sort((left,right)=>{const penalty=exercise=>(selectedFamilies.get(familyFor(exercise))||0)*36+(selectedRegisters.get(registerFor(exercise))||0)*14;return score(right)-penalty(right)-score(left)+penalty(left)})[0];selected.push(next);selectedFamilies.set(familyFor(next),(selectedFamilies.get(familyFor(next))||0)+1);selectedRegisters.set(registerFor(next),(selectedRegisters.get(registerFor(next))||0)+1)}};
-    add(reviews.slice(0,reviewLimit));add(fresh);add(reviews);if(selected.length<count)add(ranked);
+    const add=(pool,limit=count)=>{while(selected.length<limit){const candidates=pool.filter(exercise=>!selected.includes(exercise)&&!selected.some(item=>similarity(item,exercise)>.8));if(!candidates.length)break;const next=candidates.sort((left,right)=>{const penalty=exercise=>(selectedFamilies.get(familyFor(exercise))||0)*36+(selectedRegisters.get(registerFor(exercise))||0)*14;return score(right)-penalty(right)-score(left)+penalty(left)})[0];selected.push(next);selectedFamilies.set(familyFor(next),(selectedFamilies.get(familyFor(next))||0)+1);selectedRegisters.set(registerFor(next),(selectedRegisters.get(registerFor(next))||0)+1)}};
+    // A family with too little evidence gets an intervention slot before normal SRS ranking.
+    const urgentFamilies=[...coverage.buckets.values()].filter(bucket=>bucket.kind==='family'&&bucket.deficit>=55&&bucket.exerciseIds.size).sort((left,right)=>right.deficit-left.deficit);
+    for(const bucket of urgentFamilies){if(selected.length>=count)break;add(ranked.filter(exercise=>familyFor(exercise)===bucket.value),selected.length+1)}
+    add(reviews.slice(0,Math.min(count,selected.length+reviewLimit)));add(fresh);add(reviews);if(selected.length<count)add(ranked);
     return selected.map(exercise=>exercise.exercise_id);
   }
 
