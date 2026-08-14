@@ -42,3 +42,9 @@ test("balanced SRS exposes weak conversation families and registers", () => {
   assert.ok(ids.some(id => id === "e-trabajo"));
   assert.ok(ids.some(id => id === "e-dinero"));
 });
+
+test("a daily plan from an older selector is marked for rebalancing", () => {
+  const srs = planner();
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "topic_adaptive_srs_difficulty_ranked_v6" }) }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_families_registers_v8" }) }), false);
+});
