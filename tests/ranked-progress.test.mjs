@@ -10,9 +10,11 @@ function ranked() {
   return context.window.RankedProgress;
 }
 
-test("JLPT EXP goals grow exponentially instead of sharing one cumulative bar", () => {
+test("JLPT goals create one continuous route with exponential segments", () => {
   const xp = ranked();
   assert.deepEqual(JSON.parse(JSON.stringify(xp.goals)), { N5: 100, N4: 200, N3: 400, N2: 800, N1: 1600 });
+  assert.deepEqual(JSON.parse(JSON.stringify(xp.starts)), { N5: 0, N4: 100, N3: 300, N2: 700, N1: 1500 });
+  assert.deepEqual(JSON.parse(JSON.stringify(xp.routeForPosition(100))), { level: "N4", points: 0, goal: 200, percent: 0, position: 100, next: "N3" });
 });
 
 test("EXP pace follows the intended longer calendar path at higher JLPT levels", () => {
@@ -48,6 +50,15 @@ test("fifty is the minimum passing score for EXP", () => {
   assert.ok(atFifty > 0);
   assert.ok(atFifty < solid / 5);
   assert.ok(belowFifty < 0);
+});
+
+test("a high-difficulty N4 answer pulls a late N5 learner farther right", () => {
+  const xp = ranked();
+  const context = { position: 95, currentLevel: "N5", timesSeen: 0 };
+  const highN4 = xp.deltaFor(95, { direction: "ja_es", jlpt_level: "N4", difficulty: 95 }, { overall_score: 69 }, context);
+  const lowN4 = xp.deltaFor(95, { direction: "ja_es", jlpt_level: "N4", difficulty: 5 }, { overall_score: 69 }, context);
+  assert.ok(highN4 > lowN4);
+  assert.ok(lowN4 > 0);
 });
 
 test("direction tracks are independent and family evidence stays separate", () => {

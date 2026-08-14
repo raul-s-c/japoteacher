@@ -190,11 +190,12 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 - Historial, gráficos, tags, ruta temática, informes semanales/mensuales y progreso acumulado respetarán el mismo filtro.
 - Deben existir pruebas automáticas que demuestren que completar o dominar una dirección no modifica la otra.
 
-#### EXP ranked por JLPT
+#### EXP ranked por ruta JLPT
 
-- La EXP no se acumula entre niveles: cada dirección y cada JLPT conservan su propia barra. Los objetivos son exponenciales: N5 `100`, N4 `200`, N3 `400`, N2 `800` y N1 `1600` EXP.
-- Cada respuesta aporta una base ligada al JLPT, dirección y termómetro de dificultad. Se ajusta por resultado, novedad y el historial concreto del ejercicio; repetir una frase ya dominada apenas da EXP. El 50% es el mínimo pedagógico: suma EXP testimonial, mientras que cualquier resultado inferior resta.
-- Un fallo resta EXP, pero un intento por encima del nivel actual recibe una penalización muy reducida. La EXP queda limitada a la barra del JLPT correspondiente.
+- Cada dirección tiene una ruta continua, mostrada como tramos JLPT: N5 `0-100`, N4 `100-300`, N3 `300-700`, N2 `700-1500` y N1 `1500-3100`. Por tanto, N5 `100/100` es exactamente N4 `0/200`; no son dos contadores aislados ni una EXP que se pierda al cruzar el borde.
+- Cada frase ocupa una coordenada dentro de esa ruta, calculada con su JLPT y termómetro. Una respuesta correcta siempre desplaza a la derecha: una frase que queda a la derecha del estudiante tiene mayor multiplicador, y una frase ya a su izquierda sigue sumando, pero menos.
+- Cada respuesta aporta una base ligada a la dirección y el termómetro, ajustada por resultado, distancia, novedad e historial concreto; repetir una frase ya dominada apenas da EXP. El 50% es el mínimo pedagógico: suma EXP testimonial, mientras que cualquier resultado inferior mueve a la izquierda de forma proporcional.
+- Un fallo en una frase muy a la derecha (exploración del nivel superior) recibe una penalización muy reducida. La posición no puede bajar de cero.
 - El siguiente nivel solo se desbloquea al completar la EXP del actual y demostrar al menos un 50% con evidencia mínima en las cinco familias de conversación. Desde el 80% de EXP, si se cumplen esas familias, pueden aparecer frases puente del nivel siguiente.
 - Las familias muestran evidencia de aprendizaje (resultado y muestras), no una conversión engañosa de EXP. JP→ES y ES→JP nunca comparten EXP ni desbloqueos.
 
