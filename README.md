@@ -318,23 +318,6 @@ Para una ampliación adaptada a la evidencia real del alumno, usa `scripts/run-a
 
 Mientras haya créditos disponibles, el usuario autoriza una tanda editorial diaria de hasta 1.500.000 tokens para generación, revisión, equivalencia bilingüe, recalibración de dificultad, furigana, publicación, auditoría, tests y despliegue. El proceso debe cortar por presupuesto, registrar el consumo y continuar desde los checkpoints, sin regenerar slots ya aprobados.
 
-### GitHub Actions editorial diario
-
-El workflow `.github/workflows/editorial-expansion.yml` puede ejecutar la expansión editorial sin depender de que el PC local esté encendido. Se lanza manualmente desde GitHub Actions o cada día a las 04:30 UTC, usa un presupuesto por defecto de 1.500.000 tokens y envía un resumen por email si están configurados los secretos SMTP.
-
-Secrets necesarios en GitHub:
-
-- `JAPOTEACHER_EDITORIAL_KEY` o `PROXY_TOKEN`: clave aceptada por el Worker editorial.
-- `SMTP_SERVER`: servidor SMTP.
-- `SMTP_PORT`: puerto SMTP, normalmente `587`.
-- `SMTP_USERNAME`: usuario SMTP.
-- `SMTP_PASSWORD`: contraseña o app password SMTP.
-- `SMTP_FROM`: remitente autorizado por el SMTP.
-- `SMTP_TO`: email destino del resumen diario.
-- `SMTP_ENABLE_SSL`: opcional; usa `false` solo si el servidor no requiere TLS.
-
-El workflow commitea y hace push solo si cambia el banco editorial, las auditorías, el README o la furigana generada. Los ficheros locales `data/editorial/usage.jsonl` y `data/editorial/difficulty-review-checkpoint.jsonl` están ignorados por Git.
-
 Consulta antes:
 
 - `docs/content-roadmap-jlpt.md`;

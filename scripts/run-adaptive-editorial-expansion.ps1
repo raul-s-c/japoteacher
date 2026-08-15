@@ -7,8 +7,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $env:PYTHONUTF8 = '1'
 $root = Split-Path -Parent $PSScriptRoot
-$bundledPython = 'C:\Users\rauls\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-$python = if (Test-Path $bundledPython) { $bundledPython } else { 'python' }
+$python = 'C:\Users\rauls\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 $log = Join-Path $root 'data\editorial\adaptive-expansion.log'
 
 function TotalUsage {
