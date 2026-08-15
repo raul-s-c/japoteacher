@@ -84,16 +84,21 @@ for (const [group, queue] of queues) {
       sentence_type: row.sentence_type,
       baseline: Number(row.difficulty),
     }));
-    let response, body, items;
+    let response, body, items, lastError;
     const requested = new Set(batch.map(row => row.exercise_id));
     for (let attempt = 0; attempt < 3; attempt += 1) {
-      response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", "X-Editorial-Key": editorialKey }, body: JSON.stringify({ operation: "difficulty_review", group, exercises }) });
-      if (response.ok) {
-        body = await response.json();
-        items = body?.result?.items || [];
-        if (items.length === batch.length && items.every(item => requested.has(item.exercise_id))) break;
+      try {
+        response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", "X-Editorial-Key": editorialKey }, body: JSON.stringify({ operation: "difficulty_review", group, exercises }) });
+        if (response.ok) {
+          body = await response.json();
+          items = body?.result?.items || [];
+          if (items.length === batch.length && items.every(item => requested.has(item.exercise_id))) break;
+        }
+        lastError = new Error(`HTTP ${response.status}`);
+      } catch (error) {
+        lastError = error;
       }
-      if (attempt === 2) throw new Error(`Editorial review returned an incomplete batch for ${group}.`);
+      if (attempt === 2) throw new Error(`Editorial review failed for ${group}: ${lastError?.message || "incomplete batch"}.`);
       await sleep(1500 * (attempt + 1));
     }
     fs.mkdirSync(path.dirname(checkpointPath), { recursive: true });

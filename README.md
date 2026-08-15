@@ -29,12 +29,11 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- N5: 337 pares semánticos publicados, 674 ejercicios direccionales.
-- N4: 547 pares semánticos publicados, 1.094 ejercicios direccionales.
-- Total publicado en `data/exercises.full.csv`: 2.268 ejercicios, de los que 1.768 están activos y 500 se conservan archivados.
-- La tanda editorial del 13 de agosto añadió 7 pares N5 y 17 N4 en `Dinero y proyectos` (ahorro, banco, pagos, precio, inversión y negocio). Pasó generación, revisión adversarial, equivalencia bilingüe, deduplicación y furigana; consumió 507.105 tokens.
-- La siguiente ampliación debe seguir reforzando `Dinero y proyectos`: quedan 10 ejercicios N5 y 26 N4 por dirección, todavía por debajo de las demás familias.
-- Fuentes editoriales aprobadas: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
+- Fuentes editoriales aprobadas: 334 pares N5 y 513 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 2.684 ejercicios; 2.184 están activos (444 N5 y 648 N4 por dirección) y 500 se conservan archivados.
+- La ampliación adaptativa del 15 de agosto priorizó `Dinero y proyectos`, producción ES→JP de base y la rampa N4 de Trabajo/Familia. Añadió material nuevo con revisión adversarial, equivalencia bilingüe, deduplicación y furigana.
+- El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
+- Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
 
 ## Arranque rápido en el nuevo PC
@@ -300,6 +299,8 @@ python scripts/publish-editorial-bank.py
 python scripts/audit-jlpt-bank.py
 python scripts/audit-difficulty.py
 ```
+
+Para una ampliación adaptada a la evidencia real del alumno, usa `scripts/run-adaptive-editorial-expansion.ps1`. Prioriza Dinero y proyectos, producción ES→JP de base y una rampa N4 de Trabajo/Familia; conserva aproximadamente un 13 % del presupuesto para recalibrar el termómetro y regenerar furigana de lo publicado.
 
 Consulta antes:
 
