@@ -107,3 +107,17 @@ test("rank badges show the concrete EXP goal", () => {
   assert.match(xp.badgeHtml({ level: "N4", points: 95, goal: 200 }), /95\/200 EXP/);
   assert.match(xp.badgeHtml({ level: "N5", points: 4.749, goal: 100 }), /4,75\/100 EXP/);
 });
+
+test("the EXP ledger preserves a question-by-question daily history", () => {
+  const xp = ranked();
+  const exercises = [{ exercise_id: "ledger", direction: "ja_es", jlpt_level: "N5", difficulty: 50, topic_tags: ["dinero"] }];
+  const attempts = [
+    { attempt_id: "first", exercise_id: "ledger", direction: "ja_es", attempted_at: "2026-08-14T08:00:00Z", evaluation_status: "valid", overall_score: 90, is_acceptable: true },
+    { attempt_id: "second", exercise_id: "ledger", direction: "ja_es", attempted_at: "2026-08-15T08:00:00Z", evaluation_status: "valid", overall_score: 35, is_acceptable: false },
+  ];
+  const ledger = xp.history(exercises, attempts);
+  assert.equal(ledger.length, 2);
+  assert.ok(ledger[0].delta > 0);
+  assert.ok(ledger[1].delta < 0);
+  assert.equal(ledger[0].families[0], "Dinero y proyectos");
+});

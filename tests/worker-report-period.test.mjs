@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { localReport, reportContentPatch, reportPeriod } from "../worker/src/report-generation.js";
+import { experienceMetrics, localReport, reportContentPatch, reportPeriod } from "../worker/src/report-generation.js";
 
 function localDateKey(value) {
   const date = new Date(value);
@@ -31,4 +31,17 @@ test("vocabulary evidence remains in the report JSON payload", () => {
   assert.equal(patch.vocabulary_focus, undefined);
   assert.deepEqual(patch.cumulative_progress.vocabulary_focus, vocabulary_focus);
   assert.deepEqual(patch.cumulative_progress.teacher_assessment, { headline: "Lectura", narrative: "Narrativa" });
+});
+
+test("report experience aggregates net, gains, losses and daily evidence", () => {
+  const metrics = experienceMetrics([
+    { direction: "ja_es", attempted_at: "2026-08-14T10:00:00Z", ranked_xp_delta: 1.2 },
+    { direction: "ja_es", attempted_at: "2026-08-14T10:05:00Z", ranked_xp_delta: -0.2 },
+    { direction: "es_ja", attempted_at: "2026-08-15T10:00:00Z", ranked_xp_delta: 0.5 },
+  ]);
+  assert.equal(metrics.net, 1.5);
+  assert.equal(metrics.gained, 1.7);
+  assert.equal(metrics.lost, -0.2);
+  assert.equal(metrics.daily.length, 2);
+  assert.equal(metrics.direction.ja_es.net, 1);
 });

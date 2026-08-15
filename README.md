@@ -23,7 +23,8 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - El progreso, historial, informes y drill-down temático respetan el filtro de dirección. La comparativa muestra dos rutas temáticas independientes y los desbloqueos se calculan por dirección.
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
-- Las migraciones `003` a `006` crean el almacenamiento, permisos, historial y borrado de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
+- Las migraciones `003` a `006` y `009` crean el almacenamiento, permisos, historial, borrado y métricas de EXP de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
+- Cada intento conserva un ledger de EXP ranked: delta, posición antes/después, JLPT, dificultad, familias y repetición. Esto permite recalibrar la fórmula en el futuro sin perder evidencia histórica.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
 
 ### Banco editorial actual
@@ -108,6 +109,7 @@ En un proyecto Supabase nuevo, ejecuta en SQL Editor, por orden:
 6. `supabase/migrations/006_learning_report_history.sql`;
 7. `supabase/migrations/007_issue_reports.sql`.
 8. `supabase/migrations/008_issue_reports_service_role.sql`.
+9. `supabase/migrations/009_learning_report_experience.sql`.
 
 En Auth configura la URL pública correcta y las redirect URLs. El error de correo hacia `localhost:3000` se evita configurando el Site URL de producción, actualmente `https://raul-s-c.github.io/japoteacher/`.
 
@@ -228,6 +230,7 @@ El resultado final debe ser una tarjeta visual, no texto crudo. Cada informe deb
 - fortalezas consolidadas;
 - acciones concretas para los siguientes 7/30 días;
 - bloque acumulado construido a partir de resúmenes de informes anteriores;
+- EXP neta, ganada y perdida por dirección, con el historial diario de respuestas que la produjo;
 - enlaces a los intentos que justifican cada conclusión.
 
 Arquitectura objetivo:
