@@ -29,8 +29,8 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 334 pares N5 y 513 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 2.684 ejercicios; 2.184 están activos (444 N5 y 648 N4 por dirección) y 500 se conservan archivados.
+- Fuentes editoriales aprobadas: 354 pares N5 y 529 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 2.756 ejercicios; 2.256 están activos (464 N5 y 664 N4 por dirección) y 500 se conservan archivados.
 - La ampliación adaptativa del 15 de agosto priorizó `Dinero y proyectos`, producción ES→JP de base y la rampa N4 de Trabajo/Familia. Añadió material nuevo con revisión adversarial, equivalencia bilingüe, deduplicación y furigana.
 - El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
@@ -42,8 +42,8 @@ Los objetivos se expresan en ejercicios publicados, contando JP→ES y ES→JP p
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 888 activos |
-| N4 | 2.400 ejercicios | 1.296 activos |
+| N5 | 1.400 ejercicios | 928 activos |
+| N4 | 2.400 ejercicios | 1.328 activos |
 | N3 | 4.000 ejercicios | 0 activos |
 | N2 | 7.000 ejercicios | 0 activos |
 | N1 | 12.000 ejercicios | 0 activos |
