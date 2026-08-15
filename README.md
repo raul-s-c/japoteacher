@@ -36,6 +36,20 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
 
+### Plan de cobertura editorial
+
+Los objetivos se expresan en ejercicios publicados, contando JP→ES y ES→JP por separado. Se trabajará hacia el límite alto del rango razonable para que el SRS tenga suficiente variedad durante años de práctica.
+
+| Nivel | Objetivo publicado | Estado actual |
+| --- | ---: | ---: |
+| N5 | 1.400 ejercicios | 888 activos |
+| N4 | 2.400 ejercicios | 1.296 activos |
+| N3 | 4.000 ejercicios | 0 activos |
+| N2 | 7.000 ejercicios | 0 activos |
+| N1 | 12.000 ejercicios | 0 activos |
+
+Prioridad: cerrar N5 hasta 1.400, profundizar N4 hasta 2.400 y empezar N3 bajo solo cuando aporte transiciones naturales desde N4 alto. N2 y N1 se generarán después de que N3 tenga una base suficiente y calibrada.
+
 ## Arranque rápido en el nuevo PC
 
 ```powershell
@@ -302,6 +316,8 @@ python scripts/audit-difficulty.py
 
 Para una ampliación adaptada a la evidencia real del alumno, usa `scripts/run-adaptive-editorial-expansion.ps1`. Prioriza Dinero y proyectos, producción ES→JP de base y una rampa N4 de Trabajo/Familia; conserva aproximadamente un 13 % del presupuesto para recalibrar el termómetro y regenerar furigana de lo publicado.
 
+Mientras haya créditos disponibles, el usuario autoriza una tanda editorial diaria de hasta 1.500.000 tokens para generación, revisión, equivalencia bilingüe, recalibración de dificultad, furigana, publicación, auditoría, tests y despliegue. El proceso debe cortar por presupuesto, registrar el consumo y continuar desde los checkpoints, sin regenerar slots ya aprobados.
+
 Consulta antes:
 
 - `docs/content-roadmap-jlpt.md`;
@@ -360,7 +376,7 @@ Pruebas manuales mínimas:
 - Guardar evidencia agregada y referencias a intentos; minimizar datos enviados a OpenAI.
 - Limitar informes acumulados a resúmenes estructurados anteriores.
 - Registrar tokens por tarea y cortar por presupuesto configurable.
-- No reactivar la generación editorial ni los informes automáticos sin confirmar créditos disponibles.
+- La generación editorial diaria queda autorizada hasta 1.500.000 tokens por tanda mientras el usuario indique que hay créditos disponibles.
 
 ## Nota sobre archivos locales
 
