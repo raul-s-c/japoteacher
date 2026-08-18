@@ -11,6 +11,20 @@ const DIMENSION_WEIGHTS = Object.freeze({
 const REGISTER_ERROR_CATEGORIES = new Set(["register", "politeness"]);
 const MEANING_BREAKING_CATEGORIES = new Set(["meaning_change", "omission", "addition", "source_misunderstanding"]);
 
+function comparableFragment(value = "") {
+  return String(value)
+    .normalize("NFKC")
+    .replace(/<[^>]*>/g, "")
+    .replace(/[\s\u3000。、，,.!?！？¿¡「」『』（）()[\]{}・･"'`´]/g, "")
+    .toLocaleLowerCase("es");
+}
+
+function sameFragment(left, right) {
+  const a = comparableFragment(left);
+  const b = comparableFragment(right);
+  return Boolean(a && b && a === b);
+}
+
 export function spanishSourceMarksRegister(sourceText = "") {
   const normalized = String(sourceText).normalize("NFKC").toLocaleLowerCase("es");
   return /(?<!\p{L})(usted|ustedes|tú|vos|vosotros|vosotras|señor|señora|señorita|don|doña)(?!\p{L})/u.test(normalized);
@@ -29,6 +43,9 @@ export function normalizeEvaluation(evaluation, payload) {
     errors: [...(evaluation.errors || [])],
     detected_error_tags: [...(evaluation.detected_error_tags || [])],
   };
+  normalized.errors = normalized.errors.filter(
+    (error) => !sameFragment(error?.source_span, error?.corrected_span),
+  );
   const spanishRegisterIsUnmarked = payload?.exercise?.direction === "es_ja" &&
     !spanishSourceMarksRegister(payload?.exercise?.source_text);
 

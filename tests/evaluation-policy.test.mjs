@@ -62,4 +62,19 @@ function evaluation(overrides = {}) {
   assert.equal(result.meaning_changed, false);
 }
 
+{
+  const result = normalizeEvaluation(evaluation({
+    objective_score: 75, comprehensibility_score: 85, naturalness_score: 45,
+    grammar_score: 30, vocabulary_score: 80, orthography_score: 90,
+    register_score: 100,
+    overall_score: 72,
+    is_acceptable: true,
+    errors: [
+      { category: "particle", source_span: "バスが", corrected_span: "バスに" },
+      { category: "grammar", source_span: "乗りましょうか", corrected_span: "乗りましょうか" },
+    ],
+  }), { exercise: { direction: "es_ja", source_text: "¿Tomamos el bus?" }, attempt: { user_answer: "バスが乗りましょうか" } });
+  assert.deepEqual(result.errors, [{ category: "particle", source_span: "バスが", corrected_span: "バスに" }]);
+}
+
 console.log("evaluation-policy: ok");

@@ -39,3 +39,25 @@ test("ES to JP feedback retains the corrected Japanese sentence", () => {
   assert.match(html, /frase correcta en japon/);
   assert.match(html, /\u6628\u65e5/);
 });
+
+test("feedback hides fragment corrections that do not change the fragment", () => {
+  const html = feedback({
+    ...evaluation,
+    errors: [
+      {
+        source_span: "バスが",
+        corrected_span: "バスに",
+        explanation_es: "Con 乗る se usa に para el medio de transporte.",
+      },
+      {
+        source_span: "乗りましょうか",
+        corrected_span: "乗りましょうか",
+        explanation_es: "La forma es correcta por sí misma.",
+      },
+    ],
+  }, "バスが乗りましょうか", { direction: "es_ja" });
+  assert.match(html, /バスが/);
+  assert.match(html, /バスに/);
+  assert.doesNotMatch(html, /La forma es correcta por sí misma/);
+  assert.equal((html.match(/Tu fragmento/g) || []).length, 1);
+});
