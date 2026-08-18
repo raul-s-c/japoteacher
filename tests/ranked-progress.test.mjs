@@ -61,6 +61,14 @@ test("a high-difficulty N4 answer pulls a late N5 learner farther right", () => 
   assert.ok(lowN4 > 0);
 });
 
+test("correct answers scale up when the question is farther to the right", () => {
+  const xp = ranked();
+  const context = { position: 70, currentLevel: "N5", timesSeen: 0 };
+  const nearRight = xp.deltaFor(70, { direction: "ja_es", jlpt_level: "N5", difficulty: 90 }, { overall_score: 90 }, context);
+  const farRight = xp.deltaFor(70, { direction: "ja_es", jlpt_level: "N4", difficulty: 75 }, { overall_score: 90 }, context);
+  assert.ok(farRight > nearRight * 2);
+});
+
 test("direction tracks are independent and family evidence stays separate", () => {
   const xp = ranked();
   const exercises = [{ exercise_id: "a", direction: "ja_es", jlpt_level: "N5", difficulty: 70, topic_tags: ["trabajo"] }, { exercise_id: "b", direction: "es_ja", jlpt_level: "N5", difficulty: 70, topic_tags: ["ocio"] }];

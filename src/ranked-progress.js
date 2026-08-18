@@ -31,7 +31,7 @@
     const score=Number(attempt?.overall_score);if(!Number.isFinite(score))return 0;
     const currentPosition=Number(context.position??_position)||0,currentLevel=context.currentLevel||routeForPosition(currentPosition).level,previousScore=Number(context.previousScore),timesSeen=Number(context.timesSeen)||0,base=baseExperience(exercise),target=questionPosition(exercise),span=goalFor(currentLevel),gap=target-currentPosition,repeat=timesSeen===0?1:Math.max(.12,(previousScore>=85?.22:previousScore>=70?.5:.9)*Math.pow(.72,Math.max(0,timesSeen-1)));
     // Correct answers always move right. A target to the right moves more; a known left-side item still helps, just less.
-    if(score>=50){const quality=.08+(score-50)/50*1.42,distance=gap>=0?1+Math.min(2,gap/span)*.75:Math.max(.25,1-Math.min(1,-gap/span)*.55);return roundXp(base*quality*distance*repeat)}
+    if(score>=50){const quality=.08+(score-50)/50*1.42,distance=gap>=0?1+Math.min(3,gap/span)*.85:Math.max(.18,1-Math.min(1.35,-gap/span)*.6);return roundXp(base*quality*distance*repeat)}
     // An unmet minimum moves left. Above-level exploration is deliberately softened.
     const miss=(50-score)/50,distance=gap>0?Math.max(.12,1-Math.min(2,gap/span)*.44):1+Math.min(2,-gap/span)*.55,penalty=roundXp(base*miss*.55*distance*Math.max(.35,repeat)),minimum=gap>span*.35?.0001:.001;return -Math.max(minimum,penalty);
   }

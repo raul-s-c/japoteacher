@@ -138,6 +138,17 @@ const contextExplanationSchema = {
     usage_note_es: { type: "string" },
   },
 };
+const questionHelpSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["answer_es", "example_ja", "example_es", "caution_es"],
+  properties: {
+    answer_es: { type: "string" },
+    example_ja: { type: "string" },
+    example_es: { type: "string" },
+    caution_es: { type: "string" },
+  },
+};
 
 const editorialKanjiSchema = {
   type: "object",
@@ -359,6 +370,23 @@ async function callContextExplainer(payload, env) {
       input: JSON.stringify(payload),
       max_output_tokens: 500,
       text: { format: { type: "json_schema", name: "japoteacher_context_explanation", strict: true, schema: contextExplanationSchema } },
+    }),
+  });
+}
+function questionHelpPrompt() {
+  return "Eres un profesor particular de japonés para hispanohablantes dentro de una práctica. Responde solo a la duda del alumno sobre la frase actual. Usa español claro, concreto y pedagógico. Si hay japonés con kanji, añade lectura en hiragana entre paréntesis cuando ayude. No vuelvas a corregir toda la respuesta ni contradigas la referencia. answer_es debe ser la explicación principal en 2-5 frases; example_ja y example_es dan un ejemplo mínimo si aporta valor, o — si no procede; caution_es añade una advertencia breve sobre una confusión habitual o —.";
+}
+async function callQuestionHelp(payload, env) {
+  return fetch(OPENAI_RESPONSES_URL, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      reasoning: { effort: "none" },
+      instructions: questionHelpPrompt(),
+      input: JSON.stringify(payload),
+      max_output_tokens: 750,
+      text: { format: { type: "json_schema", name: "japoteacher_question_help", strict: true, schema: questionHelpSchema } },
     }),
   });
 }
@@ -587,6 +615,23 @@ export default {
         if (!text) return json({ error: "OpenAI no devolvió una explicación." }, 502, origin, env);
         return json({ explanation: JSON.parse(text), usage: raw.usage || {} }, 200, origin, env);
       } catch (error) { return json({ error: error.message || "No se pudo explicar el término." }, 500, origin, env); }
+    }
+    if (url.pathname === "/question-help" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión en el dispositivo activo para preguntar con IA." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de pregunta inválida." }, 400, origin, env); }
+      const question = String(body?.question || "").trim(), userAnswer = String(body?.user_answer || "").trim(), exercise = body?.exercise || {};
+      const japanese = String(exercise?.japanese_sentence || "").trim(), spanish = String(exercise?.spanish_sentence || "").trim(), level = String(exercise?.jlpt_level || "").trim(), direction = String(exercise?.direction || "").trim();
+      if (!question || question.length > 500 || userAnswer.length > 700 || japanese.length > 900 || spanish.length > 900 || level.length > 8 || direction.length > 12) return json({ error: "La pregunta no es válida." }, 400, origin, env);
+      try {
+        const response = await callQuestionHelp({ question, user_answer: userAnswer, exercise: { japanese_sentence: japanese, spanish_sentence: spanish, jlpt_level: level, direction, difficulty: exercise?.difficulty, topic_tags: exercise?.topic_tags || [], grammar_tags: exercise?.grammar_tags || [], vocabulary_tags: exercise?.vocabulary_tags || [] } }, env), raw = await response.json();
+        if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la pregunta." }, response.status, origin, env);
+        const text = outputText(raw);
+        if (!text) return json({ error: "OpenAI no devolvió respuesta." }, 502, origin, env);
+        return json({ help: JSON.parse(text), usage: raw.usage || {} }, 200, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo responder la pregunta." }, 500, origin, env); }
     }
     if (url.pathname.startsWith("/reports/")) {
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);

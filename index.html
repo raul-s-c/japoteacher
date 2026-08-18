@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=52">
+  <link rel="stylesheet" href="styles.css?v=53">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -53,7 +53,8 @@
             <div class="practice-reason" id="practiceReason" aria-live="polite"></div>
             <p class="instruction" id="practiceInstruction">Traduce al español</p>
             <div class="source-text" id="sourceText">Selecciona una sesión para comenzar.</div>
-            <div class="source-details"><span id="topicLabel"></span><div class="source-tools"><button class="text-button" id="dictionaryToggle" type="button" aria-expanded="false" aria-controls="dictionaryPanel">Diccionario</button><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div></div>
+            <div class="source-details"><span id="topicLabel"></span><div class="source-tools"><button class="text-button" id="speakSourceButton" type="button">Escuchar frase</button><button class="text-button" id="questionHelpToggle" type="button" aria-expanded="false" aria-controls="questionHelpPanel">Preguntar con IA</button><button class="text-button" id="dictionaryToggle" type="button" aria-expanded="false" aria-controls="dictionaryPanel">Diccionario</button><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div></div>
+            <div class="question-help-panel" id="questionHelpPanel" hidden><label for="questionHelpInput">Pregunta sobre esta frase</label><textarea id="questionHelpInput" rows="3" maxlength="500" placeholder="Ej.: ¿por qué aquí se usa に y no で?"></textarea><div><button class="secondary" id="questionHelpSubmit" type="button">Preguntar</button></div><div class="question-help-response" id="questionHelpResponse" hidden></div></div>
             <div class="dictionary-panel" id="dictionaryPanel" hidden></div>
             <label class="answer-label" for="answerInput">Tu respuesta</label>
             <textarea id="answerInput" rows="5" maxlength="500" placeholder="Escribe aquí tu traducción…"></textarea>
@@ -112,7 +113,7 @@
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=2"></script>
   <script src="src/topic-progression.js?v=39"></script>
-  <script src="src/ranked-progress.js?v=13"></script>
+  <script src="src/ranked-progress.js?v=14"></script>
   <script src="src/ranked-history.js?v=1"></script>
   <script src="src/session-planner.js?v=43"></script>
   <script src="src/furigana-generated.js?v=29"></script>
@@ -137,6 +138,7 @@
   <link rel="stylesheet" href="src/practice-history.css?v=1">
   <script src="src/practice-history.js?v=3"></script>
   <script src="src/context-explainer.js?v=1"></script>
+  <script src="src/practice-tools.js?v=2"></script>
   <script src="src/topic-drill.js?v=33"></script>
   <script src="src/issue-reporter.js?v=1"></script>
 </body>
