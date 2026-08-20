@@ -39,6 +39,7 @@
     settings: "key",
     import_history: "import_id",
     learning_reports: "report_id",
+    exercise_overrides: "exercise_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -168,6 +169,10 @@
         store === "learning_reports"
       )
         out.stores[store] = unionRows(l, r, key);
+      else if (store === "exercise_overrides")
+        out.stores[store] = unionRows(l, r, key, (a, b) =>
+          newer(a, b, "updated_at"),
+        );
       else if (store === "daily_sessions")
         out.stores[store] = unionRows(l, r, key, mergeSession);
       else if (store === "exercise_progress")

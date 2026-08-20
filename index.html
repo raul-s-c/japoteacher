@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=53">
+  <link rel="stylesheet" href="styles.css?v=54">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -53,7 +53,8 @@
             <div class="practice-reason" id="practiceReason" aria-live="polite"></div>
             <p class="instruction" id="practiceInstruction">Traduce al español</p>
             <div class="source-text" id="sourceText">Selecciona una sesión para comenzar.</div>
-            <div class="source-details"><span id="topicLabel"></span><div class="source-tools"><button class="text-button" id="speakSourceButton" type="button">Escuchar frase</button><button class="text-button" id="questionHelpToggle" type="button" aria-expanded="false" aria-controls="questionHelpPanel">Preguntar con IA</button><button class="text-button" id="dictionaryToggle" type="button" aria-expanded="false" aria-controls="dictionaryPanel">Diccionario</button><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div></div>
+            <div class="source-details"><span id="topicLabel"></span><div class="source-tools"><button class="text-button" id="speakSourceButton" type="button">Escuchar frase</button><button class="text-button" id="questionHelpToggle" type="button" aria-expanded="false" aria-controls="questionHelpPanel">Preguntar con IA</button><button class="text-button" id="recalibrateExerciseButton" type="button" aria-expanded="false" aria-controls="exerciseCalibrationPanel">Recalibrar</button><button class="text-button" id="dictionaryToggle" type="button" aria-expanded="false" aria-controls="dictionaryPanel">Diccionario</button><button class="text-button" id="furiganaToggle" aria-pressed="false">あ Mostrar furigana</button></div></div>
+            <div class="manual-adjust-panel" id="exerciseCalibrationPanel" hidden><label>Nivel real<select id="manualJlptLevel"><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label>Dificultad dentro del nivel<input id="manualDifficulty" type="number" min="0" max="100" step="1"></label><label>Motivo<textarea id="manualCalibrationReason" rows="2" maxlength="300" placeholder="Ej.: usa una estructura más propia de N4 alto"></textarea></label><div><button class="secondary" id="saveExerciseCalibration" type="button">Guardar recalibración</button><button class="text-button" id="clearExerciseCalibration" type="button">Quitar ajuste</button></div><p id="exerciseCalibrationStatus"></p></div>
             <div class="question-help-panel" id="questionHelpPanel" hidden><label for="questionHelpInput">Pregunta sobre esta frase</label><textarea id="questionHelpInput" rows="3" maxlength="500" placeholder="Ej.: ¿por qué aquí se usa に y no で?"></textarea><div><button class="secondary" id="questionHelpSubmit" type="button">Preguntar</button></div><div class="question-help-response" id="questionHelpResponse" hidden></div></div>
             <div class="dictionary-panel" id="dictionaryPanel" hidden></div>
             <label class="answer-label" for="answerInput">Tu respuesta</label>
@@ -107,8 +108,8 @@
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=29"></script>
-  <script src="src/cloud-sync.js?v=30"></script>
+  <script src="src/db.js?v=30"></script>
+  <script src="src/cloud-sync.js?v=31"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=2"></script>
@@ -130,8 +131,8 @@
   <script src="src/analytics.js?v=37"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
   <script src="src/ui.js?v=39"></script>
-  <script src="src/history-ui.js?v=35"></script>
-  <script src="app.js?v=55"></script>
+  <script src="src/history-ui.js?v=36"></script>
+  <script src="app.js?v=56"></script>
   <script src="src/navigation-fix.js?v=2"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
@@ -139,6 +140,7 @@
   <script src="src/practice-history.js?v=3"></script>
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
+  <script src="src/manual-adjustments.js?v=2"></script>
   <script src="src/topic-drill.js?v=33"></script>
   <script src="src/issue-reporter.js?v=1"></script>
 </body>
