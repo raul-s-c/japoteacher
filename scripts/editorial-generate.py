@@ -15,7 +15,8 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POLICY = json.loads((ROOT / "data" / "jlpt-content-policy.json").read_text(encoding="utf-8"))
 ENDPOINT = "https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate"
-MAX_GENERATION_ATTEMPTS = 8
+MAX_GENERATION_ATTEMPTS = 5
+UNSUITABLE_N5_COVERAGE_WORDS = {"場合", "可能", "バック"}
 
 # Windows PowerShell can default to cp1252, which cannot print Japanese
 # rejection diagnostics and should never abort a resumable editorial run.
@@ -62,7 +63,7 @@ def normalize_spacing(item):
     item["accepted_alternatives_ja"] = list(dict.fromkeys(value for value in japanese_alternatives if normalize_japanese(value) != normalize_japanese(item["japanese"])))
     item["accepted_alternatives_es"] = list(dict.fromkeys(value for value in spanish_alternatives if value.casefold().rstrip(".!?¿¡") != item["spanish"].casefold().rstrip(".!?¿¡")))
     for field in ["grammar_tags", "particle_tags", "vocabulary_tags"]:
-        item[field] = [value for value in item[field] if value not in {"grammar_focus", "topic_primary", "required_distinction"}]
+        item[field] = [value for value in item[field] if value not in {"grammar_focus", "topic_primary", "required_distinction", "N5", "N4", "N3", "N2", "N1"}]
     return item
 
 def grammar_focus_present(focus, tags, japanese):
@@ -87,13 +88,17 @@ def validate_slot(item, slot):
     if not all(grammar_focus_present(focus, item.get("grammar_tags", []), item.get("japanese", "")) for focus in slot["grammar_focus"]): errors.append("foco gramatical ausente")
     jp_chars = len(normalize_japanese(item.get("japanese", "")))
     jp_min, jp_max = max(1, int(slot["jp_char_range"][0] * 0.8)), slot["jp_char_range"][1] + 4
+    if slot.get("target_vocabulary"):
+        jp_min = min(jp_min, 5)
     if not jp_min <= jp_chars <= jp_max: errors.append(f"longitud japonesa {jp_chars}")
     es_words = len(re.findall(r"\b[\wÁÉÍÓÚÜÑáéíóúüñ]+\b", item.get("spanish", "")))
     es_min, es_max = max(1, int(slot["es_word_range"][0] * 0.75)), slot["es_word_range"][1] + 2
+    if slot.get("target_vocabulary"):
+        es_min = min(es_min, 2)
     if not es_min <= es_words <= es_max: errors.append(f"longitud española {es_words}")
     if re.search(r"(?:です|ます|ません|ました)[。！？]?$", item.get("japanese", "")) and item.get("register") != "cortés": errors.append("registro cortés mal etiquetado")
     if slot.get("level") == "N5":
-        advanced_n5 = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|学べ)")
+        advanced_n5 = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|とともに|共に|として|場合|可能|学べ)")
         if advanced_n5.search(item.get("japanese", "")):
             errors.append("construcción superior a N5 detectada")
     covered = "".join(reading.get("characters", "") for reading in item.get("kanji_readings", []))
@@ -251,7 +256,26 @@ def sorted_debt(rows, counts, id_field, min_uses):
         return (counts.get(row[id_field], 0), order)
     return sorted([row for row in rows if counts.get(row[id_field], 0) < min_uses], key=rank)
 
-def make_usage_coverage_slots(level, start, count, topics_override, reference, counts, min_uses):
+def inferred_topic(target_vocab, fallback):
+    if not target_vocab:
+        return fallback
+    haystack = " ".join((item.get("word", "") + " " + item.get("meaning_en", "")).lower() for item in target_vocab)
+    rules = [
+        ("tecnologia", ["link", "page", "technology", "site", "internet", "投稿", "リンク", "ページ", "技術"]),
+        ("trabajo", ["work", "job", "enterprise", "business", "company", "office", "企業", "仕事", "業"]),
+        ("sociedad", ["government", "society", "country", "china", "economics", "politics", "social", "政府", "社会", "中国", "経済", "個人"]),
+        ("compras", ["money", "price", "buy", "shop", "sale", "お金", "価格", "買"]),
+        ("familia", ["family", "child", "human", "person", "子供", "家族", "人間"]),
+        ("estudio", ["study", "training", "education", "article", "subject", "教育", "記事", "内容"]),
+        ("viajes", ["travel", "station", "country", "世界", "駅"]),
+        ("vida_diaria", ["life", "living", "activity", "use", "生活", "活動", "利用"]),
+    ]
+    for topic, needles in rules:
+        if any(needle.lower() in haystack for needle in needles):
+            return topic
+    return fallback if fallback in POLICY["topics"] else "vida_diaria"
+
+def make_usage_coverage_slots(level, start, count, topics_override, reference, counts, min_uses, vocab_per_slot=1, require_grammar=False):
     slots = make_slots(level, start, count, topics_override)
     vocab_debt = sorted_debt(reference["vocabulary"], counts["vocabulary"], "Word_ID", min_uses)
     kanji_debt = sorted_debt(reference["kanji"], counts["kanji"], "Kanji_ID", min_uses)
@@ -259,11 +283,13 @@ def make_usage_coverage_slots(level, start, count, topics_override, reference, c
     vocab_index = kanji_index = grammar_index = 0
     for slot in slots:
         target_vocab = []
-        while vocab_index < len(vocab_debt) and len(target_vocab) < 2:
+        while vocab_index < len(vocab_debt) and len(target_vocab) < vocab_per_slot:
             row = vocab_debt[vocab_index]
             vocab_index += 1
             word = row.get("Word", "")
             if row.get("Script_Type") not in {"kanji", "katakana"}:
+                continue
+            if level == "N5" and word in UNSUITABLE_N5_COVERAGE_WORDS:
                 continue
             if len(word) < 2:
                 continue
@@ -293,7 +319,7 @@ def make_usage_coverage_slots(level, start, count, topics_override, reference, c
                 "current_uses": counts["kanji"].get(row["Kanji_ID"], 0),
             })
         target_grammar = []
-        if grammar_index < len(grammar_debt):
+        if require_grammar and not target_vocab and grammar_index < len(grammar_debt):
             row = grammar_debt[grammar_index]
             grammar_index += 1
             target_grammar.append({
@@ -306,7 +332,11 @@ def make_usage_coverage_slots(level, start, count, topics_override, reference, c
         slot["target_vocabulary"] = target_vocab
         slot["target_kanji"] = target_kanji
         slot["target_grammar"] = target_grammar
-        slot["required_distinction"] = "Cubre target_vocabulary, target_kanji y target_grammar de forma natural. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija."
+        if target_vocab:
+            slot["grammar_focus"] = []
+            slot["topic_primary"] = inferred_topic(target_vocab, slot.get("topic_primary", "vida_diaria"))
+            slot["topic_secondary_allowed"] = ""
+        slot["required_distinction"] = "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija."
     return slots
 
 def read_jsonl(path):
@@ -372,7 +402,7 @@ def review_until_approved(items, level, key, slots=None, operation="review"):
     reason = local_rejection or review_rejection or "el revisor no aprobó la versión corregida"
     raise RuntimeError(f"El grupo no superó tres revisiones: {reason}")
 
-def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, topics_override=None, usage_reference_zip=None, coverage_min=2):
+def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, topics_override=None, usage_reference_zip=None, coverage_min=2, group_size=1, quality_mode="balanced", vocab_per_slot=1, require_grammar=False):
     key = os.environ.get("JAPOTEACHER_EDITORIAL_KEY", "")
     if not key:
         raise SystemExit("Falta JAPOTEACHER_EDITORIAL_KEY en el entorno.")
@@ -408,12 +438,12 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
             if spent >= token_budget:
                 print(json.dumps({"token_budget_reached": True, "usage_baseline": usage_baseline, "spent": spent, "budget": token_budget}, ensure_ascii=False), flush=True)
                 break
-        group_size = 1
+        group_size = max(1, min(4, group_size, remaining - generated))
         next_slot = max([len(existing), *used_slots], default=0) + 1
         if state.get("slot") and 0 < int(state.get("attempts", 0) or 0) < MAX_GENERATION_ATTEMPTS:
             next_slot = max(next_slot, int(state["slot"]))
         offset = next_slot - 1
-        slots = make_usage_coverage_slots(level, offset, group_size, topics_override, reference, counts, coverage_min) if reference else make_slots(level, offset, group_size, topics_override)
+        slots = make_usage_coverage_slots(level, offset, group_size, topics_override, reference, counts, coverage_min, vocab_per_slot, require_grammar) if reference else make_slots(level, offset, group_size, topics_override)
         current_attempts = int(state.get("attempts", 0) or 0) if state.get("slot") == slots[0]["slot"] else 0
         last_rejection = state.get("last_reason", "") if current_attempts else ""
         # Difficult coverage slots may need constrained rewrites to meet both
@@ -423,7 +453,8 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
             try:
                 result = request_editorial({"operation": "generate", "level": level, "slots": slots, "avoid_japanese": list(known)[-200:], "previous_rejection": last_rejection}, key)
                 final, rounds = review_until_approved(result["items"], level, key, slots)
-                final = equivalence_check(final, level, key, slots)
+                if quality_mode == "strict":
+                    final = equivalence_check(final, level, key, slots)
                 final_by_slot = {item.get("slot"): normalize_spacing(item) for item in final}
                 if set(final_by_slot) != {slot["slot"] for slot in slots}:
                     raise RuntimeError("La revisión perdió o duplicó identidades de slot.")
@@ -479,6 +510,10 @@ if __name__ == "__main__":
     parser.add_argument("--topics", help="Temas primarios separados por comas para cubrir un hueco editorial concreto.")
     parser.add_argument("--usage-reference-zip", help="ZIP con vocabulary_10000_v2.csv, kanji_2000_v2.csv y grammar_750_v2.csv para generar por deuda de cobertura.")
     parser.add_argument("--coverage-min", type=int, default=2, help="Usos mínimos por vocabulario/kanji antes de considerar cubierta la referencia.")
+    parser.add_argument("--group-size", type=int, default=1, help="Slots por llamada editorial. 2-4 reduce coste por frase, pero puede aumentar rechazos si los objetivos son difíciles.")
+    parser.add_argument("--quality-mode", choices=["balanced", "strict"], default="balanced", help="balanced omite equivalencia final IA tras revisión aprobada; strict la conserva.")
+    parser.add_argument("--vocab-per-slot", type=int, default=1, help="Número de vocabularios objetivo por slot.")
+    parser.add_argument("--require-grammar", action="store_true", help="Fuerza cobertura gramatical además de vocabulario solo cuando no hay objetivo léxico.")
     args = parser.parse_args()
     topics = [topic.strip() for topic in (args.topics or "").split(",") if topic.strip()]
-    run(args.level, args.limit, args.usage_baseline, args.token_budget, args.append, topics or None, args.usage_reference_zip, args.coverage_min)
+    run(args.level, args.limit, args.usage_baseline, args.token_budget, args.append, topics or None, args.usage_reference_zip, args.coverage_min, args.group_size, args.quality_mode, args.vocab_per_slot, args.require_grammar)
