@@ -46,7 +46,8 @@ test("balanced SRS exposes weak conversation families and registers", () => {
 test("a daily plan from an older selector is marked for rebalancing", () => {
   const srs = planner();
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "topic_adaptive_srs_difficulty_ranked_v6" }) }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_families_registers_v9" }) }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_coverage_v10" }) }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), false);
 });
 
 test("a zero-evidence family gets an intervention slot ahead of ordinary due reviews", () => {
@@ -56,4 +57,19 @@ test("a zero-evidence family gets an intervention slot ahead of ordinary due rev
   const attempts = topics.filter(topic => topic !== "dinero").flatMap((topic, group) => Array.from({ length: 4 }, (_, index) => ({ exercise_id: `e-${topic}`, direction: "ja_es", evaluation_status: "valid", overall_score: 90, is_acceptable: true, attempted_at: `2026-08-${String(group * 4 + index + 1).padStart(2, "0")}T12:00:00Z` })));
   const progress = exercises.filter(exercise => exercise.exercise_id !== "e-dinero").map(exercise => ({ exercise_id: exercise.exercise_id, cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 90 }));
   assert.deepEqual(Array.from(srs.choose(exercises, progress, attempts, 1, { levels: ["N5"] }, "ja_es", "2026-08-15", [])), ["e-dinero"]);
+});
+
+test("recent lexical repetition is penalized so daily plans diversify words", () => {
+  const srs = planner();
+  const exercises = [
+    { exercise_id: "repeat-1", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["ocio"], grammar_tags: ["g-a"], vocabulary_tags: ["病院"], kanji_tags: ["院"], register: "cortes" },
+    { exercise_id: "repeat-2", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["ocio"], grammar_tags: ["g-b"], vocabulary_tags: ["病院"], kanji_tags: ["院"], register: "cortes" },
+    { exercise_id: "fresh-1", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["dinero"], grammar_tags: ["g-c"], vocabulary_tags: ["お金"], kanji_tags: ["金"], register: "cortes" },
+    { exercise_id: "fresh-2", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["trabajo"], grammar_tags: ["g-d"], vocabulary_tags: ["仕事"], kanji_tags: ["仕"], register: "cortes" },
+  ];
+  const attempts = Array.from({ length: 10 }, (_, index) => ({ exercise_id: index % 2 ? "repeat-1" : "repeat-2", direction: "ja_es", evaluation_status: "valid", overall_score: 60, is_acceptable: false, attempted_at: `2026-08-${String(index + 1).padStart(2, "0")}T12:00:00Z` }));
+  const progress = exercises.map(exercise => ({ exercise_id: exercise.exercise_id, cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: exercise.exercise_id.startsWith("repeat") ? 60 : 80 }));
+  const ids = srs.choose(exercises, progress, attempts, 2, { levels: ["N5"] }, "ja_es", "2026-08-15", []);
+  assert.ok(ids.includes("fresh-1"));
+  assert.ok(ids.includes("fresh-2"));
 });
