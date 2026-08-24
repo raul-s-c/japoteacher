@@ -22,15 +22,21 @@
   function applyExerciseOverride(row, override) {
     if (!row || !override) return row;
     const difficulty = Number(override.difficulty);
+    const hasCalibration = validLevel(override.jlpt_level) || Number.isFinite(difficulty);
     return {
       ...row,
-      original_jlpt_level: row.original_jlpt_level || row.jlpt_level,
-      original_difficulty: row.original_difficulty ?? row.difficulty,
+      original_jlpt_level: hasCalibration ? row.original_jlpt_level || row.jlpt_level : row.original_jlpt_level,
+      original_difficulty: hasCalibration ? row.original_difficulty ?? row.difficulty : row.original_difficulty,
       jlpt_level: validLevel(override.jlpt_level) ? override.jlpt_level : row.jlpt_level,
       difficulty: Number.isFinite(difficulty) ? Math.max(0, Math.min(100, Math.round(difficulty))) : row.difficulty,
-      manual_calibration: true,
+      active: override.blocked_by_user ? false : row.active,
+      manual_calibration: hasCalibration,
       manual_calibration_reason: override.reason || "",
       manual_calibrated_at: override.updated_at || "",
+      blocked_by_user: Boolean(override.blocked_by_user),
+      blocked_reason: override.blocked_reason || "",
+      blocked_at: override.blocked_at || "",
+      user_filter_tag: override.user_filter_tag || "",
     };
   }
   const changed = () => document.dispatchEvent(new CustomEvent("japoteacher:db-write"));
