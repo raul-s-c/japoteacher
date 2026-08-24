@@ -40,6 +40,12 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 Los objetivos se expresan en ejercicios publicados, contando JP→ES y ES→JP por separado. Se trabajará hacia el límite alto del rango razonable para que el SRS tenga suficiente variedad durante años de práctica.
 
+A partir de `japanese_usage_progress_v2_csv.zip`, la generación nueva se rige por cobertura de uso real, no solo por volumen bruto. Cada nivel JLPT simulado tiene una lista de vocabulario, kanji y gramática de referencia; el bloque de un nivel no se considera completo hasta que cada palabra y cada kanji objetivo aparezcan al menos 2 veces, preferiblemente 3, en frases naturales y con el sentido indicado por la referencia. Las expresiones gramaticales pueden aparecer con mayor frecuencia, pero deben mantenerse equilibradas según su peso de uso.
+
+Antes de cada tanda editorial de tokens, el generador debe calcular la deuda de cobertura del nivel: términos con 0 usos, después términos con 1 uso, y por último elementos sobrerrepresentados que conviene evitar. Las frases JP→ES se crean para entrenar comprensión real de esos elementos; las frases ES→JP se diseñan a la inversa, como estímulos en español que obligan a producir el vocabulario, kanji y patrón japonés objetivo. Cada frase futura debería declarar los `Word_ID`, `Kanji_ID` y `Grammar_ID` que cubre para que el SRS y los informes puedan explicar por qué aparece.
+
+El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por acierto/error. La selección diaria debe evitar bloques monocordes por tema y priorizar familias, temas, registros, vocabulario, kanji y gramática con poca evidencia. Si una sesión empieza a concentrarse en contextos recurrentes como hospitales o colegios, el planificador debe desplazar prioridad hacia otros contextos con deuda equivalente.
+
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
 | N5 | 1.400 ejercicios | 1.058 activos |
