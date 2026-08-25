@@ -29,9 +29,9 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 419 pares N5 y 593 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 3.014 ejercicios; 2.514 están activos (529 N5 y 728 N4 por dirección) y 500 se conservan archivados.
-- La ampliación adaptativa del 15 de agosto priorizó `Dinero y proyectos`, producción ES→JP de base y la rampa N4 de Trabajo/Familia. Añadió material nuevo con revisión adversarial, equivalencia bilingüe, deduplicación y furigana.
+- Fuentes editoriales aprobadas: 527 pares N5 y 697 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 3.438 ejercicios; 2.938 están activos (637 N5 y 832 N4 por dirección) y 500 se conservan archivados.
+- La ampliación del 25 de agosto usó `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 3 pares N5 y 67 pares N4 nuevos, con revisión adversarial, deduplicación y furigana.
 - El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
@@ -48,8 +48,8 @@ El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por ac
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 1.058 activos |
-| N4 | 2.400 ejercicios | 1.456 activos |
+| N5 | 1.400 ejercicios | 1.274 activos |
+| N4 | 2.400 ejercicios | 1.664 activos |
 | N3 | 4.000 ejercicios | 0 activos |
 | N2 | 7.000 ejercicios | 0 activos |
 | N1 | 12.000 ejercicios | 0 activos |
