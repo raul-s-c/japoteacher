@@ -17,6 +17,7 @@ POLICY = json.loads((ROOT / "data" / "jlpt-content-policy.json").read_text(encod
 ENDPOINT = "https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate"
 MAX_GENERATION_ATTEMPTS = 5
 UNSUITABLE_N5_COVERAGE_WORDS = {"場合", "可能", "バック"}
+N5_BRIDGE_PATTERN = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|とともに|共に|として|場合|可能|学べ)")
 
 # Windows PowerShell can default to cp1252, which cannot print Japanese
 # rejection diagnostics and should never abort a resumable editorial run.
@@ -81,6 +82,16 @@ def grammar_focus_present(focus, tags, japanese):
 def is_kanji(character):
     return "\u3400" <= character <= "\u9fff" or "\uf900" <= character <= "\ufaff"
 
+def mark_bridge_level(item, slot):
+    item = dict(item)
+    if slot.get("level") == "N5" and N5_BRIDGE_PATTERN.search(item.get("japanese", "")):
+        bridge_tags = list(dict.fromkeys([*item.get("bridge_tags", []), "n5_to_n4_bridge"]))
+        item["bridge_tags"] = bridge_tags
+        item["difficulty_bridge"] = "N5_to_N4"
+        note = "Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4."
+        item["difficulty_rationale"] = " ".join(part for part in [item.get("difficulty_rationale", ""), note] if part).strip()
+    return item
+
 def validate_slot(item, slot):
     errors = []
     if item.get("slot") != slot["slot"]: errors.append("slot alterado")
@@ -97,10 +108,6 @@ def validate_slot(item, slot):
         es_min = min(es_min, 2)
     if not es_min <= es_words <= es_max: errors.append(f"longitud española {es_words}")
     if re.search(r"(?:です|ます|ません|ました)[。！？]?$", item.get("japanese", "")) and item.get("register") != "cortés": errors.append("registro cortés mal etiquetado")
-    if slot.get("level") == "N5":
-        advanced_n5 = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|とともに|共に|として|場合|可能|学べ)")
-        if advanced_n5.search(item.get("japanese", "")):
-            errors.append("construcción superior a N5 detectada")
     covered = "".join(reading.get("characters", "") for reading in item.get("kanji_readings", []))
     missing_kanji = sorted({character for character in item.get("japanese", "") if is_kanji(character) and character not in covered})
     if missing_kanji: errors.append(f"kanji sin lectura {''.join(missing_kanji)}")
@@ -148,7 +155,7 @@ def equivalence_check(items, level, key, slots):
     by_slot = {slot["slot"]: slot for slot in slots}
     for item in items:
         correction = corrections[item["slot"]]
-        final = normalize_spacing({**item, "japanese": correction["japanese"], "spanish": correction["spanish"], "accepted_alternatives_es": correction["accepted_alternatives_es"], "accepted_alternatives_ja": correction["accepted_alternatives_ja"]})
+        final = mark_bridge_level(normalize_spacing({**item, "japanese": correction["japanese"], "spanish": correction["spanish"], "accepted_alternatives_es": correction["accepted_alternatives_es"], "accepted_alternatives_ja": correction["accepted_alternatives_ja"]}), by_slot[item["slot"]])
         validate_slot(final, by_slot[item["slot"]])
         merged.append(final)
     return merged
@@ -378,7 +385,7 @@ def review_until_approved(items, level, key, slots=None, operation="review"):
             if set(by_slot) != {slot["slot"] for slot in slots}:
                 local_errors.append("Se perdieron o duplicaron identidades de slot.")
             else:
-                current = [by_slot[slot["slot"]] for slot in slots]
+                current = [mark_bridge_level(by_slot[slot["slot"]], slot) for slot in slots]
                 for item, slot in zip(current, slots):
                     try:
                         validate_slot(item, slot)
@@ -458,7 +465,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
                 final_by_slot = {item.get("slot"): normalize_spacing(item) for item in final}
                 if set(final_by_slot) != {slot["slot"] for slot in slots}:
                     raise RuntimeError("La revisión perdió o duplicó identidades de slot.")
-                final = [final_by_slot[slot["slot"]] for slot in slots]
+                final = [mark_bridge_level(final_by_slot[slot["slot"]], slot) for slot in slots]
                 for item, slot in zip(final, slots):
                     validate_slot(item, slot)
                 signatures = [normalize_japanese(item["japanese"]) for item in final]

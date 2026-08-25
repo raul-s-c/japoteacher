@@ -6,7 +6,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
 
 def packed(values):
-    return "|".join(dict.fromkeys(value for value in values if value))
+    if isinstance(values, str):
+        values = [values]
+    return "|".join(dict.fromkeys(str(value) for value in values if value))
 
 def reviewed_difficulties(rows):
     values = {}
@@ -37,11 +39,14 @@ def main():
             if not line.strip(): continue
             item = json.loads(line)
             slot = int(item["slot"])
+            base_difficulty = 2 + (level == "N4") * 2 + (item["coverage_slot"]["length_band"] == "long")
+            if item.get("difficulty_bridge") == "N5_to_N4":
+                base_difficulty = max(base_difficulty, 82)
             common = {
                 "jlpt_level": level,
-                "difficulty": str(2 + (level == "N4") * 2 + (item["coverage_slot"]["length_band"] == "long")),
+                "difficulty": str(base_difficulty),
                 "topic_tags": packed([item["topic_primary"], *item.get("topic_secondary", [])]),
-                "situation_tags": item.get("situation_tag", ""),
+                "situation_tags": packed([item.get("situation_tag", ""), *item.get("bridge_tags", [])]),
                 "grammar_tags": packed(item.get("grammar_tags", [])),
                 "particle_tags": packed(item.get("particle_tags", [])),
                 "vocabulary_tags": packed(item.get("vocabulary_tags", [])),

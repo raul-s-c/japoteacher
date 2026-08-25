@@ -44,6 +44,8 @@ A partir de `japanese_usage_progress_v2_csv.zip`, la generación nueva se rige p
 
 Antes de cada tanda editorial de tokens, el generador debe calcular la deuda de cobertura del nivel: términos con 0 usos, después términos con 1 uso, y por último elementos sobrerrepresentados que conviene evitar. Las frases JP→ES se crean para entrenar comprensión real de esos elementos; las frases ES→JP se diseñan a la inversa, como estímulos en español que obligan a producir el vocabulario, kanji y patrón japonés objetivo. Cada frase futura debería declarar los `Word_ID`, `Kanji_ID` y `Grammar_ID` que cubre para que el SRS y los informes puedan explicar por qué aparece.
 
+Una frase no debe rechazarse solo porque, al cubrir vocabulario/kanji objetivo N5, use una construcción que se acerque a N4. Si la frase es natural, correcta, no duplicada y cubre los objetivos, se publica como elemento puente con tag `n5_to_n4_bridge` y dificultad alta dentro de N5. Se rechazan únicamente frases duplicadas, absurdas, incorrectas, sin equivalencia clara, sin furigana/lecturas completas o que no incluyan el objetivo de cobertura.
+
 El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por acierto/error. La selección diaria debe evitar bloques monocordes por tema y priorizar familias, temas, registros, vocabulario, kanji y gramática con poca evidencia. Si una sesión empieza a concentrarse en contextos recurrentes como hospitales o colegios, el planificador debe desplazar prioridad hacia otros contextos con deuda equivalente.
 
 | Nivel | Objetivo publicado | Estado actual |
