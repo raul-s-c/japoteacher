@@ -1,17 +1,17 @@
 {
-  "active_rows": 2938,
-  "semantic_pairs": 1469,
+  "active_rows": 2962,
+  "semantic_pairs": 1481,
   "by_level_direction": {
     "N4/es_ja": 832,
     "N4/ja_es": 832,
-    "N5/es_ja": 637,
-    "N5/ja_es": 637
+    "N5/es_ja": 649,
+    "N5/ja_es": 649
   },
-  "structural_issues": 2534,
+  "structural_issues": 2550,
   "issues_by_type": {
-    "tag_count": 1846,
-    "es_length": 490,
-    "jp_length": 198
+    "tag_count": 1858,
+    "es_length": 492,
+    "jp_length": 200
   },
   "duplicate_signatures": 0,
   "invalid_direction_pairs": 0,
@@ -6436,6 +6436,86 @@
       "ESJA-N5-EDITORIAL-0612",
       "tag_count",
       16
+    ],
+    [
+      "JAES-N5-EDITORIAL-0615",
+      "es_length",
+      3
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0615",
+      "es_length",
+      3
+    ],
+    [
+      "JAES-N5-EDITORIAL-0616",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0616",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-EDITORIAL-0617",
+      "jp_length",
+      7
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0617",
+      "jp_length",
+      7
+    ],
+    [
+      "JAES-N5-EDITORIAL-0618",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0618",
+      "tag_count",
+      13
+    ],
+    [
+      "JAES-N5-EDITORIAL-0619",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0619",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EDITORIAL-0620",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0620",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-EDITORIAL-0622",
+      "tag_count",
+      15
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0622",
+      "tag_count",
+      15
+    ],
+    [
+      "JAES-N5-EDITORIAL-0623",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0623",
+      "tag_count",
+      13
     ],
     [
       "JAES-N4-EDITORIAL-0106",
