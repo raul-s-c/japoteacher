@@ -4,6 +4,12 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
+BRIDGE_MARKERS = (
+    "ので", "のに", "たら", "なら", "ば", "ように", "そうだ", "と思", "と言",
+    "かもしれ", "でしょう", "つもり", "予定", "こと", "なければ", "なくても",
+    "てしま", "てお", "てみ", "てあげ", "てくれ", "てもら", "ために", "しか",
+    "すぎ", "はず", "かどうか", "について", "によると", "に見え", "として", "以外",
+)
 
 def packed(values):
     if isinstance(values, str):
@@ -24,6 +30,24 @@ def reviewed_difficulties(rows):
             values[exercise_id] = difficulty
     return values
 
+def editorial_difficulty(level, item):
+    slot = item.get("coverage_slot", {})
+    band = slot.get("length_band", "standard")
+    base = {
+        "N5": {"short": 18, "standard": 34, "long": 48},
+        "N4": {"short": 24, "standard": 42, "long": 58},
+    }.get(level, {"short": 30, "standard": 50, "long": 70}).get(band, 42)
+    grammar = "|".join(item.get("grammar_tags", []))
+    text = item.get("japanese", "")
+    vocab_count = len(item.get("vocabulary_tags", []))
+    kanji_count = len(item.get("kanji_readings", []))
+    base += min(24, max(0, vocab_count - 2) * 5 + max(0, kanji_count - 2) * 3)
+    if level == "N5" and any(marker in text or marker in grammar for marker in BRIDGE_MARKERS):
+        base = max(base, 78)
+    if item.get("difficulty_bridge") == "N5_to_N4":
+        base = max(base, 82)
+    return max(0, min(100, round(base)))
+
 def main():
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
@@ -39,9 +63,7 @@ def main():
             if not line.strip(): continue
             item = json.loads(line)
             slot = int(item["slot"])
-            base_difficulty = 2 + (level == "N4") * 2 + (item["coverage_slot"]["length_band"] == "long")
-            if item.get("difficulty_bridge") == "N5_to_N4":
-                base_difficulty = max(base_difficulty, 82)
+            base_difficulty = editorial_difficulty(level, item)
             common = {
                 "jlpt_level": level,
                 "difficulty": str(base_difficulty),
@@ -74,7 +96,7 @@ def main():
                     "reference_translation": item["spanish"] if ja_es else item["japanese"],
                     "accepted_alternatives_json": json.dumps(item["accepted_alternatives_es" if ja_es else "accepted_alternatives_ja"], ensure_ascii=False),
                 })
-                if exercise_id in preserved_difficulty:
+                if exercise_id in preserved_difficulty and preserved_difficulty[exercise_id] > 7:
                     row["difficulty"] = str(preserved_difficulty[exercise_id])
                 rows.append(row); added += 1
     with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as output:

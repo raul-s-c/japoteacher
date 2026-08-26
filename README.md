@@ -46,7 +46,11 @@ Antes de cada tanda editorial de tokens, el generador debe calcular la deuda de 
 
 Una frase no debe rechazarse solo porque, al cubrir vocabulario/kanji objetivo N5, use una construcción que se acerque a N4. Si la frase es natural, correcta, no duplicada y cubre los objetivos, se publica como elemento puente con tag `n5_to_n4_bridge` y dificultad alta dentro de N5. Se rechazan únicamente frases duplicadas, absurdas, incorrectas, sin equivalencia clara, sin furigana/lecturas completas o que no incluyan el objetivo de cobertura.
 
+Al publicar frases editoriales, la dificultad se recalcula en escala 0-100 a partir de longitud, carga de vocabulario/kanji y marcadores gramaticales puente. Los valores mecánicos antiguos 1-7 no se preservan como porcentajes para evitar ejercicios complejos mostrados como N5/N4 casi 0%.
+
 El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por acierto/error. La selección diaria debe evitar bloques monocordes por tema y priorizar familias, temas, registros, vocabulario, kanji y gramática con poca evidencia. Si una sesión empieza a concentrarse en contextos recurrentes como hospitales o colegios, el planificador debe desplazar prioridad hacia otros contextos con deuda equivalente.
+
+Tras corregir cada intento, el usuario puede marcar la sensación del ejercicio como `muy fácil`, `normal` o `muy difícil`. Esa señal no cambia la evaluación lingüística, pero sí ajusta el SRS: `muy fácil` alarga el intervalo y sube el factor de facilidad; `muy difícil` acorta el próximo repaso, baja la facilidad y evita marcar el ejercicio como dominado.
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
