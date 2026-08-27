@@ -29,8 +29,8 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 593 pares N5 y 731 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 3.638 ejercicios; 3.138 están activos (703 N5 y 866 N4 por dirección) y 500 se conservan archivados.
+- Fuentes editoriales aprobadas: 625 pares N5 y 775 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 3.790 ejercicios; 3.290 están activos (735 N5 y 910 N4 por dirección) y 500 se conservan archivados.
 - La ampliación del 25 de agosto usó `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 3 pares N5 y 67 pares N4 nuevos, con revisión adversarial, deduplicación y furigana.
 - El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
@@ -56,8 +56,8 @@ Tras corregir cada intento, el usuario puede marcar la sensación del ejercicio 
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 1.406 activos |
-| N4 | 2.400 ejercicios | 1.732 activos |
+| N5 | 1.400 ejercicios | 1.470 activos |
+| N4 | 2.400 ejercicios | 1.820 activos |
 | N3 | 4.000 ejercicios | 0 activos |
 | N2 | 7.000 ejercicios | 0 activos |
 | N1 | 12.000 ejercicios | 0 activos |
