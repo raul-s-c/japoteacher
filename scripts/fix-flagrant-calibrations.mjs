@@ -84,6 +84,11 @@ for (const row of rows) {
   let minimum = null;
   const reasons = [];
 
+  if ((row.jlpt_level === "N5" || row.jlpt_level === "N4") && current < 8) {
+    minimum = 8;
+    reasons.push("suelo pedagogico minimo");
+  }
+
   if (row.jlpt_level === "N5") {
     if (has(row, n5Bridge)) {
       minimum = row.direction === "es_ja" ? 58 : 52;

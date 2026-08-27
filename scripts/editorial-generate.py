@@ -270,7 +270,7 @@ def inferred_topic(target_vocab, fallback):
     rules = [
         ("tecnologia", ["link", "page", "technology", "site", "internet", "投稿", "リンク", "ページ", "技術"]),
         ("trabajo", ["work", "job", "enterprise", "business", "company", "office", "企業", "仕事", "業"]),
-        ("sociedad", ["government", "society", "country", "china", "economics", "politics", "social", "政府", "社会", "中国", "経済", "個人"]),
+        ("sociedad", ["government", "society", "country", "china", "economics", "politics", "social", "organization", "policy", "responsibility", "duty", "judgement", "judgment", "effect", "政府", "社会", "中国", "経済", "個人", "組織", "政策", "責任", "判断", "効果"]),
         ("compras", ["money", "price", "buy", "shop", "sale", "お金", "価格", "買"]),
         ("familia", ["family", "child", "human", "person", "子供", "家族", "人間"]),
         ("estudio", ["study", "training", "education", "article", "subject", "教育", "記事", "内容"]),

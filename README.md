@@ -29,8 +29,8 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 539 pares N5 y 697 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 3.462 ejercicios; 2.962 están activos (649 N5 y 832 N4 por dirección) y 500 se conservan archivados.
+- Fuentes editoriales aprobadas: 593 pares N5 y 731 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 3.638 ejercicios; 3.138 están activos (703 N5 y 866 N4 por dirección) y 500 se conservan archivados.
 - La ampliación del 25 de agosto usó `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 3 pares N5 y 67 pares N4 nuevos, con revisión adversarial, deduplicación y furigana.
 - El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
@@ -48,7 +48,7 @@ Una frase no debe rechazarse solo porque, al cubrir vocabulario/kanji objetivo N
 
 Al publicar frases editoriales, la dificultad se recalcula en escala 0-100 a partir de longitud, carga de vocabulario/kanji y marcadores gramaticales puente. Los valores mecánicos antiguos 1-7 no se preservan como porcentajes para evitar ejercicios complejos mostrados como N5/N4 casi 0%.
 
-Para corregir calibraciones claramente incoherentes sin reordenar todo el banco, usa `node scripts/fix-flagrant-calibrations.mjs --write`. Sube mínimos conservadores en patrones puente N5 y estructuras N4 fuertes/moderadas, manteniendo el nivel JLPT original.
+Para corregir calibraciones claramente incoherentes sin reordenar todo el banco, usa `node scripts/fix-flagrant-calibrations.mjs --write`. Sube mínimos conservadores en patrones puente N5 y estructuras N4 fuertes/moderadas, aplica un suelo pedagógico 8/100 para N5/N4 activos y mantiene el nivel JLPT original.
 
 El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por acierto/error. La selección diaria debe evitar bloques monocordes por tema y priorizar familias, temas, registros, vocabulario, kanji y gramática con poca evidencia. Si una sesión empieza a concentrarse en contextos recurrentes como hospitales o colegios, el planificador debe desplazar prioridad hacia otros contextos con deuda equivalente.
 
@@ -56,8 +56,8 @@ Tras corregir cada intento, el usuario puede marcar la sensación del ejercicio 
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 1.298 activos |
-| N4 | 2.400 ejercicios | 1.664 activos |
+| N5 | 1.400 ejercicios | 1.406 activos |
+| N4 | 2.400 ejercicios | 1.732 activos |
 | N3 | 4.000 ejercicios | 0 activos |
 | N2 | 7.000 ejercicios | 0 activos |
 | N1 | 12.000 ejercicios | 0 activos |

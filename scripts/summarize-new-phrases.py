@@ -35,8 +35,9 @@ def main():
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
+    today = datetime.date.today().isoformat()
     parts = [
-        "# Frases nuevas - tanda 2026-08-25",
+        f"# Frases nuevas - tanda {today}",
         "",
         f"Generado: {datetime.datetime.now().isoformat(timespec='seconds')}",
         "",
