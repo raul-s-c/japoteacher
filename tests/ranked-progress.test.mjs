@@ -129,3 +129,25 @@ test("the EXP ledger preserves a question-by-question daily history", () => {
   assert.ok(ledger[1].delta < 0);
   assert.equal(ledger[0].families[0], "Dinero y proyectos");
 });
+
+test("daily news comprehension answers contribute reduced EXP without a bank exercise", () => {
+  const xp = ranked();
+  const attempts = [{
+    attempt_id: "news-a",
+    exercise_id: "news:article-1:0",
+    direction: "ja_es",
+    attempted_at: "2026-08-29T10:00:00Z",
+    evaluation_status: "valid",
+    study_event_type: "daily_news_answer",
+    jlpt_level: "N5",
+    difficulty: 70,
+    topic_tags: ["dinero"],
+    overall_score: 88,
+    is_acceptable: true,
+    weight: .42,
+  }];
+  const snapshot = xp.snapshot([], attempts);
+  assert.ok(xp.primaryForDirection(snapshot, "ja_es").points > 0);
+  assert.ok(xp.primaryForDirection(snapshot, "ja_es").points < xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N5", difficulty: 70 }, { overall_score: 88 }, { currentLevel: "N5" }));
+  assert.equal(xp.get(snapshot, "ja_es", "Dinero y proyectos").attempts, 1);
+});
