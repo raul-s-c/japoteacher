@@ -184,6 +184,17 @@ const tutorChatSchema = {
   required: ["answer_es"],
   properties: { answer_es: { type: "string" } },
 };
+const dailyNewsQuestionSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["question_ja", "question_es", "answer_ja", "answer_es"],
+  properties: {
+    question_ja: { type: "string" },
+    question_es: { type: "string" },
+    answer_ja: { type: "string" },
+    answer_es: { type: "string" },
+  },
+};
 const dailyNewsSchema = {
   type: "object",
   additionalProperties: false,
@@ -221,8 +232,21 @@ const dailyNewsSchema = {
       },
     },
     grammar_points: stringList,
-    discussion_questions: stringList,
+    discussion_questions: { type: "array", items: dailyNewsQuestionSchema },
     source_note: { type: "string" },
+  },
+};
+const dailyNewsAnswerSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["score", "is_correct", "feedback_es", "model_answer_ja", "model_answer_es", "improvement_tip_es"],
+  properties: {
+    score,
+    is_correct: { type: "boolean" },
+    feedback_es: { type: "string" },
+    model_answer_ja: { type: "string" },
+    model_answer_es: { type: "string" },
+    improvement_tip_es: { type: "string" },
   },
 };
 
@@ -471,7 +495,7 @@ function tutorPrompt(operation, mode) {
     return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis previo como contexto. Sé didáctico, concreto y suficientemente extenso cuando haya materia lingüística. Si mencionas kanji, añade lectura en hiragana cuando sea útil. No inventes datos que no estén en el texto o análisis; si falta contexto, dilo y ofrece la interpretación más probable.";
   if (mode === "ja_to_es")
     return "Eres un profesor de japonés para hispanohablantes. El alumno te da texto japonés corto o largo. Traduce de forma natural al español y explica por qué está escrito así. Desgrana estructura gramatical, partículas, forma verbal, matices, registro y conectores. Para kanji y vocabulario relevante, da lectura en hiragana, significado contextual y función dentro de la frase. La explicación debe servir para entender el contenido y también la construcción japonesa. Evita respuestas telegráficas.";
-  return "Eres un profesor de japonés para hispanohablantes. El alumno escribe en español y quiere saber cómo se diría naturalmente en japonés. Propón una traducción japonesa natural, no literal, y explica de forma extensa las decisiones: orden, tema, partículas, registro, omisiones naturales, vocabulario, posibles alternativas y errores habituales de hispanohablantes. translation_readings debe cubrir los bloques con kanji que aparezcan en natural_translation, con characters exacto, lectura en hiragana, significado contextual y explicación breve. Mantén tono docente y práctico.";
+  return "Eres un profesor de japonés para hispanohablantes. El alumno escribe en español y quiere saber cómo se diría naturalmente en japonés. Propón una traducción japonesa natural, no literal, y explica de forma extensa las decisiones: orden, tema, partículas, registro, omisiones naturales, vocabulario, posibles alternativas y errores habituales de hispanohablantes. No escribas lecturas entre paréntesis dentro de natural_translation: nada de 日本(にほん). translation_readings debe cubrir los bloques con kanji que aparezcan en natural_translation, con characters exacto, lectura en hiragana, significado contextual y explicación breve. Mantén tono docente y práctico.";
 }
 async function callTutor(payload, env) {
   const operation = payload.operation === "chat" ? "chat" : "analyze",
@@ -523,7 +547,7 @@ async function searchBraveNews(payload, env) {
   return { query, results };
 }
 function dailyNewsPrompt() {
-  return "Eres profesor de japonés para hispanohablantes. Recibes resultados recientes de Brave News, no el artículo completo. Elige una noticia concreta, fiable y fechada de hoy o de las últimas 24 horas si es posible. No copies texto largo de la fuente: reescribe una noticia breve propia en japonés natural, calibrada al JLPT solicitado y al tramo alto/medio/bajo. N5 usa frases muy cortas y gramática básica; N4 permite conectores sencillos; N3-N1 pueden aumentar subordinación, matiz y vocabulario. Incluye furigana_readings para todos los bloques con kanji visibles en japanese_title y japanese_article. Explica en español el contenido, vocabulario y gramática. Si la fuente parece insuficiente o antigua, indícalo en source_note.";
+  return "Eres profesor de japonés para hispanohablantes. Recibes resultados recientes de Brave News, no el artículo completo. Elige una noticia concreta, fiable y fechada de hoy o de las últimas 24 horas si es posible. No copies texto largo de la fuente: reescribe una noticia breve propia en japonés natural, calibrada al JLPT solicitado y al tramo alto/medio/bajo. N5 usa frases muy cortas y gramática básica; N4 permite conectores sencillos; N3-N1 pueden aumentar subordinación, matiz y vocabulario. No escribas lecturas entre paréntesis dentro de japanese_title, japanese_article, question_ja ni answer_ja: nada de 日本(にほん). Incluye furigana_readings para todos los bloques con kanji visibles en japanese_title, japanese_article, question_ja y answer_ja. discussion_questions debe incluir preguntas en japonés, su traducción española y una respuesta modelo en ambos idiomas. Explica en español el contenido, vocabulario y gramática. Si la fuente parece insuficiente o antigua, indícalo en source_note.";
 }
 async function callDailyNews(payload, search, env) {
   return fetch(OPENAI_RESPONSES_URL, {
@@ -536,6 +560,23 @@ async function callDailyNews(payload, search, env) {
       input: JSON.stringify({ ...payload, search }),
       max_output_tokens: 2800,
       text: { format: { type: "json_schema", name: "japoteacher_daily_news", strict: true, schema: dailyNewsSchema } },
+    }),
+  });
+}
+function dailyNewsAnswerPrompt() {
+  return "Eres profesor de japonés para hispanohablantes. Corrige la respuesta del alumno a una pregunta de comprensión sobre una lectura japonesa graduada. Acepta respuestas en español o japonés si demuestran comprensión. Puntúa de 0 a 100, indica si es correcta, explica brevemente qué entendió bien o mal y ofrece una respuesta modelo. No evalúes gramática japonesa salvo que impida entender la respuesta.";
+}
+async function callDailyNewsAnswer(payload, env) {
+  return fetch(OPENAI_RESPONSES_URL, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      reasoning: { effort: "none" },
+      instructions: dailyNewsAnswerPrompt(),
+      input: JSON.stringify(payload),
+      max_output_tokens: 900,
+      text: { format: { type: "json_schema", name: "japoteacher_daily_news_answer", strict: true, schema: dailyNewsAnswerSchema } },
     }),
   });
 }
@@ -825,6 +866,26 @@ export default {
         if (!output) return json({ error: "OpenAI no devolvió noticia adaptada." }, 502, origin, env);
         return json({ news: JSON.parse(output), search_query: search.query, usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
       } catch (error) { return json({ error: error.message || "No se pudo generar la noticia del día." }, 500, origin, env); }
+    }
+    if (url.pathname === "/daily-news-answer" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión para corregir la respuesta." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de corrección inválida." }, 400, origin, env); }
+      const studentAnswer = String(body?.student_answer || "").trim(),
+        question = body?.question && typeof body.question === "object" ? body.question : null,
+        article = String(body?.article || "").slice(0, 3000),
+        title = String(body?.title || "").slice(0, 300);
+      if (!studentAnswer || studentAnswer.length > 1000 || !question) return json({ error: "La respuesta o pregunta no es válida." }, 400, origin, env);
+      try {
+        const response = await callDailyNewsAnswer({ title, article, question, student_answer: studentAnswer }, env),
+          raw = await response.json();
+        if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la corrección." }, response.status, origin, env);
+        const output = outputText(raw);
+        if (!output) return json({ error: "OpenAI no devolvió corrección." }, 502, origin, env);
+        return json({ correction: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo corregir la respuesta." }, 500, origin, env); }
     }
     if (url.pathname.startsWith("/reports/")) {
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);

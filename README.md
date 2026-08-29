@@ -24,7 +24,7 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
 - La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
-- La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical.
+- La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
 - Las migraciones `003` a `006` y `009` crean el almacenamiento, permisos, historial, borrado y métricas de EXP de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
 - Cada intento conserva un ledger de EXP ranked: delta, posición antes/después, JLPT, dificultad, familias y repetición. Esto permite recalibrar la fórmula en el futuro sin perder evidencia histórica.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
@@ -350,6 +350,12 @@ La reanudación debe continuar desde los JSONL aprobados, no volver a generar lo
 La siguiente ampliación prioritaria será una entrada de texto, noticia o documento para convertir material auténtico en ejercicios. El flujo deberá extraer primero contenido legible, proponer frases autocontenidas y luego pasar cada par por la misma revisión editorial, asignación JLPT, tags, furigana y termómetro de dificultad del banco actual. No se publicará ninguna frase importada directamente ni se mezclará con el banco sin validación humana o editorial.
 
 El alcance inicial debe aceptar texto pegado y URLs de noticias; después podrá incorporar documentos PDF y DOCX. La interfaz debe permitir revisar, editar, descartar y aprobar cada frase antes de añadirla al perfil o al banco compartido. El modo examen queda expresamente fuera de esta fase.
+
+Las lecturas generadas en `Noticia del día` deben tratarse como cantera editorial. Cada noticia debería guardarse con fuente, nivel, artículo japonés reescrito, vocabulario, kanji, gramática, preguntas de comprensión y posibles pares extraíbles. Cuando el usuario pida “crea frases”, el primer paso será revisar esa cola, cribar frases válidas, descartar duplicadas o innecesarias y priorizar las que cubran deuda real de vocabulario, kanji, estructuras o familias poco practicadas.
+
+Las respuestas a preguntas de comprensión de noticias también deben convertirse en evidencia de estudio. La corrección con IA debe devolver score, tags impactados, dificultad aproximada y delta de EXP compatible con la ruta ranked, sin mezclarse con los ejercicios de traducción. Ese ledger servirá para informes y recalibración, igual que los intentos normales.
+
+Además, tras cada corrección diaria, la app debe extraer las palabras, kanji o expresiones concretas falladas y alimentar una sección SRS específica de vocabulario. Si el fallo ocurrió en JP→ES, la tarjeta mostrará el término japonés y exigirá escribir el significado español; si ocurrió en ES→JP, mostrará el estímulo español y exigirá producir japonés. Este SRS de microelementos también debe sumar o restar EXP, pero con peso menor que una frase completa.
 
 ## Pruebas y auditorías
 
