@@ -23,6 +23,7 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - El progreso, historial, informes y drill-down temático respetan el filtro de dirección. La comparativa muestra dos rutas temáticas independientes y los desbloqueos se calculan por dirección.
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
+- La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
 - Las migraciones `003` a `006` y `009` crean el almacenamiento, permisos, historial, borrado y métricas de EXP de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
 - Cada intento conserva un ledger de EXP ranked: delta, posición antes/después, JLPT, dificultad, familias y repetición. Esto permite recalibrar la fórmula en el futuro sin perder evidencia histórica.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.

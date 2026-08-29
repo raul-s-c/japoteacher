@@ -21,6 +21,7 @@
       <nav class="main-nav">
         <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button>
         <button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button>
+        <button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor IA</button>
         <button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button>
         <button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
       </nav>
@@ -68,6 +69,33 @@
         </div>
       </section>
 
+      <section class="view" id="view-tutor" aria-labelledby="tutorHeading">
+        <div class="intro"><div><h2 id="tutorHeading">Tutor IA</h2><p>Analiza traducciones y textos fuera de la práctica diaria, sin alterar tu SRS ni tu experiencia.</p></div></div>
+        <div class="ai-tutor-layout">
+          <section class="panel ai-tutor-input">
+            <div class="section-heading"><div><p class="section-kicker">Consulta independiente</p><h3>Texto para analizar</h3></div></div>
+            <div class="ai-tutor-modes" role="radiogroup" aria-label="Tipo de análisis">
+              <label><input type="radio" name="aiTutorMode" value="es_to_ja" checked> Español → japonés</label>
+              <label><input type="radio" name="aiTutorMode" value="ja_to_es"> Japonés → español</label>
+            </div>
+            <label class="answer-label" for="aiTutorText">Tu texto</label>
+            <textarea id="aiTutorText" rows="8" maxlength="4000" placeholder="Escribe una frase, párrafo, noticia breve o fragmento en español o japonés."></textarea>
+            <div class="answer-actions ai-tutor-actions"><button class="secondary" id="aiTutorClear" type="button">Limpiar</button><button class="primary" id="aiTutorSubmit" type="button">Analizar con IA</button></div>
+            <p class="security-note">Esta herramienta es didáctica y no guarda progreso. Necesita sesión iniciada para usar el Worker.</p>
+          </section>
+          <section class="panel ai-tutor-output" id="aiTutorOutput" aria-live="polite">
+            <div class="feedback-empty"><span>訳</span><h3>La explicación aparecerá aquí</h3><p>Primero genera un análisis; después podrás preguntar sobre esa traducción en el chat lateral.</p></div>
+          </section>
+          <section class="panel ai-tutor-chat">
+            <div class="section-heading"><div><p class="section-kicker">Seguimiento</p><h3>Preguntar sobre el análisis</h3></div></div>
+            <div class="ai-tutor-thread" id="aiTutorThread"><p class="empty">Todavía no hay una traducción activa sobre la que preguntar.</p></div>
+            <label class="answer-label" for="aiTutorQuestion">Pregunta</label>
+            <textarea id="aiTutorQuestion" rows="4" maxlength="900" placeholder="Ej.: ¿por qué aquí se usa に? ¿Qué matiz tiene esta palabra?"></textarea>
+            <div class="answer-actions"><button class="secondary" id="aiTutorAsk" type="button" disabled>Preguntar</button></div>
+          </section>
+        </div>
+      </section>
+
       <section class="view" id="view-progreso" aria-labelledby="progressHeading">
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Tags</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
@@ -97,7 +125,7 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación móvil">
-      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
+      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button><button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
     </nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -130,16 +158,17 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=38"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
-  <script src="src/ui.js?v=39"></script>
+  <script src="src/ui.js?v=40"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=63"></script>
-  <script src="src/navigation-fix.js?v=2"></script>
+  <script src="app.js?v=64"></script>
+  <script src="src/navigation-fix.js?v=4"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
   <link rel="stylesheet" href="src/practice-history.css?v=1">
   <script src="src/practice-history.js?v=3"></script>
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
+  <script src="src/ai-tutor.js?v=2"></script>
   <script src="src/manual-adjustments.js?v=4"></script>
   <script src="src/topic-drill.js?v=33"></script>
   <script src="src/issue-reporter.js?v=1"></script>
