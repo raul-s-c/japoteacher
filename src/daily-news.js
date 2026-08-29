@@ -31,6 +31,44 @@
   function vocab(items){
     return (Array.isArray(items)?items:[]).map(item=>`<article><strong lang="ja">${esc(stripInlineReadings(item.term))}</strong><span>${esc(stripInlineReadings(item.reading))}</span><p><b>${esc(item.meaning_es)}</b> · ${esc(item.note_es)}</p></article>`).join('');
   }
+  function localDate(){
+    const now=new Date();
+    return [now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+  }
+  function extractCandidatePhrases(news){
+    const text=stripInlineReadings(news.japanese_article||'');
+    return text.split(/(?<=[。！？])/).map(sentence=>sentence.trim()).filter(sentence=>sentence.length>=6).slice(0,12).map((sentence,index)=>({
+      candidate_id:`${index+1}`,
+      japanese:sentence,
+      source:'daily_news',
+      status:'pending_editorial_review',
+      topic_hint:news.selected_source?.title||news.selected_source?.source||''
+    }));
+  }
+  async function saveArticle(news,data){
+    try{
+      const settings=(await JapoDB.get('settings','app'))?.value||{},now=new Date().toISOString(),articleId=news.article_id||crypto.randomUUID();
+      state.currentArticleId=articleId;
+      await JapoDB.put('news_articles',{
+        article_id:articleId,
+        profile_id:settings.profileId||'local-default',
+        created_at:now,
+        local_date:localDate(),
+        jlpt_level:$('#dailyNewsJlpt')?.value||'N5',
+        band:$('#dailyNewsBand')?.value||'medio',
+        topic:$('#dailyNewsTopic')?.value||'',
+        status:'generated',
+        search_query:data.search_query||'',
+        response_id:data.response_id||'',
+        usage_json:JSON.stringify(data.usage||{}),
+        source_json:JSON.stringify(news.selected_source||{}),
+        news_json:JSON.stringify(news),
+        candidates_json:JSON.stringify(extractCandidatePhrases(news))
+      });
+    }catch(error){
+      console.warn('No se pudo guardar la noticia como cantera editorial',error);
+    }
+  }
   function normalizeQuestions(items){
     return (Array.isArray(items)?items:[]).filter(Boolean).map(item=>{
       if(typeof item==='string')return {question_ja:item,question_es:item,answer_ja:'',answer_es:''};
@@ -105,15 +143,64 @@
       const data=await response.json();
       if(!response.ok)throw new Error(data.error||`Error HTTP ${response.status}`);
       feedback.innerHTML=correctionHtml(data.correction||{});
+      await saveAnswer(index,question,studentAnswer,data);
     }catch(error){
       feedback.innerHTML=`<p class="dictionary-ai-error">${esc(error.message||'No se pudo corregir la respuesta.')}</p>`;
     }finally{
       button.disabled=false;button.textContent='Corregir respuesta';
     }
   }
+  async function saveAnswer(index,question,studentAnswer,data){
+    const correction=data.correction||{},settings=(await JapoDB.get('settings','app'))?.value||{},profileId=settings.profileId||'local-default',now=new Date().toISOString(),answerId=crypto.randomUUID(),articleId=state.currentArticleId||crypto.randomUUID(),direction=correction.direction||'ja_es',level=correction.jlpt_level||$('#dailyNewsJlpt')?.value||'N5',difficulty=Math.max(0,Math.min(100,Math.round(Number(correction.difficulty)||35))),topicTags=(correction.topic_tags||[$('#dailyNewsTopic')?.value||'noticia']).filter(Boolean),grammarTags=(correction.grammar_tags||[]).filter(Boolean),vocabularyTags=(correction.vocabulary_tags||[]).filter(Boolean),score=Number(correction.score)||0;
+    await JapoDB.batch(async()=>{
+      await JapoDB.put('news_answers',{
+        answer_id:answerId,
+        article_id:articleId,
+        question_index:index,
+        profile_id:profileId,
+        attempted_at:now,
+        local_date:localDate(),
+        direction,
+        jlpt_level:level,
+        difficulty,
+        user_answer:studentAnswer,
+        overall_score:score,
+        is_acceptable:Boolean(correction.is_correct)||score>=70,
+        question_json:JSON.stringify(question),
+        correction_json:JSON.stringify(correction),
+        topic_tags_json:JSON.stringify(topicTags),
+        grammar_tags_json:JSON.stringify(grammarTags),
+        vocabulary_tags_json:JSON.stringify(vocabularyTags),
+        lexical_failures_json:JSON.stringify(correction.lexical_failures||[]),
+        response_id:data.response_id||'',
+        usage_json:JSON.stringify(data.usage||{})
+      });
+      await updateNewsTagProgress({profileId,direction,score,isAcceptable:Boolean(correction.is_correct)||score>=70,attemptedAt:now,topicTags,grammarTags,vocabularyTags});
+      await saveLexicalFailures({profileId,answerId,articleId,attemptedAt:now,failures:correction.lexical_failures||[]});
+    });
+  }
+  async function updateNewsTagProgress({profileId,direction,score,isAcceptable,attemptedAt,topicTags,grammarTags,vocabularyTags}){
+    for(const [type,values] of [['topic',topicTags],['grammar',grammarTags],['vocabulary',vocabularyTags]])for(const value of values||[]){
+      const id=`${profileId}::${direction}::${type}::${value}`,p=await JapoDB.get('tag_progress',id)||{tag_progress_id:id,profile_id:profileId,direction,tag_type:type,tag_value:value,attempts_count:0,correct_count:0,acceptable_count:0,average_objective_score:0,average_comprehensibility_score:0,average_naturalness_score:0,average_grammar_score:0,average_vocabulary_score:0};
+      const n=p.attempts_count;p.attempts_count++;p.correct_count+=score>=80?1:0;p.acceptable_count+=isAcceptable?1:0;
+      for(const key of ['objective','comprehensibility','naturalness','grammar','vocabulary'])p[`average_${key}_score`]=Math.round((p[`average_${key}_score`]*n+score)/(n+1));
+      p.last_seen_at=attemptedAt;p.mastery_score=Math.round((p.average_objective_score+p.average_comprehensibility_score+p.average_naturalness_score)/3);p.priority_score=100-p.mastery_score;await JapoDB.put('tag_progress',p);
+    }
+  }
+  async function saveLexicalFailures({profileId,answerId,articleId,attemptedAt,failures}){
+    for(const item of failures.filter(item=>item?.term_ja||item?.prompt_es).slice(0,8)){
+      const direction=item.direction==='es_ja'?'es_ja':'ja_es',term=stripInlineReadings(item.term_ja||item.prompt_es),cardId=`${profileId}::${direction}::${term}`;
+      const card=await JapoDB.get('lexical_cards',cardId)||{card_id:cardId,profile_id:profileId,direction,term_ja:stripInlineReadings(item.term_ja||''),reading_hiragana:stripInlineReadings(item.reading_hiragana||''),prompt_es:item.prompt_es||'',created_at:attemptedAt,source_answer_ids_json:'[]',status:'active'};
+      const sourceIds=new Set(JSON.parse(card.source_answer_ids_json||'[]'));sourceIds.add(answerId);
+      await JapoDB.put('lexical_cards',{...card,term_ja:stripInlineReadings(item.term_ja||card.term_ja||''),reading_hiragana:stripInlineReadings(item.reading_hiragana||card.reading_hiragana||''),prompt_es:item.prompt_es||card.prompt_es||'',source_article_id:articleId,last_seen_at:attemptedAt,last_reason_es:item.reason_es||'',source_answer_ids_json:JSON.stringify([...sourceIds]),status:'active'});
+      const progressId=`${profileId}::${cardId}`,progress=await JapoDB.get('lexical_progress',progressId)||{progress_id:progressId,card_id:cardId,profile_id:profileId,total_attempts:0,successful_attempts:0,average_score:0,mastered:false};
+      progress.total_attempts++;progress.last_seen_at=attemptedAt;progress.last_score=0;progress.next_review_at=attemptedAt;await JapoDB.put('lexical_progress',progress);
+    }
+  }
   function render(data){
     const news=data.news||{},source=news.selected_source||{},target=$('#dailyNewsOutput'),readings=news.furigana_readings||[];
     state.news=news;state.questionLanguage='ja';
+    saveArticle(news,data);
     target.innerHTML=`<article class="daily-news-card">
       <header>
         <p class="section-kicker">Lectura graduada</p>

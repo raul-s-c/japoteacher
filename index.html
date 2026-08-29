@@ -42,6 +42,7 @@
           <section class="panel priority-panel"><div class="section-heading"><div><p class="section-kicker">Enfoque</p><h3>Tags prioritarios</h3></div></div><div id="priorityTags" class="tag-list"></div></section>
           <section class="panel"><div class="section-heading"><div><p class="section-kicker">SRS</p><h3>Próximos repasos</h3></div><span class="metric" id="dueCount">0</span></div><div id="reviewQueue" class="review-list"></div></section>
           <section class="panel activity-panel"><div class="section-heading"><div><p class="section-kicker">Actividad</p><h3>Últimos 14 días</h3></div><span class="streak" id="streakLabel">0 días</span></div><div class="activity-calendar" id="activityCalendar"></div></section>
+          <section class="panel lexical-panel"><div class="section-heading"><div><p class="section-kicker">Micro-SRS</p><h3>Palabras falladas</h3></div><span class="metric-small" id="lexicalDueCount">0 pendientes</span></div><div id="lexicalReviewQueue" class="lexical-review-list"></div></section>
         </div>
         <div class="notice" id="bankNotice" role="status"></div>
       </section>
@@ -105,7 +106,7 @@
             <label>Temática<select id="dailyNewsTopic"><option value="tecnología">Tecnología</option><option value="economía">Economía</option><option value="mundo">Mundo</option><option value="ciencia">Ciencia</option><option value="salud">Salud</option><option value="deportes">Deportes</option><option value="cultura">Cultura</option><option value="Japón">Japón</option></select></label>
             <div class="two-cols"><label>Nivel JLPT<select id="dailyNewsJlpt"><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label>Tramo<select id="dailyNewsBand"><option value="bajo">Bajo</option><option value="medio" selected>Medio</option><option value="alto">Alto</option></select></label></div>
             <button class="primary" id="dailyNewsGenerate" type="button">Buscar y adaptar</button>
-            <p class="security-note">Usa Brave Search desde el Worker y después OpenAI reescribe el texto. No modifica tu SRS.</p>
+            <p class="security-note">Usa Brave Search desde el Worker y después OpenAI reescribe el texto. La lectura queda guardada como cantera editorial y las respuestas de comprensión cuentan como evidencia de estudio.</p>
           </section>
           <section class="panel daily-news-output" id="dailyNewsOutput" aria-live="polite">
             <div class="feedback-empty"><span>新</span><h3>Tu lectura aparecerá aquí</h3><p>Elige temática, nivel y tramo para generar una noticia graduada.</p></div>
@@ -153,13 +154,13 @@
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=31"></script>
-  <script src="src/cloud-sync.js?v=31"></script>
+  <script src="src/db.js?v=32"></script>
+  <script src="src/cloud-sync.js?v=32"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=3"></script>
   <script src="src/topic-progression.js?v=39"></script>
-  <script src="src/ranked-progress.js?v=14"></script>
+  <script src="src/ranked-progress.js?v=15"></script>
   <script src="src/ranked-history.js?v=1"></script>
   <script src="src/session-planner.js?v=44"></script>
   <script src="src/furigana-generated.js?v=29"></script>
@@ -173,11 +174,11 @@
   <script src="src/ai-connection-test.js?v=11"></script>
   <script src="src/csv-import.js?v=2"></script>
   <script src="src/csv-export.js"></script>
-  <script src="src/analytics.js?v=38"></script>
+  <script src="src/analytics.js?v=39"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
   <script src="src/ui.js?v=41"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=65"></script>
+  <script src="app.js?v=67"></script>
   <script src="src/navigation-fix.js?v=4"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>

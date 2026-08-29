@@ -40,6 +40,10 @@
     import_history: "import_id",
     learning_reports: "report_id",
     exercise_overrides: "exercise_id",
+    news_articles: "article_id",
+    news_answers: "answer_id",
+    lexical_cards: "card_id",
+    lexical_progress: "progress_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -166,7 +170,11 @@
         store === "attempts" ||
         store === "exercises" ||
         store === "import_history" ||
-        store === "learning_reports"
+        store === "learning_reports" ||
+        store === "news_articles" ||
+        store === "news_answers" ||
+        store === "lexical_cards" ||
+        store === "lexical_progress"
       )
         out.stores[store] = unionRows(l, r, key);
       else if (store === "exercise_overrides")

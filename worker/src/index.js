@@ -239,7 +239,7 @@ const dailyNewsSchema = {
 const dailyNewsAnswerSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["score", "is_correct", "feedback_es", "model_answer_ja", "model_answer_es", "improvement_tip_es"],
+  required: ["score", "is_correct", "feedback_es", "model_answer_ja", "model_answer_es", "improvement_tip_es", "direction", "jlpt_level", "difficulty", "topic_tags", "grammar_tags", "vocabulary_tags", "lexical_failures"],
   properties: {
     score,
     is_correct: { type: "boolean" },
@@ -247,6 +247,27 @@ const dailyNewsAnswerSchema = {
     model_answer_ja: { type: "string" },
     model_answer_es: { type: "string" },
     improvement_tip_es: { type: "string" },
+    direction: { type: "string", enum: ["ja_es", "es_ja"] },
+    jlpt_level: { type: "string", enum: ["N5", "N4", "N3", "N2", "N1"] },
+    difficulty: score,
+    topic_tags: stringList,
+    grammar_tags: stringList,
+    vocabulary_tags: stringList,
+    lexical_failures: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["term_ja", "reading_hiragana", "prompt_es", "direction", "reason_es"],
+        properties: {
+          term_ja: { type: "string" },
+          reading_hiragana: { type: "string" },
+          prompt_es: { type: "string" },
+          direction: { type: "string", enum: ["ja_es", "es_ja"] },
+          reason_es: { type: "string" },
+        },
+      },
+    },
   },
 };
 
@@ -564,7 +585,7 @@ async function callDailyNews(payload, search, env) {
   });
 }
 function dailyNewsAnswerPrompt() {
-  return "Eres profesor de japonés para hispanohablantes. Corrige la respuesta del alumno a una pregunta de comprensión sobre una lectura japonesa graduada. Acepta respuestas en español o japonés si demuestran comprensión. Puntúa de 0 a 100, indica si es correcta, explica brevemente qué entendió bien o mal y ofrece una respuesta modelo. No evalúes gramática japonesa salvo que impida entender la respuesta.";
+  return "Eres profesor de japonés para hispanohablantes. Corrige la respuesta del alumno a una pregunta de comprensión sobre una lectura japonesa graduada. Acepta respuestas en español o japonés si demuestran comprensión. Puntúa de 0 a 100, indica si es correcta, explica brevemente qué entendió bien o mal y ofrece una respuesta modelo. No evalúes gramática japonesa salvo que impida entender la respuesta. Devuelve además jlpt_level, difficulty 0-100, topic_tags, grammar_tags y vocabulary_tags que indiquen qué competencias impacta esta pregunta. Usa direction ja_es si la respuesta demuestra comprensión de japonés hacia español; usa es_ja solo si la pregunta exige producir japonés. lexical_failures debe contener palabras o kanji concretos que el alumno haya entendido mal u omitido; déjalo vacío si no hay fallo léxico claro.";
 }
 async function callDailyNewsAnswer(payload, env) {
   return fetch(OPENAI_RESPONSES_URL, {

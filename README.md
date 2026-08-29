@@ -7,15 +7,9 @@ PWA estática para aprender traduciendo frases en dos direcciones independientes
 
 La aplicación combina sesiones adaptativas, SRS, evaluación mediante OpenAI, furigana, historial detallado y sincronización robusta entre dispositivos mediante Supabase. No utiliza un framework ni necesita compilación.
 
-## Estado de relevo — 9 de agosto de 2026
+## Estado de relevo — 29 de agosto de 2026
 
-La versión publicada y estable está en `main`, commit `c4f381c`. El árbol de trabajo contiene además el inicio, todavía incompleto, de tres mejoras solicitadas:
-
-1. informes semanales/mensuales de aprendizaje;
-2. termómetro continuo de dificultad;
-3. analítica y dominio separados por dirección.
-
-Estas mejoras se han completado en la PWA local y quedan pendientes de validación final con una cuenta sincronizada en PC y móvil. La generación automática de informes con IA sigue deliberadamente desactivada hasta autorizar presupuesto.
+La versión publicada y estable está en `main`. Informes, termómetro, progreso por dirección, Tutor IA, Noticia del día, incidencias, EXP ranked y SRS equilibrado están implementados como base funcional. La deuda abierta se concentra en ampliar banco editorial y en validar manualmente sincronización real entre PC y móvil tras cada cambio de esquema.
 
 ### Actualización de implementación — 9 de agosto de 2026
 
@@ -25,6 +19,9 @@ Estas mejoras se han completado en la PWA local y quedan pendientes de validaci�
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
 - La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
 - La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
+- Las noticias se almacenan como cantera editorial local/sincronizada, incluyendo fuente, lectura, vocabulario, gramática, preguntas y frases candidatas para revisar antes de futuras tandas de generación.
+- Las respuestas de comprensión de noticias se guardan como evidencia de estudio con score, nivel, dificultad, tags y delta de EXP ranked reducido frente a una frase completa.
+- Los fallos léxicos detectados en noticias o correcciones diarias alimentan un micro-SRS de palabras/kanji fallados en la pestaña Hoy.
 - Las migraciones `003` a `006` y `009` crean el almacenamiento, permisos, historial, borrado y métricas de EXP de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
 - Cada intento conserva un ledger de EXP ranked: delta, posición antes/después, JLPT, dificultad, familias y repetición. Esto permite recalibrar la fórmula en el futuro sin perder evidencia histórica.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
@@ -104,7 +101,7 @@ GitHub Pages (PWA estática)
 
 ### Persistencia y sincronización
 
-- `src/db.js`: IndexedDB local. La versión en curso es la 5.
+- `src/db.js`: IndexedDB local. La versión en curso es la 7.
 - `src/cloud-sync.js`: sincronización automática y consolidación con Supabase.
 - `supabase/schema.sql`: instalación inicial.
 - `supabase/migrations/002_atomic_sync.sql`: revisión optimista y sesión activa única.
@@ -239,7 +236,7 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 
 ### Criterio global de finalización
 
-Esta línea de trabajo solo se considerará terminada cuando los tres requisitos funcionen con una cuenta sincronizada entre PC y móvil, sobrevivan a cerrar sesión/reinstalar la PWA, tengan pruebas de independencia direccional y muestren el mismo estado consolidado en ambos dispositivos.
+Esta línea de trabajo se considera funcional en la PWA y el Worker. Queda como validación recurrente comprobar en cuenta real que cada cambio de IndexedDB sincroniza entre PC y móvil, sobrevive a reinstalar/cerrar sesión y muestra el mismo estado consolidado en ambos dispositivos.
 
 ### 1. Informes semanales y mensuales
 
@@ -282,7 +279,7 @@ Implementado: el Worker usa el payload consolidado como fuente inicial, tiene cr
 
 La dificultad se calibra en una escala 0–100 independiente para cada combinación de JLPT y dirección. Por tanto, un N5 con 100 sigue siendo más accesible que un N4 con 20; las escalas no se comparan entre niveles.
 
-El termómetro se muestra en selector, ejercicio, historial y detalle temático, y el planificador lo usa como preferencia gradual por dirección. Pendiente:
+El termómetro se muestra en selector, ejercicio, historial y detalle temático, y el planificador lo usa como preferencia gradual por dirección. Mantenimiento:
 
 - revisar todos los datos para que `difficulty` sea editorialmente coherente, no solo derivado mecánicamente;
 - revisar los valores anómalos que señale `python scripts/audit-difficulty.py`; la auditoría ya informa distribución por JLPT, longitud, gramática, kanji y número de tags;
@@ -304,7 +301,7 @@ La agregación visual ya respeta el filtro:
 - la comparativa muestra dos rutas temáticas separadas y el drill-down conserva la dirección elegida;
 - el planificador crea objetivos y desbloqueos por dirección.
 
-Pendiente:
+Validación recurrente:
 
 - ejecutar la prueba manual de sincronización real en dos dispositivos;
 - ampliar la cobertura automatizada al intervalo SRS por dirección, además de la ruta temática ya cubierta.
@@ -312,10 +309,10 @@ Pendiente:
 ## Antes de desplegar
 
 1. Ejecutar las pruebas y comprobaciones de sintaxis indicadas abajo.
-2. Aplicar las migraciones `003_learning_reports.sql` a `006_learning_report_history.sql` en Supabase.
-3. Probar el filtro de dirección, el termómetro y la PWA en escritorio y móvil.
-4. Probar sincronización entre dos dispositivos con una misma cuenta.
-5. Confirmar presupuesto antes de habilitar cron, secreto service-role y llamadas de IA para informes.
+2. Probar navegación, práctica, Noticia, Tutor, Progreso y Ajustes en viewport móvil.
+3. Si hay cambios de stores IndexedDB, probar sincronización entre dos dispositivos con una misma cuenta.
+4. Desplegar Worker cuando cambien endpoints o prompts del backend.
+5. Hacer push a `main` y esperar GitHub Pages.
 
 ## Continuación de la generación editorial
 
