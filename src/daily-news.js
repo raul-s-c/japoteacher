@@ -159,7 +159,7 @@
     if(!target||!window.JapoDB)return;
     const [articles,answers]=await Promise.all([JapoDB.all('news_articles'),JapoDB.all('news_answers')]);
     const answerCounts=answers.reduce((map,item)=>map.set(item.article_id,(map.get(item.article_id)||0)+1),new Map());
-    const rows=articles.filter(row=>row.status==='saved').sort((a,b)=>String(b.saved_at||b.created_at).localeCompare(String(a.saved_at||a.created_at))).slice(0,20);
+    const rows=articles.sort((a,b)=>String(b.saved_at||b.created_at).localeCompare(String(a.saved_at||a.created_at))).slice(0,50);
     target.innerHTML=rows.length?rows.map(row=>{const news=parseJson(row.news_json,{}),source=parseJson(row.source_json,{}),active=row.article_id===state.currentArticleId;return `<button type="button" class="${active?'active':''}" data-load-news="${esc(row.article_id)}"><span>${esc(periodLabel(row.saved_at||row.created_at))} · ${esc(row.jlpt_level||'N5')} ${esc(row.band||'')}</span><strong>${esc(news.japanese_title||source.title||'Noticia guardada')}</strong><small>${answerCounts.get(row.article_id)||0} respuesta${answerCounts.get(row.article_id)===1?'':'s'}</small></button>`}).join(''):'<p class="empty">Aún no hay noticias guardadas.</p>';
   }
   async function saveCurrentArticle(){
