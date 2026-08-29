@@ -1,7 +1,7 @@
 (function(){
   const $=selector=>document.querySelector(selector),
     esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const state={news:null,questionLanguage:'ja'};
+  const state={news:null,questionLanguage:'ja',currentArticleId:null};
 
   function endpoint(settings){
     return (settings?.aiEndpoint||'https://japoteacher-ai.raul-nihongo.workers.dev/evaluate').replace(/\/evaluate$/,'/daily-news');
@@ -35,6 +35,13 @@
     const now=new Date();
     return [now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
   }
+  function parseJson(value,fallback){
+    try{return JSON.parse(value||'')}catch{return fallback}
+  }
+  function periodLabel(value){
+    if(!value)return '';
+    try{return new Date(value).toLocaleDateString('es-ES',{day:'numeric',month:'short'})}catch{return String(value).slice(0,10)}
+  }
   function extractCandidatePhrases(news){
     const text=stripInlineReadings(news.japanese_article||'');
     return text.split(/(?<=[。！？])/).map(sentence=>sentence.trim()).filter(sentence=>sentence.length>=6).slice(0,12).map((sentence,index)=>({
@@ -45,28 +52,34 @@
       topic_hint:news.selected_source?.title||news.selected_source?.source||''
     }));
   }
-  async function saveArticle(news,data){
+  async function saveArticle(news,data,{status='generated'}={}){
     try{
-      const settings=(await JapoDB.get('settings','app'))?.value||{},now=new Date().toISOString(),articleId=news.article_id||crypto.randomUUID();
+      const settings=(await JapoDB.get('settings','app'))?.value||{},now=new Date().toISOString(),articleId=state.currentArticleId||news.article_id||crypto.randomUUID(),previous=await JapoDB.get('news_articles',articleId);
       state.currentArticleId=articleId;
       await JapoDB.put('news_articles',{
+        ...previous,
         article_id:articleId,
         profile_id:settings.profileId||'local-default',
-        created_at:now,
+        created_at:previous?.created_at||now,
+        updated_at:now,
         local_date:localDate(),
         jlpt_level:$('#dailyNewsJlpt')?.value||'N5',
         band:$('#dailyNewsBand')?.value||'medio',
         topic:$('#dailyNewsTopic')?.value||'',
-        status:'generated',
-        search_query:data.search_query||'',
-        response_id:data.response_id||'',
-        usage_json:JSON.stringify(data.usage||{}),
+        status:status==='saved'||previous?.status==='saved'?'saved':'generated',
+        saved_at:status==='saved'?(previous?.saved_at||now):previous?.saved_at,
+        search_query:data.search_query||previous?.search_query||'',
+        response_id:data.response_id||previous?.response_id||'',
+        usage_json:JSON.stringify(data.usage||parseJson(previous?.usage_json,{})),
         source_json:JSON.stringify(news.selected_source||{}),
         news_json:JSON.stringify(news),
         candidates_json:JSON.stringify(extractCandidatePhrases(news))
       });
+      await renderLibrary();
+      return articleId;
     }catch(error){
       console.warn('No se pudo guardar la noticia como cantera editorial',error);
+      return null;
     }
   }
   function normalizeQuestions(items){
@@ -131,6 +144,58 @@
       </div>`:''}
       ${correction.improvement_tip_es?`<small>${esc(correction.improvement_tip_es)}</small>`:''}`;
   }
+  async function answerHistoryHtml(articleId){
+    if(!articleId)return '';
+    const answers=(await JapoDB.all('news_answers')).filter(item=>item.article_id===articleId).sort((a,b)=>String(b.attempted_at).localeCompare(String(a.attempted_at)));
+    if(!answers.length)return '<p class="empty">Aún no hay respuestas corregidas para esta noticia.</p>';
+    return answers.map(answer=>{const question=parseJson(answer.question_json,{}),correction=parseJson(answer.correction_json,{}),score=Number(answer.overall_score||0);return `<article class="daily-news-history-item"><div><span>${periodLabel(answer.attempted_at)} · pregunta ${Number(answer.question_index)+1}</span><strong>${score}/100</strong></div><p>${esc(question.question_es||question.question_ja||'Pregunta')}</p><blockquote>${esc(answer.user_answer||'')}</blockquote>${correction.feedback_es?`<small>${esc(correction.feedback_es)}</small>`:''}</article>`}).join('');
+  }
+  async function renderAnswerHistory(){
+    const target=$('#dailyNewsAnswerHistory');
+    if(target)target.innerHTML=await answerHistoryHtml(state.currentArticleId);
+  }
+  async function renderLibrary(){
+    const target=$('#dailyNewsLibrary');
+    if(!target||!window.JapoDB)return;
+    const [articles,answers]=await Promise.all([JapoDB.all('news_articles'),JapoDB.all('news_answers')]);
+    const answerCounts=answers.reduce((map,item)=>map.set(item.article_id,(map.get(item.article_id)||0)+1),new Map());
+    const rows=articles.filter(row=>row.status==='saved').sort((a,b)=>String(b.saved_at||b.created_at).localeCompare(String(a.saved_at||a.created_at))).slice(0,20);
+    target.innerHTML=rows.length?rows.map(row=>{const news=parseJson(row.news_json,{}),source=parseJson(row.source_json,{}),active=row.article_id===state.currentArticleId;return `<button type="button" class="${active?'active':''}" data-load-news="${esc(row.article_id)}"><span>${esc(periodLabel(row.saved_at||row.created_at))} · ${esc(row.jlpt_level||'N5')} ${esc(row.band||'')}</span><strong>${esc(news.japanese_title||source.title||'Noticia guardada')}</strong><small>${answerCounts.get(row.article_id)||0} respuesta${answerCounts.get(row.article_id)===1?'':'s'}</small></button>`}).join(''):'<p class="empty">Aún no hay noticias guardadas.</p>';
+  }
+  async function saveCurrentArticle(){
+    if(!state.news){window.toast?toast('Genera o abre una noticia antes de guardarla.'):alert('Genera o abre una noticia antes de guardarla.');return}
+    const articleId=await saveArticle(state.news,{},{status:'saved'});
+    if(articleId)window.toast?toast('Noticia guardada para leerla luego.'):alert('Noticia guardada.');
+    renderActions();
+  }
+  async function loadArticle(articleId){
+    const row=await JapoDB.get('news_articles',articleId);
+    if(!row)return;
+    const news=parseJson(row.news_json,null);
+    if(!news)return;
+    state.currentArticleId=row.article_id;
+    render({news,search_query:row.search_query,response_id:row.response_id,usage:parseJson(row.usage_json,{})},{persist:false,articleId:row.article_id});
+  }
+  function speakArticle(){
+    try{
+      const text=stripInlineReadings([state.news?.japanese_title,state.news?.japanese_article].filter(Boolean).join('。'));
+      if(!text)throw new Error('No hay noticia japonesa para escuchar.');
+      if(!('speechSynthesis'in window)||!window.SpeechSynthesisUtterance)throw new Error('Este navegador no permite reproducir voz desde la web.');
+      speechSynthesis.cancel();
+      const utterance=new SpeechSynthesisUtterance(text);
+      utterance.lang='ja-JP';utterance.rate=.82;utterance.pitch=1;
+      const voice=(speechSynthesis.getVoices?.()||[]).find(item=>/^ja[-_]/i.test(item.lang));
+      if(voice)utterance.voice=voice;
+      speechSynthesis.speak(utterance);
+    }catch(error){
+      window.toast?toast(error.message||'No se pudo reproducir la noticia.'):alert(error.message||'No se pudo reproducir la noticia.');
+    }
+  }
+  function renderActions(){
+    const target=$('#dailyNewsActions');
+    if(!target)return;
+    target.innerHTML=`<button class="secondary" type="button" data-save-news>Guardar noticia</button><button class="secondary" type="button" data-speak-news>Escuchar noticia</button>`;
+  }
   async function correctAnswer(index){
     const questions=normalizeQuestions(state.news?.discussion_questions),question=questions[index],textarea=$(`[data-news-answer="${index}"]`),feedback=$(`[data-news-feedback="${index}"]`),button=$(`[data-correct-news-answer="${index}"]`);
     const studentAnswer=textarea?.value.trim();
@@ -178,6 +243,8 @@
       await updateNewsTagProgress({profileId,direction,score,isAcceptable:Boolean(correction.is_correct)||score>=70,attemptedAt:now,topicTags,grammarTags,vocabularyTags});
       await saveLexicalFailures({profileId,answerId,articleId,attemptedAt:now,question,failures:correction.lexical_failures||[]});
     });
+    await renderAnswerHistory();
+    await renderLibrary();
   }
   async function updateNewsTagProgress({profileId,direction,score,isAcceptable,attemptedAt,topicTags,grammarTags,vocabularyTags}){
     for(const [type,values] of [['topic',topicTags],['grammar',grammarTags],['vocabulary',vocabularyTags]])for(const value of values||[]){
@@ -198,15 +265,17 @@
       progress.total_attempts++;progress.last_seen_at=attemptedAt;progress.last_score=0;progress.next_review_at=attemptedAt;await JapoDB.put('lexical_progress',progress);
     }
   }
-  function render(data){
+  function render(data,{persist=true,articleId=null}={}){
     const news=data.news||{},source=news.selected_source||{},target=$('#dailyNewsOutput'),readings=news.furigana_readings||[];
     state.news=news;state.questionLanguage='ja';
-    saveArticle(news,data);
+    if(articleId)state.currentArticleId=articleId;
+    if(persist)saveArticle(news,data);
     target.innerHTML=`<article class="daily-news-card">
       <header>
         <p class="section-kicker">Lectura graduada</p>
         <h3 lang="ja">${japaneseWithFurigana(news.japanese_title,readings)}</h3>
         <div class="daily-news-source"><span>${esc(source.source||'Fuente')}</span><span>${esc(source.published||'últimas 24h')}</span>${source.url?`<a href="${esc(source.url)}" target="_blank" rel="noopener">Ver fuente</a>`:''}</div>
+        <div class="daily-news-actions" id="dailyNewsActions"></div>
       </header>
       <div class="daily-news-article" lang="ja">${japaneseWithFurigana(news.japanese_article,readings)}</div>
       ${news.spanish_summary?.length?`<section><h4>Resumen en español</h4><ul>${list(news.spanish_summary)}</ul></section>`:''}
@@ -214,12 +283,17 @@
       ${news.vocabulary?.length?`<section><h4>Vocabulario clave</h4><div class="daily-news-vocab">${vocab(news.vocabulary)}</div></section>`:''}
       ${news.grammar_points?.length?`<section><h4>Gramática</h4><ul>${list(news.grammar_points)}</ul></section>`:''}
       ${questionsHtml(news,readings)}
+      <section class="daily-news-history"><h4>Historial de respuestas</h4><div id="dailyNewsAnswerHistory"><p class="empty">Cargando historial…</p></div></section>
       ${news.source_note?`<section><h4>Nota de fuente</h4><p>${esc(news.source_note)}</p></section>`:''}
     </article>`;
+    renderActions();
+    renderAnswerHistory();
+    renderLibrary();
   }
   async function generate(){
     const button=$('#dailyNewsGenerate'),target=$('#dailyNewsOutput');
     const topic=$('#dailyNewsTopic')?.value,jlpt=$('#dailyNewsJlpt')?.value,band=$('#dailyNewsBand')?.value;
+    state.currentArticleId=null;
     button.disabled=true;button.textContent='Buscando...';
     target.innerHTML='<div class="feedback-empty daily-news-loading"><span>新</span><h3>Buscando noticia</h3><p>Consultando Brave Search y preparando una lectura japonesa graduada.</p></div>';
     try{
@@ -237,11 +311,20 @@
   }
   document.addEventListener('DOMContentLoaded',()=>{
     $('#dailyNewsGenerate')?.addEventListener('click',generate);
+    $('#dailyNewsRefreshLibrary')?.addEventListener('click',renderLibrary);
     $('#dailyNewsOutput')?.addEventListener('click',event=>{
+      if(event.target.closest('[data-save-news]')){saveCurrentArticle();return}
+      if(event.target.closest('[data-speak-news]')){speakArticle();return}
       const lang=event.target.closest('[data-news-question-lang]')?.dataset.newsQuestionLang;
       if(lang){setQuestionLanguage(lang);return}
       const correct=event.target.closest('[data-correct-news-answer]')?.dataset.correctNewsAnswer;
       if(correct!=null)correctAnswer(Number(correct));
     });
+    $('#dailyNewsLibrary')?.addEventListener('click',event=>{
+      const id=event.target.closest('[data-load-news]')?.dataset.loadNews;
+      if(id)loadArticle(id);
+    });
+    document.addEventListener('japoteacher:navigate',event=>{if(event.detail?.view==='noticia')renderLibrary()});
+    renderLibrary();
   });
 })();

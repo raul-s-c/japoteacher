@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=59">
+  <link rel="stylesheet" href="styles.css?v=60">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -107,6 +107,10 @@
             <div class="two-cols"><label>Nivel JLPT<select id="dailyNewsJlpt"><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label>Tramo<select id="dailyNewsBand"><option value="bajo">Bajo</option><option value="medio" selected>Medio</option><option value="alto">Alto</option></select></label></div>
             <button class="primary" id="dailyNewsGenerate" type="button">Buscar y adaptar</button>
             <p class="security-note">Usa Brave Search desde el Worker y después OpenAI reescribe el texto. La lectura queda guardada como cantera editorial y las respuestas de comprensión cuentan como evidencia de estudio.</p>
+            <div class="daily-news-library">
+              <div class="section-heading compact"><div><p class="section-kicker">Biblioteca</p><h3>Noticias guardadas</h3></div><button class="text-button" id="dailyNewsRefreshLibrary" type="button">Actualizar</button></div>
+              <div id="dailyNewsLibrary" class="daily-news-library-list"></div>
+            </div>
           </section>
           <section class="panel daily-news-output" id="dailyNewsOutput" aria-live="polite">
             <div class="feedback-empty"><span>新</span><h3>Tu lectura aparecerá aquí</h3><p>Elige temática, nivel y tramo para generar una noticia graduada.</p></div>
@@ -178,7 +182,7 @@
   <script src="src/teacher-diagnosis.js?v=2"></script>
   <script src="src/ui.js?v=41"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=73"></script>
+  <script src="app.js?v=74"></script>
   <script src="src/navigation-fix.js?v=4"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
@@ -187,7 +191,7 @@
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
   <script src="src/ai-tutor.js?v=3"></script>
-  <script src="src/daily-news.js?v=3"></script>
+  <script src="src/daily-news.js?v=4"></script>
   <script src="src/manual-adjustments.js?v=6"></script>
   <script src="src/topic-drill.js?v=33"></script>
   <script src="src/issue-reporter.js?v=1"></script>
