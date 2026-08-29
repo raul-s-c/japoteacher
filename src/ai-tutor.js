@@ -8,13 +8,19 @@
   function paragraphs(items){return (Array.isArray(items)?items:[]).filter(Boolean).map(item=>`<p>${esc(item)}</p>`).join('')}
   function chips(items){return (Array.isArray(items)?items:[]).filter(Boolean).map(item=>`<span>${esc(item)}</span>`).join('')}
   function tableRows(items){return (Array.isArray(items)?items:[]).filter(Boolean).map(item=>`<tr><td>${esc(item.item||'')}</td><td>${esc(item.reading||'')}</td><td>${esc(item.meaning_es||'')}</td><td>${esc(item.role_es||'')}</td></tr>`).join('')}
+  function japaneseWithFurigana(text,readings=[]){
+    const source=String(text||''),items=(Array.isArray(readings)?readings:[]).map(item=>({characters:item.characters||item.item,reading_hiragana:item.reading_hiragana||item.reading})).filter(item=>item.characters&&item.reading_hiragana).sort((a,b)=>b.characters.length-a.characters.length);
+    let html='',index=0;
+    while(index<source.length){const item=items.find(candidate=>source.startsWith(candidate.characters,index));if(item){html+=`<ruby>${esc(item.characters)}<rt>${esc(item.reading_hiragana)}</rt></ruby>`;index+=item.characters.length}else{html+=esc(source[index]);index++}}
+    return html;
+  }
   function renderAnalysis(data){
     state.analysis=data;
     const target=$('#aiTutorOutput'),chat=$('#aiTutorThread'),ask=$('#aiTutorAsk');
     const analysis=data.analysis||{};
     target.innerHTML=`<article class="ai-tutor-card">
       <header><p class="section-kicker">${analysis.mode_label||'Análisis didáctico'}</p><h3>${esc(analysis.title_es||'Traducción explicada')}</h3></header>
-      <section class="ai-tutor-translation"><span>Traducción natural</span><strong lang="${mode()==='es_to_ja'?'ja':'es'}">${esc(analysis.natural_translation||'')}</strong></section>
+      <section class="ai-tutor-translation"><span>Traducción natural</span><strong lang="${mode()==='es_to_ja'?'ja':'es'}">${mode()==='es_to_ja'?japaneseWithFurigana(analysis.natural_translation,analysis.translation_readings||analysis.kanji_vocabulary):esc(analysis.natural_translation||'')}</strong></section>
       <section><h4>Lectura docente</h4>${paragraphs(analysis.teacher_explanation)}</section>
       <section><h4>Estructura</h4>${paragraphs(analysis.grammar_breakdown)}</section>
       ${analysis.kanji_vocabulary?.length?`<section><h4>Kanji, lecturas y vocabulario</h4><div class="table-wrap ai-tutor-table"><table><thead><tr><th>Elemento</th><th>Lectura</th><th>Significado</th><th>Función</th></tr></thead><tbody>${tableRows(analysis.kanji_vocabulary)}</tbody></table></div></section>`:''}

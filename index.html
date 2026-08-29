@@ -22,6 +22,7 @@
         <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button>
         <button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button>
         <button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor IA</button>
+        <button class="nav-item" type="button" data-view="noticia"><span>新</span>Noticia</button>
         <button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button>
         <button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
       </nav>
@@ -96,6 +97,22 @@
         </div>
       </section>
 
+      <section class="view" id="view-noticia" aria-labelledby="dailyNewsHeading">
+        <div class="intro"><div><h2 id="dailyNewsHeading">Noticia del día</h2><p>Busca una noticia reciente y la convierte en lectura japonesa graduada.</p></div></div>
+        <div class="daily-news-layout">
+          <section class="panel daily-news-controls">
+            <div class="section-heading"><div><p class="section-kicker">Lectura actual</p><h3>Selecciona enfoque</h3></div></div>
+            <label>Temática<select id="dailyNewsTopic"><option value="tecnología">Tecnología</option><option value="economía">Economía</option><option value="mundo">Mundo</option><option value="ciencia">Ciencia</option><option value="salud">Salud</option><option value="deportes">Deportes</option><option value="cultura">Cultura</option><option value="Japón">Japón</option></select></label>
+            <div class="two-cols"><label>Nivel JLPT<select id="dailyNewsJlpt"><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label>Tramo<select id="dailyNewsBand"><option value="bajo">Bajo</option><option value="medio" selected>Medio</option><option value="alto">Alto</option></select></label></div>
+            <button class="primary" id="dailyNewsGenerate" type="button">Buscar y adaptar</button>
+            <p class="security-note">Usa Brave Search desde el Worker y después OpenAI reescribe el texto. No modifica tu SRS.</p>
+          </section>
+          <section class="panel daily-news-output" id="dailyNewsOutput" aria-live="polite">
+            <div class="feedback-empty"><span>新</span><h3>Tu lectura aparecerá aquí</h3><p>Elige temática, nivel y tramo para generar una noticia graduada.</p></div>
+          </section>
+        </div>
+      </section>
+
       <section class="view" id="view-progreso" aria-labelledby="progressHeading">
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Tags</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
@@ -125,7 +142,7 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación móvil">
-      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button><button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
+      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Práctica</button><button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor</button><button class="nav-item" type="button" data-view="noticia"><span>新</span>Noticia</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
     </nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -158,9 +175,9 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=38"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
-  <script src="src/ui.js?v=40"></script>
+  <script src="src/ui.js?v=41"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=64"></script>
+  <script src="app.js?v=65"></script>
   <script src="src/navigation-fix.js?v=4"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
@@ -168,7 +185,8 @@
   <script src="src/practice-history.js?v=3"></script>
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
-  <script src="src/ai-tutor.js?v=2"></script>
+  <script src="src/ai-tutor.js?v=3"></script>
+  <script src="src/daily-news.js?v=1"></script>
   <script src="src/manual-adjustments.js?v=4"></script>
   <script src="src/topic-drill.js?v=33"></script>
   <script src="src/issue-reporter.js?v=1"></script>

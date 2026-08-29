@@ -152,11 +152,12 @@ const questionHelpSchema = {
 const tutorAnalysisSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["mode_label", "title_es", "natural_translation", "teacher_explanation", "grammar_breakdown", "kanji_vocabulary", "natural_options", "common_pitfalls"],
+  required: ["mode_label", "title_es", "natural_translation", "translation_readings", "teacher_explanation", "grammar_breakdown", "kanji_vocabulary", "natural_options", "common_pitfalls"],
   properties: {
     mode_label: { type: "string" },
     title_es: { type: "string" },
     natural_translation: { type: "string" },
+    translation_readings: { type: "array", items: kanjiReadingSchema },
     teacher_explanation: stringList,
     grammar_breakdown: stringList,
     kanji_vocabulary: {
@@ -182,6 +183,47 @@ const tutorChatSchema = {
   additionalProperties: false,
   required: ["answer_es"],
   properties: { answer_es: { type: "string" } },
+};
+const dailyNewsSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["selected_source", "japanese_title", "japanese_article", "furigana_readings", "spanish_summary", "level_notes", "vocabulary", "grammar_points", "discussion_questions", "source_note"],
+  properties: {
+    selected_source: {
+      type: "object",
+      additionalProperties: false,
+      required: ["title", "url", "source", "published", "description"],
+      properties: {
+        title: { type: "string" },
+        url: { type: "string" },
+        source: { type: "string" },
+        published: { type: "string" },
+        description: { type: "string" },
+      },
+    },
+    japanese_title: { type: "string" },
+    japanese_article: { type: "string" },
+    furigana_readings: { type: "array", items: kanjiReadingSchema },
+    spanish_summary: stringList,
+    level_notes: stringList,
+    vocabulary: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["term", "reading", "meaning_es", "note_es"],
+        properties: {
+          term: { type: "string" },
+          reading: { type: "string" },
+          meaning_es: { type: "string" },
+          note_es: { type: "string" },
+        },
+      },
+    },
+    grammar_points: stringList,
+    discussion_questions: stringList,
+    source_note: { type: "string" },
+  },
 };
 
 const editorialKanjiSchema = {
@@ -429,7 +471,7 @@ function tutorPrompt(operation, mode) {
     return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis previo como contexto. Sé didáctico, concreto y suficientemente extenso cuando haya materia lingüística. Si mencionas kanji, añade lectura en hiragana cuando sea útil. No inventes datos que no estén en el texto o análisis; si falta contexto, dilo y ofrece la interpretación más probable.";
   if (mode === "ja_to_es")
     return "Eres un profesor de japonés para hispanohablantes. El alumno te da texto japonés corto o largo. Traduce de forma natural al español y explica por qué está escrito así. Desgrana estructura gramatical, partículas, forma verbal, matices, registro y conectores. Para kanji y vocabulario relevante, da lectura en hiragana, significado contextual y función dentro de la frase. La explicación debe servir para entender el contenido y también la construcción japonesa. Evita respuestas telegráficas.";
-  return "Eres un profesor de japonés para hispanohablantes. El alumno escribe en español y quiere saber cómo se diría naturalmente en japonés. Propón una traducción japonesa natural, no literal, y explica de forma extensa las decisiones: orden, tema, partículas, registro, omisiones naturales, vocabulario, posibles alternativas y errores habituales de hispanohablantes. Si la traducción contiene kanji, incluye lectura en hiragana y función contextual. Mantén tono docente y práctico.";
+  return "Eres un profesor de japonés para hispanohablantes. El alumno escribe en español y quiere saber cómo se diría naturalmente en japonés. Propón una traducción japonesa natural, no literal, y explica de forma extensa las decisiones: orden, tema, partículas, registro, omisiones naturales, vocabulario, posibles alternativas y errores habituales de hispanohablantes. translation_readings debe cubrir los bloques con kanji que aparezcan en natural_translation, con characters exacto, lectura en hiragana, significado contextual y explicación breve. Mantén tono docente y práctico.";
 }
 async function callTutor(payload, env) {
   const operation = payload.operation === "chat" ? "chat" : "analyze",
@@ -445,6 +487,55 @@ async function callTutor(payload, env) {
       input: JSON.stringify(payload),
       max_output_tokens: maxOutput,
       text: { format: { type: "json_schema", name: `japoteacher_tutor_${operation}`, strict: true, schema } },
+    }),
+  });
+}
+async function searchBraveNews(payload, env) {
+  const query = `${payload.topic} actualidad noticias hoy`,
+    params = new URLSearchParams({
+      q: query.slice(0, 400),
+      country: payload.country || "ES",
+      search_lang: payload.search_lang || "es",
+      ui_lang: "es-ES",
+      freshness: "pd",
+      count: "8",
+      safesearch: "moderate",
+      extra_snippets: "true",
+    }),
+    response = await fetch(`https://api.search.brave.com/res/v1/news/search?${params}`, {
+      headers: {
+        Accept: "application/json",
+        "Accept-Encoding": "gzip",
+        "X-Subscription-Token": env.BRAVE_SEARCH_API_KEY,
+      },
+    });
+  const raw = await response.json();
+  if (!response.ok) throw new Error(raw?.error?.detail || raw?.error?.message || "Brave Search rechazó la búsqueda.");
+  const results = (raw.results || []).slice(0, 8).map(item => ({
+    title: String(item.title || "").slice(0, 240),
+    url: String(item.url || ""),
+    source: String(item.source || item.meta_url?.hostname || "").slice(0, 120),
+    age: String(item.age || item.page_age || "").slice(0, 80),
+    description: String(item.description || "").slice(0, 600),
+    extra_snippets: Array.isArray(item.extra_snippets) ? item.extra_snippets.slice(0, 3).map(text => String(text).slice(0, 500)) : [],
+  })).filter(item => item.title && item.url);
+  if (!results.length) throw new Error("Brave no devolvió noticias recientes para esa temática.");
+  return { query, results };
+}
+function dailyNewsPrompt() {
+  return "Eres profesor de japonés para hispanohablantes. Recibes resultados recientes de Brave News, no el artículo completo. Elige una noticia concreta, fiable y fechada de hoy o de las últimas 24 horas si es posible. No copies texto largo de la fuente: reescribe una noticia breve propia en japonés natural, calibrada al JLPT solicitado y al tramo alto/medio/bajo. N5 usa frases muy cortas y gramática básica; N4 permite conectores sencillos; N3-N1 pueden aumentar subordinación, matiz y vocabulario. Incluye furigana_readings para todos los bloques con kanji visibles en japanese_title y japanese_article. Explica en español el contenido, vocabulario y gramática. Si la fuente parece insuficiente o antigua, indícalo en source_note.";
+}
+async function callDailyNews(payload, search, env) {
+  return fetch(OPENAI_RESPONSES_URL, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      reasoning: { effort: "none" },
+      instructions: dailyNewsPrompt(),
+      input: JSON.stringify({ ...payload, search }),
+      max_output_tokens: 2800,
+      text: { format: { type: "json_schema", name: "japoteacher_daily_news", strict: true, schema: dailyNewsSchema } },
     }),
   });
 }
@@ -713,6 +804,27 @@ export default {
         if (!output) return json({ error: "OpenAI no devolvió respuesta del tutor." }, 502, origin, env);
         return json({ [operation === "chat" ? "answer" : "analysis"]: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
       } catch (error) { return json({ error: error.message || "No se pudo usar el Tutor IA." }, 500, origin, env); }
+    }
+    if (url.pathname === "/daily-news" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.BRAVE_SEARCH_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "Falta configurar BRAVE_SEARCH_API_KEY u otro secreto del Worker." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión para generar la noticia del día." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de noticia inválida." }, 400, origin, env); }
+      const topic = String(body?.topic || "").trim().slice(0, 120),
+        jlpt = ["N5", "N4", "N3", "N2", "N1"].includes(body?.jlpt) ? body.jlpt : "N5",
+        band = ["bajo", "medio", "alto"].includes(body?.band) ? body.band : "medio";
+      if (!topic) return json({ error: "Selecciona una temática." }, 400, origin, env);
+      try {
+        const payload = { topic, jlpt, band, country: "ES", search_lang: "es" },
+          search = await searchBraveNews(payload, env),
+          response = await callDailyNews(payload, search, env),
+          raw = await response.json();
+        if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la adaptación de la noticia." }, response.status, origin, env);
+        const output = outputText(raw);
+        if (!output) return json({ error: "OpenAI no devolvió noticia adaptada." }, 502, origin, env);
+        return json({ news: JSON.parse(output), search_query: search.query, usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo generar la noticia del día." }, 500, origin, env); }
     }
     if (url.pathname.startsWith("/reports/")) {
       if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
