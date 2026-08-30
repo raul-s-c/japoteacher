@@ -66,11 +66,12 @@
     );
   }
   async function prepareAccount(nextUser) {
-    if (!nextUser) return;
+    if (!nextUser) return false;
     const previousAccount = localStorage.getItem(ACCOUNT_KEY);
     if (previousAccount && previousAccount !== nextUser.id)
       await JapoDB.clearUserData();
     localStorage.setItem(ACCOUNT_KEY, nextUser.id);
+    return previousAccount === nextUser.id;
   }
   function lock(owner) {
     ready = false;
@@ -291,12 +292,17 @@
     }
     await commitQueue;
   }
-  async function initializeState() {
+  async function initializeState({ accountKnown = true } = {}) {
     if (!(await claim(false))) return;
-    const local = await JapoDB.syncBackup(),
-      remote = await remoteState();
+    const remote = await remoteState(),
+      local = await JapoDB.syncBackup();
     revision = Number(remote?.revision || 0);
-    const combined = merge(local, remote?.payload || { stores: {} });
+    const rawRemotePayload = remote?.payload || { stores: {} };
+    const remotePayload = accountKnown
+      ? rawRemotePayload
+      : window.SyncPolicy?.recoverSettingsFromSessions?.(rawRemotePayload) || rawRemotePayload;
+    const mode = window.SyncPolicy?.firstSyncMode?.(accountKnown, remotePayload) || "merge";
+    const combined = mode === "remote" ? remotePayload : merge(local, remotePayload);
     restoring = true;
     await JapoDB.restoreSync(combined);
     restoring = false;
@@ -366,7 +372,7 @@
     try {
       const { data } = await client.auth.getSession();
       user = data.session?.user || null;
-      await prepareAccount(user);
+      const accountKnown = await prepareAccount(user);
       render();
       $("#signUpButton").addEventListener("click", signUp);
       $("#signInButton").addEventListener("click", signIn);
@@ -385,7 +391,7 @@
         if (user && user.id !== previous)
           setTimeout(
             () =>
-              prepareAccount(user).then(initializeState)
+              prepareAccount(user).then((known) => initializeState({ accountKnown: known }))
                 .then(() => {
                   if (ready) location.reload();
                 })
@@ -413,7 +419,7 @@
             })
             .catch(() => {});
       }, 4000);
-      if (user) await initializeState();
+      if (user) await initializeState({ accountKnown });
     } finally {
       resolveInitialSync();
     }

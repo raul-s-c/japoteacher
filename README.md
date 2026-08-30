@@ -108,6 +108,7 @@ GitHub Pages (PWA estática)
 - `supabase/schema.sql`: instalación inicial.
 - `supabase/migrations/002_atomic_sync.sql`: revisión optimista y sesión activa única.
 - `user_state.payload` contiene las colecciones locales. Cada escritura importante se confirma remotamente antes de continuar cuando existe sesión autenticada.
+- En el primer acceso de una instalación nueva, un estado remoto existente es autoritativo: no se mezcla con ajustes de fábrica locales. Si la fila de ajustes remota fue reiniciada, se reconstruye desde la última instantánea válida de las sesiones diarias sin alterar intentos, EXP ni SRS.
 - No debe existir un botón manual de sincronización: la pantalla debe representar el estado consolidado.
 - El sistema de sesión activa permite “traer” la sesión al dispositivo actual y suspende el anterior.
 
