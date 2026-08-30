@@ -184,6 +184,36 @@ const tutorChatSchema = {
   required: ["answer_es"],
   properties: { answer_es: { type: "string" } },
 };
+const lensAnalysisSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["context_label", "title_es", "ocr_text", "translation_es", "teacher_explanation", "grammar_points", "kanji_vocabulary", "study_notes", "reusable_phrase_candidates", "jlpt_estimate"],
+  properties: {
+    context_label: { type: "string" },
+    title_es: { type: "string" },
+    ocr_text: { type: "string" },
+    translation_es: { type: "string" },
+    teacher_explanation: stringList,
+    grammar_points: stringList,
+    kanji_vocabulary: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["term", "reading_hiragana", "meaning_es", "note_es"],
+        properties: {
+          term: { type: "string" },
+          reading_hiragana: { type: "string" },
+          meaning_es: { type: "string" },
+          note_es: { type: "string" },
+        },
+      },
+    },
+    study_notes: stringList,
+    reusable_phrase_candidates: stringList,
+    jlpt_estimate: { type: "string" },
+  },
+};
 const dailyNewsQuestionSchema = {
   type: "object",
   additionalProperties: false,
@@ -535,6 +565,32 @@ async function callTutor(payload, env) {
     }),
   });
 }
+function lensPrompt(operation, mode) {
+  if (operation === "chat")
+    return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis de lupa previo como contexto. Sé didáctico y concreto. Si mencionas kanji, añade lectura en hiragana cuando ayude. No inventes texto que no esté en la captura o transcripción; si falta contexto, explica la interpretación más probable.";
+  const source = mode === "vision" ? "una captura o imagen, y quizá una transcripción parcial" : "texto pegado por el alumno";
+  return `Eres una lupa lingüística de japonés para hispanohablantes. Recibes ${source}. Extrae el texto japonés visible cuando proceda, corrige con prudencia errores menores de OCR y traduce de forma natural al español. Después explica por qué se escribe así: kanji, lecturas, vocabulario, partículas, forma verbal, registro, omisiones y matices pragmáticos. Adapta el análisis al contexto declarado por el alumno. No guardes ni menciones datos sensibles innecesarios. No escribas furigana entre paréntesis dentro de ocr_text: ocr_text debe ser texto japonés limpio; las lecturas van en kanji_vocabulary. reusable_phrase_candidates contiene frases autocontenidas que podrían convertirse en ejercicios tras revisión editorial, o una lista vacía si no hay material claro. jlpt_estimate debe ser N5, N4, N3, N2, N1 o mixto.`;
+}
+async function callLens(payload, env) {
+  const operation = payload.operation === "chat" ? "chat" : "analyze",
+    schema = operation === "chat" ? tutorChatSchema : lensAnalysisSchema,
+    maxOutput = operation === "chat" ? 1200 : 3200,
+    mode = payload.mode === "vision" ? "vision" : "text";
+  const content = [{ type: "input_text", text: JSON.stringify({ ...payload, image_data_url: undefined }) }];
+  if (operation === "analyze" && mode === "vision" && payload.image_data_url) content.push({ type: "input_image", image_url: payload.image_data_url });
+  return fetch(OPENAI_RESPONSES_URL, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "gpt-5.4-mini",
+      reasoning: { effort: "none" },
+      instructions: lensPrompt(operation, mode),
+      input: [{ role: "user", content }],
+      max_output_tokens: maxOutput,
+      text: { format: { type: "json_schema", name: `japoteacher_lens_${operation}`, strict: true, schema } },
+    }),
+  });
+}
 async function searchBraveNews(payload, env) {
   const query = `${payload.topic} actualidad noticias hoy`,
     params = new URLSearchParams({
@@ -866,6 +922,36 @@ export default {
         if (!output) return json({ error: "OpenAI no devolvió respuesta del tutor." }, 502, origin, env);
         return json({ [operation === "chat" ? "answer" : "analysis"]: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
       } catch (error) { return json({ error: error.message || "No se pudo usar el Tutor IA." }, 500, origin, env); }
+    }
+    if (url.pathname === "/lens" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión en el dispositivo activo para usar la Lupa IA." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud de lupa inválida." }, 400, origin, env); }
+      const operation = body?.operation === "chat" ? "chat" : "analyze",
+        mode = body?.mode === "vision" ? "vision" : "text",
+        text = String(body?.text || "").trim(),
+        question = String(body?.question || "").trim(),
+        context = String(body?.context || "").trim().slice(0, 80),
+        contextDetail = String(body?.context_detail || "").trim().slice(0, 180),
+        imageDataUrl = String(body?.image_data_url || "");
+      if (operation === "analyze") {
+        if (text.length > 5000 || context.length > 80 || contextDetail.length > 180) return json({ error: "La entrada de la lupa es demasiado larga." }, 400, origin, env);
+        if (mode === "text" && !text) return json({ error: "Pega texto para usar el modo solo texto." }, 400, origin, env);
+        if (mode === "vision" && !text && !/^data:image\/(?:jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(imageDataUrl)) return json({ error: "Añade una imagen válida o una transcripción." }, 400, origin, env);
+        if (imageDataUrl.length > 2800000) return json({ error: "La imagen es demasiado grande; prueba con una captura más recortada." }, 413, origin, env);
+      }
+      if (operation === "chat" && (!question || question.length > 900)) return json({ error: "La pregunta de seguimiento no es válida." }, 400, origin, env);
+      try {
+        const payload = operation === "chat" ? { operation, mode, question, analysis: body?.analysis || null, messages: Array.isArray(body?.messages) ? body.messages.slice(-8) : [] } : { operation, mode, context, context_detail: contextDetail, text, image_data_url: imageDataUrl },
+          response = await callLens(payload, env),
+          raw = await response.json();
+        if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la consulta de lupa." }, response.status, origin, env);
+        const output = outputText(raw);
+        if (!output) return json({ error: "OpenAI no devolvió respuesta de lupa." }, 502, origin, env);
+        return json({ [operation === "chat" ? "answer" : "analysis"]: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
+      } catch (error) { return json({ error: error.message || "No se pudo usar la Lupa IA." }, 500, origin, env); }
     }
     if (url.pathname === "/daily-news" && request.method === "POST") {
       if (!env.OPENAI_API_KEY || !env.BRAVE_SEARCH_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "Falta configurar BRAVE_SEARCH_API_KEY u otro secreto del Worker." }, 503, origin, env);

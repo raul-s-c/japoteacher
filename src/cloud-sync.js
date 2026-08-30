@@ -44,6 +44,8 @@
     news_answers: "answer_id",
     lexical_cards: "card_id",
     lexical_progress: "progress_id",
+    lens_captures: "capture_id",
+    lens_messages: "message_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -174,7 +176,9 @@
         store === "news_articles" ||
         store === "news_answers" ||
         store === "lexical_cards" ||
-        store === "lexical_progress"
+        store === "lexical_progress" ||
+        store === "lens_captures" ||
+        store === "lens_messages"
       )
         out.stores[store] = unionRows(l, r, key);
       else if (store === "exercise_overrides")

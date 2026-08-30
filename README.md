@@ -18,6 +18,7 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
 - La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
+- La pestaña `Lupa IA` es una herramienta separada para analizar japonés externo a la app. Permite elegir entre modo `Solo texto`, que ahorra tokens y no envía imágenes, y modo `Visión + OCR`, que envía una captura reducida al Worker para extraer y explicar el texto. Guarda historial sincronizado del análisis, contexto, OCR, traducción, vocabulario y conversación, pero no guarda la imagen completa en el estado de progreso.
 - La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
 - Las noticias se almacenan como cantera editorial local/sincronizada, incluyendo fuente, lectura, vocabulario, gramática, preguntas y frases candidatas para revisar antes de futuras tandas de generación.
 - Las respuestas de comprensión de noticias se guardan como evidencia de estudio con score, nivel, dificultad, tags y delta de EXP ranked reducido frente a una frase completa.
@@ -101,7 +102,7 @@ GitHub Pages (PWA estática)
 
 ### Persistencia y sincronización
 
-- `src/db.js`: IndexedDB local. La versión en curso es la 7.
+- `src/db.js`: IndexedDB local. La versión en curso es la 8.
 - `src/cloud-sync.js`: sincronización automática y consolidación con Supabase.
 - `supabase/schema.sql`: instalación inicial.
 - `supabase/migrations/002_atomic_sync.sql`: revisión optimista y sesión activa única.
@@ -175,6 +176,7 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 - propuesta correcta, comparación por elementos, japonés correcto, lecturas de kanji y furigana;
 - furigana activable durante JP→ES;
 - evaluación OpenAI protegida por Worker;
+- Lupa IA para texto pegado o capturas con OCR/visión, con historial didáctico aislado del progreso;
 - SRS y tags;
 - exportación CSV y copia completa.
 

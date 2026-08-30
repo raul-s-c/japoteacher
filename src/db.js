@@ -1,6 +1,6 @@
 (function () {
   const DB_NAME = "japoteacher";
-  const VERSION = 7;
+  const VERSION = 8;
   const stores = {
     exercises: "exercise_id",
     attempts: "attempt_id",
@@ -16,11 +16,13 @@
     news_answers: "answer_id",
     lexical_cards: "card_id",
     lexical_progress: "progress_id",
+    lens_captures: "capture_id",
+    lens_messages: "message_id",
   };
   let dbPromise;
   let syncBatchDepth = 0;
   let syncPending = false;
-  const syncStores = ["exercises", "attempts", "exercise_progress", "tag_progress", "daily_sessions", "settings", "exercise_overrides", "news_articles", "news_answers", "lexical_cards", "lexical_progress"];
+  const syncStores = ["exercises", "attempts", "exercise_progress", "tag_progress", "daily_sessions", "settings", "exercise_overrides", "news_articles", "news_answers", "lexical_cards", "lexical_progress", "lens_captures", "lens_messages"];
   const isEditorialExercise = (row) => row.sync_scope === "editorial" || /^(?:JAES|ESJA)-N[1-5]-(?:\d{4}|(?:EXP|MORE|CURATED|ORGANIC|EDITORIAL)-)/.test(String(row.exercise_id || ""));
   const validLevel = (level) => ["N5", "N4", "N3", "N2", "N1"].includes(level);
   function applyExerciseOverride(row, override) {
@@ -144,11 +146,13 @@
         "news_answers",
         "lexical_cards",
         "lexical_progress",
+        "lens_captures",
+        "lens_messages",
       ])
         await api.clear(s);
     },
     async clearUserData() {
-      for (const store of ["attempts", "exercise_progress", "tag_progress", "daily_sessions", "learning_reports", "settings", "exercise_overrides", "news_articles", "news_answers", "lexical_cards", "lexical_progress"])
+      for (const store of ["attempts", "exercise_progress", "tag_progress", "daily_sessions", "learning_reports", "settings", "exercise_overrides", "news_articles", "news_answers", "lexical_cards", "lexical_progress", "lens_captures", "lens_messages"])
         await api.clear(store);
     },
     async backup() {

@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=60">
+  <link rel="stylesheet" href="styles.css?v=61">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -22,6 +22,7 @@
         <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button>
         <button class="nav-item" type="button" data-view="practicar"><span>✎</span>Practicar</button>
         <button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor IA</button>
+        <button class="nav-item" type="button" data-view="lupa"><span>⌕</span>Lupa</button>
         <button class="nav-item" type="button" data-view="noticia"><span>新</span>Noticia</button>
         <button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button>
         <button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
@@ -98,6 +99,43 @@
         </div>
       </section>
 
+      <section class="view" id="view-lupa" aria-labelledby="lensHeading">
+        <div class="intro"><div><h2 id="lensHeading">Lupa IA</h2><p>Analiza texto japonés de capturas, imágenes o texto pegado sin mezclarlo con tu práctica diaria.</p></div></div>
+        <div class="lens-layout">
+          <section class="panel lens-input">
+            <div class="section-heading"><div><p class="section-kicker">Captura didáctica</p><h3>Entrada</h3></div></div>
+            <div class="lens-mode" role="radiogroup" aria-label="Modo de análisis">
+              <label><input type="radio" name="lensMode" value="text" checked> Solo texto</label>
+              <label><input type="radio" name="lensMode" value="vision"> Visión + OCR</label>
+            </div>
+            <label>Contexto<select id="lensContext"><option value="noticia">Noticia o artículo</option><option value="web">Web o app</option><option value="menu">Menú o tienda</option><option value="manga">Manga o viñeta</option><option value="chat">Chat o mensaje</option><option value="documento">Documento</option><option value="otro">Otro</option></select></label>
+            <label>Detalle opcional<input id="lensContextDetail" maxlength="160" placeholder="Ej.: sección de economía, menú de ramen, viñeta con lenguaje informal..."></label>
+            <label class="answer-label" for="lensText">Texto visible o transcripción</label>
+            <textarea id="lensText" rows="7" maxlength="5000" placeholder="Pega aquí el texto japonés si quieres ahorrar tokens de visión."></textarea>
+            <div class="lens-image-tools" id="lensImageTools" hidden>
+              <label class="file-button">Añadir imagen o captura<input id="lensImageInput" type="file" accept="image/*"></label>
+              <div class="lens-preview" id="lensPreview"></div>
+              <p class="security-note">En modo visión se envía una imagen reducida al Worker para OCR/análisis. El historial sincronizado guarda el análisis, no la imagen completa.</p>
+            </div>
+            <div class="answer-actions lens-actions"><button class="secondary" id="lensClear" type="button">Limpiar</button><button class="primary" id="lensAnalyze" type="button">Analizar</button></div>
+          </section>
+          <section class="panel lens-output" id="lensOutput" aria-live="polite">
+            <div class="feedback-empty"><span>⌕</span><h3>La explicación aparecerá aquí</h3><p>Elige solo texto para ahorrar o visión si necesitas OCR de una captura.</p></div>
+          </section>
+          <section class="panel lens-chat">
+            <div class="section-heading"><div><p class="section-kicker">Repreguntar</p><h3>Conversación</h3></div></div>
+            <div class="ai-tutor-thread" id="lensThread"><p class="empty">Todavía no hay una captura activa sobre la que preguntar.</p></div>
+            <label class="answer-label" for="lensQuestion">Pregunta</label>
+            <textarea id="lensQuestion" rows="4" maxlength="900" placeholder="Ej.: ¿por qué se usa esta partícula? ¿Qué matiz tiene esta palabra aquí?"></textarea>
+            <div class="answer-actions"><button class="secondary" id="lensAsk" type="button" disabled>Preguntar</button></div>
+          </section>
+          <section class="panel lens-history-panel">
+            <div class="section-heading compact"><div><p class="section-kicker">Historial</p><h3>Capturas analizadas</h3></div><button class="text-button" id="lensRefreshHistory" type="button">Actualizar</button></div>
+            <div class="lens-history" id="lensHistory"></div>
+          </section>
+        </div>
+      </section>
+
       <section class="view" id="view-noticia" aria-labelledby="dailyNewsHeading">
         <div class="intro"><div><h2 id="dailyNewsHeading">Noticia del día</h2><p>Busca una noticia reciente y la convierte en lectura japonesa graduada.</p></div></div>
         <div class="daily-news-layout">
@@ -147,7 +185,7 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación móvil">
-      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Práctica</button><button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor</button><button class="nav-item" type="button" data-view="noticia"><span>新</span>Noticia</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
+      <button class="nav-item active" type="button" data-view="hoy" aria-current="page"><span>⌂</span>Hoy</button><button class="nav-item" type="button" data-view="practicar"><span>✎</span>Práctica</button><button class="nav-item" type="button" data-view="tutor"><span>会</span>Tutor</button><button class="nav-item" type="button" data-view="lupa"><span>⌕</span>Lupa</button><button class="nav-item" type="button" data-view="noticia"><span>新</span>Noticia</button><button class="nav-item" type="button" data-view="progreso"><span>▥</span>Progreso</button><button class="nav-item" type="button" data-view="ajustes"><span>⚙</span>Ajustes</button>
     </nav>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -158,8 +196,8 @@
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=32"></script>
-  <script src="src/cloud-sync.js?v=32"></script>
+  <script src="src/db.js?v=33"></script>
+  <script src="src/cloud-sync.js?v=33"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=3"></script>
@@ -180,9 +218,9 @@
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=39"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
-  <script src="src/ui.js?v=41"></script>
+  <script src="src/ui.js?v=42"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=74"></script>
+  <script src="app.js?v=75"></script>
   <script src="src/navigation-fix.js?v=4"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
@@ -191,6 +229,7 @@
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
   <script src="src/ai-tutor.js?v=3"></script>
+  <script src="src/lens.js?v=1"></script>
   <script src="src/daily-news.js?v=5"></script>
   <script src="src/manual-adjustments.js?v=6"></script>
   <script src="src/topic-drill.js?v=33"></script>
