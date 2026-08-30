@@ -18,7 +18,8 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 - La navegación comparte un único ciclo de actualización entre pestañas. En Progreso, los tags se agrupan por categoría y solo se muestran las tres prioridades con más evidencia y margen de mejora.
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
 - La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
-- La pestaña `Lupa IA` es una herramienta separada para analizar japonés externo a la app. Permite elegir entre modo `Solo texto`, que ahorra tokens y no envía imágenes, y modo `Visión + OCR`, que envía una captura reducida al Worker para extraer y explicar el texto. Guarda historial sincronizado del análisis, contexto, OCR, traducción, vocabulario y conversación, pero no guarda la imagen completa en el estado de progreso.
+- La pestaña `Lupa IA` es una herramienta separada para analizar japonés externo a la app. Permite elegir entre modo `Solo texto`, que ahorra tokens y no envía imágenes, y modo `Visión + OCR`, que envía una captura reducida al Worker para extraer y explicar el texto. En la APK nativa, la traducción y un resumen aparecen directamente sobre la aplicación que se estaba leyendo; gramática, vocabulario y notas quedan en secciones plegables y se puede repreguntar sin abandonar la lectura. Guarda historial sincronizado del análisis, contexto, OCR, traducción, vocabulario y conversación, pero no guarda la imagen completa en el estado de progreso.
+- Cada análisis de la lupa conserva también sus `reusable_phrase_candidates_json`, `candidate_count`, `candidate_source` y `candidate_status`. Los candidatos nacen como `pending_editorial_review`: son material potencial para futuras generaciones, no ejercicios publicados ni evidencia de cobertura hasta superar el filtro editorial y la calibración habituales.
 - Ajustes incluye un canal de actualización APK basado en `android-version.json`. Cuando exista una APK nativa publicada, la app mostrará versión disponible, notas y enlace de descarga sin que el usuario tenga que buscar releases manualmente.
 - La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
 - Las noticias se almacenan como cantera editorial local/sincronizada, incluyendo fuente, lectura, vocabulario, gramática, preguntas y frases candidatas para revisar antes de futuras tandas de generación.
@@ -170,20 +171,20 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 
 La APK nativa se trata como contenedor híbrido para capacidades Android que la PWA no puede ofrecer bien: overlay flotante, captura de pantalla de otras apps, OCR local, compartir imágenes desde Android y posibles notificaciones nativas. No debe duplicar la lógica de progreso ni almacenar claves; sigue usando la web publicada y el Worker.
 
-La versión `1.2.1` usa una sesión nativa de captura persistente durante el uso de la Lupa. Al activarla, Android pide una vez permiso para compartir la pantalla completa y arranca un servicio visible de tipo `mediaProjection`. Después se puede abrir cualquier app y tocar la burbuja: ésta se oculta, la pantalla se congela y aparece directamente un recorte ajustable, sin volver a JapoTeacher ni repetir el permiso en cada captura. El OCR japonés se hace localmente y devuelve el texto a JapoTeacher. La captura vive sólo en la caché privada y se elimina al cerrar el recorte; nunca aparece en la galería. Tras el OCR, el usuario elige entre enviar sólo el texto o texto + recorte para análisis con visión. Todos los pasos respetan las barras del sistema, el recorte de pantalla y el teclado; los botones finales quedan fijos en una zona segura y el contenido central se desplaza.
+La versión `1.2.2` usa una sesión nativa de captura persistente durante el uso de la Lupa. Al activarla, Android pide una vez permiso para compartir la pantalla completa y arranca un servicio visible de tipo `mediaProjection`. Después se puede abrir cualquier app y tocar la burbuja: ésta se oculta, la pantalla se congela y aparece directamente un recorte ajustable, sin volver a JapoTeacher ni repetir el permiso en cada captura. El OCR japonés se hace localmente. La captura vive sólo en la caché privada y se elimina al cerrar el recorte; nunca aparece en la galería. Tras el OCR, el usuario elige entre enviar sólo el texto o texto + recorte para análisis con visión. La respuesta se muestra en una hoja superpuesta sobre la aplicación de lectura con traducción y resumen inmediatos, explicaciones plegables y repreguntas. Todos los pasos respetan las barras del sistema, el recorte de pantalla y el teclado; los botones finales quedan fijos en una zona segura y el contenido central se desplaza.
 
 Cada release nativa se publica como archivo en `releases/android/` dentro de este mismo repo, y después se actualiza `android-version.json`:
 
 ```json
 {
-  "versionCode": 7,
-  "versionName": "1.2.1",
-  "version": "1.2.1",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
-  "sha256": "...",
+  "versionCode": 8,
+  "versionName": "1.2.2",
+  "version": "1.2.2",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.2-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.2-arm64.apk",
+  "sha256": "17a42a2e2985794b93af94442e3ece61faae6fbc48c564f5c174f72ad0e78b8f",
   "published_at": "2026-08-30T00:00:00Z",
-  "notes": ["Recorte inmediato", "Permiso único por sesión", "OCR local", "Captura sin galería", "Áreas seguras en todos los pasos"]
+  "notes": ["Explicación sobre la app de lectura", "Resumen inmediato", "Bloques didácticos plegables", "Repreguntas", "Candidatos editoriales sincronizados"]
 }
 ```
 

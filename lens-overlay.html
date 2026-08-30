@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Explicación de lupa</title>
+  <link rel="stylesheet" href="src/lens-overlay.css?v=1">
+</head>
+<body>
+  <main class="overlay-sheet" aria-labelledby="overlayTitle">
+    <header class="overlay-header">
+      <div><span class="kicker">Lupa IA</span><h1 id="overlayTitle">Explicación</h1></div>
+      <button class="icon-button" id="closeOverlay" type="button" aria-label="Cerrar y volver a la lectura">×</button>
+    </header>
+    <section id="overlayStatus" class="overlay-status" aria-live="polite">
+      <span class="spinner"></span><div><strong>Preparando la explicación</strong><p>Traduciendo y ordenando los puntos importantes.</p></div>
+    </section>
+    <article id="overlayResult" hidden></article>
+    <section id="overlayChat" class="overlay-chat" hidden>
+      <h2>Pregunta sobre este fragmento</h2>
+      <div id="overlayThread" class="overlay-thread"></div>
+      <label for="overlayQuestion">Pregunta</label>
+      <textarea id="overlayQuestion" rows="2" maxlength="900" placeholder="¿Qué matiz tiene esta palabra? ¿Por qué se usa esta partícula?"></textarea>
+      <button id="overlayAsk" type="button">Preguntar</button>
+    </section>
+    <footer class="overlay-actions">
+      <button id="recaptureOverlay" class="secondary" type="button">Nuevo recorte</button>
+      <button id="finishOverlay" type="button">Volver a la lectura</button>
+    </footer>
+  </main>
+
+  <div class="cloud-hooks" aria-hidden="true">
+    <div id="authSignedOut"><input id="authEmail"><input id="authPassword"><button id="signUpButton"></button><button id="signInButton"></button></div>
+    <div id="authSignedIn"><span id="authUserEmail"></span><button id="signOutButton"></button></div>
+    <span id="cloudStatus"></span><div id="sessionLock"><span id="sessionLockMessage"></span><button id="takeSessionButton"></button><button id="sessionLockSignOut"></button></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="src/supabase-config.js?v=11"></script>
+  <script src="src/db.js?v=33"></script>
+  <script src="src/sync-policy.js?v=1"></script>
+  <script src="src/cloud-sync.js?v=35"></script>
+  <script src="src/lens-overlay.js?v=1"></script>
+</body>
+</html>

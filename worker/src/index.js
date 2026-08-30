@@ -187,12 +187,13 @@ const tutorChatSchema = {
 const lensAnalysisSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["context_label", "title_es", "ocr_text", "translation_es", "teacher_explanation", "grammar_points", "kanji_vocabulary", "study_notes", "reusable_phrase_candidates", "jlpt_estimate"],
+  required: ["context_label", "title_es", "ocr_text", "translation_es", "overlay_summary_es", "teacher_explanation", "grammar_points", "kanji_vocabulary", "study_notes", "reusable_phrase_candidates", "jlpt_estimate"],
   properties: {
     context_label: { type: "string" },
     title_es: { type: "string" },
     ocr_text: { type: "string" },
     translation_es: { type: "string" },
+    overlay_summary_es: { type: "string" },
     teacher_explanation: stringList,
     grammar_points: stringList,
     kanji_vocabulary: {
@@ -569,7 +570,7 @@ function lensPrompt(operation, mode) {
   if (operation === "chat")
     return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis de lupa previo como contexto. Sé didáctico y concreto. Si mencionas kanji, añade lectura en hiragana cuando ayude. No inventes texto que no esté en la captura o transcripción; si falta contexto, explica la interpretación más probable.";
   const source = mode === "vision" ? "una captura o imagen, y quizá una transcripción parcial" : "texto pegado por el alumno";
-  return `Eres una lupa lingüística de japonés para hispanohablantes. Recibes ${source}. Extrae el texto japonés visible cuando proceda, corrige con prudencia errores menores de OCR y traduce de forma natural al español. Después explica por qué se escribe así: kanji, lecturas, vocabulario, partículas, forma verbal, registro, omisiones y matices pragmáticos. Adapta el análisis al contexto declarado por el alumno. No guardes ni menciones datos sensibles innecesarios. No escribas furigana entre paréntesis dentro de ocr_text: ocr_text debe ser texto japonés limpio; las lecturas van en kanji_vocabulary. reusable_phrase_candidates contiene frases autocontenidas que podrían convertirse en ejercicios tras revisión editorial, o una lista vacía si no hay material claro. jlpt_estimate debe ser N5, N4, N3, N2, N1 o mixto.`;
+  return `Eres una lupa lingüística de japonés para hispanohablantes. Recibes ${source}. Extrae el texto japonés visible cuando proceda, corrige con prudencia errores menores de OCR y traduce de forma natural al español. overlay_summary_es debe resumir en una o dos frases breves qué comunica el fragmento y cuál es su matiz principal, pensado para leerse en una superposición sin abandonar un manga o una web. Después explica por qué se escribe así: kanji, lecturas, vocabulario, partículas, forma verbal, registro, omisiones y matices pragmáticos. Adapta el análisis al contexto declarado por el alumno. No guardes ni menciones datos sensibles innecesarios. No escribas furigana entre paréntesis dentro de ocr_text: ocr_text debe ser texto japonés limpio; las lecturas van en kanji_vocabulary. reusable_phrase_candidates contiene frases autocontenidas que podrían convertirse en ejercicios tras revisión editorial, o una lista vacía si no hay material claro. jlpt_estimate debe ser N5, N4, N3, N2, N1 o mixto.`;
 }
 async function callLens(payload, env) {
   const operation = payload.operation === "chat" ? "chat" : "analyze",

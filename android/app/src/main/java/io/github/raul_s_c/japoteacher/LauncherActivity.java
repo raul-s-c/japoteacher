@@ -20,7 +20,7 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 public class LauncherActivity extends Activity {
-    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.1&nativeCode=7";
+    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.2&nativeCode=8";
     private static WebView webView;
     private ProgressBar progress;
     private String pendingLensPayload;

@@ -59,7 +59,8 @@
   async function saveCapture(data){
     const settings=(await JapoDB.get('settings','app'))?.value||{},now=new Date().toISOString(),capture=data.analysis||{},captureId=data.capture_id||crypto.randomUUID();
     data.capture_id=captureId;
-    await JapoDB.put('lens_captures',{capture_id:captureId,profile_id:settings.profileId||'local-default',created_at:now,updated_at:now,local_date:localDate(),mode:data.capture_mode||mode(),context:$('#lensContext')?.value||'',context_detail:$('#lensContextDetail')?.value.trim()||'',input_text:$('#lensText')?.value.trim()||'',ocr_text:capture.ocr_text||'',title_es:capture.title_es||'',translation_es:capture.translation_es||'',jlpt_estimate:capture.jlpt_estimate||'',analysis_json:JSON.stringify(capture),usage_json:JSON.stringify(data.usage||{}),model:data.model||'',response_id:data.response_id||'',has_image:data.capture_mode==='vision'});
+    const candidates=capture.reusable_phrase_candidates||[];
+    await JapoDB.put('lens_captures',{capture_id:captureId,profile_id:settings.profileId||'local-default',created_at:now,updated_at:now,local_date:localDate(),mode:data.capture_mode||mode(),context:$('#lensContext')?.value||'',context_detail:$('#lensContextDetail')?.value.trim()||'',input_text:$('#lensText')?.value.trim()||'',ocr_text:capture.ocr_text||'',title_es:capture.title_es||'',translation_es:capture.translation_es||'',jlpt_estimate:capture.jlpt_estimate||'',overlay_summary_es:capture.overlay_summary_es||'',analysis_json:JSON.stringify(capture),reusable_phrase_candidates_json:JSON.stringify(candidates),candidate_count:candidates.length,candidate_status:candidates.length?'pending_editorial_review':'none',candidate_source:'lens',usage_json:JSON.stringify(data.usage||{}),model:data.model||'',response_id:data.response_id||'',has_image:data.capture_mode==='vision'});
     await renderHistory();
   }
   async function analyze(){

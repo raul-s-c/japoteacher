@@ -1,16 +1,19 @@
 {
-  "versionCode": 7,
-  "versionName": "1.2.1",
-  "version": "1.2.1",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
-  "sha256": "968200D44AD4732A89ACDF73C51ADBD86626D3490338E16EF75FA464795D02C7",
+  "versionCode": 8,
+  "versionName": "1.2.2",
+  "version": "1.2.2",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.2-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.2-arm64.apk",
+  "sha256": "17a42a2e2985794b93af94442e3ece61faae6fbc48c564f5c174f72ad0e78b8f",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": [
     "Recorte inmediato sobre cualquier app, como una herramienta de recortes: toca la burbuja, congela la pantalla y ajusta el área.",
     "El permiso de pantalla se concede una vez al activar la lupa y la sesión permanece disponible para varios recortes.",
     "La burbuja se oculta antes de capturar y vuelve al cerrar el recorte.",
     "OCR japonés local; la captura sólo vive en la caché privada y no aparece en la galería.",
-    "El recorte, el resultado OCR, el teclado y la burbuja respetan las barras y áreas seguras de Android."
+    "El recorte, el resultado OCR, el teclado y la burbuja respetan las barras y áreas seguras de Android.",
+    "La traducción, el resumen y las explicaciones aparecen en una hoja superpuesta sin abandonar la lectura.",
+    "Gramática, vocabulario y notas se muestran en bloques plegables y permiten preguntas de seguimiento.",
+    "Las frases aprovechables quedan sincronizadas como material potencial pendiente de revisión editorial."
   ]
 }

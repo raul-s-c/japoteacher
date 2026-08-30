@@ -11,6 +11,8 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.os.Build;
+import android.net.Uri;
 import android.util.Base64;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -28,6 +30,10 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
@@ -36,6 +42,7 @@ import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import org.json.JSONObject;
 
 public class LensCaptureActivity extends Activity {
     private FrameLayout root;
@@ -43,6 +50,8 @@ public class LensCaptureActivity extends Activity {
     private Bitmap cropBitmap;
     private EditText contextInput;
     private String capturePath;
+    private WebView explanationWebView;
+    private String explanationPayload = "{}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -184,20 +193,18 @@ public class LensCaptureActivity extends Activity {
         actions.setPadding(dp(12), dp(8), dp(12), dp(10));
         actions.setBackgroundColor(Color.rgb(247, 245, 240));
         Button retry = button("Reajustar");
-        Button send = button("Usar texto");
+        Button send = button("Explicar aquí");
         retry.setOnClickListener(v -> {
             hideKeyboard();
             showCropper();
         });
         send.setOnClickListener(v -> {
             String imageData = mode.getCheckedRadioButtonId() == 2 ? bitmapDataUrl(cropBitmap) : "";
-            LauncherActivity.openWithLensResult(
-                    this,
+            showExplanationOverlay(
                     detected.getText().toString().trim(),
                     imageData,
                     contextInput.getText().toString().trim()
             );
-            finish();
         });
         LinearLayout.LayoutParams actionParams = new LinearLayout.LayoutParams(0, dp(54), 1);
         actionParams.setMarginEnd(dp(6));
@@ -214,6 +221,70 @@ public class LensCaptureActivity extends Activity {
         shell.addView(scroll, new LinearLayout.LayoutParams(-1, 0, 1));
         shell.addView(actions, new LinearLayout.LayoutParams(-1, -2));
         root.addView(shell, new FrameLayout.LayoutParams(-1, -1));
+    }
+
+    private void showExplanationOverlay(String text, String imageDataUrl, String contextLabel) {
+        hideKeyboard();
+        try {
+            JSONObject payload = new JSONObject();
+            payload.put("text", text);
+            payload.put("imageDataUrl", imageDataUrl);
+            payload.put("context", contextLabel);
+            payload.put("source", "android_overlay");
+            explanationPayload = payload.toString();
+        } catch (Exception error) {
+            explanationPayload = "{}";
+        }
+
+        root.removeAllViews();
+        root.setBackgroundColor(Color.TRANSPARENT);
+        explanationWebView = new WebView(this);
+        explanationWebView.setBackgroundColor(Color.TRANSPARENT);
+        WebSettings settings = explanationWebView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setAllowFileAccess(false);
+        settings.setMediaPlaybackRequiresUserGesture(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) settings.setSafeBrowsingEnabled(true);
+        explanationWebView.addJavascriptInterface(new OverlayBridge(), "JapoLensHost");
+        explanationWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request) {
+                Uri uri = request.getUrl();
+                return !("https".equals(uri.getScheme()) && "raul-s-c.github.io".equals(uri.getHost()));
+            }
+        });
+        root.addView(explanationWebView, new FrameLayout.LayoutParams(-1, -1));
+        explanationWebView.loadUrl("https://raul-s-c.github.io/japoteacher/lens-overlay.html?nativeVersion=1.2.2&nativeCode=8");
+    }
+
+    private void disposeExplanationWebView() {
+        if (explanationWebView == null) return;
+        explanationWebView.removeJavascriptInterface("JapoLensHost");
+        explanationWebView.stopLoading();
+        explanationWebView.destroy();
+        explanationWebView = null;
+    }
+
+    public class OverlayBridge {
+        @JavascriptInterface
+        public String getPayload() {
+            return explanationPayload;
+        }
+
+        @JavascriptInterface
+        public void closeOverlay() {
+            runOnUiThread(() -> finish());
+        }
+
+        @JavascriptInterface
+        public void recapture() {
+            runOnUiThread(() -> {
+                disposeExplanationWebView();
+                showCropper();
+            });
+        }
     }
 
     private void installSafeAreaHandling() {
@@ -267,6 +338,7 @@ public class LensCaptureActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        disposeExplanationWebView();
         Intent intent = new Intent(this, FloatingLensService.class);
         intent.setAction(FloatingLensService.ACTION_SHOW_BUBBLE);
         startService(intent);
