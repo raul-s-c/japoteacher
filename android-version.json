@@ -1,14 +1,14 @@
 {
-  "versionCode": 0,
-  "versionName": "0.0.0",
-  "version": "0.0.0",
-  "apkUrl": "",
-  "apk_url": "",
-  "sha256": "",
-  "published_at": "",
+  "versionCode": 3,
+  "versionName": "1.0.0",
+  "version": "1.0.0",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
+  "sha256": "10A22167A7F85D5890789D1542A8E7999A398840A4FC349770AE81A2F9858AFE",
+  "published_at": "2026-08-30T00:00:00Z",
   "notes": [
-    "Canal de actualizaciones nativas preparado.",
-    "Cuando exista una APK publicada, Ajustes mostrará aquí el enlace de descarga y las notas de versión.",
-    "Los cambios normales de contenido, UI, SRS, noticias y Worker siguen llegando por la app web."
+    "Primera APK Android de JapoTeacher.",
+    "Contenedor TWA firmado que abre la app publicada en GitHub Pages.",
+    "Ajustes ya puede comprobar futuras actualizaciones nativas desde este manifiesto."
   ]
 }

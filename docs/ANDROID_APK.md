@@ -15,7 +15,7 @@ La app consulta `android-version.json` desde Ajustes. Si `versionName`/`version`
 
 El patrón puede ser el mismo que `raul-s-c/nubeplay-releases`: repositorio público usado como canal de distribución, APKs versionadas como archivos y un manifiesto JSON apuntando al último APK mediante URL raw.
 
-Para evitar caos en GitHub, JapoTeacher usará preferentemente el propio repo `japoteacher` y publicará las APK como assets de GitHub Releases. No se deben commitear APKs al historial normal del repo.
+Para evitar pasos manuales, JapoTeacher usa el propio repo `japoteacher` como canal de distribución, con APKs en `releases/android/` y `android-version.json` apuntando a la URL raw del APK vigente. Como la APK TWA pesa alrededor de 1 MB, este patrón es manejable y evita depender de la interfaz web de Releases.
 
 La APK abre la web con `?nativeVersion=...&nativeCode=...`; la web lo guarda en `localStorage` para comparar contra el manifiesto de actualizaciones. Cuando se suba una nueva APK, hay que incrementar `versionCode` en Android y actualizar esos parámetros de arranque.
 
@@ -26,8 +26,8 @@ Ejemplo para una release real:
   "versionCode": 1,
   "versionName": "1.0.0",
   "version": "1.0.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher-releases/main/JapoTeacher-1.0.0-arm64.apk",
-  "apk_url": "https://github.com/raul-s-c/japoteacher/releases/download/android-v1.0.0/japoteacher.apk",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
   "sha256": "...",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": [
@@ -71,7 +71,7 @@ Para producir una APK desde aquí hay dos rutas válidas:
 1. Crear y versionar un contenedor Android/TWA dentro del repo, con Gradle wrapper incluido.
 2. Repetir un flujo externo tipo Bubblewrap/PWABuilder usando el SDK local y publicar el APK resultante como archivo en un repo de distribución, igual que `nubeplay-releases`.
 
-El canal de actualización ya está preparado; cuando haya una APK real, basta con publicar el archivo y actualizar `android-version.json`.
+El canal de actualización ya está preparado; cuando haya una APK nueva, basta con copiarla a `releases/android/`, incrementar `versionCode` y actualizar `android-version.json`.
 
 ## Build local actual
 

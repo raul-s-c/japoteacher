@@ -169,15 +169,15 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 
 La APK nativa debe tratarse como contenedor híbrido para capacidades Android que la PWA no puede ofrecer bien: overlay flotante, captura de pantalla de otras apps, compartir imágenes desde Android y posibles notificaciones nativas. No debe duplicar la lógica de progreso ni almacenar claves; seguirá usando la web publicada y el Worker.
 
-Cada release nativa deberá publicarse como asset de GitHub Releases o como archivo en un repositorio público de distribución tipo `nubeplay-releases`, y después actualizar `android-version.json`:
+Cada release nativa se publica como archivo en `releases/android/` dentro de este mismo repo, y después se actualiza `android-version.json`:
 
 ```json
 {
   "versionCode": 1,
   "versionName": "1.0.0",
   "version": "1.0.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher-releases/main/JapoTeacher-1.0.0-arm64.apk",
-  "apk_url": "https://github.com/raul-s-c/japoteacher/releases/download/android-v1.0.0/japoteacher.apk",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.0.0-arm64.apk",
   "sha256": "...",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": ["Lupa flotante", "Captura de pantalla Android"]
