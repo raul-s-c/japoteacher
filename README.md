@@ -19,6 +19,7 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 - Los informes se pueden generar bajo demanda desde Progreso y se presentan como resumen, métricas por dirección, fortalezas, prioridades y plan de acción. El Worker programa un cierre semanal y mensual idempotente.
 - La pestaña `Tutor IA` es un espacio independiente del SRS: permite enviar texto en español o japonés, obtener una explicación docente extensa de la traducción natural, kanji, lecturas, vocabulario y estructura gramatical, y continuar con preguntas contextuales sobre esa misma traducción.
 - La pestaña `Lupa IA` es una herramienta separada para analizar japonés externo a la app. Permite elegir entre modo `Solo texto`, que ahorra tokens y no envía imágenes, y modo `Visión + OCR`, que envía una captura reducida al Worker para extraer y explicar el texto. Guarda historial sincronizado del análisis, contexto, OCR, traducción, vocabulario y conversación, pero no guarda la imagen completa en el estado de progreso.
+- Ajustes incluye un canal de actualización APK basado en `android-version.json`. Cuando exista una APK nativa publicada, la app mostrará versión disponible, notas y enlace de descarga sin que el usuario tenga que buscar releases manualmente.
 - La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
 - Las noticias se almacenan como cantera editorial local/sincronizada, incluyendo fuente, lectura, vocabulario, gramática, preguntas y frases candidatas para revisar antes de futuras tandas de generación.
 - Las respuestas de comprensión de noticias se guardan como evidencia de estudio con score, nivel, dificultad, tags y delta de EXP ranked reducido frente a una frase completa.
@@ -163,6 +164,23 @@ No guardes `OPENAI_API_KEY`, service-role keys ni secretos editoriales en Git, J
 ### Publicación
 
 GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tras hacer push a `main`, espera el workflow y recarga la PWA. Si el móvil conserva una versión vieja, cierra y abre la app instalada; el service worker usa un nombre de caché versionado.
+
+### Futuro APK Android
+
+La APK nativa debe tratarse como contenedor híbrido para capacidades Android que la PWA no puede ofrecer bien: overlay flotante, captura de pantalla de otras apps, compartir imágenes desde Android y posibles notificaciones nativas. No debe duplicar la lógica de progreso ni almacenar claves; seguirá usando la web publicada y el Worker.
+
+Cada release nativa deberá publicarse como asset de GitHub Releases y después actualizar `android-version.json`:
+
+```json
+{
+  "version": "1.0.0",
+  "apk_url": "https://github.com/raul-s-c/japoteacher/releases/download/android-v1.0.0/japoteacher.apk",
+  "published_at": "2026-08-30T00:00:00Z",
+  "notes": ["Lupa flotante", "Captura de pantalla Android"]
+}
+```
+
+La app consulta ese manifiesto desde Ajustes. Si la versión remota es superior a la versión nativa embebida, muestra el botón `Descargar APK`. Los cambios web normales no requieren APK nueva.
 
 ## Funcionalidad estable ya implementada
 

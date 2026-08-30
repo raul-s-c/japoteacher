@@ -1,0 +1,10 @@
+{
+  "version": "0.0.0",
+  "apk_url": "",
+  "published_at": "",
+  "notes": [
+    "Canal de actualizaciones nativas preparado.",
+    "Cuando exista una APK publicada, Ajustes mostrará aquí el enlace de descarga y las notas de versión.",
+    "Los cambios normales de contenido, UI, SRS, noticias y Worker siguen llegando por la app web."
+  ]
+}
