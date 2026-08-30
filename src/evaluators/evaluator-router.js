@@ -4,7 +4,7 @@
     async evaluateAttempt(payload){
       const record=await JapoDB.get('settings','app'),settings=record?.value||{};
       if(settings.aiProvider==='openai'){
-        const evaluator=new OpenAiEvaluator();
+        const evaluator=new OpenAiEvaluator({endpoint:settings.aiEndpoint});
         return evaluator.evaluateAttempt(payload);
       }
       const result=await new LocalMockEvaluator().evaluateAttempt(payload);
