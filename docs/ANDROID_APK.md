@@ -11,14 +11,20 @@ La APK debe ser un contenedor nativo ligero sobre la app web publicada. La lógi
 
 ## Actualizaciones
 
-La app consulta `android-version.json` desde Ajustes. Si `version` es superior a la versión nativa embebida y `apk_url` contiene una URL, se muestra el botón `Descargar APK`.
+La app consulta `android-version.json` desde Ajustes. Si `versionName`/`version` es superior a la versión nativa embebida, o `versionCode` es superior al código nativo embebido, y `apkUrl`/`apk_url` contiene una URL, se muestra el botón `Descargar APK`.
+
+El patrón puede ser el mismo que `raul-s-c/nubeplay-releases`: repositorio público usado como canal de distribución, APKs versionadas como archivos y un manifiesto JSON apuntando al último APK mediante URL raw.
 
 Ejemplo para una release real:
 
 ```json
 {
+  "versionCode": 1,
+  "versionName": "1.0.0",
   "version": "1.0.0",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher-releases/main/JapoTeacher-1.0.0-arm64.apk",
   "apk_url": "https://github.com/raul-s-c/japoteacher/releases/download/android-v1.0.0/japoteacher.apk",
+  "sha256": "...",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": [
     "Lupa flotante sobre otras apps",
@@ -59,6 +65,6 @@ En este equipo se detecta Java y Android SDK en `C:\Users\rauls\AppData\Local\An
 Para producir una APK desde aquí hay dos rutas válidas:
 
 1. Crear y versionar un contenedor Android/TWA dentro del repo, con Gradle wrapper incluido.
-2. Repetir un flujo externo tipo Bubblewrap/PWABuilder usando el SDK local y publicar el APK resultante como release.
+2. Repetir un flujo externo tipo Bubblewrap/PWABuilder usando el SDK local y publicar el APK resultante como archivo en un repo de distribución, igual que `nubeplay-releases`.
 
 El canal de actualización ya está preparado; cuando haya una APK real, basta con publicar el archivo y actualizar `android-version.json`.

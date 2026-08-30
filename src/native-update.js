@@ -1,5 +1,6 @@
 (function(){
   const CURRENT_NATIVE_VERSION='0.0.0';
+  const CURRENT_NATIVE_CODE=0;
   const MANIFEST_URL='android-version.json';
   const $=selector=>document.querySelector(selector),
     esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -9,16 +10,25 @@
     for(let index=0;index<length;index++){const diff=(a[index]||0)-(b[index]||0);if(diff)return diff>0}
     return false;
   }
+  function normalizeManifest(manifest){
+    const version=manifest.version||manifest.versionName||'0.0.0';
+    const apkUrl=manifest.apk_url||manifest.apkUrl||manifest.download_url||'';
+    const versionCode=Number.parseInt(manifest.version_code??manifest.versionCode??0,10)||0;
+    const notes=Array.isArray(manifest.notes)?manifest.notes:(manifest.notes?[manifest.notes]:[]);
+    return {version,apkUrl,versionCode,notes,sha256:manifest.sha256||''};
+  }
   function render(manifest){
     const status=$('#nativeUpdateStatus'),download=$('#nativeUpdateDownload'),notes=$('#nativeUpdateNotes');
     if(!status||!download||!notes)return;
-    const version=manifest.version||'0.0.0',hasApk=Boolean(manifest.apk_url),available=hasApk&&newer(version,CURRENT_NATIVE_VERSION);
+    const normalized=normalizeManifest(manifest);
+    const version=normalized.version,hasApk=Boolean(normalized.apkUrl);
+    const available=hasApk&&(normalized.versionCode>CURRENT_NATIVE_CODE||newer(version,CURRENT_NATIVE_VERSION));
     status.classList.toggle('ready',available);
     status.classList.toggle('muted',!hasApk);
     status.innerHTML=hasApk?(available?`Actualización nativa disponible: ${esc(version)}. Tienes ${esc(CURRENT_NATIVE_VERSION)}.`:`Canal APK al día: ${esc(version)}.`):'Canal APK preparado, todavía sin APK publicada.';
     download.hidden=!available;
-    if(available)download.href=manifest.apk_url;
-    notes.innerHTML=Array.isArray(manifest.notes)&&manifest.notes.length?`<ul>${manifest.notes.map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:'<p class="empty">Cuando publiquemos una APK, aquí aparecerán los cambios y el enlace de descarga.</p>';
+    if(available)download.href=normalized.apkUrl;
+    notes.innerHTML=normalized.notes.length?`<ul>${normalized.notes.map(item=>`<li>${esc(item)}</li>`).join('')}${normalized.sha256?`<li>SHA-256: <code>${esc(normalized.sha256)}</code></li>`:''}</ul>`:'<p class="empty">Cuando publiquemos una APK, aquí aparecerán los cambios y el enlace de descarga.</p>';
   }
   async function check(){
     const status=$('#nativeUpdateStatus');
@@ -38,5 +48,5 @@
     document.addEventListener('japoteacher:navigate',event=>{if(event.detail?.view==='ajustes')check()});
     setTimeout(check,900);
   });
-  window.JapoNativeUpdate={check,currentVersion:CURRENT_NATIVE_VERSION};
+  window.JapoNativeUpdate={check,currentVersion:CURRENT_NATIVE_VERSION,currentCode:CURRENT_NATIVE_CODE};
 })();

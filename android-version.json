@@ -1,6 +1,10 @@
 {
+  "versionCode": 0,
+  "versionName": "0.0.0",
   "version": "0.0.0",
+  "apkUrl": "",
   "apk_url": "",
+  "sha256": "",
   "published_at": "",
   "notes": [
     "Canal de actualizaciones nativas preparado.",
