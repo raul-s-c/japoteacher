@@ -15,6 +15,10 @@ La app consulta `android-version.json` desde Ajustes. Si `versionName`/`version`
 
 El patrón puede ser el mismo que `raul-s-c/nubeplay-releases`: repositorio público usado como canal de distribución, APKs versionadas como archivos y un manifiesto JSON apuntando al último APK mediante URL raw.
 
+Para evitar caos en GitHub, JapoTeacher usará preferentemente el propio repo `japoteacher` y publicará las APK como assets de GitHub Releases. No se deben commitear APKs al historial normal del repo.
+
+La APK abre la web con `?nativeVersion=...&nativeCode=...`; la web lo guarda en `localStorage` para comparar contra el manifiesto de actualizaciones. Cuando se suba una nueva APK, hay que incrementar `versionCode` en Android y actualizar esos parámetros de arranque.
+
 Ejemplo para una release real:
 
 ```json
@@ -68,3 +72,21 @@ Para producir una APK desde aquí hay dos rutas válidas:
 2. Repetir un flujo externo tipo Bubblewrap/PWABuilder usando el SDK local y publicar el APK resultante como archivo en un repo de distribución, igual que `nubeplay-releases`.
 
 El canal de actualización ya está preparado; cuando haya una APK real, basta con publicar el archivo y actualizar `android-version.json`.
+
+## Build local actual
+
+El proyecto TWA está versionado en `android/`.
+
+Para generar la APK:
+
+```powershell
+cd "C:\Users\rauls\OneDrive\otros\nihongo benkyo\japoteacher\android"
+npx.cmd @bubblewrap/cli build
+```
+
+Salidas esperadas:
+
+- `android/app-release-signed.apk`
+- `android/app-release-bundle.aab`
+
+El keystore local está en `android/android.keystore` y está ignorado por Git. El archivo `android/signing.local.txt` también está ignorado y contiene el recordatorio local de firma. Hay que conservar ambos para que futuras APK puedan actualizar sobre la instalada.

@@ -12,3 +12,14 @@ __pycache__/
 .codex-remote-attachments/
 data/editorial/usage.jsonl
 data/editorial/difficulty-review-checkpoint.jsonl
+android/android.keystore
+android/*.keystore
+android/*.jks
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+android/signing.local.txt
+android/*.apk
+android/*.aab
+android/*.idsig
