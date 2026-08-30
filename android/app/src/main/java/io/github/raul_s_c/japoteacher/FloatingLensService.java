@@ -374,6 +374,7 @@ public class FloatingLensService extends Service {
                     if (Math.abs(dx) + Math.abs(dy) > dp(8)) moved = true;
                     bubbleParams.x = startX + dx;
                     bubbleParams.y = startY + dy;
+                    constrainBubble();
                     windowManager.updateViewLayout(bubble, bubbleParams);
                     return true;
                 case MotionEvent.ACTION_UP:
@@ -383,5 +384,22 @@ public class FloatingLensService extends Service {
                     return false;
             }
         }
+    }
+
+    private void constrainBubble() {
+        int width = getResources().getDisplayMetrics().widthPixels;
+        int height = getResources().getDisplayMetrics().heightPixels;
+        int statusBar = systemDimension("status_bar_height");
+        int navigationBar = systemDimension("navigation_bar_height");
+        bubbleParams.x = Math.max(0, Math.min(bubbleParams.x, width - bubbleParams.width));
+        bubbleParams.y = Math.max(statusBar, Math.min(
+                bubbleParams.y,
+                height - navigationBar - bubbleParams.height
+        ));
+    }
+
+    private int systemDimension(String name) {
+        int resource = getResources().getIdentifier(name, "dimen", "android");
+        return resource > 0 ? getResources().getDimensionPixelSize(resource) : 0;
     }
 }

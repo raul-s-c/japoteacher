@@ -12,7 +12,7 @@
   "navigationDividerColorDark": "#000000",
   "backgroundColor": "#F7F5F0",
   "enableNotifications": true,
-  "startUrl": "/japoteacher/?nativeVersion=1.2.0&nativeCode=6",
+  "startUrl": "/japoteacher/?nativeVersion=1.2.1&nativeCode=7",
   "iconUrl": "https://raul-s-c.github.io/japoteacher/assets/app-icon.svg",
   "maskableIconUrl": "https://raul-s-c.github.io/japoteacher/assets/app-icon.svg",
   "splashScreenFadeOutDuration": 300,

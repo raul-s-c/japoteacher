@@ -169,20 +169,20 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 
 La APK nativa se trata como contenedor híbrido para capacidades Android que la PWA no puede ofrecer bien: overlay flotante, captura de pantalla de otras apps, OCR local, compartir imágenes desde Android y posibles notificaciones nativas. No debe duplicar la lógica de progreso ni almacenar claves; sigue usando la web publicada y el Worker.
 
-La versión `1.2.0` usa una sesión nativa de captura persistente durante el uso de la Lupa. Al activarla, Android pide una vez permiso para compartir la pantalla completa y arranca un servicio visible de tipo `mediaProjection`. Después se puede abrir cualquier app y tocar la burbuja: ésta se oculta, la pantalla se congela y aparece directamente un recorte ajustable, sin volver a JapoTeacher ni repetir el permiso en cada captura. El OCR japonés se hace localmente y devuelve el texto a JapoTeacher. La captura vive sólo en la caché privada y se elimina al cerrar el recorte; nunca aparece en la galería. Tras el OCR, el usuario elige entre enviar sólo el texto o texto + recorte para análisis con visión.
+La versión `1.2.1` usa una sesión nativa de captura persistente durante el uso de la Lupa. Al activarla, Android pide una vez permiso para compartir la pantalla completa y arranca un servicio visible de tipo `mediaProjection`. Después se puede abrir cualquier app y tocar la burbuja: ésta se oculta, la pantalla se congela y aparece directamente un recorte ajustable, sin volver a JapoTeacher ni repetir el permiso en cada captura. El OCR japonés se hace localmente y devuelve el texto a JapoTeacher. La captura vive sólo en la caché privada y se elimina al cerrar el recorte; nunca aparece en la galería. Tras el OCR, el usuario elige entre enviar sólo el texto o texto + recorte para análisis con visión. Todos los pasos respetan las barras del sistema, el recorte de pantalla y el teclado; los botones finales quedan fijos en una zona segura y el contenido central se desplaza.
 
 Cada release nativa se publica como archivo en `releases/android/` dentro de este mismo repo, y después se actualiza `android-version.json`:
 
 ```json
 {
-  "versionCode": 6,
-  "versionName": "1.2.0",
-  "version": "1.2.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.0-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.0-arm64.apk",
+  "versionCode": 7,
+  "versionName": "1.2.1",
+  "version": "1.2.1",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.1-arm64.apk",
   "sha256": "...",
   "published_at": "2026-08-30T00:00:00Z",
-  "notes": ["Recorte inmediato", "Permiso único por sesión", "OCR local", "Captura sin galería"]
+  "notes": ["Recorte inmediato", "Permiso único por sesión", "OCR local", "Captura sin galería", "Áreas seguras en todos los pasos"]
 }
 ```
 

@@ -15,6 +15,9 @@ import android.util.Base64;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -22,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +50,7 @@ public class LensCaptureActivity extends Activity {
         overridePendingTransition(0, 0);
         root = new FrameLayout(this);
         setContentView(root);
+        installSafeAreaHandling();
         capturePath = getIntent().getStringExtra(FloatingLensService.EXTRA_CAPTURE_PATH);
         screenBitmap = capturePath == null ? null : BitmapFactory.decodeFile(capturePath);
         if (screenBitmap == null) {
@@ -57,6 +62,7 @@ public class LensCaptureActivity extends Activity {
     }
 
     private void showCropper() {
+        hideKeyboard();
         root.removeAllViews();
         CropView cropView = new CropView(this, screenBitmap);
         root.addView(cropView, new FrameLayout.LayoutParams(-1, -1));
@@ -68,13 +74,13 @@ public class LensCaptureActivity extends Activity {
         toolbar.setBackgroundColor(Color.argb(238, 20, 20, 20));
 
         TextView title = new TextView(this);
-        title.setText("Selecciona el texto");
+        title.setText("Recortar");
         title.setTextColor(Color.WHITE);
         title.setTextSize(16);
         title.setGravity(Gravity.CENTER_VERTICAL);
 
         Button cancel = button("Cancelar");
-        Button capture = button("Leer recorte");
+        Button capture = button("Leer");
         cancel.setOnClickListener(v -> finish());
         capture.setOnClickListener(v -> {
             cropBitmap = cropView.crop();
@@ -130,10 +136,18 @@ public class LensCaptureActivity extends Activity {
     private void showResult(Text result) {
         String ocrText = result == null ? "" : result.getText().trim();
         root.removeAllViews();
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setPadding(dp(18), dp(18), dp(18), dp(18));
-        layout.setBackgroundColor(Color.rgb(247, 245, 240));
+        root.setBackgroundColor(Color.rgb(247, 245, 240));
+
+        LinearLayout shell = new LinearLayout(this);
+        shell.setOrientation(LinearLayout.VERTICAL);
+
+        ScrollView scroll = new ScrollView(this);
+        scroll.setFillViewport(true);
+        scroll.setClipToPadding(false);
+
+        LinearLayout content = new LinearLayout(this);
+        content.setOrientation(LinearLayout.VERTICAL);
+        content.setPadding(dp(18), dp(18), dp(18), dp(12));
 
         TextView title = new TextView(this);
         title.setText("Texto detectado");
@@ -143,7 +157,8 @@ public class LensCaptureActivity extends Activity {
 
         EditText detected = new EditText(this);
         detected.setText(ocrText);
-        detected.setMinLines(5);
+        detected.setMinLines(4);
+        detected.setMaxLines(10);
         detected.setGravity(Gravity.TOP);
         detected.setTextSize(18);
 
@@ -165,10 +180,15 @@ public class LensCaptureActivity extends Activity {
         mode.check(1);
 
         LinearLayout actions = new LinearLayout(this);
-        actions.setGravity(Gravity.END);
-        Button retry = button("Ajustar recorte");
-        Button send = button("Enviar a Lupa IA");
-        retry.setOnClickListener(v -> showCropper());
+        actions.setGravity(Gravity.CENTER_VERTICAL);
+        actions.setPadding(dp(12), dp(8), dp(12), dp(10));
+        actions.setBackgroundColor(Color.rgb(247, 245, 240));
+        Button retry = button("Reajustar");
+        Button send = button("Usar texto");
+        retry.setOnClickListener(v -> {
+            hideKeyboard();
+            showCropper();
+        });
         send.setOnClickListener(v -> {
             String imageData = mode.getCheckedRadioButtonId() == 2 ? bitmapDataUrl(cropBitmap) : "";
             LauncherActivity.openWithLensResult(
@@ -179,15 +199,59 @@ public class LensCaptureActivity extends Activity {
             );
             finish();
         });
-        actions.addView(retry);
-        actions.addView(send);
+        LinearLayout.LayoutParams actionParams = new LinearLayout.LayoutParams(0, dp(54), 1);
+        actionParams.setMarginEnd(dp(6));
+        actions.addView(retry, actionParams);
+        LinearLayout.LayoutParams sendParams = new LinearLayout.LayoutParams(0, dp(54), 1);
+        sendParams.setMarginStart(dp(6));
+        actions.addView(send, sendParams);
 
-        layout.addView(title);
-        layout.addView(detected, new LinearLayout.LayoutParams(-1, 0, 1));
-        layout.addView(contextInput);
-        layout.addView(mode);
-        layout.addView(actions);
-        root.addView(layout, new FrameLayout.LayoutParams(-1, -1));
+        content.addView(title);
+        content.addView(detected, new LinearLayout.LayoutParams(-1, -2));
+        content.addView(contextInput);
+        content.addView(mode);
+        scroll.addView(content, new ScrollView.LayoutParams(-1, -2));
+        shell.addView(scroll, new LinearLayout.LayoutParams(-1, 0, 1));
+        shell.addView(actions, new LinearLayout.LayoutParams(-1, -2));
+        root.addView(shell, new FrameLayout.LayoutParams(-1, -1));
+    }
+
+    private void installSafeAreaHandling() {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        root.setOnApplyWindowInsetsListener((view, insets) -> {
+            int left;
+            int top;
+            int right;
+            int bottom;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+                android.graphics.Insets safe = insets.getInsets(
+                        WindowInsets.Type.systemBars()
+                                | WindowInsets.Type.displayCutout()
+                                | WindowInsets.Type.ime()
+                );
+                left = safe.left;
+                top = safe.top;
+                right = safe.right;
+                bottom = safe.bottom;
+            } else {
+                left = insets.getSystemWindowInsetLeft();
+                top = insets.getSystemWindowInsetTop();
+                right = insets.getSystemWindowInsetRight();
+                bottom = insets.getSystemWindowInsetBottom();
+            }
+            view.setPadding(left, top, right, bottom);
+            return insets;
+        });
+        root.requestApplyInsets();
+    }
+
+    private void hideKeyboard() {
+        View focused = getCurrentFocus();
+        if (focused != null) {
+            InputMethodManager keyboard = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            keyboard.hideSoftInputFromWindow(focused.getWindowToken(), 0);
+            focused.clearFocus();
+        }
     }
 
     private String bitmapDataUrl(Bitmap bitmap) {
