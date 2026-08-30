@@ -256,7 +256,7 @@ public class LensCaptureActivity extends Activity {
             }
         });
         root.addView(explanationWebView, new FrameLayout.LayoutParams(-1, -1));
-        explanationWebView.loadUrl("https://raul-s-c.github.io/japoteacher/lens-overlay.html?nativeVersion=1.2.2&nativeCode=8");
+        explanationWebView.loadUrl("https://raul-s-c.github.io/japoteacher/lens-overlay.html?nativeVersion=1.2.3&nativeCode=9");
     }
 
     private void disposeExplanationWebView() {

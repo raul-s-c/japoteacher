@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.Window;
 import android.webkit.JavascriptInterface;
@@ -19,11 +20,17 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.util.Locale;
+
 public class LauncherActivity extends Activity {
-    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.2&nativeCode=8";
+    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.3&nativeCode=9";
     private static WebView webView;
     private ProgressBar progress;
     private String pendingLensPayload;
+    private TextToSpeech textToSpeech;
+    private boolean textToSpeechInitialized;
+    private boolean textToSpeechReady;
+    private String pendingSpeechText;
 
     public static void openWithLensResult(Context context, String text, String imageDataUrl, String contextLabel) {
         Intent intent = new Intent(context, LauncherActivity.class);
@@ -40,8 +47,9 @@ public class LauncherActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         buildLayout();
         configureWebView();
+        configureTextToSpeech();
         handleIntent(getIntent());
-        webView.loadUrl(APP_URL + "#lupa");
+        webView.loadUrl(APP_URL + (pendingLensPayload == null ? "#hoy" : "#lupa"));
     }
 
     @Override
@@ -93,6 +101,33 @@ public class LauncherActivity extends Activity {
                 return true;
             }
         });
+    }
+
+    private void configureTextToSpeech() {
+        textToSpeech = new TextToSpeech(this, status -> {
+            textToSpeechInitialized = true;
+            if (status == TextToSpeech.SUCCESS && textToSpeech != null) {
+                int languageStatus = textToSpeech.setLanguage(Locale.JAPAN);
+                textToSpeech.setSpeechRate(0.86f);
+                textToSpeechReady = languageStatus != TextToSpeech.LANG_MISSING_DATA
+                        && languageStatus != TextToSpeech.LANG_NOT_SUPPORTED;
+            }
+            if (textToSpeechReady && pendingSpeechText != null) {
+                textToSpeech.speak(pendingSpeechText, TextToSpeech.QUEUE_FLUSH, null, "japoteacher-practice");
+            } else if (pendingSpeechText != null) {
+                Toast.makeText(this, "No hay una voz japonesa instalada en Android.", Toast.LENGTH_LONG).show();
+            }
+            pendingSpeechText = null;
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
     }
 
     private void handleIntent(Intent intent) {
@@ -176,6 +211,18 @@ public class LauncherActivity extends Activity {
                 service.setAction(FloatingLensService.ACTION_CAPTURE);
                 startService(service);
             });
+        }
+
+        @JavascriptInterface
+        public boolean speakJapanese(String text) {
+            if (text == null || text.trim().isEmpty()) return false;
+            if (!textToSpeechInitialized) {
+                pendingSpeechText = text;
+                return true;
+            }
+            if (!textToSpeechReady || textToSpeech == null) return false;
+            runOnUiThread(() -> textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, "japoteacher-practice"));
+            return true;
         }
     }
 }
