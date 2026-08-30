@@ -262,14 +262,13 @@
   }
   function runCommit() {
     if (!user || !ready || restoring) return Promise.resolve();
-    commitQueue = commitQueue
-      .then(atomicCommit, atomicCommit)
-      .catch((error) => {
+    const operation = commitQueue.then(atomicCommit, atomicCommit);
+    commitQueue = operation.catch((error) => {
         commitPending = true;
         status(error.message || "No se pudo guardar", "error");
         console.warn(error);
       });
-    return commitQueue;
+    return operation;
   }
   function commit() {
     if (!user || !ready || restoring) return Promise.resolve();
@@ -278,7 +277,7 @@
     if (commitTimer) clearTimeout(commitTimer);
     commitTimer = setTimeout(() => {
       commitTimer = null;
-      runCommit();
+      runCommit().catch(() => {});
     }, 1200);
     return Promise.resolve();
   }

@@ -73,3 +73,55 @@ test("recent lexical repetition is penalized so daily plans diversify words", ()
   assert.ok(ids.includes("fresh-1"));
   assert.ok(ids.includes("fresh-2"));
 });
+
+test("changing daily targets resizes today's pending plan without losing completed work", async () => {
+  const TopicProgression = {
+    analyze: () => [],
+    bonus: () => 0,
+    familyFor: () => "Conocimiento y consultas",
+  };
+  const exercises = [
+    ...Array.from({ length: 24 }, (_, index) => ({ exercise_id: `ja-${index}`, active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 20, topic_tags: [`ja-topic-${index}`], grammar_tags: [`ja-g-${index}`], vocabulary_tags: [`ja-v-${index}`] })),
+    ...Array.from({ length: 14 }, (_, index) => ({ exercise_id: `es-${index}`, active: true, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: [`es-topic-${index}`], grammar_tags: [`es-g-${index}`], vocabulary_tags: [`es-v-${index}`] })),
+  ];
+  const sessionId = "profile::2026-08-30";
+  let session = {
+    session_id: sessionId,
+    profile_id: "profile",
+    local_date: "2026-08-30",
+    planned_ja_es: 5,
+    planned_es_ja: 5,
+    exercise_ids_ja_es_json: JSON.stringify(exercises.filter(item => item.direction === "ja_es").slice(0, 5).map(item => item.exercise_id)),
+    exercise_ids_es_ja_json: JSON.stringify(exercises.filter(item => item.direction === "es_ja").slice(0, 5).map(item => item.exercise_id)),
+    completed_exercise_ids_json: JSON.stringify(["ja-0", "es-0"]),
+    selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }),
+    status: "completed",
+    completed_at: "2026-08-30T08:00:00Z",
+  };
+  const JapoDB = {
+    get: async (store, id) => store === "daily_sessions" && id === sessionId ? session : null,
+    all: async store => ({ exercises, exercise_progress: [], attempts: [] })[store] || [],
+    put: async (store, value) => { if (store === "daily_sessions") session = value; },
+  };
+  const context = {
+    window: { TopicProgression, RankedProgress: { snapshot: () => ({}), accessForDirection: () => ({ allowedLevels: ["N5"] }) } },
+    TopicProgression,
+    Difficulty: { bands: [0], bandFor: () => 0, score: () => 20, levelIndex: () => 0 },
+    JapoDB,
+    Date, Math, Set, Map, JSON,
+  };
+  vm.runInNewContext(fs.readFileSync(new URL("../src/session-planner.js", import.meta.url), "utf8"), context);
+  const expanded = await context.window.SessionPlanner.getOrCreate("profile", { levels: ["N5"], dailyJaEs: 20, dailyEsJa: 10 }, "2026-08-30");
+  assert.equal(expanded.planned_ja_es, 20);
+  assert.equal(expanded.planned_es_ja, 10);
+  assert.equal(expanded.status, "in_progress");
+  assert.equal(expanded.completed_at, null);
+  assert.ok(JSON.parse(expanded.exercise_ids_ja_es_json).includes("ja-0"));
+  assert.ok(JSON.parse(expanded.exercise_ids_es_ja_json).includes("es-0"));
+
+  const reduced = await context.window.SessionPlanner.getOrCreate("profile", { levels: ["N5"], dailyJaEs: 3, dailyEsJa: 2 }, "2026-08-30");
+  assert.equal(reduced.planned_ja_es, 3);
+  assert.equal(reduced.planned_es_ja, 2);
+  assert.ok(JSON.parse(reduced.exercise_ids_ja_es_json).includes("ja-0"));
+  assert.ok(JSON.parse(reduced.exercise_ids_es_ja_json).includes("es-0"));
+});
