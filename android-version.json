@@ -1,14 +1,15 @@
 {
-  "versionCode": 4,
-  "versionName": "1.1.0",
-  "version": "1.1.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.0-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.0-arm64.apk",
-  "sha256": "A20FFEDB1F014186F0AF32786878DB92357303FB5F4F9098A08306EAA49E94AE",
+  "versionCode": 5,
+  "versionName": "1.1.1",
+  "version": "1.1.1",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
+  "sha256": "6C35435542E7DA1A6729F68DAF7168C8FD1ED3B58DDC82F06DACC3FBB41DEA09",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": [
     "APK nativa con WebView propia para proteger el flujo web y habilitar funciones Android.",
     "Lupa flotante con permiso de superposición para capturar texto desde otras apps.",
-    "Recorte de pantalla y OCR japonés local en el móvil; la imagen sólo se envía si eliges modo visión."
+    "Recorte de pantalla y OCR japonés local en el móvil; la imagen sólo se envía si eliges modo visión.",
+    "Flujo corregido: se usa la burbuja desde otra app y el botón directo se retira para evitar capturar JapoTeacher."
   ]
 }

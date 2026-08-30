@@ -160,7 +160,6 @@
     $('#lensAnalyze')?.addEventListener('click',analyze);$('#lensAsk')?.addEventListener('click',ask);$('#lensClear')?.addEventListener('click',clear);$('#lensRefreshHistory')?.addEventListener('click',renderHistory);
     $('#lensNativeEnable')?.addEventListener('click',()=>{try{nativeBridge()?.startFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo activar la lupa.')}});
     $('#lensNativeDisable')?.addEventListener('click',()=>{try{nativeBridge()?.stopFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo desactivar la lupa.')}});
-    $('#lensNativeCapture')?.addEventListener('click',()=>{try{nativeBridge()?.captureNow?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo iniciar la captura.')}});
     $('#lensQuestion')?.addEventListener('keydown',event=>{if(event.key==='Enter'&&(event.ctrlKey||event.metaKey))ask()});
     $('#lensHistory')?.addEventListener('click',event=>{const load=event.target.closest('[data-lens-load]')?.dataset.lensLoad,del=event.target.closest('[data-lens-delete]')?.dataset.lensDelete;if(load)loadCapture(load);if(del)deleteCapture(del)});
     document.addEventListener('japoteacher:navigate',event=>{if(event.detail?.view==='lupa')renderHistory()});

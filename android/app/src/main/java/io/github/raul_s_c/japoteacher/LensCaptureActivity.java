@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.RectF;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.VirtualDisplay;
@@ -51,13 +51,51 @@ public class LensCaptureActivity extends Activity {
     private String ocrText = "";
     private EditText contextInput;
     private boolean shouldRestoreBubble = true;
+    private boolean frameCaptured = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         root = new FrameLayout(this);
         setContentView(root);
-        showLoading("Pidiendo permiso para capturar pantalla...");
+        showIntro();
+    }
+
+    private void showIntro() {
+        root.removeAllViews();
+        root.setBackgroundColor(Color.rgb(247, 245, 240));
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setGravity(Gravity.CENTER);
+        layout.setPadding(dp(24), dp(24), dp(24), dp(24));
+
+        TextView title = new TextView(this);
+        title.setText("Preparar recorte");
+        title.setTextSize(24);
+        title.setTextColor(Color.rgb(34, 34, 34));
+        title.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+
+        TextView help = new TextView(this);
+        help.setText("Android va a pedir permiso. Elige \"Compartir toda la pantalla\". Después verás la captura y podrás ajustar el recuadro antes del OCR.");
+        help.setTextSize(16);
+        help.setTextColor(Color.rgb(83, 79, 73));
+        help.setGravity(Gravity.CENTER);
+        help.setPadding(0, dp(16), 0, dp(20));
+
+        Button start = button("Elegir pantalla y recortar");
+        start.setOnClickListener(v -> requestScreenCapture());
+
+        Button cancel = button("Cancelar");
+        cancel.setOnClickListener(v -> finish());
+
+        layout.addView(title);
+        layout.addView(help);
+        layout.addView(start, new LinearLayout.LayoutParams(-1, dp(54)));
+        layout.addView(cancel, new LinearLayout.LayoutParams(-1, dp(54)));
+        root.addView(layout, new FrameLayout.LayoutParams(-1, -1));
+    }
+
+    private void requestScreenCapture() {
         MediaProjectionManager manager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
         startActivityForResult(manager.createScreenCaptureIntent(), REQUEST_CAPTURE);
     }
@@ -97,7 +135,7 @@ public class LensCaptureActivity extends Activity {
         int width = getResources().getDisplayMetrics().widthPixels;
         int height = getResources().getDisplayMetrics().heightPixels;
         int density = getResources().getDisplayMetrics().densityDpi;
-        ImageReader reader = ImageReader.newInstance(width, height, ImageFormat.FLEX_RGBA_8888, 2);
+        ImageReader reader = ImageReader.newInstance(width, height, PixelFormat.RGBA_8888, 2);
         VirtualDisplay display = projection.createVirtualDisplay(
                 "JapoTeacherLens",
                 width,
@@ -108,10 +146,17 @@ public class LensCaptureActivity extends Activity {
                 null,
                 handler
         );
-        handler.postDelayed(() -> {
+        Runnable cleanup = () -> {
+            try { display.release(); } catch (Exception ignored) {}
+            try { reader.close(); } catch (Exception ignored) {}
+            try { projection.stop(); } catch (Exception ignored) {}
+        };
+        reader.setOnImageAvailableListener(source -> {
+            if (frameCaptured) return;
+            frameCaptured = true;
             Image image = null;
             try {
-                image = reader.acquireLatestImage();
+                image = source.acquireLatestImage();
                 if (image == null) {
                     Toast.makeText(this, "No se pudo leer la captura.", Toast.LENGTH_LONG).show();
                     finish();
@@ -124,11 +169,16 @@ public class LensCaptureActivity extends Activity {
                 finish();
             } finally {
                 if (image != null) image.close();
-                display.release();
-                reader.close();
-                projection.stop();
+                cleanup.run();
             }
-        }, 850);
+        }, handler);
+        handler.postDelayed(() -> {
+            if (frameCaptured) return;
+            frameCaptured = true;
+            cleanup.run();
+            Toast.makeText(this, "No se recibió imagen. Prueba eligiendo \"Compartir toda la pantalla\".", Toast.LENGTH_LONG).show();
+            finish();
+        }, 4500);
     }
 
     private Bitmap imageToBitmap(Image image) {
@@ -161,7 +211,7 @@ public class LensCaptureActivity extends Activity {
         title.setTextSize(16);
         title.setGravity(Gravity.CENTER_VERTICAL);
         Button cancel = button("Cancelar");
-        Button capture = button("Capturar");
+        Button capture = button("Leer recorte");
         cancel.setOnClickListener(v -> finish());
         capture.setOnClickListener(v -> {
             cropBitmap = cropView.crop();
@@ -316,6 +366,17 @@ public class LensCaptureActivity extends Activity {
             canvas.drawRect(0, selection.top, selection.left, selection.bottom, dimPaint);
             canvas.drawRect(selection.right, selection.top, getWidth(), selection.bottom, dimPaint);
             canvas.drawRect(selection, framePaint);
+            Paint handlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            handlePaint.setColor(Color.rgb(181, 43, 33));
+            canvas.drawCircle(selection.left, selection.top, 13f, handlePaint);
+            canvas.drawCircle(selection.right, selection.top, 13f, handlePaint);
+            canvas.drawCircle(selection.left, selection.bottom, 13f, handlePaint);
+            canvas.drawCircle(selection.right, selection.bottom, 13f, handlePaint);
+            Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            textPaint.setColor(Color.WHITE);
+            textPaint.setTextSize(34f);
+            textPaint.setFakeBoldText(true);
+            canvas.drawText("Arrastra el recuadro y pulsa Leer recorte", imageRect.left + 28f, Math.max(56f, selection.top - 28f), textPaint);
         }
 
         @Override

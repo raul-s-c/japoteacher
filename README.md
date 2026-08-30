@@ -169,17 +169,17 @@ GitHub Pages publica la raíz mediante `.github/workflows/deploy-pages.yml`. Tra
 
 La APK nativa se trata como contenedor híbrido para capacidades Android que la PWA no puede ofrecer bien: overlay flotante, captura de pantalla de otras apps, OCR local, compartir imágenes desde Android y posibles notificaciones nativas. No debe duplicar la lógica de progreso ni almacenar claves; sigue usando la web publicada y el Worker.
 
-La versión `1.1.0` cambia el contenedor de TWA a WebView nativa y añade la Lupa Android: desde la pestaña Lupa se puede activar una burbuja flotante, abrir otra app, recortar una zona de pantalla, hacer OCR japonés local y devolver el texto a JapoTeacher. Por privacidad y limpieza del móvil, no se guarda ninguna captura en la galería. Tras el recorte, el usuario elige entre enviar sólo el texto OCR o enviar texto + recorte para análisis con visión.
+La versión `1.1.1` usa WebView nativa y añade la Lupa Android: desde la pestaña Lupa se activa una burbuja flotante; después se abre otra app, se toca la burbuja, se acepta el permiso de Android con `Compartir toda la pantalla` y aparece un recorte ajustable. El OCR japonés se hace localmente y devuelve el texto a JapoTeacher. Por privacidad y limpieza del móvil, no se guarda ninguna captura en la galería. Tras el recorte, el usuario elige entre enviar sólo el texto OCR o enviar texto + recorte para análisis con visión.
 
 Cada release nativa se publica como archivo en `releases/android/` dentro de este mismo repo, y después se actualiza `android-version.json`:
 
 ```json
 {
-  "versionCode": 4,
-  "versionName": "1.1.0",
-  "version": "1.1.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.0-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.0-arm64.apk",
+  "versionCode": 5,
+  "versionName": "1.1.1",
+  "version": "1.1.1",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
   "sha256": "...",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": ["Lupa flotante", "OCR local", "Captura sin galería"]
