@@ -108,6 +108,12 @@
               <label><input type="radio" name="lensMode" value="text" checked> Solo texto</label>
               <label><input type="radio" name="lensMode" value="vision"> Visión + OCR</label>
             </div>
+            <div class="lens-native-tools" id="lensNativeTools" hidden>
+              <button class="secondary" id="lensNativeEnable" type="button">Activar lupa flotante</button>
+              <button class="secondary" id="lensNativeCapture" type="button">Capturar ahora</button>
+              <button class="text-button" id="lensNativeDisable" type="button">Desactivar</button>
+              <p class="security-note">La APK hace el recorte y el OCR en el móvil. Sólo se envía la imagen si eliges “Texto + recorte” tras capturar.</p>
+            </div>
             <label>Contexto<select id="lensContext"><option value="noticia">Noticia o artículo</option><option value="web">Web o app</option><option value="menu">Menú o tienda</option><option value="manga">Manga o viñeta</option><option value="chat">Chat o mensaje</option><option value="documento">Documento</option><option value="otro">Otro</option></select></label>
             <label>Detalle opcional<input id="lensContextDetail" maxlength="160" placeholder="Ej.: sección de economía, menú de ramen, viñeta con lenguaje informal..."></label>
             <label class="answer-label" for="lensText">Texto visible o transcripción</label>
@@ -230,7 +236,7 @@
   <script src="src/context-explainer.js?v=1"></script>
   <script src="src/practice-tools.js?v=2"></script>
   <script src="src/ai-tutor.js?v=3"></script>
-  <script src="src/lens.js?v=1"></script>
+  <script src="src/lens.js?v=2"></script>
   <script src="src/daily-news.js?v=5"></script>
   <script src="src/manual-adjustments.js?v=6"></script>
   <script src="src/topic-drill.js?v=33"></script>

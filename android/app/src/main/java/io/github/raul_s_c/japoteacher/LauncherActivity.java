@@ -1,54 +1,168 @@
-/*
- * Copyright 2020 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package io.github.raul_s_c.japoteacher;
 
-import android.content.pm.ActivityInfo;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.view.View;
+import android.view.Window;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import org.json.JSONObject;
 
+public class LauncherActivity extends Activity {
+    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.1.0&nativeCode=4";
+    private static WebView webView;
+    private ProgressBar progress;
+    private String pendingLensPayload;
 
-public class LauncherActivity
-        extends com.google.androidbrowserhelper.trusted.LauncherActivity {
-    
-
-    
+    public static void openWithLensResult(Context context, String text, String imageDataUrl, String contextLabel) {
+        Intent intent = new Intent(context, LauncherActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("lens_text", text);
+        intent.putExtra("lens_image", imageDataUrl);
+        intent.putExtra("lens_context", contextLabel);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Setting an orientation crashes the app due to the transparent background on Android 8.0
-        // Oreo and below. We only set the orientation on Oreo and above. This only affects the
-        // splash screen and Chrome will still respect the orientation.
-        // See https://github.com/GoogleChromeLabs/bubblewrap/issues/496 for details.
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-        }
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        buildLayout();
+        configureWebView();
+        handleIntent(getIntent());
+        webView.loadUrl(APP_URL + "#lupa");
     }
 
     @Override
-    protected Uri getLaunchingUrl() {
-        // Get the original launch Url.
-        Uri uri = super.getLaunchingUrl();
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent(intent);
+        deliverPendingLensPayload();
+    }
 
-        
+    private void buildLayout() {
+        FrameLayout root = new FrameLayout(this);
+        webView = new WebView(this);
+        progress = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);
+        progress.setIndeterminate(true);
+        FrameLayout.LayoutParams webParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT
+        );
+        FrameLayout.LayoutParams progressParams = new FrameLayout.LayoutParams(96, 96);
+        progressParams.gravity = android.view.Gravity.CENTER;
+        root.addView(webView, webParams);
+        root.addView(progress, progressParams);
+        setContentView(root);
+    }
 
-        return uri;
+    private void configureWebView() {
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setMediaPlaybackRequiresUserGesture(false);
+        settings.setLoadWithOverviewMode(true);
+        settings.setUseWideViewPort(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) settings.setSafeBrowsingEnabled(true);
+        webView.addJavascriptInterface(new NativeBridge(), "JapoNativeAndroid");
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                progress.setVisibility(View.GONE);
+                deliverPendingLensPayload();
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request) {
+                Uri uri = request.getUrl();
+                if ("https".equals(uri.getScheme()) && "raul-s-c.github.io".equals(uri.getHost())) return false;
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                return true;
+            }
+        });
+    }
+
+    private void handleIntent(Intent intent) {
+        if (intent == null || !intent.hasExtra("lens_text")) return;
+        try {
+            JSONObject payload = new JSONObject();
+            payload.put("text", intent.getStringExtra("lens_text"));
+            payload.put("imageDataUrl", intent.getStringExtra("lens_image"));
+            payload.put("context", intent.getStringExtra("lens_context"));
+            payload.put("source", "android_overlay");
+            pendingLensPayload = payload.toString();
+        } catch (Exception error) {
+            pendingLensPayload = null;
+        }
+    }
+
+    private void deliverPendingLensPayload() {
+        if (pendingLensPayload == null || webView == null) return;
+        String script = "window.JapoNativeLens&&window.JapoNativeLens.receiveCapture(" + pendingLensPayload + ")";
+        webView.evaluateJavascript(script, null);
+        pendingLensPayload = null;
+    }
+
+    private boolean canDrawOverlays() {
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.M || Settings.canDrawOverlays(this);
+    }
+
+    private void requestOverlayPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+            startActivity(intent);
+        }
+    }
+
+    public class NativeBridge {
+        @JavascriptInterface
+        public boolean isNativeApp() {
+            return true;
+        }
+
+        @JavascriptInterface
+        public boolean canUseFloatingLens() {
+            return canDrawOverlays();
+        }
+
+        @JavascriptInterface
+        public void startFloatingLens() {
+            runOnUiThread(() -> {
+                if (!canDrawOverlays()) {
+                    Toast.makeText(LauncherActivity.this, "Activa el permiso de burbuja flotante y vuelve a pulsar.", Toast.LENGTH_LONG).show();
+                    requestOverlayPermission();
+                    return;
+                }
+                Intent service = new Intent(LauncherActivity.this, FloatingLensService.class);
+                startService(service);
+                Toast.makeText(LauncherActivity.this, "Lupa flotante activada.", Toast.LENGTH_SHORT).show();
+            });
+        }
+
+        @JavascriptInterface
+        public void stopFloatingLens() {
+            runOnUiThread(() -> {
+                stopService(new Intent(LauncherActivity.this, FloatingLensService.class));
+                Toast.makeText(LauncherActivity.this, "Lupa flotante desactivada.", Toast.LENGTH_SHORT).show();
+            });
+        }
+
+        @JavascriptInterface
+        public void captureNow() {
+            runOnUiThread(() -> startActivity(new Intent(LauncherActivity.this, LensCaptureActivity.class)));
+        }
     }
 }

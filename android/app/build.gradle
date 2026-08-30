@@ -23,7 +23,7 @@ plugins {
 def twaManifest = [
     applicationId: 'io.github.raul_s_c.japoteacher',
     hostName: 'raul-s-c.github.io', // The domain being opened in the TWA.
-    launchUrl: '/japoteacher/?nativeVersion=1.0.0&nativeCode=3', // The start path for the TWA. Must be relative to the domain.
+    launchUrl: '/japoteacher/?nativeVersion=1.1.0&nativeCode=4', // The start path for the TWA. Must be relative to the domain.
     name: 'Japoteacher', // The application name.
     launcherName: 'Japoteacher', // The name shown on the Android Launcher.
     themeColor: '#B52B21', // The color used for the status bar.
@@ -57,8 +57,8 @@ android {
         applicationId "io.github.raul_s_c.japoteacher"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 3
-        versionName "1.0.0"
+        versionCode 4
+        versionName "1.1.0"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -207,7 +207,6 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    
-        implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.6.2'
-    
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'com.google.mlkit:text-recognition-japanese:16.0.1'
 }

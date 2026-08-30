@@ -122,14 +122,49 @@
     $('#lensOutput').innerHTML='<div class="feedback-empty"><span>⌕</span><h3>La explicación aparecerá aquí</h3><p>Elige solo texto para ahorrar o visión si necesitas OCR de una captura.</p></div>';
     $('#lensThread').innerHTML='<p class="empty">Todavía no hay una captura activa sobre la que preguntar.</p>';
   }
+  function nativeBridge(){
+    try{return window.JapoNativeAndroid&&window.JapoNativeAndroid.isNativeApp?.()?window.JapoNativeAndroid:null}catch(_error){return null}
+  }
+  function setNativeVisible(){
+    const tools=$('#lensNativeTools'),bridge=nativeBridge();
+    if(tools)tools.hidden=!bridge;
+  }
+  function setLensMode(nextMode){
+    const radio=document.querySelector(`[name="lensMode"][value="${nextMode==='vision'?'vision':'text'}"]`);
+    if(radio){radio.checked=true;updateMode()}
+  }
+  function showLensView(){
+    const button=document.querySelector('.nav-item[data-view="lupa"]');
+    if(button)button.click();
+    else location.hash='lupa';
+  }
+  function receiveNativeCapture(payload){
+    const data=typeof payload==='string'?parseJson(payload,{}):(payload||{}),text=String(data.text||'').trim(),image=String(data.imageDataUrl||'').trim(),context=String(data.context||'').trim();
+    showLensView();
+    if(context)$('#lensContextDetail').value=context;
+    if(text)$('#lensText').value=text;
+    state.image=image||null;
+    if(image){
+      setLensMode('vision');
+      $('#lensPreview').innerHTML=`<img src="${image}" alt="Recorte capturado con lupa nativa"><small>Recorte recibido desde la lupa nativa. Se enviará porque elegiste visión.</small>`;
+    }else{
+      setLensMode('text');
+      $('#lensPreview').innerHTML='';
+    }
+    window.UI?.toast?.('Captura recibida. Revisa el texto y pulsa Analizar.');
+  }
   document.addEventListener('DOMContentLoaded',()=>{
     $('#lensAnalyze')?.setAttribute('data-label','Analizar');$('#lensAsk')?.setAttribute('data-label','Preguntar');
     document.querySelectorAll('[name="lensMode"]').forEach(radio=>radio.addEventListener('change',updateMode));
     $('#lensImageInput')?.addEventListener('change',event=>selectImage(event.target.files?.[0]).catch(error=>window.UI?.toast?.(error.message||'No se pudo preparar la imagen.')));
     $('#lensAnalyze')?.addEventListener('click',analyze);$('#lensAsk')?.addEventListener('click',ask);$('#lensClear')?.addEventListener('click',clear);$('#lensRefreshHistory')?.addEventListener('click',renderHistory);
+    $('#lensNativeEnable')?.addEventListener('click',()=>{try{nativeBridge()?.startFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo activar la lupa.')}});
+    $('#lensNativeDisable')?.addEventListener('click',()=>{try{nativeBridge()?.stopFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo desactivar la lupa.')}});
+    $('#lensNativeCapture')?.addEventListener('click',()=>{try{nativeBridge()?.captureNow?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo iniciar la captura.')}});
     $('#lensQuestion')?.addEventListener('keydown',event=>{if(event.key==='Enter'&&(event.ctrlKey||event.metaKey))ask()});
     $('#lensHistory')?.addEventListener('click',event=>{const load=event.target.closest('[data-lens-load]')?.dataset.lensLoad,del=event.target.closest('[data-lens-delete]')?.dataset.lensDelete;if(load)loadCapture(load);if(del)deleteCapture(del)});
     document.addEventListener('japoteacher:navigate',event=>{if(event.detail?.view==='lupa')renderHistory()});
-    updateMode();renderHistory();
+    updateMode();setNativeVisible();renderHistory();
   });
+  window.JapoNativeLens={receiveCapture:receiveNativeCapture};
 })();
