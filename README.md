@@ -56,6 +56,8 @@ El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por ac
 
 Tras corregir cada intento, el usuario puede marcar la sensación del ejercicio como `muy fácil`, `normal` o `muy difícil`. Esa señal no cambia la evaluación lingüística, pero sí ajusta el SRS: `muy fácil` alarga el intervalo y sube el factor de facilidad; `muy difícil` acorta el próximo repaso, baja la facilidad y evita marcar el ejercicio como dominado.
 
+Antes de pasar al siguiente ejercicio, los fallos léxicos son propuestas, no altas automáticas definitivas. El alumno puede aceptar o rechazar cada término, corregir el japonés o su significado y añadir varios elementos propios pegándolos por líneas, comas o punto y coma. Los kanji y lecturas detectados aparecen también como botones para añadirlos sin teclearlos. Solo los elementos confirmados alimentan el micro-SRS y quedan vinculados al intento.
+
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
 | N5 | 1.400 ejercicios | 1.470 activos |
