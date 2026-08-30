@@ -30,12 +30,21 @@ def main(level):
             continue
         row = replace_strings(row, override.get("replacements", {}))
         row.update(override.get("fields", {}))
+        additions = override.get("kanji_readings_add", [])
+        if additions:
+            readings = row.get("kanji_readings", [])
+            existing = {item.get("characters") for item in readings}
+            readings.extend(item for item in additions if item.get("characters") not in existing)
+            row["kanji_readings"] = sorted(
+                readings,
+                key=lambda item: row.get("japanese", "").find(item.get("characters", "")),
+            )
         row["manual_editorial_override"] = override["reason"]
         rows[index] = row
         applied.append(row["slot"])
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as output:
         for row in rows:
-            output.write(json.dumps(row, ensure_ascii=False) + "\n")
+            output.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
         temporary = pathlib.Path(output.name)
     os.replace(temporary, path)
     print(json.dumps({"level": level, "applied_slots": applied}, ensure_ascii=False))

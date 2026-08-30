@@ -95,7 +95,8 @@ def mark_bridge_level(item, slot):
 def validate_slot(item, slot):
     errors = []
     if item.get("slot") != slot["slot"]: errors.append("slot alterado")
-    if item.get("topic_primary") != slot["topic_primary"]: errors.append("tema primario alterado")
+    if item.get("topic_primary") != slot["topic_primary"] and not item.get("manual_editorial_override"):
+        errors.append("tema primario alterado")
     if not all(grammar_focus_present(focus, item.get("grammar_tags", []), item.get("japanese", "")) for focus in slot["grammar_focus"]): errors.append("foco gramatical ausente")
     jp_chars = len(normalize_japanese(item.get("japanese", "")))
     jp_min, jp_max = max(1, int(slot["jp_char_range"][0] * 0.8)), slot["jp_char_range"][1] + 4
@@ -120,6 +121,25 @@ def validate_slot(item, slot):
         kanji = target.get("kanji", "")
         if kanji and kanji not in item.get("japanese", ""):
             errors.append(f"kanji objetivo ausente {kanji}")
+    rationale = " ".join([
+        item.get("naturalness_rationale", ""),
+        item.get("ambiguity_notes", ""),
+    ]).lower()
+    quality_red_flags = (
+        "poco natural",
+        "no es natural",
+        "antinatural",
+        "inverosímil",
+        "inverosimil",
+        "forzada",
+        "forzado",
+        "artificial",
+        "aunque resulte",
+        "aun así",
+        "aun asi",
+    )
+    if item.get("editorial_quality_version", 0) >= 5 and any(flag in rationale for flag in quality_red_flags):
+        errors.append("la propia justificación reconoce una frase artificial o poco natural")
     if errors:
         raise RuntimeError(f"Slot {slot['slot']} inválido: {', '.join(errors)}")
 
@@ -268,14 +288,21 @@ def inferred_topic(target_vocab, fallback):
         return fallback
     haystack = " ".join((item.get("word", "") + " " + item.get("meaning_en", "")).lower() for item in target_vocab)
     rules = [
-        ("tecnologia", ["link", "page", "technology", "site", "internet", "投稿", "リンク", "ページ", "技術"]),
-        ("trabajo", ["work", "job", "enterprise", "business", "company", "office", "企業", "仕事", "業"]),
-        ("sociedad", ["government", "society", "country", "china", "economics", "politics", "social", "organization", "policy", "responsibility", "duty", "judgement", "judgment", "effect", "政府", "社会", "中国", "経済", "個人", "組織", "政策", "責任", "判断", "効果"]),
-        ("compras", ["money", "price", "buy", "shop", "sale", "お金", "価格", "買"]),
-        ("familia", ["family", "child", "human", "person", "子供", "家族", "人間"]),
-        ("estudio", ["study", "training", "education", "article", "subject", "教育", "記事", "内容"]),
-        ("viajes", ["travel", "station", "country", "世界", "駅"]),
-        ("vida_diaria", ["life", "living", "activity", "use", "生活", "活動", "利用"]),
+        ("tecnologia", ["link", "page", "technology", "site", "internet", "mobile", "smartphone", "communication", "upload", "file", "screen", "投稿", "リンク", "ページ", "技術", "携帯", "通信", "画面"]),
+        ("trabajo", ["work", "job", "enterprise", "business", "company", "office", "result", "career", "import", "export", "企業", "仕事", "成果", "輸入", "輸出", "作成"]),
+        ("sociedad", ["government", "society", "country", "china", "economics", "politics", "social", "organization", "policy", "responsibility", "duty", "judgement", "judgment", "effect", "reform", "revolution", "democracy", "vote", "ethnic", "youth", "government", "政府", "社会", "中国", "経済", "個人", "組織", "政策", "責任", "判断", "効果", "改革", "革命", "民主", "投票", "民族", "若者", "政権"]),
+        ("compras", ["money", "price", "buy", "shop", "sale", "product", "department store", "お金", "価格", "買", "商品", "デパート"]),
+        ("familia", ["family", "child", "parent", "partner", "relative", "子供", "家族", "両親", "恋人"]),
+        ("estudio", ["study", "training", "education", "article", "subject", "report", "submit", "lecture", "教育", "記事", "内容", "勉強", "提出", "講演"]),
+        ("viajes", ["travel", "station", "trip", "tourism", "hotel", "airport", "旅行", "駅", "観光", "空港"]),
+        ("transporte", ["bus", "train", "transport", "accident", "バス", "電車", "交通", "事故"]),
+        ("salud", ["health", "medicine", "condition", "examination", "体調", "薬", "検査"]),
+        ("comida", ["food", "fish", "restaurant", "meal", "料理", "魚", "レストラン"]),
+        ("ocio", ["movie", "stage", "performance", "actor", "映画", "出演", "公演"]),
+        ("naturaleza", ["nature", "forest", "mountain", "自然", "森", "山"]),
+        ("servicios", ["service", "repair", "counter", "details", "サービス", "修理", "窓口", "詳細"]),
+        ("cultura", ["culture", "festival", "tradition", "文化", "祭り", "伝統"]),
+        ("vida_diaria", ["life", "living", "activity", "use", "feeling", "moment", "生活", "活動", "利用", "気分", "瞬間"]),
     ]
     for topic, needles in rules:
         if any(needle.lower() in haystack for needle in needles):
@@ -494,7 +521,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
         if final is None:
             continue
         for slot, item, signature in zip(slots, final, signatures):
-            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 4, **item})
+            append_jsonl(output_path, {"level": level, "coverage_slot": slot, "review_rounds": rounds, "editorial_quality_version": 5, **item})
             known.add(signature)
             used_slots.add(item["slot"])
             if reference:

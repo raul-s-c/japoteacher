@@ -38,6 +38,565 @@
         "difficulty_rationale": "Practica と de compañía, pasado cortés y un contraste básico con vocabulario cotidiano N5.",
         "naturalness_rationale": "Es una situación autosuficiente y habitual durante un paseo al aire libre."
       }
+    },
+    "768": {
+      "reason": "Dar a 改革 un contexto social concreto y eliminar una conclusión vaga sobre culturas.",
+      "fields": {
+        "japanese": "日本の教育改革について検索すると、いろいろな意見が見つかります。",
+        "spanish": "Al buscar sobre la reforma educativa de Japón, encuentro opiniones muy diversas.",
+        "scenario_es": "Una persona busca opiniones sobre la reforma educativa japonesa.",
+        "topic_primary": "sociedad",
+        "topic_secondary": ["educacion", "internet"],
+        "situation_tag": "buscar_opiniones_reforma_educativa",
+        "vocabulary_tags": ["日本", "教育", "改革", "検索", "意見", "見つかる"],
+        "naturalness_rationale": "La búsqueda de opiniones sobre una reforma educativa es una situación informativa concreta y natural."
+      },
+      "kanji_readings_add": [
+        {"characters": "日本", "reading_hiragana": "にほん", "meaning_es": "Japón"},
+        {"characters": "教育", "reading_hiragana": "きょういく", "meaning_es": "educación"},
+        {"characters": "意見", "reading_hiragana": "いけん", "meaning_es": "opinión"},
+        {"characters": "見つかります", "reading_hiragana": "みつかります", "meaning_es": "se encuentran"}
+      ]
+    },
+    "769": {
+      "reason": "Convertir una pasiva sin referente en una tarea de creación autosuficiente.",
+      "fields": {
+        "japanese": "全国の店のリストを作成します。",
+        "spanish": "Creo una lista de tiendas de todo el país.",
+        "scenario_es": "Una persona prepara una lista nacional de tiendas.",
+        "topic_primary": "trabajo",
+        "topic_secondary": ["comercio"],
+        "situation_tag": "crear_lista_nacional_tiendas",
+        "vocabulary_tags": ["全国", "店", "リスト", "作成する"],
+        "naturalness_rationale": "Crear una lista de establecimientos es una tarea administrativa habitual."
+      },
+      "kanji_readings_add": [{"characters": "店", "reading_hiragana": "みせ", "meaning_es": "tienda"}]
+    },
+    "771": {
+      "reason": "Corregir la clasificación temática de una pregunta sobre tecnología personal.",
+      "fields": {"topic_primary": "tecnologia", "topic_secondary": ["vida_diaria"]}
+    },
+    "772": {
+      "reason": "Sustituir una compra arbitraria por una aspiración natural con 実現する.",
+      "fields": {
+        "japanese": "日本で働く夢を実現します。",
+        "spanish": "Haré realidad mi sueño de trabajar en Japón.",
+        "scenario_es": "Una persona expresa su intención de cumplir el sueño de trabajar en Japón.",
+        "topic_primary": "trabajo",
+        "topic_secondary": ["planes_personales"],
+        "situation_tag": "cumplir_sueno_trabajar_japon",
+        "vocabulary_tags": ["日本", "働く", "夢", "実現する"],
+        "naturalness_rationale": "Trabajar en Japón constituye una aspiración concreta que encaja naturalmente con 夢を実現する."
+      },
+      "kanji_readings_add": [
+        {"characters": "日本", "reading_hiragana": "にほん", "meaning_es": "Japón"},
+        {"characters": "働く", "reading_hiragana": "はたらく", "meaning_es": "trabajar"},
+        {"characters": "夢", "reading_hiragana": "ゆめ", "meaning_es": "sueño"}
+      ]
+    },
+    "773": {
+      "reason": "Añadir una condición natural a una afirmación absoluta sobre accidentes.",
+      "fields": {
+        "japanese": "よく注意すれば、事故は発生しません。",
+        "spanish": "Si prestamos mucha atención, no se producirán accidentes.",
+        "scenario_es": "Una persona explica que prestar atención ayuda a evitar accidentes.",
+        "topic_primary": "transporte",
+        "situation_tag": "evitar_accidentes_con_atencion",
+        "vocabulary_tags": ["注意する", "事故", "発生する"],
+        "naturalness_rationale": "Relacionar la atención con la prevención de accidentes es claro y cotidiano."
+      },
+      "kanji_readings_add": [{"characters": "注意", "reading_hiragana": "ちゅうい", "meaning_es": "atención"}]
+    },
+    "774": {
+      "reason": "Separar dos afirmaciones que antes insinuaban una relación causal inexistente.",
+      "fields": {
+        "japanese": "その意見には反対です。でも、来月韓国へ行きます。",
+        "spanish": "Estoy en contra de esa opinión. Pero el mes que viene iré a Corea.",
+        "scenario_es": "Una persona discrepa de una opinión y después comenta un viaje próximo a Corea.",
+        "topic_primary": "sociedad",
+        "topic_secondary": ["viajes"],
+        "situation_tag": "discrepar_y_comentar_viaje",
+        "vocabulary_tags": ["意見", "反対", "来月", "韓国", "行く"],
+        "naturalness_rationale": "El contraste con でも permite practicar dos informaciones independientes sin falsa causalidad."
+      },
+      "kanji_readings_add": [
+        {"characters": "意見", "reading_hiragana": "いけん", "meaning_es": "opinión"},
+        {"characters": "来月", "reading_hiragana": "らいげつ", "meaning_es": "el mes que viene"}
+      ]
+    },
+    "775": {
+      "reason": "Precisar que se habla de experiencias compartidas con la familia.",
+      "fields": {
+        "japanese": "家族との体験は大切です。",
+        "spanish": "Las experiencias compartidas con la familia son importantes.",
+        "scenario_es": "Una persona valora las experiencias vividas junto a su familia.",
+        "topic_primary": "familia",
+        "situation_tag": "valorar_experiencias_familiares",
+        "vocabulary_tags": ["家族", "体験", "大切"],
+        "naturalness_rationale": "家族との especifica con quién se comparten las experiencias."
+      }
+    },
+    "776": {
+      "reason": "Precisar qué criterio de estudio se fija cada mes.",
+      "fields": {
+        "japanese": "毎月、自分で勉強時間の基準を決めます。",
+        "spanish": "Cada mes decido por mí mismo el criterio de horas de estudio.",
+        "scenario_es": "Una persona establece mensualmente una referencia para sus horas de estudio.",
+        "topic_primary": "estudio",
+        "situation_tag": "fijar_criterio_horas_estudio",
+        "vocabulary_tags": ["毎月", "自分", "勉強時間", "基準", "決める"],
+        "naturalness_rationale": "Fijar una referencia mensual de horas de estudio es una acción concreta."
+      },
+      "kanji_readings_add": [{"characters": "時間", "reading_hiragana": "じかん", "meaning_es": "tiempo; horas"}]
+    },
+    "777": {
+      "reason": "Clasificar una consulta sobre un carácter dentro del aprendizaje del idioma.",
+      "fields": {"topic_primary": "estudio", "topic_secondary": ["idiomas"]}
+    },
+    "778": {
+      "reason": "Completar el ámbito del superlativo y corregir el tema.",
+      "fields": {
+        "japanese": "このレストランは町で最大です。",
+        "spanish": "Este restaurante es el más grande de la ciudad.",
+        "scenario_es": "Una persona compara el tamaño de un restaurante con los demás de la ciudad.",
+        "topic_primary": "comida",
+        "situation_tag": "restaurante_mas_grande_ciudad",
+        "vocabulary_tags": ["レストラン", "町", "最大"],
+        "naturalness_rationale": "El ámbito 町で hace que el superlativo sea completo y natural."
+      },
+      "kanji_readings_add": [{"characters": "町", "reading_hiragana": "まち", "meaning_es": "ciudad; localidad"}]
+    },
+    "779": {
+      "reason": "Convertir una negación aislada en una actividad de análisis con objeto concreto.",
+      "fields": {
+        "japanese": "この映画の内容を分析します。",
+        "spanish": "Analizo el contenido de esta película.",
+        "scenario_es": "Una persona analiza el contenido de una película.",
+        "topic_primary": "ocio",
+        "topic_secondary": ["estudio"],
+        "situation_tag": "analizar_contenido_pelicula",
+        "vocabulary_tags": ["映画", "内容", "分析する"],
+        "naturalness_rationale": "El contenido de una película es un objeto natural del verbo 分析する."
+      },
+      "kanji_readings_add": [{"characters": "内容", "reading_hiragana": "ないよう", "meaning_es": "contenido"}]
+    },
+    "781": {
+      "reason": "Transformar un fragmento nominal en una petición útil y natural.",
+      "fields": {
+        "japanese": "このサービスの詳細を教えてください。",
+        "spanish": "Por favor, explíqueme los detalles de este servicio.",
+        "scenario_es": "Un cliente solicita información detallada sobre un servicio.",
+        "topic_primary": "servicios",
+        "situation_tag": "pedir_detalles_servicio",
+        "vocabulary_tags": ["サービス", "詳細", "教える"],
+        "naturalness_rationale": "Pedir detalles de un servicio es una interacción habitual."
+      },
+      "kanji_readings_add": [{"characters": "教えて", "reading_hiragana": "おしえて", "meaning_es": "explique; enseñe"}]
+    },
+    "783": {
+      "reason": "Clasificar una pregunta sobre aspiraciones futuras como carrera y proyecto personal.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["planes_personales"]}
+    },
+    "786": {
+      "reason": "Sustituir una colocación poco idiomática por un uso natural de 通信.",
+      "fields": {
+        "japanese": "家ではインターネットで通信します。",
+        "spanish": "En casa me comunico por internet.",
+        "scenario_es": "Una persona explica cómo se comunica cuando está en casa.",
+        "topic_primary": "tecnologia",
+        "topic_secondary": ["hogar"],
+        "situation_tag": "comunicarse_internet_casa",
+        "vocabulary_tags": ["家", "インターネット", "通信する"],
+        "naturalness_rationale": "通信する se usa con un medio explícito y un contexto doméstico plausible."
+      }
+    }
+  },
+  "N4": {
+    "933": {
+      "reason": "Usar ぜひ en una invitación natural en lugar de una pregunta forzada.",
+      "fields": {
+        "japanese": "次の旅行には、是非一緒に行きませんか。",
+        "spanish": "¿Por qué no vienes sin falta con nosotros en el próximo viaje?",
+        "scenario_es": "Una persona invita con énfasis a otra a acompañarla en el próximo viaje.",
+        "topic_primary": "viajes",
+        "situation_tag": "invitar_proximo_viaje",
+        "vocabulary_tags": ["次", "旅行", "ぜひ", "一緒に", "行く"],
+        "naturalness_rationale": "ぜひ encaja de forma idiomática con una invitación positiva."
+      },
+      "kanji_readings_add": [
+        {"characters": "次", "reading_hiragana": "つぎ", "meaning_es": "próximo"},
+        {"characters": "旅行", "reading_hiragana": "りょこう", "meaning_es": "viaje"},
+        {"characters": "是非", "reading_hiragana": "ぜひ", "meaning_es": "sin falta"},
+        {"characters": "一緒", "reading_hiragana": "いっしょ", "meaning_es": "juntos"},
+        {"characters": "行きませんか", "reading_hiragana": "いきませんか", "meaning_es": "¿no vamos?"}
+      ]
+    },
+    "935": {
+      "reason": "Alinear el tratamiento colectivo 皆様 con una pregunta dirigida al grupo.",
+      "fields": {
+        "japanese": "皆様、今日は体の調子はいかがですか。",
+        "spanish": "Señoras y señores, ¿cómo se encuentran hoy?",
+        "scenario_es": "Una persona se dirige cortésmente a un grupo y pregunta cómo se encuentra.",
+        "topic_primary": "salud",
+        "situation_tag": "preguntar_estado_grupo",
+        "vocabulary_tags": ["皆様", "今日", "体", "調子"],
+        "naturalness_rationale": "皆様 introduce de manera coherente una pregunta cortés dirigida a varias personas."
+      },
+      "kanji_readings_add": [{"characters": "今日", "reading_hiragana": "きょう", "meaning_es": "hoy"}]
+    },
+    "937": {
+      "reason": "Corregir la cópula impropia con スタート.",
+      "fields": {
+        "japanese": "新しい仕事は来月スタートします。",
+        "spanish": "El nuevo trabajo empieza el mes que viene.",
+        "scenario_es": "Una persona informa de cuándo empieza su nuevo trabajo.",
+        "topic_primary": "trabajo",
+        "situation_tag": "inicio_nuevo_trabajo",
+        "vocabulary_tags": ["新しい", "仕事", "来月", "スタートする"],
+        "naturalness_rationale": "スタートする se emplea como verbo para indicar un comienzo programado."
+      },
+      "kanji_readings_add": [
+        {"characters": "新しい", "reading_hiragana": "あたらしい", "meaning_es": "nuevo"},
+        {"characters": "来月", "reading_hiragana": "らいげつ", "meaning_es": "el mes que viene"}
+      ]
+    },
+    "938": {
+      "reason": "Corregir la clasificación de una frase sobre desempeño profesional.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["carrera"]}
+    },
+    "940": {
+      "reason": "Dar a 原則 un sujeto institucional plausible.",
+      "fields": {
+        "japanese": "この自然公園では、自然を守ることが原則です。",
+        "spanish": "En este parque natural, proteger la naturaleza es el principio fundamental.",
+        "scenario_es": "Se explica el principio que rige un parque natural.",
+        "topic_primary": "naturaleza",
+        "situation_tag": "principio_parque_natural",
+        "vocabulary_tags": ["自然公園", "自然", "守る", "原則"],
+        "naturalness_rationale": "Un parque natural puede tener como principio explícito la conservación."
+      },
+      "kanji_readings_add": [{"characters": "公園", "reading_hiragana": "こうえん", "meaning_es": "parque"}]
+    },
+    "941": {
+      "reason": "Añadir el evento y el referente necesarios para que 出演 sea autosuficiente.",
+      "fields": {
+        "japanese": "今夜の公演に彼の出演はありません。",
+        "spanish": "Él no actuará en la función de esta noche.",
+        "scenario_es": "Se informa de que un artista no participará en la función de esa noche.",
+        "topic_primary": "ocio",
+        "situation_tag": "ausencia_artista_funcion",
+        "vocabulary_tags": ["今夜", "公演", "彼", "出演"],
+        "naturalness_rationale": "出演 queda ligado a una función y a un participante concretos."
+      },
+      "kanji_readings_add": [
+        {"characters": "今夜", "reading_hiragana": "こんや", "meaning_es": "esta noche"},
+        {"characters": "公演", "reading_hiragana": "こうえん", "meaning_es": "función"},
+        {"characters": "彼", "reading_hiragana": "かれ", "meaning_es": "él"}
+      ]
+    },
+    "942": {
+      "reason": "Aclarar que las fotografías se organizan por culturas de distintos pueblos.",
+      "fields": {
+        "japanese": "このアプリでは、民族ごとに文化の写真を整理できます。",
+        "spanish": "En esta aplicación se pueden ordenar por pueblo las fotos de distintas culturas.",
+        "scenario_es": "Una aplicación organiza fotografías culturales por pueblo o grupo étnico.",
+        "topic_primary": "tecnologia",
+        "topic_secondary": ["cultura"],
+        "situation_tag": "ordenar_fotos_culturales",
+        "vocabulary_tags": ["アプリ", "民族", "文化", "写真", "整理する"],
+        "naturalness_rationale": "El objeto organizado queda definido como fotografías culturales."
+      },
+      "kanji_readings_add": [{"characters": "文化", "reading_hiragana": "ぶんか", "meaning_es": "cultura"}]
+    },
+    "943": {
+      "reason": "Corregir la colocación de 充実 con 感じる.",
+      "fields": {
+        "japanese": "毎日の生活が充実していると感じます。",
+        "spanish": "Siento que mi vida diaria es plena.",
+        "scenario_es": "Una persona valora positivamente la plenitud de su vida cotidiana.",
+        "topic_primary": "vida_diaria",
+        "situation_tag": "sentir_vida_plena",
+        "vocabulary_tags": ["毎日", "生活", "充実する", "感じる"],
+        "naturalness_rationale": "充実している describe de manera idiomática el estado de la vida cotidiana."
+      }
+    },
+    "946": {
+      "reason": "Expresar de forma natural que aumenta la interacción familiar.",
+      "fields": {
+        "japanese": "家族との交流が増えて、家の雰囲気が変わりました。",
+        "spanish": "Al aumentar la comunicación con mi familia, cambió el ambiente de casa.",
+        "scenario_es": "Una persona explica cómo una mayor interacción familiar cambió el ambiente del hogar.",
+        "topic_primary": "familia",
+        "topic_secondary": ["hogar"],
+        "situation_tag": "aumentar_interaccion_familiar",
+        "vocabulary_tags": ["家族", "交流", "増える", "家", "雰囲気", "変わる"],
+        "naturalness_rationale": "交流が増える es una colocación habitual y explica claramente el cambio posterior."
+      },
+      "kanji_readings_add": [{"characters": "増えて", "reading_hiragana": "ふえて", "meaning_es": "al aumentar"}]
+    },
+    "948": {
+      "reason": "Concretar el tipo de libro para integrar 革命 sin una asociación arbitraria.",
+      "fields": {
+        "japanese": "この店は安くて品ぞろえもいいので、買い物のついでにフランス革命の本も探します。",
+        "spanish": "Como esta tienda es barata y tiene buen surtido, aprovecharé las compras para buscar también un libro sobre la Revolución francesa.",
+        "scenario_es": "Una persona aprovecha una visita a una tienda bien surtida para buscar un libro de historia.",
+        "topic_primary": "compras",
+        "topic_secondary": ["historia"],
+        "situation_tag": "buscar_libro_revolucion_compras",
+        "vocabulary_tags": ["店", "安い", "品ぞろえ", "買い物", "ついでに", "フランス革命", "本", "探す"],
+        "naturalness_rationale": "La búsqueda de un libro concreto encaja de forma verosímil en una compra."
+      }
+    },
+    "951": {
+      "reason": "Usar 標準 en su colocación clínica habitual.",
+      "fields": {
+        "japanese": "この検査結果は標準の範囲ですか。",
+        "spanish": "¿El resultado de este análisis está dentro del rango normal?",
+        "scenario_es": "Una persona pregunta si un resultado se encuentra dentro del intervalo habitual.",
+        "topic_primary": "salud",
+        "situation_tag": "consultar_rango_resultado",
+        "vocabulary_tags": ["検査結果", "標準", "範囲"],
+        "naturalness_rationale": "標準の範囲 es una combinación habitual al interpretar resultados."
+      },
+      "kanji_readings_add": [
+        {"characters": "検査結果", "reading_hiragana": "けんさけっか", "meaning_es": "resultado del análisis"},
+        {"characters": "範囲", "reading_hiragana": "はんい", "meaning_es": "rango"}
+      ]
+    },
+    "954": {
+      "reason": "Especificar con quién mantenía malas relaciones el gobierno.",
+      "fields": {
+        "japanese": "その政権は国民との関係が悪く、すぐに変わりました。",
+        "spanish": "Ese gobierno tenía mala relación con la ciudadanía y cambió enseguida.",
+        "scenario_es": "Se explica un cambio de gobierno por su mala relación con la ciudadanía.",
+        "topic_primary": "sociedad",
+        "situation_tag": "cambio_gobierno_relacion_ciudadania",
+        "vocabulary_tags": ["政権", "国民", "関係", "悪い", "変わる"],
+        "naturalness_rationale": "El complemento 国民との concreta la relación política mencionada."
+      },
+      "kanji_readings_add": [{"characters": "国民", "reading_hiragana": "こくみん", "meaning_es": "ciudadanía"}]
+    },
+    "957": {
+      "reason": "Alinear 関心 con una pregunta natural sobre un servicio.",
+      "fields": {
+        "japanese": "この修理サービスに関心がありますか。",
+        "spanish": "¿Le interesa este servicio de reparación?",
+        "scenario_es": "Una persona pregunta a un cliente si le interesa un servicio de reparación.",
+        "topic_primary": "servicios",
+        "situation_tag": "interes_servicio_reparacion",
+        "vocabulary_tags": ["修理", "サービス", "関心"],
+        "naturalness_rationale": "関心がある se aplica directamente al servicio por el que se pregunta."
+      }
+    },
+    "961": {
+      "reason": "Clasificar una acción electoral dentro de sociedad.",
+      "fields": {"topic_primary": "sociedad", "topic_secondary": ["politica"]}
+    },
+    "963": {
+      "reason": "Corregir la clasificación de una pregunta sobre juventud local.",
+      "fields": {"topic_primary": "sociedad", "topic_secondary": ["comunidad"]}
+    },
+    "964": {
+      "reason": "Integrar 心理 como explicación de una conducta de compra, no como pensamiento artificial.",
+      "fields": {
+        "japanese": "デパートで靴を見たり値段を比べたりすると、安い物を選びたくなる心理が分かります。",
+        "spanish": "Al mirar zapatos y comparar precios en unos grandes almacenes, se entiende la psicología que nos lleva a elegir lo más barato.",
+        "scenario_es": "Una persona reflexiona sobre la conducta de elegir productos baratos al comparar precios.",
+        "topic_primary": "compras",
+        "topic_secondary": ["psicologia"],
+        "situation_tag": "psicologia_elegir_precio_bajo",
+        "vocabulary_tags": ["デパート", "靴", "値段", "比べる", "安い", "選ぶ", "心理", "分かる"],
+        "naturalness_rationale": "心理 describe de forma explícita el patrón de conducta observado durante la compra."
+      }
+    },
+    "967": {
+      "reason": "Clasificar una petición administrativa fuera del ámbito sanitario.",
+      "fields": {"topic_primary": "servicios", "topic_secondary": ["tramites"]}
+    },
+    "969": {
+      "reason": "Añadir un referente a una pregunta demasiado elíptica.",
+      "fields": {
+        "japanese": "その知らせは突然でしたか。",
+        "spanish": "¿La noticia fue inesperada?",
+        "scenario_es": "Una persona pregunta si una noticia llegó de forma inesperada.",
+        "topic_primary": "vida_diaria",
+        "situation_tag": "preguntar_noticia_inesperada",
+        "vocabulary_tags": ["知らせ", "突然"],
+        "naturalness_rationale": "知らせ aporta el referente que necesita 突然でしたか."
+      },
+      "kanji_readings_add": [{"characters": "知らせ", "reading_hiragana": "しらせ", "meaning_es": "noticia; aviso"}]
+    },
+    "971": {
+      "reason": "Clasificar la apertura de una tienda como compra y servicio.",
+      "fields": {"topic_primary": "compras", "topic_secondary": ["servicios"]}
+    },
+    "972": {
+      "reason": "Usar 心配ありません con una causa de seguridad clara.",
+      "fields": {
+        "japanese": "森の道は安全なので、一人で散歩しても心配ありません。",
+        "spanish": "Como los caminos del bosque son seguros, no hay que preocuparse aunque se pasee a solas.",
+        "scenario_es": "Una persona tranquiliza a otra sobre pasear sola por caminos seguros.",
+        "topic_primary": "naturaleza",
+        "situation_tag": "tranquilizar_paseo_bosque",
+        "vocabulary_tags": ["森", "道", "安全", "一人", "散歩する", "心配"],
+        "naturalness_rationale": "La seguridad de los caminos justifica de manera directa la ausencia de preocupación."
+      },
+      "kanji_readings_add": [
+        {"characters": "道", "reading_hiragana": "みち", "meaning_es": "camino"},
+        {"characters": "安全", "reading_hiragana": "あんぜん", "meaning_es": "seguro"},
+        {"characters": "一人", "reading_hiragana": "ひとり", "meaning_es": "a solas"}
+      ]
+    },
+    "974": {
+      "reason": "Eliminar la atribución inverosímil de un estado de ánimo a un teléfono.",
+      "fields": {
+        "japanese": "このスマホの写真を見ると、気分が変わります。",
+        "spanish": "Cuando miro las fotos de este móvil, me cambia el ánimo.",
+        "scenario_es": "Una persona explica que mirar unas fotos guardadas en el móvil cambia su estado de ánimo.",
+        "topic_primary": "tecnologia",
+        "topic_secondary": ["emociones"],
+        "situation_tag": "fotos_movil_cambian_animo",
+        "grammar_tags": ["〜と", "〜が変わります", "verbo-ます"],
+        "particle_tags": ["の", "を", "と", "が"],
+        "vocabulary_tags": ["スマホ", "写真", "見る", "気分", "変わる"],
+        "naturalness_rationale": "El estado de ánimo pertenece a la persona y cambia al mirar las fotos."
+      },
+      "kanji_readings_add": [
+        {"characters": "写真", "reading_hiragana": "しゃしん", "meaning_es": "foto"},
+        {"characters": "見る", "reading_hiragana": "みる", "meaning_es": "mirar"}
+      ]
+    },
+    "975": {
+      "reason": "Añadir el objeto omitido a la pregunta con 提出する.",
+      "fields": {
+        "japanese": "レポートはもう提出しましたか。",
+        "spanish": "¿Ya entregaste el informe?",
+        "scenario_es": "Una persona pregunta si un informe ya se ha entregado.",
+        "topic_primary": "estudio",
+        "topic_secondary": ["trabajo"],
+        "situation_tag": "preguntar_entrega_informe",
+        "vocabulary_tags": ["レポート", "もう", "提出する"],
+        "naturalness_rationale": "レポート aporta un objeto frecuente y claro para 提出する."
+      }
+    },
+    "977": {
+      "reason": "Sustituir una secuencia sin sentido por el uso adverbial natural de 是非.",
+      "fields": {
+        "japanese": "この店には、是非また来たいです。",
+        "spanish": "Quiero volver sin falta a esta tienda.",
+        "scenario_es": "Un cliente expresa con énfasis que desea volver a una tienda.",
+        "topic_primary": "compras",
+        "situation_tag": "querer_volver_tienda",
+        "vocabulary_tags": ["店", "是非", "また", "来る"],
+        "naturalness_rationale": "是非 modifica de forma idiomática el deseo de volver."
+      },
+      "kanji_readings_add": [
+        {"characters": "店", "reading_hiragana": "みせ", "meaning_es": "tienda"},
+        {"characters": "是非", "reading_hiragana": "ぜひ", "meaning_es": "sin falta"},
+        {"characters": "来たい", "reading_hiragana": "きたい", "meaning_es": "quiero venir"}
+      ]
+    },
+    "984": {
+      "reason": "Eliminar una repetición innecesaria de 少しずつ.",
+      "fields": {
+        "japanese": "毎日少しずつ日本語を練習しているので、上達して、仕事でも活躍できるようになりました。",
+        "spanish": "Como practico japonés poco a poco cada día, he mejorado y ahora puedo destacar también en el trabajo.",
+        "scenario_es": "Una persona relaciona la práctica diaria del japonés con su mejora profesional.",
+        "topic_primary": "trabajo",
+        "topic_secondary": ["estudio", "carrera"],
+        "situation_tag": "mejora_japones_desempeno_trabajo",
+        "vocabulary_tags": ["毎日", "少しずつ", "日本語", "練習する", "上達する", "仕事", "活躍する"],
+        "naturalness_rationale": "La progresión entre práctica, mejora y desempeño profesional queda expresada sin redundancia."
+      }
+    },
+    "986": {
+      "reason": "Dar contenido concreto al principio que sigue la pareja.",
+      "fields": {
+        "japanese": "恋人は、約束を守ることを原則にしています。",
+        "spanish": "Mi pareja tiene como principio cumplir sus promesas.",
+        "scenario_es": "Una persona explica el principio que guía la conducta de su pareja.",
+        "topic_primary": "relaciones",
+        "situation_tag": "principio_cumplir_promesas",
+        "vocabulary_tags": ["恋人", "約束", "守る", "原則"],
+        "naturalness_rationale": "約束を守る concreta un principio personal comprensible."
+      },
+      "kanji_readings_add": [{"characters": "約束", "reading_hiragana": "やくそく", "meaning_es": "promesa"}]
+    },
+    "988": {
+      "reason": "Cambiar un bosque improbable por una región habitada por distintos pueblos.",
+      "fields": {
+        "japanese": "この地域では、いろいろな民族が昔から静かに暮らしています。",
+        "spanish": "En esta región, distintos pueblos viven tranquilamente desde hace mucho tiempo.",
+        "scenario_es": "Se describe la convivencia histórica de distintos pueblos en una región.",
+        "topic_primary": "sociedad",
+        "topic_secondary": ["cultura"],
+        "situation_tag": "pueblos_conviven_region",
+        "vocabulary_tags": ["地域", "いろいろ", "民族", "昔", "静か", "暮らす"],
+        "naturalness_rationale": "地域 es un marco geográfico plausible para hablar de distintos pueblos."
+      },
+      "kanji_readings_add": [{"characters": "地域", "reading_hiragana": "ちいき", "meaning_es": "región"}]
+    },
+    "990": {
+      "reason": "Relacionar el contenido de la conferencia con la aplicación instalada.",
+      "fields": {
+        "japanese": "このアプリの使い方についての講演を聞いてから、実際に入れてみます。",
+        "spanish": "Después de escuchar una charla sobre cómo usar esta aplicación, probaré a instalarla.",
+        "scenario_es": "Una persona decide instalar una aplicación después de asistir a una charla sobre su uso.",
+        "topic_primary": "tecnologia",
+        "situation_tag": "instalar_app_despues_charla",
+        "vocabulary_tags": ["アプリ", "使い方", "講演", "聞く", "実際", "入れる"],
+        "naturalness_rationale": "La conferencia y la instalación tratan del mismo producto y forman una secuencia coherente."
+      },
+      "kanji_readings_add": [
+        {"characters": "使い方", "reading_hiragana": "つかいかた", "meaning_es": "forma de uso"},
+        {"characters": "実際", "reading_hiragana": "じっさい", "meaning_es": "en la práctica"}
+      ]
+    },
+    "991": {
+      "reason": "Clasificar una reacción cotidiana fuera del ámbito social institucional.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["relaciones"]}
+    },
+    "993": {
+      "reason": "Clasificar una consulta sobre venta de pescado dentro de alimentación.",
+      "fields": {"topic_primary": "comida", "topic_secondary": ["compras"]}
+    },
+    "994": {
+      "reason": "Clasificar una investigación sobre una revolución dentro de historia y sociedad.",
+      "fields": {"topic_primary": "sociedad", "topic_secondary": ["historia", "estudio"]}
+    },
+    "995": {
+      "reason": "Clasificar una frase sobre resultados profesionales dentro de trabajo.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["resultados"]}
+    },
+    "996": {
+      "reason": "Precisar que la dificultad comunicativa fue con el dependiente.",
+      "fields": {
+        "japanese": "デパートで服を見たり値段を比べたりして、安い靴も買いましたが、店員とのコミュニケーションは少し難しかったです。",
+        "spanish": "En los grandes almacenes miré ropa, comparé precios y compré también unos zapatos baratos, pero comunicarme con el dependiente fue un poco difícil.",
+        "scenario_es": "Una persona cuenta sus compras y una dificultad al comunicarse con el dependiente.",
+        "topic_primary": "compras",
+        "situation_tag": "compras_dificultad_dependiente",
+        "vocabulary_tags": ["デパート", "服", "値段", "比べる", "安い", "靴", "買う", "店員", "コミュニケーション", "難しい"],
+        "naturalness_rationale": "店員との concreta con quién surgió la dificultad de comunicación durante la compra."
+      },
+      "kanji_readings_add": [{"characters": "店員", "reading_hiragana": "てんいん", "meaning_es": "dependiente"}]
+    },
+    "997": {
+      "reason": "Especificar qué elemento del autobús cumple el estándar.",
+      "fields": {
+        "japanese": "このバスには標準の安全設備があります。",
+        "spanish": "Este autobús dispone del equipamiento de seguridad estándar.",
+        "scenario_es": "Se describe el equipamiento de seguridad incluido en un autobús.",
+        "topic_primary": "transporte",
+        "situation_tag": "equipamiento_estandar_autobus",
+        "vocabulary_tags": ["バス", "標準", "安全設備"],
+        "naturalness_rationale": "標準 modifica un equipamiento concreto y verificable."
+      },
+      "kanji_readings_add": [{"characters": "安全設備", "reading_hiragana": "あんぜんせつび", "meaning_es": "equipamiento de seguridad"}]
+    },
+    "998": {
+      "reason": "Clasificar el aumento de importaciones como comercio y trabajo.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["comercio", "transporte"]}
     }
   }
 }
