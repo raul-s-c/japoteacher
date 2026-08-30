@@ -31,9 +31,9 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 625 pares N5 y 775 pares N4, verificadas sin incidencias estructurales por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 3.790 ejercicios; 3.290 están activos (735 N5 y 910 N4 por dirección) y 500 se conservan archivados.
-- La ampliación del 25 de agosto usó `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 3 pares N5 y 67 pares N4 nuevos, con revisión adversarial, deduplicación y furigana.
+- Fuentes editoriales aprobadas: 667 pares N5 y 864 pares N4, verificadas sin incidencias por `scripts/audit-editorial-pairs.py`.
+- Total publicado en `data/exercises.full.csv`: 4.052 ejercicios; 3.552 están activos (777 N5 y 999 N4 por dirección) y 500 se conservan archivados.
+- La ampliación del 30 de agosto usó 1.008.622 tokens y `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 18 pares N5 y 66 pares N4, con revisión adversarial, deduplicación, calibración y furigana.
 - El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
