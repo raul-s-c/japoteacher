@@ -1,15 +1,15 @@
 {
-  "versionCode": 5,
-  "versionName": "1.1.1",
-  "version": "1.1.1",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.1.1-arm64.apk",
-  "sha256": "6C35435542E7DA1A6729F68DAF7168C8FD1ED3B58DDC82F06DACC3FBB41DEA09",
+  "versionCode": 6,
+  "versionName": "1.2.0",
+  "version": "1.2.0",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.0-arm64.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.2.0-arm64.apk",
+  "sha256": "780C2DDCDA4ACABC8EF89113ADB16C5E97C87DCC412D3FFA60170305BF678C07",
   "published_at": "2026-08-30T00:00:00Z",
   "notes": [
-    "APK nativa con WebView propia para proteger el flujo web y habilitar funciones Android.",
-    "Lupa flotante con permiso de superposición para capturar texto desde otras apps.",
-    "Recorte de pantalla y OCR japonés local en el móvil; la imagen sólo se envía si eliges modo visión.",
-    "Flujo corregido: se usa la burbuja desde otra app y el botón directo se retira para evitar capturar JapoTeacher."
+    "Recorte inmediato sobre cualquier app, como una herramienta de recortes: toca la burbuja, congela la pantalla y ajusta el área.",
+    "El permiso de pantalla se concede una vez al activar la lupa y la sesión permanece disponible para varios recortes.",
+    "La burbuja se oculta antes de capturar y vuelve al cerrar el recorte.",
+    "OCR japonés local; la captura sólo vive en la caché privada y no aparece en la galería."
   ]
 }

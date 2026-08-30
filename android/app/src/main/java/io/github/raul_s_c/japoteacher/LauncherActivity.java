@@ -20,7 +20,7 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 public class LauncherActivity extends Activity {
-    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.1.0&nativeCode=4";
+    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.0&nativeCode=6";
     private static WebView webView;
     private ProgressBar progress;
     private String pendingLensPayload;
@@ -146,9 +146,14 @@ public class LauncherActivity extends Activity {
                     requestOverlayPermission();
                     return;
                 }
-                Intent service = new Intent(LauncherActivity.this, FloatingLensService.class);
-                startService(service);
-                Toast.makeText(LauncherActivity.this, "Lupa flotante activada.", Toast.LENGTH_SHORT).show();
+                if (FloatingLensService.isReady()) {
+                    Intent service = new Intent(LauncherActivity.this, FloatingLensService.class);
+                    service.setAction(FloatingLensService.ACTION_SHOW_BUBBLE);
+                    startService(service);
+                    Toast.makeText(LauncherActivity.this, "La lupa ya está activa.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                startActivity(new Intent(LauncherActivity.this, LensPermissionActivity.class));
             });
         }
 
@@ -162,7 +167,15 @@ public class LauncherActivity extends Activity {
 
         @JavascriptInterface
         public void captureNow() {
-            runOnUiThread(() -> startActivity(new Intent(LauncherActivity.this, LensCaptureActivity.class)));
+            runOnUiThread(() -> {
+                if (!FloatingLensService.isReady()) {
+                    startActivity(new Intent(LauncherActivity.this, LensPermissionActivity.class));
+                    return;
+                }
+                Intent service = new Intent(LauncherActivity.this, FloatingLensService.class);
+                service.setAction(FloatingLensService.ACTION_CAPTURE);
+                startService(service);
+            });
         }
     }
 }

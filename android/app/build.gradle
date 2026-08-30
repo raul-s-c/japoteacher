@@ -23,7 +23,7 @@ plugins {
 def twaManifest = [
     applicationId: 'io.github.raul_s_c.japoteacher',
     hostName: 'raul-s-c.github.io', // The domain being opened in the TWA.
-    launchUrl: '/japoteacher/?nativeVersion=1.1.1&nativeCode=5', // The start path for the TWA. Must be relative to the domain.
+    launchUrl: '/japoteacher/?nativeVersion=1.2.0&nativeCode=6', // The start path for the TWA. Must be relative to the domain.
     name: 'Japoteacher', // The application name.
     launcherName: 'Japoteacher', // The name shown on the Android Launcher.
     themeColor: '#B52B21', // The color used for the status bar.
@@ -57,8 +57,8 @@ android {
         applicationId "io.github.raul_s_c.japoteacher"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 5
-        versionName "1.1.1"
+        versionCode 6
+        versionName "1.2.0"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name

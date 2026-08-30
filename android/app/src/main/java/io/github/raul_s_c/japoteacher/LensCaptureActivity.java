@@ -4,21 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PixelFormat;
 import android.graphics.RectF;
-import android.hardware.display.DisplayManager;
-import android.hardware.display.VirtualDisplay;
-import android.media.Image;
-import android.media.ImageReader;
-import android.media.projection.MediaProjection;
-import android.media.projection.MediaProjectionManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -39,177 +31,48 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions;
 
 import java.io.ByteArrayOutputStream;
-import java.nio.ByteBuffer;
+import java.io.File;
 
 public class LensCaptureActivity extends Activity {
-    private static final int REQUEST_CAPTURE = 4201;
-    private final Handler handler = new Handler(Looper.getMainLooper());
     private FrameLayout root;
-    private ProgressBar progress;
     private Bitmap screenBitmap;
     private Bitmap cropBitmap;
-    private String ocrText = "";
     private EditText contextInput;
-    private boolean shouldRestoreBubble = true;
-    private boolean frameCaptured = false;
+    private String capturePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         root = new FrameLayout(this);
         setContentView(root);
-        showIntro();
-    }
-
-    private void showIntro() {
-        root.removeAllViews();
-        root.setBackgroundColor(Color.rgb(247, 245, 240));
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setGravity(Gravity.CENTER);
-        layout.setPadding(dp(24), dp(24), dp(24), dp(24));
-
-        TextView title = new TextView(this);
-        title.setText("Preparar recorte");
-        title.setTextSize(24);
-        title.setTextColor(Color.rgb(34, 34, 34));
-        title.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
-
-        TextView help = new TextView(this);
-        help.setText("Android va a pedir permiso. Elige \"Compartir toda la pantalla\". Después verás la captura y podrás ajustar el recuadro antes del OCR.");
-        help.setTextSize(16);
-        help.setTextColor(Color.rgb(83, 79, 73));
-        help.setGravity(Gravity.CENTER);
-        help.setPadding(0, dp(16), 0, dp(20));
-
-        Button start = button("Elegir pantalla y recortar");
-        start.setOnClickListener(v -> requestScreenCapture());
-
-        Button cancel = button("Cancelar");
-        cancel.setOnClickListener(v -> finish());
-
-        layout.addView(title);
-        layout.addView(help);
-        layout.addView(start, new LinearLayout.LayoutParams(-1, dp(54)));
-        layout.addView(cancel, new LinearLayout.LayoutParams(-1, dp(54)));
-        root.addView(layout, new FrameLayout.LayoutParams(-1, -1));
-    }
-
-    private void requestScreenCapture() {
-        MediaProjectionManager manager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-        startActivityForResult(manager.createScreenCaptureIntent(), REQUEST_CAPTURE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != REQUEST_CAPTURE || resultCode != RESULT_OK || data == null) {
+        capturePath = getIntent().getStringExtra(FloatingLensService.EXTRA_CAPTURE_PATH);
+        screenBitmap = capturePath == null ? null : BitmapFactory.decodeFile(capturePath);
+        if (screenBitmap == null) {
+            Toast.makeText(this, "No se pudo abrir la captura. Vuelve a tocar la lupa.", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
-        captureScreen(resultCode, data);
-    }
-
-    private void showLoading(String message) {
-        root.removeAllViews();
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setGravity(Gravity.CENTER);
-        layout.setPadding(dp(24), dp(24), dp(24), dp(24));
-        progress = new ProgressBar(this);
-        TextView label = new TextView(this);
-        label.setText(message);
-        label.setTextSize(18);
-        label.setTextColor(Color.rgb(34, 34, 34));
-        label.setGravity(Gravity.CENTER);
-        layout.addView(progress);
-        layout.addView(label);
-        root.addView(layout, new FrameLayout.LayoutParams(-1, -1));
-    }
-
-    private void captureScreen(int resultCode, Intent data) {
-        root.removeAllViews();
-        root.setBackgroundColor(Color.TRANSPARENT);
-        MediaProjectionManager manager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-        MediaProjection projection = manager.getMediaProjection(resultCode, data);
-        int width = getResources().getDisplayMetrics().widthPixels;
-        int height = getResources().getDisplayMetrics().heightPixels;
-        int density = getResources().getDisplayMetrics().densityDpi;
-        ImageReader reader = ImageReader.newInstance(width, height, PixelFormat.RGBA_8888, 2);
-        VirtualDisplay display = projection.createVirtualDisplay(
-                "JapoTeacherLens",
-                width,
-                height,
-                density,
-                DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR,
-                reader.getSurface(),
-                null,
-                handler
-        );
-        Runnable cleanup = () -> {
-            try { display.release(); } catch (Exception ignored) {}
-            try { reader.close(); } catch (Exception ignored) {}
-            try { projection.stop(); } catch (Exception ignored) {}
-        };
-        reader.setOnImageAvailableListener(source -> {
-            if (frameCaptured) return;
-            frameCaptured = true;
-            Image image = null;
-            try {
-                image = source.acquireLatestImage();
-                if (image == null) {
-                    Toast.makeText(this, "No se pudo leer la captura.", Toast.LENGTH_LONG).show();
-                    finish();
-                    return;
-                }
-                screenBitmap = imageToBitmap(image);
-                showCropper();
-            } catch (Exception error) {
-                Toast.makeText(this, "Error capturando pantalla: " + error.getMessage(), Toast.LENGTH_LONG).show();
-                finish();
-            } finally {
-                if (image != null) image.close();
-                cleanup.run();
-            }
-        }, handler);
-        handler.postDelayed(() -> {
-            if (frameCaptured) return;
-            frameCaptured = true;
-            cleanup.run();
-            Toast.makeText(this, "No se recibió imagen. Prueba eligiendo \"Compartir toda la pantalla\".", Toast.LENGTH_LONG).show();
-            finish();
-        }, 4500);
-    }
-
-    private Bitmap imageToBitmap(Image image) {
-        Image.Plane plane = image.getPlanes()[0];
-        ByteBuffer buffer = plane.getBuffer();
-        int pixelStride = plane.getPixelStride();
-        int rowStride = plane.getRowStride();
-        int rowPadding = rowStride - pixelStride * image.getWidth();
-        Bitmap padded = Bitmap.createBitmap(
-                image.getWidth() + rowPadding / pixelStride,
-                image.getHeight(),
-                Bitmap.Config.ARGB_8888
-        );
-        padded.copyPixelsFromBuffer(buffer);
-        return Bitmap.createBitmap(padded, 0, 0, image.getWidth(), image.getHeight());
+        showCropper();
     }
 
     private void showCropper() {
         root.removeAllViews();
         CropView cropView = new CropView(this, screenBitmap);
         root.addView(cropView, new FrameLayout.LayoutParams(-1, -1));
+
         LinearLayout toolbar = new LinearLayout(this);
         toolbar.setOrientation(LinearLayout.HORIZONTAL);
         toolbar.setGravity(Gravity.CENTER_VERTICAL);
-        toolbar.setPadding(dp(12), dp(12), dp(12), dp(12));
-        toolbar.setBackgroundColor(Color.argb(230, 20, 20, 20));
+        toolbar.setPadding(dp(12), dp(10), dp(12), dp(10));
+        toolbar.setBackgroundColor(Color.argb(238, 20, 20, 20));
+
         TextView title = new TextView(this);
-        title.setText("Ajusta el recorte");
+        title.setText("Selecciona el texto");
         title.setTextColor(Color.WHITE);
         title.setTextSize(16);
         title.setGravity(Gravity.CENTER_VERTICAL);
+
         Button cancel = button("Cancelar");
         Button capture = button("Leer recorte");
         cancel.setOnClickListener(v -> finish());
@@ -217,10 +80,11 @@ public class LensCaptureActivity extends Activity {
             cropBitmap = cropView.crop();
             runOcr();
         });
-        toolbar.addView(title, new LinearLayout.LayoutParams(0, dp(48), 1));
+
+        toolbar.addView(title, new LinearLayout.LayoutParams(0, dp(52), 1));
         toolbar.addView(cancel);
         toolbar.addView(capture);
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(-1, dp(72));
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(-1, dp(76));
         params.gravity = Gravity.BOTTOM;
         root.addView(toolbar, params);
     }
@@ -245,8 +109,26 @@ public class LensCaptureActivity extends Activity {
                 });
     }
 
+    private void showLoading(String message) {
+        root.removeAllViews();
+        root.setBackgroundColor(Color.rgb(247, 245, 240));
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setGravity(Gravity.CENTER);
+        layout.setPadding(dp(24), dp(24), dp(24), dp(24));
+        ProgressBar progress = new ProgressBar(this);
+        TextView label = new TextView(this);
+        label.setText(message);
+        label.setTextSize(18);
+        label.setTextColor(Color.rgb(34, 34, 34));
+        label.setGravity(Gravity.CENTER);
+        layout.addView(progress);
+        layout.addView(label);
+        root.addView(layout, new FrameLayout.LayoutParams(-1, -1));
+    }
+
     private void showResult(Text result) {
-        ocrText = result == null ? "" : result.getText().trim();
+        String ocrText = result == null ? "" : result.getText().trim();
         root.removeAllViews();
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -284,14 +166,17 @@ public class LensCaptureActivity extends Activity {
 
         LinearLayout actions = new LinearLayout(this);
         actions.setGravity(Gravity.END);
-        Button retry = button("Repetir");
+        Button retry = button("Ajustar recorte");
         Button send = button("Enviar a Lupa IA");
         retry.setOnClickListener(v -> showCropper());
         send.setOnClickListener(v -> {
-            ocrText = detected.getText().toString().trim();
             String imageData = mode.getCheckedRadioButtonId() == 2 ? bitmapDataUrl(cropBitmap) : "";
-            shouldRestoreBubble = false;
-            LauncherActivity.openWithLensResult(this, ocrText, imageData, contextInput.getText().toString().trim());
+            LauncherActivity.openWithLensResult(
+                    this,
+                    detected.getText().toString().trim(),
+                    imageData,
+                    contextInput.getText().toString().trim()
+            );
             finish();
         });
         actions.addView(retry);
@@ -318,32 +203,36 @@ public class LensCaptureActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        if (shouldRestoreBubble) {
-            Intent intent = new Intent(this, FloatingLensService.class);
-            intent.setAction(FloatingLensService.ACTION_SHOW_BUBBLE);
-            startService(intent);
-        }
+        Intent intent = new Intent(this, FloatingLensService.class);
+        intent.setAction(FloatingLensService.ACTION_SHOW_BUBBLE);
+        startService(intent);
+        if (capturePath != null) new File(capturePath).delete();
+        if (cropBitmap != null && !cropBitmap.isRecycled()) cropBitmap.recycle();
+        if (screenBitmap != null && !screenBitmap.isRecycled()) screenBitmap.recycle();
         super.onDestroy();
+        overridePendingTransition(0, 0);
     }
 
     private static class CropView extends View {
         private final Bitmap bitmap;
         private final Paint dimPaint = new Paint();
-        private final Paint framePaint = new Paint();
+        private final Paint framePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        private final Paint handlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Matrix matrix = new Matrix();
         private final RectF imageRect = new RectF();
         private final RectF selection = new RectF();
         private float lastX;
         private float lastY;
-        private int mode;
+        private int touchMode;
 
         CropView(Context context, Bitmap bitmap) {
             super(context);
             this.bitmap = bitmap;
-            dimPaint.setColor(Color.argb(130, 0, 0, 0));
-            framePaint.setColor(Color.rgb(181, 43, 33));
+            dimPaint.setColor(Color.argb(145, 0, 0, 0));
+            framePaint.setColor(Color.WHITE);
             framePaint.setStyle(Paint.Style.STROKE);
             framePaint.setStrokeWidth(5f);
+            handlePaint.setColor(Color.rgb(181, 43, 33));
         }
 
         @Override
@@ -354,7 +243,12 @@ public class LensCaptureActivity extends Activity {
             matrix.setScale(scale, scale);
             matrix.postTranslate(dx, dy);
             imageRect.set(dx, dy, dx + bitmap.getWidth() * scale, dy + bitmap.getHeight() * scale);
-            selection.set(imageRect.left + w * .08f, imageRect.top + h * .22f, imageRect.right - w * .08f, imageRect.top + h * .55f);
+            selection.set(
+                    imageRect.left + imageRect.width() * .08f,
+                    imageRect.top + imageRect.height() * .18f,
+                    imageRect.right - imageRect.width() * .08f,
+                    imageRect.top + imageRect.height() * .52f
+            );
         }
 
         @Override
@@ -366,17 +260,11 @@ public class LensCaptureActivity extends Activity {
             canvas.drawRect(0, selection.top, selection.left, selection.bottom, dimPaint);
             canvas.drawRect(selection.right, selection.top, getWidth(), selection.bottom, dimPaint);
             canvas.drawRect(selection, framePaint);
-            Paint handlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-            handlePaint.setColor(Color.rgb(181, 43, 33));
-            canvas.drawCircle(selection.left, selection.top, 13f, handlePaint);
-            canvas.drawCircle(selection.right, selection.top, 13f, handlePaint);
-            canvas.drawCircle(selection.left, selection.bottom, 13f, handlePaint);
-            canvas.drawCircle(selection.right, selection.bottom, 13f, handlePaint);
-            Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-            textPaint.setColor(Color.WHITE);
-            textPaint.setTextSize(34f);
-            textPaint.setFakeBoldText(true);
-            canvas.drawText("Arrastra el recuadro y pulsa Leer recorte", imageRect.left + 28f, Math.max(56f, selection.top - 28f), textPaint);
+            float radius = 14f;
+            canvas.drawCircle(selection.left, selection.top, radius, handlePaint);
+            canvas.drawCircle(selection.right, selection.top, radius, handlePaint);
+            canvas.drawCircle(selection.left, selection.bottom, radius, handlePaint);
+            canvas.drawCircle(selection.right, selection.bottom, radius, handlePaint);
         }
 
         @Override
@@ -387,16 +275,17 @@ public class LensCaptureActivity extends Activity {
                 case MotionEvent.ACTION_DOWN:
                     lastX = x;
                     lastY = y;
-                    mode = edgeMode(x, y);
+                    touchMode = edgeMode(x, y);
+                    if (touchMode == 0 && !selection.contains(x, y)) return false;
                     return true;
                 case MotionEvent.ACTION_MOVE:
                     float dx = x - lastX;
                     float dy = y - lastY;
-                    if (mode == 0) selection.offset(dx, dy);
-                    if ((mode & 1) != 0) selection.left += dx;
-                    if ((mode & 2) != 0) selection.right += dx;
-                    if ((mode & 4) != 0) selection.top += dy;
-                    if ((mode & 8) != 0) selection.bottom += dy;
+                    if (touchMode == 0) selection.offset(dx, dy);
+                    if ((touchMode & 1) != 0) selection.left += dx;
+                    if ((touchMode & 2) != 0) selection.right += dx;
+                    if ((touchMode & 4) != 0) selection.top += dy;
+                    if ((touchMode & 8) != 0) selection.bottom += dy;
                     constrain();
                     lastX = x;
                     lastY = y;
@@ -408,18 +297,19 @@ public class LensCaptureActivity extends Activity {
         }
 
         private int edgeMode(float x, float y) {
-            float edge = 42f;
+            float edge = 50f;
             int value = 0;
-            if (Math.abs(x - selection.left) < edge) value |= 1;
-            if (Math.abs(x - selection.right) < edge) value |= 2;
-            if (Math.abs(y - selection.top) < edge) value |= 4;
-            if (Math.abs(y - selection.bottom) < edge) value |= 8;
+            if (Math.abs(x - selection.left) < edge && y > selection.top - edge && y < selection.bottom + edge) value |= 1;
+            if (Math.abs(x - selection.right) < edge && y > selection.top - edge && y < selection.bottom + edge) value |= 2;
+            if (Math.abs(y - selection.top) < edge && x > selection.left - edge && x < selection.right + edge) value |= 4;
+            if (Math.abs(y - selection.bottom) < edge && x > selection.left - edge && x < selection.right + edge) value |= 8;
             return value;
         }
 
         private void constrain() {
-            if (selection.width() < 80) selection.right = selection.left + 80;
-            if (selection.height() < 80) selection.bottom = selection.top + 80;
+            float min = 80f;
+            if (selection.width() < min) selection.right = selection.left + min;
+            if (selection.height() < min) selection.bottom = selection.top + min;
             if (selection.left < imageRect.left) selection.offset(imageRect.left - selection.left, 0);
             if (selection.top < imageRect.top) selection.offset(0, imageRect.top - selection.top);
             if (selection.right > imageRect.right) selection.offset(imageRect.right - selection.right, 0);
