@@ -54,4 +54,11 @@ Ejemplo para una release real:
 
 ## Estado local actual
 
-En este equipo se detecta Java, pero no Android SDK ni Gradle global. Para compilar aquí hará falta instalar Android Studio o configurar `ANDROID_HOME`/`ANDROID_SDK_ROOT` y Gradle. Hasta entonces, el canal de actualización queda preparado, pero no se puede producir un APK funcional localmente.
+En este equipo se detecta Java y Android SDK en `C:\Users\rauls\AppData\Local\Android\Sdk`. Lo que no existe todavía en este repositorio es un proyecto Android/Gradle versionado (`android/`, `gradlew`, `build.gradle`) ni una configuración Bubblewrap/TWA guardada.
+
+Para producir una APK desde aquí hay dos rutas válidas:
+
+1. Crear y versionar un contenedor Android/TWA dentro del repo, con Gradle wrapper incluido.
+2. Repetir un flujo externo tipo Bubblewrap/PWABuilder usando el SDK local y publicar el APK resultante como release.
+
+El canal de actualización ya está preparado; cuando haya una APK real, basta con publicar el archivo y actualizar `android-version.json`.
