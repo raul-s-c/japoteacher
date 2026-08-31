@@ -1,7 +1,8 @@
 param(
   [int]$TokenBudget = 1500000,
   [int]$GenerationBudget = 1300000,
-  [long]$UsageBaseline = 0
+  [long]$UsageBaseline = 0,
+  [string]$UsageReferenceZip = $(if ($env:JAPOTEACHER_USAGE_REFERENCE_ZIP) { $env:JAPOTEACHER_USAGE_REFERENCE_ZIP } else { Join-Path $HOME 'Downloads\japanese_usage_progress_v2_csv.zip' })
 )
 
 $ErrorActionPreference = 'Stop'
@@ -25,6 +26,7 @@ function Run-Editorial([string[]]$Arguments) {
 if (-not $env:JAPOTEACHER_EDITORIAL_KEY) { throw 'Falta JAPOTEACHER_EDITORIAL_KEY en el entorno.' }
 if ($UsageBaseline -le 0) { $UsageBaseline = [long](TotalUsage) }
 if ($GenerationBudget -gt $TokenBudget) { throw 'GenerationBudget no puede superar TokenBudget.' }
+if (-not (Test-Path -LiteralPath $UsageReferenceZip)) { throw "No se encuentra la referencia de cobertura: $UsageReferenceZip" }
 
 # Prioridad basada en la evidencia actual: Dinero es el menor banco; ES->JP necesita más
 # práctica N5, y Trabajo/Familia requieren una rampa N4 baja-media antes de los tramos altos.
@@ -34,9 +36,9 @@ $n4Topics = 'ahorro,inversiones,negocio,trabajo,tecnologia,estudio,relaciones,se
 Push-Location $root
 try {
   while (Has-Budget $GenerationBudget) {
-    Run-Editorial @('scripts/editorial-generate.py','N5','--append','8','--topics',$n5Topics,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
+    Run-Editorial @('scripts/editorial-generate.py','N5','--append','8','--topics',$n5Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
     if (-not (Has-Budget $GenerationBudget)) { break }
-    Run-Editorial @('scripts/editorial-generate.py','N4','--append','8','--topics',$n4Topics,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
+    Run-Editorial @('scripts/editorial-generate.py','N4','--append','8','--topics',$n4Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
   }
   Run-Editorial @('scripts/audit-editorial-pairs.py','N5')
   Run-Editorial @('scripts/audit-editorial-pairs.py','N4')

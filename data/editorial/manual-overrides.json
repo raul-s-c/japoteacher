@@ -209,6 +209,50 @@
         "vocabulary_tags": ["家", "インターネット", "通信する"],
         "naturalness_rationale": "通信する se usa con un medio explícito y un contexto doméstico plausible."
       }
+    },
+    "794": {
+      "reason": "Clasificar el paseo tras la lluvia como vida diaria y relaciones, no como inversiones.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["relaciones", "tiempo_atmosferico"]}
+    },
+    "795": {
+      "reason": "Clasificar una petición genérica para mirar algo como vida diaria.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["interaccion"]}
+    },
+    "796": {
+      "reason": "Clasificar la consulta sobre ahorro mensual dentro de ahorro.",
+      "fields": {"topic_primary": "ahorro", "topic_secondary": ["dinero"]}
+    },
+    "797": {
+      "reason": "Clasificar una prohibición espacial genérica como vida diaria.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["normas"]}
+    },
+    "803": {
+      "reason": "Clasificar el contraste entre trabajo y descanso dentro de trabajo.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["bienestar"]}
+    },
+    "808": {
+      "reason": "Clasificar una acción con el hermano menor dentro de familia.",
+      "fields": {"topic_primary": "familia", "topic_secondary": ["libros"]}
+    },
+    "810": {
+      "reason": "Clasificar la ubicación de un objeto cotidiano como vida diaria.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["objetos"]}
+    },
+    "818": {
+      "reason": "Clasificar una referencia espacial a la empresa dentro de trabajo.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["ubicacion"]}
+    },
+    "822": {
+      "reason": "Clasificar la decisión de no comprar un bolso caro dentro de compras.",
+      "fields": {"topic_primary": "compras", "topic_secondary": ["dinero"]}
+    },
+    "824": {
+      "reason": "Clasificar la rutina de ir a la escuela dentro de estudio.",
+      "fields": {"topic_primary": "estudio", "topic_secondary": ["rutina"]}
+    },
+    "826": {
+      "reason": "Clasificar el permiso para usar un paraguas como vida diaria.",
+      "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["tiempo_atmosferico"]}
     }
   },
   "N4": {
@@ -597,6 +641,26 @@
     "998": {
       "reason": "Clasificar el aumento de importaciones como comercio y trabajo.",
       "fields": {"topic_primary": "trabajo", "topic_secondary": ["comercio", "transporte"]}
+    },
+    "1012": {
+      "reason": "Clasificar el efecto de gastos imprevistos sobre el ahorro dentro de ahorro.",
+      "fields": {"topic_primary": "ahorro", "topic_secondary": ["gastos"]}
+    },
+    "1015": {
+      "reason": "Clasificar la preparación diaria de un examen dentro de estudio.",
+      "fields": {"topic_primary": "estudio", "topic_secondary": ["examenes"]}
+    },
+    "1026": {
+      "reason": "Clasificar una decisión doméstica para reducir gastos dentro de ahorro.",
+      "fields": {"topic_primary": "ahorro", "topic_secondary": ["hogar", "energia"]}
+    },
+    "1034": {
+      "reason": "Clasificar la gestión de contabilidad empresarial dentro de trabajo.",
+      "fields": {"topic_primary": "trabajo", "topic_secondary": ["contabilidad"]}
+    },
+    "1038": {
+      "reason": "Clasificar el ahorro progresivo de yenes dentro de ahorro.",
+      "fields": {"topic_primary": "ahorro", "topic_secondary": ["dinero"]}
     }
   }
 }

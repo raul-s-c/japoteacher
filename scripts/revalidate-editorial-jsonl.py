@@ -39,16 +39,23 @@ def main():
     kept = []
     rejected = read_jsonl(rejected_path)
     invalid = []
+    seen_japanese = set()
 
     for item in approved:
         slot = item.get("coverage_slot") or {}
+        normalized_japanese = generator.normalize_japanese(item.get("japanese", ""))
         if int(item.get("slot", 0) or 0) < args.min_slot:
             kept.append(item)
+            seen_japanese.add(normalized_japanese)
             continue
         try:
             normalized = generator.normalize_spacing(item)
             generator.validate_slot(normalized, slot)
+            normalized_japanese = generator.normalize_japanese(normalized.get("japanese", ""))
+            if normalized_japanese in seen_japanese:
+                raise ValueError(f"frase duplicada dentro del lote: {normalized.get('japanese', '')}")
             kept.append({**item, **normalized})
+            seen_japanese.add(normalized_japanese)
         except Exception as error:
             invalid.append({"level": args.level, "slot": item.get("slot"), "coverage_slot": slot, "reason": f"Revalidación local: {error}", "removed_item": item})
     print(json.dumps({"level": args.level, "checked_from_slot": args.min_slot, "invalid": len(invalid), "kept": len(kept), "apply": args.apply}, ensure_ascii=False))
