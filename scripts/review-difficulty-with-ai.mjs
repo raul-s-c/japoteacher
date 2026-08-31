@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -58,9 +59,17 @@ if (fs.existsSync(checkpointPath)) for (const line of fs.readFileSync(checkpoint
   if (item?.exercise_id && Number.isInteger(item.difficulty)) reviewed.set(item.exercise_id, item);
 }
 
+function contentSignature(row) {
+  const japanese = row.direction === "ja_es" ? row.source_text : row.reference_translation;
+  const spanish = row.direction === "ja_es" ? row.reference_translation : row.source_text;
+  return crypto.createHash("sha256").update(`${japanese}\0${spanish}`).digest("hex");
+}
+
 const queues = new Map();
 for (const row of rows.filter(row => active(row) && levels.has(row.jlpt_level))) {
-  if (reviewed.has(row.exercise_id)) continue;
+  const previous = reviewed.get(row.exercise_id);
+  if (previous && (!previous.content_signature || previous.content_signature === contentSignature(row))) continue;
+  if (previous) reviewed.delete(row.exercise_id);
   const key = `${row.jlpt_level}:${row.direction}`;
   const items = queues.get(key) || [];
   items.push(row);
@@ -102,9 +111,11 @@ for (const [group, queue] of queues) {
       await sleep(1500 * (attempt + 1));
     }
     fs.mkdirSync(path.dirname(checkpointPath), { recursive: true });
-    fs.appendFileSync(checkpointPath, items.map(item => JSON.stringify({ ...item, group, reviewed_at: new Date().toISOString(), response_id: body.response_id })).join("\n") + "\n", "utf8");
+    const signatures = new Map(batch.map(row => [row.exercise_id, contentSignature(row)]));
+    const checkpointItems = items.map(item => ({ ...item, content_signature: signatures.get(item.exercise_id), group, reviewed_at: new Date().toISOString(), response_id: body.response_id }));
+    fs.appendFileSync(checkpointPath, checkpointItems.map(item => JSON.stringify(item)).join("\n") + "\n", "utf8");
     fs.appendFileSync(usagePath, JSON.stringify({ recorded_at: new Date().toISOString(), operation: "difficulty_review", level: group.split(":")[0], model: body.model, response_id: body.response_id, usage: body.usage || {} }) + "\n", "utf8");
-    items.forEach(item => reviewed.set(item.exercise_id, item));
+    checkpointItems.forEach(item => reviewed.set(item.exercise_id, item));
     completed += batch.length;
     console.log(`${group}: ${reviewed.size}/${rows.filter(active).length} reviewed (${body.usage?.total_tokens || "?"} tokens in this batch)`);
   }

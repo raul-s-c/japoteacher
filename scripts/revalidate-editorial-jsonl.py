@@ -29,8 +29,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("level", choices=["N5", "N4"])
     parser.add_argument("--min-slot", type=int, default=1)
+    parser.add_argument("--reject-slots", default="", help="Slots separados por comas que la revisión humana retira del lote.")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
+    manually_rejected = {int(value) for value in args.reject_slots.split(",") if value.strip()}
 
     generator = load_generator()
     approved_path = ROOT / "data" / "editorial" / f"{args.level.lower()}-approved.jsonl"
@@ -44,6 +46,9 @@ def main():
     for item in approved:
         slot = item.get("coverage_slot") or {}
         normalized_japanese = generator.normalize_japanese(item.get("japanese", ""))
+        if int(item.get("slot", 0) or 0) in manually_rejected:
+            invalid.append({"level": args.level, "slot": item.get("slot"), "coverage_slot": slot, "reason": "Retirada por revisión humana.", "removed_item": item})
+            continue
         if int(item.get("slot", 0) or 0) < args.min_slot:
             kept.append(item)
             seen_japanese.add(normalized_japanese)

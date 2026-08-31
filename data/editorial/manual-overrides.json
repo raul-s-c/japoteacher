@@ -253,6 +253,98 @@
     "826": {
       "reason": "Clasificar el permiso para usar un paraguas como vida diaria.",
       "fields": {"topic_primary": "vida_diaria", "topic_secondary": ["tiempo_atmosferico"]}
+    },
+    "835": {
+      "reason": "Usar 分野 en una pregunta natural sobre el tema de un campo de estudio.",
+      "fields": {
+        "japanese": "この分野のテーマは何ですか。",
+        "spanish": "¿Cuál es el tema de este campo?",
+        "scenario_es": "Una persona pregunta por el tema principal de un campo de estudio.",
+        "topic_primary": "estudio",
+        "situation_tag": "preguntar_tema_campo",
+        "vocabulary_tags": ["分野", "テーマ", "何"],
+        "accepted_alternatives_es": ["¿Qué tema tiene este campo?"],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["この分野", "テーマ", "何ですか"],
+        "naturalness_rationale": "分野 aparece como marco de conocimiento con un tema identificable."
+      },
+      "kanji_readings_add": [{"characters": "何", "reading_hiragana": "なん", "meaning_es": "qué"}]
+    },
+    "836": {
+      "reason": "Clasificar una conversación sobre la publicación de un libro dentro de estudio y libros.",
+      "fields": {"topic_primary": "estudio", "topic_secondary": ["libros", "trabajo"]}
+    },
+    "840": {
+      "reason": "Eliminar la redundancia temporal y expresar una práctica semanal durante tres semanas.",
+      "fields": {
+        "japanese": "この三週間、毎週日本語を少し勉強しました。",
+        "spanish": "Durante estas tres semanas, estudié un poco de japonés cada semana.",
+        "scenario_es": "Una persona resume su rutina semanal de estudio de las últimas tres semanas.",
+        "topic_primary": "estudio",
+        "situation_tag": "rutina_tres_semanas",
+        "vocabulary_tags": ["三週間", "毎週", "日本語", "少し", "勉強する"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["この三週間", "毎週", "日本語を少し", "勉強しました"],
+        "naturalness_rationale": "この三週間 delimita el periodo y 毎週 expresa la frecuencia sin contradicción."
+      }
+    },
+    "844": {
+      "reason": "Dar a 思 un contexto concreto de recordar planes antes de ver a un amigo.",
+      "fields": {
+        "japanese": "友だちに会う前に、今日の予定を思い出します。",
+        "spanish": "Antes de ver a mi amigo, recuerdo los planes de hoy.",
+        "scenario_es": "Una persona recuerda los planes del día antes de encontrarse con un amigo.",
+        "topic_primary": "relaciones",
+        "situation_tag": "recordar_planes_antes_encuentro",
+        "vocabulary_tags": ["友だち", "会う", "前に", "今日", "予定", "思い出す"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["友だちに会う前に", "今日の予定", "思い出します"],
+        "naturalness_rationale": "思い出す se usa con un contenido concreto que la persona necesita recordar."
+      },
+      "kanji_readings_add": [
+        {"characters": "前", "reading_hiragana": "まえ", "meaning_es": "antes"},
+        {"characters": "今日", "reading_hiragana": "きょう", "meaning_es": "hoy"},
+        {"characters": "予定", "reading_hiragana": "よてい", "meaning_es": "planes"},
+        {"characters": "思い出します", "reading_hiragana": "おもいだします", "meaning_es": "recuerdo"}
+      ]
+    },
+    "846": {
+      "reason": "Sustituir una sensación vaga por el uso natural de 達成感 en el trabajo.",
+      "fields": {
+        "japanese": "仕事をすると、達成感があります。",
+        "spanish": "Cuando trabajo, siento satisfacción por lo conseguido.",
+        "scenario_es": "Una persona explica la satisfacción que obtiene al trabajar.",
+        "topic_primary": "trabajo",
+        "situation_tag": "sentir_logro_trabajo",
+        "vocabulary_tags": ["仕事", "する", "達成感", "ある"],
+        "accepted_alternatives_es": ["Trabajar me da una sensación de logro."],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["仕事をすると", "達成感があります"],
+        "naturalness_rationale": "達成感 nombra una sensación concreta y habitual asociada al trabajo."
+      },
+      "kanji_readings_add": [{"characters": "達成感", "reading_hiragana": "たっせいかん", "meaning_es": "sensación de logro"}]
+    },
+    "848": {
+      "reason": "Dar a 思う un contenido claro mediante una opinión difícil de expresar.",
+      "fields": {
+        "japanese": "この問題について思うことを話すのは、少し難しいです。",
+        "spanish": "Es un poco difícil hablar de lo que pienso sobre este problema.",
+        "scenario_es": "Una persona reconoce que le cuesta expresar su opinión sobre un problema.",
+        "topic_primary": "vida_diaria",
+        "situation_tag": "expresar_opinion_dificil",
+        "vocabulary_tags": ["問題", "思う", "こと", "話す", "少し", "難しい"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["この問題について", "思うこと", "話すのは", "少し難しい"],
+        "naturalness_rationale": "思うこと funciona como contenido nominalizado de una opinión concreta."
+      },
+      "kanji_readings_add": [
+        {"characters": "問題", "reading_hiragana": "もんだい", "meaning_es": "problema"},
+        {"characters": "話す", "reading_hiragana": "はなす", "meaning_es": "hablar"},
+        {"characters": "難しい", "reading_hiragana": "むずかしい", "meaning_es": "difícil"}
+      ]
     }
   },
   "N4": {
@@ -661,6 +753,121 @@
     "1038": {
       "reason": "Clasificar el ahorro progresivo de yenes dentro de ahorro.",
       "fields": {"topic_primary": "ahorro", "topic_secondary": ["dinero"]}
+    },
+    "1042": {
+      "reason": "Usar 過ぎる de forma natural para expresar que se ha excedido un presupuesto.",
+      "fields": {
+        "japanese": "予算を使い過ぎたなら、来月の投資を減らします。",
+        "spanish": "Si gasté más de la cuenta, reduciré la inversión del mes que viene.",
+        "scenario_es": "Una persona ajusta la inversión futura si ha excedido el presupuesto.",
+        "topic_primary": "inversiones",
+        "situation_tag": "reducir_inversion_por_exceso",
+        "vocabulary_tags": ["予算", "使い過ぎる", "来月", "投資", "減らす"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["予算を使い過ぎたなら", "来月の投資", "減らします"],
+        "naturalness_rationale": "使い過ぎる expresa directamente exceder el gasto previsto."
+      },
+      "kanji_readings_add": [
+        {"characters": "使い過ぎた", "reading_hiragana": "つかいすぎた", "meaning_es": "gasté demasiado"},
+        {"characters": "来月", "reading_hiragana": "らいげつ", "meaning_es": "el mes que viene"},
+        {"characters": "減らします", "reading_hiragana": "へらします", "meaning_es": "reduciré"}
+      ]
+    },
+    "1044": {
+      "reason": "Integrar 等 como enumeración formal natural de tareas laborales.",
+      "fields": {
+        "japanese": "仕事では、書類を確認したり電話をかけたりする等、毎日いろいろな業務があります。",
+        "spanish": "En el trabajo hay cada día tareas variadas, como revisar documentos y hacer llamadas.",
+        "scenario_es": "Una persona enumera formalmente varias tareas de su trabajo diario.",
+        "topic_primary": "trabajo",
+        "situation_tag": "enumerar_tareas_trabajo",
+        "vocabulary_tags": ["仕事", "書類", "確認する", "電話をかける", "等", "毎日", "業務"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["仕事では", "書類を確認したり", "電話をかけたりする等", "いろいろな業務"],
+        "naturalness_rationale": "等 cierra una enumeración representativa de tareas profesionales."
+      },
+      "kanji_readings_add": [
+        {"characters": "確認したり", "reading_hiragana": "かくにんしたり", "meaning_es": "revisar, entre otras cosas"},
+        {"characters": "業務", "reading_hiragana": "ぎょうむ", "meaning_es": "tareas profesionales"}
+      ]
+    },
+    "1045": {
+      "reason": "Especificar un juego para que una función de育成 resulte natural.",
+      "fields": {
+        "japanese": "このゲームには、育成機能しかありません。",
+        "spanish": "Este juego solo tiene una función de desarrollo.",
+        "scenario_es": "Una persona describe la única función disponible en un juego.",
+        "topic_primary": "tecnologia",
+        "topic_secondary": ["gaming"],
+        "situation_tag": "app_solo_criar_personajes",
+        "vocabulary_tags": ["ゲーム", "育成", "機能", "しかない"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["このゲーム", "育成機能", "しかありません"],
+        "naturalness_rationale": "育成機能 es una denominación habitual para una mecánica de desarrollo dentro de un juego."
+      }
+    },
+    "1046": {
+      "reason": "Enseñar 万 mediante un ejemplo numérico natural y la estructura やすい.",
+      "fields": {
+        "japanese": "「一万」のように数字と一緒に覚えると、この漢字は覚えやすいです。",
+        "spanish": "Este kanji es fácil de recordar si lo aprendes con un número, como en «diez mil».",
+        "scenario_es": "Una persona explica una estrategia para recordar el kanji 万.",
+        "topic_primary": "estudio",
+        "situation_tag": "recordar_kanji_con_numero",
+        "vocabulary_tags": ["一万", "数字", "一緒に", "覚える", "漢字", "覚えやすい"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["一万のように", "数字と一緒に", "覚えると", "覚えやすい"],
+        "naturalness_rationale": "一万 muestra el kanji dentro de un número real y apoya una estrategia de memoria."
+      },
+      "kanji_readings_add": [
+        {"characters": "一万", "reading_hiragana": "いちまん", "meaning_es": "diez mil"},
+        {"characters": "数字", "reading_hiragana": "すうじ", "meaning_es": "número"},
+        {"characters": "一緒", "reading_hiragana": "いっしょ", "meaning_es": "junto"}
+      ]
+    },
+    "1047": {
+      "reason": "Eliminar el fragmento final y usar 例えば dentro de un consejo relacional natural.",
+      "fields": {
+        "japanese": "例えば、毎日連絡しすぎると、関係が悪くなることもあります。",
+        "spanish": "Por ejemplo, contactar demasiado todos los días puede empeorar la relación.",
+        "scenario_es": "Una persona ofrece un ejemplo de conducta que puede perjudicar una relación.",
+        "topic_primary": "relaciones",
+        "situation_tag": "ejemplo_contacto_excesivo",
+        "vocabulary_tags": ["例えば", "毎日", "連絡する", "すぎる", "関係", "悪くなる"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["例えば", "毎日連絡しすぎると", "関係が悪くなる", "こともあります"],
+        "naturalness_rationale": "例えば introduce un caso concreto y 連絡しすぎる expresa exceso de forma idiomática."
+      },
+      "kanji_readings_add": [
+        {"characters": "毎日", "reading_hiragana": "まいにち", "meaning_es": "cada día"},
+        {"characters": "連絡しすぎる", "reading_hiragana": "れんらくしすぎる", "meaning_es": "contactar demasiado"}
+      ]
+    },
+    "1049": {
+      "reason": "Usar 識別 en una comprobación laboral concreta durante una reunión.",
+      "fields": {
+        "japanese": "会議の間に、商品を識別する番号を確認しました。",
+        "spanish": "Durante la reunión, comprobé el número que identifica el producto.",
+        "scenario_es": "Una persona verifica un identificador de producto durante una reunión.",
+        "topic_primary": "trabajo",
+        "situation_tag": "comprobar_identificador_reunion",
+        "vocabulary_tags": ["会議", "間に", "商品", "識別する", "番号", "確認する"],
+        "accepted_alternatives_es": [],
+        "accepted_alternatives_ja": [],
+        "critical_meaning_units": ["会議の間に", "商品を識別する番号", "確認しました"],
+        "naturalness_rationale": "識別する modifica un número cuya función concreta es identificar el producto."
+      },
+      "kanji_readings_add": [
+        {"characters": "会議", "reading_hiragana": "かいぎ", "meaning_es": "reunión"},
+        {"characters": "商品", "reading_hiragana": "しょうひん", "meaning_es": "producto"},
+        {"characters": "番号", "reading_hiragana": "ばんごう", "meaning_es": "número"},
+        {"characters": "確認しました", "reading_hiragana": "かくにんしました", "meaning_es": "comprobé"}
+      ]
     }
   }
 }

@@ -15,11 +15,11 @@ El JLPT actual no publica una lista oficial cerrada de vocabulario, kanji o gram
 
 | Nivel | Pares semánticos activos | Ejercicios publicados |
 |---|---:|---:|
-| N5 | 300 | 600: 300 JP→ES + 300 ES→JP |
-| N4 | 450 | 900: 450 JP→ES + 450 ES→JP |
-| N3 | 650 | 1.300 |
-| N2 | 850 | 1.700 |
-| N1 | 1.100 | 2.200 |
+| N5 | 700 | 1.400: 700 JP→ES + 700 ES→JP |
+| N4 | 1.200 | 2.400: 1.200 JP→ES + 1.200 ES→JP |
+| N3 | 2.000 | 4.000 |
+| N2 | 3.500 | 7.000 |
+| N1 | 6.000 | 12.000 |
 
 N5 o N4 solo se considera completo cuando cada par:
 
@@ -118,8 +118,8 @@ La sesión orientativa mezcla 55 % del objetivo actual, 25 % de repasos vencidos
 
 ## Orden de ejecución
 
-1. Revalidar todos los pares N5 existentes y completar 300.
-2. Revalidar todos los pares N4 existentes y completar 450.
+1. Mantener N5 por encima de 700 pares mientras se cierra la cobertura 2x del inventario.
+2. Completar N4 hasta 1.200 pares y cerrar su cobertura 2x.
 3. Publicar cada par en ambas direcciones sin modificar IDs utilizados.
 4. Auditar sincronización, selección adaptativa, furigana y feedback.
 5. Ampliar después N3, N2 y N1 manteniendo exactamente la misma mecánica de traducción.

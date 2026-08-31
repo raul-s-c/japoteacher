@@ -60,8 +60,8 @@ Antes de pasar al siguiente ejercicio, los fallos léxicos son propuestas, no al
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 1.470 activos |
-| N4 | 2.400 ejercicios | 1.820 activos |
+| N5 | 1.400 ejercicios | 1.674 activos |
+| N4 | 2.400 ejercicios | 2.090 activos |
 | N3 | 4.000 ejercicios | 0 activos |
 | N2 | 7.000 ejercicios | 0 activos |
 | N1 | 12.000 ejercicios | 0 activos |

@@ -1,10 +1,10 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "authority_note": "Los descriptores y tipos de ítem proceden del JLPT oficial. Los inventarios de gramática son una taxonomía pedagógica interna, no una lista oficial del JLPT.",
   "topics": ["vida_diaria", "hogar", "comida", "compras", "transporte", "viajes", "salud", "estudio", "trabajo", "relaciones", "ocio", "naturaleza", "servicios", "tecnologia", "sociedad", "cultura"],
   "levels": {
     "N5": {
-      "target_pairs": 300,
+      "target_pairs": 700,
       "jp_chars": [8, 22],
       "es_words": [4, 12],
       "sentence_length_bands": {"short": {"jp_chars": [6, 16], "es_words": [2, 7]}, "standard": {"jp_chars": [10, 24], "es_words": [5, 12]}, "long": {"jp_chars": [16, 32], "es_words": [8, 18]}},
@@ -15,7 +15,7 @@
       "grammar_inventory": ["です・ます", "は・が", "を", "に・へ", "で", "と", "から・まで", "の", "も", "か", "ある・いる", "い形容詞", "な形容詞", "て形", "てください", "てもいい", "てはいけない", "ない形", "過去形", "たい", "ましょう", "ませんか", "より・ほうが", "から（理由）", "前に・後で", "もう・まだ", "頻度表現", "数量・助数詞", "疑問詞", "位置表現"]
     },
     "N4": {
-      "target_pairs": 600,
+      "target_pairs": 1200,
       "jp_chars": [12, 32],
       "es_words": [7, 18],
       "sentence_length_bands": {"short": {"jp_chars": [10, 22], "es_words": [4, 10]}, "standard": {"jp_chars": [16, 36], "es_words": [8, 18]}, "long": {"jp_chars": [26, 52], "es_words": [14, 28]}},

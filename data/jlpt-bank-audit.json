@@ -1,17 +1,17 @@
 {
-  "active_rows": 3722,
-  "semantic_pairs": 1861,
+  "active_rows": 3764,
+  "semantic_pairs": 1882,
   "by_level_direction": {
-    "N4/es_ja": 1037,
-    "N4/ja_es": 1037,
-    "N5/es_ja": 824,
-    "N5/ja_es": 824
+    "N4/es_ja": 1045,
+    "N4/ja_es": 1045,
+    "N5/es_ja": 837,
+    "N5/ja_es": 837
   },
-  "structural_issues": 3270,
+  "structural_issues": 3310,
   "issues_by_type": {
-    "tag_count": 2236,
-    "es_length": 712,
-    "jp_length": 322
+    "tag_count": 2266,
+    "es_length": 716,
+    "jp_length": 328
   },
   "duplicate_signatures": 0,
   "invalid_direction_pairs": 0,
@@ -2328,6 +2328,26 @@
       15
     ],
     [
+      "JAES-N5-EDITORIAL-0149",
+      "es_length",
+      3
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0149",
+      "es_length",
+      3
+    ],
+    [
+      "JAES-N5-EDITORIAL-0150",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0150",
+      "tag_count",
+      14
+    ],
+    [
       "JAES-N5-EDITORIAL-0151",
       "tag_count",
       11
@@ -2336,6 +2356,36 @@
       "ESJA-N5-EDITORIAL-0151",
       "tag_count",
       11
+    ],
+    [
+      "JAES-N5-EDITORIAL-0152",
+      "tag_count",
+      24
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0152",
+      "tag_count",
+      24
+    ],
+    [
+      "JAES-N5-EDITORIAL-0153",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0153",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EDITORIAL-0154",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0154",
+      "tag_count",
+      13
     ],
     [
       "JAES-N5-EDITORIAL-0156",
@@ -2476,56 +2526,6 @@
       "ESJA-N5-EDITORIAL-0176",
       "tag_count",
       12
-    ],
-    [
-      "JAES-N5-EDITORIAL-0149",
-      "es_length",
-      3
-    ],
-    [
-      "ESJA-N5-EDITORIAL-0149",
-      "es_length",
-      3
-    ],
-    [
-      "JAES-N5-EDITORIAL-0150",
-      "tag_count",
-      14
-    ],
-    [
-      "ESJA-N5-EDITORIAL-0150",
-      "tag_count",
-      14
-    ],
-    [
-      "JAES-N5-EDITORIAL-0152",
-      "tag_count",
-      24
-    ],
-    [
-      "ESJA-N5-EDITORIAL-0152",
-      "tag_count",
-      24
-    ],
-    [
-      "JAES-N5-EDITORIAL-0153",
-      "tag_count",
-      14
-    ],
-    [
-      "ESJA-N5-EDITORIAL-0153",
-      "tag_count",
-      14
-    ],
-    [
-      "JAES-N5-EDITORIAL-0154",
-      "tag_count",
-      13
-    ],
-    [
-      "ESJA-N5-EDITORIAL-0154",
-      "tag_count",
-      13
     ],
     [
       "JAES-N5-EDITORIAL-0177",
@@ -7510,12 +7510,12 @@
     [
       "JAES-N5-EDITORIAL-0794",
       "tag_count",
-      16
+      18
     ],
     [
       "ESJA-N5-EDITORIAL-0794",
       "tag_count",
-      16
+      18
     ],
     [
       "JAES-N5-EDITORIAL-0796",
@@ -7648,6 +7648,16 @@
       3
     ],
     [
+      "JAES-N5-EDITORIAL-0810",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0810",
+      "tag_count",
+      11
+    ],
+    [
       "JAES-N5-EDITORIAL-0811",
       "tag_count",
       11
@@ -7720,12 +7730,12 @@
     [
       "JAES-N5-EDITORIAL-0818",
       "tag_count",
-      15
+      14
     ],
     [
       "ESJA-N5-EDITORIAL-0818",
       "tag_count",
-      15
+      14
     ],
     [
       "JAES-N5-EDITORIAL-0820",
@@ -7750,12 +7760,12 @@
     [
       "JAES-N5-EDITORIAL-0822",
       "tag_count",
-      11
+      12
     ],
     [
       "ESJA-N5-EDITORIAL-0822",
       "tag_count",
-      11
+      12
     ],
     [
       "JAES-N5-EDITORIAL-0823",
@@ -7770,12 +7780,12 @@
     [
       "JAES-N5-EDITORIAL-0824",
       "tag_count",
-      17
+      16
     ],
     [
       "ESJA-N5-EDITORIAL-0824",
       "tag_count",
-      17
+      16
     ],
     [
       "JAES-N5-EDITORIAL-0829",
@@ -7816,6 +7826,116 @@
       "ESJA-N5-EDITORIAL-0834",
       "tag_count",
       11
+    ],
+    [
+      "JAES-N5-EDITORIAL-0836",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0836",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EDITORIAL-0837",
+      "tag_count",
+      11
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0837",
+      "tag_count",
+      11
+    ],
+    [
+      "JAES-N5-EDITORIAL-0838",
+      "jp_length",
+      7
+    ],
+    [
+      "JAES-N5-EDITORIAL-0838",
+      "es_length",
+      2
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0838",
+      "jp_length",
+      7
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0838",
+      "es_length",
+      2
+    ],
+    [
+      "JAES-N5-EDITORIAL-0840",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0840",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-EDITORIAL-0842",
+      "es_length",
+      3
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0842",
+      "es_length",
+      3
+    ],
+    [
+      "JAES-N5-EDITORIAL-0844",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0844",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N5-EDITORIAL-0846",
+      "tag_count",
+      14
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0846",
+      "tag_count",
+      14
+    ],
+    [
+      "JAES-N5-EDITORIAL-0848",
+      "jp_length",
+      24
+    ],
+    [
+      "JAES-N5-EDITORIAL-0848",
+      "tag_count",
+      16
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0848",
+      "jp_length",
+      24
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0848",
+      "tag_count",
+      16
+    ],
+    [
+      "JAES-N5-EDITORIAL-0849",
+      "tag_count",
+      13
+    ],
+    [
+      "ESJA-N5-EDITORIAL-0849",
+      "tag_count",
+      13
     ],
     [
       "JAES-N4-EDITORIAL-0106",
@@ -16210,12 +16330,12 @@
     [
       "JAES-N4-EDITORIAL-1012",
       "tag_count",
-      22
+      21
     ],
     [
       "ESJA-N4-EDITORIAL-1012",
       "tag_count",
-      22
+      21
     ],
     [
       "JAES-N4-EDITORIAL-1017",
@@ -16270,12 +16390,12 @@
     [
       "JAES-N4-EDITORIAL-1026",
       "tag_count",
-      19
+      20
     ],
     [
       "ESJA-N4-EDITORIAL-1026",
       "tag_count",
-      19
+      20
     ],
     [
       "JAES-N4-EDITORIAL-1028",
@@ -16310,12 +16430,12 @@
     [
       "JAES-N4-EDITORIAL-1034",
       "tag_count",
-      19
+      18
     ],
     [
       "ESJA-N4-EDITORIAL-1034",
       "tag_count",
-      19
+      18
     ],
     [
       "JAES-N4-EDITORIAL-1036",
@@ -16366,6 +16486,86 @@
       "ESJA-N4-EDITORIAL-1041",
       "tag_count",
       14
+    ],
+    [
+      "JAES-N4-EDITORIAL-1042",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1042",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-1043",
+      "tag_count",
+      18
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1043",
+      "tag_count",
+      18
+    ],
+    [
+      "JAES-N4-EDITORIAL-1044",
+      "jp_length",
+      36
+    ],
+    [
+      "JAES-N4-EDITORIAL-1044",
+      "tag_count",
+      25
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1044",
+      "jp_length",
+      36
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1044",
+      "tag_count",
+      25
+    ],
+    [
+      "JAES-N4-EDITORIAL-1046",
+      "tag_count",
+      19
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1046",
+      "tag_count",
+      19
+    ],
+    [
+      "JAES-N4-EDITORIAL-1047",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1047",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-1048",
+      "tag_count",
+      20
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1048",
+      "tag_count",
+      20
+    ],
+    [
+      "JAES-N4-EDITORIAL-1049",
+      "tag_count",
+      22
+    ],
+    [
+      "ESJA-N4-EDITORIAL-1049",
+      "tag_count",
+      22
     ]
   ],
   "duplicates": {},

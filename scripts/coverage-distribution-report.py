@@ -92,8 +92,20 @@ def metric(level, kind, rows, counter):
     text = "\n".join(active_japanese_texts(level))
     counts = [counter(row, text) for row in rows]
     introduced = sum(value >= 1 for value in counts)
+
+    def threshold(minimum):
+        covered = sum(value >= minimum for value in counts)
+        return {
+            "covered": covered,
+            "total": len(rows),
+            "percent": round(covered / max(1, len(rows)) * 100),
+        }
+
     return {
         "coverage": f"{introduced}/{len(rows)} ({round(introduced / max(1, len(rows)) * 100)}%)",
+        "at_least_1": threshold(1),
+        "at_least_2": threshold(2),
+        "at_least_3": threshold(3),
         "distribution": distribution(rows, counts),
     }
 
