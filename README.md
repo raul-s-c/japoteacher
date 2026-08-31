@@ -24,7 +24,8 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 - La pestaña `Noticia del día` usa Brave Search desde el Worker para localizar una noticia reciente y OpenAI para reescribirla como lectura japonesa graduada por JLPT y tramo alto/medio/bajo, con furigana, vocabulario y explicación gramatical. Las preguntas de comprensión pueden alternarse entre japonés y español, se responden una a una y el Worker corrige cada respuesta con IA.
 - Las noticias se almacenan como cantera editorial local/sincronizada, incluyendo fuente, lectura, vocabulario, gramática, preguntas y frases candidatas para revisar antes de futuras tandas de generación.
 - Las respuestas de comprensión de noticias se guardan como evidencia de estudio con score, nivel, dificultad, tags y delta de EXP ranked reducido frente a una frase completa.
-- Los fallos léxicos detectados en noticias o correcciones diarias alimentan un micro-SRS de palabras/kanji fallados en la pestaña Hoy.
+- El micro-SRS léxico se retiró de la experiencia activa. Sus registros históricos se conservan para no destruir progreso, pero ya no crea preguntas, contadores ni EXP nueva.
+- Después de cada traducción, el alumno puede activar `Repetir mañana`. La frase se sincroniza como una repetición voluntaria y se añade por encima de la cuota base: con 20/10 y cuatro/dos marcas, la sesión siguiente contiene 20+4 y 10+2. Estos ejercicios aparecen identificados como `Extra voluntaria` en Hoy, el selector y la práctica.
 - Las migraciones `003` a `006` y `009` crean el almacenamiento, permisos, historial, borrado y métricas de EXP de informes. Aplícalas después de `002_atomic_sync.sql` antes de activar el backend de informes.
 - Cada intento conserva un ledger de EXP ranked: delta, posición antes/después, JLPT, dificultad, familias y repetición. Esto permite recalibrar la fórmula en el futuro sin perder evidencia histórica.
 - Se añadieron pruebas unitarias para la independencia direccional de la ruta temática y para los periodos semanal/mensual.
@@ -56,7 +57,7 @@ El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por ac
 
 Tras corregir cada intento, el usuario puede marcar la sensación del ejercicio como `muy fácil`, `normal` o `muy difícil`. Esa señal no cambia la evaluación lingüística, pero sí ajusta el SRS: `muy fácil` alarga el intervalo y sube el factor de facilidad; `muy difícil` acorta el próximo repaso, baja la facilidad y evita marcar el ejercicio como dominado.
 
-Antes de pasar al siguiente ejercicio, los fallos léxicos son propuestas, no altas automáticas definitivas. El alumno puede aceptar o rechazar cada término, corregir el japonés o su significado y añadir varios elementos propios pegándolos por líneas, comas o punto y coma. Los kanji y lecturas detectados aparecen también como botones para añadirlos sin teclearlos. Solo los elementos confirmados alimentan el micro-SRS y quedan vinculados al intento.
+Antes de pasar al siguiente ejercicio, el alumno valora la dificultad, puede ajustar la nota y decide opcionalmente si quiere repetir exactamente esa frase al día siguiente. La repetición queda vinculada al intento mediante `repeat_requested_for`, viaja con la cuenta y nunca sustituye una plaza de la cuota diaria normal.
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
@@ -253,7 +254,7 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 
 - Cada dirección tiene una ruta continua, mostrada como tramos JLPT: N5 `0-100`, N4 `100-300`, N3 `300-700`, N2 `700-1500` y N1 `1500-3100`. Por tanto, N5 `100/100` es exactamente N4 `0/200`; no son dos contadores aislados ni una EXP que se pierda al cruzar el borde.
 - Cada frase ocupa una coordenada dentro de esa ruta, calculada con su JLPT y termómetro. Una respuesta correcta siempre desplaza a la derecha: una frase que queda a la derecha del estudiante tiene mayor multiplicador, y una frase ya a su izquierda sigue sumando, pero menos.
-- La política `guided_usability_v2` integra en un mismo ledger traducciones, comprensión de noticias y micro-SRS. La traducción completa tiene peso `1`, una respuesta de noticia `0,65` y una recuperación léxica `0,28`; en los tres casos mandan la nota, JLPT, termómetro, distancia respecto al alumno, novedad y espaciado.
+- La política `guided_usability_v2` integra en un mismo ledger traducciones y comprensión de noticias. La traducción completa tiene peso `1` y una respuesta de noticia `0,65`; en ambos casos mandan la nota, JLPT, termómetro, distancia respecto al alumno, novedad y espaciado. Los eventos históricos del micro-SRS se conservan, pero la modalidad está retirada y no produce EXP nueva.
 - Repetir una frase el mismo día aporta aproximadamente un 6% de su valor normal. Una frase ya resuelta con 80 o más queda fuera del plan al menos 21 días, y con 90 o más durante 30 días. Los fallos pueden reaparecer antes, pero no en el mismo día y preferentemente mediante transferencia a otra frase del mismo concepto.
 - El 50% es el mínimo pedagógico: suma EXP testimonial, mientras que cualquier resultado inferior mueve a la izquierda de forma proporcional. Un fallo en una frase muy a la derecha (exploración del nivel superior) recibe una penalización reducida.
 - El desbloqueo no depende de cuatro respuestas. Además de la EXP, exige evidencia distinta en las cinco familias: N5 `12`, N4 `18`, N3 `24`, N2 `32` y N1 `40` frases por familia, con medias mínimas crecientes de `70–78%` y tasas aceptables de `60–70%`. Desde el 80% de EXP, si se cumplen esos requisitos, pueden aparecer frases puente del nivel siguiente.
@@ -291,7 +292,7 @@ El resultado final debe ser una tarjeta visual, no texto crudo. Cada informe deb
 - fortalezas consolidadas;
 - acciones concretas para los siguientes 7/30 días;
 - bloque acumulado construido a partir de resúmenes de informes anteriores;
-- EXP neta, ganada y perdida por dirección y modalidad (traducción, noticias y micro-SRS), con el historial diario de respuestas que la produjo;
+- EXP neta, ganada y perdida por dirección y modalidad activa (traducción y noticias), con el historial diario de respuestas que la produjo;
 - enlaces a los intentos que justifican cada conclusión.
 
 Arquitectura objetivo:

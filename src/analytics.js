@@ -13,7 +13,7 @@
   }
   async function snapshot(){
     if(cache)return cache;
-    const [attempts,progress,exercises,sessions,tagProgress,newsAnswers,lexicalCards,newsArticles,lensCaptures]=await Promise.all(['attempts','exercise_progress','exercises','daily_sessions','tag_progress','news_answers','lexical_cards','news_articles','lens_captures'].map(JapoDB.all));
+    const [attempts,progress,exercises,sessions,tagProgress,newsAnswers,newsArticles,lensCaptures]=await Promise.all(['attempts','exercise_progress','exercises','daily_sessions','tag_progress','news_answers','news_articles','lens_captures'].map(JapoDB.all));
     const eMap=new Map(exercises.map(e=>[e.exercise_id,e]));
     const dirs={ja_es:{count:0,total:0,acceptable:0},es_ja:{count:0,total:0,acceptable:0}};
     const validExerciseAttempts=attempts.filter(attempt=>attempt.evaluation_status!=='invalid'&&Number.isFinite(Number(attempt.overall_score))&&eMap.get(attempt.exercise_id)?.active!==false);
@@ -35,7 +35,7 @@
     Object.values(dirs).forEach(direction=>direction.average=direction.count?Math.round(direction.total/direction.count):0);
     const tags=tagProgress.map(tag=>({direction:tag.direction,type:tag.tag_type,value:tag.tag_value,count:tag.attempts_count||0,average:tagAverage(tag)})).map(tag=>({...tag,priority:tagPriority(tag)})).sort((a,b)=>b.priority-a.priority||b.count-a.count||a.value.localeCompare(b.value,'es'));
     const completedDays=new Set(sessions.filter(s=>s.status==='completed'||JSON.parse(s.completed_exercise_ids_json||'[]').length).map(s=>s.local_date));
-    cache={attempts:validAttempts.sort((a,b)=>b.attempted_at.localeCompare(a.attempted_at)),allAttempts:attempts.sort((a,b)=>b.attempted_at.localeCompare(a.attempted_at)),validAttempts,progress,exercises,eMap,dirs,tags,tagGroups:groupTags(tags),completedDays,newsAnswers,lexicalCards,newsArticles,lensCaptures};
+    cache={attempts:validAttempts.sort((a,b)=>b.attempted_at.localeCompare(a.attempted_at)),allAttempts:attempts.sort((a,b)=>b.attempted_at.localeCompare(a.attempted_at)),validAttempts,progress,exercises,eMap,dirs,tags,tagGroups:groupTags(tags),completedDays,newsAnswers,newsArticles,lensCaptures};
     return cache;
   }
   if(typeof document!=='undefined')document.addEventListener('japoteacher:db-write',()=>{cache=null});

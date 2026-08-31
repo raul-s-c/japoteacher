@@ -120,6 +120,8 @@
     }
     return [...rows.values()];
   }
+  function attemptUpdatedAt(row){return row?.repeat_request_updated_at||row?.manual_score_adjusted_at||row?.user_difficulty_feedback_at||row?.attempted_at||''}
+  function mergeAttempt(local,remote){return attemptUpdatedAt(local)>=attemptUpdatedAt(remote)?local:remote}
   function mergeSession(local, remote) {
     const completed = [
         ...new Set([
@@ -131,10 +133,8 @@
         ...JSON.parse(remote.drafts_json || "{}"),
         ...JSON.parse(local.drafts_json || "{}"),
       },
-      total = Math.max(
-        (local.planned_ja_es || 0) + (local.planned_es_ja || 0),
-        (remote.planned_ja_es || 0) + (remote.planned_es_ja || 0),
-      );
+      mergeIds = field => [...new Set([...JSON.parse(remote[field] || "[]"),...JSON.parse(local[field] || "[]")])],
+      jaIds=mergeIds('exercise_ids_ja_es_json'),esIds=mergeIds('exercise_ids_es_ja_json'),jaRepeats=mergeIds('voluntary_repeat_ids_ja_es_json'),esRepeats=mergeIds('voluntary_repeat_ids_es_ja_json'),total=new Set([...jaIds,...esIds]).size;
     return {
       ...remote,
       ...local,
@@ -156,6 +156,10 @@
             ? "in_progress"
             : "planned",
       completed_exercise_ids_json: JSON.stringify(completed),
+      exercise_ids_ja_es_json:JSON.stringify(jaIds),
+      exercise_ids_es_ja_json:JSON.stringify(esIds),
+      voluntary_repeat_ids_ja_es_json:JSON.stringify(jaRepeats),
+      voluntary_repeat_ids_es_ja_json:JSON.stringify(esRepeats),
       drafts_json: JSON.stringify(drafts),
     };
   }
@@ -181,7 +185,7 @@
         store === "lens_captures" ||
         store === "lens_messages"
       )
-        out.stores[store] = unionRows(l, r, key);
+        out.stores[store] = store==='attempts'?unionRows(l,r,key,mergeAttempt):unionRows(l, r, key);
       else if (store === "exercise_overrides")
         out.stores[store] = unionRows(l, r, key, (a, b) =>
           newer(a, b, "updated_at"),

@@ -268,7 +268,6 @@
         vocabulary_score:score
       });
       await updateNewsTagProgress({profileId,direction,score,isAcceptable:Boolean(correction.is_correct)||score>=70,attemptedAt:now,topicTags,grammarTags,vocabularyTags});
-      await saveLexicalFailures({profileId,answerId,articleId,attemptedAt:now,question,failures:correction.lexical_failures||[]});
     });
     await renderAnswerHistory();
     await renderLibrary();
@@ -279,17 +278,6 @@
       const n=p.attempts_count;p.attempts_count++;p.correct_count+=score>=80?1:0;p.acceptable_count+=isAcceptable?1:0;
       for(const key of ['objective','comprehensibility','naturalness','grammar','vocabulary'])p[`average_${key}_score`]=Math.round((p[`average_${key}_score`]*n+score)/(n+1));
       p.last_seen_at=attemptedAt;p.mastery_score=Math.round((p.average_objective_score+p.average_comprehensibility_score+p.average_naturalness_score)/3);p.priority_score=100-p.mastery_score;await JapoDB.put('tag_progress',p);
-    }
-  }
-  function hasJapaneseText(value){return /[\u3400-\u9fff々〆ヶぁ-んァ-ンー]/.test(String(value||''))}
-  async function saveLexicalFailures({profileId,answerId,articleId,attemptedAt,question,failures}){
-    for(const item of failures.filter(item=>item?.term_ja&&item?.prompt_es&&hasJapaneseText(item.term_ja)).slice(0,8)){
-      const direction=item.direction==='es_ja'?'es_ja':'ja_es',term=stripInlineReadings(item.term_ja),cardId=`${profileId}::${direction}::${term}`;
-      const card=await JapoDB.get('lexical_cards',cardId)||{card_id:cardId,profile_id:profileId,direction,term_ja:stripInlineReadings(item.term_ja||''),reading_hiragana:stripInlineReadings(item.reading_hiragana||''),prompt_es:item.prompt_es||'',created_at:attemptedAt,source_answer_ids_json:'[]',status:'active'};
-      const sourceIds=new Set(JSON.parse(card.source_answer_ids_json||'[]'));sourceIds.add(answerId);
-      await JapoDB.put('lexical_cards',{...card,term_ja:term,reading_hiragana:stripInlineReadings(item.reading_hiragana||card.reading_hiragana||''),prompt_es:item.prompt_es||card.prompt_es||'',source_article_id:articleId,source_sentence_ja:stripInlineReadings(question?.question_ja||term),last_seen_at:attemptedAt,last_reason_es:item.reason_es||'',desired_meaning_es:item.prompt_es||card.prompt_es||'',review_mode:'contextual_transfer',source_answer_ids_json:JSON.stringify([...sourceIds]),status:'active'});
-      const progressId=`${profileId}::${cardId}`,progress=await JapoDB.get('lexical_progress',progressId)||{progress_id:progressId,card_id:cardId,profile_id:profileId,total_attempts:0,successful_attempts:0,average_score:0,mastered:false};
-      progress.total_attempts++;progress.last_seen_at=attemptedAt;progress.last_score=0;progress.next_review_at=attemptedAt;await JapoDB.put('lexical_progress',progress);
     }
   }
   function render(data,{persist=true,articleId=null}={}){

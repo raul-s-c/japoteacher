@@ -48,7 +48,8 @@ test("a daily plan from an older selector is marked for rebalancing", () => {
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "topic_adaptive_srs_difficulty_ranked_v6" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_coverage_v10" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v13_voluntary_repeats" }) }), false);
 });
 
 test("a zero-evidence family gets an intervention slot ahead of ordinary due reviews", () => {
@@ -125,4 +126,39 @@ test("changing daily targets resizes today's pending plan without losing complet
   assert.equal(reduced.planned_es_ja, 2);
   assert.ok(JSON.parse(reduced.exercise_ids_ja_es_json).includes("ja-0"));
   assert.ok(JSON.parse(reduced.exercise_ids_es_ja_json).includes("es-0"));
+});
+
+test("voluntary repeats are appended beyond the normal 20 and 10 quotas", async () => {
+  const TopicProgression = { analyze: () => [], bonus: () => 0, familyFor: () => "Conocimiento y consultas" };
+  const exercises = [
+    ...Array.from({ length: 30 }, (_, index) => ({ exercise_id: `ja-${index}`, active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 20, topic_tags: [`ja-${index}`], grammar_tags: [`jg-${index}`], vocabulary_tags: [`jv-${index}`] })),
+    ...Array.from({ length: 20 }, (_, index) => ({ exercise_id: `es-${index}`, active: true, direction: "es_ja", jlpt_level: "N5", difficulty: 20, topic_tags: [`es-${index}`], grammar_tags: [`eg-${index}`], vocabulary_tags: [`ev-${index}`] })),
+  ];
+  const attempts = [
+    ...[0, 1, 2, 3].map(index => ({ attempt_id: `rj-${index}`, profile_id: "profile", exercise_id: `ja-${index}`, direction: "ja_es", evaluation_status: "valid", overall_score: 80, attempted_at: "2026-08-30T12:00:00Z", repeat_tomorrow: true, repeat_requested_for: "2026-08-31", repeat_request_updated_at: `2026-08-30T12:0${index}:00Z` })),
+    ...[0, 1].map(index => ({ attempt_id: `re-${index}`, profile_id: "profile", exercise_id: `es-${index}`, direction: "es_ja", evaluation_status: "valid", overall_score: 80, attempted_at: "2026-08-30T12:00:00Z", repeat_tomorrow: true, repeat_requested_for: "2026-08-31", repeat_request_updated_at: `2026-08-30T13:0${index}:00Z` })),
+  ];
+  let session = null;
+  const JapoDB = {
+    get: async () => session,
+    all: async store => ({ exercises, exercise_progress: [], attempts })[store] || [],
+    put: async (store, value) => { if (store === "daily_sessions") session = value; },
+  };
+  const context = {
+    window: { TopicProgression, RankedProgress: { snapshot: () => ({}), accessForDirection: () => ({ allowedLevels: ["N5"] }) } },
+    TopicProgression,
+    Difficulty: { bands: [0], bandFor: () => 0, score: () => 20, levelIndex: () => 0 },
+    JapoDB, Date, Math, Set, Map, JSON,
+  };
+  vm.runInNewContext(fs.readFileSync(new URL("../src/session-planner.js", import.meta.url), "utf8"), context);
+  const planned = await context.window.SessionPlanner.getOrCreate("profile", { levels: ["N5"], dailyJaEs: 20, dailyEsJa: 10 }, "2026-08-31");
+  const ja = JSON.parse(planned.exercise_ids_ja_es_json), es = JSON.parse(planned.exercise_ids_es_ja_json);
+  assert.equal(planned.planned_ja_es, 20);
+  assert.equal(planned.planned_es_ja, 10);
+  assert.equal(ja.length, 24);
+  assert.equal(es.length, 12);
+  assert.deepEqual(JSON.parse(planned.voluntary_repeat_ids_ja_es_json), ["ja-0", "ja-1", "ja-2", "ja-3"]);
+  assert.deepEqual(JSON.parse(planned.voluntary_repeat_ids_es_ja_json), ["es-0", "es-1"]);
+  assert.equal(new Set(ja).size, 24);
+  assert.equal(new Set(es).size, 12);
 });
