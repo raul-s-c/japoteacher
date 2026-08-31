@@ -108,11 +108,15 @@
     const byId = new Map(overrides.map((row) => [row.exercise_id, row]));
     return rows.map((row) => applyExerciseOverride(row, byId.get(row.exercise_id)));
   }
+  function normalizeWrite(store, value) {
+    if (store !== "attempts" || !value || value.ranked_xp_version || value.ranked_xp_policy) return value;
+    return { ...value, ranked_xp_policy: "guided_usability_v2" };
+  }
   const api = {
     open,
     get: (s, k) => s === "exercises" ? exerciseWithOverride(k) : tx(s, "readonly", (o) => o.get(k)),
     all: (s) => s === "exercises" ? exercisesWithOverrides() : allRaw(s),
-    put: (s, v) => write(s, (o) => o.put(v)),
+    put: (s, v) => write(s, (o) => o.put(normalizeWrite(s, v))),
     bulkPut: (s, vs) =>
       write(s, (o) => {
         vs.forEach((v) => o.put(v));

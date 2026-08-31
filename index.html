@@ -165,6 +165,7 @@
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Tags</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
         <section class="panel wide ranked-panel" id="rankedProgressPanel" data-progress-section="resumen"></section>
+        <section class="panel wide study-summary-panel" id="studySummary" data-progress-section="resumen"></section>
         <div class="stats-grid" id="summaryStats" data-progress-section="resumen"></div>
         <div class="analytics-grid">
           <div class="wide" id="teacherDiagnosis" data-progress-section="resumen"></div>
@@ -202,20 +203,20 @@
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
-  <script src="src/db.js?v=33"></script>
+  <script src="src/db.js?v=34"></script>
   <script src="src/sync-policy.js?v=1"></script>
   <script src="src/cloud-sync.js?v=35"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=3"></script>
   <script src="src/topic-progression.js?v=39"></script>
-  <script src="src/ranked-progress.js?v=15"></script>
-  <script src="src/ranked-history.js?v=1"></script>
-  <script src="src/session-planner.js?v=45"></script>
+  <script src="src/ranked-progress.js?v=16"></script>
+  <script src="src/ranked-history.js?v=2"></script>
+  <script src="src/session-planner.js?v=46"></script>
   <script src="src/furigana-generated.js?v=31"></script>
   <script src="src/furigana.js?v=26"></script>
   <script src="src/difficulty.js?v=36"></script>
-  <script src="src/reports.js?v=49"></script>
+  <script src="src/reports.js?v=50"></script>
   <script src="src/evaluators/ai-evaluator.js"></script>
   <script src="src/evaluators/mock-evaluator.js?v=19"></script>
   <script src="src/evaluators/openai-evaluator.js?v=21"></script>
@@ -223,12 +224,13 @@
   <script src="src/ai-connection-test.js?v=11"></script>
   <script src="src/csv-import.js?v=2"></script>
   <script src="src/csv-export.js"></script>
-  <script src="src/analytics.js?v=39"></script>
+  <script src="src/analytics.js?v=41"></script>
+  <script src="src/study-summary.js?v=1"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
   <script src="src/ui.js?v=42"></script>
   <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=78"></script>
-  <script src="src/navigation-fix.js?v=4"></script>
+  <script src="app.js?v=79"></script>
+  <script src="src/navigation-fix.js?v=5"></script>
   <script src="src/mobile-insets.js?v=1"></script>
   <script src="src/bank-status.js?v=27"></script>
   <script src="src/extra-study.js?v=22"></script>
@@ -238,7 +240,7 @@
   <script src="src/practice-tools.js?v=3"></script>
   <script src="src/ai-tutor.js?v=3"></script>
   <script src="src/lens.js?v=4"></script>
-  <script src="src/daily-news.js?v=5"></script>
+  <script src="src/daily-news.js?v=6"></script>
   <script src="src/manual-adjustments.js?v=6"></script>
   <script src="src/lexical-review-editor.js?v=1"></script>
   <script src="src/topic-drill.js?v=33"></script>

@@ -47,7 +47,8 @@ test("a daily plan from an older selector is marked for rebalancing", () => {
   const srs = planner();
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "topic_adaptive_srs_difficulty_ranked_v6" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_coverage_v10" }) }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), false);
 });
 
 test("a zero-evidence family gets an intervention slot ahead of ordinary due reviews", () => {

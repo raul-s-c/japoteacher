@@ -36,12 +36,15 @@ test("vocabulary evidence remains in the report JSON payload", () => {
 test("report experience aggregates net, gains, losses and daily evidence", () => {
   const metrics = experienceMetrics([
     { direction: "ja_es", attempted_at: "2026-08-14T10:00:00Z", ranked_xp_delta: 1.2 },
-    { direction: "ja_es", attempted_at: "2026-08-14T10:05:00Z", ranked_xp_delta: -0.2 },
-    { direction: "es_ja", attempted_at: "2026-08-15T10:00:00Z", ranked_xp_delta: 0.5 },
+    { direction: "ja_es", attempted_at: "2026-08-14T10:05:00Z", ranked_xp_delta: -0.2, study_event_type: "daily_news_answer" },
+    { direction: "es_ja", attempted_at: "2026-08-15T10:00:00Z", ranked_xp_delta: 0.5, study_event_type: "lexical_review" },
   ]);
   assert.equal(metrics.net, 1.5);
   assert.equal(metrics.gained, 1.7);
   assert.equal(metrics.lost, -0.2);
   assert.equal(metrics.daily.length, 2);
   assert.equal(metrics.direction.ja_es.net, 1);
+  assert.equal(metrics.activity.translation_attempt.count, 1);
+  assert.equal(metrics.activity.daily_news_answer.net, -0.2);
+  assert.equal(metrics.activity.lexical_review.net, 0.5);
 });

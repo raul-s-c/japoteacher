@@ -253,16 +253,20 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 
 - Cada dirección tiene una ruta continua, mostrada como tramos JLPT: N5 `0-100`, N4 `100-300`, N3 `300-700`, N2 `700-1500` y N1 `1500-3100`. Por tanto, N5 `100/100` es exactamente N4 `0/200`; no son dos contadores aislados ni una EXP que se pierda al cruzar el borde.
 - Cada frase ocupa una coordenada dentro de esa ruta, calculada con su JLPT y termómetro. Una respuesta correcta siempre desplaza a la derecha: una frase que queda a la derecha del estudiante tiene mayor multiplicador, y una frase ya a su izquierda sigue sumando, pero menos.
-- Cada respuesta aporta una base ligada a la dirección y el termómetro, ajustada por resultado, distancia, novedad e historial concreto; repetir una frase ya dominada apenas da EXP. El 50% es el mínimo pedagógico: suma EXP testimonial, mientras que cualquier resultado inferior mueve a la izquierda de forma proporcional.
-- Un fallo en una frase muy a la derecha (exploración del nivel superior) recibe una penalización muy reducida. La posición no puede bajar de cero.
-- El siguiente nivel solo se desbloquea al completar la EXP del actual y demostrar al menos un 50% con evidencia mínima en las cinco familias de conversación. Desde el 80% de EXP, si se cumplen esas familias, pueden aparecer frases puente del nivel siguiente.
+- La política `guided_usability_v2` integra en un mismo ledger traducciones, comprensión de noticias y micro-SRS. La traducción completa tiene peso `1`, una respuesta de noticia `0,65` y una recuperación léxica `0,28`; en los tres casos mandan la nota, JLPT, termómetro, distancia respecto al alumno, novedad y espaciado.
+- Repetir una frase el mismo día aporta aproximadamente un 6% de su valor normal. Una frase ya resuelta con 80 o más queda fuera del plan al menos 21 días, y con 90 o más durante 30 días. Los fallos pueden reaparecer antes, pero no en el mismo día y preferentemente mediante transferencia a otra frase del mismo concepto.
+- El 50% es el mínimo pedagógico: suma EXP testimonial, mientras que cualquier resultado inferior mueve a la izquierda de forma proporcional. Un fallo en una frase muy a la derecha (exploración del nivel superior) recibe una penalización reducida.
+- El desbloqueo no depende de cuatro respuestas. Además de la EXP, exige evidencia distinta en las cinco familias: N5 `12`, N4 `18`, N3 `24`, N2 `32` y N1 `40` frases por familia, con medias mínimas crecientes de `70–78%` y tasas aceptables de `60–70%`. Desde el 80% de EXP, si se cumplen esos requisitos, pueden aparecer frases puente del nivel siguiente.
 - Las familias muestran evidencia de aprendizaje (resultado y muestras), no una conversión engañosa de EXP. JP→ES y ES→JP nunca comparten EXP ni desbloqueos.
+- La política de EXP está versionada. Los intentos que ya tienen `ranked_xp_version: 1` conservan exactamente el delta registrado; no se reescribe el progreso histórico. Las nuevas acciones usan la versión 2, salvo que el usuario ajuste manualmente una nota, caso en el que solo se recalcula ese intento.
+- Leer, abrir una explicación o consultar la lupa cuenta en el resumen de actividad cuando exista un evento guardado, pero no demuestra por sí solo dominio JLPT. El rango solo cambia con una respuesta evaluada, evitando EXP artificial por consumo pasivo.
 
 #### SRS equilibrado
 
-- El SRS mantiene revisiones vencidas y una mayoría de material nuevo cuando el banco lo permite, pero puntúa además el desequilibrio por familia de conversación y registro.
+- El SRS reserva al menos el 60% del plan a material no visto cuando el banco lo permite. El resto combina revisiones vencidas, transferencia de debilidades y material puente, puntuando además el desequilibrio por familia, tema, registro, vocabulario, kanji y gramática.
 - Las familias o registros con pocas muestras, peor media o escasa práctica reciben prioridad. Dentro de la misma sesión, cada selección reduce temporalmente la prioridad de su propia familia y registro para evitar bloques monocordes.
 - El equilibrio se calcula por dirección y solo entre material permitido por la ruta JLPT, por lo que JP→ES y ES→JP siguen siendo rutas independientes.
+- Progreso muestra un resumen móvil de los últimos siete días: acciones por modalidad, nota media, EXP neta, ejercicios y términos distintos, días activos y la familia que el planificador priorizará en la siguiente sesión.
 
 ### Criterio global de finalización
 
@@ -287,7 +291,7 @@ El resultado final debe ser una tarjeta visual, no texto crudo. Cada informe deb
 - fortalezas consolidadas;
 - acciones concretas para los siguientes 7/30 días;
 - bloque acumulado construido a partir de resúmenes de informes anteriores;
-- EXP neta, ganada y perdida por dirección, con el historial diario de respuestas que la produjo;
+- EXP neta, ganada y perdida por dirección y modalidad (traducción, noticias y micro-SRS), con el historial diario de respuestas que la produjo;
 - enlaces a los intentos que justifican cada conclusión.
 
 Arquitectura objetivo:

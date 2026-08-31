@@ -240,6 +240,33 @@
         response_id:data.response_id||'',
         usage_json:JSON.stringify(data.usage||{})
       });
+      await JapoDB.put('attempts',{
+        attempt_id:answerId,
+        exercise_id:`news:${articleId}:${index}`,
+        profile_id:profileId,
+        direction,
+        attempted_at:now,
+        local_date:localDate(),
+        evaluation_status:'valid',
+        study_event_type:'daily_news_answer',
+        ranked_xp_policy:'guided_usability_v2',
+        source_article_id:articleId,
+        question_index:index,
+        jlpt_level:level,
+        difficulty,
+        weight:.65,
+        topic_tags:topicTags,
+        grammar_tags:grammarTags,
+        vocabulary_tags:vocabularyTags,
+        user_answer:studentAnswer,
+        overall_score:score,
+        is_acceptable:Boolean(correction.is_correct)||score>=70,
+        objective_score:score,
+        comprehensibility_score:score,
+        naturalness_score:score,
+        grammar_score:score,
+        vocabulary_score:score
+      });
       await updateNewsTagProgress({profileId,direction,score,isAcceptable:Boolean(correction.is_correct)||score>=70,attemptedAt:now,topicTags,grammarTags,vocabularyTags});
       await saveLexicalFailures({profileId,answerId,articleId,attemptedAt:now,question,failures:correction.lexical_failures||[]});
     });

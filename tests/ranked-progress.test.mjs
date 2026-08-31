@@ -151,3 +151,25 @@ test("daily news comprehension answers contribute reduced EXP without a bank exe
   assert.ok(xp.primaryForDirection(snapshot, "ja_es").points < xp.deltaFor(0, { direction: "ja_es", jlpt_level: "N5", difficulty: 70 }, { overall_score: 88 }, { currentLevel: "N5" }));
   assert.equal(xp.get(snapshot, "ja_es", "Dinero y proyectos").attempts, 1);
 });
+
+test("versioned legacy EXP remains exactly as it was recorded", () => {
+  const xp = ranked();
+  const exercises = [{ exercise_id: "legacy-anchor", direction: "ja_es", jlpt_level: "N5", difficulty: 90, topic_tags: ["trabajo"] }];
+  const attempts = [{ attempt_id: "legacy", exercise_id: "legacy-anchor", direction: "ja_es", attempted_at: "2026-08-01T08:00:00Z", evaluation_status: "valid", overall_score: 100, is_acceptable: true, ranked_xp_version: 1, ranked_xp_delta: 2.75 }];
+  assert.equal(xp.history(exercises, attempts)[0].delta, 2.75);
+});
+
+test("same-day repetition earns far less than a properly spaced retrieval", () => {
+  const xp = ranked(), exercise = { direction: "ja_es", jlpt_level: "N5", difficulty: 55 };
+  const sameDay = xp.deltaFor(10, exercise, { overall_score: 90 }, { position: 10, currentLevel: "N5", timesSeen: 1, previousScore: 90, previousAt: "2026-08-01T08:00:00Z", attemptedAt: "2026-08-01T12:00:00Z" });
+  const spaced = xp.deltaFor(10, exercise, { overall_score: 90 }, { position: 10, currentLevel: "N5", timesSeen: 1, previousScore: 90, previousAt: "2026-08-01T08:00:00Z", attemptedAt: "2026-08-24T08:00:00Z" });
+  assert.ok(spaced > sameDay * 10);
+});
+
+test("micro-SRS contributes to ranked mastery with a deliberately smaller weight", () => {
+  const xp = ranked(), context = { position: 10, currentLevel: "N5", timesSeen: 0 };
+  const translation = xp.deltaFor(10, { direction: "ja_es", jlpt_level: "N5", difficulty: 50 }, { overall_score: 100 }, context);
+  const lexical = xp.deltaFor(10, { direction: "ja_es", jlpt_level: "N5", difficulty: 50, study_event_type: "lexical_review", weight: .28 }, { overall_score: 100 }, context);
+  assert.ok(lexical > 0);
+  assert.ok(lexical < translation / 3);
+});
