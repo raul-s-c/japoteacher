@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=62">
+  <link rel="stylesheet" href="styles.css?v=63">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -200,6 +200,7 @@
   <div class="detail-modal" id="historyDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="historyDetailTitle"><div class="section-heading"><h2 id="historyDetailTitle">Detalle del intento</h2><button class="icon-button" id="closeHistoryDetail" aria-label="Cerrar detalle">✕</button></div><div id="historyDetailBody"></div></section></div>
   <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
+  <div class="detail-modal" id="filterExerciseDialog" hidden><section class="detail-modal-card filter-exercise-card" role="dialog" aria-modal="true" aria-labelledby="filterExerciseTitle"><p class="section-kicker">Control editorial personal</p><h2 id="filterExerciseTitle">¿Retirar esta frase?</h2><p class="chooser-help">No volverá a aparecer en tu práctica y también se retirará su pareja inversa. Tu historial anterior se conserva.</p><blockquote id="filterExerciseText"></blockquote><p class="issue-form-status" id="filterExerciseStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelFilterExercise" type="button">Cancelar</button><button class="danger" id="confirmFilterExercise" type="button">No pasa el filtro</button></div></section></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
   <script src="src/db.js?v=34"></script>
@@ -221,14 +222,14 @@
   <script src="src/evaluators/openai-evaluator.js?v=21"></script>
   <script src="src/evaluators/evaluator-router.js?v=2"></script>
   <script src="src/ai-connection-test.js?v=11"></script>
-  <script src="src/csv-import.js?v=2"></script>
+  <script src="src/csv-import.js?v=4"></script>
   <script src="src/csv-export.js"></script>
   <script src="src/analytics.js?v=42"></script>
   <script src="src/study-summary.js?v=2"></script>
   <script src="src/teacher-diagnosis.js?v=2"></script>
-  <script src="src/ui.js?v=42"></script>
-  <script src="src/history-ui.js?v=36"></script>
-  <script src="app.js?v=82"></script>
+  <script src="src/ui.js?v=43"></script>
+  <script src="src/history-ui.js?v=37"></script>
+  <script src="app.js?v=84"></script>
   <script src="src/navigation-fix.js?v=5"></script>
   <script src="src/mobile-insets.js?v=1"></script>
   <script src="src/bank-status.js?v=27"></script>

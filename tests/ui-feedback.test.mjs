@@ -32,6 +32,22 @@ test("JP to ES feedback shows the Spanish reference instead of repeating the pro
   assert.match(html, /Traducci.n de referencia/);
   assert.match(html, /Ayer tome el metro con un amigo/);
   assert.doesNotMatch(html, /frase correcta en japon/);
+  assert.match(html, /respuesta modelo/);
+});
+
+test("key words show their real-usage percentile and derived level", () => {
+  const html = feedback({
+    ...evaluation,
+    kanji_readings: [{ characters: "友達", reading_hiragana: "ともだち", meaning_es: "amigo", explanation_es: "Persona cercana." }],
+  }, "Ayer fui con un amigo.", {
+    direction: "ja_es",
+    exercise: {
+      reference_translation: "Ayer fui con un amigo.",
+      usage_components: [{ k: "v", t: "友達", p: 7.42, l: "N5" }],
+    },
+  });
+  assert.match(html, /Palabras clave del enunciado/);
+  assert.match(html, /Top 7\.4% · N5/);
 });
 
 test("ES to JP feedback retains the corrected Japanese sentence", () => {

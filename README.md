@@ -7,7 +7,7 @@ PWA estática para aprender traduciendo frases en dos direcciones independientes
 
 La aplicación combina sesiones adaptativas, SRS, evaluación mediante OpenAI, furigana, historial detallado y sincronización robusta entre dispositivos mediante Supabase. No utiliza un framework ni necesita compilación.
 
-## Estado de relevo — 29 de agosto de 2026
+## Estado de relevo — 1 de septiembre de 2026
 
 La versión publicada y estable está en `main`. Informes, termómetro, progreso por dirección, Tutor IA, Noticia del día, incidencias, EXP ranked y SRS equilibrado están implementados como base funcional. La deuda abierta se concentra en ampliar banco editorial y en validar manualmente sincronización real entre PC y móvil tras cada cambio de esquema.
 
@@ -32,10 +32,11 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 
 ### Banco editorial actual
 
-- Fuentes editoriales aprobadas: 667 pares N5 y 864 pares N4, verificadas sin incidencias por `scripts/audit-editorial-pairs.py`.
-- Total publicado en `data/exercises.full.csv`: 4.052 ejercicios; 3.552 están activos (777 N5 y 999 N4 por dirección) y 500 se conservan archivados.
+- Total publicado en `data/exercises.full.csv`: 4.264 ejercicios; 3.764 están activos, equivalentes a 1.882 parejas semánticas, y 500 se conservan archivados.
+- Clasificación activa derivada del ranking de uso: 41 parejas N5, 268 N4, 821 N3, 658 N2 y 94 N1. Estas cantidades no son objetivos ni cuotas: son el resultado de analizar el contenido real de cada frase.
+- `scripts/usage-classification.py` recalcula de forma determinista vocabulario, kanji, estructuras, percentil limitante, JLPT y dificultad. `scripts/audit-jlpt-bank.py` exige trazabilidad de percentil y coherencia entre ambas direcciones.
 - La ampliación del 30 de agosto usó 1.008.622 tokens y `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 18 pares N5 y 66 pares N4, con revisión adversarial, deduplicación, calibración y furigana.
-- El termómetro se recalibra en lotes pequeños y deja checkpoint y consumo en `data/editorial/`; si se agota un presupuesto, solo se aplican las puntuaciones realmente revisadas y el resto queda pendiente de la siguiente tanda.
+- El termómetro se deriva de forma determinista del percentil limitante y de una corrección acotada por carga lingüística. El pipeline ya no ejecuta una segunda revisión por IA que pueda pisar esa clasificación.
 - Ficheros fuente: `data/editorial/n5-approved.jsonl` y `data/editorial/n4-approved.jsonl`.
 - La app solo contiene traducción JP→ES y ES→JP. No se deben añadir otros tipos de ejercicio.
 
@@ -43,15 +44,17 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 
 Los objetivos se expresan en ejercicios publicados, contando JP→ES y ES→JP por separado. Se trabajará hacia el límite alto del rango razonable para que el SRS tenga suficiente variedad durante años de práctica.
 
-A partir de `japanese_usage_progress_v2_csv.zip`, la generación nueva se rige por cobertura de uso real, no solo por volumen bruto. Cada nivel JLPT simulado tiene una lista de vocabulario, kanji y gramática de referencia; el bloque de un nivel no se considera completo hasta que cada palabra y cada kanji objetivo aparezcan al menos 2 veces, preferiblemente 3, en frases naturales y con el sentido indicado por la referencia. Las expresiones gramaticales pueden aparecer con mayor frecuencia, pero deben mantenerse equilibradas según su peso de uso.
+A partir de `japanese_usage_progress_v2_csv.zip`, el diccionario ordenado por uso real es la autoridad. Cada inventario se divide por percentil: top 0-10% N5, 10-30% N4, 30-60% N3, 60-90% N2 y 90-100% N1. Esta división se aplica por separado a vocabulario, kanji y estructuras. El bloque de un nivel no se considera cubierto hasta que cada objetivo aparezca al menos 2 veces, preferiblemente 3, en frases naturales y con el sentido indicado.
+
+El nivel de una frase nunca se asigna antes de crearla ni se conserva por el nombre del lote que la generó. Después de redactarla se detectan sus componentes y la frase hereda el nivel del componente relevante más avanzado. No se fuerza ninguna distribución del banco: si una generación destinada a cubrir vocabulario frecuente incorpora una estructura N3, la frase se conserva como N3 siempre que sea correcta y natural. Esa frase sí cuenta para la cobertura del vocabulario frecuente que contiene; la cobertura se mide por componente en todo el banco activo, no solo dentro de frases cuyo JLPT final coincida. Las palabras ausentes del diccionario quedan marcadas para revisión; nunca se presumen fáciles.
 
 Antes de cada tanda editorial de tokens, el generador debe calcular la deuda de cobertura del nivel: términos con 0 usos, después términos con 1 uso, y por último elementos sobrerrepresentados que conviene evitar. Las frases JP→ES se crean para entrenar comprensión real de esos elementos; las frases ES→JP se diseñan a la inversa, como estímulos en español que obligan a producir el vocabulario, kanji y patrón japonés objetivo. Cada frase futura debería declarar los `Word_ID`, `Kanji_ID` y `Grammar_ID` que cubre para que el SRS y los informes puedan explicar por qué aparece.
 
-Una frase no debe rechazarse solo porque, al cubrir vocabulario/kanji objetivo N5, use una construcción que se acerque a N4. Si la frase es natural, correcta, no duplicada y cubre los objetivos, se publica como elemento puente con tag `n5_to_n4_bridge` y dificultad alta dentro de N5. Se rechazan únicamente frases duplicadas, absurdas, incorrectas, sin equivalencia clara, sin furigana/lecturas completas o que no incluyan el objetivo de cobertura.
+Una frase no debe rechazarse solo porque mezcle componentes de varios niveles. Si es natural, correcta, no duplicada y cubre los objetivos, se publica con el JLPT derivado después de analizarla. Se rechazan únicamente frases duplicadas, absurdas, incorrectas, sin equivalencia clara, sin furigana/lecturas completas o que no incluyan el objetivo de cobertura.
 
-Al publicar frases editoriales, la dificultad se recalcula en escala 0-100 a partir de longitud, carga de vocabulario/kanji y marcadores gramaticales puente. Los valores mecánicos antiguos 1-7 no se preservan como porcentajes para evitar ejercicios complejos mostrados como N5/N4 casi 0%.
+Al publicar frases editoriales, `scripts/publish-editorial-bank.py` ejecuta automáticamente la clasificación por uso. La dificultad 0-100 expresa la posición dentro de la banda JLPT resultante y añade una corrección acotada por carga combinada, gramática y longitud. Se conservan `original_jlpt_level` y `original_difficulty` para auditoría.
 
-Para corregir calibraciones claramente incoherentes sin reordenar todo el banco, usa `node scripts/fix-flagrant-calibrations.mjs --write`. Sube mínimos conservadores en patrones puente N5 y estructuras N4 fuertes/moderadas, aplica un suelo pedagógico 8/100 para N5/N4 activos y mantiene el nivel JLPT original.
+`scripts/fix-flagrant-calibrations.mjs` y `scripts/review-difficulty-with-ai.mjs` quedan como utilidades históricas y no forman parte del pipeline. No deben aplicarse sobre el banco clasificado, porque introducirían una segunda escala incompatible con el ranking de uso.
 
 El SRS debe usar esa misma referencia: no basta con espaciar repeticiones por acierto/error. La selección diaria debe evitar bloques monocordes por tema y priorizar familias, temas, registros, vocabulario, kanji y gramática con poca evidencia. Si una sesión empieza a concentrarse en contextos recurrentes como hospitales o colegios, el planificador debe desplazar prioridad hacia otros contextos con deuda equivalente.
 
@@ -61,13 +64,13 @@ Antes de pasar al siguiente ejercicio, el alumno valora la dificultad, puede aju
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | 1.400 ejercicios | 1.674 activos |
-| N4 | 2.400 ejercicios | 2.090 activos |
-| N3 | 4.000 ejercicios | 0 activos |
-| N2 | 7.000 ejercicios | 0 activos |
-| N1 | 12.000 ejercicios | 0 activos |
+| N5 | Cobertura del top 10% | 82 ejercicios activos |
+| N4 | Cobertura del tramo 10-30% | 536 ejercicios activos |
+| N3 | Cobertura del tramo 30-60% | 1.642 ejercicios activos |
+| N2 | Cobertura del tramo 60-90% | 1.316 ejercicios activos |
+| N1 | Cobertura del tramo 90-100% | 188 ejercicios activos |
 
-Prioridad: cerrar N5 hasta 1.400, profundizar N4 hasta 2.400 y empezar N3 bajo solo cuando aporte transiciones naturales desde N4 alto. N2 y N1 se generarán después de que N3 tenga una base suficiente y calibrada.
+La prioridad editorial se calcula por deuda de vocabulario, kanji y estructuras, no por inflar una fila concreta. Las nuevas frases se clasifican después de su creación y pueden alimentar cualquier nivel.
 
 ## Arranque rápido en el nuevo PC
 

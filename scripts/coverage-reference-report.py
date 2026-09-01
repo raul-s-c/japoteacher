@@ -8,11 +8,33 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def level_for(percentile):
+    if percentile < 10:
+        return "N5"
+    if percentile < 30:
+        return "N4"
+    if percentile < 60:
+        return "N3"
+    if percentile < 90:
+        return "N2"
+    return "N1"
+
+
 def read_reference(zip_path, filename, level):
     with zipfile.ZipFile(zip_path) as archive:
         with archive.open(filename) as raw:
             text = raw.read().decode("utf-8-sig").splitlines()
-    return [row for row in csv.DictReader(text) if row.get("Simulated_JLPT") == level]
+    rows = list(csv.DictReader(text))
+    rank_field = {"vocabulary_10000_v2.csv": "Study_Rank", "kanji_2000_v2.csv": "Usage_Rank", "grammar_750_v2.csv": "Usage_Proxy_Rank"}[filename]
+    selected = []
+    for index, row in enumerate(rows):
+        try:
+            rank = int(float(row.get(rank_field) or index + 1))
+        except ValueError:
+            rank = index + 1
+        if level_for(100 * (rank - 1) / max(1, len(rows))) == level:
+            selected.append(row)
+    return selected
 
 
 def japanese_text(row):
@@ -24,14 +46,14 @@ def japanese_text(row):
     return ""
 
 
-def published_texts(level):
+def published_texts(level=None):
     path = ROOT / "data" / "exercises.full.csv"
     with path.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
     seen = set()
     texts = []
     for row in rows:
-        if row.get("jlpt_level") != level or str(row.get("active", "")).lower() != "true":
+        if str(row.get("active", "")).lower() != "true":
             continue
         text = japanese_text(row)
         if not text or text in seen:

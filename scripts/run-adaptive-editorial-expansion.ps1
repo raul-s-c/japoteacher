@@ -43,11 +43,6 @@ try {
   Run-Editorial @('scripts/audit-editorial-pairs.py','N5')
   Run-Editorial @('scripts/audit-editorial-pairs.py','N4')
   Run-Editorial @('scripts/publish-editorial-bank.py')
-  if (Has-Budget $TokenBudget) {
-    $env:EDITORIAL_API_KEY = $env:JAPOTEACHER_EDITORIAL_KEY
-    & node scripts/review-difficulty-with-ai.mjs --levels N5,N4 --apply-reviewed --usage-baseline $UsageBaseline --token-budget $TokenBudget 2>&1 | Tee-Object -FilePath $log -Append
-    if ($LASTEXITCODE -ne 0) { throw 'Falló la recalibración editorial de dificultad.' }
-  }
   Run-Editorial @('scripts/generate-editorial-furigana.py')
   Run-Editorial @('scripts/audit-jlpt-bank.py')
   Run-Editorial @('scripts/audit-difficulty.py')

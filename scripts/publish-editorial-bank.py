@@ -1,6 +1,9 @@
 import csv
 import json
 import pathlib
+import os
+import subprocess
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
@@ -102,6 +105,9 @@ def main():
     with CSV_PATH.open("w", encoding="utf-8-sig", newline="") as output:
         writer = csv.DictWriter(output, fieldnames=fields)
         writer.writeheader(); writer.writerows(rows)
+    usage_zip = pathlib.Path(os.environ.get("JAPOTEACHER_USAGE_REFERENCE_ZIP", pathlib.Path.home() / "Downloads" / "japanese_usage_progress_v2_csv.zip"))
+    if usage_zip.exists():
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "usage-classification.py"), "--zip", str(usage_zip), "--write"], cwd=ROOT, check=True)
     print(json.dumps({"published_exercises": added, "total": len(rows)}, ensure_ascii=False))
 
 if __name__ == "__main__": main()

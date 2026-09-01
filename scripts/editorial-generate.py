@@ -207,9 +207,9 @@ def request_editorial(payload, key, retries=6):
                 raise RuntimeError(f"La llamada editorial falló tras {retries} intentos: {error}") from error
             time.sleep(2 ** attempt)
 
-def active_pairs(level):
+def active_pairs(level=None):
     rows = list(csv.DictReader((ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="")))
-    return [row for row in rows if row["active"].lower() == "true" and row["jlpt_level"] == level and row["direction"] == "ja_es"]
+    return [row for row in rows if row["active"].lower() == "true" and row["direction"] == "ja_es" and (level is None or row["jlpt_level"] == level)]
 
 def existing_pairs(level):
     return [row for row in active_pairs(level) if "-EDITORIAL-" not in row["exercise_id"]]
@@ -245,15 +245,32 @@ def load_usage_rows(zip_path, name):
         text = archive.read(name).decode("utf-8-sig")
     return list(csv.DictReader(text.splitlines()))
 
+def percentile_level(row, total, rank_field):
+    try:
+        rank = int(float(row.get(rank_field) or total))
+    except ValueError:
+        rank = total
+    percentile = 100 * (rank - 1) / max(1, total)
+    if percentile < 10: return "N5"
+    if percentile < 30: return "N4"
+    if percentile < 60: return "N3"
+    if percentile < 90: return "N2"
+    return "N1"
+
 def usage_reference(zip_path, level):
+    vocabulary = load_usage_rows(zip_path, "vocabulary_10000_v2.csv")
+    kanji = load_usage_rows(zip_path, "kanji_2000_v2.csv")
+    grammar = load_usage_rows(zip_path, "grammar_750_v2.csv")
     return {
-        "vocabulary": [row for row in load_usage_rows(zip_path, "vocabulary_10000_v2.csv") if row.get("Simulated_JLPT") == level],
-        "kanji": [row for row in load_usage_rows(zip_path, "kanji_2000_v2.csv") if row.get("Simulated_JLPT") == level],
-        "grammar": [row for row in load_usage_rows(zip_path, "grammar_750_v2.csv") if row.get("Simulated_JLPT") == level],
+        "vocabulary": [row for row in vocabulary if percentile_level(row, len(vocabulary), "Study_Rank") == level],
+        "kanji": [row for row in kanji if percentile_level(row, len(kanji), "Usage_Rank") == level],
+        "grammar": [row for row in grammar if percentile_level(row, len(grammar), "Usage_Proxy_Rank") == level],
     }
 
 def all_japanese_texts(level, approved):
-    texts = [row["source_text"] for row in active_pairs(level)]
+    # A frequent N5 component still counts as covered when a less frequent
+    # component makes the complete sentence N3, N2 or N1.
+    texts = [row["source_text"] for row in active_pairs()]
     texts.extend(item.get("japanese", "") for item in approved)
     return "\n".join(texts)
 
@@ -451,7 +468,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
     remaining = append if append is not None else max(0, config["target_pairs"] - len(existing) - len(approved))
     if limit is not None:
         remaining = min(remaining, limit)
-    known = {normalize_japanese(row["source_text"]) for row in active_pairs(level)} | {normalize_japanese(item["japanese"]) for item in approved}
+    known = {normalize_japanese(row["source_text"]) for row in active_pairs()} | {normalize_japanese(item["japanese"]) for item in approved}
     rejected_slots = {item["slot"] for item in read_jsonl(rejected_path)}
     used_slots = {item["slot"] for item in approved} | rejected_slots
     state = read_json(state_path) or {}
