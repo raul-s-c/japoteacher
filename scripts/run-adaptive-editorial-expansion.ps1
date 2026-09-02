@@ -36,13 +36,14 @@ $n4Topics = 'ahorro,inversiones,negocio,trabajo,tecnologia,estudio,relaciones,se
 Push-Location $root
 try {
   while (Has-Budget $GenerationBudget) {
-    Run-Editorial @('scripts/editorial-generate.py','N5','--append','8','--topics',$n5Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
+    Run-Editorial @('scripts/editorial-generate.py','N5','--append','8','--group-size','1','--topics',$n5Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
     if (-not (Has-Budget $GenerationBudget)) { break }
-    Run-Editorial @('scripts/editorial-generate.py','N4','--append','8','--topics',$n4Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
+    Run-Editorial @('scripts/editorial-generate.py','N4','--append','8','--group-size','1','--topics',$n4Topics,'--usage-reference-zip',$UsageReferenceZip,'--usage-baseline',$UsageBaseline,'--token-budget',$GenerationBudget)
   }
   Run-Editorial @('scripts/audit-editorial-pairs.py','N5')
   Run-Editorial @('scripts/audit-editorial-pairs.py','N4')
   Run-Editorial @('scripts/publish-editorial-bank.py')
+  Run-Editorial @('scripts/usage-classification.py','--zip',$UsageReferenceZip,'--write')
   Run-Editorial @('scripts/generate-editorial-furigana.py')
   Run-Editorial @('scripts/audit-jlpt-bank.py')
   Run-Editorial @('scripts/audit-difficulty.py')

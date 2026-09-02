@@ -8,6 +8,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 ROWS = list(csv.DictReader((ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="")))
 ACTIVE = [row for row in ROWS if row.get("active", "").lower() == "true"]
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
+CLASSIFICATION_VERSION = "usage_percentile_v2"
 
 def split(value):
     return [part.strip() for part in str(value or "").split("|") if part.strip()]
@@ -42,7 +43,7 @@ for row in ACTIVE:
         issues.append((exercise_id, "percentile_level_mismatch", percentile))
     if not 0 <= difficulty <= 100:
         issues.append((exercise_id, "invalid_difficulty", difficulty))
-    if row.get("usage_classification_version") != "usage_percentile_v1":
+    if row.get("usage_classification_version") != CLASSIFICATION_VERSION:
         issues.append((exercise_id, "classification_version", row.get("usage_classification_version")))
     if not row.get("usage_hardest_component_json"):
         issues.append((exercise_id, "missing_hardest_component", ""))
@@ -57,7 +58,7 @@ for text, rows in pairs.items():
         invalid_pairs.append({"text": text, "directions": dict(directions), "levels": sorted(levels)})
 
 report = {
-    "classification_version": "usage_percentile_v1",
+    "classification_version": CLASSIFICATION_VERSION,
     "active_rows": len(ACTIVE),
     "semantic_pairs": len(pairs),
     "by_level_direction": {"/".join(key): value for key, value in sorted(Counter((row["jlpt_level"], row["direction"]) for row in ACTIVE).items())},

@@ -115,7 +115,17 @@ def validate_slot(item, slot):
     for target in slot.get("target_vocabulary", []):
         word = target.get("word", "")
         reading = target.get("reading", "")
-        if word and word not in item.get("japanese", "") and (not reading or reading not in item.get("japanese", "")):
+        vocabulary_evidence = set(item.get("vocabulary_tags", [])) | set(item.get("verb_tags", [])) | set(item.get("adjective_tags", []))
+        tag_evidence = word in vocabulary_evidence or reading in vocabulary_evidence
+        reading_evidence = False
+        for entry in item.get("kanji_readings", []):
+            entry_reading = entry.get("reading_hiragana", "")
+            okurigana = "".join(character for character in entry.get("characters", "") if "\u3040" <= character <= "\u309f")
+            inflected_stem = len(reading) >= 2 and reading[-1:] in "うくぐすつぬぶむる" and entry_reading == reading[:-1]
+            if reading and (reading in entry_reading or reading == entry_reading + okurigana or inflected_stem):
+                reading_evidence = True
+                break
+        if word and word not in item.get("japanese", "") and (not reading or reading not in item.get("japanese", "")) and not reading_evidence and not tag_evidence:
             errors.append(f"vocabulario objetivo ausente {word}")
     for target in slot.get("target_kanji", []):
         kanji = target.get("kanji", "")
@@ -267,27 +277,40 @@ def usage_reference(zip_path, level):
         "grammar": [row for row in grammar if percentile_level(row, len(grammar), "Usage_Proxy_Rank") == level],
     }
 
-def all_japanese_texts(level, approved):
-    # A frequent N5 component still counts as covered when a less frequent
-    # component makes the complete sentence N3, N2 or N1.
-    texts = [row["source_text"] for row in active_pairs()]
-    texts.extend(item.get("japanese", "") for item in approved)
-    return "\n".join(texts)
-
 def coverage_counts(reference, level, approved):
-    text = all_japanese_texts(level, approved)
+    # Coverage is counted per sentence and from explicit editorial evidence.
+    # Kana substring counts are unsafe: いく is not present in いくら, nor
+    # さい in ください. Visible kanji/katakana can be scanned safely.
+    rows_by_sentence = {}
+    for row in active_pairs():
+        text = row["source_text"] if row.get("direction") == "ja_es" else row.get("reference_translation", "")
+        rows_by_sentence.setdefault(normalize_japanese(text), row)
+    rows = list(rows_by_sentence.values())
+    texts = [row["source_text"] if row.get("direction") == "ja_es" else row.get("reference_translation", "") for row in rows]
+    vocab_tags = [set(filter(None, re.split(r"\s*\|\s*", "|".join(str(row.get(field, "")) for field in ("vocabulary_tags", "verb_tags", "adjective_tags", "counter_tags"))))) for row in rows]
+    grammar_tags = [set(filter(None, re.split(r"\s*\|\s*", str(row.get("grammar_tags", ""))))) for row in rows]
+    kanji_or_katakana = re.compile(r"[\u3400-\u9fff\u30a0-\u30ff]")
     vocabulary = {}
     for row in reference["vocabulary"]:
         word, reading = row.get("Word", ""), row.get("Reading", "")
-        count = text.count(word)
-        if reading and reading != word:
-            count = max(count, text.count(reading))
-        vocabulary[row["Word_ID"]] = count
-    kanji = {row["Kanji_ID"]: text.count(row.get("Kanji", "")) for row in reference["kanji"]}
+        safe_text_match = bool(kanji_or_katakana.search(word))
+        vocabulary[row["Word_ID"]] = sum(1 for text, tags in zip(texts, vocab_tags) if word in tags or reading in tags or (safe_text_match and word in text))
+    kanji = {row["Kanji_ID"]: sum(1 for text in texts if row.get("Kanji", "") in text) for row in reference["kanji"]}
     grammar = {}
     for row in reference["grammar"]:
         form = row.get("Matched_Form") or row.get("Pattern") or ""
-        grammar[row["Grammar_ID"]] = text.count(form) if form and len(form) <= 8 else 0
+        aliases = {form, re.sub(r"\s*→.*$", "", form).strip()}
+        grammar[row["Grammar_ID"]] = sum(1 for tags in grammar_tags if any(alias and alias in tags for alias in aliases))
+    # Approved-but-not-yet-published rows carry the exact coverage targets that
+    # were requested, so they can be counted without guessing from substrings.
+    for item in approved:
+        slot = item.get("coverage_slot") or {}
+        for target in slot.get("target_vocabulary", []):
+            vocabulary[target.get("id")] = vocabulary.get(target.get("id"), 0) + 1
+        for target in slot.get("target_kanji", []):
+            kanji[target.get("id")] = kanji.get(target.get("id"), 0) + 1
+        for target in slot.get("target_grammar", []):
+            grammar[target.get("id")] = grammar.get(target.get("id"), 0) + 1
     return {"vocabulary": vocabulary, "kanji": kanji, "grammar": grammar}
 
 def sorted_debt(rows, counts, id_field, min_uses):
@@ -338,8 +361,6 @@ def make_usage_coverage_slots(level, start, count, topics_override, reference, c
             row = vocab_debt[vocab_index]
             vocab_index += 1
             word = row.get("Word", "")
-            if row.get("Script_Type") not in {"kanji", "katakana"}:
-                continue
             if level == "N5" and word in UNSUITABLE_N5_COVERAGE_WORDS:
                 continue
             if len(word) < 2:

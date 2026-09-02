@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
-VERSION = "usage_percentile_v1"
+VERSION = "usage_percentile_v2"
 KANJI_RE = re.compile(r"[\u3400-\u9fff]")
 KATAKANA_RE = re.compile(r"[\u30a0-\u30ff]")
 
@@ -75,6 +75,10 @@ def japanese(row):
     return row.get("source_text", "") if row.get("direction") == "ja_es" else row.get("reference_translation", "")
 
 
+def sentence_key(row):
+    return re.sub(r"[\s。、！？「」『』（）・,.!?]", "", japanese(row))
+
+
 def compact(item):
     return {"k": item["kind"][0], "t": item["term"], "p": item["percentile"], "l": item["level"]}
 
@@ -100,7 +104,6 @@ class UsageClassifier:
         # inside 始まります). Kana items are resolved from editorial tags; text
         # scanning is limited to visible kanji/katakana and uses longest matches.
         self.scan_vocab = [item for item in self.vocabulary if len(item["term"]) >= 2 and (KANJI_RE.search(item["term"]) or KATAKANA_RE.search(item["term"]))]
-        self.scan_grammar = [item for item in self.grammar if 2 <= len(item["term"]) <= 12 and "→" not in item["term"]]
 
     def resolve_vocab_tag(self, value):
         if value in self.tag_cache:
@@ -111,9 +114,9 @@ class UsageClassifier:
             if value.endswith(suffix) and len(value) > len(suffix):
                 variants.append(value[:-len(suffix)])
         if item is None:
-            related = [candidate for candidate in self.vocabulary if any(len(variant) >= 2 and (candidate["term"] in variant or variant in candidate["term"]) for variant in variants)]
-            if related:
-                item = sorted(related, key=lambda candidate: (abs(len(candidate["term"]) - len(value)), candidate["rank"]))[0]
+            # Editorial tags may contain an inflected form, but a shorter kana
+            # substring is not evidence of a word (さい in ください, for example).
+            item = next((self.vocab_exact.get(variant) for variant in variants if self.vocab_exact.get(variant)), None)
         self.tag_cache[value] = item
         return item
 
@@ -156,9 +159,8 @@ class UsageClassifier:
             item = self.grammar_exact.get(value)
             if item:
                 found.append(item)
-        for item in self.scan_grammar:
-            if item["term"] in text:
-                found.append(item)
+        # Grammar is accepted only from the editorial tag. Free substring
+        # scanning confuses constructions such as ないで with ないです.
         visible_kanji = set(KANJI_RE.findall(text))
         for character in visible_kanji:
             item = self.kanji_exact.get(character)
@@ -191,13 +193,36 @@ def classify_bank(csv_path, zip_path, write=False, emit_js=None):
         if field not in fields:
             fields.append(field)
     classifier = UsageClassifier(zip_path)
+    tag_fields = ("vocabulary_tags", "verb_tags", "adjective_tags", "counter_tags", "grammar_tags")
+    grouped = {}
+    for row in rows:
+        grouped.setdefault(sentence_key(row), []).append(row)
+    profiles = {}
+    for key, pair_rows in grouped.items():
+        merged = dict(pair_rows[0])
+        merged["direction"] = "ja_es"
+        merged["source_text"] = japanese(pair_rows[0])
+        for field in tag_fields:
+            merged[field] = "|".join(dict.fromkeys(value for row in pair_rows for value in tags(row.get(field))))
+        profiles[key] = classifier.classify(merged)
     changes, unresolved, levels, difficulties = Counter(), Counter(), Counter(), []
     phrase_profiles = {}
     for row in rows:
-        profile, missing = classifier.classify(row)
+        profile, missing = profiles[sentence_key(row)]
         unresolved.update(missing)
         if not profile:
-            row["usage_classification_confidence"] = "unclassified"
+            # Keep the previous conservative result when the reference has no
+            # resolvable component, but mark it as a fallback of this version.
+            row["usage_classification_version"] = VERSION
+            row["usage_classification_confidence"] = "legacy_fallback" if row.get("usage_percentile") else "reference_gap"
+            if not row.get("usage_percentile"):
+                fallback_percentiles = {"N5": 5, "N4": 20, "N3": 45, "N2": 75, "N1": 95}
+                percentile = fallback_percentiles.get(row.get("jlpt_level"), 95)
+                row["usage_percentile"] = str(percentile)
+                row["usage_hardest_component_json"] = json.dumps({"k": "u", "t": "reference_gap", "p": percentile, "l": row.get("jlpt_level", "N1")}, separators=(",", ":"))
+                row["usage_components_json"] = "[]"
+            if row.get("jlpt_level") in LEVELS:
+                levels[row["jlpt_level"]] += 1
             continue
         old_level, old_difficulty = row.get("jlpt_level", ""), row.get("difficulty", "")
         row["original_jlpt_level"] = row.get("original_jlpt_level") or old_level
