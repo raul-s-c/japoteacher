@@ -47,7 +47,25 @@ test("key words show their real-usage percentile and derived level", () => {
     },
   });
   assert.match(html, /Palabras clave del enunciado/);
-  assert.match(html, /Top 7\.4% · N5/);
+  assert.match(html, /友達 · uso combinado top 7\.4% · N5/);
+});
+
+test("a grouped reading shows the rank of each matched Japanese term", () => {
+  const html = feedback({
+    ...evaluation,
+    kanji_readings: [{ characters: "仕事の資料", reading_hiragana: "しごとのしりょう", meaning_es: "documentos de trabajo", explanation_es: "Material de trabajo." }],
+  }, "Documentos de trabajo.", {
+    direction: "ja_es",
+    exercise: {
+      reference_translation: "Documentos de trabajo.",
+      usage_components: [
+        { k: "v", t: "仕事", p: 0.3, l: "N5", w: 0.91, d: 81, x: 57 },
+        { k: "v", t: "資料", p: 1.76, l: "N5", w: 5.78, d: 63, x: 67 },
+      ],
+    },
+  });
+  assert.match(html, /仕事 · uso combinado top 0\.30%/);
+  assert.match(html, /資料 · uso combinado top 1\.8%/);
 });
 
 test("ES to JP feedback retains the corrected Japanese sentence", () => {

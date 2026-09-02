@@ -21,5 +21,13 @@ class UsageClassificationTests(unittest.TestCase):
             self.assertGreaterEqual(MODULE.difficulty_for(percentile, 8, 2, 24), 0)
             self.assertLessEqual(MODULE.difficulty_for(percentile, 8, 2, 24), 100)
 
+    def test_contextual_reference_groups_mother_forms(self):
+        path = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
+        with path.open(encoding="utf-8-sig") as source:
+            rows = {row["Word"]: row for row in __import__("csv").DictReader(source)}
+        self.assertEqual(rows["母"]["Concept_ID"], rows["お母さん"]["Concept_ID"])
+        self.assertEqual(rows["母"]["Composite_Percentile"], rows["ママ"]["Composite_Percentile"])
+        self.assertLess(float(rows["母"]["Composite_Percentile"]), float(rows["資料"]["Composite_Percentile"]))
+
 if __name__ == "__main__":
     unittest.main()

@@ -8,7 +8,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 ROWS = list(csv.DictReader((ROOT / "data" / "exercises.full.csv").open(encoding="utf-8-sig", newline="")))
 ACTIVE = [row for row in ROWS if row.get("active", "").lower() == "true"]
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
-CLASSIFICATION_VERSION = "usage_percentile_v2"
+CLASSIFICATION_VERSION = "contextual_usage_v3"
 
 def split(value):
     return [part.strip() for part in str(value or "").split("|") if part.strip()]

@@ -32,8 +32,8 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 
 ### Banco editorial actual
 
-- Total publicado en `data/exercises.full.csv`: 4.264 ejercicios; 3.764 están activos, equivalentes a 1.882 parejas semánticas, y 500 se conservan archivados.
-- Clasificación activa derivada del ranking de uso: 41 parejas N5, 268 N4, 821 N3, 658 N2 y 94 N1. Estas cantidades no son objetivos ni cuotas: son el resultado de analizar el contenido real de cada frase.
+- Total publicado en `data/exercises.full.csv`: 4.478 ejercicios; 3.978 están activos, equivalentes a 1.989 parejas semánticas, y 500 se conservan archivados.
+- Clasificación activa contextual: 89 parejas N5, 454 N4, 728 N3, 663 N2 y 55 N1. Estas cantidades no son objetivos ni cuotas: son el resultado de analizar el componente limitante real de cada frase.
 - `scripts/usage-classification.py` recalcula de forma determinista vocabulario, kanji, estructuras, percentil limitante, JLPT y dificultad. `scripts/audit-jlpt-bank.py` exige trazabilidad de percentil y coherencia entre ambas direcciones.
 - La ampliación del 30 de agosto usó 1.008.622 tokens y `japanese_usage_progress_v2_csv.zip` para priorizar deuda de vocabulario/kanji de uso real. Añadió 18 pares N5 y 66 pares N4, con revisión adversarial, deduplicación, calibración y furigana.
 - El termómetro se deriva de forma determinista del percentil limitante y de una corrección acotada por carga lingüística. El pipeline ya no ejecuta una segunda revisión por IA que pueda pisar esa clasificación.
@@ -44,7 +44,9 @@ La versión publicada y estable está en `main`. Informes, termómetro, progreso
 
 Los objetivos se expresan en ejercicios publicados, contando JP→ES y ES→JP por separado. Se trabajará hacia el límite alto del rango razonable para que el SRS tenga suficiente variedad durante años de práctica.
 
-A partir de `japanese_usage_progress_v2_csv.zip`, el diccionario ordenado por uso real es la autoridad. Cada inventario se divide por percentil: top 0-10% N5, 10-30% N4, 30-60% N3, 60-90% N2 y 90-100% N1. Esta división se aplica por separado a vocabulario, kanji y estructuras. El bloque de un nivel no se considera cubierto hasta que cada objetivo aparezca al menos 2 veces, preferiblemente 3, en frases naturales y con el sentido indicado.
+A partir de `japanese_usage_progress_v2_csv.zip`, el vocabulario se recalcula mediante `data/reference/vocabulary-context-v1.csv`: 30% frecuencia web escrita, 45% diálogo de OpenSubtitles, 15% equilibrio entre ambos registros y 10% dispersión entre las cinco familias pedagógicas. Con menos de tres evidencias contextuales, la dispersión es neutral. Kanji y estructuras conservan por ahora sus inventarios ordenados independientes. Cada inventario se divide por percentil: top 0-10% N5, 10-30% N4, 30-60% N3, 60-90% N2 y 90-100% N1.
+
+La cobertura de vocabulario se mide por conceptos revisados, no solo por grafías. `母`, `母親`, `お母さん` y `ママ`, por ejemplo, alimentan el concepto `family.mother`; aun así, cada forma conserva lectura, registro y uso pragmático propios y no se trata como sustitución libre. `data/reference/semantic-concepts.json` contiene los grupos explícitos y el constructor agrupa además variantes con idéntica lectura y glosa. Un concepto no se da por cubierto hasta aparecer al menos 2 veces, preferiblemente 3, en frases naturales; la selección editorial debe procurar también variedad de formas y registros dentro del concepto.
 
 El nivel de una frase nunca se asigna antes de crearla ni se conserva por el nombre del lote que la generó. Después de redactarla se detectan sus componentes y la frase hereda el nivel del componente relevante más avanzado. No se fuerza ninguna distribución del banco: si una generación destinada a cubrir vocabulario frecuente incorpora una estructura N3, la frase se conserva como N3 siempre que sea correcta y natural. Esa frase sí cuenta para la cobertura del vocabulario frecuente que contiene; la cobertura se mide por componente en todo el banco activo, no solo dentro de frases cuyo JLPT final coincida. Las palabras ausentes del diccionario quedan marcadas para revisión; nunca se presumen fáciles.
 
@@ -66,11 +68,11 @@ Antes de pasar al siguiente ejercicio, el alumno valora la dificultad, puede aju
 
 | Nivel | Objetivo publicado | Estado actual |
 | --- | ---: | ---: |
-| N5 | Cobertura del top 10% | 82 ejercicios activos |
-| N4 | Cobertura del tramo 10-30% | 536 ejercicios activos |
-| N3 | Cobertura del tramo 30-60% | 1.642 ejercicios activos |
-| N2 | Cobertura del tramo 60-90% | 1.316 ejercicios activos |
-| N1 | Cobertura del tramo 90-100% | 188 ejercicios activos |
+| N5 | Cobertura del top 10% contextual | 178 ejercicios activos |
+| N4 | Cobertura del tramo 10-30% contextual | 908 ejercicios activos |
+| N3 | Cobertura del tramo 30-60% contextual | 1.456 ejercicios activos |
+| N2 | Cobertura del tramo 60-90% contextual | 1.326 ejercicios activos |
+| N1 | Cobertura del tramo 90-100% contextual | 110 ejercicios activos |
 
 La prioridad editorial se calcula por deuda de vocabulario, kanji y estructuras, no por inflar una fila concreta. Las nuevas frases se clasifican después de su creación y pueden alimentar cualquier nivel.
 

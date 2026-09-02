@@ -14,6 +14,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 POLICY = json.loads((ROOT / "data" / "jlpt-content-policy.json").read_text(encoding="utf-8"))
+CONTEXTUAL_VOCABULARY = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
 ENDPOINT = "https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate"
 MAX_GENERATION_ATTEMPTS = 5
 UNSUITABLE_N5_COVERAGE_WORDS = {"場合", "可能", "バック"}
@@ -269,10 +270,18 @@ def percentile_level(row, total, rank_field):
 
 def usage_reference(zip_path, level):
     vocabulary = load_usage_rows(zip_path, "vocabulary_10000_v2.csv")
+    if CONTEXTUAL_VOCABULARY.exists():
+        contextual = list(csv.DictReader(CONTEXTUAL_VOCABULARY.open(encoding="utf-8-sig", newline="")))
+        concepts = {}
+        for row in contextual:
+            concept_id = row["Concept_ID"]
+            if concept_id not in concepts:
+                concepts[concept_id] = {**row, "Word_ID": concept_id}
+        vocabulary = list(concepts.values())
     kanji = load_usage_rows(zip_path, "kanji_2000_v2.csv")
     grammar = load_usage_rows(zip_path, "grammar_750_v2.csv")
     return {
-        "vocabulary": [row for row in vocabulary if percentile_level(row, len(vocabulary), "Study_Rank") == level],
+        "vocabulary": [row for row in vocabulary if row.get("Composite_JLPT") == level] if CONTEXTUAL_VOCABULARY.exists() else [row for row in vocabulary if percentile_level(row, len(vocabulary), "Study_Rank") == level],
         "kanji": [row for row in kanji if percentile_level(row, len(kanji), "Usage_Rank") == level],
         "grammar": [row for row in grammar if percentile_level(row, len(grammar), "Usage_Proxy_Rank") == level],
     }
@@ -293,8 +302,8 @@ def coverage_counts(reference, level, approved):
     vocabulary = {}
     for row in reference["vocabulary"]:
         word, reading = row.get("Word", ""), row.get("Reading", "")
-        safe_text_match = bool(kanji_or_katakana.search(word))
-        vocabulary[row["Word_ID"]] = sum(1 for text, tags in zip(texts, vocab_tags) if word in tags or reading in tags or (safe_text_match and word in text))
+        forms = [value for value in (row.get("Concept_Members") or word).split("|") if value]
+        vocabulary[row["Word_ID"]] = sum(1 for text, tags in zip(texts, vocab_tags) if any(form in tags or (kanji_or_katakana.search(form) and form in text) for form in forms) or reading in tags)
     kanji = {row["Kanji_ID"]: sum(1 for text in texts if row.get("Kanji", "") in text) for row in reference["kanji"]}
     grammar = {}
     for row in reference["grammar"]:
@@ -315,7 +324,7 @@ def coverage_counts(reference, level, approved):
 
 def sorted_debt(rows, counts, id_field, min_uses):
     def rank(row):
-        raw = row.get("Study_Rank") or row.get("Usage_Rank") or row.get("Usage_Proxy_Rank") or 999999
+        raw = row.get("Composite_Rank") or row.get("Study_Rank") or row.get("Usage_Rank") or row.get("Usage_Proxy_Rank") or 999999
         try:
             order = float(raw)
         except ValueError:
@@ -370,7 +379,10 @@ def make_usage_coverage_slots(level, start, count, topics_override, reference, c
                 "word": word,
                 "reading": row.get("Reading", ""),
                 "meaning_en": row.get("Meaning_EN", ""),
-                "usage_score": row.get("Usage_Score_100", ""),
+                "concept_id": row.get("Concept_ID", row["Word_ID"]),
+                "concept_label": row.get("Concept_Label", row.get("Meaning_EN", "")),
+                "concept_members": [value for value in row.get("Concept_Members", word).split("|") if value],
+                "usage_score": row.get("Composite_Score") or row.get("Usage_Score_100", ""),
                 "current_uses": counts["vocabulary"].get(row["Word_ID"], 0),
             })
         target_kanji = []

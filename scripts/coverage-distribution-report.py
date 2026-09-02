@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
+CONTEXTUAL_VOCABULARY = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
 
 
 def level_for(percentile):
@@ -23,6 +24,12 @@ def level_for(percentile):
 
 
 def read_reference(zip_path, filename, level):
+    if filename == "vocabulary_10000_v2.csv" and CONTEXTUAL_VOCABULARY.exists():
+        rows = list(csv.DictReader(CONTEXTUAL_VOCABULARY.open(encoding="utf-8-sig", newline="")))
+        concepts = {}
+        for row in rows:
+            concepts.setdefault(row["Concept_ID"], row)
+        return [row for row in concepts.values() if row["Composite_JLPT"] == level]
     with zipfile.ZipFile(zip_path) as archive:
         text = archive.read(filename).decode("utf-8-sig").splitlines()
     rows = list(csv.DictReader(text))
@@ -53,7 +60,7 @@ def active_japanese_texts(level=None):
 
 
 def score(row):
-    for key in ("Usage_Score_100", "Usage_Score", "usage_score"):
+    for key in ("Composite_Score", "Usage_Score_100", "Usage_Score", "usage_score"):
         try:
             return float(row.get(key) or 0)
         except ValueError:
@@ -62,9 +69,12 @@ def score(row):
 
 
 def count_vocab(row, text):
-    word = row.get("Word", "")
+    words = [value for value in (row.get("Concept_Members") or row.get("Word", "")).split("|") if value]
     reading = row.get("Reading", "")
-    return max(text.count(word) if word else 0, text.count(reading) if reading and reading != word else 0)
+    values = [text.count(word) for word in words]
+    if reading and reading not in words:
+        values.append(text.count(reading))
+    return max(values or [0])
 
 
 def count_kanji(row, text):

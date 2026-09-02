@@ -15,7 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
-VERSION = "usage_percentile_v2"
+VERSION = "contextual_usage_v3"
+CONTEXTUAL_VOCABULARY_PATH = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
 KANJI_RE = re.compile(r"[\u3400-\u9fff]")
 KATAKANA_RE = re.compile(r"[\u30a0-\u30ff]")
 
@@ -41,11 +42,15 @@ def difficulty_for(percentile, component_count, grammar_count, japanese_length):
     return max(0, min(100, round(within * 0.88 + load)))
 
 
-def read_reference(zip_path, filename, kind):
+def read_reference(zip_path, filename, kind, contextual_vocabulary=None):
     with zipfile.ZipFile(zip_path) as archive:
         rows = list(csv.DictReader(archive.read(filename).decode("utf-8-sig").splitlines()))
     total = len(rows)
     output = []
+    contextual = {}
+    if kind == "vocabulary" and contextual_vocabulary and contextual_vocabulary.exists():
+        with contextual_vocabulary.open(encoding="utf-8-sig", newline="") as source:
+            contextual = {row["Word_ID"]: row for row in csv.DictReader(source)}
     for index, row in enumerate(rows):
         rank_field = {"vocabulary": "Study_Rank", "kanji": "Usage_Rank", "grammar": "Usage_Proxy_Rank"}[kind]
         try:
@@ -63,7 +68,22 @@ def read_reference(zip_path, filename, kind):
             term = row.get("Matched_Form") or row.get("Pattern") or ""
             reading, meaning, item_id = "", row.get("Meaning_EN", ""), row.get("Grammar_ID", "")
         if term:
-            output.append({"id": item_id, "kind": kind, "term": term, "reading": reading, "meaning": meaning, "rank": rank, "percentile": percentile, "level": level_for(percentile)})
+            item = {"id": item_id, "kind": kind, "term": term, "reading": reading, "meaning": meaning, "rank": rank, "percentile": percentile, "level": level_for(percentile)}
+            context = contextual.get(item_id)
+            if context:
+                item.update({
+                    "rank": int(context["Composite_Rank"]),
+                    "percentile": float(context["Composite_Percentile"]),
+                    "level": context["Composite_JLPT"],
+                    "web_percentile": float(context["Web_Percentile"]),
+                    "dialogue_score": float(context["Dialogue_Score"]),
+                    "dialogue_evidence": context.get("Dialogue_Evidence", "direct"),
+                    "context_dispersion": float(context["Context_Dispersion"]),
+                    "concept_id": context["Concept_ID"],
+                    "concept_label": context["Concept_Label"],
+                    "concept_members": context["Concept_Members"].split("|") if context["Concept_Members"] else [term],
+                })
+            output.append(item)
     return output
 
 
@@ -80,12 +100,22 @@ def sentence_key(row):
 
 
 def compact(item):
-    return {"k": item["kind"][0], "t": item["term"], "p": item["percentile"], "l": item["level"]}
+    result = {"k": item["kind"][0], "t": item["term"], "p": item["percentile"], "l": item["level"]}
+    if item["kind"] == "vocabulary" and item.get("concept_id"):
+        result.update({
+            "w": item.get("web_percentile"),
+            "d": item.get("dialogue_score"),
+            "de": item.get("dialogue_evidence"),
+            "x": item.get("context_dispersion"),
+            "c": item["concept_id"],
+            "cl": item.get("concept_label", ""),
+        })
+    return result
 
 
 class UsageClassifier:
-    def __init__(self, zip_path):
-        self.vocabulary = read_reference(zip_path, "vocabulary_10000_v2.csv", "vocabulary")
+    def __init__(self, zip_path, contextual_vocabulary=CONTEXTUAL_VOCABULARY_PATH):
+        self.vocabulary = read_reference(zip_path, "vocabulary_10000_v2.csv", "vocabulary", contextual_vocabulary)
         self.kanji = read_reference(zip_path, "kanji_2000_v2.csv", "kanji")
         self.grammar = read_reference(zip_path, "grammar_750_v2.csv", "grammar")
         self.vocab_exact = {}
@@ -184,7 +214,7 @@ class UsageClassifier:
         }, sorted(set(unresolved))
 
 
-def classify_bank(csv_path, zip_path, write=False, emit_js=None):
+def classify_bank(csv_path, zip_path, write=False, emit_js=None, contextual_vocabulary=CONTEXTUAL_VOCABULARY_PATH):
     with csv_path.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
         fields, rows = list(reader.fieldnames or []), list(reader)
@@ -192,7 +222,7 @@ def classify_bank(csv_path, zip_path, write=False, emit_js=None):
     for field in extra_fields:
         if field not in fields:
             fields.append(field)
-    classifier = UsageClassifier(zip_path)
+    classifier = UsageClassifier(zip_path, contextual_vocabulary)
     tag_fields = ("vocabulary_tags", "verb_tags", "adjective_tags", "counter_tags", "grammar_tags")
     grouped = {}
     for row in rows:
@@ -256,8 +286,9 @@ def main():
     parser.add_argument("--csv", default=str(CSV_PATH))
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--emit-js", default="")
+    parser.add_argument("--contextual-vocabulary", default=str(CONTEXTUAL_VOCABULARY_PATH))
     args = parser.parse_args()
-    result = classify_bank(Path(args.csv), Path(args.zip), args.write, Path(args.emit_js) if args.write and args.emit_js else None)
+    result = classify_bank(Path(args.csv), Path(args.zip), args.write, Path(args.emit_js) if args.write and args.emit_js else None, Path(args.contextual_vocabulary))
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

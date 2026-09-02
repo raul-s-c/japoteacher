@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "description": "Grupos semanticos revisados. Comparten cobertura conceptual, pero sus formas conservan registro y lectura propios.",
+  "concepts": [
+    {"id": "family.mother", "label_es": "madre / mama", "terms": ["母", "母親", "お母さん", "ママ"]},
+    {"id": "family.father", "label_es": "padre / papa", "terms": ["父", "父親", "お父さん", "パパ"]},
+    {"id": "family.parents", "label_es": "padres", "terms": ["両親", "父母"]},
+    {"id": "family.grandmother", "label_es": "abuela", "terms": ["祖母", "お祖母さん", "お婆さん", "ばあちゃん"]},
+    {"id": "family.grandfather", "label_es": "abuelo", "terms": ["祖父", "お祖父さん", "お爺さん", "じいちゃん"]},
+    {"id": "family.husband", "label_es": "marido", "terms": ["夫", "旦那", "主人"]},
+    {"id": "family.wife", "label_es": "esposa", "terms": ["妻", "奥さん", "家内"]},
+    {"id": "family.child", "label_es": "hijo / nino", "terms": ["子", "子供", "子ども"]},
+    {"id": "family.son", "label_es": "hijo varon", "terms": ["息子", "男の子"]},
+    {"id": "family.daughter", "label_es": "hija", "terms": ["娘", "女の子"]},
+    {"id": "people.friend", "label_es": "amigo / amiga", "terms": ["友達", "友人", "友だち"]},
+    {"id": "money.money", "label_es": "dinero", "terms": ["お金", "金銭", "マネー"]},
+    {"id": "work.job", "label_es": "trabajo / empleo", "terms": ["仕事", "職", "職業"]},
+    {"id": "work.documents", "label_es": "documentos", "terms": ["資料", "書類", "文書"]}
+  ]
+}

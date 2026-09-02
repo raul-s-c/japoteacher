@@ -15,6 +15,6 @@ test("usage component evidence remains an array", () => {
 });
 
 test("startup never records a rejected or incomplete bank as loaded", () => {
-  assert.match(appSource, /if\(imported<3790\)throw new Error/);
-  assert.ok(appSource.indexOf("if(imported<3790)") < appSource.indexOf("localStorage.setItem('japoteacher_bank_version'"));
+  assert.match(appSource, /if\(imported<4478\)throw new Error/);
+  assert.ok(appSource.indexOf("if(imported<4478)") < appSource.indexOf("localStorage.setItem('japoteacher_bank_version'"));
 });
