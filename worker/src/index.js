@@ -707,12 +707,11 @@ async function callEditorialOpenAI(operation, payload, env) {
       : editorialGenerationSchema;
   const body = {
     model: "gpt-5.4-mini",
-    // Editorial requests handle one sentence at a time. They do not need
-    // extended reasoning, which can exceed the Worker response window.
-    reasoning: { effort: "none" },
+    // Editorial translation needs reasoning; interactive grading is separate.
+    reasoning: { effort: "low" },
     instructions: operation === "difficulty_review" ? difficultyReviewInstructions() : operation === "repair_kanji" ? kanjiRepairInstructions() : operation === "equivalence_check" ? equivalenceCheckInstructions() : editorialInstructions(operation),
     input: JSON.stringify(payload),
-    max_output_tokens: operation === "difficulty_review" ? 1400 : operation === "equivalence_check" ? 1000 : operation === "repair_kanji" ? 1600 : operation === "review" ? 1800 : 1800,
+    max_output_tokens: Math.min(12000, 4000 * Math.max(1, (payload.items || payload.slots || []).length)),
     text: {
       format: {
         type: "json_schema",
@@ -768,8 +767,11 @@ async function editorial(request, env) {
         .find((item) => item.type === "output_text")?.text;
     if (!outputText)
       return json({ error: "OpenAI no devolvió contenido editorial." }, 502);
+    let result;
+    try { result = JSON.parse(outputText); }
+    catch { return json({ error: "Respuesta editorial incompleta o JSON truncado.", usage: raw.usage, model: raw.model, response_id: raw.id }, 502); }
     return json({
-      result: JSON.parse(outputText),
+      result,
       usage: raw.usage,
       model: raw.model,
       response_id: raw.id,

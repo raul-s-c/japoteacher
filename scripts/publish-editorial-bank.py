@@ -1,3 +1,4 @@
+import argparse
 import csv
 import json
 import pathlib
@@ -52,11 +53,16 @@ def editorial_difficulty(level, item):
     return max(0, min(100, round(base)))
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--append-only", action="store_true", help="Preserve existing exercises, including archived rows and manual metadata.")
+    args = parser.parse_args()
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)
         fields, rows = reader.fieldnames, list(reader)
     preserved_difficulty = reviewed_difficulties(rows)
-    rows = [row for row in rows if "-EDITORIAL-" not in row["exercise_id"]]
+    existing_ids = {row["exercise_id"] for row in rows} if args.append_only else set()
+    if not args.append_only:
+        rows = [row for row in rows if "-EDITORIAL-" not in row["exercise_id"]]
     added = 0
     for level in ("N5", "N4"):
         path = ROOT / "data" / "editorial" / f"{level.lower()}-approved.jsonl"
@@ -88,6 +94,8 @@ def main():
             for direction in ("ja_es", "es_ja"):
                 ja_es = direction == "ja_es"
                 exercise_id = f"{'JAES' if ja_es else 'ESJA'}-{level}-EDITORIAL-{slot:04d}"
+                if exercise_id in existing_ids:
+                    continue
                 row = {field: "" for field in fields}
                 row.update(common)
                 row.update({

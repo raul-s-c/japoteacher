@@ -95,6 +95,8 @@ def mark_bridge_level(item, slot):
 
 def validate_slot(item, slot):
     errors = []
+    if re.search(r"[\u3040-\u30ff\u3400-\u9fff]", item.get("spanish", "")):
+        errors.append("la traduccion espanola contiene texto japones")
     if item.get("slot") != slot["slot"]: errors.append("slot alterado")
     if item.get("topic_primary") != slot["topic_primary"] and not item.get("manual_editorial_override"):
         errors.append("tema primario alterado")
@@ -136,6 +138,8 @@ def validate_slot(item, slot):
         item.get("naturalness_rationale", ""),
         item.get("ambiguity_notes", ""),
     ]).lower()
+    rationale = re.sub(r"sin (?:elementos? |sonar |ser )?(?:forzad[oa]s?|artificial(?:es)?)", "", rationale)
+    rationale = re.sub(r"no (?:es |resulta |suena )?(?:forzad[oa]s?|artificial(?:es)?)", "", rationale)
     quality_red_flags = (
         "poco natural",
         "no es natural",
@@ -204,7 +208,10 @@ def request_editorial(payload, key, retries=6):
             return data["result"]
         except urllib.error.HTTPError as error:
             try:
-                detail = json.loads(error.read().decode("utf-8")).get("error", str(error))
+                failure = json.loads(error.read().decode("utf-8"))
+                if failure.get("usage"):
+                    record_usage(payload, failure)
+                detail = failure.get("error", str(error))
             except (UnicodeDecodeError, json.JSONDecodeError):
                 detail = str(error)
             transient_client_errors = {401, 403, 408, 409, 425, 429}
@@ -539,6 +546,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
                 final, rounds = review_until_approved(result["items"], level, key, slots)
                 if quality_mode == "strict":
                     final = equivalence_check(final, level, key, slots)
+                    final = [{**item, "equivalence_verified": True} for item in final]
                 final_by_slot = {item.get("slot"): normalize_spacing(item) for item in final}
                 if set(final_by_slot) != {slot["slot"] for slot in slots}:
                     raise RuntimeError("La revisión perdió o duplicó identidades de slot.")
@@ -556,6 +564,7 @@ def run(level, limit=None, usage_baseline=None, token_budget=None, append=None, 
                     state_path.unlink()
                 break
             except RuntimeError as error:
+                final = None
                 last_rejection = str(error)
                 state = {"slot": slots[0]["slot"], "attempts": generation_attempt, "last_reason": last_rejection, "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat()}
                 write_json(state_path, state)

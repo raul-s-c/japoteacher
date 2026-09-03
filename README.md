@@ -360,6 +360,10 @@ Validación recurrente:
 
 No generar frases mecánicamente. Cada par debe ser natural, útil, coherente por sí mismo, correcto en ambos idiomas, adecuado al JLPT y validado antes de publicarse.
 
+Para nuevas tandas, usar `--quality-mode strict` y lotes de como máximo dos pares: generación, revisión y comprobación final de equivalencia. El Worker editorial tiene razonamiento `low` y un límite de salida proporcional al lote. Los errores de JSON que devuelven consumo también se registran. No se debe presentar el registro local como consumo exacto si hubo peticiones interrumpidas sin respuesta.
+
+Publicar ampliaciones con `python scripts/publish-editorial-bank.py --append-only`: conserva los IDs, las filas archivadas y los metadatos existentes. Después se aplica la clasificación por uso contextual y se comprueba que las filas anteriores no han cambiado. El listado de nuevas frases distingue la banda objetivo del nivel final recalibrado. No modifica intentos, EXP ni configuración del usuario.
+
 Flujo recomendado:
 
 ```powershell

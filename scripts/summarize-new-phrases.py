@@ -1,4 +1,5 @@
 import argparse
+import csv
 import datetime
 import json
 from pathlib import Path
@@ -34,6 +35,8 @@ def main():
     parser.add_argument("--n4", type=int, default=0)
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
+    with (ROOT / "data/exercises.full.csv").open(encoding="utf-8-sig", newline="") as source:
+        exercises = {row["exercise_id"]: row for row in csv.DictReader(source)}
 
     today = datetime.date.today().isoformat()
     parts = [
@@ -51,15 +54,16 @@ def main():
         rows = tail(level, count)
         total += len(rows)
         parts.extend([
-            f"## {level} ({len(rows)} pares)",
+            f"## Objetivos de cobertura {level} ({len(rows)} pares; nivel final en la tabla)",
             "",
-            "| Slot | Japonés | Español | Objetivos de cobertura | Tema |",
-            "| ---: | --- | --- | --- | --- |",
+            "| Slot | Nivel final | Dificultad /100 | Japonés | Español | Objetivos de cobertura | Tema |",
+            "| ---: | --- | ---: | --- | --- | --- | --- |",
         ])
         for item in rows:
             slot = item.get("coverage_slot") or {}
+            exercise = exercises.get(f"JAES-{level}-EDITORIAL-{int(item['slot']):04d}", {})
             parts.append(
-                f"| {item.get('slot')} | {clean(item.get('japanese'))} | {clean(item.get('spanish'))} | {clean(target_label(slot))} | {clean(item.get('topic_primary'))} |"
+                f"| {item.get('slot')} | {exercise.get('jlpt_level', 'pendiente')} | {exercise.get('difficulty', '-')} | {clean(item.get('japanese'))} | {clean(item.get('spanish'))} | {clean(target_label(slot))} | {clean(item.get('topic_primary'))} |"
             )
         parts.append("")
     parts.append(f"Total nuevo listado: {total} pares / {total * 2} ejercicios direccionales.")
