@@ -34,6 +34,14 @@ test("a genuinely empty account may adopt local progress", () => {
   assert.equal(sync.firstSyncMode(false, { stores: {} }), "merge");
 });
 
+test("a stale lease from the same mobile class can recover automatically", () => {
+  const sync = policy();
+  const now = Date.parse("2026-09-03T12:00:30Z");
+  assert.equal(sync.canRecoverSameDeviceLease("Móvil · Android", "Móvil · Android", "2026-09-03T12:00:00Z", now), true);
+  assert.equal(sync.canRecoverSameDeviceLease("Móvil · Android", "Móvil · Android", "2026-09-03T12:00:20Z", now), false);
+  assert.equal(sync.canRecoverSameDeviceLease("Ordenador · Win32", "Móvil · Android", "2026-09-03T12:00:00Z", now), false);
+});
+
 test("factory settings are recovered from the latest customized daily session", () => {
   const sync = policy();
   const payload = {

@@ -23,6 +23,12 @@
     return !accountKnown && hasRemoteUserData(remotePayload) ? "remote" : "merge";
   }
 
+  function canRecoverSameDeviceLease(ownerName, currentName, activeAt, now = Date.now(), graceMs = 15000) {
+    if (!ownerName || ownerName !== currentName || !activeAt) return false;
+    const lastHeartbeat = Date.parse(activeAt);
+    return Number.isFinite(lastHeartbeat) && now - lastHeartbeat >= graceMs;
+  }
+
   function defaultSettings(value = {}) {
     return (
       (value.profileName || "Estudiante") === "Estudiante" &&
@@ -85,6 +91,7 @@
   window.SyncPolicy = {
     hasRemoteUserData,
     firstSyncMode,
+    canRecoverSameDeviceLease,
     recoverSettingsFromSessions,
   };
 })();

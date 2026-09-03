@@ -214,7 +214,7 @@
     if (error) throw error;
     return data;
   }
-  async function claim(force = false) {
+  async function claim(force = false, recoveryAttempt = false) {
     const { data, error } = await client.rpc("claim_user_session", {
       p_device_id: deviceId,
       p_device_name: deviceName,
@@ -223,6 +223,11 @@
     if (error) throw error;
     const result = data?.[0];
     if (!result?.claimed) {
+      if (!force && !recoveryAttempt) {
+        const remote = await remoteState().catch(() => null);
+        if (window.SyncPolicy?.canRecoverSameDeviceLease?.(remote?.active_device_name, deviceName, remote?.active_at))
+          return claim(true, true);
+      }
       lock(result?.owner_name);
       return false;
     }

@@ -789,21 +789,47 @@ async function authenticated(request, env) {
     deviceId.length > 100
   )
     return false;
-  try {
-    const response = await fetch(
-      `${env.SUPABASE_URL}/rest/v1/rpc/heartbeat_user_session`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: authorization,
-          apikey: env.SUPABASE_PUBLISHABLE_KEY,
-          "Content-Type": "application/json",
+  const headers = {
+    Authorization: authorization,
+    apikey: env.SUPABASE_PUBLISHABLE_KEY,
+    "Content-Type": "application/json",
+  };
+  for (const delay of [0, 250, 700]) {
+    if (delay) await new Promise(resolve => setTimeout(resolve, delay));
+    try {
+      const response = await fetch(
+        `${env.SUPABASE_URL}/rest/v1/rpc/heartbeat_user_session`,
+        {
+          method: "POST",
+          headers,
+          body: JSON.stringify({ p_device_id: deviceId }),
+          signal: AbortSignal.timeout(8000),
         },
-        body: JSON.stringify({ p_device_id: deviceId }),
-        signal: AbortSignal.timeout(5000),
-      },
-    );
-    return response.ok && (await response.json()) === true;
+      );
+      if (response.ok) {
+        if ((await response.json()) === true) return true;
+        const claimResponse = await fetch(`${env.SUPABASE_URL}/rest/v1/rpc/claim_user_session`, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({ p_device_id: deviceId, p_device_name: "Dispositivo actual", p_force: false }),
+          signal: AbortSignal.timeout(8000),
+        });
+        if (!claimResponse.ok) continue;
+        return Boolean((await claimResponse.json())?.[0]?.claimed);
+      }
+      if (response.status === 401 || response.status === 403) return false;
+    } catch {
+      // A short mobile network interruption is retried before deciding anything.
+    }
+  }
+  // The device lease is a consistency guard, not an authentication boundary.
+  // If its endpoint is temporarily unavailable, accept only a JWT Supabase can validate.
+  try {
+    const response = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, {
+      headers,
+      signal: AbortSignal.timeout(8000),
+    });
+    return response.ok;
   } catch {
     return false;
   }
