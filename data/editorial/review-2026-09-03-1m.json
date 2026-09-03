@@ -1,0 +1,234 @@
+[
+  {
+    "level": "N5",
+    "slot": 978,
+    "reason": "La explosion de gas no es un contexto adecuado para justificar simplemente abrir una ventana. Reescribe una frase cotidiana coherente con 爆発, sin sugerir medidas peligrosas.",
+    "status": "pending",
+    "error": "Slot 978 inválido: la propia justificación reconoce una frase artificial o poco natural"
+  },
+  {
+    "level": "N5",
+    "slot": 985,
+    "reason": "仕事場で異常があります es una colocacion demasiado vaga y poco natural. Especificar por ejemplo una anomalia en un equipo, manteniendo equivalencia.",
+    "status": "repaired",
+    "before_japanese": "仕事場で異常があります。",
+    "before_spanish": "Hay una anomalía en el lugar de trabajo.",
+    "japanese": "仕事場の機械に異常があります。",
+    "spanish": "Hay una anomalía en una máquina del lugar de trabajo."
+  },
+  {
+    "level": "N5",
+    "slot": 986,
+    "reason": "関係が混乱しています y 'la relacion esta confusa' son poco naturales. Usar 混乱 en contexto apropiado, por ejemplo confusion de una persona.",
+    "status": "repaired",
+    "before_japanese": "彼女との関係が混乱しています。",
+    "before_spanish": "La relación con ella está confusa.",
+    "japanese": "彼女は関係のことで混乱しています。",
+    "spanish": "Ella está confundida por la relación."
+  },
+  {
+    "level": "N4",
+    "slot": 1152,
+    "reason": "伝統工芸は優秀 es una colocacion impropia. 優秀 describe una persona o equipo competente, no la artesania abstracta. Reescribe naturalmente.",
+    "status": "repaired",
+    "before_japanese": "この地方の伝統工芸は優秀だから、文化祭でもよく紹介されます。",
+    "before_spanish": "La artesanía tradicional de esta región es excelente, así que suele presentarse también en el festival cultural.",
+    "japanese": "この地方の職人たちは優秀だから、文化祭でも伝統工芸がよく紹介されます。",
+    "spanish": "Los artesanos de esta región son excelentes, así que la artesanía tradicional suele presentarse también en el festival cultural."
+  },
+  {
+    "level": "N4",
+    "slot": 1159,
+    "reason": "健康だった彼 no equivale a 'un hombre sano'; ademas contrasta salud con asesinato artificialmente. Reescribir el objetivo 殺害 en contexto coherente y traduccion precisa.",
+    "status": "pending",
+    "error": "Equivalencia no aprobada en slot 1159 tras tres correcciones: El español cambia el referente de 「彼」 por «un hombre», añadiendo indefinición y perdiendo la referencia concreta.; La relación sujeto/referente en japonés es una persona específica; la versión española sugiere un hombre cualquiera.; La expresión española es globalmente cercana, pero no es plenamente equivalente por esa pérdida de especificidad."
+  },
+  {
+    "level": "N4",
+    "slot": 1164,
+    "reason": "Proteger bosque no implica descubrir que la quietud vale mas que el honor. Argumento forzado por objetivos. Utiliza 名誉 en contexto natural sin moraleja artificial.",
+    "status": "pending",
+    "error": "Slot 1164 inválido: la propia justificación reconoce una frase artificial o poco natural"
+  },
+  {
+    "level": "N5",
+    "slot": 995,
+    "reason": "Afirmacion absoluta sin contexto de que un alimento no causa muerte: poco util y falsa garantia. Usa 死亡 en una frase informativa concreta, sin consejos de salud.",
+    "status": "pending",
+    "error": "Slot 995 inválido: la propia justificación reconoce una frase artificial o poco natural"
+  },
+  {
+    "level": "N4",
+    "slot": 1168,
+    "reason": "商店街 significa calle/zona comercial, no necesariamente asociacion. Usar 商店街の人たち si son quienes invitan, o 商店会, y hacer traduccion equivalente sin inventar agente.",
+    "status": "repaired",
+    "before_japanese": "昨日、地元の商店街から文化祭への出演要請が急にありました。",
+    "before_spanish": "Ayer llegó de repente una petición para actuar en el festival cultural por parte de la asociación comercial del barrio.",
+    "japanese": "昨日、地元の商店会から文化祭への出演要請が急にありました。",
+    "spanish": "Ayer llegó de repente una solicitud de la asociación de comerciantes del barrio para actuar en el festival cultural."
+  },
+  {
+    "level": "N4",
+    "slot": 1170,
+    "reason": "No hablar de asuntos militares en casa no contrasta logicamente con leer el periodico. Usar 軍事 en un contexto sencillo y coherente, no unir proposiciones sin relacion.",
+    "status": "repaired",
+    "before_japanese": "私は家では軍事の話はしませんが、新聞は読みます。",
+    "before_spanish": "En casa no hablo de asuntos militares, pero sí leo el periódico.",
+    "japanese": "私は家では軍事の話はしませんが、軍事の本は読みます。",
+    "spanish": "En casa no hablo de asuntos militares, pero sí leo libros sobre eso."
+  },
+  {
+    "level": "N5",
+    "slot": 1002,
+    "reason": "Que la base este cerca no explica que sea dificil verlo. Utiliza 基地 con causa/contexto coherente, sin conectar ideas arbitrarias.",
+    "status": "pending",
+    "before_japanese": "基地が近いから、彼に会いにくいです。",
+    "before_spanish": "Como la base está cerca, es difícil verle.",
+    "japanese": "基地があるせいで、彼に会いにくいです。",
+    "spanish": "Como hay una base, es difícil verle.",
+    "error": "La revision final sigue detectando contexto causal insuficiente o ambiguedad de agente."
+  },
+  {
+    "level": "N5",
+    "slot": 1006,
+    "reason": "所有しています expresa propiedad legal, no mera disponibilidad. La traduccion principal y alternativas deben explicitar 'soy propietario de esta casa'.",
+    "status": "repaired",
+    "before_japanese": "私はこの家を所有しています。",
+    "before_spanish": "Tengo esta casa.",
+    "japanese": "私はこの家の所有者です。",
+    "spanish": "Soy propietario de esta casa."
+  },
+  {
+    "level": "N4",
+    "slot": 1180,
+    "reason": "外来種を持ち込まないように強制されています resulta muy poco natural para una prohibicion en una reserva. Usar 強制 en un contexto genuino de obligacion/coaccion y correspondencia espanola.",
+    "status": "pending",
+    "error": "Slot 1180 inválido: la propia justificación reconoce una frase artificial o poco natural"
+  },
+  {
+    "level": "N5",
+    "slot": 1015,
+    "reason": "風邪に感染する es colocacion poco natural, usar por ejemplo ウイルスに感染する si se mantiene 感染. Equivalencia exacta.",
+    "status": "repaired",
+    "before_japanese": "風邪に感染しました。",
+    "before_spanish": "Me resfrié.",
+    "japanese": "風邪のウイルスに感染しました。",
+    "spanish": "Me contagié del virus del resfriado."
+  },
+  {
+    "level": "N5",
+    "slot": 1016,
+    "reason": "気分が解放されました es poco natural. Usar 解放される de una carga, tension u obligacion concreta.",
+    "status": "repaired",
+    "before_japanese": "宿題が終わって、気分が解放されました。",
+    "before_spanish": "Terminé la tarea y me sentí aliviado.",
+    "japanese": "宿題が終わって、やっと解放されました。",
+    "spanish": "Terminé la tarea y por fin me liberé."
+  },
+  {
+    "level": "N4",
+    "slot": 1192,
+    "reason": "Usar radio para preparar una reunion de estudio es un contexto forzado. Usar 無線 en un contexto natural de comunicacion por radio, puede cambiar tema.",
+    "status": "repaired",
+    "before_japanese": "勉強会の準備は、無線で連絡しながら少しずつ進めます。",
+    "before_spanish": "La preparación de la reunión de estudio avanza poco a poco mientras nos comunicamos por radio.",
+    "japanese": "無線で連絡しながら、イベントの準備を少しずつ進めます。",
+    "spanish": "Vamos preparando el evento poco a poco mientras nos comunicamos por radio."
+  },
+  {
+    "level": "N5",
+    "slot": 1024,
+    "reason": "受付は本部でお願いします suele pedir registrarse en sede, no 'hagan la recepcion'. Desambiguar claramente quien hace que en ambas lenguas.",
+    "status": "pending",
+    "before_japanese": "このイベントの受付は本部でお願いします。",
+    "before_spanish": "Hagan la recepción de este evento en la sede.",
+    "japanese": "このイベントの受付は本部で担当してください。",
+    "spanish": "Por favor, que la sede se encargue de la recepción de este evento.",
+    "error": "La revision final sigue detectando contexto causal insuficiente o ambiguedad de agente."
+  },
+  {
+    "level": "N5",
+    "slot": 1027,
+    "reason": "この味なら確信があります queda incompleto: de que hay certeza? Reescribir 確信 con contenido concreto y natural.",
+    "status": "repaired",
+    "before_japanese": "この味なら確信があります。",
+    "before_spanish": "Con este sabor, estoy seguro.",
+    "japanese": "この味なら、おいしいと確信しています。",
+    "spanish": "Si es este sabor, estoy seguro de que está delicioso."
+  },
+  {
+    "level": "N4",
+    "slot": 1205,
+    "reason": "ここは司法ではありません compara un lugar con poder judicial: frase absurda/insuficiente. Usar 司法 en contexto natural y comprensible.",
+    "status": "pending",
+    "error": "Slot 1205 inválido: kanji sin lectura 場"
+  },
+  {
+    "level": "N4",
+    "slot": 1206,
+    "reason": "旅行中でも significa incluso durante el viaje; el espanol omite でも y contraste parece forzado. Reescribir 軍隊 con contexto coherente y equivalencia.",
+    "status": "repaired",
+    "before_japanese": "旅行中でも軍隊の基地は見学できません。",
+    "before_spanish": "Durante el viaje, no se puede visitar una base del ejército.",
+    "japanese": "旅行中でも、軍隊の基地は見学できません。",
+    "spanish": "Incluso durante el viaje, no se puede visitar una base militar."
+  },
+  {
+    "level": "N4",
+    "slot": 1207,
+    "reason": "休むことにします aqui anuncia decision actual de descansar, no 'decidire' en futuro. Corregir traduccion principal y alternativas.",
+    "status": "repaired",
+    "before_japanese": "やっぱり今日は少し休むことにします。",
+    "before_spanish": "Al final, hoy decidiré descansar un poco.",
+    "japanese": "やっぱり今日は少し休むことにします。",
+    "spanish": "Al final, hoy he decidido descansar un poco."
+  },
+  {
+    "level": "N4",
+    "slot": 1212,
+    "reason": "寒さが限界だった y 'el frio llego al limite' carecen de referente. Expresar que no se podia soportar mas el frio, con 限界 y equivalencia.",
+    "status": "pending",
+    "error": "Repair budget reserve reached"
+  },
+  {
+    "level": "N4",
+    "slot": 1213,
+    "reason": "この店で名刺をつくる permite un sujeto omitido pero 'Hacen' impone lectura del establecimiento. Desambiguar, por ejemplo encargar/hacer tarjetas en tienda y traduccion precisa.",
+    "status": "pending",
+    "error": "Repair budget reserve reached"
+  },
+  {
+    "level": "N5",
+    "slot": 1045,
+    "reason": "電車で出来事がありました es poco natural y vacio sin especificar tipo de suceso. Anadir detalle natural manteniendo 出来事.",
+    "status": "pending",
+    "error": "Repair budget reserve reached"
+  },
+  {
+    "level": "N4",
+    "slot": 1219,
+    "reason": "このスープは塩で味を上げます y traduccion 'esta sopa realza el sabor' atribuyen accion a la sopa. Reescribir con 上げる natural, p.ej. temperatura/fuego/volumen, y sujetos equivalentes.",
+    "status": "pending",
+    "error": "Repair budget reserve reached"
+  },
+  {
+    "level": "N4",
+    "slot": 1186,
+    "reason": "ERROR DE SENTIDO: objetivo 正義 significa justicia y se lee せいぎ, NO nombre propio Masayoshi. Corregir lectura erronea del objetivo, frase y significado para usar justicia.",
+    "status": "repaired",
+    "before_japanese": "正義さんがうちのそうじをてつだってくれました。",
+    "before_spanish": "Masayoshi me ayudó a limpiar la casa.",
+    "japanese": "うちでは正義が大事です。",
+    "spanish": "En casa, la justicia es importante."
+  },
+  {
+    "level": "N5",
+    "slot": 1021,
+    "reason": "'El sol esta fuera' es traduccion poco idiomatica. Usar 'Ha salido el sol' o 'Hace sol' segun japones, con equivalencia temporal.",
+    "status": "repaired",
+    "before_japanese": "太陽が出ています。",
+    "before_spanish": "El sol está fuera.",
+    "japanese": "太陽が出ています。",
+    "spanish": "Ha salido el sol."
+  }
+]

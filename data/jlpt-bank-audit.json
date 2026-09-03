@@ -1,22 +1,22 @@
 {
   "classification_version": "contextual_usage_v3",
-  "active_rows": 4176,
-  "semantic_pairs": 2088,
+  "active_rows": 4456,
+  "semantic_pairs": 2228,
   "by_level_direction": {
-    "N1/es_ja": 56,
-    "N1/ja_es": 56,
-    "N2/es_ja": 675,
-    "N2/ja_es": 675,
-    "N3/es_ja": 784,
-    "N3/ja_es": 784,
-    "N4/es_ja": 475,
-    "N4/ja_es": 475,
-    "N5/es_ja": 98,
-    "N5/ja_es": 98
+    "N1/es_ja": 59,
+    "N1/ja_es": 59,
+    "N2/es_ja": 709,
+    "N2/ja_es": 709,
+    "N3/es_ja": 845,
+    "N3/ja_es": 845,
+    "N4/es_ja": 513,
+    "N4/ja_es": 513,
+    "N5/es_ja": 102,
+    "N5/ja_es": 102
   },
   "confidence": {
-    "review": 1204,
-    "ranked": 2970,
+    "review": 1258,
+    "ranked": 3196,
     "legacy_fallback": 2
   },
   "issues": 0,

@@ -1,0 +1,1399 @@
+[
+  {
+    "level": "N5",
+    "slot": 978,
+    "status": "pending_repair",
+    "reason": "La explosion de gas no es un contexto adecuado para justificar simplemente abrir una ventana. Reescribe una frase cotidiana coherente con 爆発, sin sugerir medidas peligrosas.",
+    "item": {
+      "level": "N5",
+      "coverage_slot": {
+        "slot": 978,
+        "level": "N5",
+        "topic_primary": "hogar",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "reason_contrast_condition",
+        "length_band": "standard",
+        "jp_char_range": [
+          10,
+          24
+        ],
+        "es_word_range": [
+          5,
+          12
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V02757",
+            "word": "爆発",
+            "reading": "ばくはつ",
+            "meaning_en": "explosion",
+            "concept_id": "lexeme.V02757",
+            "concept_label": "explosion",
+            "concept_members": [
+              "爆発"
+            ],
+            "usage_score": "49.532",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 978,
+      "japanese": "台所でガスが爆発したので、窓を開けました。",
+      "spanish": "Como el gas explotó en la cocina, abrí la ventana.",
+      "scenario_es": "En casa, ocurre una explosión de gas y se toma una acción consecuencia.",
+      "topic_primary": "hogar",
+      "topic_secondary": [],
+      "situation_tag": "causa_consecuencia_doméstica",
+      "grammar_tags": [
+        "ので",
+        "た形"
+      ],
+      "particle_tags": [
+        "で",
+        "が",
+        "を"
+      ],
+      "vocabulary_tags": [
+        "爆発"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "台所",
+          "reading_hiragana": "だいどころ",
+          "meaning_es": "cocina",
+          "explanation_es": "Lugar de la escena doméstica."
+        },
+        {
+          "characters": "爆発",
+          "reading_hiragana": "ばくはつ",
+          "meaning_es": "explosión",
+          "explanation_es": "Sustantivo clave que expresa el evento causal."
+        },
+        {
+          "characters": "窓",
+          "reading_hiragana": "まど",
+          "meaning_es": "ventana",
+          "explanation_es": "Objeto afectado por la respuesta a la causa."
+        },
+        {
+          "characters": "開けました",
+          "reading_hiragana": "あけました",
+          "meaning_es": "abrí",
+          "explanation_es": "Verbo en pasado cortés; el kanji visible aparece en la forma flexionada completa."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "expresar causa y consecuencia",
+      "tense_aspect": "pasado",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Como hubo una explosión de gas en la cocina, abrí la ventana."
+      ],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "爆発したので se interpreta como causa directa de la acción posterior.",
+      "critical_meaning_units": [
+        "台所で",
+        "ガスが",
+        "爆発したので",
+        "窓を",
+        "開けました"
+      ],
+      "difficulty_rationale": "Combina vocabulario concreto con una estructura causal básica y un verbo en pasado cortés. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4.",
+      "naturalness_rationale": "Es una secuencia doméstica plausible y autocontenida; la consecuencia de abrir la ventana encaja de forma natural con una explosión de gas.",
+      "bridge_tags": [
+        "n5_to_n4_bridge"
+      ],
+      "difficulty_bridge": "N5_to_N4",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N5",
+    "slot": 995,
+    "status": "pending_repair",
+    "reason": "Afirmacion absoluta sin contexto de que un alimento no causa muerte: poco util y falsa garantia. Usa 死亡 en una frase informativa concreta, sin consejos de salud.",
+    "item": {
+      "level": "N5",
+      "coverage_slot": {
+        "slot": 995,
+        "level": "N5",
+        "topic_primary": "comida",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "negative_or_correction",
+        "length_band": "standard",
+        "jp_char_range": [
+          10,
+          24
+        ],
+        "es_word_range": [
+          5,
+          12
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V01976",
+            "word": "死亡",
+            "reading": "しぼう",
+            "meaning_en": "death",
+            "concept_id": "lexeme.V01976",
+            "concept_label": "death",
+            "concept_members": [
+              "死亡"
+            ],
+            "usage_score": "48.832",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 2,
+      "editorial_quality_version": 5,
+      "slot": 995,
+      "japanese": "この食べ物で死亡することはありません。",
+      "spanish": "Esta comida no causa la muerte.",
+      "scenario_es": "Al hablar de un alimento, se corrige que no provoca una muerte.",
+      "topic_primary": "comida",
+      "topic_secondary": [],
+      "situation_tag": "corrección_negativa",
+      "grammar_tags": [
+        "〜ことはありません"
+      ],
+      "particle_tags": [
+        "で",
+        "は"
+      ],
+      "vocabulary_tags": [
+        "食べ物",
+        "死亡"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "食",
+          "reading_hiragana": "た",
+          "meaning_es": "comer",
+          "explanation_es": "Aparece en 食べ物, parte de la palabra relacionada con alimento."
+        },
+        {
+          "characters": "物",
+          "reading_hiragana": "もの",
+          "meaning_es": "cosa",
+          "explanation_es": "Aparece en 食べ物 y significa 'cosa'."
+        },
+        {
+          "characters": "死",
+          "reading_hiragana": "し",
+          "meaning_es": "muerte",
+          "explanation_es": "Aparece en 死亡 y aporta la idea de morir o muerte."
+        },
+        {
+          "characters": "亡",
+          "reading_hiragana": "ぼう",
+          "meaning_es": "fallecer; muerte",
+          "explanation_es": "Aparece en 死亡 y refuerza el sentido de fallecimiento."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "corregir una afirmación negativa sobre el efecto de un alimento",
+      "tense_aspect": "presente",
+      "polarity": "negativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Esta comida no provoca la muerte."
+      ],
+      "accepted_alternatives_ja": [
+        "この食べ物で死亡することはない。",
+        "この食べ物で死ぬことはありません."
+      ],
+      "ambiguity_notes": "死亡 se interpreta aquí como 'muerte' en el sentido de causar la muerte.",
+      "critical_meaning_units": [
+        "この食べ物で",
+        "死亡する",
+        "ことはありません"
+      ],
+      "difficulty_rationale": "Combina vocabulario específico con la construcción negativa 〜ことはありません en una frase breve y natural.",
+      "naturalness_rationale": "Es una corrección plausible sobre un alimento y su efecto, sin añadidos de contexto ni elementos forzados.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N5",
+    "slot": 1002,
+    "status": "pending_repair",
+    "reason": "Que la base este cerca no explica que sea dificil verlo. Utiliza 基地 con causa/contexto coherente, sin conectar ideas arbitrarias.",
+    "item": {
+      "level": "N5",
+      "coverage_slot": {
+        "slot": 1002,
+        "level": "N5",
+        "topic_primary": "relaciones",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "reason_contrast_condition",
+        "length_band": "standard",
+        "jp_char_range": [
+          5,
+          80
+        ],
+        "es_word_range": [
+          2,
+          45
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V02235",
+            "word": "基地",
+            "reading": "きち",
+            "meaning_en": "base",
+            "concept_id": "lexeme.V02235",
+            "concept_label": "base",
+            "concept_members": [
+              "基地"
+            ],
+            "usage_score": "48.5606",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1002,
+      "japanese": "基地があるせいで、彼に会いにくいです。",
+      "spanish": "Como hay una base, es difícil verle.",
+      "scenario_es": "La presencia de una base dificulta ver a una persona concreta.",
+      "topic_primary": "relaciones",
+      "topic_secondary": [],
+      "situation_tag": "reason",
+      "grammar_tags": [
+        "せいで",
+        "adjectival_difficulty",
+        "potentiality"
+      ],
+      "particle_tags": [
+        "が",
+        "に"
+      ],
+      "vocabulary_tags": [
+        "基地",
+        "彼",
+        "会う"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "基地",
+          "reading_hiragana": "きち",
+          "meaning_es": "base",
+          "explanation_es": "Instalación o base; aquí es la causa de la dificultad."
+        },
+        {
+          "characters": "彼",
+          "reading_hiragana": "かれ",
+          "meaning_es": "él",
+          "explanation_es": "Pronombre de tercera persona masculina, referente a una persona concreta."
+        },
+        {
+          "characters": "会",
+          "reading_hiragana": "あ",
+          "meaning_es": "ver / encontrar",
+          "explanation_es": "En 会いにくい expresa dificultad para reunirse o ver a alguien."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "dar una razón que explica una dificultad de contacto o encuentro",
+      "tense_aspect": "presente",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Como hay una base, cuesta verle."
+      ],
+      "accepted_alternatives_ja": [
+        "基地があるので、彼に会いにくいです。"
+      ],
+      "ambiguity_notes": "彼 puede referirse a un hombre concreto ya identificado; la frase solo expresa dificultad de encuentro o contacto.",
+      "critical_meaning_units": [
+        "基地がある",
+        "せいで",
+        "彼に",
+        "会いにくいです"
+      ],
+      "difficulty_rationale": "Mantiene una estructura causal básica y una expresión frecuente de dificultad, adecuada para N5.",
+      "naturalness_rationale": "La causa y el efecto quedan lógicamente conectados: la presencia de la base explica la dificultad para verle, sin forzar una relación arbitraria.",
+      "equivalence_verified": true,
+      "manual_editorial_override": true,
+      "editorial_repair_reason": "Que la base este cerca no explica que sea dificil verlo. Utiliza 基地 con causa/contexto coherente, sin conectar ideas arbitrarias."
+    }
+  },
+  {
+    "level": "N5",
+    "slot": 1024,
+    "status": "pending_repair",
+    "reason": "受付は本部でお願いします suele pedir registrarse en sede, no 'hagan la recepcion'. Desambiguar claramente quien hace que en ambas lenguas.",
+    "item": {
+      "level": "N5",
+      "coverage_slot": {
+        "slot": 1024,
+        "level": "N5",
+        "topic_primary": "cultura",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "social_action",
+        "length_band": "long",
+        "jp_char_range": [
+          5,
+          80
+        ],
+        "es_word_range": [
+          2,
+          45
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V01906",
+            "word": "本部",
+            "reading": "ほんぶ",
+            "meaning_en": "headquarters",
+            "concept_id": "lexeme.V01906",
+            "concept_label": "headquarters",
+            "concept_members": [
+              "本部"
+            ],
+            "usage_score": "47.7683",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 2,
+      "editorial_quality_version": 5,
+      "slot": 1024,
+      "japanese": "このイベントの受付は本部で担当してください。",
+      "spanish": "Por favor, que la sede se encargue de la recepción de este evento.",
+      "scenario_es": "En un evento, se indica que la sede se encargue de la recepción.",
+      "topic_primary": "cultura",
+      "topic_secondary": [],
+      "situation_tag": "instrucción",
+      "grammar_tags": [
+        "てください"
+      ],
+      "particle_tags": [
+        "の",
+        "は",
+        "で"
+      ],
+      "vocabulary_tags": [
+        "本部",
+        "受付",
+        "イベント",
+        "担当"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "受付",
+          "reading_hiragana": "うけつけ",
+          "meaning_es": "recepción, mostrador de inscripción",
+          "explanation_es": "Sustantivo que designa el puesto o servicio de inscripción y atención."
+        },
+        {
+          "characters": "本部",
+          "reading_hiragana": "ほんぶ",
+          "meaning_es": "sede central, cuartel general",
+          "explanation_es": "Compuesto de 本 y 部; aquí se usa con el sentido de sede o centro de coordinación."
+        },
+        {
+          "characters": "担",
+          "reading_hiragana": "たん",
+          "meaning_es": "encargar(se), asumir",
+          "explanation_es": "Aparece en 担当 y se lee たん en esta palabra."
+        },
+        {
+          "characters": "当",
+          "reading_hiragana": "とう",
+          "meaning_es": "encargar(se), corresponder",
+          "explanation_es": "Aparece en 担当 y se lee とう en esta palabra."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "dar una instrucción",
+      "tense_aspect": "no marcado",
+      "polarity": "afirmativa",
+      "sentence_type": "imperativa",
+      "accepted_alternatives_es": [
+        "Encarguen la recepción de este evento a la sede, por favor."
+      ],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "本部 se interpreta como la sede o centro de coordinación del evento, y 受付 como el servicio de recepción/inscripción.",
+      "critical_meaning_units": [
+        "このイベントの",
+        "受付",
+        "は",
+        "本部",
+        "で",
+        "担当",
+        "して",
+        "ください"
+      ],
+      "difficulty_rationale": "La frase sigue siendo de nivel muy básico, pero exige integrar 受付 y 本部 en una instrucción natural sin cambiar el sentido pragmático.",
+      "naturalness_rationale": "Es una indicación realista para la organización de un evento y la formulación en japonés suena natural en contexto administrativo.",
+      "equivalence_verified": true,
+      "manual_editorial_override": true,
+      "editorial_repair_reason": "受付は本部でお願いします suele pedir registrarse en sede, no 'hagan la recepcion'. Desambiguar claramente quien hace que en ambas lenguas."
+    }
+  },
+  {
+    "level": "N5",
+    "slot": 1045,
+    "status": "pending_repair",
+    "reason": "電車で出来事がありました es poco natural y vacio sin especificar tipo de suceso. Anadir detalle natural manteniendo 出来事.",
+    "item": {
+      "level": "N5",
+      "coverage_slot": {
+        "slot": 1045,
+        "level": "N5",
+        "topic_primary": "transporte",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "statement",
+        "length_band": "short",
+        "jp_char_range": [
+          6,
+          16
+        ],
+        "es_word_range": [
+          2,
+          7
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V01858",
+            "word": "出来事",
+            "reading": "できごと",
+            "meaning_en": "event",
+            "concept_id": "lexeme.V01858",
+            "concept_label": "event",
+            "concept_members": [
+              "出来事"
+            ],
+            "usage_score": "47.073",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1045,
+      "japanese": "電車で出来事がありました。",
+      "spanish": "Hubo un suceso en el tren.",
+      "scenario_es": "Durante un trayecto en tren ocurrió algo.",
+      "topic_primary": "transporte",
+      "topic_secondary": [],
+      "situation_tag": "incidente_en_transporte",
+      "grammar_tags": [
+        "Vがあります"
+      ],
+      "particle_tags": [
+        "で",
+        "が"
+      ],
+      "vocabulary_tags": [
+        "出来事",
+        "電車"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "電",
+          "reading_hiragana": "でん",
+          "meaning_es": "electricidad",
+          "explanation_es": "Forma parte de 電車, «tren»."
+        },
+        {
+          "characters": "車",
+          "reading_hiragana": "しゃ",
+          "meaning_es": "vehículo",
+          "explanation_es": "Forma parte de 電車, «tren»."
+        },
+        {
+          "characters": "出",
+          "reading_hiragana": "で",
+          "meaning_es": "salir",
+          "explanation_es": "Forma parte de 出来事, «suceso»."
+        },
+        {
+          "characters": "来",
+          "reading_hiragana": "き",
+          "meaning_es": "venir",
+          "explanation_es": "Forma parte de 出来事, «suceso»."
+        },
+        {
+          "characters": "事",
+          "reading_hiragana": "じ",
+          "meaning_es": "cosa; asunto",
+          "explanation_es": "Forma parte de 出来事, «suceso»."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "informar",
+      "tense_aspect": "pasado",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Hubo un acontecimiento en el tren."
+      ],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "出来事 es más general que «incidente»; aquí se usa en sentido neutro de suceso ocurrido durante el trayecto.",
+      "critical_meaning_units": [
+        "電車で",
+        "出来事",
+        "がありました"
+      ],
+      "difficulty_rationale": "Introduce 出来事 en una estructura muy frecuente de existencia/ocurrencia, con contexto claro de transporte.",
+      "naturalness_rationale": "La frase es breve, idiomática y plausible: en un tren puede ocurrir un suceso sin necesidad de más contexto.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1159,
+    "status": "pending_repair",
+    "reason": "健康だった彼 no equivale a 'un hombre sano'; ademas contrasta salud con asesinato artificialmente. Reescribir el objetivo 殺害 en contexto coherente y traduccion precisa.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1159,
+        "level": "N4",
+        "topic_primary": "salud",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "statement",
+        "length_band": "standard",
+        "jp_char_range": [
+          16,
+          36
+        ],
+        "es_word_range": [
+          8,
+          18
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V04278",
+            "word": "殺害",
+            "reading": "さつがい",
+            "meaning_en": "killing",
+            "concept_id": "lexeme.V04278",
+            "concept_label": "killing",
+            "concept_members": [
+              "殺害"
+            ],
+            "usage_score": "45.7173",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1159,
+      "japanese": "健康だった彼が殺害されたのは、今でも信じられません。",
+      "spanish": "Aún no puedo creer que asesinaran a un hombre sano.",
+      "scenario_es": "Habla con sorpresa de que asesinaran a un hombre que estaba sano.",
+      "topic_primary": "salud",
+      "topic_secondary": [
+        "violencia",
+        "sorpresa"
+      ],
+      "situation_tag": "reacción ante una muerte violenta",
+      "grammar_tags": [
+        "V-た",
+        "のは",
+        "今でも"
+      ],
+      "particle_tags": [
+        "が"
+      ],
+      "vocabulary_tags": [
+        "健康",
+        "殺害"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "健康",
+          "reading_hiragana": "けんこう",
+          "meaning_es": "salud",
+          "explanation_es": "Marca el estado físico de la persona antes del hecho."
+        },
+        {
+          "characters": "彼",
+          "reading_hiragana": "かれ",
+          "meaning_es": "él",
+          "explanation_es": "Se refiere al hombre mencionado en la frase."
+        },
+        {
+          "characters": "殺害",
+          "reading_hiragana": "さつがい",
+          "meaning_es": "asesinato",
+          "explanation_es": "Es el vocabulario objetivo y expresa que fue matado."
+        },
+        {
+          "characters": "今",
+          "reading_hiragana": "いま",
+          "meaning_es": "ahora",
+          "explanation_es": "Forma parte de 今でも, 'todavía / incluso ahora'."
+        },
+        {
+          "characters": "信じられません",
+          "reading_hiragana": "しんじられません",
+          "meaning_es": "no puedo creerlo",
+          "explanation_es": "Expresa sorpresa e incredulidad de forma cortés."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "expresar incredulidad ante un asesinato",
+      "tense_aspect": "pasado con estado actual",
+      "polarity": "mixta",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Todavía no puedo creer que asesinaran a un hombre sano."
+      ],
+      "accepted_alternatives_ja": [
+        "健康だった彼が殺害されたのは、今でも信じられないです。"
+      ],
+      "ambiguity_notes": "殺害された identifica un hecho violento consumado; no se especifica el agente.",
+      "critical_meaning_units": [
+        "健康だった彼",
+        "殺害された",
+        "のは",
+        "今でも",
+        "信じられません"
+      ],
+      "difficulty_rationale": "Combina el vocabulario objetivo con una estructura de nominalización y una expresión de incredulidad, manteniendo un registro cortés claro.",
+      "naturalness_rationale": "La frase es verosímil como comentario sobre un hecho trágico. El contraste entre el estado de salud previo y el asesinato refuerza la relación con el tema de salud sin forzar el contexto.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1164,
+    "status": "pending_repair",
+    "reason": "Proteger bosque no implica descubrir que la quietud vale mas que el honor. Argumento forzado por objetivos. Utiliza 名誉 en contexto natural sin moraleja artificial.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1164,
+        "level": "N4",
+        "topic_primary": "naturaleza",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "reason_contrast_condition",
+        "length_band": "long",
+        "jp_char_range": [
+          26,
+          52
+        ],
+        "es_word_range": [
+          14,
+          28
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V03164",
+            "word": "名誉",
+            "reading": "めいよ",
+            "meaning_en": "honor",
+            "concept_id": "lexeme.V03164",
+            "concept_label": "honor",
+            "concept_members": [
+              "名誉"
+            ],
+            "usage_score": "45.6739",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1164,
+      "japanese": "この森を守れば、名誉より自然の静けさが大切だと分かります。",
+      "spanish": "Si protegemos este bosque, entendemos que la quietud de la naturaleza vale más que el honor.",
+      "scenario_es": "En un paseo por un bosque, se habla de proteger la naturaleza y de lo que realmente importa.",
+      "topic_primary": "naturaleza",
+      "topic_secondary": [
+        "valores",
+        "medio ambiente"
+      ],
+      "situation_tag": "reason_contrast_condition",
+      "grammar_tags": [
+        "ば条件",
+        "より",
+        "～と分かる"
+      ],
+      "particle_tags": [
+        "を",
+        "より",
+        "が",
+        "と"
+      ],
+      "vocabulary_tags": [
+        "名誉",
+        "自然",
+        "静けさ",
+        "大切",
+        "分かる",
+        "守る"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "森",
+          "reading_hiragana": "もり",
+          "meaning_es": "bosque",
+          "explanation_es": "Aparece en この森 y nombra el entorno natural del que se habla."
+        },
+        {
+          "characters": "守",
+          "reading_hiragana": "まも",
+          "meaning_es": "proteger",
+          "explanation_es": "Aparece en 守れば, dentro de la forma condicional del verbo 守る."
+        },
+        {
+          "characters": "名",
+          "reading_hiragana": "めい",
+          "meaning_es": "honor",
+          "explanation_es": "Forma parte de 名誉, palabra objetivo presente en la oración."
+        },
+        {
+          "characters": "誉",
+          "reading_hiragana": "よ",
+          "meaning_es": "honor",
+          "explanation_es": "Completa 名誉; se lee よ en esta palabra."
+        },
+        {
+          "characters": "自",
+          "reading_hiragana": "じ",
+          "meaning_es": "naturaleza / uno mismo",
+          "explanation_es": "Forma parte de 自然, aquí con el sentido de naturaleza."
+        },
+        {
+          "characters": "然",
+          "reading_hiragana": "ぜん",
+          "meaning_es": "naturaleza / así",
+          "explanation_es": "Completa 自然, palabra usada para referirse a la naturaleza."
+        },
+        {
+          "characters": "静",
+          "reading_hiragana": "しず",
+          "meaning_es": "quieto, tranquilo",
+          "explanation_es": "Aparece en 静けさ, que expresa calma o quietud."
+        },
+        {
+          "characters": "大",
+          "reading_hiragana": "だい",
+          "meaning_es": "grande",
+          "explanation_es": "Forma parte de 大切, adjetivo que significa importante."
+        },
+        {
+          "characters": "切",
+          "reading_hiragana": "せつ",
+          "meaning_es": "importante / cortar",
+          "explanation_es": "Completa 大切, aquí con el valor de ‘importante’."
+        },
+        {
+          "characters": "分",
+          "reading_hiragana": "わ",
+          "meaning_es": "entender",
+          "explanation_es": "Aparece en 分かります, forma educada de 分かる."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "expresar una comparación valorativa condicionada por una acción",
+      "tense_aspect": "presente",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Si cuidamos este bosque, comprendemos que la tranquilidad de la naturaleza vale más que el honor."
+      ],
+      "accepted_alternatives_ja": [
+        "この森を守れば、名誉より自然の静けさが大事だと分かります。",
+        "この森を守れば、自然の静けさは名誉より大切だと分かります。"
+      ],
+      "ambiguity_notes": "名誉 se entiende como ‘honor’ en sentido abstracto; no alude a un nombre propio.",
+      "critical_meaning_units": [
+        "この森を守れば",
+        "名誉より",
+        "自然の静けさが",
+        "大切だと",
+        "分かります"
+      ],
+      "difficulty_rationale": "Combina condicional con ば, comparación con より y una cláusula de contenido mental con と分かる, además del vocabulario objetivo 名誉.",
+      "naturalness_rationale": "La frase suena como una reflexión natural en un contexto de conservación ambiental y usa una valoración habitual en japonés.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1180,
+    "status": "pending_repair",
+    "reason": "外来種を持ち込まないように強制されています resulta muy poco natural para una prohibicion en una reserva. Usar 強制 en un contexto genuino de obligacion/coaccion y correspondencia espanola.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1180,
+        "level": "N4",
+        "topic_primary": "naturaleza",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "social_action",
+        "length_band": "long",
+        "jp_char_range": [
+          26,
+          52
+        ],
+        "es_word_range": [
+          14,
+          28
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V01867",
+            "word": "強制",
+            "reading": "きょうせい",
+            "meaning_en": "obligation",
+            "concept_id": "lexeme.V01867",
+            "concept_label": "obligation",
+            "concept_members": [
+              "強制"
+            ],
+            "usage_score": "45.3139",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 2,
+      "editorial_quality_version": 5,
+      "slot": 1180,
+      "japanese": "この自然保護区では、外来種を持ち込まないように強制されています。",
+      "spanish": "En esta reserva natural, se obliga a no introducir especies foráneas.",
+      "scenario_es": "En una reserva natural, se explica que están obligados a no introducir especies foráneas.",
+      "topic_primary": "naturaleza",
+      "topic_secondary": [
+        "normas"
+      ],
+      "situation_tag": "regla_o_restricción",
+      "grammar_tags": [
+        "〜ように",
+        "受け身",
+        "〜ています"
+      ],
+      "particle_tags": [
+        "では",
+        "を"
+      ],
+      "vocabulary_tags": [
+        "強制する",
+        "自然保護区",
+        "外来種",
+        "持ち込む"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "自然保護区",
+          "reading_hiragana": "しぜんほごく",
+          "meaning_es": "reserva natural / área protegida",
+          "explanation_es": "Compuesto de 自然 (naturaleza) + 保護 (protección) + 区 (área)."
+        },
+        {
+          "characters": "外来種",
+          "reading_hiragana": "がいらいしゅ",
+          "meaning_es": "especie foránea / exótica",
+          "explanation_es": "Término fijo para especies introducidas desde fuera."
+        },
+        {
+          "characters": "持ち込まない",
+          "reading_hiragana": "もちこまない",
+          "meaning_es": "no introducir / no traer",
+          "explanation_es": "Forma negativa del verbo 持ち込む."
+        },
+        {
+          "characters": "強制されています",
+          "reading_hiragana": "きょうせいされています",
+          "meaning_es": "se obliga / está siendo forzado",
+          "explanation_es": "Forma pasiva/progresiva de 強制する, usada para una obligación impuesta."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "informar de una norma",
+      "tense_aspect": "presente progresivo pasivo",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "La expresión 強制されています suena más a obligación impuesta que a prohibición explícita; en español se mantiene el valor normativo de la frase dada.",
+      "critical_meaning_units": [
+        "自然保護区",
+        "外来種",
+        "持ち込まない",
+        "強制されています"
+      ],
+      "difficulty_rationale": "Combina vocabulario administrativo con una estructura normativa en pasiva y una subordinada de finalidad.",
+      "naturalness_rationale": "Es plausible en un aviso o explicación normativa, aunque menos idiomática que 禁止されています.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1205,
+    "status": "pending_repair",
+    "reason": "ここは司法ではありません compara un lugar con poder judicial: frase absurda/insuficiente. Usar 司法 en contexto natural y comprensible.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1205,
+        "level": "N4",
+        "topic_primary": "transporte",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "negative_or_correction",
+        "length_band": "short",
+        "jp_char_range": [
+          10,
+          22
+        ],
+        "es_word_range": [
+          4,
+          10
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V01619",
+            "word": "司法",
+            "reading": "しほう",
+            "meaning_en": "administration of justice",
+            "concept_id": "lexeme.V01619",
+            "concept_label": "administration of justice",
+            "concept_members": [
+              "司法"
+            ],
+            "usage_score": "44.9121",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1205,
+      "japanese": "ここは司法ではありません。",
+      "spanish": "Aquí no es la administración de justicia.",
+      "scenario_es": "En una corrección breve, alguien aclara que ese lugar o ámbito no pertenece a la administración de justicia.",
+      "topic_primary": "transporte",
+      "topic_secondary": [
+        "negación"
+      ],
+      "situation_tag": "correccion_breve",
+      "grammar_tags": [
+        "ではありません"
+      ],
+      "particle_tags": [
+        "は"
+      ],
+      "vocabulary_tags": [
+        "司法"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "司",
+          "reading_hiragana": "し",
+          "meaning_es": "administración / oficio",
+          "explanation_es": "Forma parte de 司法; se pronuncia し."
+        },
+        {
+          "characters": "法",
+          "reading_hiragana": "ほう",
+          "meaning_es": "ley",
+          "explanation_es": "Forma parte de 司法; se pronuncia ほう."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "corregir",
+      "tense_aspect": "presente",
+      "polarity": "negativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "司法 se interpreta aquí como 'administración de justicia' o 'ámbito judicial'; la frase niega pertenencia a ese ámbito.",
+      "critical_meaning_units": [
+        "ここは",
+        "司法ではありません"
+      ],
+      "difficulty_rationale": "Frase muy corta con un sustantivo especializado y una negación cortés básica.",
+      "naturalness_rationale": "La negación es natural en japonés; la versión española conserva el valor abstracto sin añadir información extra.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1212,
+    "status": "pending_repair",
+    "reason": "寒さが限界だった y 'el frio llego al limite' carecen de referente. Expresar que no se podia soportar mas el frio, con 限界 y equivalencia.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1212,
+        "level": "N4",
+        "topic_primary": "naturaleza",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "reason_contrast_condition",
+        "length_band": "long",
+        "jp_char_range": [
+          26,
+          52
+        ],
+        "es_word_range": [
+          14,
+          28
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V02252",
+            "word": "限界",
+            "reading": "げんかい",
+            "meaning_en": "limit",
+            "concept_id": "lexeme.V02252",
+            "concept_label": "limit",
+            "concept_members": [
+              "限界"
+            ],
+            "usage_score": "44.8051",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1212,
+      "japanese": "寒さが限界だったので、今日は山の上まで行かずに帰りました。",
+      "spanish": "El frío llegó al límite, así que hoy no subimos hasta la cima y volvimos.",
+      "scenario_es": "Una caminata en la montaña se interrumpe porque el frío ya es demasiado fuerte.",
+      "topic_primary": "naturaleza",
+      "topic_secondary": [
+        "clima",
+        "montaña",
+        "razón y contraste"
+      ],
+      "situation_tag": "naturaleza_clima_montaña",
+      "grammar_tags": [
+        "〜ので",
+        "〜ずに",
+        "pasado"
+      ],
+      "particle_tags": [
+        "が",
+        "の",
+        "まで",
+        "に"
+      ],
+      "vocabulary_tags": [
+        "限界",
+        "寒さ",
+        "山",
+        "上",
+        "帰る"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "寒さ",
+          "reading_hiragana": "さむさ",
+          "meaning_es": "frío; el hecho de que haga frío",
+          "explanation_es": "Se lee さむさ porque el kanji 寒 tiene lectura nativa さむ y, con el sufijo さ, forma el sustantivo de estado 「寒さ」."
+        },
+        {
+          "characters": "限界",
+          "reading_hiragana": "げんかい",
+          "meaning_es": "límite; punto máximo tolerable",
+          "explanation_es": "Es una palabra Sinojaponesa con lectura on-yomi: 限 = げん y 界 = かい."
+        },
+        {
+          "characters": "今日は",
+          "reading_hiragana": "きょうは",
+          "meaning_es": "hoy; en cuanto a hoy",
+          "explanation_es": "今日 se lee きょう en esta expresión fija. La partícula は marca el tema de la frase."
+        },
+        {
+          "characters": "山の上",
+          "reading_hiragana": "やまのうえ",
+          "meaning_es": "encima de la montaña; la parte alta de la montaña",
+          "explanation_es": "山 se lee やま y 上 se lee うえ aquí como sustantivo locativo, unidos por la partícula の."
+        },
+        {
+          "characters": "行かず",
+          "reading_hiragana": "いかず",
+          "meaning_es": "sin ir; no yendo",
+          "explanation_es": "El verbo 行く se lee いく; en la forma negativa en -ず, aparece como 行かず, con la base 行か-."
+        },
+        {
+          "characters": "帰りました",
+          "reading_hiragana": "かえりました",
+          "meaning_es": "volví; regresé",
+          "explanation_es": "El verbo 帰る se lee かえる; en pasado cortés aparece como 帰りました."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "expresar una razón y una decisión de no continuar",
+      "tense_aspect": "pasado",
+      "polarity": "mixta",
+      "sentence_type": "enunciativa",
+      "accepted_alternatives_es": [
+        "El frío fue el límite, así que hoy no subimos hasta la cima y regresamos."
+      ],
+      "accepted_alternatives_ja": [
+        "寒さが限界だったので、今日は山の上へ行かずに帰りました。"
+      ],
+      "ambiguity_notes": "山の上まで行かずに puede interpretarse como ‘no llegar hasta la cima’, no como ‘no ir a la montaña’ en general. El sentido global es que la excursión se cortó por el frío.",
+      "critical_meaning_units": [
+        "寒さが限界だった",
+        "ので",
+        "今日は",
+        "山の上まで",
+        "行かずに",
+        "帰りました"
+      ],
+      "difficulty_rationale": "Incluye el vocabulario objetivo 限界 en una estructura causal y además una negación de acción secundaria con 〜ずに, útil para N4.",
+      "naturalness_rationale": "La frase describe de forma realista una excursión interrumpida por el clima, con una relación causa-efecto clara y un cierre natural en pasado cortés.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1213,
+    "status": "pending_repair",
+    "reason": "この店で名刺をつくる permite un sujeto omitido pero 'Hacen' impone lectura del establecimiento. Desambiguar, por ejemplo encargar/hacer tarjetas en tienda y traduccion precisa.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1213,
+        "level": "N4",
+        "topic_primary": "servicios",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "statement",
+        "length_band": "short",
+        "jp_char_range": [
+          10,
+          22
+        ],
+        "es_word_range": [
+          4,
+          10
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "form.8782c5780dd4",
+            "word": "つくる",
+            "reading": "つくる",
+            "meaning_en": "Create",
+            "concept_id": "form.8782c5780dd4",
+            "concept_label": "Create",
+            "concept_members": [
+              "つくる",
+              "創る"
+            ],
+            "usage_score": "44.7866",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1213,
+      "japanese": "この店で名刺をつくる。",
+      "spanish": "Hacen tarjetas de visita en esta tienda.",
+      "scenario_es": "En una tienda de servicios de impresión, se encarga la elaboración de tarjetas de visita.",
+      "topic_primary": "servicios",
+      "topic_secondary": [
+        "impresión",
+        "comercio"
+      ],
+      "situation_tag": "servicios_impresion",
+      "grammar_tags": [],
+      "particle_tags": [
+        "で",
+        "を"
+      ],
+      "vocabulary_tags": [
+        "つくる",
+        "名刺",
+        "店"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "店で",
+          "reading_hiragana": "みせで",
+          "meaning_es": "en la tienda",
+          "explanation_es": "店 se lee みせ como lectura nativa en esta frase; la partícula で indica el lugar donde ocurre la acción."
+        },
+        {
+          "characters": "名刺",
+          "reading_hiragana": "めいし",
+          "meaning_es": "tarjeta de presentación",
+          "explanation_es": "Lectura Sinojaponesa: 名 = めい y 刺 = し."
+        }
+      ],
+      "register": "neutro",
+      "communicative_function": "describir un servicio disponible",
+      "tense_aspect": "no marcado",
+      "polarity": "afirmativa",
+      "sentence_type": "enunciativa",
+      "accepted_alternatives_es": [
+        "En esta tienda hacen tarjetas de visita."
+      ],
+      "accepted_alternatives_ja": [
+        "この店で名刺を作る。",
+        "この店では名刺をつくる。"
+      ],
+      "ambiguity_notes": "つくる puede escribirse en hiragana o con 作る; aquí se mantiene en hiragana según el objetivo dado.",
+      "critical_meaning_units": [
+        "この店で",
+        "名刺を",
+        "つくる"
+      ],
+      "difficulty_rationale": "Frase corta con un verbo muy frecuente pero necesario para expresar un servicio de elaboración. El objeto 名刺 obliga a una elección léxica concreta y natural.",
+      "naturalness_rationale": "Es una escena cotidiana y plausible en un local de impresión o copistería, sin información añadida ni contexto oculto.",
+      "equivalence_verified": true
+    }
+  },
+  {
+    "level": "N4",
+    "slot": 1219,
+    "status": "pending_repair",
+    "reason": "このスープは塩で味を上げます y traduccion 'esta sopa realza el sabor' atribuyen accion a la sopa. Reescribir con 上げる natural, p.ej. temperatura/fuego/volumen, y sujetos equivalentes.",
+    "item": {
+      "level": "N4",
+      "coverage_slot": {
+        "slot": 1219,
+        "level": "N4",
+        "topic_primary": "comida",
+        "topic_secondary_allowed": "",
+        "grammar_focus": [],
+        "communicative_shape": "statement",
+        "length_band": "standard",
+        "jp_char_range": [
+          16,
+          36
+        ],
+        "es_word_range": [
+          8,
+          18
+        ],
+        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
+        "target_vocabulary": [
+          {
+            "id": "lexeme.V05797",
+            "word": "上げ",
+            "reading": "あげ",
+            "meaning_en": "Raise",
+            "concept_id": "lexeme.V05797",
+            "concept_label": "Raise",
+            "concept_members": [
+              "上げ"
+            ],
+            "usage_score": "44.721",
+            "current_uses": 0
+          }
+        ],
+        "target_kanji": [],
+        "target_grammar": []
+      },
+      "review_rounds": 1,
+      "editorial_quality_version": 5,
+      "slot": 1219,
+      "japanese": "このスープは塩で味を上げます。",
+      "spanish": "Esta sopa realza el sabor con sal.",
+      "scenario_es": "Al describir una sopa, se explica que la sal mejora el sabor.",
+      "topic_primary": "comida",
+      "topic_secondary": [],
+      "situation_tag": "descripcion_de_sabor",
+      "grammar_tags": [
+        "～で",
+        "～を～ます"
+      ],
+      "particle_tags": [
+        "は",
+        "で",
+        "を"
+      ],
+      "vocabulary_tags": [
+        "上げ"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "塩",
+          "reading_hiragana": "しお",
+          "meaning_es": "sal",
+          "explanation_es": "Ingrediente usado para indicar el medio o recurso con で."
+        },
+        {
+          "characters": "味",
+          "reading_hiragana": "あじ",
+          "meaning_es": "sabor",
+          "explanation_es": "En 味を上げます, nombra el sabor que se mejora."
+        },
+        {
+          "characters": "上",
+          "reading_hiragana": "あ",
+          "meaning_es": "elevar / subir",
+          "explanation_es": "En 上げます, aporta la idea de ‘subir, mejorar, aumentar’."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "describir una preparación o efecto culinario",
+      "tense_aspect": "presente",
+      "polarity": "afirmativa",
+      "sentence_type": "declarativa",
+      "accepted_alternatives_es": [
+        "Esta sopa mejora el sabor con sal."
+      ],
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "味を上げます aquí se entiende como ‘mejorar el sabor’; no implica necesariamente un proceso técnico específico.",
+      "critical_meaning_units": [
+        "このスープは",
+        "塩で",
+        "味を上げます"
+      ],
+      "difficulty_rationale": "Integra el lexema objetivo 上げ en un contexto natural de comida, con partículas básicas y un significado semántico no literal.",
+      "naturalness_rationale": "La frase es corta, clara y plausible como comentario sobre el sabor de una sopa.",
+      "equivalence_verified": true
+    }
+  }
+]
