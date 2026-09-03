@@ -436,6 +436,8 @@ Pruebas manuales mínimas:
 
 ## Seguridad y costes
 
+La correccion muestra solo vocabulario presente en la frase correcta; los fragmentos erroneos permanecen en la comparacion con la respuesta del alumno. Los percentiles del feedback se consultan en la referencia contextual completa, con variantes ortograficas y formas corteses reconocibles. Las palabras sin entrada o con homofonia ambigua muestran "Sin ranking disponible", nunca un porcentaje inventado. `scripts/build-feedback-usage.py` regenera ese indice cuando cambia la referencia. No se recalculan notas ni EXP por estos ajustes visuales.
+
 - Nunca exponer `OPENAI_API_KEY` ni una Supabase service-role key.
 - Aplicar RLS a cualquier tabla nueva.
 - El cron debe ser idempotente para no facturar dos veces el mismo informe.

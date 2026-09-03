@@ -487,7 +487,7 @@ async function callOpenAI(payload, env) {
   const body = {
     model: "gpt-5.4-mini",
     reasoning: { effort: "none" },
-    instructions: `${systemPrompt()} ${scoringGuide()}`,
+    instructions: `${systemPrompt()} ${scoringGuide()} En la respuesta modelo es_ja usa la escritura japonesa habitual con kanji comunes (por ejemplo 今日, 晩ご飯, 作ります), sin convertir artificialmente palabras que se escriben normalmente en kana como うち. No penalices al alumno solo por usar kana correctamente. kanji_readings debe cubrir primero TODAS las palabras con kanji de correct_japanese_sentence, con su lectura contextual completa. Incluye las formas correctas, nunca conjugaciones inventadas por el alumno como 料理ます. Conserva las explicaciones de sus formas erroneas en errors; puedes incluir lecturas adicionales de corrected_span si son correctas. Prefiere palabras completas (晩ご飯: ばんごはん; 作ります: つくります), no fragmentos con una lectura que corresponde al compuesto entero.`,
     input: JSON.stringify(payload),
     max_output_tokens: 2500,
     text: {

@@ -5,6 +5,8 @@ import vm from "node:vm";
 
 function feedback(ev, answer, options) {
   const context = { window: {} };
+  vm.runInNewContext(fs.readFileSync(new URL("../src/feedback-usage-data.js", import.meta.url), "utf8"), context);
+  vm.runInNewContext(fs.readFileSync(new URL("../src/feedback-vocabulary.js", import.meta.url), "utf8"), context);
   vm.runInNewContext(fs.readFileSync(new URL("../src/ui.js", import.meta.url), "utf8"), context);
   return context.window.UI.feedback(ev, answer, options);
 }
@@ -53,6 +55,7 @@ test("key words show their real-usage percentile and derived level", () => {
 test("a grouped reading shows the rank of each matched Japanese term", () => {
   const html = feedback({
     ...evaluation,
+    correct_japanese_sentence: "仕事の資料です。",
     kanji_readings: [{ characters: "仕事の資料", reading_hiragana: "しごとのしりょう", meaning_es: "documentos de trabajo", explanation_es: "Material de trabajo." }],
   }, "Documentos de trabajo.", {
     direction: "ja_es",
@@ -66,6 +69,23 @@ test("a grouped reading shows the rank of each matched Japanese term", () => {
   });
   assert.match(html, /仕事 · uso combinado top 0\.30%/);
   assert.match(html, /資料 · uso combinado top 1\.8%/);
+});
+
+test("feedback repairs screenshot spelling and separates wrong-answer vocabulary", () => {
+  const html=feedback({...evaluation,correct_japanese_sentence:'きょうはうちで母が晩ご飯を作ります。',natural_answer:'きょうはうちで母が晩ご飯を作ります。',kanji_readings:[
+    {characters:'家',reading_hiragana:'いえ',meaning_es:'casa'},
+    {characters:'母',reading_hiragana:'はは',meaning_es:'madre'},
+    {characters:'晩ごはん',reading_hiragana:'ばんごはん',meaning_es:'cena'},
+    {characters:'料理ます',reading_hiragana:'りょうります',meaning_es:'incorrecta'},
+  ]},'家に今日は、晩ごはんが母料理ます',{direction:'es_ja'});
+  const support=html.split('<section class="correct-japanese">')[1].split('<section class="answer-comparison">')[0];
+  assert.match(support,/<ruby>今日<rt>きょう<\/rt>/);
+  assert.match(support,/<ruby>作ります<rt>つくります<\/rt>/);
+  assert.match(support,/今日 · uso combinado top 0\.31%/);
+  assert.match(support,/作る · uso combinado top 7\.8%/);
+  assert.match(support,/Sin ranking disponible/);
+  assert.doesNotMatch(support,/料理ます|<strong>家<\/strong>/);
+  assert.match(html,/家に今日は、晩ごはんが母料理ます/);
 });
 
 test("ES to JP feedback retains the corrected Japanese sentence", () => {
