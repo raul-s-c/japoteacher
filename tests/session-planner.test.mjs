@@ -49,7 +49,43 @@ test("a daily plan from an older selector is marked for rebalancing", () => {
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_coverage_v10" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v13_voluntary_repeats" }) }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v13_voluntary_repeats" }) }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 90 }) }, { newRatio: 90 }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 60 }) }, { newRatio: 90 }), true);
+});
+
+test("the configured 90 percent new ratio is enforced as a real quota", () => {
+  const srs = planner();
+  const fresh = Array.from({ length: 25 }, (_, index) => ({ exercise_id: `fresh-${index}`, active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: [`fresh-topic-${index}`], grammar_tags: [`fresh-g-${index}`], vocabulary_tags: [`fresh-v-${index}`], register: "cortes" }));
+  const reviews = Array.from({ length: 8 }, (_, index) => ({ exercise_id: `review-${index}`, active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: [`review-topic-${index}`], grammar_tags: [`review-g-${index}`], vocabulary_tags: [`review-v-${index}`], register: "cortes" }));
+  const attempts = reviews.map((exercise, index) => ({ exercise_id: exercise.exercise_id, direction: "ja_es", evaluation_status: "valid", overall_score: 70, is_acceptable: true, attempted_at: `2026-07-${String(index + 1).padStart(2, "0")}T12:00:00Z` }));
+  const progress = reviews.map(exercise => ({ exercise_id: exercise.exercise_id, cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 70 }));
+  const ids = srs.choose([...fresh, ...reviews], progress, attempts, 20, { levels: ["N5"], newRatio: 90 }, "ja_es", "2026-09-03", []);
+  assert.equal(ids.length, 20);
+  assert.equal(ids.filter(id => id.startsWith("fresh-")).length, 18);
+  assert.equal(ids.filter(id => id.startsWith("review-")).length, 2);
+});
+
+test("a very easy 90-plus exercise is deferred while suitable unseen exercises remain", () => {
+  const srs = planner();
+  const exercises = [
+    ...Array.from({ length: 4 }, (_, index) => ({ exercise_id: `fresh-${index}`, active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: [`fresh-${index}`], grammar_tags: [`fg-${index}`], vocabulary_tags: [`fv-${index}`] })),
+    { exercise_id: "normal-review", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["normal"], grammar_tags: ["normal-g"], vocabulary_tags: ["normal-v"] },
+    { exercise_id: "easy-review", active: true, direction: "ja_es", jlpt_level: "N5", difficulty: 30, topic_tags: ["easy"], grammar_tags: ["easy-g"], vocabulary_tags: ["easy-v"] },
+  ];
+  const attempts = [
+    { exercise_id: "normal-review", direction: "ja_es", evaluation_status: "valid", overall_score: 65, attempted_at: "2026-07-01T12:00:00Z" },
+    { exercise_id: "easy-review", direction: "ja_es", evaluation_status: "valid", overall_score: 96, user_difficulty_feedback: "too_easy", attempted_at: "2026-07-01T12:00:00Z" },
+  ];
+  const progress = [
+    { exercise_id: "normal-review", cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 65 },
+    { exercise_id: "easy-review", cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 96, deferred_until_new_exhausted: true },
+  ];
+  const ids = srs.choose(exercises, progress, attempts, 3, { levels: ["N5"], newRatio: 67 }, "ja_es", "2026-09-03", []);
+  assert.equal(ids.length, 3);
+  assert.equal(ids.filter(id => id.startsWith("fresh-")).length, 2);
+  assert.ok(ids.includes("normal-review"));
+  assert.ok(!ids.includes("easy-review"));
 });
 
 test("a zero-evidence family gets an intervention slot ahead of ordinary due reviews", () => {
@@ -71,7 +107,7 @@ test("recent lexical repetition is penalized so daily plans diversify words", ()
   ];
   const attempts = Array.from({ length: 10 }, (_, index) => ({ exercise_id: index % 2 ? "repeat-1" : "repeat-2", direction: "ja_es", evaluation_status: "valid", overall_score: 60, is_acceptable: false, attempted_at: `2026-08-${String(index + 1).padStart(2, "0")}T12:00:00Z` }));
   const progress = exercises.map(exercise => ({ exercise_id: exercise.exercise_id, cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: exercise.exercise_id.startsWith("repeat") ? 60 : 80 }));
-  const ids = srs.choose(exercises, progress, attempts, 2, { levels: ["N5"] }, "ja_es", "2026-08-15", []);
+  const ids = srs.choose(exercises, progress, attempts, 2, { levels: ["N5"], newRatio: 100 }, "ja_es", "2026-08-15", []);
   assert.ok(ids.includes("fresh-1"));
   assert.ok(ids.includes("fresh-2"));
 });
