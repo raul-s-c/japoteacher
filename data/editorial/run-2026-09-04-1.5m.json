@@ -1,0 +1,18 @@
+{
+  "baseline": 25296635,
+  "budget": 1500000,
+  "spent": 133804,
+  "new_pairs": {
+    "N5": 15,
+    "N4": 10
+  },
+  "status": "interrupted_transport",
+  "candidates": 25,
+  "publishable_pairs": {
+    "N5": 13,
+    "N4": 7
+  },
+  "pending_review": 5,
+  "unreported_transport_usage_possible": true,
+  "note": "Budget not exhausted; disconnected requests may have unreported usage."
+}

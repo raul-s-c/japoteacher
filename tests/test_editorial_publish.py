@@ -8,6 +8,27 @@ from unittest.mock import patch
 
 
 class IncrementalPublishingTest(unittest.TestCase):
+    def test_transport_failure_does_not_retry_or_count_as_editorial_rejection(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location("generator", root / "scripts/editorial-generate.py")
+        generator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(generator)
+        with patch.object(generator.urllib.request, "urlopen", side_effect=generator.http.client.RemoteDisconnected("closed")) as request:
+            with self.assertRaises(generator.EditorialTransportError):
+                generator.request_editorial({"operation": "generate"}, "test", retries=6)
+        self.assertEqual(request.call_count, 1)
+
+    def test_published_editorial_sentence_is_not_counted_twice_for_coverage(self):
+        root = pathlib.Path(__file__).resolve().parents[1]
+        spec = importlib.util.spec_from_file_location("generator", root / "scripts/editorial-generate.py")
+        generator = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(generator)
+        reference = {"vocabulary": [{"Word_ID": "book", "Word": "book"}], "kanji": [], "grammar": []}
+        row = {"source_text": "sentence", "direction": "ja_es", "vocabulary_tags": "book"}
+        approved = [{"japanese": "sentence", "coverage_slot": {"target_vocabulary": [{"id": "book"}]}}]
+        with patch.object(generator, "active_pairs", return_value=[row]):
+            self.assertEqual(generator.coverage_counts(reference, "N5", approved)["vocabulary"]["book"], 1)
+
     def test_exhausted_validation_does_not_publish_provisional_result(self):
         root = pathlib.Path(__file__).resolve().parents[1]
         spec = importlib.util.spec_from_file_location("generator", root / "scripts/editorial-generate.py")

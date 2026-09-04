@@ -17,6 +17,11 @@ POLICY = json.loads((ROOT / "data" / "jlpt-content-policy.json").read_text(encod
 CONTEXTUAL_VOCABULARY = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
 ENDPOINT = "https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate"
 MAX_GENERATION_ATTEMPTS = 5
+
+
+class EditorialTransportError(Exception):
+    """Stop the run when a request has no accountable server response."""
+
 UNSUITABLE_N5_COVERAGE_WORDS = {"場合", "可能", "バック"}
 N5_BRIDGE_PATTERN = re.compile(r"(?:ので|のに|たら|なら|(?:れ|け|え)ば|ように|そうだ|と思|と言|かもしれ|でしょう|つもり|予定|こと[がに]|なければ|なくても|てしま|てお[くき]|てみ[るま]|て(?:あげ|くれ|もら)|ために|しか.+ない|すぎ[るま]|はず|かどうか|について|によると|に見え|とともに|共に|として|場合|可能|学べ)")
 
@@ -220,7 +225,11 @@ def request_editorial(payload, key, retries=6):
             if attempt == retries - 1:
                 raise RuntimeError(f"El endpoint editorial respondió {error.code}: {detail}") from error
             time.sleep(2 ** attempt)
-        except (urllib.error.URLError, http.client.RemoteDisconnected, ConnectionResetError, TimeoutError, RuntimeError) as error:
+        except (urllib.error.URLError, http.client.RemoteDisconnected, ConnectionResetError, TimeoutError) as error:
+            # A disconnected POST may already have consumed tokens. It is not a
+            # rejected sentence and must not enter the generation retry loop.
+            raise EditorialTransportError(f"Editorial transport interrupted: {error}") from error
+        except RuntimeError as error:
             if attempt == retries - 1:
                 raise RuntimeError(f"La llamada editorial falló tras {retries} intentos: {error}") from error
             time.sleep(2 ** attempt)
@@ -320,6 +329,8 @@ def coverage_counts(reference, level, approved):
     # Approved-but-not-yet-published rows carry the exact coverage targets that
     # were requested, so they can be counted without guessing from substrings.
     for item in approved:
+        if normalize_japanese(item.get("japanese", "")) in rows_by_sentence:
+            continue
         slot = item.get("coverage_slot") or {}
         for target in slot.get("target_vocabulary", []):
             vocabulary[target.get("id")] = vocabulary.get(target.get("id"), 0) + 1
