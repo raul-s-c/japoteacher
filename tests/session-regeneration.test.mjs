@@ -146,3 +146,13 @@ test('cloud sync cannot resurrect discarded pending IDs in either merge order', 
     assert.deepEqual(JSON.parse(merged.voluntary_repeat_ids_ja_es_json), ['repeat']);
   }
 });
+
+test('cloud sync preserves the newest extension metadata and ignores unrelated completions', () => {
+  const old = { plan_updated_at: ago(1), exercise_ids_ja_es_json: '["done"]', completed_exercise_ids_json: '["done","unrelated"]', extra_study_history_json: '[{"added_ja_es":1}]' };
+  const newer = { plan_updated_at: ago(0), exercise_ids_ja_es_json: '["done","pending"]', extra_study_history_json: '[{"added_ja_es":2}]' };
+  for (const row of [mergeSession(old, newer), mergeSession(newer, old)]) {
+    assert.equal(row.extra_study_history_json, newer.extra_study_history_json);
+    assert.equal(row.status, 'in_progress');
+    assert.equal(row.completed_at, null);
+  }
+});
