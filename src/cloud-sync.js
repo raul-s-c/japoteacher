@@ -134,10 +134,15 @@
         ...JSON.parse(local.drafts_json || "{}"),
       },
       mergeIds = field => [...new Set([...JSON.parse(remote[field] || "[]"),...JSON.parse(local[field] || "[]")])],
-      jaIds=mergeIds('exercise_ids_ja_es_json'),esIds=mergeIds('exercise_ids_es_ja_json'),jaRepeats=mergeIds('voluntary_repeat_ids_ja_es_json'),esRepeats=mergeIds('voluntary_repeat_ids_es_ja_json'),total=new Set([...jaIds,...esIds]).size;
+      localVersion=local.plan_updated_at||'',remoteVersion=remote.plan_updated_at||'',
+      winner=localVersion===remoteVersion?null:localVersion>remoteVersion?local:remote,
+      jaRepeats=mergeIds('voluntary_repeat_ids_ja_es_json'),esRepeats=mergeIds('voluntary_repeat_ids_es_ja_json'),
+      planIds=(field,repeats)=>{const all=mergeIds(field);return winner?[...new Set([...JSON.parse(winner[field]||'[]'),...all.filter(id=>completed.includes(id)||drafts[id]),...repeats])]:all},
+      jaIds=planIds('exercise_ids_ja_es_json',jaRepeats),esIds=planIds('exercise_ids_es_ja_json',esRepeats),total=new Set([...jaIds,...esIds]).size;
     return {
       ...remote,
       ...local,
+      ...(winner?{plan_updated_at:winner.plan_updated_at,selection_reason_json:winner.selection_reason_json,planned_ja_es:winner.planned_ja_es,planned_es_ja:winner.planned_es_ja,settings_snapshot_json:winner.settings_snapshot_json}:{}),
       created_at: [local.created_at, remote.created_at]
         .filter(Boolean)
         .sort()[0],

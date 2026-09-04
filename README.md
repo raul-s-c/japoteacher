@@ -271,9 +271,11 @@ Este bloque recoge literalmente la intención del producto. Se considera la fuen
 
 #### SRS equilibrado
 
-- El SRS reserva al menos el 60% del plan a material no visto cuando el banco lo permite. El resto combina revisiones vencidas, transferencia de debilidades y material puente, puntuando además el desequilibrio por familia, tema, registro, vocabulario, kanji y gramática.
+- El SRS aplica la proporción configurada como cuota mínima de nuevas: con 20 preguntas y 90%, reserva 18 nuevas y admite como máximo 2 repasos ordinarios. Las extras voluntarias no consumen esa cuota. Los días mínimos entre repeticiones se respetan incluso tras una mala respuesta; el refuerzo no puede saltárselos. Si no hay candidatas suficientes, Hoy muestra el déficit en vez de rellenarlo con repeticiones prematuras.
 - Las familias o registros con pocas muestras, peor media o escasa práctica reciben prioridad. Dentro de la misma sesión, cada selección reduce temporalmente la prioridad de su propia familia y registro para evitar bloques monocordes.
-- El equilibrio se calcula por dirección y solo entre material permitido por la ruta JLPT, por lo que JP→ES y ES→JP siguen siendo rutas independientes.
+- El equilibrio se calcula por dirección y entre los niveles habilitados expresamente en Ajustes. La EXP no anula esos niveles: dentro de cada JLPT se mantiene el desbloqueo gradual de dificultad y se priorizan niveles inferiores y contextos con poca evidencia. Se penalizan palabras y plantillas casi idénticas dentro de una tanda y respecto al historial reciente. Una misma frase japonesa con otro ID tampoco cuenta como nueva en la misma dirección.
+- En Hoy, `Rehacer selección` cambia únicamente las preguntas pendientes sin borrador. Conserva respuestas completadas, borradores, extras voluntarias y ampliaciones elegidas, sin escribir en intentos ni recalcular EXP. Al actualizar el planificador también se reparan los planes antiguos. La revisión `plan_updated_at` se sincroniza para impedir que un plan obsoleto vuelva a incorporar preguntas descartadas.
+- Regresión SRS: `node --test tests/session-*.test.mjs`; prueba real de interfaz con historial sintético y banco público: `node tests/session-mobile.cjs` (requiere Playwright). Incluye 360/420/1280 px, cancelar, regenerar, borrador sin guardar, extras, recarga y sincronización en ambos órdenes de mezcla.
 - Progreso muestra un resumen móvil de los últimos siete días: acciones por modalidad, nota media, EXP neta, ejercicios y términos distintos, días activos y la familia que el planificador priorizará en la siguiente sesión.
 
 ### Criterio global de finalización

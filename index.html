@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=64">
+  <link rel="stylesheet" href="styles.css?v=65">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -37,7 +37,8 @@
       </header>
 
       <section class="view active" id="view-hoy" aria-labelledby="viewTitle">
-        <div class="intro"><div><h2>Tu práctica diaria</h2><p>Completa tu objetivo y, si quieres, sigue con tantas tandas adicionales como te apetezca.</p></div><div class="intro-actions"><button class="secondary" id="extraStudyButton" hidden>Estudiar más</button><button class="primary" id="continueButton">Comenzar sesión</button></div></div>
+        <div class="intro"><div><h2>Tu práctica diaria</h2><p>Completa tu objetivo y, si quieres, sigue con tantas tandas adicionales como te apetezca.</p></div><div class="intro-actions"><button class="secondary" id="regenerateSelectionButton" type="button"><span aria-hidden="true">↻</span> Rehacer selección</button><button class="secondary" id="extraStudyButton" hidden>Estudiar más</button><button class="primary" id="continueButton">Comenzar sesión</button></div></div>
+        <p id="selectionStatus" class="selection-status" role="status"></p>
         <div class="direction-grid" id="directionCards"></div>
         <div class="dashboard-grid">
           <section class="panel priority-panel"><div class="section-heading"><div><p class="section-kicker">Enfoque</p><h3>Tags prioritarios</h3></div></div><div id="priorityTags" class="tag-list"></div></section>
@@ -201,18 +202,19 @@
   <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <div class="detail-modal" id="filterExerciseDialog" hidden><section class="detail-modal-card filter-exercise-card" role="dialog" aria-modal="true" aria-labelledby="filterExerciseTitle"><p class="section-kicker">Control editorial personal</p><h2 id="filterExerciseTitle">¿Retirar esta frase?</h2><p class="chooser-help">No volverá a aparecer en tu práctica y también se retirará su pareja inversa. Tu historial anterior se conserva.</p><blockquote id="filterExerciseText"></blockquote><p class="issue-form-status" id="filterExerciseStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelFilterExercise" type="button">Cancelar</button><button class="danger" id="confirmFilterExercise" type="button">No pasa el filtro</button></div></section></div>
+  <dialog id="regenerateSelectionDialog" class="regenerate-dialog" aria-labelledby="regenerateSelectionTitle"><h2 id="regenerateSelectionTitle">¿Rehacer las frases pendientes?</h2><p>Se conservan las respuestas completadas, los borradores y todas las extras voluntarias de hoy. No se modifica tu EXP.</p><p id="regenerateSelectionStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelRegenerateSelection" type="button">Cancelar</button><button class="primary" id="confirmRegenerateSelection" type="button">Rehacer pendientes</button></div></dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="src/supabase-config.js?v=11"></script>
   <script src="src/db.js?v=34"></script>
   <script src="src/sync-policy.js?v=2"></script>
-  <script src="src/cloud-sync.js?v=37"></script>
+  <script src="src/cloud-sync.js?v=38"></script>
   <script src="src/pwa-update.js?v=16"></script>
   <script src="src/schema-validation.js?v=19"></script>
   <script src="src/srs.js?v=4"></script>
   <script src="src/topic-progression.js?v=39"></script>
   <script src="src/ranked-progress.js?v=16"></script>
   <script src="src/ranked-history.js?v=2"></script>
-  <script src="src/session-planner.js?v=48"></script>
+  <script src="src/session-planner.js?v=49"></script>
   <script src="src/furigana-generated.js?v=35"></script>
   <script src="src/furigana.js?v=26"></script>
   <script src="src/difficulty.js?v=36"></script>
@@ -231,7 +233,7 @@
   <script src="src/feedback-vocabulary.js?v=1"></script>
   <script src="src/ui.js?v=45"></script>
   <script src="src/history-ui.js?v=37"></script>
-  <script src="app.js?v=87"></script>
+  <script src="app.js?v=88"></script>
   <script src="src/navigation-fix.js?v=5"></script>
   <script src="src/mobile-insets.js?v=1"></script>
   <script src="src/bank-status.js?v=27"></script>

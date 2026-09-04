@@ -3,8 +3,9 @@ import fs from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
 
-function planner() {
+function planner(JapoDB) {
   const TopicProgression = {
+    analyze: () => [],
     bonus: () => 0,
     familyFor(topic) {
       return ({ familia: "Familia y amigos", trabajo: "Trabajo y carrera", dinero: "Dinero y proyectos", ocio: "Ocio y vida diaria", consulta: "Conocimiento y consultas" })[topic] || "Conocimiento y consultas";
@@ -15,6 +16,7 @@ function planner() {
     TopicProgression,
     Difficulty: { bands: [0], bandFor: () => 0, score: () => 50, levelIndex: () => 0 },
     Date, Math, Set, Map, JSON,
+    JapoDB,
   };
   vm.runInNewContext(fs.readFileSync(new URL("../src/session-planner.js", import.meta.url), "utf8"), context);
   return context.window.SessionPlanner;
@@ -50,7 +52,8 @@ test("a daily plan from an older selector is marked for rebalancing", () => {
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "balanced_srs_variety_v11" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v13_voluntary_repeats" }) }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 90 }) }, { newRatio: 90 }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 90 }) }, { newRatio: 90 }), true);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v15_hard_constraints", new_ratio: 90, cooldown_days: 14, levels: ["N5"] }) }, { newRatio: 90, levels: ["N5"] }), false);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 60 }) }, { newRatio: 90 }), true);
 });
 
@@ -81,7 +84,7 @@ test("a very easy 90-plus exercise is deferred while suitable unseen exercises r
     { exercise_id: "normal-review", cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 65 },
     { exercise_id: "easy-review", cooldown_until: "2000-01-01T00:00:00Z", next_review_at: "2000-01-01T00:00:00Z", average_score: 96, deferred_until_new_exhausted: true },
   ];
-  const ids = srs.choose(exercises, progress, attempts, 3, { levels: ["N5"], newRatio: 67 }, "ja_es", "2026-09-03", []);
+  const ids = srs.choose(exercises, progress, attempts, 3, { levels: ["N5"], newRatio: 66 }, "ja_es", "2026-09-03", []);
   assert.equal(ids.length, 3);
   assert.equal(ids.filter(id => id.startsWith("fresh-")).length, 2);
   assert.ok(ids.includes("normal-review"));
