@@ -1,12 +1,79 @@
 [
   {
-    "reason": "Forced causal context for explosion.",
+    "reason": "Repair retains an unexplained explosion/neighbour relation; rewrite the complete scene.",
     "item": {
+      "slot": 1052,
+      "japanese": "その爆発のあと、隣人との関係は悪くなりました。",
+      "spanish": "Después de esa explosión, la relación con el vecino empeoró.",
+      "scenario_es": "Después de una explosión cercana, la relación con el vecino se deterioró.",
+      "topic_primary": "sociedad",
+      "topic_secondary": [],
+      "situation_tag": "conflicto_vecinal",
+      "grammar_tags": [
+        "のあと",
+        "くなる"
+      ],
+      "particle_tags": [
+        "との",
+        "は",
+        "の"
+      ],
+      "vocabulary_tags": [
+        "爆発",
+        "関係",
+        "悪い",
+        "隣人"
+      ],
+      "kanji_readings": [
+        {
+          "characters": "爆発",
+          "reading_hiragana": "ばくはつ",
+          "meaning_es": "explosión",
+          "explanation_es": "Causa del cambio de estado expresado en la oración."
+        },
+        {
+          "characters": "隣人",
+          "reading_hiragana": "りんじん",
+          "meaning_es": "vecino",
+          "explanation_es": "Persona del entorno vecinal con la que se tiene la relación mencionada."
+        },
+        {
+          "characters": "関係",
+          "reading_hiragana": "かんけい",
+          "meaning_es": "relación",
+          "explanation_es": "Vínculo social que cambia de estado en la frase."
+        },
+        {
+          "characters": "悪",
+          "reading_hiragana": "わる",
+          "meaning_es": "malo",
+          "explanation_es": "Base adjetival de 悪くなりました, que indica empeoramiento."
+        }
+      ],
+      "register": "cortés",
+      "communicative_function": "statement",
+      "tense_aspect": "pasado",
+      "polarity": "afirmativa",
+      "sentence_type": "oración simple",
+      "accepted_alternatives_es": [
+        "Tras esa explosión, la relación con el vecino empeoró."
+      ],
+      "accepted_alternatives_ja": [
+        "その爆発のあと、隣人との関係は悪くなった。"
+      ],
+      "ambiguity_notes": "隣人 se entiende como «vecino» en sentido literal. El complemento temporal その爆発のあと fija claramente la secuencia sin añadir información extra.",
+      "critical_meaning_units": [
+        "その爆発のあと",
+        "隣人との関係",
+        "悪くなりました"
+      ],
+      "difficulty_rationale": "Mantiene vocabulario accesible de N5 con un cambio de estado en pasado y una relación causal sencilla.",
+      "naturalness_rationale": "La secuencia temporal después de una explosión y el deterioro de una relación vecinal es plausible y fluida en japonés natural.",
       "level": "N5",
       "coverage_slot": {
         "slot": 1052,
         "level": "N5",
-        "topic_primary": "relaciones",
+        "topic_primary": "sociedad",
         "topic_secondary_allowed": "",
         "grammar_focus": [],
         "communicative_shape": "statement",
@@ -38,113 +105,45 @@
         "target_kanji": [],
         "target_grammar": []
       },
-      "review_rounds": 1,
+      "review_rounds": 2,
       "editorial_quality_version": 5,
-      "slot": 1052,
-      "japanese": "隣人との関係は、あの爆発で悪くなりました。",
-      "spanish": "La relación con el vecino empeoró por esa explosión.",
-      "scenario_es": "Tras una explosión cercana, la relación con el vecino se deterioró.",
-      "topic_primary": "relaciones",
-      "topic_secondary": [],
-      "situation_tag": "conflicto_vecinal",
-      "grammar_tags": [
-        "で",
-        "くなる"
-      ],
-      "particle_tags": [
-        "と",
-        "の",
-        "は",
-        "で"
-      ],
-      "vocabulary_tags": [
-        "爆発",
-        "関係",
-        "悪い"
-      ],
-      "kanji_readings": [
-        {
-          "characters": "隣人",
-          "reading_hiragana": "りんじん",
-          "meaning_es": "vecino",
-          "explanation_es": "Persona cercana en la comunidad, vinculada a la relación mencionada."
-        },
-        {
-          "characters": "関係",
-          "reading_hiragana": "かんけい",
-          "meaning_es": "relación",
-          "explanation_es": "Núcleo temático de la frase, sujeto del cambio de estado."
-        },
-        {
-          "characters": "爆発",
-          "reading_hiragana": "ばくはつ",
-          "meaning_es": "explosión",
-          "explanation_es": "Causa del empeoramiento de la relación."
-        },
-        {
-          "characters": "悪",
-          "reading_hiragana": "わる",
-          "meaning_es": "malo",
-          "explanation_es": "Base adjetival del cambio de estado en 悪くなりました。"
-        }
-      ],
-      "register": "cortés",
-      "communicative_function": "statement",
-      "tense_aspect": "pasado",
-      "polarity": "afirmativa",
-      "sentence_type": "oración simple",
-      "accepted_alternatives_es": [
-        "La relación con el vecino se volvió peor por esa explosión."
-      ],
-      "accepted_alternatives_ja": [
-        "隣人との関係は、あの爆発で悪くなった。"
-      ],
-      "ambiguity_notes": "隣人 se interpreta aquí como «vecino»; el complemento causal con で expresa una causa externa clara.",
-      "critical_meaning_units": [
-        "隣人との関係",
-        "爆発",
-        "で",
-        "悪くなりました"
-      ],
-      "difficulty_rationale": "Combina un sustantivo abstracto de frecuencia media con un cambio de estado en pasado, manteniendo vocabulario accesible.",
-      "naturalness_rationale": "La relación vecinal empeorando tras una explosión es una microescena plausible y semánticamente coherente.",
       "equivalence_verified": true
     }
   },
   {
-    "reason": "Vague unnatural event/cause phrasing.",
+    "reason": "Spanish imperative is not unambiguously supported by Japanese declarative wording; align intention.",
     "item": {
       "level": "N5",
       "coverage_slot": {
-        "slot": 1056,
+        "slot": 1086,
         "level": "N5",
-        "topic_primary": "ocio",
+        "topic_primary": "vida_diaria",
         "topic_secondary_allowed": "",
         "grammar_focus": [],
         "communicative_shape": "reason_contrast_condition",
-        "length_band": "long",
+        "length_band": "standard",
         "jp_char_range": [
-          16,
-          32
+          10,
+          24
         ],
         "es_word_range": [
-          8,
-          18
+          5,
+          12
         ],
         "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
         "target_vocabulary": [
           {
-            "id": "lexeme.V01858",
-            "word": "出来事",
-            "reading": "できごと",
-            "meaning_en": "event",
-            "concept_id": "lexeme.V01858",
-            "concept_label": "event",
+            "id": "lexeme.V00535",
+            "word": "人生",
+            "reading": "じんせい",
+            "meaning_en": "life",
+            "concept_id": "lexeme.V00535",
+            "concept_label": "life",
             "concept_members": [
-              "出来事"
+              "人生"
             ],
-            "usage_score": "47.073",
-            "current_uses": 0
+            "usage_score": "61.0433",
+            "current_uses": 1
           }
         ],
         "target_kanji": [],
@@ -152,254 +151,65 @@
       },
       "review_rounds": 1,
       "editorial_quality_version": 5,
-      "slot": 1056,
-      "japanese": "旅行中の出来事が多かったので少し疲れました。",
-      "spanish": "Como hubo muchos acontecimientos durante el viaje, me cansé un poco.",
-      "scenario_es": "Tras un viaje con muchas cosas que pasaron, la persona explica el cansancio como consecuencia de eso.",
-      "topic_primary": "ocio",
+      "slot": 1086,
+      "japanese": "人生は短いから、むだにしない。",
+      "spanish": "La vida es corta, así que no la desperdicies.",
+      "scenario_es": "Una persona habla de su vida cotidiana y expresa una decisión razonada de no desperdiciar la vida.",
+      "topic_primary": "vida_diaria",
       "topic_secondary": [],
       "situation_tag": "reason_contrast_condition",
-      "grammar_tags": [
-        "ので",
-        "た形",
-        "かった"
-      ],
+      "grammar_tags": [],
       "particle_tags": [
-        "の",
-        "が",
-        "ので"
+        "は",
+        "から"
       ],
       "vocabulary_tags": [
-        "旅行",
-        "中",
-        "出来事",
-        "多い",
-        "疲れる"
+        "人生"
       ],
       "kanji_readings": [
         {
-          "characters": "旅行中",
-          "reading_hiragana": "りょこうちゅう",
-          "meaning_es": "durante el viaje",
-          "explanation_es": "「旅行」 se lee りょこう y 「中」 aquí indica “durante”. Juntos forman una expresión fija de tiempo."
+          "characters": "人生",
+          "reading_hiragana": "じんせい",
+          "meaning_es": "vida",
+          "explanation_es": "Palabra objetivo para ‘vida’; aparece como núcleo del tema y del motivo de la frase."
         },
         {
-          "characters": "出来事",
-          "reading_hiragana": "できごと",
-          "meaning_es": "sucesos; cosas que ocurrieron",
-          "explanation_es": "Es una palabra fija en la que 「出来」 se lee でき y 「事」 se lee ごと."
-        },
-        {
-          "characters": "多かった",
-          "reading_hiragana": "おおかった",
-          "meaning_es": "fueron muchas",
-          "explanation_es": "Es el pasado de 「多い」, por eso el kanji 多 se lee おお en esta forma flexionada."
-        },
-        {
-          "characters": "少し",
-          "reading_hiragana": "すこし",
-          "meaning_es": "un poco",
-          "explanation_es": "「少」 se lee すこ en la palabra 「少し」, una lectura establecida por uso."
-        },
-        {
-          "characters": "疲れました",
-          "reading_hiragana": "つかれました",
-          "meaning_es": "me cansé",
-          "explanation_es": "Proviene del verbo 「疲れる」; el kanji 疲 se lee つか en esta conjugación de cortesía en pasado."
+          "characters": "短",
+          "reading_hiragana": "みじか",
+          "meaning_es": "corto",
+          "explanation_es": "Kanji en 短い, que aporta la razón de la segunda parte de la oración."
         }
       ],
-      "register": "cortés",
-      "communicative_function": "explicar una consecuencia o motivo",
-      "tense_aspect": "pasado",
-      "polarity": "afirmativa",
-      "sentence_type": "enunciativa",
+      "register": "neutro",
+      "communicative_function": "dar una razón y expresar una decisión personal",
+      "tense_aspect": "presente",
+      "polarity": "negativa",
+      "sentence_type": "declarativa",
       "accepted_alternatives_es": [
-        "Como ocurrieron muchas cosas durante el viaje, me cansé un poco."
+        "La vida es corta, por eso no la desperdicies."
       ],
-      "accepted_alternatives_ja": [],
-      "ambiguity_notes": "ので presenta una causa directa y natural; la oración no añade matices de contraste fuerte ni condición hipotética.",
+      "accepted_alternatives_ja": [
+        "人生は短いので、むだにしない。"
+      ],
+      "ambiguity_notes": "「むだにしない」 se entiende como ‘no desperdiciar’ la vida; la frase no especifica un objeto concreto.",
       "critical_meaning_units": [
-        "旅行中",
-        "の",
-        "出来事",
-        "が多かった",
-        "ので",
-        "少し疲れました"
+        "人生",
+        "短い",
+        "から",
+        "むだにしない"
       ],
-      "difficulty_rationale": "Combina vocabulario básico con una causa explicativa clara y un sustantivo menos frecuente, manteniendo una microescena muy plausible. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4. Elemento puente: vocabulario objetivo N5 con una construcción que puede acercarse a N4.",
-      "naturalness_rationale": "La secuencia causal es habitual en japonés y encaja de forma natural con una explicación de cansancio tras el viaje.",
-      "bridge_tags": [
-        "n5_to_n4_bridge"
-      ],
-      "difficulty_bridge": "N5_to_N4",
+      "difficulty_rationale": "Requiere la palabra objetivo 人生 y una estructura causal simple pero natural, adecuada para N5.",
+      "naturalness_rationale": "La oración es una reflexión cotidiana y plausible, con relación causa-efecto clara y sin añadidos forzados.",
       "equivalence_verified": true
     }
   },
   {
-    "reason": "Forced contrast and vague coercion context.",
+    "reason": "Spanish remains unnatural; use a concrete communication/work scene in both languages.",
     "item": {
-      "level": "N4",
-      "coverage_slot": {
-        "slot": 1224,
-        "level": "N4",
-        "topic_primary": "ocio",
-        "topic_secondary_allowed": "",
-        "grammar_focus": [],
-        "communicative_shape": "reason_contrast_condition",
-        "length_band": "long",
-        "jp_char_range": [
-          26,
-          52
-        ],
-        "es_word_range": [
-          14,
-          28
-        ],
-        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
-        "target_vocabulary": [
-          {
-            "id": "lexeme.V01867",
-            "word": "強制",
-            "reading": "きょうせい",
-            "meaning_en": "obligation",
-            "concept_id": "lexeme.V01867",
-            "concept_label": "obligation",
-            "concept_members": [
-              "強制"
-            ],
-            "usage_score": "45.3139",
-            "current_uses": 0
-          }
-        ],
-        "target_kanji": [],
-        "target_grammar": []
-      },
-      "review_rounds": 1,
-      "editorial_quality_version": 5,
-      "slot": 1224,
-      "japanese": "強制があるなら行きませんが、自由なら友だちと遊びます。",
-      "spanish": "Si hay coerción, no voy; si soy libre, juego con mis amigos.",
-      "scenario_es": "En una situación de ocio, la persona contrasta una actividad obligatoria con otra libre.",
-      "topic_primary": "ocio",
-      "topic_secondary": [
-        "obligación",
-        "contraste"
-      ],
-      "situation_tag": "condición_y_contraste",
-      "grammar_tags": [
-        "～なら",
-        "～ませんが",
-        "～ます"
-      ],
-      "particle_tags": [
-        "が",
-        "なら",
-        "と"
-      ],
-      "vocabulary_tags": [
-        "強制",
-        "自由",
-        "友だち",
-        "遊びます"
-      ],
-      "kanji_readings": [
-        {
-          "characters": "強制",
-          "reading_hiragana": "きょうせい",
-          "meaning_es": "obligación",
-          "explanation_es": "Se usa como sustantivo para una imposición o coerción; aquí contrasta con la libertad de elegir."
-        },
-        {
-          "characters": "行",
-          "reading_hiragana": "い",
-          "meaning_es": "ir",
-          "explanation_es": "Aparece en 行きません dentro de la forma verbal negativa."
-        },
-        {
-          "characters": "自由",
-          "reading_hiragana": "じゆう",
-          "meaning_es": "libertad",
-          "explanation_es": "Indica que no hay restricción ni imposición."
-        },
-        {
-          "characters": "友",
-          "reading_hiragana": "とも",
-          "meaning_es": "amigo",
-          "explanation_es": "Forma parte de 友だち, 'amigo(s)'."
-        },
-        {
-          "characters": "遊",
-          "reading_hiragana": "あそ",
-          "meaning_es": "jugar / pasar el rato",
-          "explanation_es": "Aparece en 遊びます, una acción de ocio natural en la escena."
-        }
-      ],
-      "register": "cortés",
-      "communicative_function": "expresar una condición con contraste entre obligación y libertad",
-      "tense_aspect": "presente-futuro habitual",
-      "polarity": "mixta",
-      "sentence_type": "oracional",
-      "accepted_alternatives_es": [
-        "Si me obligan, no voy; si soy libre, juego con mis amigos."
-      ],
-      "accepted_alternatives_ja": [],
-      "ambiguity_notes": "強制 se interpreta aquí como 'obligación' o 'imposición' en sentido general, no como un acto legal concreto.",
-      "critical_meaning_units": [
-        "強制があるなら",
-        "行きませんが",
-        "自由なら",
-        "友だちと遊びます"
-      ],
-      "difficulty_rationale": "Integra una condición, un contraste y vocabulario abstracto dentro de una frase natural de nivel N4.",
-      "naturalness_rationale": "La escena es plausible: en un contexto de ocio, la persona distingue entre una situación obligatoria y otra libre con una decisión coherente.",
-      "equivalence_verified": true
-    }
-  },
-  {
-    "reason": "Spanish needs a natural precise rewrite.",
-    "item": {
-      "level": "N4",
-      "coverage_slot": {
-        "slot": 1228,
-        "level": "N4",
-        "topic_primary": "tecnologia",
-        "topic_secondary_allowed": "",
-        "grammar_focus": [],
-        "communicative_shape": "social_action",
-        "length_band": "long",
-        "jp_char_range": [
-          26,
-          52
-        ],
-        "es_word_range": [
-          14,
-          28
-        ],
-        "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
-        "target_vocabulary": [
-          {
-            "id": "lexeme.V01703",
-            "word": "当たり前",
-            "reading": "あたりまえ",
-            "meaning_en": "obvious",
-            "concept_id": "lexeme.V01703",
-            "concept_label": "obvious",
-            "concept_members": [
-              "当たり前"
-            ],
-            "usage_score": "44.6606",
-            "current_uses": 0
-          }
-        ],
-        "target_kanji": [],
-        "target_grammar": []
-      },
-      "review_rounds": 2,
-      "editorial_quality_version": 5,
       "slot": 1228,
       "japanese": "スマホがあるのが当たり前になって、連絡も仕事もすぐできます。",
-      "spanish": "Tener un smartphone ya es algo normal, y se puede comunicar y trabajar enseguida.",
-      "scenario_es": "Una persona comenta que, con el uso habitual del smartphone, hoy resulta normal comunicarse y trabajar rápidamente.",
+      "spanish": "Tener un smartphone ya es algo normal, y también se puede contactar y trabajar enseguida.",
+      "scenario_es": "Una persona comenta que, hoy en día, tener un smartphone se ha vuelto algo normal y permite contactar y trabajar enseguida.",
       "topic_primary": "tecnologia",
       "topic_secondary": [
         "vida cotidiana",
@@ -448,10 +258,8 @@
       "polarity": "afirmativa",
       "sentence_type": "declarativa",
       "accepted_alternatives_es": [],
-      "accepted_alternatives_ja": [
-        "スマホがあるのが当たり前になって、連絡も仕事もすぐできる。"
-      ],
-      "ambiguity_notes": "La frase japonesa usa 連絡 y 仕事 como actividades que pueden hacerse enseguida; en español conviene evitar traducciones demasiado literales que suenen forzadas.",
+      "accepted_alternatives_ja": [],
+      "ambiguity_notes": "連絡も仕事も presenta dos actividades que se vuelven fáciles o inmediatas en el contexto del smartphone; en español se mantiene la misma lectura sin añadir matices temporales ni de sujeto.",
       "critical_meaning_units": [
         "スマホがある",
         "当たり前になって",
@@ -460,42 +268,36 @@
       ],
       "difficulty_rationale": "Exige producir 当たり前 dentro de una escena cotidiana coherente, además de una estructura con ～になる y posibilidad en contexto tecnológico.",
       "naturalness_rationale": "La frase suena como un comentario realista sobre hábitos actuales y usa vocabulario común de manera natural.",
-      "equivalence_verified": true
-    }
-  },
-  {
-    "reason": "Unnatural collocation for wind strength.",
-    "item": {
       "level": "N4",
       "coverage_slot": {
-        "slot": 1229,
+        "slot": 1228,
         "level": "N4",
-        "topic_primary": "naturaleza",
+        "topic_primary": "tecnologia",
         "topic_secondary_allowed": "",
         "grammar_focus": [],
-        "communicative_shape": "negative_or_correction",
-        "length_band": "short",
+        "communicative_shape": "social_action",
+        "length_band": "long",
         "jp_char_range": [
-          10,
-          22
+          26,
+          52
         ],
         "es_word_range": [
-          4,
-          10
+          14,
+          28
         ],
         "required_distinction": "Cubre target_vocabulary y target_kanji de forma natural. Si hay target_grammar, cubre también ese patrón. En ES-JP, el español debe obligar a producir esos elementos japoneses. Evita hospitales, colegios y profesores salvo que el objetivo lo exija.",
         "target_vocabulary": [
           {
-            "id": "lexeme.V02992",
-            "word": "強力",
-            "reading": "きょうりょく",
-            "meaning_en": "powerful",
-            "concept_id": "lexeme.V02992",
-            "concept_label": "powerful",
+            "id": "lexeme.V01703",
+            "word": "当たり前",
+            "reading": "あたりまえ",
+            "meaning_en": "obvious",
+            "concept_id": "lexeme.V01703",
+            "concept_label": "obvious",
             "concept_members": [
-              "強力"
+              "当たり前"
             ],
-            "usage_score": "44.6292",
+            "usage_score": "44.6606",
             "current_uses": 0
           }
         ],
@@ -504,58 +306,6 @@
       },
       "review_rounds": 2,
       "editorial_quality_version": 5,
-      "slot": 1229,
-      "japanese": "この風は強力じゃない。",
-      "spanish": "Este viento no es fuerte.",
-      "scenario_es": "Alguien corrige una apreciación sobre el viento en un contexto natural, negando que sea potente.",
-      "topic_primary": "naturaleza",
-      "topic_secondary": [
-        "clima"
-      ],
-      "situation_tag": "correction",
-      "grammar_tags": [
-        "～じゃない"
-      ],
-      "particle_tags": [
-        "は"
-      ],
-      "vocabulary_tags": [
-        "強力",
-        "風"
-      ],
-      "kanji_readings": [
-        {
-          "characters": "強力",
-          "reading_hiragana": "きょうりょく",
-          "meaning_es": "fuerte; potente",
-          "explanation_es": "Se usa para describir algo con mucha fuerza o poder; aquí se niega esa cualidad del viento."
-        },
-        {
-          "characters": "風",
-          "reading_hiragana": "かぜ",
-          "meaning_es": "viento",
-          "explanation_es": "Fenómeno natural al que se aplica la corrección."
-        }
-      ],
-      "register": "neutro",
-      "communicative_function": "negar o corregir una descripción de fuerza",
-      "tense_aspect": "presente",
-      "polarity": "negativa",
-      "sentence_type": "declarativa",
-      "accepted_alternatives_es": [
-        "Este viento no es potente."
-      ],
-      "accepted_alternatives_ja": [
-        "この風は強力ではない。"
-      ],
-      "ambiguity_notes": "強力 es poco frecuente con 風, pero la combinación sigue siendo interpretable como corrección sobre la intensidad del viento.",
-      "critical_meaning_units": [
-        "この風は",
-        "強力",
-        "じゃない"
-      ],
-      "difficulty_rationale": "La tarea obliga a integrar un adjetivo de fuerza con un elemento natural en una negación breve y clara.",
-      "naturalness_rationale": "Aunque 強力 no es la opción más cotidiana para viento, la frase funciona como corrección simple y comprensible.",
       "equivalence_verified": true
     }
   }

@@ -1,18 +1,28 @@
 {
   "baseline": 25296635,
   "budget": 1500000,
-  "spent": 133804,
+  "spent": 339606,
   "new_pairs": {
-    "N5": 15,
-    "N4": 10
+    "N5": 35,
+    "N4": 20
   },
   "status": "interrupted_transport",
-  "candidates": 25,
+  "candidates": 55,
   "publishable_pairs": {
-    "N5": 13,
-    "N4": 7
+    "N5": 33,
+    "N4": 19
   },
-  "pending_review": 5,
+  "pending_review": 3,
   "unreported_transport_usage_possible": true,
-  "note": "Budget not exhausted; disconnected requests may have unreported usage."
+  "note": "Budget not exhausted; disconnected requests may have unreported usage.",
+  "continuation_new_pairs": {
+    "N5": 22,
+    "N4": 13
+  },
+  "last_error": "Editorial transport interrupted: Remote end closed connection without response",
+  "continuation_publishable_pairs": {
+    "N5": 20,
+    "N4": 12
+  },
+  "continuation_tokens": 205802
 }

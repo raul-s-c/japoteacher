@@ -11,6 +11,8 @@ La aplicación combina sesiones adaptativas, SRS, evaluación mediante OpenAI, f
 
 ### Lote parcial del 4 de septiembre de 2026
 
+Continuación: se añaden otras 32 parejas (64 ejercicios); total de la tanda: 52 parejas publicadas y tres pendientes de reparación. Consumo acumulado registrado: 339.606 tokens de los 1.500.000 autorizados, con posible consumo no informado de solicitudes desconectadas. El transporte volvió a fallar y la monitorización de Wrangler también perdió conexión; causa sin determinar. Banco activo actual: 2.280 parejas / 4.560 ejercicios. Listado de la continuación: `data/editorial/new-phrases-2026-09-04-continuation.md`.
+
 Presupuesto solicitado: 1.500.000 tokens. La generación se interrumpió por cierres de conexión sin respuesta; se registraron 133.804 tokens, con posible consumo no informado en llamadas desconectadas. No se debe dar este presupuesto por agotado ni reiniciar su contador al continuar.
 
 Se publicaron 20 parejas nuevas (40 ejercicios), con calibración por uso contextual y furigana; otras cinco quedan en `data/editorial/pending-review-2026-09-04.json`, fuera del banco y de la cobertura. Banco activo: 2.248 parejas / 4.496 ejercicios. Listado: `data/editorial/new-phrases-2026-09-04-partial.md`. Los 4.956 registros anteriores permanecen intactos.
