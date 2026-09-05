@@ -920,7 +920,7 @@ export default {
       let body;
       try { body = await request.json(); } catch { return json({ error: "Solicitud inválida." }, 400, origin, env); }
       if (!validLessonInput(body)) return json({ error: "El vocabulario de la lección no es válido." }, 400, origin, env);
-      try { return json({ lesson: await generateLesson({terms:body.terms,contexts:body.contexts},env) }, 200, origin, env); }
+      try { return json({ lesson: await generateLesson({terms:body.terms,contexts:body.contexts,previous_lesson:body.previous_lesson},env) }, 200, origin, env); }
       catch (error) { return json({ error: error.message || "No se pudo generar la lección." }, 502, origin, env); }
     }
     if (url.pathname === "/question-help" && request.method === "POST") {

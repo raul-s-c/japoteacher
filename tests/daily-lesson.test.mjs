@@ -26,7 +26,19 @@ test('validates bounds and requires literal coverage evidence for every term',()
  assert.equal(validLesson(lesson,['猫']),true);assert.equal(validLesson(lesson,['猫','犬']),false);
  assert.equal(validLesson({...lesson,vocabulary:[{...lesson.vocabulary[0],surface:'犬'}]},['猫']),false);
 });
-test('rejects incomplete model output instead of caching an incomplete lesson',async()=>{
+test('preserves a usable reading and reports precisely what still needs repair',async()=>{
  const original=globalThis.fetch;globalThis.fetch=async()=>new Response(JSON.stringify({output_text:JSON.stringify({title_es:'Missing words',paragraphs:[{japanese:'犬',spanish:'perro'}],vocabulary:[],readings:[],tips_es:[]})}));
- try{await assert.rejects(generateLesson({terms:['猫'],contexts:[]},{OPENAI_API_KEY:'test'}),/no cubrió/)}finally{globalThis.fetch=original}
+ try{const result=await generateLesson({terms:['猫'],contexts:[]},{OPENAI_API_KEY:'test'});assert.deepEqual(result.missing_terms,['猫']);assert.deepEqual(result.missing_readings,['犬']);assert(result.paragraphs.length)}finally{globalThis.fetch=original}
+});
+test('uses vocabulary readings without rejecting a complete reading for missing duplicate annotations',async()=>{
+ const original=globalThis.fetch;let calls=0;
+ globalThis.fetch=async()=>{calls++;return new Response(JSON.stringify({output_text:JSON.stringify({title_es:'Gato',paragraphs:[{japanese:'猫です。',spanish:'Es un gato.'}],vocabulary:[{term:'猫',surface:'猫',reading:'ねこ',meaning_es:'gato',note_es:''}],readings:[],tips_es:[]})}))};
+ try{const result=await generateLesson({terms:['猫'],contexts:[]},{OPENAI_API_KEY:'test'});assert(validLesson(result,['猫']));assert.equal(calls,1)}finally{globalThis.fetch=original}
+});
+test('automatically adds missing terms and kanji readings without rewriting the initial story',async()=>{
+ const original=globalThis.fetch;let calls=0;
+ const first={title_es:'Animales',paragraphs:[{japanese:'犬です。',spanish:'Es un perro.'}],vocabulary:[],readings:[],tips_es:[]};
+ const patch={title_es:'Complemento',paragraphs:[{japanese:'猫もいます。',spanish:'También hay un gato.'}],vocabulary:[{term:'猫',surface:'猫',reading:'ねこ',meaning_es:'gato',note_es:''}],readings:[{characters:'犬',reading_hiragana:'いぬ'}],tips_es:[]};
+ globalThis.fetch=async(_url,options)=>{calls++;if(calls===2)assert(JSON.parse(JSON.parse(options.body).input).repair.missing_terms.includes('猫'));return new Response(JSON.stringify({output_text:JSON.stringify(calls===1?first:patch)}))};
+ try{const result=await generateLesson({terms:['猫'],contexts:[]},{OPENAI_API_KEY:'test'});assert(validLesson(result,['猫']));assert.equal(result.paragraphs[0].japanese,first.paragraphs[0].japanese);assert.equal(calls,2)}finally{globalThis.fetch=original}
 });

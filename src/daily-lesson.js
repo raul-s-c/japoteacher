@@ -33,7 +33,7 @@
     const card=$('#dailyLessonCard');if(!card)return;
     card.hidden=!plan.rows.length;
     $('#dailyLessonSummary').textContent=`Prepara ${plan.terms.length} términos de tus ${plan.rows.length} ejercicios de hoy, en ambos sentidos. Incluye las frases nuevas y las que necesitan refuerzo.`;
-    $('#openDailyLesson').textContent=cache.read?'Volver a leer la lección':'Lección explicativa';
+    $('#openDailyLesson').textContent=cache.parts.some(incomplete)?'Completar lección':cache.read?'Volver a leer la lección':'Lección explicativa';
     $('#dailyLessonContent').hidden=true;
   }
   async function request(path,body){
@@ -43,8 +43,9 @@
     const response=await fetch(endpoint,{method:'POST',signal:AbortSignal.timeout(110000),headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify(body)});
     const data=await response.json();if(!response.ok)throw new Error(data.error||'No se pudo completar la consulta.');return data;
   }
+  const incomplete=part=>Boolean(part?.missing_terms?.length||part?.missing_readings?.length);
   function render(){
-    $('#dailyLessonParts').innerHTML=cache.parts.map((part,index)=>`<article class="lesson-part" data-lesson-part="${index}"><h3>${esc(part.title_es)}</h3>${part.paragraphs.map(p=>`<div class="lesson-paragraph"><p lang="ja">${furigana?UI.japaneseWithFurigana(p.japanese,part.readings):esc(p.japanese)}</p><p class="lesson-translation">${esc(p.spanish)}</p></div>`).join('')}
+    $('#dailyLessonParts').innerHTML=cache.parts.map((part,index)=>`<article class="lesson-part" data-lesson-part="${index}"><h3>${esc(part.title_es)}</h3>${incomplete(part)?`<p class="notice">${part.missing_terms?.length?`Pendientes de incorporar: ${part.missing_terms.map(esc).join(' · ')}. `:''}${part.missing_readings?.length?'Falta completar parte del furigana. ':''}Pulsa «Completar lección» para añadir lo pendiente conservando esta lectura.</p>`:''}${part.paragraphs.map(p=>`<div class="lesson-paragraph"><p lang="ja">${furigana?UI.japaneseWithFurigana(p.japanese,part.readings):esc(p.japanese)}</p><p class="lesson-translation">${esc(p.spanish)}</p></div>`).join('')}
       <div class="source-tools"><button class="text-button" data-lesson-speak="${index}">Escuchar lectura</button></div>
       <details><summary>Diccionario · ${part.vocabulary.length} términos</summary><div class="dictionary-grid">${part.vocabulary.map((v,i)=>`<article><strong lang="ja">${esc(v.term)}</strong><span>${esc(v.reading)}</span><p>${esc(v.meaning_es)}</p><small>${esc(v.note_es)}</small><button class="text-button" data-lesson-explain="${i}">Explicar con IA</button><p class="lesson-explanation" aria-live="polite"></p></article>`).join('')}</div></details>
       <ul>${part.tips_es.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
@@ -59,14 +60,16 @@
     $('#openDailyLesson').disabled=true;$('#dailyLessonContent').hidden=false;render();
     $('#dailyLessonContent').focus();
     try{
-      for(let i=cache.parts.length;i<active.chunks.length;i++){
+      for(let i=0;i<active.chunks.length;i++){
+        if(activeCache.parts[i]&&!incomplete(activeCache.parts[i]))continue;
         $('#dailyLessonStatus').textContent=`Preparando lectura ${i+1} de ${active.chunks.length}… Puedes seguir usando la aplicación.`;
-        const data=await request('/daily-lesson',active.chunks[i]);
+        const data=await request('/daily-lesson',{...active.chunks[i],previous_lesson:activeCache.parts[i]});
         if(plan!==active)return;
         if(!validPart(data.lesson))throw new Error('La lectura recibida no es válida.');
-        activeCache.parts.push(data.lesson);save();render();
+        activeCache.parts[i]=data.lesson;save();render();
       }
-      $('#dailyLessonStatus').textContent=active.chunks.length>1?'Vocabulario completo, dividido en lecturas breves para que no resulte pesado.':'Lectura preparada. Lee el japonés con su traducción y consulta tus dudas antes de practicar.';
+      $('#openDailyLesson').textContent=cache.parts.some(incomplete)?'Completar lección':'Lección explicativa';
+      $('#dailyLessonStatus').textContent=cache.parts.some(incomplete)?'Lectura guardada. Puedes leerla ahora y completar los detalles pendientes sin empezar de nuevo.':active.chunks.length>1?'Vocabulario completo, dividido en lecturas breves para que no resulte pesado.':'Lectura preparada. Lee el japonés con su traducción y consulta tus dudas antes de practicar.';
     }catch(error){$('#dailyLessonStatus').textContent=`${error.name==='TimeoutError'?'La IA tardó demasiado.':error.message} Pulsa «Lección explicativa» para reintentar.`}
     finally{busy=false;$('#openDailyLesson').disabled=false}
   }

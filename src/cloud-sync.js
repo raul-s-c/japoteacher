@@ -1,9 +1,28 @@
 (function () {
+  let initialDeadline = 0;
+  async function boundedFetch(input, options = {}) {
+    const controller = new AbortController(), upstream = options.signal;
+    const abort = () => controller.abort();
+    if (upstream?.aborted) abort();
+    else upstream?.addEventListener('abort', abort, { once: true });
+    const budget = initialDeadline ? Math.max(1, initialDeadline - Date.now()) : 20000;
+    const timer = setTimeout(abort, budget);
+    try {
+      const response = await fetch(input, { ...options, signal: controller.signal });
+      // Keep the timeout active while downloading the JSON body, not just headers.
+      const body = await response.arrayBuffer();
+      return new Response(response.status === 204 ? null : body, { status: response.status, statusText: response.statusText, headers: response.headers });
+    } finally {
+      clearTimeout(timer);
+      upstream?.removeEventListener('abort', abort);
+    }
+  }
   const config = window.JAPOTEACHER_SUPABASE;
   const client = window.supabase.createClient(
     config.url,
     config.publishableKey,
     {
+      global: { fetch: boundedFetch },
       auth: {
         persistSession: true,
         autoRefreshToken: true,
@@ -26,6 +45,14 @@
     navigator.userAgentData?.platform || navigator.platform || "Dispositivo";
   const deviceName = `${/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? "Móvil" : "Ordenador"} · ${platform}`;
   const ACCOUNT_KEY = "japoteacher_last_account_id";
+  let changeVersion = 0, initializing = null, heartbeatBusy = false;
+  function checkpoint() {
+    try { return JSON.parse(localStorage.getItem(`japoteacher_sync_v1:${user?.id}`) || 'null'); } catch { return null; }
+  }
+  function saveCheckpoint(dirty, savedRevision = revision) {
+    if (!user) return;
+    localStorage.setItem(`japoteacher_sync_v1:${user.id}`, JSON.stringify({ revision: savedRevision, dirty }));
+  }
   const initialSync = new Promise((resolve) => {
     resolveInitialSync = resolve;
   });
@@ -237,7 +264,6 @@
       return false;
     }
     revision = Number(result.out_revision || 0);
-    ready = true;
     unlock();
     status(`Activo en ${deviceName} · revisión ${revision}`, "ok");
     return true;
@@ -246,6 +272,7 @@
     if (!user || !ready || restoring) return;
     commitPending = false;
     status("Guardando en la nube…");
+    const snapshotVersion = changeVersion;
     let payload = await JapoDB.syncBackup();
     for (let attempt = 0; attempt < 4; attempt++) {
       const { data, error } = await client.rpc("commit_user_state", {
@@ -264,6 +291,7 @@
         );
       }
       if (result.committed) {
+        saveCheckpoint(changeVersion !== snapshotVersion);
         status(`Todo guardado · revisión ${revision}`, "ok");
         return;
       }
@@ -285,6 +313,11 @@
     return operation;
   }
   function commit() {
+    changeVersion++;
+    const saved = checkpoint();
+    // Only a completed restore/upload proves which remote revision is local.
+    // A failed initial download must never create a fast-start checkpoint.
+    if (saved) saveCheckpoint(true, saved.revision);
     if (!user || !ready || restoring) return Promise.resolve();
     commitPending = true;
     status("Cambios guardados en este dispositivo; sincronizando…");
@@ -306,9 +339,22 @@
     await commitQueue;
   }
   async function initializeState({ accountKnown = true } = {}) {
+    if (initializing) return initializing;
+    initializing = initializeAccount(accountKnown);
+    try { return await initializing; } finally { initializing = null; }
+  }
+  async function initializeAccount(accountKnown) {
+    ready = false;
     if (!(await claim(false))) return;
-    const remote = await remoteState(),
-      local = await JapoDB.syncBackup();
+    const saved = checkpoint();
+    if (accountKnown && saved?.revision === revision && await JapoDB.get('settings', 'app')) {
+      ready = true;
+      if (saved.dirty) commit();
+      else status(`Todo guardado · revisión ${revision}`, 'ok');
+      return;
+    }
+    const remote = await remoteState();
+    const local = await JapoDB.syncBackup();
     revision = Number(remote?.revision || 0);
     const rawRemotePayload = remote?.payload || { stores: {} };
     const remotePayload = accountKnown
@@ -317,18 +363,20 @@
     const mode = window.SyncPolicy?.firstSyncMode?.(accountKnown, remotePayload) || "merge";
     const combined = mode === "remote" ? remotePayload : merge(local, remotePayload);
     restoring = true;
-    await JapoDB.restoreSync(combined);
-    restoring = false;
+    try { await JapoDB.restoreSync(combined); } finally { restoring = false; }
     ready = true;
     if (
       JSON.stringify(combined.stores) !==
       JSON.stringify(remote?.payload?.stores || {})
-    )
-      await runCommit();
-    else status(`Todo guardado · revisión ${revision}`, "ok");
+    ) {
+      saveCheckpoint(true);
+      commit();
+    }
+    else { saveCheckpoint(false); status(`Todo guardado · revisión ${revision}`, "ok"); }
   }
   async function refresh() {
-    if (!user || !ready || restoring) return;
+    if (!user || restoring || initializing) return;
+    if (!ready) { await initializeState(); if (ready) location.reload(); return; }
     await flush();
     const remote = await remoteState();
     if (remote?.active_device_id && remote.active_device_id !== deviceId) {
@@ -382,6 +430,7 @@
     return data.session?.access_token || "";
   }
   async function init() {
+    initialDeadline = Date.now() + 12000;
     try {
       const { data } = await client.auth.getSession();
       user = data.session?.user || null;
@@ -424,16 +473,19 @@
         if (commitPending) flush().catch(() => {});
       });
       setInterval(() => {
-        if (user && ready)
+        if (user && ready && !heartbeatBusy) {
+          heartbeatBusy = true;
           client
             .rpc("heartbeat_user_session", { p_device_id: deviceId })
             .then(({ data }) => {
               if (data !== true) refresh().catch(() => {});
             })
-            .catch(() => {});
+            .catch(() => {}).finally(() => { heartbeatBusy = false; });
+        }
       }, 4000);
       if (user) await initializeState({ accountKnown });
     } finally {
+      initialDeadline = 0;
       resolveInitialSync();
     }
   }
