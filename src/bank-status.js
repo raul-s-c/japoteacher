@@ -29,6 +29,6 @@
       dashboard.innerHTML=`<div class="bank-dashboard-grid">${levelHtml}</div><div class="bank-family-list"><h4>Cobertura por familia</h4>${familyHtml}</div><p class="bank-review-note">${archived} ejercicios archivados o fuera del banco activo. Las frases editoriales aprobadas están publicadas; las no aprobadas no entran en práctica.</p>`;
     });
   }
-  document.addEventListener('DOMContentLoaded',()=>{setTimeout(()=>update().catch(()=>{}),800);document.addEventListener('japoteacher:navigate',()=>setTimeout(()=>update().catch(()=>{}),0))});
+  document.addEventListener('DOMContentLoaded',()=>{document.addEventListener('japoteacher:navigate',event=>{if(event.detail?.view==='ajustes')update().catch(()=>{})})});
   window.BankStatus={update};
 })();
