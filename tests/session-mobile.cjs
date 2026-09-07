@@ -47,7 +47,7 @@ const assert = require('node:assert/strict');
       await JapoDB.put('settings', { key: 'app', value: settings });
       await JapoDB.put('daily_sessions', row);
       await JapoDB.put('attempts', { attempt_id: 'fixture-done', profile_id: 'local-default', exercise_id: ja[0].exercise_id, direction: 'ja_es', attempted_at: now, overall_score: 90, is_acceptable: true, evaluation_status: 'valid' });
-      localStorage.setItem('japoteacher_bank_version', '20260903-editorial-140');
+      localStorage.setItem('japoteacher_bank_version', '20260904-editorial-52');
       return { sessionId, done: ja[0].exercise_id, draft: ja[1].exercise_id, repeatJa: ja.slice(20, 22).map(e => e.exercise_id), repeatEs: [es[10].exercise_id] };
     });
     await page.goto(origin + '/');
@@ -92,6 +92,32 @@ const assert = require('node:assert/strict');
     await page.waitForFunction(() => document.querySelector('#directionCards').children.length >= 2 && !document.querySelector('#routeLoader').classList.contains('active'));
     assert.equal((await session()).exercise_ids_ja_es_json, latest.exercise_ids_ja_es_json);
     assert.equal(await page.evaluate(() => JapoDB.all('attempts').then(rows => rows.length)), 1);
+    // Settings remain usable even when uploading to the cloud never resolves.
+    await page.evaluate(() => { CloudSync.flush = () => new Promise(() => {}); });
+    await page.locator('.nav-item[data-view="ajustes"]:visible').click();
+    await page.locator('[name="newRatio"]').evaluate(input => {
+      input.value = '60'; input.dispatchEvent(new Event('input', {bubbles:true}));
+    });
+    assert.equal(await page.locator('#newRatioOutput').textContent(), '60%');
+    for (const value of ['40','70']) await page.locator('[name="newRatio"]').evaluate((input,value) => {
+      input.value=value; input.dispatchEvent(new Event('input',{bubbles:true})); input.dispatchEvent(new Event('change',{bubbles:true}));
+    }, value);
+    await page.waitForFunction(async () => (await JapoDB.get('settings','app')).value.newRatio === 70);
+    assert.equal(await page.locator('#newRatioOutput').textContent(), '70%');
+    await page.locator('#recalculateDayFromSettings').click();
+    await page.locator('#confirmRegenerateSelection').click();
+    await page.waitForFunction(() => !document.querySelector('#regenerateSelectionDialog').open);
+    assert.equal(await page.evaluate(() => JapoDB.all('attempts').then(rows => rows.length)), 1);
+    assert.equal(JSON.parse((await session()).drafts_json)[seed.draft], 'Borrador nuevo sin guardar');
+    await page.reload();
+    await page.waitForFunction(() => document.querySelector('#directionCards').children.length >= 2 && !document.querySelector('#routeLoader').classList.contains('active'));
+    await page.locator('.nav-item[data-view="ajustes"]:visible').click();
+    assert.equal(await page.locator('[name="newRatio"]').inputValue(), '70');
+    assert.equal(await page.locator('#newRatioOutput').textContent(), '70%');
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.waitForFunction(() => !document.querySelector('#routeLoader').classList.contains('active'));
+    await page.locator('[name="newRatio"]').scrollIntoViewIfNeeded();
+    await page.screenshot({path:path.join(process.env.TEMP,'japoteacher-settings-360.png')});
     assert.deepEqual(errors, []);
     console.log('PASS: actual app at 360/420/1280px; cancel, regenerate, completed, saved/unsaved drafts, voluntary extras, reload, no console errors.');
   } finally {

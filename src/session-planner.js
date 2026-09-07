@@ -25,9 +25,12 @@
   const familyFor=exercise=>window.TopicProgression?.familyFor?.((exercise.topic_tags||[])[0]||'')||'Conocimiento y consultas';
   const topicFor=exercise=>(exercise.topic_tags||[])[0]||'sin tema';
   const registerFor=exercise=>String(exercise.register||'neutro').trim().toLowerCase()||'neutro';
-  const selectionStrategy='guided_coverage_srs_v15_hard_constraints';
+  const selectionStrategy='guided_coverage_srs_v16_collections';
+  const collectionId=settings=>String(settings?.studyCollection||'');
+  const collectionRatio=settings=>collectionId(settings)?Math.max(0,Math.min(100,Number(settings?.collectionRatio)||0)):0;
+  const inCollection=(e,settings)=>Boolean(collectionId(settings)&&e?.source_collection===collectionId(settings));
   const normalizedNewRatio=settings=>Math.max(0,Math.min(100,Number(settings?.newRatio??60)));
-  function needsRebalance(session,settings){try{const reason=JSON.parse(session?.selection_reason_json||'{}');return reason.strategy!==selectionStrategy||(settings&&(Number(reason.new_ratio)!==normalizedNewRatio(settings)||Number(reason.cooldown_days)!==Number(settings.cooldownDays??14)||JSON.stringify(reason.levels)!==JSON.stringify(settings.levels)))}catch{return true}}
+  function needsRebalance(session,settings){try{const reason=JSON.parse(session?.selection_reason_json||'{}');return reason.strategy!==selectionStrategy||(settings&&(Number(reason.new_ratio)!==normalizedNewRatio(settings)||String(reason.study_collection||'')!==collectionId(settings)||Number(reason.collection_ratio||0)!==collectionRatio(settings)||Number(reason.cooldown_days)!==Number(settings.cooldownDays??14)||JSON.stringify(reason.levels)!==JSON.stringify(settings.levels)))}catch{return true}}
   const lexicalTags=exercise=>[...(exercise.vocabulary_tags||[]).map(value=>`v:${value}`),...(exercise.kanji_tags||[]).map(value=>`k:${value}`),...(exercise.grammar_tags||[]).map(value=>`g:${value}`)];
   const varietyTags=exercise=>[`family:${familyFor(exercise)}`,`topic:${topicFor(exercise)}`,`register:${registerFor(exercise)}`,...lexicalTags(exercise)];
   function recentExposure(exercises,attempts,direction,limit=90){
@@ -79,8 +82,9 @@
     const coverage=coverageProfile(exercises,attempts,direction),exposure=recentExposure(exercises,attempts,direction);
     const isNew=e=>!history.seen.has(sentenceKey(e)),unlocked=e=>Difficulty.bandFor(e)<=(gates[e.jlpt_level]?.unlockedBand??0);
     const deferred=e=>{const k=sentenceKey(e),p=history.pMap.get(k),last=history.latest.get(k);return p?.deferred_until_new_exhausted||(Number(last?.overall_score)>=90&&last?.user_difficulty_feedback==='too_easy')};
-    const scope=exercises.filter(e=>e.direction===direction&&e.active!==false&&levels.has(e.jlpt_level)&&!excluded.has(e.exercise_id)&&!excludedKeys.has(sentenceKey(e)));
-    const anyUnseen=exercises.some(e=>e.direction===direction&&e.active!==false&&levels.has(e.jlpt_level)&&isNew(e));
+    const collectionAllowed=e=>!e.source_collection||(collectionRatio(settings)>0&&inCollection(e,settings));
+    const scope=exercises.filter(e=>collectionAllowed(e)&&e.direction===direction&&e.active!==false&&levels.has(e.jlpt_level)&&!excluded.has(e.exercise_id)&&!excludedKeys.has(sentenceKey(e)));
+    const anyUnseen=exercises.some(e=>collectionAllowed(e)&&e.direction===direction&&e.active!==false&&levels.has(e.jlpt_level)&&isNew(e));
     const ready=e=>{
       if(isNew(e))return unlocked(e);
       const k=sentenceKey(e),p=history.pMap.get(k),last=history.latest.get(k),lastAt=Math.max(Date.parse(last?.attempted_at||'')||-Infinity,Date.parse(p?.last_seen_at||'')||-Infinity),age=(now-lastAt)/86400000;
@@ -108,11 +112,24 @@
     };
     const fresh=eligible.filter(isNew),reviews=eligible.filter(e=>!isNew(e)&&!deferred(e)),easy=eligible.filter(e=>!isNew(e)&&deferred(e));
     const freshTarget=Math.max(0,Math.min(count,options.freshTarget??Math.ceil(count*normalizedNewRatio(settings)/100)));
-    add(fresh,freshTarget);
+    const sourceTarget=Math.max(0,Math.min(count,options.collectionTarget??Math.round(count*collectionRatio(settings)/100)));
+    const source=pool=>pool.filter(e=>inCollection(e,settings)),base=pool=>pool.filter(e=>!inCollection(e,settings));
+    const size=pool=>new Set(pool.map(sentenceKey)).size;
+    const reviewSlots=count-freshTarget;
+    const lower=Math.max(0,sourceTarget-Math.min(reviewSlots,size(source(reviews))),freshTarget-size(base(fresh)));
+    const upper=Math.min(freshTarget,size(source(fresh)),sourceTarget-Math.max(0,reviewSlots-size(base(reviews))));
+    const freshSource=Math.max(0,Math.min(size(source(fresh)),freshTarget,Math.max(lower,Math.min(upper,Math.round(freshTarget*collectionRatio(settings)/100)))));
+    function addBalanced(pool,limit,desired){
+      add(source(pool),Math.min(limit,selected.length+Math.max(0,desired)));
+      add(base(pool),limit);
+      add(pool,limit);
+    }
+    if(collectionRatio(settings)>0)addBalanced(fresh,freshTarget,freshSource);else add(fresh,freshTarget);
     // A shortage is reported instead of filling new slots with old or premature reviews.
     const freshCount=selected.length,reviewLimit=count-freshTarget;
-    add(reviews,freshCount+reviewLimit);if(!anyUnseen)add(easy,freshCount+reviewLimit);
-    add(fresh,count);
+    if(collectionRatio(settings)>0)addBalanced(reviews,freshCount+reviewLimit,sourceTarget-selected.filter(e=>inCollection(e,settings)).length);else add(reviews,freshCount+reviewLimit);
+    if(!anyUnseen)add(easy,freshCount+reviewLimit);
+    if(collectionRatio(settings)>0)addBalanced(fresh,count,sourceTarget-selected.filter(e=>inCollection(e,settings)).length);else add(fresh,count);
     if(options.diagnostics)Object.assign(options.diagnostics,{requested:count,selected:selected.length,new_required:freshTarget,new_selected:selected.filter(isNew).length,reviews_selected:selected.filter(e=>!isNew(e)).length,eligible_fresh:new Set(fresh.map(sentenceKey)).size,shortfall:count-selected.length});
     return selected.map(e=>e.exercise_id);
   }
@@ -140,20 +157,21 @@
       const alreadyNew=kept.filter(id=>!historical.seen.has(historical.key(id))).length;
       const quota=Math.max(0,Math.min(limit-kept.length,Math.ceil(target*normalizedNewRatio(settings)/100)-alreadyNew));
       const removed=rebalance?old.filter(id=>!completed.has(id)&&!repeatSet.has(id)&&!drafts[id]):[];
+      const sourceTarget=Math.round(target*collectionRatio(settings)/100),sourceRemaining=Math.max(0,sourceTarget-kept.filter(id=>inCollection(byId.get(id),settings)).length);
       const diag={},exclude=[...kept,...repeats[direction],...removed];
-      let picked=choose(exercises,progress,attempts,limit-kept.length,settings,direction,date+':revision:'+revision,roadmaps[direction],{excludeIds:exclude,contextIds:kept,freshTarget:quota,diagnostics:diag});
+      let picked=choose(exercises,progress,attempts,limit-kept.length,settings,direction,date+':revision:'+revision,roadmaps[direction],{excludeIds:exclude,contextIds:kept,freshTarget:quota,collectionTarget:sourceRemaining,diagnostics:diag});
       if(picked.length<limit-kept.length&&removed.length){
         // Previous pending items may return only if they still pass every hard rule.
-        picked=choose(exercises,progress,attempts,limit-kept.length,settings,direction,date+':revision:'+revision,roadmaps[direction],{excludeIds:[...kept,...repeats[direction]],contextIds:kept,freshTarget:quota,diagnostics:diag});
+        picked=choose(exercises,progress,attempts,limit-kept.length,settings,direction,date+':revision:'+revision,roadmaps[direction],{excludeIds:[...kept,...repeats[direction]],contextIds:kept,freshTarget:quota,collectionTarget:sourceRemaining,diagnostics:diag});
       }
       plans[direction]=[...kept,...picked,...repeats[direction]];
       const normalNew=[...kept,...picked].filter(id=>!historical.seen.has(historical.key(id))).length;
-      diagnostics[direction]={...diag,normal_target:target,normal_selected:kept.length+picked.length,normal_new:normalNew,normal_reviews:kept.length+picked.length-normalNew,preserved:kept.length,voluntary:repeats[direction].length};
+      diagnostics[direction]={...diag,collection_requested:sourceTarget,collection_selected:[...kept,...picked].filter(id=>inCollection(byId.get(id),settings)).length,normal_target:target,normal_selected:kept.length+picked.length,normal_new:normalNew,normal_reviews:kept.length+picked.length-normalNew,preserved:kept.length,voluntary:repeats[direction].length};
     }
     const planned=new Set([...plans.ja_es,...plans.es_ja]),complete=planned.size>0&&[...planned].every(id=>completed.has(id)),now=new Date().toISOString();
     const changed=!existing||rebalance||Number(existing.planned_ja_es)!==Number(settings.dailyJaEs)||Number(existing.planned_es_ja)!==Number(settings.dailyEsJa)||['ja_es','es_ja'].some(d=>existing['exercise_ids_'+d+'_json']!==JSON.stringify(plans[d])||existing['voluntary_repeat_ids_'+d+'_json']!==JSON.stringify(repeats[d]))||existing.completed_exercise_ids_json!==JSON.stringify([...completed]);
     if(!changed)return existing;
-    const session={...existing,plan_updated_at:now,session_id:id,profile_id:profileId,local_date:date,created_at:existing?.created_at||now,started_at:existing?.started_at||null,completed_at:complete?(existing?.completed_at||now):null,status:complete?'completed':completed.size?'in_progress':'planned',planned_ja_es:Math.max(0,Number(settings.dailyJaEs)||0),planned_es_ja:Math.max(0,Number(settings.dailyEsJa)||0),exercise_ids_ja_es_json:JSON.stringify(plans.ja_es),exercise_ids_es_ja_json:JSON.stringify(plans.es_ja),voluntary_repeat_ids_ja_es_json:JSON.stringify(repeats.ja_es),voluntary_repeat_ids_es_ja_json:JSON.stringify(repeats.es_ja),completed_exercise_ids_json:JSON.stringify([...completed]),drafts_json:existing?.drafts_json||'{}',settings_snapshot_json:JSON.stringify(settings),selection_reason_json:JSON.stringify({strategy:selectionStrategy,new_ratio:normalizedNewRatio(settings),cooldown_days:Number(settings.cooldownDays??14),levels:settings.levels,revision,diagnostics,regenerated_at:options.regenerate?now:oldReason.regenerated_at,rebalanced_existing_plan:rebalance})};
+    const session={...existing,plan_updated_at:now,session_id:id,profile_id:profileId,local_date:date,created_at:existing?.created_at||now,started_at:existing?.started_at||null,completed_at:complete?(existing?.completed_at||now):null,status:complete?'completed':completed.size?'in_progress':'planned',planned_ja_es:Math.max(0,Number(settings.dailyJaEs)||0),planned_es_ja:Math.max(0,Number(settings.dailyEsJa)||0),exercise_ids_ja_es_json:JSON.stringify(plans.ja_es),exercise_ids_es_ja_json:JSON.stringify(plans.es_ja),voluntary_repeat_ids_ja_es_json:JSON.stringify(repeats.ja_es),voluntary_repeat_ids_es_ja_json:JSON.stringify(repeats.es_ja),completed_exercise_ids_json:JSON.stringify([...completed]),drafts_json:existing?.drafts_json||'{}',settings_snapshot_json:JSON.stringify(settings),selection_reason_json:JSON.stringify({strategy:selectionStrategy,new_ratio:normalizedNewRatio(settings),study_collection:collectionId(settings),collection_ratio:collectionRatio(settings),cooldown_days:Number(settings.cooldownDays??14),levels:settings.levels,revision,diagnostics,regenerated_at:options.regenerate?now:oldReason.regenerated_at,rebalanced_existing_plan:rebalance})};
     await JapoDB.put('daily_sessions',session);return session;
   }
   const regenerate=(profileId,settings,date=localDate())=>getOrCreate(profileId,settings,date,{regenerate:true});

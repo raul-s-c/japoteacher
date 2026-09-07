@@ -49,7 +49,7 @@ test("key words show their real-usage percentile and derived level", () => {
     },
   });
   assert.match(html, /Palabras clave del enunciado/);
-  assert.match(html, /友達 · uso combinado top 7\.4% · N5/);
+  assert.match(html, /友達 · frecuencia global: top 0\.54% · franja N5/);
 });
 
 test("a grouped reading shows the rank of each matched Japanese term", () => {
@@ -67,8 +67,8 @@ test("a grouped reading shows the rank of each matched Japanese term", () => {
       ],
     },
   });
-  assert.match(html, /仕事 · uso combinado top 0\.30%/);
-  assert.match(html, /資料 · uso combinado top 1\.8%/);
+  assert.match(html, /仕事 · frecuencia global: top 0\.35%/);
+  assert.match(html, /資料 · frecuencia global: top 2\.0%/);
 });
 
 test("feedback repairs screenshot spelling and separates wrong-answer vocabulary", () => {
@@ -81,8 +81,8 @@ test("feedback repairs screenshot spelling and separates wrong-answer vocabulary
   const support=html.split('<section class="correct-japanese">')[1].split('<section class="answer-comparison">')[0];
   assert.match(support,/<ruby>今日<rt>きょう<\/rt>/);
   assert.match(support,/<ruby>作ります<rt>つくります<\/rt>/);
-  assert.match(support,/今日 · uso combinado top 0\.31%/);
-  assert.match(support,/作る · uso combinado top 7\.8%/);
+  assert.match(support,/今日 · frecuencia global: top 0\.31%/);
+  assert.match(support,/作る · frecuencia global: top 7\.8%/);
   assert.match(support,/Sin ranking disponible/);
   assert.doesNotMatch(support,/料理ます|<strong>家<\/strong>/);
   assert.match(html,/家に今日は、晩ごはんが母料理ます/);

@@ -33,19 +33,23 @@
     indexes();
     const value=key(reading.characters), components=(exercise?.usage_components||[]).filter(x=>x.k==='v');
     const exact=components.filter(x=>key(x.t)===value);
-    if(exact.length)return exact;
-    const matches=[...new Map((forms.get(value)||[]).map(item=>[item.c,item])).values()];
-    if(matches.length===1)return matches;
+    const concepts=new Map();
+    for(const item of forms.get(value)||[])if(!concepts.has(item.c)||key(item.t)===value)concepts.set(item.c,item);
+    const matches=[...concepts.values()];
+    // Current reference wins over a percentile embedded in an older exercise.
+    if(matches.length===1)return matches.map(item=>({...exact.find(x=>x.c===item.c||x.t===item.t),...item}));
     const contextual=matches.filter(x=>components.some(c=>c.c===x.c||c.t===x.t));
     if(contextual.length===1)return contextual;
     if(matches.length>1)return [];
+    if(exact.length)return exact.filter(x=>Number.isFinite(Number(x.p))&&x.l===frequencyLevel(Number(x.p)));
     // A kana spelling may map by reading only when the reference is unambiguous.
     if(/^[\u3040-\u30ff]+$/.test(value)){
       const byReading=readings.get(value)||[];
       if(byReading.length===1)return byReading;
     }
-    return components.filter(x=>x.t&&value.includes(x.t)).sort((a,b)=>value.indexOf(a.t)-value.indexOf(b.t));
+    return components.filter(x=>x.t&&value.includes(x.t)).sort((a,b)=>value.indexOf(a.t)-value.indexOf(b.t)).flatMap(x=>resolve({characters:x.t},exercise));
   }
+  function frequencyLevel(p){return p<10?'N5':p<30?'N4':p<60?'N3':p<90?'N2':'N1'}
   function canonical(sentence){
     // Standard date spelling at an explicit word boundary, not a general kana-to-kanji conversion.
     return String(sentence||'').replace(/(^|[\s、。])きょう(?=[はものに、。]|$)/g,'$1今日');
@@ -60,6 +64,12 @@
     }
     if(text.includes('今日')&&!seen.has('今日'))items.push({characters:'今日',reading_hiragana:'きょう',meaning_es:'hoy',explanation_es:'Lectura contextual de 今日.'});
     if(text.includes('晩ご飯')&&!seen.has('晩ご飯'))items.push({characters:'晩ご飯',reading_hiragana:'ばんごはん',meaning_es:'cena',explanation_es:''});
+    // The vocabulary panel must not silently omit every word written in kana.
+    for(const term of exercise?.vocabulary_tags||[]){
+      if(term.length<2||!text.includes(term)||items.some(x=>x.characters===term))continue;
+      const matches=resolve({characters:term},exercise);
+      if(matches.length===1&&matches[0].r)items.push({characters:term,reading_hiragana:matches[0].r,meaning_es:'',explanation_es:''});
+    }
     for(let i=0;i<text.length;i++){
       const supplied=items.filter(x=>text.startsWith(x.characters,i)).sort((a,b)=>b.characters.length-a.characters.length)[0];
       if(supplied){i+=supplied.characters.length-1;continue;}
@@ -72,5 +82,5 @@
     items.sort((a,b)=>text.indexOf(a.characters)-text.indexOf(b.characters));
     return {text,readings:items};
   }
-  window.FeedbackVocabulary={resolve,prepare,canonical};
+  window.FeedbackVocabulary={resolve,prepare,canonical,frequencyLevel};
 })();

@@ -22,6 +22,26 @@ function planner(JapoDB) {
   return context.window.SessionPlanner;
 }
 
+test('a 70 percent collection quota mixes 11 of 15 while honoring new/review ratios',()=>{
+  const bank=[],attempts=[];
+  for(const group of ['base','sakamoto'])for(let i=0;i<40;i++){
+    const id=`${group}-${i}`;bank.push({exercise_id:id,source_text:id,active:true,direction:'ja_es',jlpt_level:'N5',source_collection:group==='base'?'':group,topic_tags:[id],vocabulary_tags:[id]});
+    if(i<20)attempts.push({exercise_id:id,direction:'ja_es',evaluation_status:'valid',overall_score:60,attempted_at:'2026-01-01T12:00:00Z'});
+  }
+  const seen=new Set(attempts.map(x=>x.exercise_id)),srs=planner();
+  for(const newRatio of [0,30,60,90,100]){
+    const ids=srs.choose(bank,[],attempts,15,{levels:['N5'],newRatio,studyCollection:'sakamoto',collectionRatio:70},'ja_es','2026-09-07');
+    assert.equal(ids.length,15);assert.equal(ids.filter(id=>id.startsWith('sakamoto')).length,11);assert.equal(ids.filter(id=>!seen.has(id)).length,Math.ceil(15*newRatio/100));
+  }
+  const disabled=srs.choose(bank,[],attempts,15,{levels:['N5'],newRatio:100},'ja_es','2026-09-07');assert(disabled.every(id=>id.startsWith('base')));
+});
+
+test('collection shortages use eligible general phrases without bypassing level filters',()=>{
+  const bank=Array.from({length:25},(_,i)=>({exercise_id:`e${i}`,source_text:`sentence${i}`,active:true,direction:'es_ja',jlpt_level:i<2?'N1':'N5',source_collection:i<4?'sakamoto':'',topic_tags:[`t${i}`]}));
+  const ids=planner().choose(bank,[],[],15,{levels:['N5'],newRatio:100,studyCollection:'sakamoto',collectionRatio:70},'es_ja','2026-09-07');
+  assert.equal(ids.length,15);assert(!ids.includes('e0'));assert(!ids.includes('e1'));assert(ids.includes('e2'));assert(ids.includes('e3'));
+});
+
 test("balanced SRS exposes weak conversation families and registers", () => {
   const srs = planner();
   const topics = ["familia", "trabajo", "dinero", "ocio", "consulta"];
@@ -53,7 +73,7 @@ test("a daily plan from an older selector is marked for rebalancing", () => {
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v12" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v13_voluntary_repeats" }) }), true);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 90 }) }, { newRatio: 90 }), true);
-  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v15_hard_constraints", new_ratio: 90, cooldown_days: 14, levels: ["N5"] }) }, { newRatio: 90, levels: ["N5"] }), false);
+  assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v16_collections", new_ratio: 90, cooldown_days: 14, levels: ["N5"] }) }, { newRatio: 90, levels: ["N5"] }), false);
   assert.equal(srs.needsRebalance({ selection_reason_json: JSON.stringify({ strategy: "guided_coverage_srs_v14_strict_new_ratio", new_ratio: 60 }) }, { newRatio: 90 }), true);
 });
 
@@ -200,4 +220,24 @@ test("voluntary repeats are appended beyond the normal 20 and 10 quotas", async 
   assert.deepEqual(JSON.parse(planned.voluntary_repeat_ids_es_ja_json), ["es-0", "es-1"]);
   assert.equal(new Set(ja).size, 24);
   assert.equal(new Set(es).size, 12);
+});
+
+
+test('recalculating collection quotas preserves answered phrases and progress in both directions',async()=>{
+  const exercises=[];
+  for(const direction of ['ja_es','es_ja'])for(const group of ['base','sakamoto'])for(let i=0;i<40;i++){
+    const id=`${direction}-${group}-${i}`;
+    exercises.push({exercise_id:id,source_text:id,reference_translation:id,active:true,direction,jlpt_level:'N5',source_collection:group==='base'?'':group,topic_tags:[id],vocabulary_tags:[id]});
+  }
+  const completed=['ja_es-base-0','es_ja-sakamoto-0'];
+  const attempts=completed.map(exercise_id=>({exercise_id,profile_id:'profile',direction:exercise_id.startsWith('ja_es')?'ja_es':'es_ja',evaluation_status:'valid',overall_score:70,attempted_at:'2026-09-07T08:00:00Z'}));
+  let session={session_id:'profile::2026-09-07',profile_id:'profile',local_date:'2026-09-07',exercise_ids_ja_es_json:JSON.stringify(exercises.filter(e=>e.direction==='ja_es').slice(0,15).map(e=>e.exercise_id)),exercise_ids_es_ja_json:JSON.stringify(['es_ja-sakamoto-0',...exercises.filter(e=>e.direction==='es_ja').slice(1,15).map(e=>e.exercise_id)]),completed_exercise_ids_json:JSON.stringify(completed),drafts_json:'{}'};
+  const api=planner({get:async()=>session,all:async store=>({exercises,attempts,exercise_progress:[]}[store]||[]),put:async(store,row)=>{assert.equal(store,'daily_sessions');session=row}});
+  await api.regenerate('profile',{levels:['N5'],dailyJaEs:15,dailyEsJa:15,newRatio:90,studyCollection:'sakamoto',collectionRatio:70},'2026-09-07');
+  for(const direction of ['ja_es','es_ja']){
+    const ids=JSON.parse(session[`exercise_ids_${direction}_json`]);
+    assert.equal(ids.length,15);assert.equal(ids.filter(id=>id.includes('-sakamoto-')).length,11);
+    assert(ids.includes(completed.find(id=>id.startsWith(direction))));
+  }
+  assert.equal(attempts.length,2);assert.deepEqual(JSON.parse(session.completed_exercise_ids_json),completed);
 });
