@@ -40,3 +40,12 @@ test("daily sessions reserve most slots for unseen material when the bank is lar
   const picked = plan.choose(exercises, progress, attempts, 10, settings, "ja_es", "seed", []);
   assert.ok(picked.filter(id=>id.startsWith("new-")).length >= 6);
 });
+
+
+test('optional collection growth does not relock a mastered band and collection answers count toward mastery',()=>{
+  const plan=planner(),base=Array.from({length:40},(_,i)=>exercise(`base-${String(i).padStart(2,'0')}`,10)),collection=Array.from({length:120},(_,i)=>({...exercise(`source-${String(i).padStart(3,'0')}`,10),source_collection:'sakamoto'}));
+  const exercises=[...base,...collection,exercise('middle-01',35)];
+  assert.equal(plan.difficultyRoadmap(exercises,base.slice(0,4).map(e=>attempt(e.exercise_id)),'ja_es').N4.unlockedBand,1);
+  assert.equal(plan.difficultyRoadmap(exercises,collection.slice(1,5).map(e=>attempt(e.exercise_id)),'ja_es').N4.unlockedBand,1);
+  assert.equal(plan.difficultyRoadmap(exercises,[],'ja_es').N4.unlockedBand,0);
+});

@@ -1,0 +1,527 @@
+{
+  "version": "20260907-1",
+  "review_method": "codex_editorial_review",
+  "external_additional_validation": "No completada: conexiones cerradas sin respuesta; no se atribuye aprobación al servicio externo. Las dos pasadas principales sí se completaron.",
+  "items": [
+    {
+      "id": "e01-0016",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e01-0095",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e01-0134",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e01-0145",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0083",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0097",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0105",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0148",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0159",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e02-0170",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0003",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0022",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0026",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0055",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0061",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0109",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0131",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0136",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0165",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0173",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0230",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0244",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e03-0246",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0084",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0130",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0153",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0169",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0251",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e04-0259",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0044",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0062",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0088",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0100",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0141",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0180",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0247",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e05-0271",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0013",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0044",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0048",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0140",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0157",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0169",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0190",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e06-0262",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0006",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0057",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0064",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0101",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0160",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0186",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0193",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0200",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0243",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0275",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0276",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e07-0324",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0018",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0025",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0037",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0085",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0101",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0111",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0144",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0189",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0224",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0254",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0255",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0256",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0314",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0317",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e08-0334",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0000",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0049",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0078",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0091",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0127",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0158",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0240",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0253",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0262",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0263",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e09-0276",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0016",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0047",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0057",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0058",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0069",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0145",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0198",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0219",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0238",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0247",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0260",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0265",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e10-0290",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0025",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0032",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0060",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0168",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0195",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0199",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0223",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    },
+    {
+      "id": "e11-0239",
+      "approved": true,
+      "reason": "Traducción cotejada directamente con el japonés original durante la revisión editorial final."
+    }
+  ]
+}

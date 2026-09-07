@@ -1,0 +1,7513 @@
+{
+  "source_archive": {
+    "archive_sha256": "3c1199de788820a25ba583aed7aed4aa3c65c8964c7dd65314bc5989bb86324b",
+    "archive_name": "OneDrive_1_7-9-2026.zip",
+    "segments": 3375,
+    "files": [
+      "[DKB] Sakamoto Days - S01E01 [1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E02 [1080p][V2][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E03 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E04 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E05 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E06 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E07 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E08 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E09 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E10 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack",
+      "[DKB] Sakamoto Days - S01E11 [V2][1080p][HEVC x265 10bit][Dual-Audio][Multi-Subs].lrpack"
+    ]
+  },
+  "source_segments": 3375,
+  "prefilter_rejected": 1103,
+  "screen_rejected": 526,
+  "annotation_rejected": 181,
+  "verification_rejected": 158,
+  "publication_rejected": [
+    {
+      "id": "e01-0008",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0013",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0014",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0015",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0017",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "個人商店",
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e01-0018",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0020",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e01-0021",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e01-0035",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0038",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "便利屋"
+      ]
+    },
+    {
+      "id": "e01-0040",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0051",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0056",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0057",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0060",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e01-0063",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0068",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e01-0069",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0071",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "宇宙人"
+      ]
+    },
+    {
+      "id": "e01-0080",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e01-0089",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e01-0090",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e01-0100",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e01-0101",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e01-0104",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0106",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0109",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0110",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0112",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0115",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0119",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "代わりに"
+      ]
+    },
+    {
+      "id": "e01-0121",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0122",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "憧れ",
+        "銃口"
+      ]
+    },
+    {
+      "id": "e01-0123",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e01-0125",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e01-0130",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e01-0133",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エスパー"
+      ]
+    },
+    {
+      "id": "e01-0155",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e02-0002",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0003",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e02-0005",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一撃"
+      ]
+    },
+    {
+      "id": "e02-0007",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e02-0009",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0016",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0017",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0019",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0020",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0026",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0037",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0040",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e02-0051",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e02-0052",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "逃がす"
+      ]
+    },
+    {
+      "id": "e02-0053",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "皆殺し",
+        "追い詰める"
+      ]
+    },
+    {
+      "id": "e02-0068",
+      "reason": "transcripción confunde llave con cangrejo en la escena"
+    },
+    {
+      "id": "e02-0069",
+      "reason": "transcripción confunde llave con cangrejo en la escena"
+    },
+    {
+      "id": "e02-0070",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0073",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0075",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0079",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e02-0081",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0082",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0084",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0086",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0089",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人",
+        "顔向け"
+      ]
+    },
+    {
+      "id": "e02-0090",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0092",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0094",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e02-0096",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0103",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e02-0104",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0109",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0112",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0114",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ソンヒ",
+        "殺し屋",
+        "馬長"
+      ]
+    },
+    {
+      "id": "e02-0115",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "引き換え",
+        "法外",
+        "獲物"
+      ]
+    },
+    {
+      "id": "e02-0116",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "シリアルキラー",
+        "殺戮"
+      ]
+    },
+    {
+      "id": "e02-0117",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スケッチ",
+        "変態"
+      ]
+    },
+    {
+      "id": "e02-0119",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e02-0120",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ソンヒ"
+      ]
+    },
+    {
+      "id": "e02-0123",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e02-0128",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0129",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0131",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0138",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0140",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0144",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0149",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e02-0154",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "血塗られる"
+      ]
+    },
+    {
+      "id": "e02-0158",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0162",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0163",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0167",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0173",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0178",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "不可避",
+        "地獄斬り",
+        "斬撃"
+      ]
+    },
+    {
+      "id": "e02-0183",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "三人目",
+        "貴様"
+      ]
+    },
+    {
+      "id": "e02-0190",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0194",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0202",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e02-0209",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懺悔"
+      ]
+    },
+    {
+      "id": "e02-0210",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e02-0212",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e02-0215",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e02-0219",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0220",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0221",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "開かない"
+      ]
+    },
+    {
+      "id": "e02-0224",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0226",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "財宝"
+      ]
+    },
+    {
+      "id": "e02-0227",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e02-0240",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "書いてある"
+      ]
+    },
+    {
+      "id": "e02-0243",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0245",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e02-0246",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0247",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0248",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e02-0250",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e02-0253",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エプロン"
+      ]
+    },
+    {
+      "id": "e02-0255",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0261",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0262",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e02-0264",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "知ってる"
+      ]
+    },
+    {
+      "id": "e02-0267",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一条"
+      ]
+    },
+    {
+      "id": "e03-0001",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0002",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ルン"
+      ]
+    },
+    {
+      "id": "e03-0004",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0005",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0007",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0010",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0012",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0013",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0015",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0017",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0018",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0020",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e03-0021",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0024",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0025",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0027",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "何年"
+      ]
+    },
+    {
+      "id": "e03-0029",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0033",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "血の通った"
+      ]
+    },
+    {
+      "id": "e03-0034",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人"
+      ]
+    },
+    {
+      "id": "e03-0041",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e03-0043",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0049",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0053",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "向かい"
+      ]
+    },
+    {
+      "id": "e03-0057",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0060",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0064",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e03-0066",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0068",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0069",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e03-0073",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e03-0074",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0075",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e03-0076",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "イケメン",
+        "台無し"
+      ]
+    },
+    {
+      "id": "e03-0079",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0083",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0090",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0091",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0092",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0093",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0094",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0096",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0097",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0099",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0102",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0103",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0107",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0108",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "黒髪"
+      ]
+    },
+    {
+      "id": "e03-0110",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "時代遅れ"
+      ]
+    },
+    {
+      "id": "e03-0113",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0114",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0120",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0122",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0124",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0125",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0126",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "忠告"
+      ]
+    },
+    {
+      "id": "e03-0130",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0132",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0133",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0134",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0138",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "セオリー",
+        "出歩く"
+      ]
+    },
+    {
+      "id": "e03-0143",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お弁当"
+      ]
+    },
+    {
+      "id": "e03-0146",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "フランクフルト",
+        "食べ過ぎる"
+      ]
+    },
+    {
+      "id": "e03-0148",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e03-0149",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "東京ドーム"
+      ]
+    },
+    {
+      "id": "e03-0153",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e03-0161",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "俺ら",
+        "護衛"
+      ]
+    },
+    {
+      "id": "e03-0162",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0163",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "見分ける"
+      ]
+    },
+    {
+      "id": "e03-0167",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "30メートル",
+        "半径"
+      ]
+    },
+    {
+      "id": "e03-0169",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "高ぶる"
+      ]
+    },
+    {
+      "id": "e03-0174",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0176",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0178",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0185",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0186",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "動脈"
+      ]
+    },
+    {
+      "id": "e03-0187",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "神業"
+      ]
+    },
+    {
+      "id": "e03-0191",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e03-0192",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0193",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0194",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0198",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0200",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0203",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0206",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0207",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0208",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "銀髪"
+      ]
+    },
+    {
+      "id": "e03-0210",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "明らかに"
+      ]
+    },
+    {
+      "id": "e03-0212",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "決めつける"
+      ]
+    },
+    {
+      "id": "e03-0213",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0214",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0217",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "レバー"
+      ]
+    },
+    {
+      "id": "e03-0218",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0227",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e03-0235",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ブレンド",
+        "特製"
+      ]
+    },
+    {
+      "id": "e03-0237",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e03-0240",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "決めつける"
+      ]
+    },
+    {
+      "id": "e03-0241",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0243",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "負け犬"
+      ]
+    },
+    {
+      "id": "e03-0247",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0252",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "遅らせる"
+      ]
+    },
+    {
+      "id": "e03-0254",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "怯える",
+        "避けきる"
+      ]
+    },
+    {
+      "id": "e03-0256",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0264",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0265",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0266",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "関係ない"
+      ]
+    },
+    {
+      "id": "e03-0267",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一本"
+      ]
+    },
+    {
+      "id": "e03-0268",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e03-0270",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0272",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "コックル"
+      ]
+    },
+    {
+      "id": "e03-0275",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "コックル",
+        "予想外"
+      ]
+    },
+    {
+      "id": "e03-0280",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e03-0283",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ボコボコ"
+      ]
+    },
+    {
+      "id": "e03-0284",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0285",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺戮"
+      ]
+    },
+    {
+      "id": "e03-0290",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e03-0292",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0293",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0294",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e03-0296",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e03-0298",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "急に"
+      ]
+    },
+    {
+      "id": "e04-0000",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0001",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "終わらせる"
+      ]
+    },
+    {
+      "id": "e04-0003",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0004",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0005",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "偉そう"
+      ]
+    },
+    {
+      "id": "e04-0013",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0014",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "モットー"
+      ]
+    },
+    {
+      "id": "e04-0015",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0018",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ズレる"
+      ]
+    },
+    {
+      "id": "e04-0021",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "目薬"
+      ]
+    },
+    {
+      "id": "e04-0022",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "片目"
+      ]
+    },
+    {
+      "id": "e04-0023",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0024",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "毒使い"
+      ]
+    },
+    {
+      "id": "e04-0027",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0029",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0033",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0034",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0035",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "片目"
+      ]
+    },
+    {
+      "id": "e04-0037",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0038",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0042",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "死にたい"
+      ]
+    },
+    {
+      "id": "e04-0043",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0044",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e04-0045",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0047",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サツレン"
+      ]
+    },
+    {
+      "id": "e04-0049",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e04-0050",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e04-0053",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0054",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "免許証"
+      ]
+    },
+    {
+      "id": "e04-0056",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0058",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0059",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0062",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "都市伝説"
+      ]
+    },
+    {
+      "id": "e04-0063",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "行っちゃう"
+      ]
+    },
+    {
+      "id": "e04-0064",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0069",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ヒーローショー",
+        "縄抜け"
+      ]
+    },
+    {
+      "id": "e04-0070",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お疲れさま"
+      ]
+    },
+    {
+      "id": "e04-0072",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0073",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0074",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0075",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0079",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一回"
+      ]
+    },
+    {
+      "id": "e04-0081",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ボーッとする",
+        "解毒剤"
+      ]
+    },
+    {
+      "id": "e04-0083",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "失格",
+        "探知機"
+      ]
+    },
+    {
+      "id": "e04-0085",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0094",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "タツ"
+      ]
+    },
+    {
+      "id": "e04-0097",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "タッチャー"
+      ]
+    },
+    {
+      "id": "e04-0103",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0105",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0106",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ボイル"
+      ]
+    },
+    {
+      "id": "e04-0107",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "尻拭い"
+      ]
+    },
+    {
+      "id": "e04-0108",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "引率"
+      ]
+    },
+    {
+      "id": "e04-0109",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "首切り"
+      ]
+    },
+    {
+      "id": "e04-0117",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0119",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0124",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "どんでん会",
+        "武闘派"
+      ]
+    },
+    {
+      "id": "e04-0125",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0127",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お弁当"
+      ]
+    },
+    {
+      "id": "e04-0128",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0129",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0133",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0134",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "私たち",
+        "行きたい"
+      ]
+    },
+    {
+      "id": "e04-0141",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "適する"
+      ]
+    },
+    {
+      "id": "e04-0144",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "適する"
+      ]
+    },
+    {
+      "id": "e04-0150",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "踏み入れる"
+      ]
+    },
+    {
+      "id": "e04-0156",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0157",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0161",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お兄さん"
+      ]
+    },
+    {
+      "id": "e04-0163",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e04-0166",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e04-0171",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "デブ",
+        "確かに"
+      ]
+    },
+    {
+      "id": "e04-0173",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ゾクゾクする"
+      ]
+    },
+    {
+      "id": "e04-0174",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "手出す"
+      ]
+    },
+    {
+      "id": "e04-0175",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0177",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e04-0179",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お友達"
+      ]
+    },
+    {
+      "id": "e04-0183",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0186",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ダチ",
+        "ボコる",
+        "課外実習"
+      ]
+    },
+    {
+      "id": "e04-0189",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0190",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0192",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "似た者同士"
+      ]
+    },
+    {
+      "id": "e04-0194",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0197",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "バレンタインデー"
+      ]
+    },
+    {
+      "id": "e04-0203",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0208",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "毒殺家"
+      ]
+    },
+    {
+      "id": "e04-0209",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0211",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0215",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "因縁"
+      ]
+    },
+    {
+      "id": "e04-0217",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0219",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0221",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0223",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0224",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0227",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0233",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0237",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0239",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "貧乏くじ"
+      ]
+    },
+    {
+      "id": "e04-0240",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "雑魚"
+      ]
+    },
+    {
+      "id": "e04-0248",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "生きのいい"
+      ]
+    },
+    {
+      "id": "e04-0249",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e04-0250",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0255",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "探し物"
+      ]
+    },
+    {
+      "id": "e04-0262",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e04-0266",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0270",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0271",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0275",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e04-0279",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0285",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0286",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e04-0292",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0294",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e04-0295",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0303",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e04-0305",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0306",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e04-0307",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0308",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e04-0331",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0006",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e05-0015",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0018",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0048",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0052",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "奴ら"
+      ]
+    },
+    {
+      "id": "e05-0059",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0061",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e05-0064",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e05-0067",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "強さ"
+      ]
+    },
+    {
+      "id": "e05-0094",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "野暮"
+      ]
+    },
+    {
+      "id": "e05-0095",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0096",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0097",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0099",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0101",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e05-0105",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0107",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "痩せすぎ"
+      ]
+    },
+    {
+      "id": "e05-0108",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0109",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0113",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0115",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0119",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋",
+        "襲ってくる"
+      ]
+    },
+    {
+      "id": "e05-0121",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0123",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "不器用"
+      ]
+    },
+    {
+      "id": "e05-0127",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0128",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e05-0129",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0130",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0131",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e05-0132",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0134",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "隠し通す"
+      ]
+    },
+    {
+      "id": "e05-0135",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0138",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "隠し事"
+      ]
+    },
+    {
+      "id": "e05-0139",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "堂々と"
+      ]
+    },
+    {
+      "id": "e05-0142",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e05-0146",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "取り下げる",
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e05-0148",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺戮"
+      ]
+    },
+    {
+      "id": "e05-0150",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e05-0151",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0154",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "義理"
+      ]
+    },
+    {
+      "id": "e05-0155",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0157",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0158",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0160",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0164",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0166",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0168",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0170",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0178",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0185",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一人",
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e05-0187",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "本拠地"
+      ]
+    },
+    {
+      "id": "e05-0192",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "どんでん返し"
+      ]
+    },
+    {
+      "id": "e05-0193",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0194",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0199",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "独身時代"
+      ]
+    },
+    {
+      "id": "e05-0200",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0201",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0202",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お仲間",
+        "絡んでる"
+      ]
+    },
+    {
+      "id": "e05-0203",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0205",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "答えられる"
+      ]
+    },
+    {
+      "id": "e05-0206",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0212",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0215",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0219",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0223",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0226",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0227",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0229",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0231",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0246",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0248",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ボイル"
+      ]
+    },
+    {
+      "id": "e05-0250",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ボイル"
+      ]
+    },
+    {
+      "id": "e05-0255",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0258",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0260",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "最上階"
+      ]
+    },
+    {
+      "id": "e05-0261",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二階",
+        "伝う"
+      ]
+    },
+    {
+      "id": "e05-0262",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e05-0265",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0267",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0268",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0270",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0278",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0282",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0284",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0285",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0286",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0289",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e05-0290",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0294",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "数ヶ月",
+        "斬殺"
+      ]
+    },
+    {
+      "id": "e05-0299",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0301",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0303",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0304",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0305",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0307",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0308",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋界"
+      ]
+    },
+    {
+      "id": "e05-0309",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e05-0312",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0313",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "俺ら",
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e05-0316",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e05-0317",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e05-0321",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0323",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e05-0325",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0329",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0335",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0336",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "取り下げる",
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e05-0337",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "包帯",
+        "絆創膏"
+      ]
+    },
+    {
+      "id": "e05-0339",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お嬢ちゃん"
+      ]
+    },
+    {
+      "id": "e05-0347",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e05-0348",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e05-0352",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e05-0353",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "肉まん"
+      ]
+    },
+    {
+      "id": "e06-0001",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "2000円"
+      ]
+    },
+    {
+      "id": "e06-0002",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0004",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0007",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "10億",
+        "何たって"
+      ]
+    },
+    {
+      "id": "e06-0011",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0012",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "修繕"
+      ]
+    },
+    {
+      "id": "e06-0014",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "万事"
+      ]
+    },
+    {
+      "id": "e06-0017",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0020",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0021",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e06-0022",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0027",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋",
+        "間抜け"
+      ]
+    },
+    {
+      "id": "e06-0028",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0031",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クソ"
+      ]
+    },
+    {
+      "id": "e06-0032",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0033",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0034",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e06-0035",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0037",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0043",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e06-0045",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e06-0046",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "当て"
+      ]
+    },
+    {
+      "id": "e06-0049",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e06-0050",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0052",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e06-0053",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0058",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "100万"
+      ]
+    },
+    {
+      "id": "e06-0060",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0064",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "本格的"
+      ]
+    },
+    {
+      "id": "e06-0068",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "修繕"
+      ]
+    },
+    {
+      "id": "e06-0069",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人"
+      ]
+    },
+    {
+      "id": "e06-0072",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一人"
+      ]
+    },
+    {
+      "id": "e06-0073",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人"
+      ]
+    },
+    {
+      "id": "e06-0074",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "チーム戦",
+        "五人"
+      ]
+    },
+    {
+      "id": "e06-0078",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e06-0080",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0081",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "失格"
+      ]
+    },
+    {
+      "id": "e06-0082",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e06-0084",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0085",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e06-0089",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e06-0097",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e06-0100",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0108",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "優勝候補"
+      ]
+    },
+    {
+      "id": "e06-0112",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "戦友"
+      ]
+    },
+    {
+      "id": "e06-0115",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0118",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サバゲー"
+      ]
+    },
+    {
+      "id": "e06-0119",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e06-0120",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0122",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0123",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0127",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0128",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0129",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e06-0130",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0131",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0134",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0135",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e06-0137",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e06-0145",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0151",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e06-0154",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e06-0163",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e06-0164",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e06-0165",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0170",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "悟らせない"
+      ]
+    },
+    {
+      "id": "e06-0173",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "バレてる"
+      ]
+    },
+    {
+      "id": "e06-0174",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e06-0175",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "今の",
+        "避けられた"
+      ]
+    },
+    {
+      "id": "e06-0180",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e06-0186",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "長弾"
+      ]
+    },
+    {
+      "id": "e06-0187",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "バウンド",
+        "読ませる"
+      ]
+    },
+    {
+      "id": "e06-0188",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "特別仕様"
+      ]
+    },
+    {
+      "id": "e06-0191",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0192",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スコープ"
+      ]
+    },
+    {
+      "id": "e06-0195",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0196",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ヘイスケ",
+        "何も"
+      ]
+    },
+    {
+      "id": "e06-0197",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0198",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0199",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マシモヘイスケ",
+        "新入社員"
+      ]
+    },
+    {
+      "id": "e06-0200",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "特技",
+        "狙撃"
+      ]
+    },
+    {
+      "id": "e06-0201",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "狙撃"
+      ]
+    },
+    {
+      "id": "e06-0202",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "狙撃"
+      ]
+    },
+    {
+      "id": "e06-0204",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0205",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0207",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0210",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0211",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0213",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e06-0235",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "キーン"
+      ]
+    },
+    {
+      "id": "e06-0249",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0250",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e06-0258",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e06-0264",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e07-0001",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0002",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人"
+      ]
+    },
+    {
+      "id": "e07-0005",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0007",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0011",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0012",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e07-0013",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e07-0014",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0015",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0017",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0018",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0020",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エプロン",
+        "酔いどれ"
+      ]
+    },
+    {
+      "id": "e07-0021",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0024",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0034",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0041",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0043",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0047",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0048",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "超能力者"
+      ]
+    },
+    {
+      "id": "e07-0049",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "成功者"
+      ]
+    },
+    {
+      "id": "e07-0050",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0052",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "気味悪い"
+      ]
+    },
+    {
+      "id": "e07-0054",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "筒抜け"
+      ]
+    },
+    {
+      "id": "e07-0056",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "好かれる"
+      ]
+    },
+    {
+      "id": "e07-0084",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "完全に"
+      ]
+    },
+    {
+      "id": "e07-0085",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "南西",
+        "移動中"
+      ]
+    },
+    {
+      "id": "e07-0088",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "確実に"
+      ]
+    },
+    {
+      "id": "e07-0090",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e07-0096",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e07-0099",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0100",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0106",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "セマちゃん"
+      ]
+    },
+    {
+      "id": "e07-0107",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e07-0109",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0126",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0134",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0135",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "セバちゃん"
+      ]
+    },
+    {
+      "id": "e07-0137",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0139",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0141",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0142",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0143",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0147",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "オクタビ"
+      ]
+    },
+    {
+      "id": "e07-0151",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0152",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e07-0153",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0156",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0159",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "擬態"
+      ]
+    },
+    {
+      "id": "e07-0161",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "里帰り"
+      ]
+    },
+    {
+      "id": "e07-0163",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "表向き"
+      ]
+    },
+    {
+      "id": "e07-0165",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "オクタビ"
+      ]
+    },
+    {
+      "id": "e07-0167",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "急いでる"
+      ]
+    },
+    {
+      "id": "e07-0168",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "言わずに"
+      ]
+    },
+    {
+      "id": "e07-0176",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e07-0177",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "別館"
+      ]
+    },
+    {
+      "id": "e07-0184",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e07-0185",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0192",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "心当たり"
+      ]
+    },
+    {
+      "id": "e07-0195",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "セバさん"
+      ]
+    },
+    {
+      "id": "e07-0203",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0204",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e07-0205",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "侵入者"
+      ]
+    },
+    {
+      "id": "e07-0208",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "第二"
+      ]
+    },
+    {
+      "id": "e07-0209",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0212",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "フェーズ",
+        "第二"
+      ]
+    },
+    {
+      "id": "e07-0213",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e07-0225",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "迎撃"
+      ]
+    },
+    {
+      "id": "e07-0227",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0230",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0237",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クソ",
+        "科学者"
+      ]
+    },
+    {
+      "id": "e07-0239",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0244",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ポンコツ",
+        "科学者"
+      ]
+    },
+    {
+      "id": "e07-0249",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e07-0251",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "冒涜"
+      ]
+    },
+    {
+      "id": "e07-0252",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "冒涜"
+      ]
+    },
+    {
+      "id": "e07-0259",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e07-0260",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "野暮用"
+      ]
+    },
+    {
+      "id": "e07-0268",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "奴ら"
+      ]
+    },
+    {
+      "id": "e07-0272",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e07-0273",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "カシマ"
+      ]
+    },
+    {
+      "id": "e07-0274",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "革新的"
+      ]
+    },
+    {
+      "id": "e07-0278",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0286",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0289",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "野蛮"
+      ]
+    },
+    {
+      "id": "e07-0296",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お嬢さん"
+      ]
+    },
+    {
+      "id": "e07-0298",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "朝倉"
+      ]
+    },
+    {
+      "id": "e07-0301",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "騒がしい"
+      ]
+    },
+    {
+      "id": "e07-0302",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0303",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0312",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0313",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0317",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e07-0318",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0320",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0326",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0327",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0344",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "大掃除"
+      ]
+    },
+    {
+      "id": "e07-0346",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0348",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e07-0354",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0001",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0007",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0013",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0015",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0019",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "デブる"
+      ]
+    },
+    {
+      "id": "e08-0020",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "先手"
+      ]
+    },
+    {
+      "id": "e08-0029",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0031",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0044",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エスパー"
+      ]
+    },
+    {
+      "id": "e08-0045",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "知ってる"
+      ]
+    },
+    {
+      "id": "e08-0047",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エスパー"
+      ]
+    },
+    {
+      "id": "e08-0049",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "生まれつき"
+      ]
+    },
+    {
+      "id": "e08-0050",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クソガキ"
+      ]
+    },
+    {
+      "id": "e08-0053",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0054",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "栄養素"
+      ]
+    },
+    {
+      "id": "e08-0055",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マグネシウム",
+        "含まれる",
+        "栄養失調"
+      ]
+    },
+    {
+      "id": "e08-0056",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クソガキ"
+      ]
+    },
+    {
+      "id": "e08-0059",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0061",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "旧友",
+        "消息"
+      ]
+    },
+    {
+      "id": "e08-0063",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e08-0064",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0065",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "活動限界"
+      ]
+    },
+    {
+      "id": "e08-0066",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "平たく",
+        "超能力"
+      ]
+    },
+    {
+      "id": "e08-0069",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "可能性",
+        "開かれる"
+      ]
+    },
+    {
+      "id": "e08-0071",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0073",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0074",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0075",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0083",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0087",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0088",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0090",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0091",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0108",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0115",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0118",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0120",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0126",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0127",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0132",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "アホらしい"
+      ]
+    },
+    {
+      "id": "e08-0134",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0135",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e08-0136",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0137",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0141",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "オンオフ"
+      ]
+    },
+    {
+      "id": "e08-0150",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "突き抜ける"
+      ]
+    },
+    {
+      "id": "e08-0153",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "反射的"
+      ]
+    },
+    {
+      "id": "e08-0182",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0186",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0188",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0190",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0191",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0192",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0195",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0199",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0202",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0203",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "侮る",
+        "奴ら"
+      ]
+    },
+    {
+      "id": "e08-0204",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0210",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "1人",
+        "1秒"
+      ]
+    },
+    {
+      "id": "e08-0211",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0212",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0213",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0223",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0227",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0229",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0230",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "迷子",
+        "迷路"
+      ]
+    },
+    {
+      "id": "e08-0232",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ご案内"
+      ]
+    },
+    {
+      "id": "e08-0233",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0234",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スラー"
+      ]
+    },
+    {
+      "id": "e08-0235",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0242",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0244",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0252",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e08-0257",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0264",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "尊さ",
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e08-0265",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0268",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0269",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0271",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スラー"
+      ]
+    },
+    {
+      "id": "e08-0272",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "シシバ"
+      ]
+    },
+    {
+      "id": "e08-0275",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e08-0277",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サカ"
+      ]
+    },
+    {
+      "id": "e08-0278",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e08-0279",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "シシバ"
+      ]
+    },
+    {
+      "id": "e08-0282",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0283",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サカ"
+      ]
+    },
+    {
+      "id": "e08-0288",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e08-0292",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e08-0293",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0297",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e08-0299",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0303",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0305",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e08-0306",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0307",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0308",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "生け捕り"
+      ]
+    },
+    {
+      "id": "e08-0310",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0311",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0312",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e08-0313",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0315",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サクッと"
+      ]
+    },
+    {
+      "id": "e08-0316",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e08-0319",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "粘る"
+      ]
+    },
+    {
+      "id": "e08-0321",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "俺ら"
+      ]
+    },
+    {
+      "id": "e08-0323",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0325",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クマさん"
+      ]
+    },
+    {
+      "id": "e08-0327",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クマさん",
+        "強そう"
+      ]
+    },
+    {
+      "id": "e08-0328",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e08-0330",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "サガさん"
+      ]
+    },
+    {
+      "id": "e08-0331",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "あの人",
+        "何年か"
+      ]
+    },
+    {
+      "id": "e08-0336",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "透明人間"
+      ]
+    },
+    {
+      "id": "e08-0341",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ピースケ",
+        "透明人間"
+      ]
+    },
+    {
+      "id": "e08-0344",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e09-0004",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0006",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋会"
+      ]
+    },
+    {
+      "id": "e09-0011",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0023",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0036",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クソ"
+      ]
+    },
+    {
+      "id": "e09-0038",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "大して"
+      ]
+    },
+    {
+      "id": "e09-0040",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e09-0042",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e09-0043",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0045",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0050",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "超能力"
+      ]
+    },
+    {
+      "id": "e09-0052",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0056",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0060",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0063",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0066",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スナイパー"
+      ]
+    },
+    {
+      "id": "e09-0068",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0071",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0076",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0079",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0085",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0092",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e09-0094",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "コーディネートする",
+        "科学技術"
+      ]
+    },
+    {
+      "id": "e09-0095",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0100",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "様子見"
+      ]
+    },
+    {
+      "id": "e09-0104",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "行儀"
+      ]
+    },
+    {
+      "id": "e09-0105",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "片目"
+      ]
+    },
+    {
+      "id": "e09-0112",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "三流",
+        "五流"
+      ]
+    },
+    {
+      "id": "e09-0116",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0121",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一人",
+        "偽善者"
+      ]
+    },
+    {
+      "id": "e09-0126",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e09-0130",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e09-0132",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e09-0151",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e09-0152",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0154",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "悪人",
+        "疎まれる"
+      ]
+    },
+    {
+      "id": "e09-0156",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0157",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "誰も"
+      ]
+    },
+    {
+      "id": "e09-0159",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "汚す"
+      ]
+    },
+    {
+      "id": "e09-0160",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "尊い"
+      ]
+    },
+    {
+      "id": "e09-0164",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0165",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0168",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "優先席"
+      ]
+    },
+    {
+      "id": "e09-0180",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "新調する"
+      ]
+    },
+    {
+      "id": "e09-0181",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e09-0187",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "牢屋"
+      ]
+    },
+    {
+      "id": "e09-0188",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "異変",
+        "自爆装置"
+      ]
+    },
+    {
+      "id": "e09-0189",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0192",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "急に"
+      ]
+    },
+    {
+      "id": "e09-0197",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0199",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0201",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0203",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0212",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0214",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0215",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0217",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "見取り図"
+      ]
+    },
+    {
+      "id": "e09-0219",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e09-0222",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0224",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0226",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0231",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0236",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0238",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e09-0239",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0247",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "皆殺し"
+      ]
+    },
+    {
+      "id": "e09-0252",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一人"
+      ]
+    },
+    {
+      "id": "e09-0259",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e09-0273",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0274",
+      "reason": "repetición de una expresión ya conservada"
+    },
+    {
+      "id": "e09-0277",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "イケメン"
+      ]
+    },
+    {
+      "id": "e09-0281",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e09-0282",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0287",
+      "reason": "fragmento con omisión explícita"
+    },
+    {
+      "id": "e09-0289",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e09-0291",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e09-0292",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e09-0293",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e09-0295",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ゼリー"
+      ]
+    },
+    {
+      "id": "e09-0297",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "1個"
+      ]
+    },
+    {
+      "id": "e09-0299",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エビフライ",
+        "断然"
+      ]
+    },
+    {
+      "id": "e09-0305",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "奴ら",
+        "懲りない"
+      ]
+    },
+    {
+      "id": "e10-0003",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e10-0004",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0008",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0009",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e10-0010",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "務め"
+      ]
+    },
+    {
+      "id": "e10-0011",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "最重要"
+      ]
+    },
+    {
+      "id": "e10-0017",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0022",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0027",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0028",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e10-0037",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "10億",
+        "懸賞金"
+      ]
+    },
+    {
+      "id": "e10-0040",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e10-0041",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0043",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0051",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "無防備"
+      ]
+    },
+    {
+      "id": "e10-0054",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0055",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e10-0061",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e10-0062",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ギミック"
+      ]
+    },
+    {
+      "id": "e10-0064",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0066",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ジェットバス"
+      ]
+    },
+    {
+      "id": "e10-0073",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e10-0076",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "執拗だ"
+      ]
+    },
+    {
+      "id": "e10-0080",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "仕留める"
+      ]
+    },
+    {
+      "id": "e10-0081",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0082",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0084",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e10-0086",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "自然発火"
+      ]
+    },
+    {
+      "id": "e10-0087",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "焼け死ぬ"
+      ]
+    },
+    {
+      "id": "e10-0091",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e10-0093",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0101",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e10-0103",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0105",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "長風呂"
+      ]
+    },
+    {
+      "id": "e10-0106",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0109",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0110",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0115",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e10-0121",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ユタロー"
+      ]
+    },
+    {
+      "id": "e10-0127",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "風呂屋"
+      ]
+    },
+    {
+      "id": "e10-0128",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0129",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "利き方"
+      ]
+    },
+    {
+      "id": "e10-0130",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0131",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "根性なし"
+      ]
+    },
+    {
+      "id": "e10-0133",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e10-0134",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0141",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e10-0148",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "何年ぶり"
+      ]
+    },
+    {
+      "id": "e10-0153",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e10-0154",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e10-0156",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "良すぎる",
+        "虫が良い"
+      ]
+    },
+    {
+      "id": "e10-0157",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e10-0161",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e10-0164",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e10-0167",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "もう片っぽ",
+        "コーラ",
+        "ブレンド",
+        "特製"
+      ]
+    },
+    {
+      "id": "e10-0169",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0172",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0173",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ファミレス"
+      ]
+    },
+    {
+      "id": "e10-0175",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ファミレス"
+      ]
+    },
+    {
+      "id": "e10-0178",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "料理人"
+      ]
+    },
+    {
+      "id": "e10-0181",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0182",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0183",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0191",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0203",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0210",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0213",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0214",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ウータンさん"
+      ]
+    },
+    {
+      "id": "e10-0215",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0217",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0222",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マフィア",
+        "相談役"
+      ]
+    },
+    {
+      "id": "e10-0227",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0231",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "貴様"
+      ]
+    },
+    {
+      "id": "e10-0232",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e10-0234",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0237",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マフィア"
+      ]
+    },
+    {
+      "id": "e10-0239",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0240",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "貴様"
+      ]
+    },
+    {
+      "id": "e10-0245",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "フッ",
+        "マフィア",
+        "情報網"
+      ]
+    },
+    {
+      "id": "e10-0246",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0249",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0259",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0261",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0263",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "二人",
+        "貧乏人"
+      ]
+    },
+    {
+      "id": "e10-0266",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0269",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "社交場",
+        "裏社会"
+      ]
+    },
+    {
+      "id": "e10-0270",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "渦巻く"
+      ]
+    },
+    {
+      "id": "e10-0276",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "3000万"
+      ]
+    },
+    {
+      "id": "e10-0277",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0280",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0281",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e10-0284",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e10-0288",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ウータン",
+        "切れ者"
+      ]
+    },
+    {
+      "id": "e10-0294",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e10-0295",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e10-0297",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "クレープ屋",
+        "田中さん"
+      ]
+    },
+    {
+      "id": "e10-0301",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e10-0303",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "セバちゃん"
+      ]
+    },
+    {
+      "id": "e10-0304",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0001",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "運ゲー"
+      ]
+    },
+    {
+      "id": "e11-0002",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0003",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0004",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "運勝負"
+      ]
+    },
+    {
+      "id": "e11-0011",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0012",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "一人勝ち"
+      ]
+    },
+    {
+      "id": "e11-0013",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "リシチさん"
+      ]
+    },
+    {
+      "id": "e11-0014",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0015",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "殺し屋"
+      ]
+    },
+    {
+      "id": "e11-0020",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懸ける"
+      ]
+    },
+    {
+      "id": "e11-0023",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0024",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0033",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ディール"
+      ]
+    },
+    {
+      "id": "e11-0038",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0039",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0041",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0043",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0046",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0047",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0056",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e11-0057",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ブラフ"
+      ]
+    },
+    {
+      "id": "e11-0061",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "フフッ",
+        "ブラフ"
+      ]
+    },
+    {
+      "id": "e11-0064",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "表向き"
+      ]
+    },
+    {
+      "id": "e11-0065",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0067",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スプリット"
+      ]
+    },
+    {
+      "id": "e11-0069",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0070",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0071",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "デブ"
+      ]
+    },
+    {
+      "id": "e11-0072",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0078",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0080",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ウータン",
+        "ヤツら"
+      ]
+    },
+    {
+      "id": "e11-0081",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "イカ様"
+      ]
+    },
+    {
+      "id": "e11-0083",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0086",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0087",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0089",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0092",
+      "reason": "sin referencia para clasificar"
+    },
+    {
+      "id": "e11-0095",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0100",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0101",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マフィア",
+        "腕っぷし"
+      ]
+    },
+    {
+      "id": "e11-0102",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0107",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0108",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0109",
+      "reason": "referencia a personajes, nombre deformado o dependencia de la escena"
+    },
+    {
+      "id": "e11-0110",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "やり返す"
+      ]
+    },
+    {
+      "id": "e11-0112",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0113",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0117",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0118",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0119",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ウーター"
+      ]
+    },
+    {
+      "id": "e11-0120",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0121",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0122",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0123",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0124",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0125",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0126",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0127",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0129",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0130",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0132",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0134",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "手出し"
+      ]
+    },
+    {
+      "id": "e11-0138",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0139",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0142",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "貴様ら"
+      ]
+    },
+    {
+      "id": "e11-0144",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "2人",
+        "3対1"
+      ]
+    },
+    {
+      "id": "e11-0147",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0149",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0150",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0161",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お嬢"
+      ]
+    },
+    {
+      "id": "e11-0162",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "手加減"
+      ]
+    },
+    {
+      "id": "e11-0167",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "貴様"
+      ]
+    },
+    {
+      "id": "e11-0170",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "楽勝"
+      ]
+    },
+    {
+      "id": "e11-0171",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0175",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0178",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0179",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0180",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ハッタリ"
+      ]
+    },
+    {
+      "id": "e11-0184",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0185",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "言語化"
+      ]
+    },
+    {
+      "id": "e11-0188",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0196",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0197",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ポーカーフェイス"
+      ]
+    },
+    {
+      "id": "e11-0198",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0202",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "終わり"
+      ]
+    },
+    {
+      "id": "e11-0203",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0210",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0211",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0214",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "頭でっかち"
+      ]
+    },
+    {
+      "id": "e11-0217",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0219",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0222",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0225",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0226",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e11-0228",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0229",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "暴発",
+        "細工"
+      ]
+    },
+    {
+      "id": "e11-0231",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0235",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0238",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0241",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "懸賞金",
+        "貴様"
+      ]
+    },
+    {
+      "id": "e11-0243",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0244",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ウータン"
+      ]
+    },
+    {
+      "id": "e11-0245",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0246",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "エプロン"
+      ]
+    },
+    {
+      "id": "e11-0248",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0251",
+      "reason": "referencia a personajes o transcripción dudosa"
+    },
+    {
+      "id": "e11-0254",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0256",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "お兄さん"
+      ]
+    },
+    {
+      "id": "e11-0257",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0260",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0261",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0262",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0264",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0265",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "痕跡"
+      ]
+    },
+    {
+      "id": "e11-0268",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "数日前",
+        "殺人事件"
+      ]
+    },
+    {
+      "id": "e11-0269",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "4人",
+        "死刑囚",
+        "第1級"
+      ]
+    },
+    {
+      "id": "e11-0273",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "情報筋",
+        "生業"
+      ]
+    },
+    {
+      "id": "e11-0276",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "1人",
+        "丸める"
+      ]
+    },
+    {
+      "id": "e11-0280",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "死刑囚",
+        "脱獄する"
+      ]
+    },
+    {
+      "id": "e11-0281",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0283",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "スポーツ選手"
+      ]
+    },
+    {
+      "id": "e11-0284",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0286",
+      "reason": "proposición sin conclusión autónoma"
+    },
+    {
+      "id": "e11-0290",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "気長"
+      ]
+    },
+    {
+      "id": "e11-0292",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0300",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "待たせる",
+        "申し訳ない"
+      ]
+    },
+    {
+      "id": "e11-0301",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "物好き",
+        "私ら"
+      ]
+    },
+    {
+      "id": "e11-0302",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ご足労",
+        "遠路"
+      ]
+    },
+    {
+      "id": "e11-0307",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "好き放題",
+        "関係ない"
+      ]
+    },
+    {
+      "id": "e11-0309",
+      "reason": "transcripción dudosa que no debe corregirse inventando japonés"
+    },
+    {
+      "id": "e11-0311",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0312",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "おデブさん"
+      ]
+    },
+    {
+      "id": "e11-0313",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0314",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "縮める"
+      ]
+    },
+    {
+      "id": "e11-0318",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0320",
+      "reason": "kanji sin lectura revisada"
+    },
+    {
+      "id": "e11-0321",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0322",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "見届ける"
+      ]
+    },
+    {
+      "id": "e11-0329",
+      "reason": "anotación de lectura inválida"
+    },
+    {
+      "id": "e11-0330",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "ヘイスケ"
+      ]
+    },
+    {
+      "id": "e11-0332",
+      "reason": "léxico sin referencia suficiente para nivelar con confianza",
+      "terms": [
+        "マフィア",
+        "奴ら",
+        "殺し屋",
+        "猟奇殺人者"
+      ]
+    },
+    {
+      "id": "e11-0333",
+      "reason": "fragmento, enumeración o respuesta sin contenido autónomo suficiente"
+    },
+    {
+      "id": "e11-0334",
+      "reason": "anotación de lectura inválida"
+    }
+  ],
+  "approved_pairs": 304,
+  "directional_exercises": 608,
+  "levels": {
+    "N4": 53,
+    "N3": 127,
+    "N5": 34,
+    "N2": 75,
+    "N1": 15
+  },
+  "episodes": {
+    "1": 21,
+    "2": 24,
+    "3": 38,
+    "4": 22,
+    "5": 25,
+    "6": 21,
+    "7": 45,
+    "8": 29,
+    "9": 22,
+    "10": 26,
+    "11": 31
+  },
+  "approved": [
+    {
+      "id": "e01-0003",
+      "pair_id": "SAKAMOTO-91427722fc2ad159",
+      "level": "N4",
+      "episode": 1
+    },
+    {
+      "id": "e01-0007",
+      "pair_id": "SAKAMOTO-c65702590c14e347",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0012",
+      "pair_id": "SAKAMOTO-afc6abc36d275409",
+      "level": "N4",
+      "episode": 1
+    },
+    {
+      "id": "e01-0016",
+      "pair_id": "SAKAMOTO-737c1b2ae4ba7da7",
+      "level": "N5",
+      "episode": 1
+    },
+    {
+      "id": "e01-0019",
+      "pair_id": "SAKAMOTO-2b147b534f9f35a5",
+      "level": "N2",
+      "episode": 1
+    },
+    {
+      "id": "e01-0031",
+      "pair_id": "SAKAMOTO-8ab117048ea1a2c4",
+      "level": "N4",
+      "episode": 1
+    },
+    {
+      "id": "e01-0058",
+      "pair_id": "SAKAMOTO-f9b2853224663a7a",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0062",
+      "pair_id": "SAKAMOTO-d8bb593633bc393b",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0073",
+      "pair_id": "SAKAMOTO-c768fac32365f1c3",
+      "level": "N4",
+      "episode": 1
+    },
+    {
+      "id": "e01-0078",
+      "pair_id": "SAKAMOTO-7efa11a7e4708952",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0083",
+      "pair_id": "SAKAMOTO-aee85ca22d089b0c",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0095",
+      "pair_id": "SAKAMOTO-911e3df500a766a6",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0097",
+      "pair_id": "SAKAMOTO-29eb714fa816cff8",
+      "level": "N5",
+      "episode": 1
+    },
+    {
+      "id": "e01-0102",
+      "pair_id": "SAKAMOTO-54fe8b3696d9a47c",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0116",
+      "pair_id": "SAKAMOTO-16137245990cec0d",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0127",
+      "pair_id": "SAKAMOTO-104b1c3f374a395b",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0128",
+      "pair_id": "SAKAMOTO-fbc4103811b17395",
+      "level": "N2",
+      "episode": 1
+    },
+    {
+      "id": "e01-0134",
+      "pair_id": "SAKAMOTO-2bc1c3ab469e089a",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e01-0145",
+      "pair_id": "SAKAMOTO-10f27d20f08fe052",
+      "level": "N1",
+      "episode": 1
+    },
+    {
+      "id": "e01-0156",
+      "pair_id": "SAKAMOTO-5acaaf9f8b4b5d71",
+      "level": "N2",
+      "episode": 1
+    },
+    {
+      "id": "e01-0160",
+      "pair_id": "SAKAMOTO-23a5e298643e8709",
+      "level": "N3",
+      "episode": 1
+    },
+    {
+      "id": "e02-0024",
+      "pair_id": "SAKAMOTO-09703a785ad84a9b",
+      "level": "N5",
+      "episode": 2
+    },
+    {
+      "id": "e02-0033",
+      "pair_id": "SAKAMOTO-d38b64f3bc6bce32",
+      "level": "N4",
+      "episode": 2
+    },
+    {
+      "id": "e02-0043",
+      "pair_id": "SAKAMOTO-e0139704646c0779",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0056",
+      "pair_id": "SAKAMOTO-4e4efcae833674a2",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0078",
+      "pair_id": "SAKAMOTO-d43cb6265d7b23de",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0083",
+      "pair_id": "SAKAMOTO-955b4607f4ae06f6",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0085",
+      "pair_id": "SAKAMOTO-4fb067e7c6f77287",
+      "level": "N4",
+      "episode": 2
+    },
+    {
+      "id": "e02-0097",
+      "pair_id": "SAKAMOTO-0df794fc12cfcc82",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0105",
+      "pair_id": "SAKAMOTO-4bc8a8160e73f1e6",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0118",
+      "pair_id": "SAKAMOTO-ab3a8ad11de1d400",
+      "level": "N5",
+      "episode": 2
+    },
+    {
+      "id": "e02-0124",
+      "pair_id": "SAKAMOTO-6cea8271cc91ac94",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0125",
+      "pair_id": "SAKAMOTO-c5a05d81129edd70",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0132",
+      "pair_id": "SAKAMOTO-dd778e51de3fe87f",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0136",
+      "pair_id": "SAKAMOTO-539ea60821b7f33a",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0148",
+      "pair_id": "SAKAMOTO-c509ac10a194a6ee",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0153",
+      "pair_id": "SAKAMOTO-a5b5a95ed83ceeaf",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0159",
+      "pair_id": "SAKAMOTO-430b4fa2d3b60cd1",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0165",
+      "pair_id": "SAKAMOTO-bde13ddb2371a462",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0170",
+      "pair_id": "SAKAMOTO-a7c478927fbfe385",
+      "level": "N4",
+      "episode": 2
+    },
+    {
+      "id": "e02-0203",
+      "pair_id": "SAKAMOTO-06803347488cf5bc",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e02-0214",
+      "pair_id": "SAKAMOTO-957153d6f10a5dae",
+      "level": "N5",
+      "episode": 2
+    },
+    {
+      "id": "e02-0242",
+      "pair_id": "SAKAMOTO-c915b60ade527cfb",
+      "level": "N3",
+      "episode": 2
+    },
+    {
+      "id": "e02-0254",
+      "pair_id": "SAKAMOTO-ea6739f440a1af45",
+      "level": "N5",
+      "episode": 2
+    },
+    {
+      "id": "e02-0269",
+      "pair_id": "SAKAMOTO-7e8c015e71fec55b",
+      "level": "N2",
+      "episode": 2
+    },
+    {
+      "id": "e03-0003",
+      "pair_id": "SAKAMOTO-79d56bbe948879b9",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0022",
+      "pair_id": "SAKAMOTO-2741af9a3aaa6af9",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0026",
+      "pair_id": "SAKAMOTO-f955a9cf68a2e9b6",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0055",
+      "pair_id": "SAKAMOTO-40d013e8b78377bc",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0061",
+      "pair_id": "SAKAMOTO-a5c746b70ecd40c2",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0062",
+      "pair_id": "SAKAMOTO-b281951800e5d454",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0070",
+      "pair_id": "SAKAMOTO-3f4aeeea59e988ec",
+      "level": "N5",
+      "episode": 3
+    },
+    {
+      "id": "e03-0082",
+      "pair_id": "SAKAMOTO-974df14369c1326b",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0086",
+      "pair_id": "SAKAMOTO-ca90bba21d990964",
+      "level": "N1",
+      "episode": 3
+    },
+    {
+      "id": "e03-0087",
+      "pair_id": "SAKAMOTO-50859bde211f10f5",
+      "level": "N5",
+      "episode": 3
+    },
+    {
+      "id": "e03-0095",
+      "pair_id": "SAKAMOTO-06796284fc9b9ed4",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0109",
+      "pair_id": "SAKAMOTO-1ccde82220b0f8c4",
+      "level": "N5",
+      "episode": 3
+    },
+    {
+      "id": "e03-0131",
+      "pair_id": "SAKAMOTO-69344611f295d61e",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0136",
+      "pair_id": "SAKAMOTO-bc347781d32cfb25",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0141",
+      "pair_id": "SAKAMOTO-4e424651b15be800",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0144",
+      "pair_id": "SAKAMOTO-e2a5f0f98f01d7e6",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0152",
+      "pair_id": "SAKAMOTO-15b93c7c17d945a6",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0164",
+      "pair_id": "SAKAMOTO-9293209d9a3c040b",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0165",
+      "pair_id": "SAKAMOTO-7ab8f35c3e110b65",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0173",
+      "pair_id": "SAKAMOTO-e8b92b6e9f848bf5",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0199",
+      "pair_id": "SAKAMOTO-997303e3e832a425",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0202",
+      "pair_id": "SAKAMOTO-f6ed18a682f4567f",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0224",
+      "pair_id": "SAKAMOTO-e262663eb39932e4",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0225",
+      "pair_id": "SAKAMOTO-0739ef2ba0263d11",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0226",
+      "pair_id": "SAKAMOTO-1fef811c3455a81b",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0228",
+      "pair_id": "SAKAMOTO-b43f82f8766693b5",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0230",
+      "pair_id": "SAKAMOTO-9dd4c273bcf284cc",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0234",
+      "pair_id": "SAKAMOTO-a26770060e7d5121",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0244",
+      "pair_id": "SAKAMOTO-1c7557b2f2fde466",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0246",
+      "pair_id": "SAKAMOTO-0505a7e2c576b7ad",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0250",
+      "pair_id": "SAKAMOTO-eda158545bea230e",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0263",
+      "pair_id": "SAKAMOTO-0c0f3423743f51f9",
+      "level": "N4",
+      "episode": 3
+    },
+    {
+      "id": "e03-0271",
+      "pair_id": "SAKAMOTO-beb1b61f75625c22",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0277",
+      "pair_id": "SAKAMOTO-48914a31973fd17a",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0278",
+      "pair_id": "SAKAMOTO-a2d4fad87fe2d2ac",
+      "level": "N2",
+      "episode": 3
+    },
+    {
+      "id": "e03-0281",
+      "pair_id": "SAKAMOTO-72105001774c7132",
+      "level": "N5",
+      "episode": 3
+    },
+    {
+      "id": "e03-0297",
+      "pair_id": "SAKAMOTO-ba9469150770c93f",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e03-0299",
+      "pair_id": "SAKAMOTO-09a06f109cb6bfbc",
+      "level": "N3",
+      "episode": 3
+    },
+    {
+      "id": "e04-0041",
+      "pair_id": "SAKAMOTO-93d49dd21fe53fa5",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0055",
+      "pair_id": "SAKAMOTO-e48b7037424e88df",
+      "level": "N4",
+      "episode": 4
+    },
+    {
+      "id": "e04-0071",
+      "pair_id": "SAKAMOTO-eb28c1f93609e787",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0082",
+      "pair_id": "SAKAMOTO-a552c7e6f13222ba",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0084",
+      "pair_id": "SAKAMOTO-ed34581d6613163a",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0090",
+      "pair_id": "SAKAMOTO-94c00c89fafcf407",
+      "level": "N4",
+      "episode": 4
+    },
+    {
+      "id": "e04-0098",
+      "pair_id": "SAKAMOTO-a99baef9f27f07b4",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0130",
+      "pair_id": "SAKAMOTO-d237cb07433d950c",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0135",
+      "pair_id": "SAKAMOTO-bd66b19cd01ff6cf",
+      "level": "N5",
+      "episode": 4
+    },
+    {
+      "id": "e04-0140",
+      "pair_id": "SAKAMOTO-1dd2ada73b526796",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0153",
+      "pair_id": "SAKAMOTO-4b3f56ed13e45f71",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0169",
+      "pair_id": "SAKAMOTO-49f517cb41e56cac",
+      "level": "N4",
+      "episode": 4
+    },
+    {
+      "id": "e04-0178",
+      "pair_id": "SAKAMOTO-e17ba55c64ea84d4",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0187",
+      "pair_id": "SAKAMOTO-33522b48bf11ff86",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0232",
+      "pair_id": "SAKAMOTO-e548455b4fcf03f3",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0247",
+      "pair_id": "SAKAMOTO-0c841f20bad90590",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0251",
+      "pair_id": "SAKAMOTO-aaa1096e8753fa17",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0253",
+      "pair_id": "SAKAMOTO-fade4ea7f9c7c3ed",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e04-0259",
+      "pair_id": "SAKAMOTO-518660399958470c",
+      "level": "N5",
+      "episode": 4
+    },
+    {
+      "id": "e04-0260",
+      "pair_id": "SAKAMOTO-82aa5b94e8af00e3",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0274",
+      "pair_id": "SAKAMOTO-38813c8e8c7302c6",
+      "level": "N2",
+      "episode": 4
+    },
+    {
+      "id": "e04-0320",
+      "pair_id": "SAKAMOTO-4a21fc175d86b0bc",
+      "level": "N3",
+      "episode": 4
+    },
+    {
+      "id": "e05-0044",
+      "pair_id": "SAKAMOTO-1db29ef5f2081069",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0062",
+      "pair_id": "SAKAMOTO-6685b72cb4d6a3c0",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0081",
+      "pair_id": "SAKAMOTO-9d1ffe9e7dcc065a",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0082",
+      "pair_id": "SAKAMOTO-3e5bbfed67dde192",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0088",
+      "pair_id": "SAKAMOTO-c1e2f92e72a5945d",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0090",
+      "pair_id": "SAKAMOTO-55b8b14fe04c0ab4",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0100",
+      "pair_id": "SAKAMOTO-0d7ba3be78f5d862",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0140",
+      "pair_id": "SAKAMOTO-73290e8cddb9c8b9",
+      "level": "N4",
+      "episode": 5
+    },
+    {
+      "id": "e05-0141",
+      "pair_id": "SAKAMOTO-41932ef2493aef31",
+      "level": "N2",
+      "episode": 5
+    },
+    {
+      "id": "e05-0180",
+      "pair_id": "SAKAMOTO-50138f0d204cb2c4",
+      "level": "N2",
+      "episode": 5
+    },
+    {
+      "id": "e05-0189",
+      "pair_id": "SAKAMOTO-19680db45a29d871",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0190",
+      "pair_id": "SAKAMOTO-d65c24102299fa61",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0191",
+      "pair_id": "SAKAMOTO-511d5422bb6a6c30",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0198",
+      "pair_id": "SAKAMOTO-2ead1a363487f306",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0214",
+      "pair_id": "SAKAMOTO-8b5db6aa3c3ad3cf",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0217",
+      "pair_id": "SAKAMOTO-e9a83a495882ac58",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0234",
+      "pair_id": "SAKAMOTO-11e53b391e3a3acc",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0247",
+      "pair_id": "SAKAMOTO-d99c41b3764c1105",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0257",
+      "pair_id": "SAKAMOTO-d487a0f4cb920b95",
+      "level": "N2",
+      "episode": 5
+    },
+    {
+      "id": "e05-0269",
+      "pair_id": "SAKAMOTO-8c97fe4bb08f7bf3",
+      "level": "N2",
+      "episode": 5
+    },
+    {
+      "id": "e05-0271",
+      "pair_id": "SAKAMOTO-ef8596d7bcdb40e8",
+      "level": "N4",
+      "episode": 5
+    },
+    {
+      "id": "e05-0275",
+      "pair_id": "SAKAMOTO-924e1ae48eeddd97",
+      "level": "N5",
+      "episode": 5
+    },
+    {
+      "id": "e05-0281",
+      "pair_id": "SAKAMOTO-7220247151380499",
+      "level": "N4",
+      "episode": 5
+    },
+    {
+      "id": "e05-0288",
+      "pair_id": "SAKAMOTO-7e6dfbdb14a96310",
+      "level": "N3",
+      "episode": 5
+    },
+    {
+      "id": "e05-0343",
+      "pair_id": "SAKAMOTO-dd08ba01ea1de9b4",
+      "level": "N1",
+      "episode": 5
+    },
+    {
+      "id": "e06-0013",
+      "pair_id": "SAKAMOTO-15049db094865a2e",
+      "level": "N5",
+      "episode": 6
+    },
+    {
+      "id": "e06-0040",
+      "pair_id": "SAKAMOTO-c0f8c1493d34f559",
+      "level": "N4",
+      "episode": 6
+    },
+    {
+      "id": "e06-0044",
+      "pair_id": "SAKAMOTO-f87401cb3ee65067",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0048",
+      "pair_id": "SAKAMOTO-8066f6f7c5a50424",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0061",
+      "pair_id": "SAKAMOTO-893f24a4fc94ff0a",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0090",
+      "pair_id": "SAKAMOTO-bf409c540b8b97f8",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0091",
+      "pair_id": "SAKAMOTO-a7b2716d53cbdf89",
+      "level": "N4",
+      "episode": 6
+    },
+    {
+      "id": "e06-0093",
+      "pair_id": "SAKAMOTO-fed40c09aa1dc323",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0099",
+      "pair_id": "SAKAMOTO-c66474cd7a21ca31",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0140",
+      "pair_id": "SAKAMOTO-c93eb08b33ccf441",
+      "level": "N1",
+      "episode": 6
+    },
+    {
+      "id": "e06-0152",
+      "pair_id": "SAKAMOTO-206ab7ef7b4ab236",
+      "level": "N5",
+      "episode": 6
+    },
+    {
+      "id": "e06-0156",
+      "pair_id": "SAKAMOTO-b98171afb67756bd",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0157",
+      "pair_id": "SAKAMOTO-4fbe10cd0a05629b",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0162",
+      "pair_id": "SAKAMOTO-d0c1ca267c7003c5",
+      "level": "N5",
+      "episode": 6
+    },
+    {
+      "id": "e06-0166",
+      "pair_id": "SAKAMOTO-14fff808d8a0a9bf",
+      "level": "N5",
+      "episode": 6
+    },
+    {
+      "id": "e06-0169",
+      "pair_id": "SAKAMOTO-9a1fec91676f67ea",
+      "level": "N1",
+      "episode": 6
+    },
+    {
+      "id": "e06-0190",
+      "pair_id": "SAKAMOTO-2511772728c0236b",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0226",
+      "pair_id": "SAKAMOTO-5cf1748a677affca",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0228",
+      "pair_id": "SAKAMOTO-38faddfbf06fdee1",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e06-0232",
+      "pair_id": "SAKAMOTO-593afe2eb7a06db8",
+      "level": "N3",
+      "episode": 6
+    },
+    {
+      "id": "e06-0262",
+      "pair_id": "SAKAMOTO-c9cb834a5ad4142a",
+      "level": "N2",
+      "episode": 6
+    },
+    {
+      "id": "e07-0006",
+      "pair_id": "SAKAMOTO-5ff6b9725236ca18",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0016",
+      "pair_id": "SAKAMOTO-d9059b9fd2def0a9",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0027",
+      "pair_id": "SAKAMOTO-d4ea0a0dc9d76459",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0028",
+      "pair_id": "SAKAMOTO-05d5206f04f071ad",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0029",
+      "pair_id": "SAKAMOTO-a24b33d53efd1a85",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0045",
+      "pair_id": "SAKAMOTO-26d7b58260719ec3",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0046",
+      "pair_id": "SAKAMOTO-5388412f7826ef80",
+      "level": "N1",
+      "episode": 7
+    },
+    {
+      "id": "e07-0055",
+      "pair_id": "SAKAMOTO-8e306557eef3cdd0",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0057",
+      "pair_id": "SAKAMOTO-578f81df9df563fa",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0064",
+      "pair_id": "SAKAMOTO-5c839d87a3ce130f",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0069",
+      "pair_id": "SAKAMOTO-9fe56c4bde9e6441",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0070",
+      "pair_id": "SAKAMOTO-1bbed92a65d3c6b4",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0091",
+      "pair_id": "SAKAMOTO-e51aff2d76c752ea",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0092",
+      "pair_id": "SAKAMOTO-1cf4226181dec7ed",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0095",
+      "pair_id": "SAKAMOTO-617a0bcb16549b0d",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0101",
+      "pair_id": "SAKAMOTO-8fe6054df3687320",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0119",
+      "pair_id": "SAKAMOTO-896b673075e5d189",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0122",
+      "pair_id": "SAKAMOTO-87f0638a04edfaee",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0131",
+      "pair_id": "SAKAMOTO-8543b4fb25231d21",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0132",
+      "pair_id": "SAKAMOTO-f47af66f48880438",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0133",
+      "pair_id": "SAKAMOTO-e020ede10810e04f",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0140",
+      "pair_id": "SAKAMOTO-b78db8b2464edf17",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0144",
+      "pair_id": "SAKAMOTO-975c4524c5336a9f",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0160",
+      "pair_id": "SAKAMOTO-190303fe76d6adde",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0166",
+      "pair_id": "SAKAMOTO-752cfd0016930216",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0174",
+      "pair_id": "SAKAMOTO-e48ecd14a081ca3e",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0178",
+      "pair_id": "SAKAMOTO-b6a87a2badf51ba0",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0186",
+      "pair_id": "SAKAMOTO-72f5e004016c69b9",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0189",
+      "pair_id": "SAKAMOTO-d9e6d190b0b07c65",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0193",
+      "pair_id": "SAKAMOTO-8cfdcbc6457d1bc1",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0196",
+      "pair_id": "SAKAMOTO-69e6766d704b0583",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0200",
+      "pair_id": "SAKAMOTO-a7d7f6e77baf52ab",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0202",
+      "pair_id": "SAKAMOTO-a59641d4578fa24a",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0216",
+      "pair_id": "SAKAMOTO-c2899f7143aa971a",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0243",
+      "pair_id": "SAKAMOTO-416faf04beac3fa0",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0256",
+      "pair_id": "SAKAMOTO-9c3d096848a69477",
+      "level": "N5",
+      "episode": 7
+    },
+    {
+      "id": "e07-0275",
+      "pair_id": "SAKAMOTO-c973534abac22aca",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0276",
+      "pair_id": "SAKAMOTO-ca259119957200bd",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0284",
+      "pair_id": "SAKAMOTO-a2b43e1edd3b9a14",
+      "level": "N4",
+      "episode": 7
+    },
+    {
+      "id": "e07-0292",
+      "pair_id": "SAKAMOTO-4bf9054e69f3e4c3",
+      "level": "N3",
+      "episode": 7
+    },
+    {
+      "id": "e07-0294",
+      "pair_id": "SAKAMOTO-b2c24bd348f360e1",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0315",
+      "pair_id": "SAKAMOTO-562ce84994e508bd",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0321",
+      "pair_id": "SAKAMOTO-7505aad9c6e2b04c",
+      "level": "N5",
+      "episode": 7
+    },
+    {
+      "id": "e07-0324",
+      "pair_id": "SAKAMOTO-76fa6179a6d0aaa6",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e07-0331",
+      "pair_id": "SAKAMOTO-0701552cf65cb16f",
+      "level": "N2",
+      "episode": 7
+    },
+    {
+      "id": "e08-0018",
+      "pair_id": "SAKAMOTO-fc10bf0be7b9ee0c",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0021",
+      "pair_id": "SAKAMOTO-c81ec5a887cf998e",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0025",
+      "pair_id": "SAKAMOTO-4a58fc34489a3182",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0030",
+      "pair_id": "SAKAMOTO-b757b1442415aff0",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0037",
+      "pair_id": "SAKAMOTO-1deccbee74454b5b",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0081",
+      "pair_id": "SAKAMOTO-9378dcda9072ae63",
+      "level": "N5",
+      "episode": 8
+    },
+    {
+      "id": "e08-0085",
+      "pair_id": "SAKAMOTO-775f01a9c82fb897",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0086",
+      "pair_id": "SAKAMOTO-2a930561d6be50bd",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0097",
+      "pair_id": "SAKAMOTO-995b714f9ea54126",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0101",
+      "pair_id": "SAKAMOTO-988ca9db704d0081",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0111",
+      "pair_id": "SAKAMOTO-8fe48d1794c6c9b9",
+      "level": "N2",
+      "episode": 8
+    },
+    {
+      "id": "e08-0139",
+      "pair_id": "SAKAMOTO-94819519043dfd6b",
+      "level": "N2",
+      "episode": 8
+    },
+    {
+      "id": "e08-0144",
+      "pair_id": "SAKAMOTO-0e2b6b88b290a491",
+      "level": "N5",
+      "episode": 8
+    },
+    {
+      "id": "e08-0161",
+      "pair_id": "SAKAMOTO-5a20d66dfc773715",
+      "level": "N4",
+      "episode": 8
+    },
+    {
+      "id": "e08-0189",
+      "pair_id": "SAKAMOTO-683e7b1ef2d6c1c9",
+      "level": "N4",
+      "episode": 8
+    },
+    {
+      "id": "e08-0205",
+      "pair_id": "SAKAMOTO-5bde1ad4ff674a35",
+      "level": "N4",
+      "episode": 8
+    },
+    {
+      "id": "e08-0224",
+      "pair_id": "SAKAMOTO-fd0b87b31f4a3d23",
+      "level": "N1",
+      "episode": 8
+    },
+    {
+      "id": "e08-0228",
+      "pair_id": "SAKAMOTO-ee88ac04fb1821a5",
+      "level": "N5",
+      "episode": 8
+    },
+    {
+      "id": "e08-0245",
+      "pair_id": "SAKAMOTO-abdb5756286aac49",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0254",
+      "pair_id": "SAKAMOTO-d75032d022601dff",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0255",
+      "pair_id": "SAKAMOTO-27212f2e048b9afb",
+      "level": "N4",
+      "episode": 8
+    },
+    {
+      "id": "e08-0256",
+      "pair_id": "SAKAMOTO-e743d8878aa36615",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e08-0304",
+      "pair_id": "SAKAMOTO-e33303d9b01f4bc2",
+      "level": "N5",
+      "episode": 8
+    },
+    {
+      "id": "e08-0314",
+      "pair_id": "SAKAMOTO-95ad8833ab0a4bae",
+      "level": "N1",
+      "episode": 8
+    },
+    {
+      "id": "e08-0317",
+      "pair_id": "SAKAMOTO-348f290b950ad427",
+      "level": "N2",
+      "episode": 8
+    },
+    {
+      "id": "e08-0334",
+      "pair_id": "SAKAMOTO-9e07ffba611c878a",
+      "level": "N5",
+      "episode": 8
+    },
+    {
+      "id": "e08-0337",
+      "pair_id": "SAKAMOTO-2b69d6a2e9cbd6c8",
+      "level": "N1",
+      "episode": 8
+    },
+    {
+      "id": "e08-0339",
+      "pair_id": "SAKAMOTO-85c72ce48be3c007",
+      "level": "N4",
+      "episode": 8
+    },
+    {
+      "id": "e08-0342",
+      "pair_id": "SAKAMOTO-45476d1f1aae6922",
+      "level": "N3",
+      "episode": 8
+    },
+    {
+      "id": "e09-0000",
+      "pair_id": "SAKAMOTO-dca4acff65a59211",
+      "level": "N2",
+      "episode": 9
+    },
+    {
+      "id": "e09-0002",
+      "pair_id": "SAKAMOTO-d4b8b74c16c0bd18",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0049",
+      "pair_id": "SAKAMOTO-521dab191ec793bb",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0078",
+      "pair_id": "SAKAMOTO-3b73339ce0a7e3d0",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0091",
+      "pair_id": "SAKAMOTO-ce4bd4a78044e67f",
+      "level": "N2",
+      "episode": 9
+    },
+    {
+      "id": "e09-0093",
+      "pair_id": "SAKAMOTO-ab94dc1a5b151939",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0127",
+      "pair_id": "SAKAMOTO-58a10110d6781cb5",
+      "level": "N2",
+      "episode": 9
+    },
+    {
+      "id": "e09-0133",
+      "pair_id": "SAKAMOTO-90f221710d2d5490",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0158",
+      "pair_id": "SAKAMOTO-886e26d7111f7862",
+      "level": "N4",
+      "episode": 9
+    },
+    {
+      "id": "e09-0162",
+      "pair_id": "SAKAMOTO-07421add2603d3a4",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0163",
+      "pair_id": "SAKAMOTO-49e77c2b4cd0f65b",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0171",
+      "pair_id": "SAKAMOTO-a40612cbc9ffce0a",
+      "level": "N5",
+      "episode": 9
+    },
+    {
+      "id": "e09-0172",
+      "pair_id": "SAKAMOTO-952d5244c33c2246",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0175",
+      "pair_id": "SAKAMOTO-95a8450a5dcb3ce2",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0240",
+      "pair_id": "SAKAMOTO-2db09f59bbe2e669",
+      "level": "N5",
+      "episode": 9
+    },
+    {
+      "id": "e09-0253",
+      "pair_id": "SAKAMOTO-8a0e7c85190bc684",
+      "level": "N2",
+      "episode": 9
+    },
+    {
+      "id": "e09-0262",
+      "pair_id": "SAKAMOTO-1f84388ec432fd99",
+      "level": "N4",
+      "episode": 9
+    },
+    {
+      "id": "e09-0263",
+      "pair_id": "SAKAMOTO-ef3bdb211eddbf28",
+      "level": "N4",
+      "episode": 9
+    },
+    {
+      "id": "e09-0276",
+      "pair_id": "SAKAMOTO-27e391ee94005d1f",
+      "level": "N4",
+      "episode": 9
+    },
+    {
+      "id": "e09-0284",
+      "pair_id": "SAKAMOTO-aeb6682cf9a55049",
+      "level": "N3",
+      "episode": 9
+    },
+    {
+      "id": "e09-0286",
+      "pair_id": "SAKAMOTO-6331be726bd5fe9a",
+      "level": "N1",
+      "episode": 9
+    },
+    {
+      "id": "e09-0294",
+      "pair_id": "SAKAMOTO-967893b08a0eb740",
+      "level": "N5",
+      "episode": 9
+    },
+    {
+      "id": "e10-0014",
+      "pair_id": "SAKAMOTO-f52a53092e5347ea",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0016",
+      "pair_id": "SAKAMOTO-407496b4dddd7c52",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0042",
+      "pair_id": "SAKAMOTO-6df0f4aa3b5761cf",
+      "level": "N5",
+      "episode": 10
+    },
+    {
+      "id": "e10-0047",
+      "pair_id": "SAKAMOTO-13364733ce00a28a",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0057",
+      "pair_id": "SAKAMOTO-dcc37140043a48fc",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0058",
+      "pair_id": "SAKAMOTO-32fdba9c1601d738",
+      "level": "N1",
+      "episode": 10
+    },
+    {
+      "id": "e10-0067",
+      "pair_id": "SAKAMOTO-8b7b449e7697e819",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0069",
+      "pair_id": "SAKAMOTO-64b3c7958ad6ebc8",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0097",
+      "pair_id": "SAKAMOTO-5d999befb6185745",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0120",
+      "pair_id": "SAKAMOTO-21432baa9348fc68",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0145",
+      "pair_id": "SAKAMOTO-0a690aec6af7d4d9",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0158",
+      "pair_id": "SAKAMOTO-e58a6a0771b7b38f",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0174",
+      "pair_id": "SAKAMOTO-2d474bceaddd836b",
+      "level": "N4",
+      "episode": 10
+    },
+    {
+      "id": "e10-0184",
+      "pair_id": "SAKAMOTO-bceaa3d32057a4fa",
+      "level": "N4",
+      "episode": 10
+    },
+    {
+      "id": "e10-0198",
+      "pair_id": "SAKAMOTO-8bc29da75a3c2dfa",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0206",
+      "pair_id": "SAKAMOTO-ae8a1f26aecd2640",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0219",
+      "pair_id": "SAKAMOTO-cdf19e8c814fc809",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0233",
+      "pair_id": "SAKAMOTO-75e6c6583b9829f7",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0238",
+      "pair_id": "SAKAMOTO-68af1c04ccc90fb2",
+      "level": "N4",
+      "episode": 10
+    },
+    {
+      "id": "e10-0247",
+      "pair_id": "SAKAMOTO-82c405bb1034db4a",
+      "level": "N3",
+      "episode": 10
+    },
+    {
+      "id": "e10-0256",
+      "pair_id": "SAKAMOTO-415d3e6772897551",
+      "level": "N1",
+      "episode": 10
+    },
+    {
+      "id": "e10-0260",
+      "pair_id": "SAKAMOTO-582cc8d3842cb392",
+      "level": "N2",
+      "episode": 10
+    },
+    {
+      "id": "e10-0265",
+      "pair_id": "SAKAMOTO-e3b553ac3605d43b",
+      "level": "N1",
+      "episode": 10
+    },
+    {
+      "id": "e10-0290",
+      "pair_id": "SAKAMOTO-6dc0c4d625369c27",
+      "level": "N1",
+      "episode": 10
+    },
+    {
+      "id": "e10-0292",
+      "pair_id": "SAKAMOTO-515022ad9dca0f04",
+      "level": "N4",
+      "episode": 10
+    },
+    {
+      "id": "e10-0300",
+      "pair_id": "SAKAMOTO-8a8a1bf0410c2536",
+      "level": "N4",
+      "episode": 10
+    },
+    {
+      "id": "e11-0016",
+      "pair_id": "SAKAMOTO-fb513c64fc86f113",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0025",
+      "pair_id": "SAKAMOTO-0ba186071ae80cda",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0030",
+      "pair_id": "SAKAMOTO-2a8c6ec10cf227d2",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0032",
+      "pair_id": "SAKAMOTO-d020c04d875f1170",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0035",
+      "pair_id": "SAKAMOTO-f2d7b40d4d728468",
+      "level": "N5",
+      "episode": 11
+    },
+    {
+      "id": "e11-0059",
+      "pair_id": "SAKAMOTO-7aba4a3ec192e4ee",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0060",
+      "pair_id": "SAKAMOTO-097e36392988e5e5",
+      "level": "N2",
+      "episode": 11
+    },
+    {
+      "id": "e11-0088",
+      "pair_id": "SAKAMOTO-d163773dc8a100dd",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0116",
+      "pair_id": "SAKAMOTO-0c45acdcffb7caa9",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0131",
+      "pair_id": "SAKAMOTO-c1667238fb96ad35",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0136",
+      "pair_id": "SAKAMOTO-4f45f24a066bb8ac",
+      "level": "N2",
+      "episode": 11
+    },
+    {
+      "id": "e11-0166",
+      "pair_id": "SAKAMOTO-75408362a5b597e1",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0168",
+      "pair_id": "SAKAMOTO-31c255ae4cafb88c",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0172",
+      "pair_id": "SAKAMOTO-8210ead94065dc86",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0195",
+      "pair_id": "SAKAMOTO-ba78537ab454daa4",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0199",
+      "pair_id": "SAKAMOTO-c0afddc50b92b725",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0206",
+      "pair_id": "SAKAMOTO-7b264b5f351d4d65",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0212",
+      "pair_id": "SAKAMOTO-79fd6037cfcca763",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0216",
+      "pair_id": "SAKAMOTO-3cbff3ef70192e10",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0220",
+      "pair_id": "SAKAMOTO-0f49cfce03567d80",
+      "level": "N2",
+      "episode": 11
+    },
+    {
+      "id": "e11-0223",
+      "pair_id": "SAKAMOTO-7675d918e0d95891",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0239",
+      "pair_id": "SAKAMOTO-089bbc22af290269",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0258",
+      "pair_id": "SAKAMOTO-d7bc7319daff7574",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0274",
+      "pair_id": "SAKAMOTO-7a133b0591f0f465",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0285",
+      "pair_id": "SAKAMOTO-7652d9cae29b8194",
+      "level": "N2",
+      "episode": 11
+    },
+    {
+      "id": "e11-0287",
+      "pair_id": "SAKAMOTO-1320d8a6e38a68b0",
+      "level": "N4",
+      "episode": 11
+    },
+    {
+      "id": "e11-0295",
+      "pair_id": "SAKAMOTO-476740bb57710860",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0297",
+      "pair_id": "SAKAMOTO-d3f00d576868a627",
+      "level": "N2",
+      "episode": 11
+    },
+    {
+      "id": "e11-0306",
+      "pair_id": "SAKAMOTO-48096b053d894c04",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0315",
+      "pair_id": "SAKAMOTO-8643a4c036f3ed65",
+      "level": "N3",
+      "episode": 11
+    },
+    {
+      "id": "e11-0323",
+      "pair_id": "SAKAMOTO-fe0a30a2c87c4299",
+      "level": "N1",
+      "episode": 11
+    }
+  ]
+}

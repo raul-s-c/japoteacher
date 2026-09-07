@@ -1,0 +1,9 @@
+{
+  "limit": 2000000,
+  "recorded_tokens": 1441694,
+  "uncertain_prior_reserved": 200000,
+  "unconfirmed_requests": 8,
+  "unconfirmed_requests_reserved": 272965,
+  "conservative_total": 1914659,
+  "api_calls_closed": true
+}

@@ -1,4 +1,5 @@
 import { normalizeEvaluation } from "./evaluation-policy.js";
+import { collectionEditorial } from "./collection-editorial.js";
 import { allUserStates, deleteReport, generateReport, localReport, reportPeriod, reportsForUser, userPayload } from "./report-generation.js";
 
 import { generateLesson, validLessonInput } from "./daily-lesson.js";
@@ -697,6 +698,7 @@ function difficultyReviewInstructions() {
 }
 
 async function callEditorialOpenAI(operation, payload, env) {
+  if(operation==='collection_review')return fetch(OPENAI_RESPONSES_URL,{method:'POST',headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`,'Content-Type':'application/json'},body:JSON.stringify(collectionEditorial(payload))});
   const schema = operation === "difficulty_review"
     ? difficultyReviewSchema
     : operation === "review"
@@ -751,7 +753,7 @@ async function editorial(request, env) {
   const authorized = (await Promise.all(acceptedKeys.map(key => secretMatches(providedKey, String(key).trim())))).some(Boolean);
   if (!authorized)
     return json({ error: "Unauthorized" }, 401);
-  if (!["generate", "review", "equivalence_check", "repair_kanji", "difficulty_review"].includes(operation))
+  if (!["generate", "review", "equivalence_check", "repair_kanji", "difficulty_review", "collection_review"].includes(operation))
     return json({ error: "Operación editorial inválida." }, 400);
   try {
     const response = await callEditorialOpenAI(operation, payload, env),
