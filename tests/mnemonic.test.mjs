@@ -7,16 +7,16 @@ import worker from '../worker/src/index.js';
 const payload={exercise:{direction:'ja_es',japanese_sentence:'昨日、本を借りました。',spanish_sentence:'Ayer pedí prestado un libro.'},user_answer:'Ayer presté un libro.',errors:[{source_span:'presté',corrected_span:'pedí prestado',explanation_es:'借りる significa recibir prestado.'}]};
 test('mnemonic request includes only bounded error context and caps generation',()=>{
   const input=mnemonicInput({...payload,account:'private',exercise:{...payload.exercise,unrelated:'private'}});
-  assert.deepEqual(input,payload);assert.equal(mnemonicInput({...payload,errors:[]}),null);assert.equal(mnemonicInput({...payload,user_answer:'a'.repeat(1201)}),null);assert.equal(mnemonicInput({...payload,errors:[null]}),null);
+  assert.deepEqual(input,payload);assert.deepEqual(mnemonicInput({...payload,errors:[]}),{...payload,errors:[]});assert.equal(mnemonicInput({...payload,user_answer:'a'.repeat(1201)}),null);assert.equal(mnemonicInput({...payload,errors:[null]}),null);
   const request=mnemonicRequest(input);assert.equal(request.max_output_tokens,850);assert.equal(request.reasoning.effort,'none');assert.equal(request.text.format.schema.properties.tips.maxItems,2);
   assert(!validMnemonic({tips:[],note_es:''}));assert(validMnemonic({tips:[],note_es:'No hay un error real.'}));assert(!validMnemonic({tips:[{target_es:'x'}],note_es:''}));
 });
-test('mnemonic appears only for actual corrections and escapes saved content',()=>{
+test('mnemonic appears for correct and incorrect answers and escapes saved content',()=>{
   const context={window:{},document:{addEventListener(){}}};
   for(const file of ['mnemonic','ui'])vm.runInNewContext(fs.readFileSync(new URL('../src/'+file+'.js',import.meta.url),'utf8'),context);
   const feedback=errors=>context.window.UI.feedback({errors,kanji_readings:[],strengths:[],overall_score:80},'presté',{direction:'ja_es',attemptId:'a'});
-  assert(!feedback([]).includes('data-mnemonic-generate'));
-  assert(!feedback([{source_span:'本。',corrected_span:'本'}]).includes('data-mnemonic-generate'));
+  assert(feedback([]).includes('data-mnemonic-generate'));
+  assert(feedback([{source_span:'本。',corrected_span:'本'}]).includes('data-mnemonic-generate'));
   assert(feedback(payload.errors).includes('data-mnemonic-generate'));
   const html=context.window.Mnemonic.html('a',payload.errors,{mnemonic_json:JSON.stringify({tips:[{target_es:'<img src=x>',trick_es:'Una escena.',rule_es:'Una regla.'}],note_es:''})});
   assert(html.includes('&lt;img'));assert(!html.includes('<img'));
@@ -38,7 +38,8 @@ test('mnemonic endpoint authenticates, rejects bad input and handles incomplete 
   });
   const request=(body=payload,headers={})=>new Request('https://worker.test/mnemonic',{method:'POST',headers:{Origin:'https://app.test','Content-Type':'application/json',Authorization:'Bearer fake','X-Device-ID':'test',...headers},body:JSON.stringify(body)});
   assert.equal((await worker.fetch(request(payload,{Authorization:''}),env)).status,409);assert.equal(calls,0);
-  assert.equal((await worker.fetch(request({...payload,errors:[]}),env)).status,400);assert.equal(calls,0);
+  assert.equal((await worker.fetch(request({...payload,errors:null}),env)).status,400);assert.equal(calls,0);
   const result=await worker.fetch(request(),env);assert.equal(result.status,200);assert.deepEqual((await result.json()).mnemonic,output);assert.equal(calls,1);
-  output={tips:[],note_es:''};assert.equal((await worker.fetch(request(),env)).status,502);assert.equal(calls,2);
+  assert.equal((await worker.fetch(request({...payload,errors:[]}),env)).status,200);assert.equal(calls,2);
+  output={tips:[],note_es:''};assert.equal((await worker.fetch(request(),env)).status,502);assert.equal(calls,3);
 });

@@ -5,9 +5,9 @@
   function saved(attempt){try{const value=JSON.parse(attempt?.mnemonic_json||'null');return valid(value)?value:null}catch{return null}}
   function content(value){return value.tips.map(t=>`<article><strong>${esc(t.target_es)}</strong><p>${esc(t.trick_es)}</p><p class="mnemonic-rule"><b>Recuerda:</b> ${esc(t.rule_es)}</p></article>`).join('')+(value.note_es?`<p>${esc(value.note_es)}</p>`:'')}
   function html(attemptId,errors,attempt){
-    if(!attemptId||!errors.length||attempt?.evaluation_status==='invalid')return '';
+    if(!attemptId||attempt?.evaluation_status==='invalid')return '';
     const value=saved(attempt);
-    return `<section class="mnemonic-card" data-mnemonic-attempt="${esc(attemptId)}"><h4>¿Quieres un consejo mnemotécnico?</h4><p>Un truco breve para recordar lo que has fallado.</p><button type="button" class="secondary" data-mnemonic-generate${value?' hidden':''}>Dame un consejo</button><div class="mnemonic-result" aria-live="polite"${value?'':' hidden'}>${value?content(value):''}</div><small>Las asociaciones son ayudas de memoria inventadas.</small></section>`;
+    return `<section class="mnemonic-card" data-mnemonic-attempt="${esc(attemptId)}"><h4>¿Quieres un consejo mnemotécnico?</h4><p>${errors.length?'Un truco breve para recordar lo que has fallado.':'Un truco breve para recordar el vocabulario o la estructura de esta frase.'}</p><button type="button" class="secondary" data-mnemonic-generate${value?' hidden':''}>Dame un consejo</button><div class="mnemonic-result" aria-live="polite"${value?'':' hidden'}>${value?content(value):''}</div><small>Las asociaciones son ayudas de memoria inventadas.</small></section>`;
   }
   async function generate(id){
     const attempt=await JapoDB.get('attempts',id);if(!attempt||attempt.evaluation_status!=='valid')throw new Error('No se encontró una corrección válida.');
@@ -18,7 +18,6 @@
     let errors;try{errors=JSON.parse(attempt.errors_json||'null')}catch{}
     errors=Array.isArray(errors)?errors:Array.isArray(attempt.errors)?attempt.errors:[];
     errors=errors.filter(e=>String(e.source_span||'').trim()!==String(e.corrected_span||'').trim()).slice(0,6);
-    if(!errors.length)throw new Error('Esta respuesta no tiene fallos para preparar un consejo.');
     const endpoint=(settings?.value?.aiEndpoint||'https://japoteacher-ai.raul-nihongo.workers.dev/evaluate').replace(/\/evaluate\/?$/,'/mnemonic');
     const response=await fetch(endpoint,{method:'POST',signal:AbortSignal.timeout(45000),headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify({exercise:{direction:attempt.direction,japanese_sentence:exercise.direction==='ja_es'?exercise.source_text:attempt.correct_japanese_sentence||exercise.reference_translation,spanish_sentence:exercise.direction==='ja_es'?exercise.reference_translation:exercise.source_text},user_answer:attempt.user_answer||'',errors:errors.map(e=>({source_span:String(e.source_span||''),corrected_span:String(e.corrected_span||''),explanation_es:String(e.explanation_es||'')}))})});
     const data=await response.json();if(!response.ok)throw new Error(data.error||'No se pudo preparar el consejo.');

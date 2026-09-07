@@ -74,8 +74,12 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     // Moving on must not attach the delayed response to another correction.
     await page.locator('.nav-item[data-view="hoy"]:visible').click();
     await page.waitForFunction(async id=>(await JapoDB.get('attempts',id)).mnemonic_json,second);
-    await answer('ja_es',true);assert.equal(await page.locator('#feedbackPanel .mnemonic-card').count(),0);
-    assert.equal(requests.length,3);assert.deepEqual(errors,[]);
+    await answer('ja_es',true);assert.equal(await page.locator('#feedbackPanel .mnemonic-card').count(),1);
+    assert((await page.locator('#feedbackPanel .mnemonic-card').textContent()).includes('vocabulario o la estructura'));
+    await page.locator('#feedbackPanel [data-mnemonic-generate]').click();
+    await page.waitForFunction(()=>document.querySelector('#feedbackPanel [data-mnemonic-generate]').hidden);
+    assert.deepEqual(requests[3].errors,[]);
+    assert.equal(requests.length,4);assert.deepEqual(errors,[]);
     console.log(JSON.stringify({pass:true,directions:['ja_es','es_ja'],onDemand:true,savedAfterReload:true,retry:true,noScoreOrSrsChanges:true,widths:[390,1280]}));
   }finally{await browser.close();await new Promise(r=>server.close(r))}
 })().catch(e=>{console.error(e);process.exitCode=1});

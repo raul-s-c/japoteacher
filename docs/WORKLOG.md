@@ -55,3 +55,8 @@
 - Nueva ruta autenticada `/mnemonic`: contexto acotado a frase, respuesta y hasta seis errores; modelo gpt-5.4-mini sin razonamiento y máximo 850 tokens de salida, con instrucción de no superar 100 palabras. Valida la respuesta, limita tiempos de espera y no reintenta automáticamente.
 - Guarda el consejo con el intento y lo muestra en el historial tras recargar. La fusión de sincronización conserva el consejo independientemente de posteriores cambios de nota o dificultad. No modifica SRS, EXP ni notas. Evita peticiones duplicadas en curso y escapa el texto generado al mostrarlo.
 - QA: 128 pruebas generales más la prueba de integración del nuevo endpoint correctas (129 en total). Prueba de navegador con API simulada en 390/1280 px: ambos sentidos, ausencia de generación automática, doble clic, persistencia tras recarga, historial, error recuperable, cambio de vista durante petición y ausencia del botón en respuestas sin fallos. Sin errores JS ni desbordamientos. Cero llamadas reales a OpenAI durante desarrollo/pruebas; presupuesto cerrado de Sakamoto intacto.
+
+## 2026-09-07 — Consejo también tras acertar
+
+- La opción mnemotécnica aparece en todas las correcciones válidas, incluidas las respuestas sin errores. En ese caso propone recordar vocabulario o estructura sin inventar fallos. El endpoint acepta errores vacíos; conserva generación a petición, caché e historial.
+- Validados los cuatro tests del módulo y el flujo de navegador en móvil/escritorio, incluyendo generar y guardar un consejo tras una respuesta correcta. Sin llamadas reales a OpenAI.
