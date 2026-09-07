@@ -148,7 +148,11 @@
     return [...rows.values()];
   }
   function attemptUpdatedAt(row){return row?.repeat_request_updated_at||row?.manual_score_adjusted_at||row?.user_difficulty_feedback_at||row?.attempted_at||''}
-  function mergeAttempt(local,remote){return attemptUpdatedAt(local)>=attemptUpdatedAt(remote)?local:remote}
+  function mergeAttempt(local,remote){
+    const winner=attemptUpdatedAt(local)>=attemptUpdatedAt(remote)?local:remote;
+    const advice=[local,remote].filter(row=>row.mnemonic_json&&row.mnemonic_updated_at).sort((a,b)=>String(b.mnemonic_updated_at).localeCompare(String(a.mnemonic_updated_at)))[0];
+    return advice?{...winner,mnemonic_json:advice.mnemonic_json,mnemonic_updated_at:advice.mnemonic_updated_at}:winner;
+  }
   function mergeSession(local, remote) {
     const completed = [
         ...new Set([

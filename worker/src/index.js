@@ -1,5 +1,6 @@
 import { normalizeEvaluation } from "./evaluation-policy.js";
 import { collectionEditorial } from "./collection-editorial.js";
+import { mnemonicInput, mnemonicRequest, validMnemonic } from "./mnemonic.js";
 import { allUserStates, deleteReport, generateReport, localReport, reportPeriod, reportsForUser, userPayload } from "./report-generation.js";
 
 import { generateLesson, validLessonInput } from "./daily-lesson.js";
@@ -924,6 +925,22 @@ export default {
       if (!validLessonInput(body)) return json({ error: "El vocabulario de la lección no es válido." }, 400, origin, env);
       try { return json({ lesson: await generateLesson({terms:body.terms,contexts:body.contexts,previous_lesson:body.previous_lesson},env) }, 200, origin, env); }
       catch (error) { return json({ error: error.message || "No se pudo generar la lección." }, 502, origin, env); }
+    }
+    if (url.pathname === "/mnemonic" && request.method === "POST") {
+      if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
+      if (!cors(origin, env)) return json({ error: "Origen no permitido." }, 403, origin, env);
+      if (!(await authenticated(request, env))) return json({ error: "Inicia sesión en el dispositivo activo para pedir un consejo." }, 409, origin, env);
+      let body;
+      try { body = await request.json(); } catch { return json({ error: "Solicitud inválida." }, 400, origin, env); }
+      const input=mnemonicInput(body);
+      if(!input)return json({error:"La frase o los errores no son válidos."},400,origin,env);
+      try {
+        const response=await fetch(OPENAI_RESPONSES_URL,{method:'POST',signal:AbortSignal.timeout(35000),headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`,'Content-Type':'application/json'},body:JSON.stringify(mnemonicRequest(input))}),raw=await response.json();
+        if(!response.ok)return json({error:"No se pudo generar el consejo. Puedes reintentarlo."},502,origin,env);
+        const mnemonic=JSON.parse(outputText(raw)||'null');
+        if(!validMnemonic(mnemonic))return json({error:"El consejo llegó incompleto. Puedes reintentarlo."},502,origin,env);
+        return json({mnemonic,usage:raw.usage||{}},200,origin,env);
+      }catch{return json({error:"No se pudo completar el consejo. Puedes reintentarlo."},502,origin,env)}
     }
     if (url.pathname === "/question-help" && request.method === "POST") {
       if (!env.OPENAI_API_KEY || !env.SUPABASE_URL || !env.SUPABASE_PUBLISHABLE_KEY) return json({ error: "El Worker no está configurado." }, 503, origin, env);
