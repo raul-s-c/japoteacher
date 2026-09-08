@@ -74,3 +74,8 @@
 - Botón Dominada en la corrección y en la valoración final. Aplaza 62 días la frase en esa dirección, sin cambiar nota ni EXP ni adelantar un repaso ya más lejano. Cancela Repetir mañana y permite continuar directamente.
 - La marca se guarda en intento y progreso, sobrevive a reconstrucciones por ajustes de nota y se fusiona independientemente durante sincronización.
 - QA: 139 pruebas Node; prueba de navegador móvil/escritorio de marcado, reconstrucción y recarga con API simulada. Sin llamadas reales a OpenAI. Caché PWA v157.
+
+## 2026-09-08 — Previsión de repasos por plan
+
+- Tabla visible de +1 a +9 días por plan y dirección, con fecha y número de repasos, incluidos ceros. Usa la fecha efectiva SRS y el enfriamiento del plan; excluye nuevas, suspendidas y atrasados de hoy. Explica que las fechas cambian al estudiar y que el máximo diario limita la selección; indica los planes pausados.
+- Validación: 140 pruebas Node correctas, incluyendo fechas límite, cambio de año, dirección, enfriamiento y dominio aplazado. Flujo de navegador a 390/1280 px correcto, inspección visual móvil. Sin llamadas API de generación. Caché v158.

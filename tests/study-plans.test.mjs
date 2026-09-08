@@ -55,3 +55,12 @@ test('manual mastery stays out of daily reselection until its review date',()=>{
   assert.equal(plans.select(plan,[e],a,p,'p',date,[],[],true).ids.length,0);
   assert.equal(plans.select(plan,[e],a,p,'p','2026-11-10',[],[],true).ids.length,1);
 });
+
+test('nine-day forecast buckets actual review dates, respecting cooldown, scope and suspension',()=>{
+ const rows=['one','two','nine','ten','overdue','suspended','cooldown','new','mastered'].map(id=>ex(id));rows.push(ex('inverse',{direction:'es_ja'}));
+ const dates={one:'2026-09-09',two:'2026-09-10',nine:'2026-09-17',ten:'2026-09-18',overdue:'2026-09-07',suspended:'2026-09-09',cooldown:'2026-09-09',mastered:'2026-11-09',inverse:'2026-09-09'};
+ const a=Object.keys(dates).map(id=>attempt(id,id==='cooldown'?today:old)),p=Object.entries(dates).map(([id,d])=>({exercise_id:id,profile_id:'p',last_seen_at:id==='cooldown'?today:old,total_attempts:1,next_review_at:d+'T12:00:00',suspended:id==='suspended'})),{plans}=fixture();
+ const c=plans.classify({...plan,cooldownDays:3},rows,a,p,'p',date),forecast=plans.reviewForecast(c,date);
+ assert.deepEqual(Array.from(forecast,r=>r.count),[1,1,1,0,0,0,0,0,1]);assert.equal(forecast[8].date,'2026-09-17');
+ const boundary=plans.reviewForecast({learned:[]},'2026-12-29');assert.equal(boundary[2].date,'2027-01-01');assert.equal(boundary.length,9);
+});

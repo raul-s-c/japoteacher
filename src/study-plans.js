@@ -42,6 +42,11 @@
     const due=e=>!ev.isNew(e)&&!ev.today(e)&&!ev.pMap.get(identity(e))?.suspended&&dueAt(e)<=now;
     return {rows,ev,eligibleNew,due,dueAt,unseen:rows.filter(ev.isNew),reviews:rows.filter(due),learned:rows.filter(e=>!ev.isNew(e)),mastered:rows.filter(e=>ev.pMap.get(identity(e))?.mastered)};
   }
+  function reviewForecast(classified,date=SessionPlanner.localDate()){
+    const days=Array.from({length:9},(_,i)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+i+1);return {offset:i+1,date:day(d),count:0}}),byDate=new Map(days.map(d=>[d.date,d]));
+    for(const e of classified.learned){if(classified.ev.pMap.get(identity(e))?.suspended)continue;const bucket=byDate.get(day(classified.dueAt(e)));if(bucket)bucket.count++;}
+    return days;
+  }
   function select(plan,exercises,attempts,progress,profile,date,old=[],pinned=[],regenerate=false){
     const c=classify(plan,exercises,attempts,progress,profile,date),byId=new Map(exercises.map(e=>[e.exercise_id,e])),preserved=pinned.filter(id=>byId.has(id)),selected=[...preserved],seen=new Set(selected.map(id=>identity(byId.get(id))));
     const start=new Date(date+'T12:00:00');start.setDate(start.getDate()-((start.getDay()+6)%7));const week=day(start);
@@ -100,5 +105,5 @@
     const field='exercise_ids_'+current.direction+'_json',history=parse(session.replacement_history_json);history.push({from:id,to:next.exercise_id,reason,at:new Date().toISOString()});
     const updated={...session,[field]:JSON.stringify(parse(session[field]).map(x=>x===id?next.exercise_id:x)),study_plan_assignments_json:JSON.stringify(assignments),replacement_history_json:JSON.stringify(history),plan_updated_at:new Date().toISOString()};await JapoDB.put('daily_sessions',updated);return {session:updated,exerciseId:next.exercise_id,previousId:id};
   }
-  window.StudyPlans={all,save,ensure,normalize,catalog,matches,scopeRows,classify,select,build,forExercise,replace,parse};
+  window.StudyPlans={reviewForecast,all,save,ensure,normalize,catalog,matches,scopeRows,classify,select,build,forExercise,replace,parse};
 })();
