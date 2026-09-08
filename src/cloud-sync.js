@@ -149,7 +149,7 @@
   }
   function attemptUpdatedAt(row){return row?.repeat_request_updated_at||row?.manual_score_adjusted_at||row?.user_difficulty_feedback_at||row?.attempted_at||''}
   function mergeAttempt(local,remote){
-    const winner=attemptUpdatedAt(local)>=attemptUpdatedAt(remote)?local:remote;
+    let winner=attemptUpdatedAt(local)>=attemptUpdatedAt(remote)?local:remote;const mastery=[local,remote].filter(r=>r.mastered_until).sort((a,b)=>String(b.mastered_at).localeCompare(String(a.mastered_at)))[0];if(mastery)winner={...winner,mastered_at:mastery.mastered_at,mastered_until:mastery.mastered_until};
     const advice=[local,remote].filter(row=>row.mnemonic_json&&row.mnemonic_updated_at).sort((a,b)=>String(b.mnemonic_updated_at).localeCompare(String(a.mnemonic_updated_at)))[0];
     return advice?{...winner,mnemonic_json:advice.mnemonic_json,mnemonic_updated_at:advice.mnemonic_updated_at}:winner;
   }
@@ -230,7 +230,7 @@
         out.stores[store] = unionRows(l, r, key, mergeSession);
       else if (store === "exercise_progress")
         out.stores[store] = unionRows(l, r, key, (a, b) =>
-          newer(a, b, "last_seen_at"),
+          (()=>{const p={...newer(a,b,"last_seen_at")},m=[a,b].filter(r=>r.mastered_until).sort((x,y)=>String(y.mastered_until).localeCompare(String(x.mastered_until)))[0];if(m){p.mastered_until=m.mastered_until;p.mastered_at=m.mastered_at;for(const field of ['next_review_at','cooldown_until'])if(!(Date.parse(p[field])>=Date.parse(m.mastered_until)))p[field]=m.mastered_until;if(Date.parse(m.mastered_until)>Date.parse(p.last_seen_at))p.mastered=true;}return p})(),
         );
       else if (store === "tag_progress")
         out.stores[store] = unionRows(l, r, key, (a, b) =>

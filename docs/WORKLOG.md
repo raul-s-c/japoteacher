@@ -68,3 +68,9 @@
 - Mnemotecnias con asociaciones concretas de sonido, significado y componentes conocidos, diferenciadas de etimología. Alternativa guardada mediante Probar otra asociación, solo a petición.
 - QA: 136 pruebas Node correctas y flujos de planes y mnemotecnias en navegador a 390/1280 px, con persistencia, migración, límites, sustitución y respuestas correctas. Sin errores JS ni desbordamiento. API simulada: cero llamadas reales a OpenAI, presupuesto de importación intacto.
 - Worker publicado: 5dd0796c-0987-47da-9439-5ce596e35bc9. Frontend preparado para GitHub Pages, caché v156. Detalles en STUDY_PLANS.md.
+
+## 2026-09-08 — Marcar una respuesta como dominada
+
+- Botón Dominada en la corrección y en la valoración final. Aplaza 62 días la frase en esa dirección, sin cambiar nota ni EXP ni adelantar un repaso ya más lejano. Cancela Repetir mañana y permite continuar directamente.
+- La marca se guarda en intento y progreso, sobrevive a reconstrucciones por ajustes de nota y se fusiona independientemente durante sincronización.
+- QA: 139 pruebas Node; prueba de navegador móvil/escritorio de marcado, reconstrucción y recarga con API simulada. Sin llamadas reales a OpenAI. Caché PWA v157.

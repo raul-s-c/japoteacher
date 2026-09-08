@@ -49,3 +49,9 @@ test('changing plan levels cannot reset the new allowance already consumed today
   const rows=[ex('done',{jlpt_level:'N4'}),ex('new')],a=[{...attempt('done',today),study_plan_id:plan.id}],{plans}=fixture();
   assert.deepEqual([...plans.select(plan,rows,a,[],'p',date,['done'],['done'],true).ids],['done']);
 });
+
+test('manual mastery stays out of daily reselection until its review date',()=>{
+  const e=ex('mastered'),a=[attempt(e.exercise_id)],p=[{profile_id:'p',exercise_id:e.exercise_id,last_seen_at:old,total_attempts:1,mastered:true,next_review_at:'2026-11-09T12:00:00Z'}],{plans}=fixture();
+  assert.equal(plans.select(plan,[e],a,p,'p',date,[],[],true).ids.length,0);
+  assert.equal(plans.select(plan,[e],a,p,'p','2026-11-10',[],[],true).ids.length,1);
+});

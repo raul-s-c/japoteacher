@@ -53,6 +53,11 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     const reference=await page.evaluate(async id=>(await JapoDB.get('exercises',id)).reference_translation,newId);
     await page.locator('#answerInput').fill(reference);await page.locator('#evaluateButton').click();await page.waitForFunction(()=>document.querySelector('#feedbackPanel').dataset.attemptId&&!document.querySelector('#evaluateButton').disabled);
     assert(await page.locator('.mnemonic-card').isVisible());
+    await page.locator('#feedbackPanel [data-mark-mastered]').click();
+    await page.waitForFunction(()=>document.querySelector('#feedbackPanel [data-mark-mastered]').textContent.includes('aplazada'));
+    const mastery=await page.evaluate(async id=>{await ManualAdjustments.rebuildExerciseProgress(id);return JapoDB.get('exercise_progress','local-default::'+id)},newId);
+    assert(mastery.mastered);assert(Date.parse(mastery.next_review_at)>=Date.now()+61.99*86400000);assert.equal(mastery.last_score,100);
+    await page.locator('#feedbackPanel [data-mark-mastered]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(process.env.TEMP,'japoteacher-mastered.png')});
     await page.locator('.nav-item[data-view="hoy"]:visible').click();
     await card.locator('[data-plan-edit]').click();await page.locator('#studyPlanForm input[name=newLimit]').fill('1');await page.locator('#studyPlanForm input[name=dailyLimit]').fill('1');await page.locator('#saveStudyPlan').click();await page.waitForFunction(()=>!document.querySelector('#studyPlanDialog').open);
     assert((await card.textContent()).includes('Objetivo de hoy completado'));
@@ -61,7 +66,7 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     await page.locator('#settingsForm [name=profileName]').fill('Planes QA');await page.locator('#settingsForm [name=profileName]').press('Tab');await page.waitForFunction(()=>document.querySelector('#saveState').textContent==='Guardado');
     await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.study-plan-row').length>=2&&!document.querySelector('#routeLoader').classList.contains('active'));
     const state=await page.evaluate(async()=>({plans:await StudyPlans.all('local-default'),attempts:await JapoDB.all('attempts'),session:(await JapoDB.all('daily_sessions')).find(s=>s.local_date===SessionPlanner.localDate())}));
-    assert.equal(state.plans.find(p=>p.id==='sakamoto::ja_es').dailyLimit,1);assert.equal(state.attempts.length,1);assert.equal(state.attempts[0].study_plan_id,'sakamoto::ja_es');assert.equal(state.attempts[0].overall_score,100);
+    assert.equal(state.plans.find(p=>p.id==='sakamoto::ja_es').dailyLimit,1);assert.equal(state.attempts.length,1);assert.equal(state.attempts[0].study_plan_id,'sakamoto::ja_es');assert.equal(state.attempts[0].overall_score,100);assert(state.attempts[0].mastered_until);
     assert.deepEqual(errors,[]);console.log(JSON.stringify({pass:true,migration:true,independentDirections:true,perPlanCaps:true,planQuiz:true,replacementDialog:true,persistence:true,widths:[390,1280]}));
   }finally{await browser.close();await new Promise(r=>server.close(r))}
 })().catch(e=>{console.error(e);process.exitCode=1});
