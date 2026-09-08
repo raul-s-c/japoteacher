@@ -37,7 +37,8 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     });
     async function answer(direction,correct=false){
       await page.locator('.nav-item[data-view="hoy"]:visible').click();
-      await page.locator(`.direction-start[data-direction="${direction}"]`).click();
+      await page.locator(`[data-plan-direction="${direction}"]`).click();
+      await page.locator('[data-plan-study]:not([disabled])').first().click();
       const choice=page.locator('#exerciseChoiceList [data-exercise-id]').first(),id=await choice.getAttribute('data-exercise-id');
       await choice.click();
       await page.waitForFunction(id=>document.querySelector('#sourceText').dataset.exerciseId===id&&!document.querySelector('#feedbackPanel').dataset.attemptId,id);
@@ -79,7 +80,10 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     await page.locator('#feedbackPanel [data-mnemonic-generate]').click();
     await page.waitForFunction(()=>document.querySelector('#feedbackPanel [data-mnemonic-generate]').hidden);
     assert.deepEqual(requests[3].errors,[]);
-    assert.equal(requests.length,4);assert.deepEqual(errors,[]);
+    assert.equal(requests.length,4);
+    await page.locator('#feedbackPanel [data-mnemonic-refresh]').click();
+    await page.waitForFunction(()=>!!document.querySelector('#feedbackPanel .mnemonic-result [data-mnemonic-refresh]'));
+    assert.equal(requests.length,5);assert.deepEqual(errors,[]);
     console.log(JSON.stringify({pass:true,directions:['ja_es','es_ja'],onDemand:true,savedAfterReload:true,retry:true,noScoreOrSrsChanges:true,widths:[390,1280]}));
   }finally{await browser.close();await new Promise(r=>server.close(r))}
 })().catch(e=>{console.error(e);process.exitCode=1});

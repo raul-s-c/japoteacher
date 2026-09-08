@@ -1,5 +1,6 @@
 (function(){
   document.addEventListener('DOMContentLoaded',()=>{
+    if(document.querySelector('#addStudyPlan'))return;
     const continueButton=document.querySelector('#continueButton'),extraButton=document.querySelector('#extraStudyButton');
     if(!continueButton||!extraButton)return;
     const refresh=()=>{extraButton.hidden=!continueButton.disabled};

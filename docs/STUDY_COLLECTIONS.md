@@ -1,6 +1,6 @@
 # Bloques de estudio
 
-En Ajustes, selecciona **Sakamoto** en «Bloque de estudio», elige su porcentaje y pulsa **Recalcular el día**. Un 70 % de 15 frases solicita 11 del bloque por dirección. La selección respeta niveles, dificultad desbloqueada y proporción de nuevas/repasos. Si faltan candidatas aptas, completa con el banco general e indica el déficit. Los intentos y borradores existentes se conservan.
+En **Planes de estudio → Añadir plan**, selecciona Sakamoto y una dirección. Cada plan tiene un máximo total y un máximo de frases nuevas al día, con prioridad configurable para repasos. No hay cuota porcentual global ni sustitución automática por otro banco. Consulta [Planes de estudio](STUDY_PLANS.md). Recalcular las pendientes conserva respuestas y borradores.
 
 Sakamoto contiene 304 frases revisadas de los 11 episodios suministrados: 608 ejercicios japonés→español y español→japonés. Comparten los mecanismos habituales de progreso, EXP, furigana, diccionario, preguntas con IA y preparación de la lección diaria.
 

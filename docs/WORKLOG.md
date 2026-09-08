@@ -60,3 +60,11 @@
 
 - La opción mnemotécnica aparece en todas las correcciones válidas, incluidas las respuestas sin errores. En ese caso propone recordar vocabulario o estructura sin inventar fallos. El endpoint acepta errores vacíos; conserva generación a petición, caché e historial.
 - Validados los cuatro tests del módulo y el flujo de navegador en móvil/escritorio, incluyendo generar y guardar un consejo tras una respuesta correcta. Sin llamadas reales a OpenAI.
+
+## 2026-09-08 — Planes por contenido y dirección
+
+- Hoy se organiza en planes N5–N1 y Sakamoto independientes por dirección, con pendientes de hoy, por aprender, estudiadas, dominadas y biblioteca filtrable. Cada plan configura máximo total y nuevas; opciones avanzadas de tandas, semana, repasos, dificultad y pausa. Migración idempotente de límites anteriores sin borrar historial.
+- Retirados porcentajes globales y niveles del formulario general. Las prácticas y sustituciones permanecen dentro del plan elegido; Cambiar frase abre directamente fácil/repetida/difícil. Recalcular conserva respuestas, borradores y cupos consumidos, incluso al cambiar niveles.
+- Mnemotecnias con asociaciones concretas de sonido, significado y componentes conocidos, diferenciadas de etimología. Alternativa guardada mediante Probar otra asociación, solo a petición.
+- QA: 136 pruebas Node correctas y flujos de planes y mnemotecnias en navegador a 390/1280 px, con persistencia, migración, límites, sustitución y respuestas correctas. Sin errores JS ni desbordamiento. API simulada: cero llamadas reales a OpenAI, presupuesto de importación intacto.
+- Worker publicado: 5dd0796c-0987-47da-9439-5ce596e35bc9. Frontend preparado para GitHub Pages, caché v156. Detalles en STUDY_PLANS.md.

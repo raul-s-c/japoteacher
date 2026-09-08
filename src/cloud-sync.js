@@ -173,7 +173,7 @@
     return {
       ...remote,
       ...local,
-      ...(winner?{plan_updated_at:winner.plan_updated_at,selection_reason_json:winner.selection_reason_json,planned_ja_es:winner.planned_ja_es,planned_es_ja:winner.planned_es_ja,settings_snapshot_json:winner.settings_snapshot_json,extra_study_history_json:winner.extra_study_history_json,replacement_history_json:winner.replacement_history_json}:{}),
+      ...(winner?{plan_updated_at:winner.plan_updated_at,study_plan_assignments_json:winner.study_plan_assignments_json,selection_reason_json:winner.selection_reason_json,planned_ja_es:winner.planned_ja_es,planned_es_ja:winner.planned_es_ja,settings_snapshot_json:winner.settings_snapshot_json,extra_study_history_json:winner.extra_study_history_json,replacement_history_json:winner.replacement_history_json}:{}),
       created_at: [local.created_at, remote.created_at]
         .filter(Boolean)
         .sort()[0],

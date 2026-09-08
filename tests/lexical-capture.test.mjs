@@ -22,5 +22,6 @@ test("the before-next dialog can schedule an optional repeat", () => {
 test("daily and practice views identify voluntary repeats", () => {
   assert.match(app, /voluntary_repeat_ids_ja_es_json/);
   assert.match(app, /Extra voluntaria/);
-  assert.match(app, /diarias \+ .*extra/);
+  const plansUi = fs.readFileSync(new URL("../src/study-plans-ui.js", import.meta.url), "utf8");
+  assert.match(plansUi, /repeticiones voluntarias conservadas/);
 });

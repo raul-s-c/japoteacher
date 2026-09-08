@@ -7,7 +7,7 @@
   <meta name="description" content="Práctica diaria de traducción entre japonés y español.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=67">
+  <link rel="stylesheet" href="styles.css?v=68">
   <title>Japoteacher</title>
 </head>
 <body>
@@ -37,7 +37,11 @@
       </header>
 
       <section class="view active" id="view-hoy" aria-labelledby="viewTitle">
-        <div class="intro"><div><h2>Tu práctica diaria</h2><p>Completa tu objetivo y, si quieres, sigue con tantas tandas adicionales como te apetezca.</p></div><div class="intro-actions"><button class="secondary" id="regenerateSelectionButton" type="button"><span aria-hidden="true">↻</span> Recalcular el día</button><button class="secondary" id="extraStudyButton" hidden>Estudiar más</button><button class="primary" id="continueButton">Comenzar sesión</button></div></div>
+        <div class="intro plans-intro"><div><p>Tu estudio de hoy, plan a plan.</p></div><button class="primary" id="addStudyPlan" type="button" data-plan-add>+ Añadir plan</button></div>
+        <div class="plan-directions" role="tablist" aria-label="Dirección de los planes"><button type="button" role="tab" class="active" aria-selected="true" data-plan-direction="ja_es">Japonés → Español</button><button type="button" role="tab" aria-selected="false" data-plan-direction="es_ja">Español → Japonés</button></div>
+        <div class="study-plan-list" id="directionCards"></div>
+        <section class="panel" id="preservedPlanWork" hidden></section>
+        <div class="plan-day-actions"><button class="secondary" id="regenerateSelectionButton" type="button">↻ Recalcular pendientes</button><button class="secondary" id="extraStudyButton" hidden>Estudiar más</button><button class="primary" id="continueButton" hidden>Comenzar sesión</button></div>
         <p id="selectionStatus" class="selection-status" role="status"></p>
         <section class="panel daily-lesson-card" id="dailyLessonCard" hidden>
           <div class="section-heading"><div><p class="section-kicker">Antes de practicar</p><h3>Entiende lo que vas a estudiar</h3></div><button class="primary" id="openDailyLesson" type="button">Lección explicativa</button></div>
@@ -48,17 +52,17 @@
             <button class="primary" id="lessonReadButton" hidden>Ya la he leído · Practicar</button>
           </section>
         </section>
-        <div class="direction-grid" id="directionCards"></div>
-        <div class="dashboard-grid">
-          <section class="panel priority-panel"><div class="section-heading"><div><p class="section-kicker">Enfoque</p><h3>Tags prioritarios</h3></div></div><div id="priorityTags" class="tag-list"></div></section>
+
+        <details class="day-summary"><summary>Actividad y resumen general</summary><div class="dashboard-grid">
+          <section class="panel priority-panel"><div class="section-heading"><div><p class="section-kicker">Enfoque</p><h3>Aspectos que reforzar</h3></div></div><div id="priorityTags" class="tag-list"></div></section>
           <section class="panel"><div class="section-heading"><div><p class="section-kicker">SRS</p><h3>Próximos repasos</h3></div><span class="metric" id="dueCount">0</span></div><div id="reviewQueue" class="review-list"></div></section>
           <section class="panel activity-panel"><div class="section-heading"><div><p class="section-kicker">Actividad</p><h3>Últimos 14 días</h3></div><span class="streak" id="streakLabel">0 días</span></div><div class="activity-calendar" id="activityCalendar"></div></section>
         </div>
-        <div class="notice" id="bankNotice" role="status"></div>
+        <div class="notice" id="bankNotice" role="status"></div></details>
       </section>
 
       <section class="view" id="view-practicar" aria-labelledby="practiceHeading">
-        <section class="exercise-chooser panel" id="exerciseChooser" hidden><div class="section-heading"><div><p class="section-kicker">Sesión de hoy</p><h2>Elige una frase</h2></div><button class="secondary" id="closeExerciseChooser">Volver a Hoy</button></div><p class="chooser-help">Puedes empezar por cualquiera. Después continuaremos por orden con las pendientes.</p><div class="exercise-choice-list" id="exerciseChoiceList"></div></section>
+        <section class="exercise-chooser panel" id="exerciseChooser" hidden><div class="section-heading"><div><p class="section-kicker">Sesión de hoy</p><h2>Tu tanda de estudio</h2></div><button class="secondary" id="closeExerciseChooser">Volver a Hoy</button></div><p class="chooser-help">Puedes empezar por cualquiera. Después seguiremos con las pendientes de esta tanda.</p><div class="exercise-choice-list" id="exerciseChoiceList"></div></section>
         <div class="practice-layout" id="practiceLayout">
           <section class="exercise-panel">
             <div class="practice-meta"><span id="practiceDirection">Japonés → Español</span><span id="practiceLevel">JLPT N5</span><span id="practiceDifficulty"></span></div>
@@ -73,7 +77,7 @@
             <label class="answer-label" for="answerInput">Tu respuesta</label>
             <textarea id="answerInput" rows="5" maxlength="500" placeholder="Escribe aquí tu traducción…"></textarea>
             <div class="answer-actions"><button class="secondary" id="saveDraftButton">Guardar borrador</button><button class="secondary" id="replaceExerciseButton" type="button">Cambiar frase</button><button class="danger" id="blockExerciseButton" type="button">No pasa filtro</button><button class="primary" id="evaluateButton">Corregir</button></div>
-            <div class="replace-reasons" id="replaceReasons" hidden><span>¿Por qué quieres cambiarla?</span><div><button type="button" data-replace-reason="too_hard">Muy difícil</button><button type="button" data-replace-reason="recent">La hice hace poco</button><button type="button" data-replace-reason="too_easy">Muy fácil</button></div></div>
+
           </section>
           <aside class="feedback-panel" id="feedbackPanel" aria-live="polite">
             <div class="feedback-empty"><span>添</span><h3>Tu corrección aparecerá aquí</h3><p>Evaluaremos significado, comprensión, naturalidad, gramática y escritura por separado.</p></div>
@@ -158,7 +162,7 @@
             <label>Temática<select id="dailyNewsTopic"><option value="tecnología">Tecnología</option><option value="economía">Economía</option><option value="mundo">Mundo</option><option value="ciencia">Ciencia</option><option value="salud">Salud</option><option value="deportes">Deportes</option><option value="cultura">Cultura</option><option value="Japón">Japón</option></select></label>
             <div class="two-cols"><label>Nivel JLPT<select id="dailyNewsJlpt"><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label>Tramo<select id="dailyNewsBand"><option value="bajo">Bajo</option><option value="medio" selected>Medio</option><option value="alto">Alto</option></select></label></div>
             <button class="primary" id="dailyNewsGenerate" type="button">Buscar y adaptar</button>
-            <p class="security-note">Usa Brave Search desde el Worker y después OpenAI reescribe el texto. La lectura queda guardada como cantera editorial y las respuestas de comprensión cuentan como evidencia de estudio.</p>
+            <p class="security-note">Estos ajustes se aplican solo a la noticia que generes. La lectura se guarda y sus respuestas de comprensión cuentan para tu progreso; no cambian los límites de tus planes.</p>
             <div class="daily-news-library">
               <div class="section-heading compact"><div><p class="section-kicker">Biblioteca</p><h3>Noticias guardadas</h3></div><button class="text-button" id="dailyNewsRefreshLibrary" type="button">Actualizar</button></div>
               <div id="dailyNewsLibrary" class="daily-news-library-list"></div>
@@ -172,7 +176,7 @@
 
       <section class="view" id="view-progreso" aria-labelledby="progressHeading">
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
-        <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Tags</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
+        <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Aspectos a reforzar</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
         <section class="panel wide ranked-panel" id="rankedProgressPanel" data-progress-section="resumen"></section>
         <section class="panel wide study-summary-panel" id="studySummary" data-progress-section="resumen"></section>
         <div class="stats-grid" id="summaryStats" data-progress-section="resumen"></div>
@@ -188,15 +192,14 @@
       </section>
 
       <section class="view" id="view-ajustes" aria-labelledby="settingsHeading">
-        <div class="intro"><div><h2 id="settingsHeading">Ajustes</h2><p>El progreso se guarda localmente y, al iniciar sesión, también en tu cuenta.</p></div><span class="save-state" id="saveState">Guardado</span></div>
+        <div class="intro"><div><h2 id="settingsHeading">Ajustes</h2><p>Preferencias generales de la app. Los límites y el contenido se ajustan dentro de cada plan.</p></div><span class="save-state" id="saveState">Guardado</span></div>
         <form id="settingsForm" class="settings-layout">
-          <section class="panel settings-section account-panel"><h3>Cuenta y progreso</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Comprobando estado remoto…</div><p class="security-note">Los cambios se guardan al instante en este dispositivo y se sincronizan con Supabase en segundo plano.</p></section>
-          <section class="panel settings-section"><h3>Perfil y sesión diaria</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><div class="two-cols"><label>Japonés → Español<input name="dailyJaEs" type="number" min="1" max="30"></label><label>Español → Japonés<input name="dailyEsJa" type="number" min="1" max="30"></label></div><fieldset><legend>Niveles activos</legend><div class="check-row" id="levelChecks"></div></fieldset></section>
-          <section class="panel settings-section"><h3>Repetición espaciada</h3><label>Días mínimos antes de repetir<input name="cooldownDays" type="number" min="1" max="90"></label><label>Proporción de ejercicios nuevos <output id="newRatioOutput">60%</output><input name="newRatio" type="range" min="0" max="100" step="10"></label><label class="toggle-row"><span>Mostrar furigana</span><input name="furigana" type="checkbox"></label></section>
-          <section class="panel settings-section"><h3>Bloque de estudio</h3><label>Origen de las frases<select name="studyCollection"><option value="">Solo banco general</option></select></label><label>Proporción del bloque <output id="collectionRatioOutput">70%</output><input name="collectionRatio" type="range" min="0" max="100" step="5" value="70"></label><p>Se aplica a cada dirección: con 15 ejercicios y 70 %, se intentan reservar 11 al bloque y 4 al banco general. Se respetan niveles, dificultad y descansos. El porcentaje de nuevas se aplica dentro de esta mezcla; si faltan candidatas, se indicará en Hoy.</p><button type="button" class="secondary" id="recalculateDayFromSettings">Recalcular el día</button></section>
-          <section class="panel settings-section"><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></section>
+          <section class="panel settings-section account-panel"><h3>Cuenta y progreso</h3><div id="authSignedOut"><label>Email<input id="authEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label><label>Contraseña<input id="authPassword" type="password" minlength="8" autocomplete="current-password"></label><div class="stack-actions auth-actions"><button type="button" class="primary" id="signInButton">Iniciar sesión</button><button type="button" class="secondary" id="signUpButton">Crear cuenta</button></div></div><div id="authSignedIn" hidden><p>Sesión iniciada como <strong id="authUserEmail"></strong>.</p><div class="stack-actions auth-actions"><button type="button" class="secondary" id="signOutButton">Cerrar sesión</button></div></div><div class="provider-status" id="cloudStatus" role="status">Comprobando estado remoto…</div><p class="security-note">Los cambios se guardan en este dispositivo y se sincronizan con tu cuenta en segundo plano.</p></section>
+          <section class="panel settings-section"><h3>Perfil y visualización</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><label class="toggle-row"><span>Mostrar furigana por defecto en práctica</span><input name="furigana" type="checkbox"></label><p>Se aplica a la visualización, no al contenido ni al ritmo de tus planes.</p></section>
+          <section class="panel settings-section"><h3>Ritmo de estudio</h3><p>El contenido, la dirección, los límites diarios, las nuevas y los repasos se configuran en cada plan.</p><button class="primary" type="button" data-plan-home>Ir a mis planes</button><button type="button" class="secondary" id="recalculateDayFromSettings">Recalcular pendientes de todos los planes</button></section>
+          <details class="panel settings-section"><summary>Corrección con IA · Todas las prácticas</summary><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo de corrección<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></details>
           <section class="panel settings-section native-update-panel"><h3>Actualizaciones APK</h3><div class="native-update-status" id="nativeUpdateStatus" role="status">Comprobando canal de actualización…</div><div class="native-update-actions"><button type="button" class="secondary" id="checkNativeUpdateButton">Buscar actualización</button><a class="primary native-update-download" id="nativeUpdateDownload" href="#" target="_blank" rel="noopener" hidden>Descargar APK</a></div><div class="native-update-notes" id="nativeUpdateNotes"></div><p class="security-note">La app consulta un manifiesto público de versiones. Las actualizaciones normales de contenido siguen llegando por web; este aviso es para cambios nativos como lupa flotante, permisos Android o captura de pantalla.</p></section>
-          <section class="panel settings-section bank-panel"><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><div id="bankDashboard" class="bank-dashboard"></div><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></section>
+          <details class="panel settings-section bank-panel"><summary>Datos, importación y copias · Avanzado</summary><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><div id="bankDashboard" class="bank-dashboard"></div><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></details>
         </form>
       </section>
     </main>
@@ -212,19 +215,23 @@
   <div class="detail-modal" id="topicDrillDetail" hidden><section class="detail-modal-card" role="dialog" aria-modal="true" aria-labelledby="topicDrillTitle"><div class="section-heading"><div><p class="section-kicker">Práctica por temática</p><h2 id="topicDrillTitle">Frases</h2></div><button class="icon-button" id="closeTopicDrill" aria-label="Cerrar listado">✕</button></div><p class="chooser-help" id="topicDrillSummary"></p><div class="exercise-choice-list" id="topicDrillList"></div></section></div>
   <div class="detail-modal issue-modal" id="issueReportModal" hidden><section class="detail-modal-card issue-modal-card" role="dialog" aria-modal="true" aria-labelledby="issueReportTitle"><div class="section-heading"><div><p class="section-kicker">Soporte de Japoteacher</p><h2 id="issueReportTitle">Reportar incidencia</h2></div><button class="icon-button" id="closeIssueReport" type="button" aria-label="Cerrar">✕</button></div><p class="chooser-help">Describe qué estabas haciendo y adjunta los pantallazos que ayuden a reproducirlo.</p><form id="issueReportForm"><label class="issue-comment-label" for="issueReportComment">Comentario<textarea id="issueReportComment" maxlength="2000" rows="5" required placeholder="Ej.: al corregir una frase N4, la puntuación aparece como 0 aunque la respuesta era aceptable."></textarea></label><label class="file-button issue-file-button">Añadir pantallazos<input id="issueReportFiles" type="file" accept="image/*" multiple></label><p class="issue-file-help">Hasta 5 imágenes. Se reducen antes de subirlas para enviar sólo lo necesario.</p><div class="issue-preview-list" id="issuePreviewList"></div><p class="issue-form-status" id="issueReportStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelIssueReport" type="button">Cancelar</button><button class="primary" id="submitIssueReport" type="submit">Enviar incidencia</button></div></form></section></div>
   <div class="detail-modal" id="filterExerciseDialog" hidden><section class="detail-modal-card filter-exercise-card" role="dialog" aria-modal="true" aria-labelledby="filterExerciseTitle"><p class="section-kicker">Control editorial personal</p><h2 id="filterExerciseTitle">¿Retirar esta frase?</h2><p class="chooser-help">No volverá a aparecer en tu práctica y también se retirará su pareja inversa. Tu historial anterior se conserva.</p><blockquote id="filterExerciseText"></blockquote><p class="issue-form-status" id="filterExerciseStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelFilterExercise" type="button">Cancelar</button><button class="danger" id="confirmFilterExercise" type="button">No pasa el filtro</button></div></section></div>
+  <dialog id="replaceReasons" class="plan-dialog replace-dialog" aria-labelledby="replaceTitle"><h2 id="replaceTitle">¿Por qué quieres cambiarla?</h2><p>Buscaremos otra frase del mismo plan.</p><div class="replace-dialog-actions"><button class="primary" type="button" data-replace-reason="too_easy">Demasiado fácil</button><button class="primary" type="button" data-replace-reason="recent">Ya la he visto</button><button class="primary" type="button" data-replace-reason="too_hard">Demasiado difícil</button></div><p id="replaceStatus" role="status"></p><button class="secondary" type="button" id="cancelReplace">Cancelar</button></dialog>
+  <dialog id="studyPlanDialog" class="plan-dialog" aria-labelledby="studyPlanTitle"><header><h2 id="studyPlanTitle">Ajustes del plan</h2><button type="button" class="text-button" id="closeStudyPlan">Cerrar</button></header><h3 id="studyPlanScope"></h3><form id="studyPlanForm"><label>Contenido del plan<select name="source"></select></label><label>Máximo total al día<input type="number" name="dailyLimit" min="0" max="200" required></label><small>Incluye nuevas y repasos. Las respuestas y borradores existentes se conservan aunque bajes el máximo.</small><label>Máximo de nuevas al día<input type="number" name="newLimit" min="0" max="200" required></label><label class="toggle-row"><span>Priorizar repasos</span><input type="checkbox" name="reviewsFirst"></label><small>No añade nuevas mientras queden repasos pendientes fuera de la selección.</small><label class="toggle-row"><span>Pausar plan</span><input type="checkbox" name="paused"></label><details><summary>Más opciones</summary><label>Modo<select name="mode"><option value="learn">Aprender y repasar</option><option value="review">Solo repaso</option></select></label><label>Frases por tanda<input name="quizSize" type="number" min="1" max="50" required></label><small>Cada vez que pulses Estudiar; no aumenta el máximo diario.</small><label>Máximo de nuevas por semana<input name="weeklyNewLimit" type="number" min="0" max="1400" required></label><small>0 = sin límite semanal adicional. Semana de lunes a domingo.</small><label>Descanso mínimo entre repasos (días)<input name="cooldownDays" type="number" min="0" max="90" required></label><small>Además de la fecha de repaso que calcula tu progreso.</small><label class="toggle-row"><span>Desbloquear dificultad progresivamente</span><input name="adaptive" type="checkbox"></label><small>Desactívalo para poder aprender cualquier frase de los niveles del plan.</small><fieldset id="planLevelsField"><legend>Niveles incluidos en este bloque</legend><div class="check-row" id="planLevels"></div></fieldset></details><p id="studyPlanSaveStatus" role="status"></p><button type="submit" class="primary" id="saveStudyPlan">Guardar cambios</button><small>Solo cambia este plan y esta dirección. Se actualizan las pendientes de hoy.</small></form></dialog>
+  <dialog id="planTermsDialog" class="plan-dialog plan-terms-dialog" aria-labelledby="planTermsTitle"><header><h2 id="planTermsTitle">Frases del plan</h2><button class="text-button" type="button" id="closePlanTerms">Cerrar</button></header><label>Buscar frase<input type="search" id="planTermSearch"></label><label>Mostrar<select id="planTermFilter"><option value="all">Todas</option><option value="today">Pendientes de hoy</option><option value="new">Por aprender</option><option value="studied">Estudiadas</option><option value="due">Repasos pendientes</option></select></label><p id="planTermsCount" role="status"></p><div id="planTermsList"></div></dialog>
   <dialog id="regenerateSelectionDialog" class="regenerate-dialog" aria-labelledby="regenerateSelectionTitle"><h2 id="regenerateSelectionTitle">¿Recalcular el día con los criterios actuales?</h2><p>Se conservan las respuestas completadas, los borradores y todas las extras voluntarias de hoy. No se modifica tu EXP.</p><p id="regenerateSelectionStatus" role="status"></p><div class="stack-actions"><button class="secondary" id="cancelRegenerateSelection" type="button">Cancelar</button><button class="primary" id="confirmRegenerateSelection" type="button">Reseleccionar frases</button></div></dialog>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="src/supabase-config.js?v=11"></script>
   <script defer src="src/db.js?v=34"></script>
   <script defer src="src/sync-policy.js?v=2"></script>
-  <script defer src="src/cloud-sync.js?v=41"></script>
+  <script defer src="src/cloud-sync.js?v=42"></script>
   <script defer src="src/pwa-update.js?v=16"></script>
   <script defer src="src/schema-validation.js?v=19"></script>
-  <script defer src="src/srs.js?v=4"></script>
+  <script defer src="src/srs.js?v=5"></script>
   <script defer src="src/topic-progression.js?v=39"></script>
   <script defer src="src/ranked-progress.js?v=16"></script>
   <script defer src="src/ranked-history.js?v=2"></script>
-  <script defer src="src/session-planner.js?v=52"></script>
+  <script defer src="src/study-plans.js?v=1"></script>
+  <script defer src="src/session-planner.js?v=53"></script>
   <script defer src="src/furigana-generated.js?v=37"></script>
   <script defer src="src/furigana.js?v=27"></script>
   <script defer src="src/difficulty.js?v=36"></script>
@@ -241,16 +248,17 @@
   <script defer src="src/teacher-diagnosis.js?v=2"></script>
   <script defer src="src/feedback-usage-data.js?v=1"></script>
   <script defer src="src/feedback-vocabulary.js?v=2"></script>
-  <script defer src="src/mnemonic.js?v=2"></script>
-  <script defer src="src/ui.js?v=48"></script>
+  <script defer src="src/mnemonic.js?v=3"></script>
+  <script defer src="src/ui.js?v=49"></script>
   <script defer src="src/history-ui.js?v=38"></script>
   <script defer src="src/study-collections.js?v=2"></script>
   <script defer src="src/daily-lesson.js?v=2"></script>
-  <script defer src="app.js?v=97"></script>
+  <script defer src="src/study-plans-ui.js?v=1"></script>
+  <script defer src="app.js?v=98"></script>
   <script defer src="src/navigation-fix.js?v=5"></script>
   <script defer src="src/mobile-insets.js?v=1"></script>
   <script defer src="src/bank-status.js?v=28"></script>
-  <script defer src="src/extra-study.js?v=22"></script>
+  <script defer src="src/extra-study.js?v=23"></script>
   <link rel="stylesheet" href="src/practice-history.css?v=1">
   <script defer src="src/practice-history.js?v=3"></script>
   <script defer src="src/context-explainer.js?v=1"></script>
