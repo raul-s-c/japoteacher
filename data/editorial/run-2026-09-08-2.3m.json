@@ -1,0 +1,21 @@
+{
+  "limit": 2300000,
+  "used": 1077746,
+  "calls": 414,
+  "reservations": {
+    "1788903636048010100": 99055,
+    "1788903657773643500": 85628
+  },
+  "closed": true,
+  "before": {
+    "N5": 945,
+    "N4": 1090
+  },
+  "paused_by_user": true,
+  "stop_reason": "El usuario necesita apagar el equipo",
+  "stopped_at": "2026-09-08T21:40:59.179573+00:00",
+  "approved_new": {
+    "N5": 104,
+    "N4": 104
+  }
+}

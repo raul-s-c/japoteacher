@@ -79,3 +79,11 @@
 
 - Tabla visible de +1 a +9 días por plan y dirección, con fecha y número de repasos, incluidos ceros. Usa la fecha efectiva SRS y el enfriamiento del plan; excluye nuevas, suspendidas y atrasados de hoy. Explica que las fechas cambian al estudiar y que el máximo diario limita la selección; indica los planes pausados.
 - Validación: 140 pruebas Node correctas, incluyendo fechas límite, cambio de año, dirección, enfriamiento y dominio aplazado. Flujo de navegador a 390/1280 px correcto, inspección visual móvil. Sin llamadas API de generación. Caché v158.
+
+
+## 2026-09-09 — Ampliación editorial con presupuesto separado
+
+- Continuada la tanda interrumpida del día 8 con máximo nuevo de 2.000.000 tokens. Consumo confirmado hoy: 1.911.411; sin reservas pendientes. El ledger anterior conserva sus 184.683 tokens reservados sin confirmar.
+- Publicación de 504 frases / 1.008 ejercicios de ambos días, tras revisión, equivalencia, cotejo directo, deduplicación y control de furigana. Banco general: 6.068 ejercicios. Clasificación contextual: N5 43, N4 161, N3 213, N2 79, N1 8 frases.
+- Verificación frente a 70a14ae: 5.060 filas y 2.517 lecturas antiguas idénticas. 140 pruebas Node y 2 pruebas de reservas correctas; navegador a 390/1280 px con migración, límites, sustitución, dominio y persistencia. Browser plugin no disponible: Playwright local; API simulada en QA. Caché PWA v159.
+- Informes y descartes: data/editorial/summary-2026-09-09-expansion.{json,md}.

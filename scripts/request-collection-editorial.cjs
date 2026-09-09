@@ -2,6 +2,11 @@
 let input='';process.stdin.setEncoding('utf8');process.stdin.on('data',s=>input+=s);
 process.stdin.on('end',async()=>{
   try{
+    const payload=JSON.parse(input);
+    if(['generate','review','equivalence_check'].includes(payload.operation)){
+      payload.editorial_quality_requirements='Cada frase debe ser una situación comprensible por sí sola, con lógica de sentido común y español natural de España. No fuerces vocabulario dentro de un tema incompatible. Evita preguntas o negaciones genéricas sin referente (por ejemplo Eso no es evolución o Hay responsabilidad). No aceptes comparaciones absurdas como tan ligero que incluso un gigante puede levantarlo: incluso debe implicar una dificultad real. Conserva causas, negaciones, condiciones, agente y matices en ambas direcciones. No uses japonés arcaico salvo que la frase dé un contexto explícito. Si revisas, rechaza o corrige también estos defectos aunque la gramática sea válida.';
+      input=JSON.stringify(payload);
+    }
     const response=await fetch('https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate',{method:'POST',headers:{'Content-Type':'application/json','X-Editorial-Key':(process.env.JAPOTEACHER_EDITORIAL_KEY||'').trim(),'User-Agent':'JapoTeacher-Editorial/1.0'},body:input,signal:AbortSignal.timeout(180000)});
     const data=await response.text();if(!response.ok)throw new Error(`Editorial HTTP ${response.status}: ${data.slice(0,300)}`);
     JSON.parse(data);process.stdout.write(data);
