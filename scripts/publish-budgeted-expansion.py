@@ -1,5 +1,5 @@
 """Publish only this run's approved pairs; preserve every previous bank row."""
-import csv, html, importlib.util, json, os, pathlib, sys, tempfile, time, unicodedata
+import argparse, csv, html, importlib.util, json, os, pathlib, sys, tempfile, time, unicodedata
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def load(name,file):
@@ -7,8 +7,14 @@ def load(name,file):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 def main():
-    prior=json.loads((ROOT/'data/editorial/run-2026-09-08-2.3m.json').read_text())
-    ledger=json.loads((ROOT/'data/editorial/run-2026-09-09-2m.json').read_text())
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--date',default='2026-09-09')
+    parser.add_argument('--baseline-ledger')
+    args=parser.parse_args();day=args.date
+    ledger_path=ROOT/f'data/editorial/run-{day}-2m.json'
+    prior_path=ROOT/args.baseline_ledger if args.baseline_ledger else (ROOT/'data/editorial/run-2026-09-08-2.3m.json' if day=='2026-09-09' else ledger_path)
+    prior=json.loads(prior_path.read_text())
+    ledger=json.loads(ledger_path.read_text())
     if not ledger.get('closed') or ledger.get('paused_by_user'):raise SystemExit('Complete the generation and final review before publishing')
     generator=load('generator','editorial-generate.py')
     normalize=lambda value:generator.normalize_japanese(unicodedata.normalize('NFKC',value))
@@ -21,7 +27,7 @@ def main():
     collection=json.loads((ROOT/'data/collections/sakamoto.json').read_text(encoding='utf-8'))
     known.update(normalize(r['source_text']) for r in collection['exercises'] if r['direction']=='ja_es')
     existing_ids={r['exercise_id'] for r in old}
-    review_cursor=json.loads((ROOT/'data/editorial/review-cursor-2026-09-09.json').read_text(encoding='utf-8-sig'))
+    review_cursor=json.loads((ROOT/f'data/editorial/review-cursor-{day}.json').read_text(encoding='utf-8-sig'))
     accepted={};excluded=[]
     manual={
         ('N5',1408):'El contraste con lo peor carece de referente y contexto suficiente.',
@@ -91,6 +97,9 @@ def main():
         ('N5',1367):'La duración de un siglo para un síntoma es un ejemplo forzado sin contexto.',
         ('N4',1500):'初期 carece de una fase o periodo de referencia claro en la descripción del bosque.',
     }
+    extra_review=ROOT/f'data/editorial/manual-exclusions-{day}.json'
+    if extra_review.exists():
+        manual.update({(x['level'],x['slot']):x['reason'] for x in json.loads(extra_review.read_text(encoding='utf-8'))})
     for level in ['N5','N4']:
         rows=generator.read_jsonl(ROOT/f'data/editorial/{level.lower()}-approved.jsonl')[prior['before'][level]:]
         accepted[level]=[]
@@ -141,10 +150,10 @@ def main():
                 if pos<0:continue
                 parts.extend([html.escape(item['japanese'][cursor:pos]),f'<ruby>{html.escape(chars)}<rt>{html.escape(reading["reading_hiragana"])}</rt></ruby>']);cursor=pos+len(chars)
             parts.append(html.escape(item['japanese'][cursor:]));furi[f"JAES-{level}-EDITORIAL-{int(item['slot']):04d}"]=''.join(parts)
-    staged_bank=bank.with_suffix('.expansion-20260909.tmp')
+    staged_bank=bank.with_suffix(f'.expansion-{day}.tmp')
     with staged_bank.open('w',encoding='utf-8-sig',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader();writer.writerows(old+new)
-    staged_furi=furi_path.with_suffix('.expansion-20260909.tmp')
+    staged_furi=furi_path.with_suffix(f'.expansion-{day}.tmp')
     staged_furi.write_text(prefix+json.dumps(furi,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
     # Install readings first: unused extra readings are harmless if the CSV
     # rename fails. Existing bank rows never point at missing new readings.
@@ -154,8 +163,8 @@ def main():
             except PermissionError:
                 if retry==19:raise
                 time.sleep(.25)
-    report={'tokens_confirmed':ledger['used'],'tokens_conservative':ledger['used']+sum(ledger['reservations'].values()),'limit':ledger['limit'],'new_pairs':len(new)//2,'prior_day_confirmed':prior['used'],'prior_day_conservative':prior['used']+sum(prior['reservations'].values()),'previous_rows_preserved':len(old),'classification':result,'excluded':excluded}
-    (ROOT/'data/editorial/summary-2026-09-09-expansion.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+    report={'tokens_confirmed':ledger['used'],'tokens_conservative':ledger['used']+sum(ledger['reservations'].values()),'limit':ledger['limit'],'new_pairs':len(new)//2,'prior_day_confirmed':prior['used'] if prior_path!=ledger_path else None,'prior_day_conservative':prior['used']+sum(prior['reservations'].values()) if prior_path!=ledger_path else None,'previous_rows_preserved':len(old),'classification':result,'excluded':excluded}
+    (ROOT/f'data/editorial/summary-{day}-expansion.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False),flush=True)
 
 if __name__=='__main__':main()

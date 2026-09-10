@@ -1,0 +1,277 @@
+[
+  {
+    "level": "N5",
+    "slot": 1412,
+    "reason": "La construcción de considerar el bolso un destino resulta forzada sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1520,
+    "reason": "El concepto de esta cultura carece de una referencia clara y natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1521,
+    "reason": "La pregunta con tarde o temprano es poco natural sin un contexto temporal."
+  },
+  {
+    "level": "N5",
+    "slot": 1414,
+    "reason": "Conocí presupone un primer encuentro que 会いました no exige."
+  },
+  {
+    "level": "N4",
+    "slot": 1523,
+    "reason": "La oposición entre entrevista y degustación resulta forzada sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1524,
+    "reason": "Hecho con cariño añade la elaboración del regalo, no exigida por 愛情がこもった."
+  },
+  {
+    "level": "N4",
+    "slot": 1528,
+    "reason": "La traducción reduce un préstamo recibido a una petición, y el periodo de estudio está formulado de forma poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1529,
+    "reason": "Contraste desproporcionado y sin contexto entre pena de muerte y suspensión del cargo."
+  },
+  {
+    "level": "N5",
+    "slot": 1421,
+    "reason": "共同 y eso carecen de referente que dé sentido al uso compartido."
+  },
+  {
+    "level": "N5",
+    "slot": 1422,
+    "reason": "感覚がいい no expresa de forma natural el buen tacto de un móvil."
+  },
+  {
+    "level": "N5",
+    "slot": 1429,
+    "reason": "Para conmemorar queda incompleto y el viaje en autobús carece de relación explicada con la conmemoración."
+  },
+  {
+    "level": "N5",
+    "slot": 1443,
+    "reason": "La interjección de cansancio ante la pregunta sobre comer no tiene una situación que la justifique."
+  },
+  {
+    "level": "N4",
+    "slot": 1548,
+    "reason": "La lluvia no explica aplazar una actualización de software en el contexto aportado."
+  },
+  {
+    "level": "N5",
+    "slot": 1445,
+    "reason": "Para abrir el acceso corresponde 開放, no 解放 en esta frase."
+  },
+  {
+    "level": "N4",
+    "slot": 1550,
+    "reason": "Ser útil no contradice ser lenta; むしろ queda forzado."
+  },
+  {
+    "level": "N4",
+    "slot": 1551,
+    "reason": "身分 carece de contexto social concreto y la traducción añade en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1553,
+    "reason": "No es solo el cuerpo es un fragmento sin referente suficiente."
+  },
+  {
+    "level": "N4",
+    "slot": 1556,
+    "reason": "毎週まとめて買う significa comprar en conjunto cada semana; para toda la semana añade el periodo que cubre la compra."
+  },
+  {
+    "level": "N5",
+    "slot": 1453,
+    "reason": "これは para presentar una persona necesita contexto de foto o representación, ausente aquí."
+  },
+  {
+    "level": "N4",
+    "slot": 1558,
+    "reason": "進歩 resulta poco natural para el avance de la planificación del viaje."
+  },
+  {
+    "level": "N5",
+    "slot": 1457,
+    "reason": "La negación no tiene un referente concreto para practicar el concepto."
+  },
+  {
+    "level": "N5",
+    "slot": 1460,
+    "reason": "La relación entre las rebajas y cuidar las declaraciones queda forzada sin contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 1461,
+    "reason": "Animar en la estación carece de destinatario o evento que dé contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 1462,
+    "reason": "労働する resulta forzado para el trabajo en un destino de viaje sin contexto laboral."
+  },
+  {
+    "level": "N5",
+    "slot": 1463,
+    "reason": "いつも薬を飲みません permite una negación habitual, no expresa inequívocamente no siempre."
+  },
+  {
+    "level": "N5",
+    "slot": 1464,
+    "reason": "El repaso de otras personas no explica la elección de la biblioteca."
+  },
+  {
+    "level": "N4",
+    "slot": 1572,
+    "reason": "La palabra objetivo se usa como nombre propio de una tienda y no enseña su significado."
+  },
+  {
+    "level": "N4",
+    "slot": 1573,
+    "reason": "El propio autobús carece de predicado o referente suficiente."
+  },
+  {
+    "level": "N5",
+    "slot": 1466,
+    "reason": "操作 necesita contexto para distinguir manejo de una máquina y manipulación interpersonal."
+  },
+  {
+    "level": "N4",
+    "slot": 1581,
+    "reason": "転送 no especifica llamada, mensaje o archivo y la traducción personal introduce un sentido concreto."
+  },
+  {
+    "level": "N4",
+    "slot": 1582,
+    "reason": "El nombre propio Alan no añade cobertura léxica útil al ejemplo genérico de compra."
+  },
+  {
+    "level": "N4",
+    "slot": 1585,
+    "reason": "会議が前進する resulta poco natural sin precisar la negociación o el asunto que avanza."
+  },
+  {
+    "level": "N5",
+    "slot": 1480,
+    "reason": "Estudio de Italia queda como un tema genérico forzado sin aclarar lengua, historia u otra materia."
+  },
+  {
+    "level": "N4",
+    "slot": 1588,
+    "reason": "返品は不能です resulta poco natural para comunicar la política de devolución de un producto."
+  },
+  {
+    "level": "N4",
+    "slot": 1596,
+    "reason": "Alice estaba en un día despejado es una traducción defectuosa, con enlace temático japonés confuso."
+  },
+  {
+    "level": "N4",
+    "slot": 1598,
+    "reason": "Película difícil si la actuación no es buena no aclara qué acción resulta difícil."
+  },
+  {
+    "level": "N5",
+    "slot": 1485,
+    "reason": "A esta escala es un fragmento sin actividad o magnitud de referencia."
+  },
+  {
+    "level": "N5",
+    "slot": 1488,
+    "reason": "Incluso en actos tradicionales introduce un contraste no justificado."
+  },
+  {
+    "level": "N4",
+    "slot": 1603,
+    "reason": "ので y したがって duplican de forma poco natural la conexión causal en la misma oración."
+  },
+  {
+    "level": "N4",
+    "slot": 1609,
+    "reason": "会議に突入しました expresa entrar de lleno en una reunión, no que la propia reunión empezara de golpe."
+  },
+  {
+    "level": "N5",
+    "slot": 1497,
+    "reason": "Esta estructura es un fragmento sin predicado o contexto útil."
+  },
+  {
+    "level": "N5",
+    "slot": 1500,
+    "reason": "La abundancia de temas de conversación no contrasta de forma natural con no poder ir por lluvia."
+  },
+  {
+    "level": "N4",
+    "slot": 1616,
+    "reason": "反省する expresa examen crítico de la propia conducta, no simplemente reflexión sobre el contenido de una película."
+  },
+  {
+    "level": "N5",
+    "slot": 1511,
+    "reason": "La comparación entre tener fiebre y no ser el infierno resulta forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 1618,
+    "reason": "El ejemplo se centra en un nombre propio sin aportar cobertura léxica útil."
+  },
+  {
+    "level": "N5",
+    "slot": 1513,
+    "reason": "Cambia el desarrollo queda sin referente y no es una frase española natural."
+  },
+  {
+    "level": "N5",
+    "slot": 1514,
+    "reason": "彼女自体 resulta poco natural para describir a una persona sin contraste contextual."
+  },
+  {
+    "level": "N4",
+    "slot": 1635,
+    "reason": "Sabor real o auténtico no especifica qué sabor se imita y resulta poco natural con リアル."
+  },
+  {
+    "level": "N5",
+    "slot": 1530,
+    "reason": "Que otra persona esté en casa no explica por sí solo esperar fuera; falta contexto causal."
+  },
+  {
+    "level": "N4",
+    "slot": 1653,
+    "reason": "ここは不法駐輪ですか identifica el lugar con la infracción y resulta poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1657,
+    "reason": "指名は田中さんです no precisa si Tanaka designa o es la persona solicitada; la traducción fija una lectura no asegurada."
+  },
+  {
+    "level": "N4",
+    "slot": 1667,
+    "reason": "木造建て duplica de forma poco natural la noción de construcción."
+  },
+  {
+    "level": "N4",
+    "slot": 1668,
+    "reason": "Captación para prostitución es una traducción poco natural de 客引き en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1669,
+    "reason": "La referencia al metro de la URSS carece de contexto histórico o ciudad concreta."
+  },
+  {
+    "level": "N4",
+    "slot": 1671,
+    "reason": "Unidad de este medicamento no aclara si se refiere a dosis, medida o presentación."
+  }
+]

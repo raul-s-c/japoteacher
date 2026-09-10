@@ -87,3 +87,11 @@
 - Publicación de 504 frases / 1.008 ejercicios de ambos días, tras revisión, equivalencia, cotejo directo, deduplicación y control de furigana. Banco general: 6.068 ejercicios. Clasificación contextual: N5 43, N4 161, N3 213, N2 79, N1 8 frases.
 - Verificación frente a 70a14ae: 5.060 filas y 2.517 lecturas antiguas idénticas. 140 pruebas Node y 2 pruebas de reservas correctas; navegador a 390/1280 px con migración, límites, sustitución, dominio y persistencia. Browser plugin no disponible: Playwright local; API simulada en QA. Caché PWA v159.
 - Informes y descartes: data/editorial/summary-2026-09-09-expansion.{json,md}.
+
+
+## 2026-09-10 — Nueva tanda editorial de hasta 2 millones de tokens
+
+- Presupuesto separado: 1.914.980 tokens confirmados de 2.000.000, sin reservas pendientes. Tanda cerrada por falta de margen para reservar otra petición.
+- 344 candidatas aprobadas por IA, 66 descartes finales; incorporadas 278 frases / 556 ejercicios con equivalencia y furigana. Banco general: 6.624 filas, 3.062 frases activas. Distribución nueva: N5 8, N4 79, N3 121, N2 65, N1 5.
+- Publicador parametrizado por fecha, baseline y descartes de cada tanda; mantiene el comportamiento histórico del 9 de septiembre. Instrucciones editoriales reforzadas para evitar nombres propios usados como vocabulario, causas inconexas y traducciones con matices añadidos.
+- Verificación frente a 2fb81e8: 6.068 filas y 3.021 lecturas antiguas idénticas, sin duplicados nuevos. 140 pruebas Node y 2 de presupuesto pasan. Flujo de planes a 390/1280 px: carga, selección, sustitución, dominio y persistencia correctos; inspección visual móvil. Browser plugin not available: Playwright local y API simulada en QA. Caché v160.

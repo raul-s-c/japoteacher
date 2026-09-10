@@ -1,0 +1,554 @@
+{
+  "tokens_confirmed": 1914980,
+  "tokens_conservative": 1914980,
+  "limit": 2000000,
+  "new_pairs": 278,
+  "prior_day_confirmed": null,
+  "prior_day_conservative": null,
+  "previous_rows_preserved": 6068,
+  "classification": {
+    "version": "contextual_usage_v3",
+    "rows": 556,
+    "classified": 556,
+    "levels": {
+      "N4": 158,
+      "N3": 242,
+      "N2": 130,
+      "N5": 16,
+      "N1": 10
+    },
+    "changes": {
+      "N4->N1": 2,
+      "N4->N2": 66,
+      "N4->N3": 102,
+      "N4->N4": 78,
+      "N5->N1": 8,
+      "N5->N2": 64,
+      "N5->N3": 140,
+      "N5->N4": 80,
+      "N5->N5": 16
+    },
+    "unresolved_unique": 59,
+    "unresolved_top": [
+      [
+        "スマホ",
+        10
+      ],
+      [
+        "休みの日",
+        4
+      ],
+      [
+        "かばん",
+        4
+      ],
+      [
+        "アプリ",
+        4
+      ],
+      [
+        "見に行く",
+        4
+      ],
+      [
+        "片づける",
+        4
+      ],
+      [
+        "朝ご飯",
+        4
+      ],
+      [
+        "食べます",
+        4
+      ],
+      [
+        "旅行先",
+        4
+      ],
+      [
+        "資料室",
+        2
+      ],
+      [
+        "入場料",
+        2
+      ],
+      [
+        "遊園地",
+        2
+      ],
+      [
+        "乗れます",
+        2
+      ],
+      [
+        "困った",
+        2
+      ],
+      [
+        "話してください",
+        2
+      ],
+      [
+        "断ります",
+        2
+      ],
+      [
+        "誘い",
+        2
+      ],
+      [
+        "再起動",
+        2
+      ],
+      [
+        "どのくらい",
+        2
+      ],
+      [
+        "三冊",
+        2
+      ],
+      [
+        "いっしょに",
+        2
+      ],
+      [
+        "見られる",
+        2
+      ],
+      [
+        "朝ごはん",
+        2
+      ],
+      [
+        "文化祭",
+        2
+      ],
+      [
+        "錠",
+        2
+      ],
+      [
+        "どこも",
+        2
+      ],
+      [
+        "います",
+        2
+      ],
+      [
+        "連れて行く",
+        2
+      ],
+      [
+        "こわれる",
+        2
+      ],
+      [
+        "さびしい",
+        2
+      ]
+    ],
+    "difficulty_median": 47.0
+  },
+  "excluded": [
+    {
+      "level": "N5",
+      "slot": 1412,
+      "japanese": "先週、このかばんを運命だと思って買いました。",
+      "reason": "La construcción de considerar el bolso un destino resulta forzada sin contexto."
+    },
+    {
+      "level": "N5",
+      "slot": 1414,
+      "japanese": "旅行先で医師に会いました。",
+      "reason": "Slot 1414 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N5",
+      "slot": 1418,
+      "japanese": "彼とは相当長く付き合っています。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1420,
+      "japanese": "森の掃除は面倒ですが、友だちといっしょに掃除を手伝いました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1421,
+      "japanese": "それは共同じゃない。",
+      "reason": "共同 y eso carecen de referente que dé sentido al uso compartido."
+    },
+    {
+      "level": "N5",
+      "slot": 1422,
+      "japanese": "このスマホは感覚がいいですが、少し遅いです。",
+      "reason": "感覚がいい no expresa de forma natural el buen tacto de un móvil."
+    },
+    {
+      "level": "N5",
+      "slot": 1429,
+      "japanese": "記念にバスで行きます。",
+      "reason": "Para conmemorar queda incompleto y el viaje en autobús carece de relación explicada con la conmemoración."
+    },
+    {
+      "level": "N5",
+      "slot": 1440,
+      "japanese": "ほとんどの人は着物を着ないので、祭りでも洋服で大丈夫です。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1443,
+      "japanese": "ふう、もう食べましたか。",
+      "reason": "La interjección de cansancio ante la pregunta sobre comer no tiene una situación que la justifique."
+    },
+    {
+      "level": "N5",
+      "slot": 1445,
+      "japanese": "この改札はまだ解放されていません。",
+      "reason": "Para abrir el acceso corresponde 開放, no 解放 en esta frase."
+    },
+    {
+      "level": "N5",
+      "slot": 1453,
+      "japanese": "これはミカちゃんです。",
+      "reason": "これは para presentar una persona necesita contexto de foto o representación, ausente aquí."
+    },
+    {
+      "level": "N5",
+      "slot": 1457,
+      "japanese": "それは否定です。",
+      "reason": "La negación no tiene un referente concreto para practicar el concepto."
+    },
+    {
+      "level": "N5",
+      "slot": 1460,
+      "japanese": "セール中の発言には気をつけます。",
+      "reason": "La relación entre las rebajas y cuidar las declaraciones queda forzada sin contexto."
+    },
+    {
+      "level": "N5",
+      "slot": 1461,
+      "japanese": "駅で応援しますか。",
+      "reason": "Animar en la estación carece de destinatario o evento que dé contexto."
+    },
+    {
+      "level": "N5",
+      "slot": 1462,
+      "japanese": "旅行先で労働します。",
+      "reason": "労働する resulta forzado para el trabajo en un destino de viaje sin contexto laboral."
+    },
+    {
+      "level": "N5",
+      "slot": 1463,
+      "japanese": "私はいつも薬を飲みません。",
+      "reason": "いつも薬を飲みません permite una negación habitual, no expresa inequívocamente no siempre."
+    },
+    {
+      "level": "N5",
+      "slot": 1464,
+      "japanese": "彼らは先に復習したので、私は図書館で勉強しました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1466,
+      "japanese": "彼の操作に気づきました。",
+      "reason": "操作 necesita contexto para distinguir manejo de una máquina y manipulación interpersonal."
+    },
+    {
+      "level": "N5",
+      "slot": 1470,
+      "japanese": "説明を読んで、このアプリは安全だと確信しました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1480,
+      "japanese": "イタリアの勉強を手伝ってくれて、ありがとうございます。",
+      "reason": "Estudio de Italia queda como un tema genérico forzado sin aclarar lengua, historia u otra materia."
+    },
+    {
+      "level": "N5",
+      "slot": 1485,
+      "japanese": "この規模ですか。",
+      "reason": "A esta escala es un fragmento sin actividad o magnitud de referencia."
+    },
+    {
+      "level": "N5",
+      "slot": 1488,
+      "japanese": "その態度では、伝統行事でも相手に失礼です。",
+      "reason": "Incluso en actos tradicionales introduce un contraste no justificado."
+    },
+    {
+      "level": "N5",
+      "slot": 1497,
+      "japanese": "この構造？",
+      "reason": "Esta estructura es un fragmento sin predicado o contexto útil."
+    },
+    {
+      "level": "N5",
+      "slot": 1500,
+      "japanese": "山の話題は多いが、今は雨で行けない。",
+      "reason": "La abundancia de temas de conversación no contrasta de forma natural con no poder ir por lluvia."
+    },
+    {
+      "level": "N5",
+      "slot": 1508,
+      "japanese": "店では規則を守って買い物をします。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1511,
+      "japanese": "今日は熱があるけど地獄じゃない。",
+      "reason": "La comparación entre tener fiebre y no ser el infierno resulta forzada."
+    },
+    {
+      "level": "N5",
+      "slot": 1513,
+      "japanese": "会議で展開が変わる。",
+      "reason": "Cambia el desarrollo queda sin referente y no es una frase española natural."
+    },
+    {
+      "level": "N5",
+      "slot": 1514,
+      "japanese": "彼女自体は悪くない。",
+      "reason": "彼女自体 resulta poco natural para describir a una persona sin contraste contextual."
+    },
+    {
+      "level": "N5",
+      "slot": 1530,
+      "japanese": "彼は家にいるから、私は外で待ちます。",
+      "reason": "Slot 1530 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N5",
+      "slot": 1584,
+      "japanese": "この祭りは有名ですから、今年も見に行きます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1520,
+      "japanese": "この文化の概念は、国によって少しずつ違いますし、説明のしかたも変わります。",
+      "reason": "El concepto de esta cultura carece de una referencia clara y natural."
+    },
+    {
+      "level": "N4",
+      "slot": 1521,
+      "japanese": "いずれ帰りますか。",
+      "reason": "La pregunta con tarde o temprano es poco natural sin un contexto temporal."
+    },
+    {
+      "level": "N4",
+      "slot": 1523,
+      "japanese": "それは面接じゃなくて試食会です。",
+      "reason": "La oposición entre entrevista y degustación resulta forzada sin contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1524,
+      "japanese": "高くても、愛情がこもった贈り物を選びます。",
+      "reason": "Hecho con cariño añade la elaboración del regalo, no exigida por 愛情がこもった."
+    },
+    {
+      "level": "N4",
+      "slot": 1528,
+      "japanese": "長期の勉強に入るので、先輩に参考書を貸してもらいました。",
+      "reason": "La traducción reduce un préstamo recibido a una petición, y el periodo de estudio está formulado de forma poco natural."
+    },
+    {
+      "level": "N4",
+      "slot": 1529,
+      "japanese": "死刑じゃなくて停職です。",
+      "reason": "Contraste desproporcionado y sin contexto entre pena de muerte y suspensión del cargo."
+    },
+    {
+      "level": "N4",
+      "slot": 1531,
+      "japanese": "その言い訳は、もう私には通用しません。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1536,
+      "japanese": "伝統の踊りは難しいですが、彼は全力で最後まで踊りました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1548,
+      "japanese": "雨が強いので、ソフトウェアの更新は明日にして、外出もやめます。",
+      "reason": "La lluvia no explica aplazar una actualización de software en el contexto aportado."
+    },
+    {
+      "level": "N4",
+      "slot": 1550,
+      "japanese": "このアプリは遅いと思ったが、むしろ便利だった。",
+      "reason": "Ser útil no contradice ser lenta; むしろ queda forzado."
+    },
+    {
+      "level": "N4",
+      "slot": 1551,
+      "japanese": "ここではその人の身分は何ですか。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1553,
+      "japanese": "それは肉体だけではない。",
+      "reason": "No es solo el cuerpo es un fragmento sin referente suficiente."
+    },
+    {
+      "level": "N4",
+      "slot": 1556,
+      "japanese": "この店では食品を安く買えるので、毎週まとめて買います。",
+      "reason": "Slot 1556 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1558,
+      "japanese": "旅行の計画はもう少し進歩しました。",
+      "reason": "進歩 resulta poco natural para el avance de la planificación del viaje."
+    },
+    {
+      "level": "N4",
+      "slot": 1572,
+      "japanese": "共和という店で安かったので、そこで買いました。",
+      "reason": "La palabra objetivo se usa como nombre propio de una tienda y no enseña su significado."
+    },
+    {
+      "level": "N4",
+      "slot": 1573,
+      "japanese": "このバスそのものです。",
+      "reason": "El propio autobús carece de predicado o referente suficiente."
+    },
+    {
+      "level": "N4",
+      "slot": 1576,
+      "japanese": "昨日見た映画で、犯人が人質をとる場面がいちばん印象に残りました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1581,
+      "japanese": "転送をお願いします。",
+      "reason": "転送 no especifica llamada, mensaje o archivo y la traducción personal introduce un sentido concreto."
+    },
+    {
+      "level": "N4",
+      "slot": 1582,
+      "japanese": "アランが店で新しいスマホを買いました。",
+      "reason": "El nombre propio Alan no añade cobertura léxica útil al ejemplo genérico de compra."
+    },
+    {
+      "level": "N4",
+      "slot": 1585,
+      "japanese": "会議は少し前進しました。",
+      "reason": "会議が前進する resulta poco natural sin precisar la negociación o el asunto que avanza."
+    },
+    {
+      "level": "N4",
+      "slot": 1588,
+      "japanese": "申し訳ありませんが、この商品の返品は不能です。",
+      "reason": "返品は不能です resulta poco natural para comunicar la política de devolución de un producto."
+    },
+    {
+      "level": "N4",
+      "slot": 1596,
+      "japanese": "アリスは晴れていたけれど、風が強かったので、山へ行きませんでした。",
+      "reason": "Alice estaba en un día despejado es una traducción defectuosa, con enlace temático japonés confuso."
+    },
+    {
+      "level": "N4",
+      "slot": 1598,
+      "japanese": "この映画は演技がうまくないと難しいです。",
+      "reason": "Película difícil si la actuación no es buena no aclara qué acción resulta difícil."
+    },
+    {
+      "level": "N4",
+      "slot": 1603,
+      "japanese": "今日はもう食べたので、したがって、お腹がすいていません。",
+      "reason": "ので y したがって duplican de forma poco natural la conexión causal en la misma oración."
+    },
+    {
+      "level": "N4",
+      "slot": 1609,
+      "japanese": "会議に突入しました。",
+      "reason": "会議に突入しました expresa entrar de lleno en una reunión, no que la propia reunión empezara de golpe."
+    },
+    {
+      "level": "N4",
+      "slot": 1616,
+      "japanese": "その映画を見たあと、内容について反省しました。",
+      "reason": "反省する expresa examen crítico de la propia conducta, no simplemente reflexión sobre el contenido de una película."
+    },
+    {
+      "level": "N4",
+      "slot": 1618,
+      "japanese": "マリアは部屋を片づけます。",
+      "reason": "El ejemplo se centra en un nombre propio sin aportar cobertura léxica útil."
+    },
+    {
+      "level": "N4",
+      "slot": 1634,
+      "japanese": "私たちは掃除の協定を結びました。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1635,
+      "japanese": "このアイスの味はリアルですか。",
+      "reason": "Sabor real o auténtico no especifica qué sabor se imita y resulta poco natural con リアル."
+    },
+    {
+      "level": "N4",
+      "slot": 1653,
+      "japanese": "ここは不法駐輪ですか。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1656,
+      "japanese": "観客が多かったので、はっきり話さないと聞こえません。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1657,
+      "japanese": "指名は田中さんです。",
+      "reason": "指名は田中さんです no precisa si Tanaka designa o es la persona solicitada; la traducción fija una lectura no asegurada."
+    },
+    {
+      "level": "N4",
+      "slot": 1667,
+      "japanese": "この家は木造建てではありません。",
+      "reason": "木造建て duplica de forma poco natural la noción de construcción."
+    },
+    {
+      "level": "N4",
+      "slot": 1668,
+      "japanese": "この商店街は昼はにぎやかですが、売春の客引きが出るので夜は歩きません。",
+      "reason": "Captación para prostitución es una traducción poco natural de 客引き en este contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1669,
+      "japanese": "ソ連の地下鉄は有名です。",
+      "reason": "La referencia al metro de la URSS carece de contexto histórico o ciudad concreta."
+    },
+    {
+      "level": "N4",
+      "slot": 1671,
+      "japanese": "この薬の単位は何ですか。",
+      "reason": "Unidad de este medicamento no aclara si se refiere a dosis, medida o presentación."
+    }
+  ]
+}
