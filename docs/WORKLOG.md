@@ -102,3 +102,12 @@
 - APK 1.3.0 (10): widget nativo, ajustes compartidos de captura rápida/OCR/visión, resultado interactivo junto a burbuja y cierre confirmado desde menú/ notificación. Siguiente recorte toma una imagen nueva; se ocultan las ventanas propias antes de capturar.
 - Web: resultado compacto con chat plegable, minimizar y acceso a ajustes; controles de widget y preferencias en Lupa y Ajustes para la APK compatible. Caché v161.
 - Compilaciones debug/release correctas y firma de actualización verificada. 140 pruebas Node y QA web 280/330/390 px correctas, API simulada. Browser plugin not available: Playwright local. Pruebas nativas en emulador Android 16: widget, permisos, recorte repetido, panel, preferencias y cierre/cancelación. Detalles en ANDROID_APK.md.
+
+
+## 2026-09-12 — Tanda editorial de hasta 1,8 millones de tokens
+
+- Presupuesto separado cerrado: 1.621.294 tokens confirmados y 93.158 reservados por una petición incierta; total conservador 1.714.452. No se reutiliza la reserva; margen insuficiente para otra petición completa.
+- 236 candidatas, 34 descartes finales: 202 frases / 404 ejercicios incorporados. N5 7, N4 54, N3 78, N2 55, N1 8 según clasificación contextual. Banco general: 7.028 filas.
+- Publicador admite --ledger para tandas con presupuesto distinto de 2 millones. Verificación contra 24b4a9e: 6.624 filas y 3.299 lecturas previas idénticas; pares y furigana completos, sin duplicados nuevos.
+- 140 pruebas Node, 2 de presupuesto y QA de planes a 390/1280 px correctos. Inspección visual móvil correcta. Browser plugin no disponible: Playwright local con API simulada. Caché v163.
+- Contabilidad, revisión y descartes en data/editorial/summary-2026-09-12-expansion.{json,md} y ledger fechado.

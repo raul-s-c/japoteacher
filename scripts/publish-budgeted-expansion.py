@@ -10,8 +10,9 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--date',default='2026-09-09')
     parser.add_argument('--baseline-ledger')
+    parser.add_argument('--ledger',help='Ledger for the authorized run; keeps non-default budgets separate')
     args=parser.parse_args();day=args.date
-    ledger_path=ROOT/f'data/editorial/run-{day}-2m.json'
+    ledger_path=ROOT/args.ledger if args.ledger else ROOT/f'data/editorial/run-{day}-2m.json'
     prior_path=ROOT/args.baseline_ledger if args.baseline_ledger else (ROOT/'data/editorial/run-2026-09-08-2.3m.json' if day=='2026-09-09' else ledger_path)
     prior=json.loads(prior_path.read_text())
     ledger=json.loads(ledger_path.read_text())

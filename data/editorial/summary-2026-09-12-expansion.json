@@ -1,0 +1,362 @@
+{
+  "tokens_confirmed": 1621294,
+  "tokens_conservative": 1714452,
+  "limit": 1800000,
+  "new_pairs": 202,
+  "prior_day_confirmed": null,
+  "prior_day_conservative": null,
+  "previous_rows_preserved": 6624,
+  "classification": {
+    "version": "contextual_usage_v3",
+    "rows": 404,
+    "classified": 404,
+    "levels": {
+      "N2": 110,
+      "N3": 156,
+      "N4": 108,
+      "N1": 16,
+      "N5": 14
+    },
+    "changes": {
+      "N4->N1": 8,
+      "N4->N2": 34,
+      "N4->N3": 78,
+      "N4->N4": 64,
+      "N5->N1": 8,
+      "N5->N2": 76,
+      "N5->N3": 78,
+      "N5->N4": 44,
+      "N5->N5": 14
+    },
+    "unresolved_unique": 60,
+    "unresolved_top": [
+      [
+        "スマホ",
+        16
+      ],
+      [
+        "ある",
+        6
+      ],
+      [
+        "アプリ",
+        6
+      ],
+      [
+        "郵便局",
+        4
+      ],
+      [
+        "だれも",
+        4
+      ],
+      [
+        "いっしょに",
+        4
+      ],
+      [
+        "ください",
+        4
+      ],
+      [
+        "毎晩",
+        4
+      ],
+      [
+        "持って行きます",
+        2
+      ],
+      [
+        "長持ちする",
+        2
+      ],
+      [
+        "見に行く",
+        2
+      ],
+      [
+        "お酒",
+        2
+      ],
+      [
+        "お風呂",
+        2
+      ],
+      [
+        "お皿",
+        2
+      ],
+      [
+        "何も",
+        2
+      ],
+      [
+        "けがする",
+        2
+      ],
+      [
+        "人が多い",
+        2
+      ],
+      [
+        "途中で",
+        2
+      ],
+      [
+        "一緒に",
+        2
+      ],
+      [
+        "両替機",
+        2
+      ],
+      [
+        "使えます",
+        2
+      ],
+      [
+        "旅行しやすい",
+        2
+      ],
+      [
+        "お参り",
+        2
+      ],
+      [
+        "絵馬",
+        2
+      ],
+      [
+        "三通",
+        2
+      ],
+      [
+        "来ない",
+        2
+      ],
+      [
+        "います",
+        2
+      ],
+      [
+        "晩ごはん",
+        2
+      ],
+      [
+        "食べます",
+        2
+      ],
+      [
+        "ゲーム機",
+        2
+      ]
+    ],
+    "difficulty_median": 46.0
+  },
+  "excluded": [
+    {
+      "level": "N5",
+      "slot": 1596,
+      "japanese": "春になると、山の空気が気持ちいいので、よく散歩します。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1604,
+      "japanese": "駅前のスーパーへ行って、パンを買って、家に帰りました。",
+      "reason": "Supermercado de la estación no conserva la ubicación delante de la estación de 駅前."
+    },
+    {
+      "level": "N5",
+      "slot": 1620,
+      "japanese": "スーパーのとなりなら安いパンが買えますが、駅の前の店は少し高いです。",
+      "reason": "Si está junto al supermercado introduce un sujeto y una condición ambiguos; el japonés contrasta lugares de compra."
+    },
+    {
+      "level": "N5",
+      "slot": 1633,
+      "japanese": "この店は便利です。",
+      "reason": "Traducción poco natural: conveniente no expresa claramente la utilidad práctica de la tienda."
+    },
+    {
+      "level": "N5",
+      "slot": 1672,
+      "japanese": "今度一緒に図書館で勉強しませんか。",
+      "reason": "今度 en esta invitación apunta a una próxima ocasión; esta vez cambia la referencia temporal."
+    },
+    {
+      "level": "N5",
+      "slot": 1675,
+      "japanese": "映画の前に友だちに会って、後で映画を見ます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1680,
+      "japanese": "この祭りはここで始まるので、あとであそこへ行けば舞台も見られます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1700,
+      "japanese": "デパートで新しいかばんを買いたいので、週末に行く。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 1703,
+      "japanese": "薬より水のほうがいいです。",
+      "reason": "Comparación general entre agua y medicina sin situación concreta que justifique la preferencia."
+    },
+    {
+      "level": "N5",
+      "slot": 1712,
+      "japanese": "茶道は静かですが、道具がとても大切です。",
+      "reason": "El contraste entre tranquilidad e importancia de los utensilios no tiene una relación coherente."
+    },
+    {
+      "level": "N4",
+      "slot": 1678,
+      "japanese": "ネットでライブの中継を見ました。",
+      "reason": "ライブの中継 puede referirse a la retransmisión de un concierto; la traducción no conserva ese contenido ni aporta contexto para descartarlo."
+    },
+    {
+      "level": "N4",
+      "slot": 1682,
+      "japanese": "家では母の助手として洗い物を手伝います。",
+      "reason": "Ayudo como ayudante con los platos es redundante y poco natural; el papel de asistente resulta forzado."
+    },
+    {
+      "level": "N4",
+      "slot": 1685,
+      "japanese": "地点はここではありません。",
+      "reason": "地点 carece de un punto de referencia y la construcción aislada resulta poco natural."
+    },
+    {
+      "level": "N4",
+      "slot": 1692,
+      "japanese": "両親が共働きなので、子ども（児童）の世話を毎日交代でしています。",
+      "reason": "El sinónimo 児童 añadido entre paréntesis fuerza el objetivo dentro de la oración."
+    },
+    {
+      "level": "N4",
+      "slot": 1693,
+      "japanese": "薬物は体にとても危険です。",
+      "reason": "薬物 puede incluir medicamentos; la afirmación general requiere concretar drogas nocivas o uso indebido."
+    },
+    {
+      "level": "N4",
+      "slot": 1705,
+      "japanese": "今日は現場で品質の測定をします。",
+      "reason": "現場 no identifica necesariamente una obra de construcción; falta contexto para esa traducción."
+    },
+    {
+      "level": "N4",
+      "slot": 1714,
+      "japanese": "うちの部屋にアートを飾っています。",
+      "reason": "飾る significa exhibir o decorar; arte colgado presupone una forma de exposición no indicada."
+    },
+    {
+      "level": "N4",
+      "slot": 1716,
+      "japanese": "酸素が足りないので、店で小さなボンベを買いました。",
+      "reason": "La falta de oxígeno y la compra de una bombona requieren un contexto específico que aquí falta."
+    },
+    {
+      "level": "N4",
+      "slot": 1719,
+      "japanese": "健康への情熱はありますか。",
+      "reason": "La pregunta sobre pasión por la salud resulta forzada y sin contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1722,
+      "japanese": "神父は忙しいですが、毎週この町で相談に乗ります。",
+      "reason": "神父 significa sacerdote católico; no implica que sea párroco."
+    },
+    {
+      "level": "N4",
+      "slot": 1727,
+      "japanese": "それは階級の問題ではなく、収入の差です。",
+      "reason": "Slot 1727 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1729,
+      "japanese": "その国では勢力が弱まりました。",
+      "reason": "Falta identificar de quién es la influencia o fuerza que disminuye."
+    },
+    {
+      "level": "N4",
+      "slot": 1731,
+      "japanese": "昼ごはんの拠点はここですか。",
+      "reason": "El uso de 拠点 para el lugar de almuerzo resulta forzado sin contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1732,
+      "japanese": "金曜に買い物に行くなら、私も一緒に行きます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1740,
+      "japanese": "風が山道で加速したので、雲もすぐ流れていった。",
+      "reason": "La aceleración del viento en un sendero no explica claramente el movimiento de las nubes; causalidad forzada."
+    },
+    {
+      "level": "N4",
+      "slot": 1745,
+      "japanese": "そのやり方は公正じゃない。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1751,
+      "japanese": "それは病気ではなく、起訴の問題です。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1756,
+      "japanese": "友だちに独身だと話すと、週末は森でよく歩くと言われます。",
+      "reason": "El sujeto de pasear en la cita es ambiguo y la relación con decir que es soltero resulta incoherente."
+    },
+    {
+      "level": "N4",
+      "slot": 1760,
+      "japanese": "彼女は祖父母にも婚約を報告してから、結婚式の日取りを決めました。",
+      "reason": "La traducción omite el compromiso matrimonial de 婚約 y lo sustituye por un pronombre sin antecedente."
+    },
+    {
+      "level": "N4",
+      "slot": 1767,
+      "japanese": "この薬の製作には時間がかかりますか。",
+      "reason": "製作 no es la colocación natural para fabricar medicamentos; corresponde 製造."
+    },
+    {
+      "level": "N4",
+      "slot": 1778,
+      "japanese": "玄関の棚の先頭に鍵を置いてあります。",
+      "reason": "先頭 no es natural para el borde delantero de una balda; correspondería 手前."
+    },
+    {
+      "level": "N4",
+      "slot": 1779,
+      "japanese": "この大型の鍋は何人分作れますか。",
+      "reason": "Caldero concreta un tipo de recipiente que 大型の鍋 no especifica."
+    },
+    {
+      "level": "N4",
+      "slot": 1781,
+      "japanese": "潜在的な問題じゃなくて、遅延です。",
+      "reason": "Slot 1781 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1788,
+      "japanese": "出産のあとで、妻の体調が戻るまで、私が夕食を作ります。",
+      "reason": "La traducción omite que se trata de la esposa y usa ella sin antecedente."
+    }
+  ]
+}
