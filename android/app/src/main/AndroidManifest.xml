@@ -44,10 +44,17 @@
 
         <activity
             android:name=".LensPermissionActivity"
+            android:taskAffinity=""
             android:excludeFromRecents="true"
             android:exported="false"
             android:theme="@style/LensTheme" />
 
+        <activity android:name=".LensSettingsActivity" android:exported="false"
+            android:excludeFromRecents="true" android:taskAffinity="" />
+        <receiver android:name=".LensWidgetProvider" android:exported="false" android:label="Lupa JapoTeacher">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/lens_widget_info" />
+        </receiver>
         <service
             android:name=".FloatingLensService"
             android:exported="false"

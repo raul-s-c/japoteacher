@@ -95,3 +95,10 @@
 - 344 candidatas aprobadas por IA, 66 descartes finales; incorporadas 278 frases / 556 ejercicios con equivalencia y furigana. Banco general: 6.624 filas, 3.062 frases activas. Distribución nueva: N5 8, N4 79, N3 121, N2 65, N1 5.
 - Publicador parametrizado por fecha, baseline y descartes de cada tanda; mantiene el comportamiento histórico del 9 de septiembre. Instrucciones editoriales reforzadas para evitar nombres propios usados como vocabulario, causas inconexas y traducciones con matices añadidos.
 - Verificación frente a 2fb81e8: 6.068 filas y 3.021 lecturas antiguas idénticas, sin duplicados nuevos. 140 pruebas Node y 2 de presupuesto pasan. Flujo de planes a 390/1280 px: carga, selección, sustitución, dominio y persistencia correctos; inspección visual móvil. Browser plugin not available: Playwright local y API simulada en QA. Caché v160.
+
+
+## 2026-09-12 — Widget y lupa continua
+
+- APK 1.3.0 (10): widget nativo, ajustes compartidos de captura rápida/OCR/visión, resultado interactivo junto a burbuja y cierre confirmado desde menú/ notificación. Siguiente recorte toma una imagen nueva; se ocultan las ventanas propias antes de capturar.
+- Web: resultado compacto con chat plegable, minimizar y acceso a ajustes; controles de widget y preferencias en Lupa y Ajustes para la APK compatible. Caché v161.
+- Compilaciones debug/release correctas y firma de actualización verificada. 140 pruebas Node y QA web 280/330/390 px correctas, API simulada. Browser plugin not available: Playwright local. Pruebas nativas en emulador Android 16: widget, permisos, recorte repetido, panel, preferencias y cierre/cancelación. Detalles en ANDROID_APK.md.

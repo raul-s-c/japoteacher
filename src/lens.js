@@ -129,6 +129,8 @@
   function setNativeVisible(){
     const tools=$('#lensNativeTools'),bridge=nativeBridge();
     if(tools)tools.hidden=!bridge;
+    for(const id of ['lensNativeSettings','lensDeviceSettings'])if($('#'+id))$('#'+id).hidden=!bridge?.openLensSettings;
+    if($('#lensNativeWidget'))$('#lensNativeWidget').hidden=!bridge?.addLensWidget;
   }
   function setLensMode(nextMode){
     const radio=document.querySelector(`[name="lensMode"][value="${nextMode==='vision'?'vision':'text'}"]`);
@@ -159,6 +161,8 @@
     document.querySelectorAll('[name="lensMode"]').forEach(radio=>radio.addEventListener('change',updateMode));
     $('#lensImageInput')?.addEventListener('change',event=>selectImage(event.target.files?.[0]).catch(error=>window.UI?.toast?.(error.message||'No se pudo preparar la imagen.')));
     $('#lensAnalyze')?.addEventListener('click',analyze);$('#lensAsk')?.addEventListener('click',ask);$('#lensClear')?.addEventListener('click',clear);$('#lensRefreshHistory')?.addEventListener('click',renderHistory);
+    for(const id of ['lensNativeSettings','lensSettingsOpen'])$('#'+id)?.addEventListener('click',()=>nativeBridge()?.openLensSettings?.());
+    $('#lensNativeWidget')?.addEventListener('click',()=>nativeBridge()?.addLensWidget?.());
     $('#lensNativeEnable')?.addEventListener('click',()=>{try{nativeBridge()?.startFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo activar la lupa.')}});
     $('#lensNativeDisable')?.addEventListener('click',()=>{try{nativeBridge()?.stopFloatingLens?.()}catch(error){window.UI?.toast?.(error.message||'No se pudo desactivar la lupa.')}});
     $('#lensQuestion')?.addEventListener('keydown',event=>{if(event.key==='Enter'&&(event.ctrlKey||event.metaKey))ask()});

@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.Locale;
 
 public class LauncherActivity extends Activity {
-    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.2.3&nativeCode=9";
+    public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.3.0&nativeCode=10";
     private static WebView webView;
     private ProgressBar progress;
     private String pendingLensPayload;
@@ -163,6 +163,18 @@ public class LauncherActivity extends Activity {
     }
 
     public class NativeBridge {
+        @JavascriptInterface public void openLensSettings() {
+            runOnUiThread(() -> startActivity(new Intent(LauncherActivity.this, LensSettingsActivity.class)));
+        }
+        @JavascriptInterface public void addLensWidget() {
+            runOnUiThread(() -> {
+                android.appwidget.AppWidgetManager manager = android.appwidget.AppWidgetManager.getInstance(LauncherActivity.this);
+                if (Build.VERSION.SDK_INT >= 26 && manager.isRequestPinAppWidgetSupported()) {
+                    manager.requestPinAppWidget(new android.content.ComponentName(LauncherActivity.this, LensWidgetProvider.class), null, null);
+                } else Toast.makeText(LauncherActivity.this, "Mantén pulsada la pantalla de inicio y elige Widgets → Lupa JapoTeacher", Toast.LENGTH_LONG).show();
+            });
+        }
+
         @JavascriptInterface
         public boolean isNativeApp() {
             return true;
@@ -195,8 +207,10 @@ public class LauncherActivity extends Activity {
         @JavascriptInterface
         public void stopFloatingLens() {
             runOnUiThread(() -> {
-                stopService(new Intent(LauncherActivity.this, FloatingLensService.class));
-                Toast.makeText(LauncherActivity.this, "Lupa flotante desactivada.", Toast.LENGTH_SHORT).show();
+                new android.app.AlertDialog.Builder(LauncherActivity.this).setTitle("¿Cerrar la lupa?")
+                    .setMessage("Se cerrarán la burbuja y su sesión de captura.")
+                    .setNegativeButton("Seguir leyendo", null)
+                    .setPositiveButton("Cerrar lupa", (dialog, which) -> stopService(new Intent(LauncherActivity.this, FloatingLensService.class))).show();
             });
         }
 

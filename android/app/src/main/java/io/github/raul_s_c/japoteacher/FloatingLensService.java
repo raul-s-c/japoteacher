@@ -34,6 +34,9 @@ import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
 
 public class FloatingLensService extends Service {
+    public static final String ACTION_SHOW_RESULT = "io.github.raul_s_c.japoteacher.SHOW_LENS_RESULT";
+    public static final String ACTION_MENU = "io.github.raul_s_c.japoteacher.LENS_MENU";
+    public static final String PAYLOAD_FILE = "lens-result.json";
     public static final String ACTION_START_SESSION = "io.github.raul_s_c.japoteacher.START_LENS_SESSION";
     public static final String ACTION_SHOW_BUBBLE = "io.github.raul_s_c.japoteacher.SHOW_BUBBLE";
     public static final String ACTION_CAPTURE = "io.github.raul_s_c.japoteacher.CAPTURE_LENS";
@@ -53,6 +56,13 @@ public class FloatingLensService extends Service {
     private VirtualDisplay virtualDisplay;
     private ImageReader imageReader;
     private boolean capturePending;
+    private int captureGeneration;
+    private android.widget.LinearLayout resultPanel;
+    private android.webkit.WebView resultWebView;
+    private WindowManager.LayoutParams resultParams;
+    private String resultPayload = "{}";
+    private android.app.AlertDialog menu;
+
 
     public static boolean isReady() {
         return ready;
@@ -76,6 +86,10 @@ public class FloatingLensService extends Service {
             }
             startProjectionForeground();
             startProjection(resultCode, resultData);
+        } else if (ACTION_SHOW_RESULT.equals(action)) {
+            if (ready) showResultPanel(); else stopSelf();
+        } else if (ACTION_MENU.equals(action)) {
+            if (ready) showMenu(); else stopSelf();
         } else if (ACTION_CAPTURE.equals(action)) {
             requestCapture();
         } else if (ACTION_SHOW_BUBBLE.equals(action)) {
@@ -124,6 +138,9 @@ public class FloatingLensService extends Service {
                 .setContentTitle("Lupa IA activa")
                 .setContentText("Toca la lupa flotante para recortar la pantalla")
                 .setContentIntent(pendingIntent)
+                .addAction(android.R.drawable.ic_menu_close_clear_cancel, "Opciones / cerrar",
+                    PendingIntent.getService(this, 8204, new Intent(this, FloatingLensService.class).setAction(ACTION_MENU),
+                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE))
                 .setOngoing(true)
                 .build();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -188,15 +205,17 @@ public class FloatingLensService extends Service {
             if (!ready) Toast.makeText(this, "Activa de nuevo la lupa desde JapoTeacher.", Toast.LENGTH_LONG).show();
             return;
         }
+        hideResult();
         capturePending = true;
+        final int generation = ++captureGeneration;
         setBubbleVisible(false);
         handler.postDelayed(() -> {
-            if (!capturePending || virtualDisplay == null || imageReader == null) return;
+            if (generation != captureGeneration || !capturePending || virtualDisplay == null || imageReader == null) return;
             drainImages();
             virtualDisplay.setSurface(imageReader.getSurface());
         }, 180);
         handler.postDelayed(() -> {
-            if (!capturePending) return;
+            if (generation != captureGeneration || !capturePending) return;
             capturePending = false;
             detachCaptureSurface();
             setBubbleVisible(true);
@@ -269,6 +288,9 @@ public class FloatingLensService extends Service {
         }
         TextView button = new TextView(this);
         button.setText("⌕");
+        button.setContentDescription("Lupa: tocar para recortar; mantener pulsado para opciones y cerrar");
+        button.setOnClickListener(v -> requestCapture());
+        button.setOnLongClickListener(v -> { showMenu(); return true; });
         button.setTextColor(Color.WHITE);
         button.setTextSize(28);
         button.setGravity(Gravity.CENTER);
@@ -339,9 +361,28 @@ public class FloatingLensService extends Service {
     public void onDestroy() {
         ready = false;
         capturePending = false;
+        new File(getCacheDir(), PAYLOAD_FILE).delete();
+        handler.removeCallbacksAndMessages(null);
+        if (menu != null) menu.dismiss();
+        disposeResult();
         removeBubble();
         releaseProjection();
         super.onDestroy();
+    }
+
+    @Override public void onConfigurationChanged(android.content.res.Configuration config) {
+        super.onConfigurationChanged(config);
+        if (ready && virtualDisplay != null) {
+            capturePending = false; captureGeneration++; detachCaptureSurface();
+            int width = getResources().getDisplayMetrics().widthPixels;
+            int height = getResources().getDisplayMetrics().heightPixels;
+            ImageReader old = imageReader;
+            imageReader = ImageReader.newInstance(width, height, PixelFormat.RGBA_8888, 2);
+            imageReader.setOnImageAvailableListener(this::onImageAvailable, handler);
+            virtualDisplay.resize(width, height, getResources().getDisplayMetrics().densityDpi);
+            if (old != null) old.close();
+            if (bubble != null) { constrainBubble(); windowManager.updateViewLayout(bubble, bubbleParams); positionResult(); }
+        }
     }
 
     @Override
@@ -376,13 +417,118 @@ public class FloatingLensService extends Service {
                     bubbleParams.y = startY + dy;
                     constrainBubble();
                     windowManager.updateViewLayout(bubble, bubbleParams);
+                    positionResult();
                     return true;
                 case MotionEvent.ACTION_UP:
-                    if (!moved && System.currentTimeMillis() - downAt < 450) requestCapture();
+                    if (!moved) {
+                        if (System.currentTimeMillis() - downAt >= 450) view.performLongClick();
+                        else view.performClick();
+                    }
                     return true;
                 default:
                     return false;
             }
+        }
+    }
+
+    private int overlayType() {
+        return Build.VERSION.SDK_INT >= 26 ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : WindowManager.LayoutParams.TYPE_PHONE;
+    }
+
+    private void showMenu() {
+        if (menu != null && menu.isShowing()) return;
+        menu = new android.app.AlertDialog.Builder(this)
+            .setTitle("Lupa de lectura")
+            .setItems(new String[]{"Nuevo recorte", "Mostrar última traducción", "Ajustes", "Cerrar lupa…"}, (dialog, which) -> {
+                if (which == 0) requestCapture();
+                if (which == 1 && resultPanel != null) { resultPanel.setVisibility(View.VISIBLE); positionResult(); }
+                if (which == 2) { hideResult(); startActivity(new Intent(this, LensSettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)); }
+                if (which == 3) handler.post(this::confirmStop);
+            }).setNegativeButton("Seguir leyendo", null).create();
+        menu.getWindow().setType(overlayType()); menu.show();
+    }
+
+    private void confirmStop() {
+        menu = new android.app.AlertDialog.Builder(this).setTitle("¿Cerrar la lupa?")
+            .setMessage("Se quitarán la burbuja y la traducción. Puedes activarla otra vez desde el widget.")
+            .setNegativeButton("Seguir leyendo", null)
+            .setPositiveButton("Cerrar lupa", (dialog, which) -> stopSelf()).create();
+        menu.getWindow().setType(overlayType()); menu.show();
+    }
+
+    private void hideResult() { if (resultPanel != null) resultPanel.setVisibility(View.GONE); }
+    private void disposeResult() {
+        if (resultPanel != null) { try { windowManager.removeView(resultPanel); } catch (Exception ignored) {} }
+        if (resultWebView != null) {
+            resultWebView.removeJavascriptInterface("JapoLensHost"); resultWebView.stopLoading(); resultWebView.destroy();
+        }
+        resultPanel = null; resultWebView = null;
+    }
+
+    private void showResultPanel() {
+        File file = new File(getCacheDir(), PAYLOAD_FILE);
+        try (java.io.FileInputStream stream = new java.io.FileInputStream(file);
+             java.io.ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream()) {
+            byte[] buffer = new byte[8192]; int count;
+            while ((count = stream.read(buffer)) != -1) bytes.write(buffer, 0, count);
+            resultPayload = new String(bytes.toByteArray(), java.nio.charset.StandardCharsets.UTF_8);
+        } catch (Exception error) {
+            Toast.makeText(this, "No se pudo abrir el resultado. Repite el recorte.", Toast.LENGTH_LONG).show();
+            setBubbleVisible(true); return;
+        } finally { file.delete(); }
+        disposeResult();
+        resultPanel = new android.widget.LinearLayout(this);
+        resultPanel.setOrientation(android.widget.LinearLayout.VERTICAL);
+        resultPanel.setBackgroundColor(Color.rgb(255, 253, 249));
+        resultPanel.setElevation(dp(12));
+        resultWebView = new android.webkit.WebView(this);
+        android.webkit.WebSettings settings = resultWebView.getSettings();
+        settings.setJavaScriptEnabled(true); settings.setDomStorageEnabled(true); settings.setDatabaseEnabled(true);
+        settings.setAllowFileAccess(false); settings.setAllowContentAccess(false);
+        settings.setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+        if (Build.VERSION.SDK_INT >= 26) settings.setSafeBrowsingEnabled(true);
+        resultWebView.addJavascriptInterface(new ResultBridge(), "JapoLensHost");
+        resultWebView.setWebViewClient(new android.webkit.WebViewClient() {
+            @Override public boolean shouldOverrideUrlLoading(android.webkit.WebView view, android.webkit.WebResourceRequest request) {
+                android.net.Uri uri = request.getUrl();
+                return !("https".equals(uri.getScheme()) && "raul-s-c.github.io".equals(uri.getHost())
+                    && "/japoteacher/lens-overlay.html".equals(uri.getPath()));
+            }
+        });
+        resultPanel.addView(resultWebView, new android.widget.LinearLayout.LayoutParams(-1, -1));
+        resultParams = new WindowManager.LayoutParams(dp(300), dp(390), overlayType(),
+            WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
+        resultParams.gravity = Gravity.TOP | Gravity.START;
+        resultParams.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
+        windowManager.addView(resultPanel, resultParams);
+        setBubbleVisible(true); positionResult();
+        resultWebView.loadUrl("https://raul-s-c.github.io/japoteacher/lens-overlay.html?compact=1&nativeVersion=1.3.0&nativeCode=10");
+    }
+
+    private void positionResult() {
+        if (resultPanel == null || bubbleParams == null) return;
+        int width = getResources().getDisplayMetrics().widthPixels;
+        int height = getResources().getDisplayMetrics().heightPixels;
+        int gap = dp(6), bubbleSize = bubbleParams.width;
+        // Keep a readable panel beside the bubble, moving the pair to the nearest edge.
+        boolean right = bubbleParams.x < width / 2;
+        resultParams.width = Math.min(dp(330), Math.max(dp(180), width - bubbleSize - gap * 3));
+        resultParams.height = Math.min(dp(410), height - systemDimension("status_bar_height") - systemDimension("navigation_bar_height") - gap * 2);
+        int x = right ? bubbleParams.x + bubbleSize + gap : bubbleParams.x - resultParams.width - gap;
+        resultParams.x = Math.max(gap, Math.min(x, width - resultParams.width - gap));
+        bubbleParams.x = right ? Math.max(0, resultParams.x - bubbleSize - gap) : Math.min(width - bubbleSize, resultParams.x + resultParams.width + gap);
+        windowManager.updateViewLayout(bubble, bubbleParams);
+        resultParams.y = Math.max(systemDimension("status_bar_height"), Math.min(bubbleParams.y,
+            height - systemDimension("navigation_bar_height") - resultParams.height - gap));
+        windowManager.updateViewLayout(resultPanel, resultParams);
+    }
+
+    public class ResultBridge {
+        @android.webkit.JavascriptInterface public String getPayload() { return resultPayload; }
+        @android.webkit.JavascriptInterface public void closeOverlay() { handler.post(() -> { hideResult(); setBubbleVisible(true); }); }
+        @android.webkit.JavascriptInterface public void recapture() { handler.post(() -> requestCapture()); }
+        @android.webkit.JavascriptInterface public void openSettings() {
+            handler.post(() -> { hideResult(); startActivity(new Intent(FloatingLensService.this, LensSettingsActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)); });
         }
     }
 

@@ -8,8 +8,10 @@ const android = fs.readFileSync(new URL("../android/app/src/main/java/io/github/
 const serviceWorker = fs.readFileSync(new URL("../service-worker.js", import.meta.url), "utf8");
 
 test("the native lens explains inside its overlay instead of opening the main app", () => {
-  assert.match(android, /lens-overlay\.html/);
-  assert.match(android, /class OverlayBridge/);
+  assert.match(android, /ACTION_SHOW_RESULT/);
+  const service = fs.readFileSync(new URL('../android/app/src/main/java/io/github/raul_s_c/japoteacher/FloatingLensService.java', import.meta.url), 'utf8');
+  assert.match(service, /lens-overlay\.html\?compact=1/);
+  assert.match(service, /class ResultBridge/);
   assert.doesNotMatch(android, /LauncherActivity\.openWithLensResult\(/);
 });
 

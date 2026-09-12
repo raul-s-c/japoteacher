@@ -50,8 +50,7 @@ public class LensCaptureActivity extends Activity {
     private Bitmap cropBitmap;
     private EditText contextInput;
     private String capturePath;
-    private WebView explanationWebView;
-    private String explanationPayload = "{}";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +91,7 @@ public class LensCaptureActivity extends Activity {
         Button capture = button("Leer");
         cancel.setOnClickListener(v -> finish());
         capture.setOnClickListener(v -> {
+            if (cropBitmap != null && !cropBitmap.isRecycled()) cropBitmap.recycle();
             cropBitmap = cropView.crop();
             runOcr();
         });
@@ -115,10 +115,12 @@ public class LensCaptureActivity extends Activity {
         if (cropBitmap == null) return;
         showLoading("Leyendo japonés en el móvil...");
         InputImage image = InputImage.fromBitmap(cropBitmap, 0);
-        TextRecognition.getClient(new JapaneseTextRecognizerOptions.Builder().build())
-                .process(image)
-                .addOnSuccessListener(this::showResult)
+        com.google.mlkit.vision.text.TextRecognizer recognizer = TextRecognition.getClient(new JapaneseTextRecognizerOptions.Builder().build());
+        recognizer.process(image)
+                .addOnSuccessListener(result -> { if (!isFinishing() && !isDestroyed()) showResult(result); })
+                .addOnCompleteListener(task -> recognizer.close())
                 .addOnFailureListener(error -> {
+                    if (isFinishing() || isDestroyed()) return;
                     Toast.makeText(this, "OCR local fallido: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     showResult(null);
                 });
@@ -144,6 +146,11 @@ public class LensCaptureActivity extends Activity {
 
     private void showResult(Text result) {
         String ocrText = result == null ? "" : result.getText().trim();
+        android.content.SharedPreferences prefs = LensSettingsActivity.preferences(this);
+        if (prefs.getBoolean("quick", false) && (!ocrText.isEmpty() || prefs.getBoolean("vision", false))) {
+            showExplanationOverlay(ocrText, prefs.getBoolean("vision", false) ? bitmapDataUrl(cropBitmap) : "", prefs.getString("context", ""));
+            return;
+        }
         root.removeAllViews();
         root.setBackgroundColor(Color.rgb(247, 245, 240));
 
@@ -175,6 +182,7 @@ public class LensCaptureActivity extends Activity {
         contextInput.setHint("Contexto opcional: noticia, manga, menú, app...");
         contextInput.setSingleLine(false);
         contextInput.setMinLines(2);
+        contextInput.setText(prefs.getString("context", ""));
 
         RadioGroup mode = new RadioGroup(this);
         mode.setOrientation(RadioGroup.VERTICAL);
@@ -186,7 +194,10 @@ public class LensCaptureActivity extends Activity {
         withVision.setId(2);
         mode.addView(textOnly);
         mode.addView(withVision);
-        mode.check(1);
+        mode.check(prefs.getBoolean("vision", false) ? 2 : 1);
+        android.widget.CheckBox quick = new android.widget.CheckBox(this);
+        quick.setText("Usar esta elección sin preguntar en los siguientes recortes");
+        quick.setChecked(prefs.getBoolean("quick", false));
 
         LinearLayout actions = new LinearLayout(this);
         actions.setGravity(Gravity.CENTER_VERTICAL);
@@ -199,6 +210,11 @@ public class LensCaptureActivity extends Activity {
             showCropper();
         });
         send.setOnClickListener(v -> {
+            if (mode.getCheckedRadioButtonId() != 2 && detected.getText().toString().trim().isEmpty()) {
+                detected.setError("No se detectó texto. Escríbelo o elige visión."); return;
+            }
+            prefs.edit().putBoolean("quick", quick.isChecked()).putBoolean("vision", mode.getCheckedRadioButtonId() == 2)
+                .putString("context", contextInput.getText().toString().trim()).apply();
             String imageData = mode.getCheckedRadioButtonId() == 2 ? bitmapDataUrl(cropBitmap) : "";
             showExplanationOverlay(
                     detected.getText().toString().trim(),
@@ -217,6 +233,7 @@ public class LensCaptureActivity extends Activity {
         content.addView(detected, new LinearLayout.LayoutParams(-1, -2));
         content.addView(contextInput);
         content.addView(mode);
+        content.addView(quick);
         scroll.addView(content, new ScrollView.LayoutParams(-1, -2));
         shell.addView(scroll, new LinearLayout.LayoutParams(-1, 0, 1));
         shell.addView(actions, new LinearLayout.LayoutParams(-1, -2));
@@ -225,65 +242,24 @@ public class LensCaptureActivity extends Activity {
 
     private void showExplanationOverlay(String text, String imageDataUrl, String contextLabel) {
         hideKeyboard();
+        if (!FloatingLensService.isReady()) {
+            Toast.makeText(this, "La sesión terminó. Activa la lupa de nuevo desde el widget.", Toast.LENGTH_LONG).show();
+            finish(); return;
+        }
         try {
             JSONObject payload = new JSONObject();
-            payload.put("text", text);
-            payload.put("imageDataUrl", imageDataUrl);
-            payload.put("context", contextLabel);
-            payload.put("source", "android_overlay");
-            explanationPayload = payload.toString();
-        } catch (Exception error) {
-            explanationPayload = "{}";
-        }
-
-        root.removeAllViews();
-        root.setBackgroundColor(Color.TRANSPARENT);
-        explanationWebView = new WebView(this);
-        explanationWebView.setBackgroundColor(Color.TRANSPARENT);
-        WebSettings settings = explanationWebView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
-        settings.setDatabaseEnabled(true);
-        settings.setAllowFileAccess(false);
-        settings.setMediaPlaybackRequiresUserGesture(true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) settings.setSafeBrowsingEnabled(true);
-        explanationWebView.addJavascriptInterface(new OverlayBridge(), "JapoLensHost");
-        explanationWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request) {
-                Uri uri = request.getUrl();
-                return !("https".equals(uri.getScheme()) && "raul-s-c.github.io".equals(uri.getHost()));
+            payload.put("text", text); payload.put("imageDataUrl", imageDataUrl);
+            payload.put("context", contextLabel); payload.put("source", "android_overlay");
+            // Keep image data out of Binder extras, which have a small transaction limit.
+            File file = new File(getCacheDir(), FloatingLensService.PAYLOAD_FILE);
+            try (java.io.FileOutputStream stream = new java.io.FileOutputStream(file)) {
+                stream.write(payload.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
-        });
-        root.addView(explanationWebView, new FrameLayout.LayoutParams(-1, -1));
-        explanationWebView.loadUrl("https://raul-s-c.github.io/japoteacher/lens-overlay.html?nativeVersion=1.2.3&nativeCode=9");
-    }
-
-    private void disposeExplanationWebView() {
-        if (explanationWebView == null) return;
-        explanationWebView.removeJavascriptInterface("JapoLensHost");
-        explanationWebView.stopLoading();
-        explanationWebView.destroy();
-        explanationWebView = null;
-    }
-
-    public class OverlayBridge {
-        @JavascriptInterface
-        public String getPayload() {
-            return explanationPayload;
-        }
-
-        @JavascriptInterface
-        public void closeOverlay() {
-            runOnUiThread(() -> finish());
-        }
-
-        @JavascriptInterface
-        public void recapture() {
-            runOnUiThread(() -> {
-                disposeExplanationWebView();
-                showCropper();
-            });
+            startService(new Intent(this, FloatingLensService.class).setAction(FloatingLensService.ACTION_SHOW_RESULT));
+            finish();
+        } catch (Exception error) {
+            Toast.makeText(this, "No se pudo preparar la traducción. Repite el recorte.", Toast.LENGTH_LONG).show();
+            showCropper();
         }
     }
 
@@ -328,7 +304,10 @@ public class LensCaptureActivity extends Activity {
     private String bitmapDataUrl(Bitmap bitmap) {
         if (bitmap == null) return "";
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 82, out);
+        float scale = Math.min(1f, 1280f / Math.max(bitmap.getWidth(), bitmap.getHeight()));
+        Bitmap resized = Bitmap.createScaledBitmap(bitmap, Math.max(1, Math.round(bitmap.getWidth()*scale)), Math.max(1, Math.round(bitmap.getHeight()*scale)), true);
+        resized.compress(Bitmap.CompressFormat.JPEG, 82, out);
+        if (resized != bitmap) resized.recycle();
         return "data:image/jpeg;base64," + Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP);
     }
 
@@ -338,10 +317,9 @@ public class LensCaptureActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        disposeExplanationWebView();
         Intent intent = new Intent(this, FloatingLensService.class);
         intent.setAction(FloatingLensService.ACTION_SHOW_BUBBLE);
-        startService(intent);
+        if (FloatingLensService.isReady()) startService(intent);
         if (capturePath != null) new File(capturePath).delete();
         if (cropBitmap != null && !cropBitmap.isRecycled()) cropBitmap.recycle();
         if (screenBitmap != null && !screenBitmap.isRecycled()) screenBitmap.recycle();

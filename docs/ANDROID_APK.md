@@ -90,3 +90,14 @@ Salidas esperadas:
 - `android/app-release-bundle.aab`
 
 El keystore local está en `android/android.keystore` y está ignorado por Git. El archivo `android/signing.local.txt` también está ignorado y contiene el recordatorio local de firma. Hay que conservar ambos para que futuras APK puedan actualizar sobre la instalada.
+
+
+## 1.3.0 — Lupa de lectura continua (12-09-2026)
+
+- Widget Android «Lupa JapoTeacher»: activar burbuja y abrir ajustes sin cargar la aplicación principal. También puede añadirse desde Lupa → Añadir widget, si el launcher admite fijarlo.
+- Resultado en una ventana TYPE_APPLICATION_OVERLAY junto a la burbuja, con traducción, lectura y detalles; Siguiente recorte captura de nuevo la pantalla actual. Es una ventana interactiva tipo PiP, no el modo PiP de vídeo de Android.
+- Minimizar conserva el último resultado y la sesión. Mantener pulsada la burbuja abre el menú; Cerrar lupa requiere un segundo toque de confirmación. La notificación ofrece el mismo menú.
+- Ajustes → Lupa flotante → Configurar lectura continua: modo rápido, OCR/visión y contexto habitual, guardados localmente para widget y app. OCR vacío devuelve al formulario sin enviar la imagen automáticamente. Android mantiene el consentimiento obligatorio al iniciar una sesión de MediaProjection.
+- Payload en caché privada (no Binder ni galería); se elimina al consumirlo. Imágenes para visión limitadas a 1280 px. Al cerrar, se liberan pantalla virtual, lector de imagen y WebView.
+- APK: releases/android/JapoTeacher-1.3.0.apk; código 10. Firma verificada contra 1.2.3. Actualizar instalando encima de la existente, sin desinstalar.
+- Validación: debug/release compilados; 140 pruebas Node; interfaz con API simulada a 280/330/390 px (OCR sin imagen, minimizar, siguiente y ajustes). Emulador Android 16 aislado: widget añadido desde launcher, inicio desde widget, permiso de sesión, recorte, resultado junto a burbuja, nuevo recorte sin otro permiso, persistencia del modo rápido, OCR vacío, cancelar cierre y detener servicio. No se han realizado llamadas reales a IA ni utilizado datos de cuenta durante QA.

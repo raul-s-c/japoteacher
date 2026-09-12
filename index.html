@@ -122,6 +122,8 @@
               <label><input type="radio" name="lensMode" value="vision"> Visión + OCR</label>
             </div>
             <div class="lens-native-tools" id="lensNativeTools" hidden>
+              <button class="secondary" id="lensNativeWidget" type="button" hidden>Añadir widget</button>
+              <button class="secondary" id="lensNativeSettings" type="button" hidden>Lectura continua y visión</button>
               <button class="secondary" id="lensNativeEnable" type="button">Activar lupa flotante</button>
               <button class="text-button" id="lensNativeDisable" type="button">Desactivar</button>
               <p class="security-note">Al activar la lupa, Android pedirá una vez permiso para ver la pantalla. Después abre cualquier app y toca la burbuja: la pantalla se congelará y podrás ajustar el recorte.</p>
@@ -198,6 +200,7 @@
           <section class="panel settings-section"><h3>Perfil y visualización</h3><label>Nombre del perfil<input name="profileName" maxlength="40"></label><label class="toggle-row"><span>Mostrar furigana por defecto en práctica</span><input name="furigana" type="checkbox"></label><p>Se aplica a la visualización, no al contenido ni al ritmo de tus planes.</p></section>
           <section class="panel settings-section"><h3>Ritmo de estudio</h3><p>El contenido, la dirección, los límites diarios, las nuevas y los repasos se configuran en cada plan.</p><button class="primary" type="button" data-plan-home>Ir a mis planes</button><button type="button" class="secondary" id="recalculateDayFromSettings">Recalcular pendientes de todos los planes</button></section>
           <details class="panel settings-section"><summary>Corrección con IA · Todas las prácticas</summary><h3>Evaluación con IA</h3><label>Proveedor<select name="aiProvider"><option value="openai">OpenAI</option><option value="mock">Simulado</option></select></label><div class="provider-status" id="providerStatus" role="status"></div><label>Modelo de corrección<input name="aiModel" value="gpt-5.4-mini" disabled></label><input name="aiEndpoint" type="hidden" value="https://japoteacher-ai.raul-nihongo.workers.dev/evaluate"><input name="proxyToken" type="hidden" value=""><button type="button" class="secondary" id="testAiButton">Probar conexión con OpenAI</button><div class="security-note">La corrección se activa automáticamente al iniciar sesión. La clave de OpenAI permanece protegida en Cloudflare y ningún usuario necesita introducir claves o tokens.</div></details>
+          <section class="panel settings-section" id="lensDeviceSettings" hidden><h3>Lupa flotante · este dispositivo</h3><p>Elige OCR o visión y activa la traducción sin preguntas entre recortes.</p><button type="button" class="secondary" id="lensSettingsOpen">Configurar lectura continua</button></section>
           <section class="panel settings-section native-update-panel"><h3>Actualizaciones APK</h3><div class="native-update-status" id="nativeUpdateStatus" role="status">Comprobando canal de actualización…</div><div class="native-update-actions"><button type="button" class="secondary" id="checkNativeUpdateButton">Buscar actualización</button><a class="primary native-update-download" id="nativeUpdateDownload" href="#" target="_blank" rel="noopener" hidden>Descargar APK</a></div><div class="native-update-notes" id="nativeUpdateNotes"></div><p class="security-note">La app consulta un manifiesto público de versiones. Las actualizaciones normales de contenido siguen llegando por web; este aviso es para cambios nativos como lupa flotante, permisos Android o captura de pantalla.</p></section>
           <details class="panel settings-section bank-panel"><summary>Datos, importación y copias · Avanzado</summary><h3>Banco y copias</h3><p id="bankSummary">Cargando banco…</p><div id="bankDashboard" class="bank-dashboard"></div><p class="security-note">Cada frase importada debe incluir un <strong>jlpt_level</strong> entre N5–N1 y al menos una categoría en <strong>topic_tags</strong>. Puedes separar varios temas con <code>|</code>.</p><label class="file-button">Importar CSV UTF-8<input id="csvInput" type="file" accept=".csv,text/csv"></label><div id="importReport" class="import-report"></div><div class="stack-actions"><button type="button" class="secondary" id="backupButton">Descargar copia completa</button><button type="button" class="danger" id="resetButton">Reiniciar perfil</button></div></details>
         </form>
@@ -254,7 +257,7 @@
   <script defer src="src/study-collections.js?v=2"></script>
   <script defer src="src/daily-lesson.js?v=2"></script>
   <script defer src="src/study-plans-ui.js?v=2"></script>
-  <script defer src="app.js?v=102"></script>
+  <script defer src="app.js?v=103"></script>
   <script defer src="src/navigation-fix.js?v=5"></script>
   <script defer src="src/mobile-insets.js?v=1"></script>
   <script defer src="src/bank-status.js?v=28"></script>
@@ -264,7 +267,7 @@
   <script defer src="src/context-explainer.js?v=1"></script>
   <script defer src="src/practice-tools.js?v=4"></script>
   <script defer src="src/ai-tutor.js?v=3"></script>
-  <script defer src="src/lens.js?v=4"></script>
+  <script defer src="src/lens.js?v=5"></script>
   <script defer src="src/daily-news.js?v=7"></script>
   <script defer src="src/manual-adjustments.js?v=8"></script>
   <script defer src="src/topic-drill.js?v=33"></script>
