@@ -21,7 +21,7 @@ class BudgetTests(unittest.TestCase):
                 def response(*args, **kwargs):
                     time.sleep(.02)
                     return types.SimpleNamespace(returncode=0, stdout=json.dumps({'usage':{'total_tokens':123},'result':{'items':[]}}))
-                with patch.object(module.subprocess,'run',response), patch.object(module.editorial,'record_usage'):
+                with patch.object(module.subprocess,'run',response), patch.object(module.editorial,'record_usage'), patch.object(module.time,'time_ns',return_value=123):
                     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
                         list(pool.map(lambda _:module.request({'operation':'generate'},'fake'),range(2)))
                 ledger=json.loads(module.OUT.read_text())

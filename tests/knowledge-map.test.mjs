@@ -1,0 +1,16 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const context={window:{}};vm.createContext(context);vm.runInContext(fs.readFileSync('src/knowledge-map.js','utf8'),context);
+const {build}=context.window.KnowledgeMap;
+const rows=[{exercise_id:'a',direction:'ja_es',source_text:'食べます。',reference_translation:'Como.'},{exercise_id:'b',direction:'ja_es',source_text:'パンを食べます。',reference_translation:'Como pan.'},{exercise_id:'c',direction:'es_ja',source_text:'Como.',reference_translation:'食べます。'}];
+const data={nodes:[{id:'v:eat',type:'v',label:'食べる'}],sentences:Object.fromEntries(rows.map(e=>[e.exercise_id,{text:e.direction==='ja_es'?e.source_text:e.reference_translation,concepts:['v:eat']}]))};
+const attempt=(id,day,score=95,profile='p')=>({exercise_id:id,profile_id:profile,attempted_at:`2026-09-${day}T12:00:00Z`,overall_score:score});
+const state=(attempts,direction='ja_es',extra=[])=>build(data,[...rows,...extra],attempts,[],'p',direction).nodes.get('v:eat').state;
+test('one correct phrase is evidence of learning, not mastery',()=>assert.equal(state([attempt('a','01')]),'learning'));
+test('multiple dates and independent examples support consolidation',()=>assert.equal(state([attempt('a','01'),attempt('b','02'),attempt('a','03')]),'solid'));
+test('latest failure supersedes earlier successful context',()=>assert.equal(state([attempt('a','01'),attempt('b','02'),attempt('a','03'),attempt('a','04',30)]),'reinforce'));
+test('profiles, directions and invalid answers do not leak',()=>{assert.equal(state([attempt('a','01',95,'other')]),'new');assert.equal(state([attempt('a','01')],'es_ja'),'new');assert.equal(state([{...attempt('a','01'),evaluation_status:'invalid'}]),'new')});
+test('duplicate sentence IDs cannot manufacture multiple contexts',()=>{const d={...rows[0],exercise_id:'d'};data.sentences.d=data.sentences.a;assert.equal(state([attempt('a','01'),attempt('d','02'),attempt('d','03')],'ja_es',[d]),'learning')});
+test('stale graph text is excluded after sentence changes',()=>{const m=build(data,[{...rows[0],source_text:'別の文。'}],[],[],'p','ja_es');assert.equal(m.nodes.size,0)});

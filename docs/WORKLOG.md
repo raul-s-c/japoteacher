@@ -111,3 +111,13 @@
 - Publicador admite --ledger para tandas con presupuesto distinto de 2 millones. Verificación contra 24b4a9e: 6.624 filas y 3.299 lecturas previas idénticas; pares y furigana completos, sin duplicados nuevos.
 - 140 pruebas Node, 2 de presupuesto y QA de planes a 390/1280 px correctos. Inspección visual móvil correcta. Browser plugin no disponible: Playwright local con API simulada. Caché v163.
 - Contabilidad, revisión y descartes en data/editorial/summary-2026-09-12-expansion.{json,md} y ledger fechado.
+
+
+## 2026-09-12 — Mapa de conocimientos y normalización
+
+- Mapa local desde Hoy y cada plan: 3.986 conceptos, filtros de plan/dirección/nivel/tipo/estado, búsqueda, conexiones de kanji, bases gramaticales explícitas, zoom, desplazamiento y fichas con ejemplos/furigana/audio/diccionario. Lista equivalente accesible por teclado; 48 nodos por página para móvil.
+- Janome 0.5.0 verifica lemas y límites; 4.078 asociaciones de frecuencia retiradas. Separación de frecuencia y nivel pedagógico: 5.992 filas recuperan el JLPT original. IDs, textos, respuestas y lecturas anteriores conservados; progreso personal sin escrituras nuevas.
+- Recomendaciones basadas en evidencia de frases, pendientes y conceptos trabajados, separadas por perfil/dirección. Consolidación requiere dos frases y tres fechas con aciertos >=85; un fallo reciente evita consolidación. No se atribuye un fallo global a una palabra individual. Practicar hoy revalida la asignación actual y respeta cupos; el resto es vista previa.
+- 146 pruebas Node y 15 Python correctas; QA de mapa y planes a 390/1280 px, API simulada, consola sin errores. Browser plugin not available: Playwright local. Inspección visual y corrección de anchura mínima móvil.
+- Prueba concurrente detectó colisión de time_ns en Windows para reservas editoriales: UUID evita sobrescribir reservas; regresión con reloj constante. Sin consumo de API durante este trabajo.
+- Caché v164 y versiones de banco/colección actualizadas. El mapa cubre el banco presente y 14 patrones gramaticales; no representa todo el currículo JLPT. Reproducción en docs/KNOWLEDGE_MAP.md.

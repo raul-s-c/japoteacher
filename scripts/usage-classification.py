@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "exercises.full.csv"
 LEVELS = ("N5", "N4", "N3", "N2", "N1")
-VERSION = "contextual_usage_v3"
+VERSION = "morphology_usage_v1"
 CONTEXTUAL_VOCABULARY_PATH = ROOT / "data" / "reference" / "vocabulary-context-v1.csv"
 KANJI_RE = re.compile(r"[\u3400-\u9fff]")
 KATAKANA_RE = re.compile(r"[\u30a0-\u30ff]")
@@ -177,14 +177,22 @@ class UsageClassifier:
 
     def classify(self, row):
         text = japanese(row)
+        # Build-time dependency only; do not silently fall back to substring
+        # matching if it is missing (pip install -r requirements-knowledge-map.txt).
+        from janome.tokenizer import Tokenizer
+        if not hasattr(self, '_tokenizer'):
+            self._tokenizer = Tokenizer()
+        tokens = list(self._tokenizer.tokenize(text))
+        lexical = {t.base_form if t.base_form != '*' else t.surface for t in tokens
+                   if t.part_of_speech.split(',')[0] in ('名詞','動詞','形容詞','副詞','連体詞','接続詞')
+                   and t.part_of_speech.split(',')[1] not in ('非自立','接尾','固有名詞','数')}
         found, unresolved = [], []
-        for value in tags(row.get("vocabulary_tags")) + tags(row.get("verb_tags")) + tags(row.get("adjective_tags")) + tags(row.get("counter_tags")):
+        for value in sorted(lexical):
             item = self.resolve_vocab_tag(value)
             if item:
                 found.append(item)
             else:
                 unresolved.append(value)
-        found.extend(self.text_vocabulary(text))
         for value in tags(row.get("grammar_tags")):
             item = self.grammar_exact.get(value)
             if item:
@@ -204,13 +212,13 @@ class UsageClassifier:
             return None, sorted(set(unresolved))
         grammar_count = sum(item["kind"] == "grammar" for item in found)
         return {
-            "level": hardest["level"],
-            "difficulty": difficulty_for(hardest["percentile"], len(found), grammar_count, len(text)),
+            "level": row.get('original_jlpt_level') or row['jlpt_level'],
+            "difficulty": float(row.get('original_difficulty') or row.get('difficulty') or 50),
             "percentile": hardest["percentile"],
             "hardest": compact(hardest),
             "components": [compact(item) for item in found],
             "display_components": [compact(item) for item in found if item["kind"] == "vocabulary"],
-            "confidence": "review" if unresolved else "ranked",
+            "confidence": "frequency_only",
         }, sorted(set(unresolved))
 
 

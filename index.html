@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=69">
   <title>Japoteacher</title>
+<link rel="stylesheet" href="src/knowledge-map.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -39,7 +40,7 @@
       <section class="view active" id="view-hoy" aria-labelledby="viewTitle">
         <div class="intro plans-intro"><div><p>Tu estudio de hoy, plan a plan.</p></div><button class="primary" id="addStudyPlan" type="button" data-plan-add>+ Añadir plan</button></div>
         <div class="plan-directions" role="tablist" aria-label="Dirección de los planes"><button type="button" role="tab" class="active" aria-selected="true" data-plan-direction="ja_es">Japonés → Español</button><button type="button" role="tab" aria-selected="false" data-plan-direction="es_ja">Español → Japonés</button></div>
-        <div class="study-plan-list" id="directionCards"></div>
+        <button class="secondary" type="button" data-open-map="">◎ Ver mapa de mi japonés</button><div class="study-plan-list" id="directionCards"></div>
         <section class="panel" id="preservedPlanWork" hidden></section>
         <div class="plan-day-actions"><button class="secondary" id="regenerateSelectionButton" type="button">↻ Recalcular pendientes</button><button class="secondary" id="extraStudyButton" hidden>Estudiar más</button><button class="primary" id="continueButton" hidden>Comenzar sesión</button></div>
         <p id="selectionStatus" class="selection-status" role="status"></p>
@@ -176,7 +177,19 @@
         </div>
       </section>
 
-      <section class="view" id="view-progreso" aria-labelledby="progressHeading">
+      <section class="view" id="view-mapa" aria-label="Mapa de tu japonés">
+<p class="section-kicker">Tu conocimiento, conectado</p><p class="map-intro">Explora lo que has trabajado y descubre un siguiente paso. Cada conexión se apoya en las frases de tu banco.</p>
+<div class="map-filters">
+<label>Plan<select id="mapPlan"><option value="all">Todo mi banco</option></select></label>
+<label>Dirección<select id="mapDirection"><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label>
+<label>Nivel de las frases<select id="mapLevel"><option value="all">Todos</option><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label>
+<label>Tipo<select id="mapType"><option value="all">Todos</option><option value="v">Vocabulario</option><option value="k">Kanji</option><option value="g">Gramática</option></select></label>
+<label>Estado<select id="mapState"><option value="all">Todos</option><option value="new">Sin estudiar</option><option value="learning">Aprendiendo</option><option value="solid">Consolidado en contexto</option><option value="reinforce">Frases con fallos</option><option value="due">Repaso pendiente</option></select></label>
+<label>Buscar concepto<input id="mapSearch" type="search" placeholder="食べる, 食, permiso…"></label>
+</div><button type="button" class="secondary" id="mapRefresh">Actualizar progreso</button><p id="mapStatus" role="status"></p><div id="mapSummary" class="map-summary"></div>
+<div class="map-layout"><div><div class="map-canvas"><svg id="mapGraph" viewBox="0 0 780 400" aria-label="Mapa interactivo; también disponible en la lista de conceptos" role="group"></svg><div class="map-controls"><button type="button" id="mapZoomIn" aria-label="Acercar">+</button><button type="button" id="mapZoomOut" aria-label="Alejar">−</button><button type="button" id="mapReset">Centrar</button><button type="button" id="mapPrev">Anterior</button><button type="button" id="mapNext">Siguiente</button></div><p class="map-legend"><span>○ Sin estudiar</span><span>● Aprendiendo</span><span class="green">● Consolidado</span><span class="red">● Frases con fallos</span><span class="purple">● Repaso</span></p></div><p class="map-note">Arrastra para mover. Las líneas unen palabras con sus kanji; al seleccionar se añaden coincidencias en frases. Las bases gramaticales son recomendaciones, no bloqueos.</p><div id="mapNodeList" class="map-node-list" aria-label="Lista de conceptos"></div><div id="mapRecommendations" class="map-recommendations"></div></div><aside id="mapDetail" class="map-detail" tabindex="-1" aria-label="Detalle del concepto"></aside></div>
+<p class="map-note">Nivel JLPT pedagógico y frecuencia son medidas distintas. El mapa no equivale a una certificación de nivel. Los conceptos aún no analizados no se consideran aprendidos.</p></section>
+<section class="view" id="view-progreso" aria-labelledby="progressHeading">
         <div class="intro"><div><h2 id="progressHeading">Evidencia de progreso</h2><p>Estimaciones basadas en tu práctica; no equivalen a una certificación JLPT.</p></div><div class="progress-actions"><label>Analizar dirección<select id="progressDirection"><option value="all">Comparar ambas</option><option value="ja_es">Japonés → Español</option><option value="es_ja">Español → Japonés</option></select></label><button class="secondary" id="exportAttemptsButton">Exportar intentos CSV</button></div></div>
         <div class="progress-subnav" role="tablist" aria-label="Secciones de progreso"><button class="active" type="button" role="tab" aria-selected="true" data-progress-tab="resumen">Resumen</button><button type="button" role="tab" aria-selected="false" data-progress-tab="informes">Informes</button><button type="button" role="tab" aria-selected="false" data-progress-tab="ruta">Ruta JLPT</button><button type="button" role="tab" aria-selected="false" data-progress-tab="tags">Aspectos a reforzar</button><button type="button" role="tab" aria-selected="false" data-progress-tab="historial">Historial</button></div>
         <section class="panel wide ranked-panel" id="rankedProgressPanel" data-progress-section="resumen"></section>
@@ -252,12 +265,13 @@
   <script defer src="src/feedback-usage-data.js?v=1"></script>
   <script defer src="src/feedback-vocabulary.js?v=2"></script>
   <script defer src="src/mnemonic.js?v=3"></script>
-  <script defer src="src/ui.js?v=50"></script>
+  <script defer src="src/ui.js?v=map1-50"></script>
   <script defer src="src/history-ui.js?v=38"></script>
-  <script defer src="src/study-collections.js?v=2"></script>
+  <script defer src="src/study-collections.js?v=map1-2"></script>
   <script defer src="src/daily-lesson.js?v=2"></script>
-  <script defer src="src/study-plans-ui.js?v=2"></script>
-  <script defer src="app.js?v=105"></script>
+  <script defer src="src/study-plans-ui.js?v=map1-2"></script>
+  <script defer src="src/knowledge-map.js?v=1"></script><script defer src="src/knowledge-map-ui.js?v=1"></script>
+<script defer src="app.js?v=106"></script>
   <script defer src="src/navigation-fix.js?v=5"></script>
   <script defer src="src/mobile-insets.js?v=1"></script>
   <script defer src="src/bank-status.js?v=28"></script>

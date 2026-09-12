@@ -8,6 +8,16 @@ MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
 class UsageClassificationTests(unittest.TestCase):
+    def test_morphology_rejects_clock_substring_and_unrelated_tags(self):
+        classifier=MODULE.UsageClassifier(Path.home()/'Downloads/japanese_usage_progress_v2_csv.zip')
+        profile,_=classifier.classify({'direction':'ja_es','source_text':'毎朝七時に起きます。','jlpt_level':'N5','difficulty':18,'vocabulary_tags':'買う|時に|起きる'})
+        terms={c['t'] for c in profile['display_components']}
+        self.assertNotIn('買う',terms)
+        self.assertNotIn('時に',terms)
+        self.assertIn('起きる',terms)
+        self.assertEqual(profile['level'],'N5')
+        self.assertEqual(profile['difficulty'],18)
+
     def test_percentile_bands(self):
         self.assertEqual(MODULE.level_for(0), "N5")
         self.assertEqual(MODULE.level_for(9.99), "N5")

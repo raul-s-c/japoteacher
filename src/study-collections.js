@@ -1,5 +1,5 @@
 (function(){
-  const catalog=[{id:'sakamoto',name:'Sakamoto',version:'20260907-1',url:'data/collections/sakamoto.json',available:true}];
+  const catalog=[{id:'sakamoto',name:'Sakamoto',version:'20260912-concepts-1',url:'data/collections/sakamoto.json',available:true}];
   const normalized=text=>String(text||'').normalize('NFKC').replace(/[\s。、！？!?.,「」『』]/g,'');
   async function load(){
     for(const entry of catalog){

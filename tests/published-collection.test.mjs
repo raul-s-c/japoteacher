@@ -32,7 +32,7 @@ test('reviewed tags prevent accidental vocabulary matches across token boundarie
   // of finding e.g. 時に (sometimes) inside a clock time followed by に.
   for(const e of data.exercises){
     for(const c of e.usage_components.filter(c=>c.k==='v'))assert(e.vocabulary_tags.some(tag=>tag===c.t||tag.startsWith(c.t)),`${e.exercise_id}: ${c.t}`);
-    assert.equal(e.usage_percentile,Math.max(...e.usage_components.map(c=>c.p)));
-    const p=e.usage_percentile;assert.equal(e.jlpt_level,p<10?'N5':p<30?'N4':p<60?'N3':p<90?'N2':'N1');
+    assert.equal(e.usage_percentile,e.usage_components.length?Math.max(...e.usage_components.map(c=>c.p)):null);
+    assert.equal(e.usage_classification_confidence,'frequency_only');assert(/^N[1-5]$/.test(e.jlpt_level)); // Pedagogical level is independent of frequency.
   }
 });

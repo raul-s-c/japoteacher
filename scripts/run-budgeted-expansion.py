@@ -32,7 +32,8 @@ def request(payload, key, retries=1):
         charged = ledger['used'] + sum(ledger['reservations'].values())
         if ledger.get('closed') or OUT.with_suffix('.stop').exists() or charged + maximum > ledger['limit']:
             raise BudgetStop('Insufficient budget for the next fully reserved request')
-        rid = str(time.time_ns())
+        # Windows clocks may return the same time_ns for consecutive reservations.
+        rid = __import__('uuid').uuid4().hex
         ledger['reservations'][rid] = maximum
         save(ledger)
     result = subprocess.run(['node', str(ROOT/'scripts/request-collection-editorial.cjs')], input=body, text=True, encoding='utf-8', capture_output=True, timeout=195)
