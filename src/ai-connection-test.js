@@ -11,10 +11,9 @@
   async function testConnection(){
     const form=$('#settingsForm'),button=$('#testAiButton');
     if(form.aiProvider.value!=='openai'){status('Selecciona OpenAI antes de probar la conexión.');return}
-    form.aiProvider.dispatchEvent(new Event('change',{bubbles:true}));
     button.disabled=true;button.textContent='Probando…';status('Contactando con el Worker y OpenAI…','testing');
     const payload={schema_version:'1.0',prompt_version:'1.0',exercise:{exercise_id:'CONNECTION-TEST',direction:'ja_es',source_text:'これは本です。',reference_translation:'Esto es un libro.',accepted_alternatives:[],jlpt_level:'N5',grammar_tags:['copula_desu'],vocabulary_tags:['本'],register:'cortés'},attempt:{user_answer:'Esto es un libro.'},student_context:{target_level:'N5',explanation_language:'es'}};
-    try{const result=await new OpenAiEvaluator({timeoutMs:45000,retries:0}).evaluateAttempt(payload);status(`Conexión correcta: OpenAI respondió con ${result.overall_score}/100.`,'ready');}
+    try{const record=await JapoDB.get('settings','app');const result=await new OpenAiEvaluator({endpoint:record?.value?.aiEndpoint,timeoutMs:60000,retries:0}).evaluateAttempt(payload);status(`Conexión correcta: OpenAI respondió con ${result.overall_score}/100.`,'ready');}
     catch(error){status(`No se pudo conectar: ${error.message}`);}
     finally{button.disabled=false;button.textContent='Probar conexión con OpenAI'}
   }

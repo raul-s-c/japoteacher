@@ -9,6 +9,7 @@
       this.timeoutMs=timeoutMs;
       this.retries=retries;
       this.lastRawResponse='';
+      this.requestId='';
     }
 
     async workerAvailable(){
@@ -18,7 +19,8 @@
           cache:'no-store',
           signal:controller.signal,
         });
-        return response.ok;
+        if(!response.ok)return false;
+        return (await response.json()).ok===true;
       }catch{
         return false;
       }finally{
@@ -30,6 +32,7 @@
       const button=document.querySelector('#evaluateButton'),started=performance.now();
       if(button)button.textContent='Validando sesión…';
       let lastError;
+      this.requestId=crypto.randomUUID();
 
       for(let attempt=0;attempt<=this.retries;attempt++){
         const accessToken=await window.CloudSync?.getAccessToken();
@@ -37,7 +40,9 @@
         const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),this.timeoutMs);
         try{
           if(button)button.textContent=attempt?`Reconectando (${attempt+1}/${this.retries+1})…`:'Analizando con IA…';
-          const response=await fetch(this.endpoint,{
+          const requestUrl=new URL(this.endpoint);
+          requestUrl.searchParams.set('request_id',this.requestId);
+          const response=await fetch(requestUrl.href,{
             method:'POST',
             headers:{
               'Content-Type':'application/json',
@@ -58,7 +63,9 @@
             throw error;
           }
           const evaluation=data.evaluation||data;
-          if(!SchemaValidation.validEvaluation(evaluation))throw Object.assign(new Error('OpenAI devolvió una evaluación que no cumple el esquema.'),{retryable:true});
+          let schemaValid=false;
+          try{schemaValid=SchemaValidation.validEvaluation(evaluation)}catch{throw Object.assign(new Error('La app no pudo interpretar la evaluación recibida.'),{retryable:false})}
+          if(!schemaValid)throw Object.assign(new Error('OpenAI devolvió una evaluación que no cumple el esquema.'),{retryable:true});
           if(button)button.textContent='Guardando progreso…';
           return {...evaluation,correction_provider:'openai',correction_model:'gpt-5.4-mini',evaluation_latency_ms:Math.round(performance.now()-started),raw_ai_response_json:this.lastRawResponse};
         }catch(error){
@@ -75,9 +82,10 @@
 
       if(lastError instanceof TypeError||/failed to fetch|networkerror|load failed/i.test(lastError?.message||'')){
         const available=await this.workerAvailable();
-        throw new Error(available
-          ?'La conexión se interrumpió durante la corrección. Tu respuesta sigue guardada como borrador; pulsa Reintentar corrección.'
-          :'El móvil no puede conectar ahora con el servicio de corrección. Comprueba la conexión y vuelve a intentarlo; tu respuesta sigue guardada.');
+        let host='dirección configurada';try{host=new URL(this.endpoint).hostname}catch{}
+        throw new Error((available
+          ?'El servicio responde, pero la petición de corrección se interrumpió o fue bloqueada.'
+          :`La app no ha podido obtener respuesta de ${host}. Esto no demuestra que el móvil esté sin internet.`)+` Tu respuesta sigue guardada. Referencia: ${this.requestId}.`);
       }
       throw lastError;
     }

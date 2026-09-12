@@ -121,3 +121,11 @@
 - 146 pruebas Node y 15 Python correctas; QA de mapa y planes a 390/1280 px, API simulada, consola sin errores. Browser plugin not available: Playwright local. Inspección visual y corrección de anchura mínima móvil.
 - Prueba concurrente detectó colisión de time_ns en Windows para reservas editoriales: UUID evita sobrescribir reservas; regresión con reloj constante. Sin consumo de API durante este trabajo.
 - Caché v164 y versiones de banco/colección actualizadas. El mapa cubre el banco presente y 14 patrones gramaticales; no representa todo el currículo JLPT. Reproducción en docs/KNOWLEDGE_MAP.md.
+
+
+## 2026-09-12 — Diagnóstico de fallo de corrección móvil
+
+- Verificados health, preflight y POST sin autenticación del servicio público; este último rechaza antes de OpenAI. Tail confirma llegada de la petición de diagnóstico. No se ha observado un reintento del móvil durante la ventana de comprobación: causa específica aún sin confirmar.
+- La prueba de ajustes usaba el endpoint fijo mientras la corrección usaba el guardado: ahora comparten endpoint. Health requiere JSON ok=true. Referencia UUID en query de cada petición para correlación sin añadir cabeceras CORS ni registrar credenciales.
+- Error de validación local ya no se confunde con red. Se elimina la atribución injustificada a internet del móvil. Error persistente bajo formulario, respuesta/borrador conservados y reintento disponible.
+- 150 pruebas Node correctas. QA móvil con fallo simulado confirma mensaje visible, texto conservado y botón disponible; consola sin errores. Browser plugin not available: Playwright local. Sin consumo OpenAI en estas pruebas. Caché v165.
