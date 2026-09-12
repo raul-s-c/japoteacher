@@ -1,5 +1,13 @@
 # Japoteacher
 
+## 📲 Descargar para Android
+
+### [⬇ Descargar la última APK](https://raul-s-c.github.io/japoteacher/download.html)
+
+El enlace muestra siempre la versión vigente y su descarga. Para actualizar, instala la APK encima de la anterior **sin desinstalar la app**.
+
+[Usar la versión web](https://raul-s-c.github.io/japoteacher/) · [Ver archivos de versiones anteriores](releases/android/)
+
 PWA estática para aprender traduciendo frases en dos direcciones independientes:
 
 - japonés → español (`ja_es`);
