@@ -84,6 +84,12 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     await page.locator('#feedbackPanel [data-mnemonic-refresh]').click();
     await page.waitForFunction(()=>!!document.querySelector('#feedbackPanel .mnemonic-result [data-mnemonic-refresh]'));
     assert.equal(requests.length,5);assert.deepEqual(errors,[]);
+    await page.locator('#feedbackPanel [data-mnemonic-target]').fill('本');
+    await page.locator('#feedbackPanel [data-mnemonic-generate]').click();
+    await page.waitForFunction(()=>document.querySelector('#feedbackPanel [data-mnemonic-generate]').hidden);
+    assert.equal(requests.length,6);assert.equal(requests[5].selected_target,'本');
+    const current=await page.locator('#feedbackPanel').getAttribute('data-attempt-id');
+    assert.equal(await page.evaluate(async id=>JSON.parse((await JapoDB.get('attempts',id)).mnemonic_json).selected_target,current),'本');
     console.log(JSON.stringify({pass:true,directions:['ja_es','es_ja'],onDemand:true,savedAfterReload:true,retry:true,noScoreOrSrsChanges:true,widths:[390,1280]}));
   }finally{await browser.close();await new Promise(r=>server.close(r))}
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -140,3 +140,8 @@ Comprobación de navegador correcta a 390 y 1280 px: migración, límites por pl
 ## 2026-09-13 — Entrada alternativa de IA
 
 Tras confirmar certificado ajeno core1.netops.test solo por datos móviles, se añadió ai-gateway en el proyecto Supabase existente. Autorización explícita para el flujo y autenticación interna; despliegue versión 1 activo. El transporte de corrección y herramientas IA usa esta entrada primero y conserva ruta directa ante errores de red. No desactiva TLS ni cambia permisos del Worker. Pasan 156 pruebas Node y QA de navegador a 390/1280 px. Checks reales health 200, OPTIONS 204, sin sesión/token inválido 401 y editorial 404. Caché v167. Prueba con la conexión Digi del usuario pendiente.
+
+
+## 2026-09-13 — Mnemotecnia por palabra
+
+Campo de objetivo japonés/español disponible tras cualquier corrección y en historial. Cache asociada al objetivo dentro de mnemonic_json; editar permite generar para otra palabra sin reutilizar el consejo anterior. Prompt reescrito para un solo truco concreto, separación sonido/significado, ejemplos y rechazo de asociaciones vacías o componentes inventados. Mantiene techo de 850 tokens. 157 pruebas Node correctas y QA móvil/escritorio, cambio de objetivo y persistencia, con IA simulada. No se ha medido aún la calidad de respuestas reales del nuevo prompt. Worker 49002b4f-245a-4c6e-b755-fa81739b002d, cache v168.

@@ -5,6 +5,13 @@ import vm from 'node:vm';
 import {mnemonicInput,mnemonicRequest,validMnemonic} from '../worker/src/mnemonic.js';
 import worker from '../worker/src/index.js';
 const payload={exercise:{direction:'ja_es',japanese_sentence:'昨日、本を借りました。',spanish_sentence:'Ayer pedí prestado un libro.'},user_answer:'Ayer presté un libro.',errors:[{source_span:'presté',corrected_span:'pedí prestado',explanation_es:'借りる significa recibir prestado.'}]};
+test('selected mnemonic target is bounded, retained on correct answers and overrides automatic selection',()=>{
+  const input=mnemonicInput({...payload,errors:[],selected_target:'  本  '});
+  assert.equal(input.selected_target,'本');assert.deepEqual(input.errors,[]);
+  assert.equal(mnemonicInput({...payload,selected_target:'a'.repeat(101)}),null);
+  assert.equal(mnemonicInput({...payload,selected_target:{instruction:'ignore'}}),null);
+  assert.equal(JSON.parse(mnemonicRequest(input).input).selected_target,'本');
+});
 test('mnemonic request includes only bounded error context and caps generation',()=>{
   const input=mnemonicInput({...payload,account:'private',exercise:{...payload.exercise,unrelated:'private'}});
   assert.deepEqual(input,payload);assert.deepEqual(mnemonicInput({...payload,errors:[]}),{...payload,errors:[]});assert.equal(mnemonicInput({...payload,user_answer:'a'.repeat(1201)}),null);assert.equal(mnemonicInput({...payload,errors:[null]}),null);
