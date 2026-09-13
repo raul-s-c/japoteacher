@@ -1,0 +1,680 @@
+[
+  {
+    "level": "N5",
+    "slot": 1717,
+    "jlpt_level": "N3",
+    "difficulty": 25
+  },
+  {
+    "level": "N5",
+    "slot": 1720,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1725,
+    "jlpt_level": "N2",
+    "difficulty": 25
+  },
+  {
+    "level": "N5",
+    "slot": 1726,
+    "jlpt_level": "N4",
+    "difficulty": 40
+  },
+  {
+    "level": "N5",
+    "slot": 1731,
+    "jlpt_level": "N3",
+    "difficulty": 25
+  },
+  {
+    "level": "N4",
+    "slot": 1795,
+    "jlpt_level": "N3",
+    "difficulty": 50
+  },
+  {
+    "level": "N4",
+    "slot": 1800,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1733,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1735,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1737,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1738,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1740,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1742,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1746,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1811,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1813,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1814,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1815,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1816,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1749,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1755,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1818,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1819,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1820,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1822,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1823,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1824,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1758,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1826,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1827,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1828,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1764,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1831,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1832,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1833,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1835,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1836,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1837,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1838,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1839,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1840,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1841,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1842,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1843,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1845,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1846,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1847,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1849,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1773,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1776,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1850,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1853,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1783,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1855,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1856,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1857,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1858,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1861,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1862,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1863,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1864,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1865,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1785,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1787,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1788,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1867,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1868,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1869,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1870,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1872,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1873,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1792,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1796,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1874,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1876,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1877,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1880,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1805,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1806,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1882,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1883,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1884,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1885,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1886,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1887,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1888,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1890,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1892,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1895,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1896,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1897,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1898,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1899,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1900,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1901,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N5",
+    "slot": 1818,
+    "jlpt_level": "N4",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1902,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1903,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1904,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1905,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1906,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1908,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1909,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1910,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1911,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1912,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1913,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1915,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1917,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1918,
+    "jlpt_level": "N3",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1919,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1920,
+    "jlpt_level": "N1",
+    "difficulty": 35
+  },
+  {
+    "level": "N4",
+    "slot": 1921,
+    "jlpt_level": "N2",
+    "difficulty": 35
+  }
+]

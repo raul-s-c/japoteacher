@@ -1,0 +1,132 @@
+[
+  {
+    "level": "N4",
+    "slot": 1807,
+    "reason": "El contraste todavía se puede contar esa historia a la persona implicada resulta forzado sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1809,
+    "reason": "La traducción no refleja la insistencia o invitación enfática de ぜひ, objetivo de la frase."
+  },
+  {
+    "level": "N5",
+    "slot": 1741,
+    "reason": "受付 aquí no identifica una recepción como evento; la traducción aislada resulta ambigua."
+  },
+  {
+    "level": "N5",
+    "slot": 1745,
+    "reason": "Interjección y corrección sin referente; aporta poco contexto de aprendizaje."
+  },
+  {
+    "level": "N5",
+    "slot": 1747,
+    "reason": "Generalización cultural inexacta: en Japón el desayuno no consiste necesariamente en arroz."
+  },
+  {
+    "level": "N5",
+    "slot": 1748,
+    "reason": "Comprar ropa aún etiquetada es normal; el arrepentimiento queda forzado sin más contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1812,
+    "reason": "商店街 es una zona comercial; asociación de comercios añade una organización no explícita."
+  },
+  {
+    "level": "N4",
+    "slot": 1821,
+    "reason": "録画 implica grabar vídeo; grabar sin contexto no conserva esa distinción frente a grabar audio."
+  },
+  {
+    "level": "N4",
+    "slot": 1829,
+    "reason": "電車はここで切れます no es una forma natural de indicar que el tren termina su recorrido aquí."
+  },
+  {
+    "level": "N4",
+    "slot": 1830,
+    "reason": "Que el camino lleve al puerto no justifica por sí solo necesitar un mapa; relación causal forzada."
+  },
+  {
+    "level": "N5",
+    "slot": 1769,
+    "reason": "出ます sin contexto no determina trabajar; puede significar salir o participar."
+  },
+  {
+    "level": "N5",
+    "slot": 1770,
+    "reason": "Vivir al lado de una casa pierde la referencia a la casa del hablante y vuelve incoherente la explicación."
+  },
+  {
+    "level": "N4",
+    "slot": 1844,
+    "reason": "La traducción deja el nombre del pescado en inglés (yellowtail) y fuerza la repetición de ぶり."
+  },
+  {
+    "level": "N4",
+    "slot": 1852,
+    "reason": "先輩 designa a alguien con más antigüedad o experiencia, no necesariamente un superior jerárquico."
+  },
+  {
+    "level": "N4",
+    "slot": 1859,
+    "reason": "Contraste entre campo de batalla y comedor tranquilo sin contexto que lo justifique."
+  },
+  {
+    "level": "N4",
+    "slot": 1860,
+    "reason": "El presentimiento no tiene referente ni contenido; falta contexto para entender la decisión de cambiar de tienda."
+  },
+  {
+    "level": "N4",
+    "slot": 1866,
+    "reason": "甘い物の抑制 resulta poco natural: se controla el consumo de dulces, no los dulces mismos."
+  },
+  {
+    "level": "N5",
+    "slot": 1800,
+    "reason": "La tranquilidad de la biblioteca no causa la incapacidad para estudiar en casa; nexo causal incoherente."
+  },
+  {
+    "level": "N4",
+    "slot": 1875,
+    "reason": "Pregunta con 別に poco natural sin contexto y traducción española forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 1878,
+    "reason": "Falta explicar qué materiales exige el viaje; 素材 resulta forzado en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1881,
+    "reason": "Todavía no termina no conserva claramente el matiz de que aún queda bastante de まだまだ."
+  },
+  {
+    "level": "N4",
+    "slot": 1889,
+    "reason": "検出されませんでした no especifica que no se detectara nada; puede referirse a un elemento concreto omitido."
+  },
+  {
+    "level": "N4",
+    "slot": 1891,
+    "reason": "料理のさま es poco natural para el aspecto de un plato y puede aludir al proceso de cocinar."
+  },
+  {
+    "level": "N4",
+    "slot": 1907,
+    "reason": "Contraste incoherente entre una hipótesis y haberse olvidado de echar sal, sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1914,
+    "reason": "救済 resulta forzado para el alivio emocional producido por unas palabras; sería más natural 救い."
+  },
+  {
+    "level": "N4",
+    "slot": 1916,
+    "reason": "空気の品質 es una colocación poco natural para aire de un bosque; corresponde 空気の質."
+  }
+]

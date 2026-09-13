@@ -129,3 +129,9 @@
 - La prueba de ajustes usaba el endpoint fijo mientras la corrección usaba el guardado: ahora comparten endpoint. Health requiere JSON ok=true. Referencia UUID en query de cada petición para correlación sin añadir cabeceras CORS ni registrar credenciales.
 - Error de validación local ya no se confunde con red. Se elimina la atribución injustificada a internet del móvil. Error persistente bajo formulario, respuesta/borrador conservados y reintento disponible.
 - 150 pruebas Node correctas. QA móvil con fallo simulado confirma mensaje visible, texto conservado y botón disponible; consola sin errores. Browser plugin not available: Playwright local. Sin consumo OpenAI en estas pruebas. Caché v165.
+
+
+## 2026-09-13 — Ampliación editorial 1,5 M
+
+Consumo cerrado: 1.409.820 tokens / 510 llamadas / sin reservas pendientes. 240 candidatas, 203 frases publicadas (406 ejercicios); niveles revisados 73 N5, 45 N4, 23 N3, 48 N2, 14 N1. Banco 7.434 filas; se conservan las 7.028 anteriores y sus lecturas. Mapa actualizado a 4.112 conceptos / 7.542 ejercicios. Publicador admite revisiones pedagógicas fechadas; constructor del mapa permite versión e informe de auditoría separados. Caché v166. Pasan 150 pruebas Node y 15 Python, además del verificador de preservación y furigana.
+Comprobación de navegador correcta a 390 y 1280 px: migración, límites por plan, cambio de frase, filtros/fichas/zoom del mapa e inicio de práctica; captura móvil revisada.

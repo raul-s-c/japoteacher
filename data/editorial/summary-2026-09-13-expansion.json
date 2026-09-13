@@ -1,0 +1,344 @@
+{
+  "tokens_confirmed": 1409820,
+  "tokens_conservative": 1409820,
+  "limit": 1500000,
+  "new_pairs": 203,
+  "prior_day_confirmed": null,
+  "prior_day_conservative": null,
+  "previous_rows_preserved": 7028,
+  "classification": {
+    "version": "morphology_usage_v1",
+    "rows": 406,
+    "classified": 406,
+    "levels": {
+      "N5": 146,
+      "N4": 90,
+      "N3": 46,
+      "N2": 96,
+      "N1": 28
+    },
+    "changes": {
+      "N5->N5": 146,
+      "N5->N3": 6,
+      "N5->N4": 42,
+      "N5->N2": 6,
+      "N4->N4": 48,
+      "N4->N3": 40,
+      "N4->N2": 90,
+      "N4->N1": 28
+    },
+    "unresolved_unique": 21,
+    "unresolved_top": [
+      [
+        "ある",
+        42
+      ],
+      [
+        "ない",
+        6
+      ],
+      [
+        "スマホ",
+        6
+      ],
+      [
+        "アプリ",
+        4
+      ],
+      [
+        "毎晩",
+        4
+      ],
+      [
+        "でも",
+        2
+      ],
+      [
+        "かたい",
+        2
+      ],
+      [
+        "いる",
+        2
+      ],
+      [
+        "あした",
+        2
+      ],
+      [
+        "川べり",
+        2
+      ],
+      [
+        "おみやげ",
+        2
+      ],
+      [
+        "にぎやか",
+        2
+      ],
+      [
+        "かばん",
+        2
+      ],
+      [
+        "さびしい",
+        2
+      ],
+      [
+        "持ち込み",
+        2
+      ],
+      [
+        "また",
+        2
+      ],
+      [
+        "片づける",
+        2
+      ],
+      [
+        "守れる",
+        2
+      ],
+      [
+        "かさ",
+        2
+      ],
+      [
+        "品ぞろえ",
+        2
+      ],
+      [
+        "移り変わり",
+        2
+      ]
+    ],
+    "difficulty_median": 35.0,
+    "pedagogical_review_exercises": 212
+  },
+  "excluded": [
+    {
+      "level": "N5",
+      "slot": 1741,
+      "japanese": "あぁ、受付は終わった。",
+      "reason": "受付 aquí no identifica una recepción como evento; la traducción aislada resulta ambigua."
+    },
+    {
+      "level": "N5",
+      "slot": 1745,
+      "japanese": "ふう、ちがうよ。",
+      "reason": "Interjección y corrección sin referente; aporta poco contexto de aprendizaje."
+    },
+    {
+      "level": "N5",
+      "slot": 1747,
+      "japanese": "日本における朝ごはんはご飯です。",
+      "reason": "Generalización cultural inexacta: en Japón el desayuno no consiste necesariamente en arroz."
+    },
+    {
+      "level": "N5",
+      "slot": 1748,
+      "japanese": "タグが付いたままの服を買ってしまった。",
+      "reason": "Comprar ropa aún etiquetada es normal; el arrepentimiento queda forzado sin más contexto."
+    },
+    {
+      "level": "N5",
+      "slot": 1769,
+      "japanese": "だれが今日出ますか。",
+      "reason": "出ます sin contexto no determina trabajar; puede significar salir o participar."
+    },
+    {
+      "level": "N5",
+      "slot": 1770,
+      "japanese": "彼は家のとなりに住んでいるので、よく会います。",
+      "reason": "Vivir al lado de una casa pierde la referencia a la casa del hablante y vuelve incoherente la explicación."
+    },
+    {
+      "level": "N5",
+      "slot": 1800,
+      "japanese": "図書館では静かなので、家ではあまり勉強できません。",
+      "reason": "La tranquilidad de la biblioteca no causa la incapacidad para estudiar en casa; nexo causal incoherente."
+    },
+    {
+      "level": "N5",
+      "slot": 1819,
+      "japanese": "きのう友だちと歌を歌った。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1791,
+      "japanese": "あっ、この区の区長ですか？",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1794,
+      "japanese": "警察が来るまで遺体のそばを離れませんでした。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1807,
+      "japanese": "その話は、まだ本人には言えます。",
+      "reason": "El contraste todavía se puede contar esa historia a la persona implicada resulta forzado sin contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1809,
+      "japanese": "ぜひ来てください。",
+      "reason": "La traducción no refleja la insistencia o invitación enfática de ぜひ, objetivo de la frase."
+    },
+    {
+      "level": "N4",
+      "slot": 1812,
+      "japanese": "このセールは商店街の主催ですが、雨でも客が多いです。",
+      "reason": "商店街 es una zona comercial; asociación de comercios añade una organización no explícita."
+    },
+    {
+      "level": "N4",
+      "slot": 1821,
+      "japanese": "録画はできますか。",
+      "reason": "録画 implica grabar vídeo; grabar sin contexto no conserva esa distinción frente a grabar audio."
+    },
+    {
+      "level": "N4",
+      "slot": 1825,
+      "japanese": "仕事のあと花火を見ます。",
+      "reason": "Slot 1825 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1829,
+      "japanese": "いいえ、この電車はここで切れます。",
+      "reason": "電車はここで切れます no es una forma natural de indicar que el tren termina su recorrido aquí."
+    },
+    {
+      "level": "N4",
+      "slot": 1830,
+      "japanese": "この道は港に至るので、地図が必要です。",
+      "reason": "Que el camino lleve al puerto no justifica por sí solo necesitar un mapa; relación causal forzada."
+    },
+    {
+      "level": "N4",
+      "slot": 1832,
+      "japanese": "工業について辞書で調べると、専門語が多くて大変です。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1836,
+      "japanese": "山の景色が大いに気に入ったので、晴れた日はまた来ます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1844,
+      "japanese": "今日は三年ぶりにぶりを買いました。",
+      "reason": "La traducción deja el nombre del pescado en inglés (yellowtail) y fuerza la repetición de ぶり."
+    },
+    {
+      "level": "N4",
+      "slot": 1850,
+      "japanese": "引っ越してもまだ実感がわきません。",
+      "reason": "Slot 1850 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1852,
+      "japanese": "先輩に職務の内容を教えてもらって、少し安心しました。",
+      "reason": "Slot 1852 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 1859,
+      "japanese": "ここは戦場ではなく、静かな食堂です。",
+      "reason": "Contraste entre campo de batalla y comedor tranquilo sin contexto que lo justifique."
+    },
+    {
+      "level": "N4",
+      "slot": 1860,
+      "japanese": "予感がしたので、その店では買わずに別の店へ行きました。",
+      "reason": "El presentimiento no tiene referente ni contenido; falta contexto para entender la decisión de cambiar de tienda."
+    },
+    {
+      "level": "N4",
+      "slot": 1866,
+      "japanese": "甘い物の抑制のため、夜はお菓子を買いません。",
+      "reason": "甘い物の抑制 resulta poco natural: se controla el consumo de dulces, no los dulces mismos."
+    },
+    {
+      "level": "N4",
+      "slot": 1867,
+      "japanese": "このゲームでは、防御も大切ですし、攻め方も考えます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1875,
+      "japanese": "別にお腹はすいていませんか。",
+      "reason": "Pregunta con 別に poco natural sin contexto y traducción española forzada."
+    },
+    {
+      "level": "N4",
+      "slot": 1878,
+      "japanese": "素材が足りないので、旅行の計画を変えました。",
+      "reason": "Falta explicar qué materiales exige el viaje; 素材 resulta forzado en este contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1881,
+      "japanese": "まだまだ終わりませんか。",
+      "reason": "Todavía no termina no conserva claramente el matiz de que aún queda bastante de まだまだ."
+    },
+    {
+      "level": "N4",
+      "slot": 1889,
+      "japanese": "検出されませんでした。",
+      "reason": "検出されませんでした no especifica que no se detectara nada; puede referirse a un elemento concreto omitido."
+    },
+    {
+      "level": "N4",
+      "slot": 1891,
+      "japanese": "料理のさまを写真に撮りました。",
+      "reason": "料理のさま es poco natural para el aspecto de un plato y puede aludir al proceso de cocinar."
+    },
+    {
+      "level": "N4",
+      "slot": 1892,
+      "japanese": "この店は実力のある店員が多く、安心して相談できます。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1905,
+      "japanese": "その服、個性が出ますか。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 1907,
+      "japanese": "それは仮説ではなく、塩の入れ忘れです。",
+      "reason": "Contraste incoherente entre una hipótesis y haberse olvidado de echar sal, sin contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 1914,
+      "japanese": "その言葉は彼女にとって大きな救済でした。",
+      "reason": "救済 resulta forzado para el alivio emocional producido por unas palabras; sería más natural 救い."
+    },
+    {
+      "level": "N4",
+      "slot": 1916,
+      "japanese": "この森の空気の品質は季節によってかなり変わります。",
+      "reason": "空気の品質 es una colocación poco natural para aire de un bosque; corresponde 空気の質."
+    },
+    {
+      "level": "N4",
+      "slot": 1919,
+      "japanese": "それは問題の一つの側面にすぎません。",
+      "reason": "Unplaceable or incomplete furigana"
+    }
+  ]
+}

@@ -140,6 +140,23 @@ def main():
             else:os.environ['JAPOTEACHER_USAGE_REFERENCE_ZIP']=original_env
         result=classifier.classify_bank(new_bank,pathlib.Path.home()/'Downloads/japanese_usage_progress_v2_csv.zip',write=True)
         with new_bank.open(encoding='utf-8-sig',newline='') as stream:new=list(csv.DictReader(stream))
+    # A generation queue label is not a verified pedagogical level. Apply only
+    # explicitly reviewed overrides to this run's new rows, never older rows.
+    level_review_path=ROOT/f'data/editorial/level-reviews-{day}.json'
+    if level_review_path.exists():
+        level_reviews=json.loads(level_review_path.read_text(encoding='utf-8'))
+        changed=0
+        for review in level_reviews:
+            if review['jlpt_level'] not in ['N5','N4','N3','N2','N1'] or not 0<=review['difficulty']<=100:raise SystemExit('Invalid pedagogical level review')
+            suffix=f"-{review['level']}-EDITORIAL-{int(review['slot']):04d}"
+            for row in new:
+                if row['exercise_id'].endswith(suffix):
+                    row['jlpt_level']=row['original_jlpt_level']=review['jlpt_level']
+                    row['difficulty']=row['original_difficulty']=str(review['difficulty']);changed+=1
+        result['levels']={level:sum(r['jlpt_level']==level for r in new) for level in ['N5','N4','N3','N2','N1']}
+        result['pedagogical_review_exercises']=changed
+        result['changes']=dict(__import__('collections').Counter(f"{r['exercise_id'].split('-')[1]}->{r['jlpt_level']}" for r in new))
+        result['difficulty_median']=__import__('statistics').median(float(r['difficulty']) for r in new)
     prefix='window.JAPOTEACHER_FURIGANA='
     furi_path=ROOT/'src/furigana-generated.js'
     furi=json.loads(furi_path.read_text(encoding='utf-8').strip()[len(prefix):-1])

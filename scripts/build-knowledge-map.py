@@ -3,7 +3,7 @@
 Frequency ranks are never JLPT levels. IDs, sentence text and learner records
 are untouched. Ambiguous dictionary readings and unsupported grammar are omitted.
 """
-import csv, hashlib, json, re, unicodedata
+import argparse, csv, hashlib, json, re, unicodedata
 from collections import Counter
 from pathlib import Path
 from janome.tokenizer import Tokenizer
@@ -58,11 +58,15 @@ def analyze(text):
     return sorted(set(words)),spans,grams
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--version',default='20260912-concepts-1')
+    parser.add_argument('--audit-path',default='data/knowledge-map-audit.json')
+    args=parser.parse_args()
     bank=ROOT/'data/exercises.full.csv'
     with bank.open(encoding='utf-8-sig',newline='') as f:
         reader=csv.DictReader(f);fields=reader.fieldnames;rows=list(reader)
     collection_path=ROOT/'data/collections/sakamoto.json';collection=json.loads(collection_path.read_text(encoding='utf-8'))
-    graph={'version':'20260912-concepts-1','nodes':{},'sentences':{},'prerequisites':[['g:'+p,'g:'+k] for k,_,_,_,ps in GRAMMAR for p in ps]}
+    graph={'version':args.version,'nodes':{},'sentences':{},'prerequisites':[['g:'+p,'g:'+k] for k,_,_,_,ps in GRAMMAR for p in ps]}
     audit=Counter(); cache={}
     for row in rows+collection['exercises']:
         text=ja(row); words,spans,grams=cache.setdefault(text,analyze(text)) if text not in cache else cache[text]
@@ -102,7 +106,7 @@ def main():
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(rows)
     collection_path.write_text(json.dumps(collection,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     audit.update(nodes=len(graph['nodes']),exercises=len(graph['sentences']))
-    (ROOT/'data/knowledge-map-audit.json').write_text(json.dumps(dict(audit),indent=2),encoding='utf-8')
+    (ROOT/args.audit_path).write_text(json.dumps(dict(audit),indent=2),encoding='utf-8')
     print(json.dumps(dict(audit)))
 
 if __name__=='__main__':main()

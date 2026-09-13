@@ -6,7 +6,7 @@ El mapa se abre desde Hoy o «Ver mapa» de un plan. Lee exclusivamente ejercici
 
 Dependencia de compilación: `python -m pip install -r scripts/requirements-knowledge-map.txt` (Janome 0.5.0, sin dependencia adicional en el navegador).
 
-Después de publicar nuevas frases, ejecutar `python scripts/build-knowledge-map.py`, revisar el diff de metadatos y regenerar las versiones de banco, colección, mapa y caché. El analizador conserva texto, IDs y traducciones. Los nuevos conceptos no indexados se omiten hasta regenerar; nunca se consideran dominados. `scripts/usage-classification.py` también requiere Janome y ya no escanea subcadenas de vocabulario ni convierte frecuencia en JLPT.
+Después de publicar nuevas frases, ejecutar `python scripts/build-knowledge-map.py --version AAAAMMDD-editorial --audit-path data/editorial/map-audit-AAAA-MM-DD.json`, revisar el diff de metadatos y regenerar las versiones de banco, colección, mapa y caché. El analizador conserva texto, IDs y traducciones. Los nuevos conceptos no indexados se omiten hasta regenerar; nunca se consideran dominados. `scripts/usage-classification.py` también requiere Janome y ya no escanea subcadenas de vocabulario ni convierte frecuencia en JLPT.
 
 El nivel pedagógico histórico se conserva/restaura cuando está disponible: es una estimación editorial. Sakamoto conserva su nivel existente. Las asociaciones son morfológicas, no una desambiguación semántica perfecta: homógrafos pueden compartir nodo; nombres propios y fragmentos no independientes se omiten. Los 14 patrones gramaticales tienen comprobación textual y de límites; las demás etiquetas antiguas no se incorporan automáticamente al mapa.
 

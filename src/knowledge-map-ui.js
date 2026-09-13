@@ -7,7 +7,7 @@
   async function load(){
     const current=++generation;$('#mapStatus').textContent='Preparando tu mapa…';
     try{
-      const [raw,exercises,attempts,progress,settings]=await Promise.all([data||fetch('data/knowledge-map.json?v=1').then(r=>{if(!r.ok)throw Error('No se pudo descargar el mapa.');return r.json()}),JapoDB.all('exercises'),JapoDB.all('attempts'),JapoDB.all('exercise_progress'),JapoDB.get('settings','app')]);
+      const [raw,exercises,attempts,progress,settings]=await Promise.all([data||fetch('data/knowledge-map.json?v=20260913-editorial-203').then(r=>{if(!r.ok)throw Error('No se pudo descargar el mapa.');return r.json()}),JapoDB.all('exercises'),JapoDB.all('attempts'),JapoDB.all('exercise_progress'),JapoDB.get('settings','app')]);
       if(current!==generation)return;data=raw;const profile=settings?.value?.profileId||'local-default',plans=await StudyPlans.all(profile),sessions=await JapoDB.all('daily_sessions'),today=SessionPlanner.localDate(),session=sessions.find(s=>s.profile_id===profile&&s.local_date===today&&s.session_id===profile+'::'+today);
       const previous=$('#mapPlan').value;$('#mapPlan').innerHTML='<option value="all">Todo mi banco</option>'+plans.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} · ${p.direction==='ja_es'?'JP → ES':'ES → JP'}</option>`).join('');if(plans.some(p=>p.id===previous))$('#mapPlan').value=previous;
       ctx={exercises,attempts,progress,profile,plans,session};draw();
