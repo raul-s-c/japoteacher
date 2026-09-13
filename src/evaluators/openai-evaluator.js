@@ -15,7 +15,7 @@
     async workerAvailable(){
       const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);
       try{
-        const response=await fetch(this.endpoint.replace(/\/evaluate$/,'/health'),{
+        const response=await (window.JapoAiTransport?.fetch||fetch)(this.endpoint.replace(/\/evaluate$/,'/health'),{
           cache:'no-store',
           signal:controller.signal,
         });
@@ -42,7 +42,7 @@
           if(button)button.textContent=attempt?`Reconectando (${attempt+1}/${this.retries+1})…`:'Analizando con IA…';
           const requestUrl=new URL(this.endpoint);
           requestUrl.searchParams.set('request_id',this.requestId);
-          const response=await fetch(requestUrl.href,{
+          const response=await (window.JapoAiTransport?.fetch||fetch)(requestUrl.href,{
             method:'POST',
             headers:{
               'Content-Type':'application/json',

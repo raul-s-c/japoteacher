@@ -39,7 +39,7 @@
   async function callTutor(body){
     const [settings,token]=await Promise.all([JapoDB.get('settings','app'),window.CloudSync?.getAccessToken()]);
     if(!token)throw new Error('Inicia sesión para usar el Tutor IA.');
-    const response=await fetch(endpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify(body)});
+    const response=await (window.JapoAiTransport?.fetch||fetch)(endpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify(body)});
     const data=await response.json();
     if(!response.ok)throw new Error(data.error||`Error HTTP ${response.status}`);
     return data;

@@ -135,3 +135,8 @@
 
 Consumo cerrado: 1.409.820 tokens / 510 llamadas / sin reservas pendientes. 240 candidatas, 203 frases publicadas (406 ejercicios); niveles revisados 73 N5, 45 N4, 23 N3, 48 N2, 14 N1. Banco 7.434 filas; se conservan las 7.028 anteriores y sus lecturas. Mapa actualizado a 4.112 conceptos / 7.542 ejercicios. Publicador admite revisiones pedagógicas fechadas; constructor del mapa permite versión e informe de auditoría separados. Caché v166. Pasan 150 pruebas Node y 15 Python, además del verificador de preservación y furigana.
 Comprobación de navegador correcta a 390 y 1280 px: migración, límites por plan, cambio de frase, filtros/fichas/zoom del mapa e inicio de práctica; captura móvil revisada.
+
+
+## 2026-09-13 — Entrada alternativa de IA
+
+Tras confirmar certificado ajeno core1.netops.test solo por datos móviles, se añadió ai-gateway en el proyecto Supabase existente. Autorización explícita para el flujo y autenticación interna; despliegue versión 1 activo. El transporte de corrección y herramientas IA usa esta entrada primero y conserva ruta directa ante errores de red. No desactiva TLS ni cambia permisos del Worker. Pasan 156 pruebas Node y QA de navegador a 390/1280 px. Checks reales health 200, OPTIONS 204, sin sesión/token inválido 401 y editorial 404. Caché v167. Prueba con la conexión Digi del usuario pendiente.

@@ -204,7 +204,7 @@
     try{
       const [settings,token]=await Promise.all([JapoDB.get('settings','app'),window.CloudSync?.getAccessToken()]);
       if(!token)throw new Error('Inicia sesión para corregir la respuesta.');
-      const response=await fetch(answerEndpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify({title:state.news?.japanese_title||'',article:state.news?.japanese_article||'',question,student_answer:studentAnswer})});
+      const response=await (window.JapoAiTransport?.fetch||fetch)(answerEndpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify({title:state.news?.japanese_title||'',article:state.news?.japanese_article||'',question,student_answer:studentAnswer})});
       const data=await response.json();
       if(!response.ok)throw new Error(data.error||`Error HTTP ${response.status}`);
       feedback.innerHTML=correctionHtml(data.correction||{});
@@ -314,7 +314,7 @@
     try{
       const [settings,token]=await Promise.all([JapoDB.get('settings','app'),window.CloudSync?.getAccessToken()]);
       if(!token)throw new Error('Inicia sesión para generar la noticia del día.');
-      const response=await fetch(endpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify({topic,jlpt,band})});
+      const response=await (window.JapoAiTransport?.fetch||fetch)(endpoint(settings?.value||{}),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify({topic,jlpt,band})});
       const data=await response.json();
       if(!response.ok)throw new Error(data.error||`Error HTTP ${response.status}`);
       render(data);

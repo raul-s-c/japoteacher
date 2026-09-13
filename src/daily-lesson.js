@@ -40,7 +40,7 @@
     const [settings,token]=await Promise.all([JapoDB.get('settings','app'),window.CloudSync?.getAccessToken?.()]);
     if(!token)throw new Error('Inicia sesión para usar la IA. Las lecturas guardadas se pueden leer sin conexión.');
     const endpoint=(settings?.value?.aiEndpoint||'https://japoteacher-ai.raul-nihongo.workers.dev/evaluate').replace(/\/evaluate$/,path);
-    const response=await fetch(endpoint,{method:'POST',signal:AbortSignal.timeout(110000),headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify(body)});
+    const response=await (window.JapoAiTransport?.fetch||fetch)(endpoint,{method:'POST',signal:AbortSignal.timeout(110000),headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`,'X-Device-ID':window.CloudSync?.getDeviceId?.()||''},body:JSON.stringify(body)});
     const data=await response.json();if(!response.ok)throw new Error(data.error||'No se pudo completar la consulta.');return data;
   }
   const incomplete=part=>Boolean(part?.missing_terms?.length||part?.missing_readings?.length);
