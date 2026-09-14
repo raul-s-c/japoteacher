@@ -1,0 +1,482 @@
+[
+  {
+    "level": "N5",
+    "slot": 1823,
+    "reason": "La negación no tiene referente; insuficiente contexto para estudiar la frase aisladamente."
+  },
+  {
+    "level": "N5",
+    "slot": 1826,
+    "reason": "家族たち es poco natural para referirse a la propia familia como conjunto."
+  },
+  {
+    "level": "N5",
+    "slot": 1829,
+    "reason": "Interjección y corrección sin referente; español forzado."
+  },
+  {
+    "level": "N4",
+    "slot": 1931,
+    "reason": "一本先 indica la siguiente calle, no necesariamente una manzana más allá."
+  },
+  {
+    "level": "N4",
+    "slot": 1933,
+    "reason": "La tarifa es por cada vez resulta poco natural y omite el tipo de servicio."
+  },
+  {
+    "level": "N5",
+    "slot": 1837,
+    "reason": "Enunciado aislado sin contexto ni referente útil."
+  },
+  {
+    "level": "N5",
+    "slot": 1838,
+    "reason": "Registro arcaico ござる sin contexto y sujeto no especificado."
+  },
+  {
+    "level": "N4",
+    "slot": 1936,
+    "reason": "Lectura errónea de 浴衣: corresponde ゆかた, no よくい."
+  },
+  {
+    "level": "N5",
+    "slot": 1841,
+    "reason": "Corrección sin referente y combinación de interjección poco natural."
+  },
+  {
+    "level": "N5",
+    "slot": 1842,
+    "reason": "雨とか風が強い usa una enumeración imprecisa y una colocación poco natural para lluvia."
+  },
+  {
+    "level": "N5",
+    "slot": 1845,
+    "reason": "Pregunta de identificación sin contexto suficiente."
+  },
+  {
+    "level": "N4",
+    "slot": 1938,
+    "reason": "El japonés da verduras como ejemplo; no afirma haber comprado además otros alimentos."
+  },
+  {
+    "level": "N4",
+    "slot": 1939,
+    "reason": "Emplea たつ como nombre propio para cubrir un objetivo léxico; poco útil para vocabulario general."
+  },
+  {
+    "level": "N5",
+    "slot": 1849,
+    "reason": "Frase tautológica sin contexto; empleo forzado de における."
+  },
+  {
+    "level": "N5",
+    "slot": 1850,
+    "reason": "Lectura incorrecta de 二人 en este contexto: ふたり, no ににん."
+  },
+  {
+    "level": "N4",
+    "slot": 1943,
+    "reason": "Contraste entre ingeniería y método de salud sin contexto justificativo; español poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1949,
+    "reason": "民衆 no es la forma natural de público destinatario de un servicio en este contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 1857,
+    "reason": "Furigana de 浴 incluye び, que ya aparece como okurigana; debe ser あ."
+  },
+  {
+    "level": "N5",
+    "slot": 1861,
+    "reason": "Identificación aislada de autobús sin contexto de aprendizaje."
+  },
+  {
+    "level": "N5",
+    "slot": 1867,
+    "reason": "Lectura de 九時 incorrecta: くじ, no きゅうじ."
+  },
+  {
+    "level": "N5",
+    "slot": 1868,
+    "reason": "Encadenamiento de posesivos y traducción bosque de primavera poco naturales."
+  },
+  {
+    "level": "N4",
+    "slot": 1950,
+    "reason": "Relación causal entre bendición y presentación de producto forzada sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1955,
+    "reason": "No da tanto trabajo introduce una comparación ausente; japonés dice que no requiere trabajo/esfuerzo."
+  },
+  {
+    "level": "N4",
+    "slot": 1956,
+    "reason": "La cosa necesaria no tiene referente, quedando un aumento de precio como supuesto objeto necesario."
+  },
+  {
+    "level": "N5",
+    "slot": 1877,
+    "reason": "Prohibición general de hablar en autobús poco plausible sin especificar una situación particular."
+  },
+  {
+    "level": "N4",
+    "slot": 1959,
+    "reason": "同志 es forzado para compañeros que quieren dejar de fumar; usa vocabulario inadecuado al contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1960,
+    "reason": "La traducción omite 何度も, repetidamente, relevante para la reacción expresada."
+  },
+  {
+    "level": "N5",
+    "slot": 1882,
+    "reason": "La lectura de 飯 en 夕ご飯 debe ser はん, no めし."
+  },
+  {
+    "level": "N4",
+    "slot": 1963,
+    "reason": "Descansar en el puesto de venta de un cine resulta forzado sin contexto; 軽く休む poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1964,
+    "reason": "Atmósfera fina es un calco poco natural; el español debe expresar menor densidad del aire."
+  },
+  {
+    "level": "N4",
+    "slot": 1965,
+    "reason": "La pregunta japonesa puede referirse a la entrega o preparación del billete; no determina que el interlocutor no lo tenga."
+  },
+  {
+    "level": "N5",
+    "slot": 1885,
+    "reason": "Mirar antes de pedir omite el objeto y no aporta contexto autónomo."
+  },
+  {
+    "level": "N5",
+    "slot": 1887,
+    "reason": "Pregunta por número de encuentros sin intervalo ni situación; frecuencia incompleta."
+  },
+  {
+    "level": "N4",
+    "slot": 1966,
+    "reason": "La lectura de 一人 es ひとり, no いちにん."
+  },
+  {
+    "level": "N5",
+    "slot": 1889,
+    "reason": "Lectura de 来ません incorrecta: きません, no くません."
+  },
+  {
+    "level": "N5",
+    "slot": 1890,
+    "reason": "Referente omitido y nexo causal poco claro entre estar en la cocina y comer aquí."
+  },
+  {
+    "level": "N5",
+    "slot": 1891,
+    "reason": "Lectura incorrecta de ご飯: ごはん, no ごめし."
+  },
+  {
+    "level": "N4",
+    "slot": 1970,
+    "reason": "ジュニア carece de referente (categoría deportiva, edad); español para juniors poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1971,
+    "reason": "根本 y fundamento de este sabor son una colocación forzada sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1972,
+    "reason": "Pregunta sobre un anillo mágico en tienda sin contexto de ficción o juego, y cita indirecta poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 1973,
+    "reason": "Contraste arbitrario entre amistad y billete sin contexto explicativo."
+  },
+  {
+    "level": "N4",
+    "slot": 1974,
+    "reason": "Unificar señalización en destinos de viaje exige un contexto profesional ausente; frase forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 1977,
+    "reason": "強烈 es poco natural para preguntar por las horas extra sin más contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 1978,
+    "reason": "Lectura incorrecta de 来ない: こない, no くない."
+  },
+  {
+    "level": "N4",
+    "slot": 1989,
+    "reason": "該当する requiere indicar la condición aplicable; la categoría correspondiente añade un referente inexistente."
+  },
+  {
+    "level": "N4",
+    "slot": 1990,
+    "reason": "La traducción añade pluscuamperfecto y ya, y no conserva claramente la preparación anticipada de ておく."
+  },
+  {
+    "level": "N5",
+    "slot": 1898,
+    "reason": "La traducción omite que 姉 es hermana mayor, distinción necesaria en ES-JP."
+  },
+  {
+    "level": "N4",
+    "slot": 1994,
+    "reason": "Su idea siempre es interesante no refleja bien 発想 como manera de concebir ideas; español extraño."
+  },
+  {
+    "level": "N4",
+    "slot": 1996,
+    "reason": "要因 es excesivamente técnico en esta situación y expliqué a mi familia tiene discordancia les/a mi familia en la traducción."
+  },
+  {
+    "level": "N4",
+    "slot": 1997,
+    "reason": "Uso literario ゆく en una despedida coloquial y español yo ya me voy primero forzado."
+  },
+  {
+    "level": "N4",
+    "slot": 1998,
+    "reason": "会議は解散する y la reunión se disolvió resultan poco naturales; debe distinguir terminar/cancelar reunión de disolver grupo."
+  },
+  {
+    "level": "N4",
+    "slot": 2003,
+    "reason": "Contraste entre altura del techo y olor de comida incoherente sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2004,
+    "reason": "Comprar fácil no expresa de forma natural ser asequible; かつて y esta cartera producen un contexto forzado."
+  },
+  {
+    "level": "N4",
+    "slot": 2007,
+    "reason": "医療統治 no es una colocación natural para la atención o gestión sanitaria de una ciudad."
+  },
+  {
+    "level": "N5",
+    "slot": 1916,
+    "reason": "夕日 es el sol del atardecer; además el contraste entre atardecer y nieve no resulta coherente."
+  },
+  {
+    "level": "N4",
+    "slot": 2010,
+    "reason": "Furigana de 苦手 incorrecto: にがて, no くて."
+  },
+  {
+    "level": "N4",
+    "slot": 2017,
+    "reason": "Lectura incorrecta de 大阪: おおさか, no だいはん."
+  },
+  {
+    "level": "N5",
+    "slot": 1926,
+    "reason": "Furigana de 降 incluye り que ya forma parte de okurigana; debe ser お."
+  },
+  {
+    "level": "N5",
+    "slot": 1928,
+    "reason": "Lecturas incorrectas de 昨日 y 今日 por descomposición en kanji individuales."
+  },
+  {
+    "level": "N5",
+    "slot": 1929,
+    "reason": "Furigana produce きょうひ en 今日 en lugar de きょう."
+  },
+  {
+    "level": "N4",
+    "slot": 2019,
+    "reason": "新メニューの出現はありますか es poco natural para preguntar por platos nuevos."
+  },
+  {
+    "level": "N4",
+    "slot": 2021,
+    "reason": "Esto no va a Irlanda no especifica transporte; falta contexto para 行き."
+  },
+  {
+    "level": "N4",
+    "slot": 2028,
+    "reason": "果て no especifica de qué final se trata; contexto geográfico insuficiente y nexo causal forzado."
+  },
+  {
+    "level": "N5",
+    "slot": 1930,
+    "reason": "Lectura incorrecta de ご飯: ごはん, no ごめし."
+  },
+  {
+    "level": "N5",
+    "slot": 1933,
+    "reason": "Estación conveniente es un calco poco natural; debe precisar comodidad o buena ubicación."
+  },
+  {
+    "level": "N4",
+    "slot": 2030,
+    "reason": "体の活性が高まる resulta poco natural para beneficios del ejercicio; además cada mañana se traduce solo diario."
+  },
+  {
+    "level": "N4",
+    "slot": 2032,
+    "reason": "Elegir por intuición una película específica ya recomendada produce un contraste forzado."
+  },
+  {
+    "level": "N5",
+    "slot": 1938,
+    "reason": "La traducción omite 夜, por la noche."
+  },
+  {
+    "level": "N4",
+    "slot": 2034,
+    "reason": "La relación entre ver una noticia del Senado y retrasar la cena queda forzada; no expresa estar ocupado viéndola."
+  },
+  {
+    "level": "N4",
+    "slot": 2036,
+    "reason": "Asocia comer menos fuera con deterioro de salud sin contexto que sostenga la causalidad."
+  },
+  {
+    "level": "N5",
+    "slot": 1946,
+    "reason": "彼女 puede significar ella aún no está o no tengo novia; sin contexto no se determina la traducción."
+  },
+  {
+    "level": "N5",
+    "slot": 1949,
+    "reason": "Pregunta aislada sin objeto ni situación suficiente."
+  },
+  {
+    "level": "N5",
+    "slot": 1952,
+    "reason": "Furigana de 祭 duplica り de okurigana, y español convierte sonido animado en causalidad general."
+  },
+  {
+    "level": "N4",
+    "slot": 2045,
+    "reason": "Negación de trámite tras fallecimiento sin identificar trámite ni contexto; práctica poco autónoma."
+  },
+  {
+    "level": "N4",
+    "slot": 2048,
+    "reason": "La traducción omite 久しぶりに会った: reencontrarse tras mucho tiempo, objetivo importante de la frase."
+  },
+  {
+    "level": "N4",
+    "slot": 2051,
+    "reason": "Cocina comunista carece de sentido/contexto; combinación artificial para cubrir 共産主義."
+  },
+  {
+    "level": "N5",
+    "slot": 1962,
+    "reason": "La oración puede significar que yo no puedo verlo porque él está ocupado; la traducción fija sujeto no determinado."
+  },
+  {
+    "level": "N4",
+    "slot": 2054,
+    "reason": "駅前 significa delante de la estación; zona de la estación pierde la posición concreta."
+  },
+  {
+    "level": "N4",
+    "slot": 2058,
+    "reason": "彼女は忙しいっていう puede indicar que ella dice estar ocupada; dicen que introduce una fuente no determinada."
+  },
+  {
+    "level": "N5",
+    "slot": 1972,
+    "reason": "駅前 significa frente a la estación; tienda de la estación cambia la ubicación."
+  },
+  {
+    "level": "N5",
+    "slot": 1973,
+    "reason": "Repite la frase del slot 1853 de esta tanda con el único cambio de omitir です."
+  },
+  {
+    "level": "N5",
+    "slot": 1975,
+    "reason": "Secuencia de guardar móvil antes de medicina y luego descansar sin contexto, con alcance temporal poco claro."
+  },
+  {
+    "level": "N5",
+    "slot": 1978,
+    "reason": "Lectura incorrecta de 三つ: みっつ, no みつ."
+  },
+  {
+    "level": "N4",
+    "slot": 2066,
+    "reason": "La habitación es la máxima comodidad es una afirmación y colocación poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2067,
+    "reason": "反論 se refiere a contraargumentar una afirmación, no a objetar un plato."
+  },
+  {
+    "level": "N4",
+    "slot": 2069,
+    "reason": "Negación de método sin identificar acción o contexto suficiente."
+  },
+  {
+    "level": "N4",
+    "slot": 2075,
+    "reason": "No me refiero añade un acto discursivo ausente; puede negar dirección, área o ámbito."
+  },
+  {
+    "level": "N4",
+    "slot": 2076,
+    "reason": "市内 significa dentro de la ciudad, no necesariamente en el centro."
+  },
+  {
+    "level": "N5",
+    "slot": 1992,
+    "reason": "La dificultad de ejercicios no justifica acostarse antes sin contexto adicional; relación causal forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 2078,
+    "reason": "川の下りのほう es una expresión poco natural para río abajo, que sería 下流."
+  },
+  {
+    "level": "N4",
+    "slot": 2080,
+    "reason": "Fotografiar paisajes en esta tienda necesita un contexto de vistas o ubicación que no se aporta."
+  },
+  {
+    "level": "N4",
+    "slot": 2081,
+    "reason": "思想 no equivale a un pensamiento cualquiera; negación sin referente y significado impreciso."
+  },
+  {
+    "level": "N4",
+    "slot": 2083,
+    "reason": "共感する con la sencillez de un plato resulta una asociación artificial y poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2086,
+    "reason": "Lectura de 一歩 incorrecta: いっぽ, no いちほ; 混 también duplica ん del texto."
+  },
+  {
+    "level": "N4",
+    "slot": 2090,
+    "reason": "Lectura de 二人 incorrecta (ふたり) y traducción española poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2092,
+    "reason": "La playa de mañana es una referencia incompleta a una excursión no expresada; lectura de 明日 incorrecta."
+  }
+]

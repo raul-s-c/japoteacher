@@ -145,3 +145,9 @@ Tras confirmar certificado ajeno core1.netops.test solo por datos móviles, se a
 ## 2026-09-13 — Mnemotecnia por palabra
 
 Campo de objetivo japonés/español disponible tras cualquier corrección y en historial. Cache asociada al objetivo dentro de mnemonic_json; editar permite generar para otra palabra sin reutilizar el consejo anterior. Prompt reescrito para un solo truco concreto, separación sonido/significado, ejemplos y rechazo de asociaciones vacías o componentes inventados. Mantiene techo de 850 tokens. 157 pruebas Node correctas y QA móvil/escritorio, cambio de objetivo y persistencia, con IA simulada. No se ha medido aún la calidad de respuestas reales del nuevo prompt. Worker 49002b4f-245a-4c6e-b755-fa81739b002d, cache v168.
+
+
+## 2026-09-14 — Ampliación editorial 2,2 M
+
+Nueva autorización independiente de 2.200.000 tokens. Consumo cerrado: 2.106.506 tokens en 753 llamadas, sin reservas pendientes. 348 candidatas revisadas; 247 frases publicadas (494 ejercicios) y 101 descartadas. Niveles editoriales: 60 N5, 70 N4, 34 N3, 63 N2, 20 N1. Banco 7.928 filas, preservadas las 7.434 anteriores y 3.704 lecturas. Mapa 4.274 conceptos / 8.036 ejercicios activos; asociaciones anteriores intactas. Pasan 157 pruebas Node y 15 Python. Caché v169, versión banco/mapa 20260914-editorial-247.
+QA de navegador correcta a 390/1280 px: migración, cupos de planes, práctica y mapa (filtros, fichas, zoom y acceso a ejercicios). Captura móvil revisada. IA simulada durante QA; sin gasto adicional de generación.
