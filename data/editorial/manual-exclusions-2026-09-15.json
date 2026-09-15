@@ -1,0 +1,177 @@
+[
+  {
+    "level": "N5",
+    "slot": 1997,
+    "reason": "Furigana de 入口 incorrecto: いりぐち, no いぐち."
+  },
+  {
+    "level": "N4",
+    "slot": 2099,
+    "reason": "Aceptación aislada sin indicar qué opción se considera válida."
+  },
+  {
+    "level": "N4",
+    "slot": 2100,
+    "reason": "Invierte el alcance de のみ: el japonés limita a los socios a recogida, no reserva la recogida exclusivamente a socios."
+  },
+  {
+    "level": "N5",
+    "slot": 2005,
+    "reason": "Respuesta aislada sin referente y localización poco precisa."
+  },
+  {
+    "level": "N5",
+    "slot": 2007,
+    "reason": "Furigana incorrecto: 風邪 debe leerse かぜ en conjunto."
+  },
+  {
+    "level": "N5",
+    "slot": 2013,
+    "reason": "Tratamiento y situación poco naturales sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2111,
+    "reason": "Negación metalingüística sin contexto útil."
+  },
+  {
+    "level": "N4",
+    "slot": 2112,
+    "reason": "Relación causal forzada y traducción poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2116,
+    "reason": "Contexto forzado y lectura incorrecta de 同じ."
+  },
+  {
+    "level": "N5",
+    "slot": 2015,
+    "reason": "Lectura incorrecta de 大声: おおごえ."
+  },
+  {
+    "level": "N5",
+    "slot": 2016,
+    "reason": "Lectura incorrecta de 浴衣: ゆかた."
+  },
+  {
+    "level": "N4",
+    "slot": 2118,
+    "reason": "すなわち establece equivalencia y no la consecuencia necesaria en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2120,
+    "reason": "Sintaxis del código expresada de forma poco natural y lectura de 一つ incorrecta."
+  },
+  {
+    "level": "N4",
+    "slot": 2126,
+    "reason": "をめぐる aplicado a la visita resulta ambiguo y no expresa claramente el recorrido de exposición."
+  },
+  {
+    "level": "N4",
+    "slot": 2128,
+    "reason": "Furigana de 今日 incorrecto: きょう, no きょうにち."
+  },
+  {
+    "level": "N4",
+    "slot": 2129,
+    "reason": "Contraste aislado sin referente suficiente."
+  },
+  {
+    "level": "N5",
+    "slot": 2028,
+    "reason": "La ausencia de viento fuerte como motivo para no ir al monte exige contexto no aportado."
+  },
+  {
+    "level": "N5",
+    "slot": 2032,
+    "reason": "Lectura incorrecta de 神社: じんじゃ."
+  },
+  {
+    "level": "N4",
+    "slot": 2130,
+    "reason": "臨時 modifica sacar las sillas, no afirma que las sillas sean provisionales."
+  },
+  {
+    "level": "N4",
+    "slot": 2131,
+    "reason": "La traducción añade certificación oficial no especificada."
+  },
+  {
+    "level": "N4",
+    "slot": 2135,
+    "reason": "La condicional 無理しなくても queda forzada y no coincide con la exhortación española."
+  },
+  {
+    "level": "N4",
+    "slot": 2140,
+    "reason": "件におきまして resulta poco natural para agradecer colaboración sobre un asunto."
+  },
+  {
+    "level": "N4",
+    "slot": 2146,
+    "reason": "来た debe anotarse きた, no くた."
+  },
+  {
+    "level": "N4",
+    "slot": 2147,
+    "reason": "果物 se lee くだもの; lectura descompuesta incorrecta."
+  },
+  {
+    "level": "N4",
+    "slot": 2148,
+    "reason": "Lecturas desordenadas e incompletas, con 人気 incorrecto; formulación forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 2149,
+    "reason": "来ます debe anotarse きます, no くます."
+  },
+  {
+    "level": "N4",
+    "slot": 2150,
+    "reason": "支部 resulta impropio para una sucursal comercial de agencia de viajes en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2151,
+    "reason": "権威 no expresa por sí solo respaldo de un método de salud; pregunta japonesa poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2152,
+    "reason": "決めました requiere き, pero se aporta けっ y un kanji 定 ausente."
+  },
+  {
+    "level": "N5",
+    "slot": 2039,
+    "reason": "Pregunta y respuesta incompleta encadenadas sin marcar diálogo; reformulación artificial para evitar duplicado."
+  },
+  {
+    "level": "N5",
+    "slot": 2045,
+    "reason": "No especifica qué objeto o servicio no se puede utilizar."
+  },
+  {
+    "level": "N5",
+    "slot": 2048,
+    "reason": "日本 requiere にほん o にっぽん, no にちほん."
+  },
+  {
+    "level": "N4",
+    "slot": 2160,
+    "reason": "Decidir la cultura y mirar el terreno son formulaciones poco naturales y semánticamente imprecisas."
+  },
+  {
+    "level": "N4",
+    "slot": 2161,
+    "reason": "Jefe genérico no conserva el cargo administrativo específico de 長官."
+  },
+  {
+    "level": "N4",
+    "slot": 2163,
+    "reason": "Interjección insertada de modo artificial y pregunta española poco natural."
+  }
+]

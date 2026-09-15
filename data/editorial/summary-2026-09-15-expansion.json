@@ -1,0 +1,331 @@
+{
+  "tokens_confirmed": 769961,
+  "tokens_conservative": 2148402,
+  "limit": 2200000,
+  "new_pairs": 84,
+  "prior_day_confirmed": null,
+  "prior_day_conservative": null,
+  "previous_rows_preserved": 7928,
+  "classification": {
+    "version": "morphology_usage_v1",
+    "rows": 168,
+    "classified": 168,
+    "levels": {
+      "N5": 60,
+      "N4": 32,
+      "N3": 28,
+      "N2": 40,
+      "N1": 8
+    },
+    "changes": {
+      "N5->N5": 52,
+      "N5->N4": 22,
+      "N5->N2": 6,
+      "N5->N3": 2,
+      "N4->N5": 8,
+      "N4->N2": 34,
+      "N4->N4": 10,
+      "N4->N3": 26,
+      "N4->N1": 8
+    },
+    "unresolved_unique": 13,
+    "unresolved_top": [
+      [
+        "ある",
+        18
+      ],
+      [
+        "いる",
+        6
+      ],
+      [
+        "スマホ",
+        6
+      ],
+      [
+        "働ける",
+        2
+      ],
+      [
+        "あたたかい",
+        2
+      ],
+      [
+        "アプリ",
+        2
+      ],
+      [
+        "毎晩",
+        2
+      ],
+      [
+        "直せる",
+        2
+      ],
+      [
+        "ホ",
+        2
+      ],
+      [
+        "鉢",
+        2
+      ],
+      [
+        "痛める",
+        2
+      ],
+      [
+        "略語",
+        2
+      ],
+      [
+        "遊べる",
+        2
+      ]
+    ],
+    "difficulty_median": 34.0,
+    "pedagogical_review_exercises": 106
+  },
+  "excluded": [
+    {
+      "level": "N5",
+      "slot": 1996,
+      "japanese": "ああ、海がきれいですね。みんなで散歩しましょう。",
+      "reason": "Slot 1996 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N5",
+      "slot": 1997,
+      "japanese": "そこは入口のところじゃない。",
+      "reason": "Furigana de 入口 incorrecto: いりぐち, no いぐち."
+    },
+    {
+      "level": "N5",
+      "slot": 2005,
+      "japanese": "駅のところです。",
+      "reason": "Respuesta aislada sin referente y localización poco precisa."
+    },
+    {
+      "level": "N5",
+      "slot": 2007,
+      "japanese": "風邪かもしれないと思いますか。",
+      "reason": "Furigana incorrecto: 風邪 debe leerse かぜ en conjunto."
+    },
+    {
+      "level": "N5",
+      "slot": 2010,
+      "japanese": "妹は母に似ているから、声まで似ています。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 2013,
+      "japanese": "すみません、田中ちゃんですか。",
+      "reason": "Tratamiento y situación poco naturales sin contexto."
+    },
+    {
+      "level": "N5",
+      "slot": 2015,
+      "japanese": "ここでは大声で話しません。",
+      "reason": "Lectura incorrecta de 大声: おおごえ."
+    },
+    {
+      "level": "N5",
+      "slot": 2016,
+      "japanese": "夏祭りに行くと、浴衣の人がたくさんいます。",
+      "reason": "Lectura incorrecta de 浴衣: ゆかた."
+    },
+    {
+      "level": "N5",
+      "slot": 2028,
+      "japanese": "風が強くないから、今日は山へ行かない。",
+      "reason": "La ausencia de viento fuerte como motivo para no ir al monte exige contexto no aportado."
+    },
+    {
+      "level": "N5",
+      "slot": 2032,
+      "japanese": "今度、神社でお祭りを見に行きませんか。",
+      "reason": "Lectura incorrecta de 神社: じんじゃ."
+    },
+    {
+      "level": "N5",
+      "slot": 2033,
+      "japanese": "牛乳より水のほうが安い。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 2036,
+      "japanese": "もう本は買いましたが、まだかばんは買っていません。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N5",
+      "slot": 2039,
+      "japanese": "どこが痛いですか。頭じゃありません。",
+      "reason": "Pregunta y respuesta incompleta encadenadas sin marcar diálogo; reformulación artificial para evitar duplicado."
+    },
+    {
+      "level": "N5",
+      "slot": 2045,
+      "japanese": "この店では使えません。",
+      "reason": "No especifica qué objeto o servicio no se puede utilizar."
+    },
+    {
+      "level": "N5",
+      "slot": 2048,
+      "japanese": "日本の昔の祭りの写真を見ました。",
+      "reason": "日本 requiere にほん o にっぽん, no にちほん."
+    },
+    {
+      "level": "N4",
+      "slot": 2099,
+      "japanese": "それはありです。",
+      "reason": "Aceptación aislada sin indicar qué opción se considera válida."
+    },
+    {
+      "level": "N4",
+      "slot": 2100,
+      "japanese": "会員は店頭受け取りのみですが、送料はかかりません。",
+      "reason": "Invierte el alcance de のみ: el japonés limita a los socios a recogida, no reserva la recogida exclusivamente a socios."
+    },
+    {
+      "level": "N4",
+      "slot": 2111,
+      "japanese": "いいえ、ここは「はい」ではありません。",
+      "reason": "Negación metalingüística sin contexto útil."
+    },
+    {
+      "level": "N4",
+      "slot": 2112,
+      "japanese": "この町では昔ながらの味づくりを守っているから、料理の説明も長くなります。",
+      "reason": "Relación causal forzada y traducción poco natural."
+    },
+    {
+      "level": "N4",
+      "slot": 2116,
+      "japanese": "この店では、信者も他のお客さんと同じように買い物できます。",
+      "reason": "Contexto forzado y lectura incorrecta de 同じ."
+    },
+    {
+      "level": "N4",
+      "slot": 2118,
+      "japanese": "道に迷った、すなわち予定の電車に乗れませんでした。",
+      "reason": "すなわち establece equivalencia y no la consecuencia necesaria en este contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 2119,
+      "japanese": "大手の会社で働いています。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 2120,
+      "japanese": "コードを直しても、文法を一つずつ確認しないと意味が通りません。",
+      "reason": "Sintaxis del código expresada de forma poco natural y lectura de 一つ incorrecta."
+    },
+    {
+      "level": "N4",
+      "slot": 2126,
+      "japanese": "新しい機器をめぐる展示ツアーに参加します。",
+      "reason": "をめぐる aplicado a la visita resulta ambiguo y no expresa claramente el recorrido de exposición."
+    },
+    {
+      "level": "N4",
+      "slot": 2128,
+      "japanese": "今日は仕事で大物の取引先に直接あいさつするので緊張します。",
+      "reason": "Furigana de 今日 incorrecto: きょう, no きょうにち."
+    },
+    {
+      "level": "N4",
+      "slot": 2129,
+      "japanese": "知性じゃなくて経験です。",
+      "reason": "Contraste aislado sin referente suficiente."
+    },
+    {
+      "level": "N4",
+      "slot": 2130,
+      "japanese": "今日は臨時で来客用の椅子を出しました。",
+      "reason": "臨時 modifica sacar las sillas, no afirma que las sillas sean provisionales."
+    },
+    {
+      "level": "N4",
+      "slot": 2131,
+      "japanese": "この蜂蜜は有機認証を受けています。",
+      "reason": "La traducción añade certificación oficial no especificada."
+    },
+    {
+      "level": "N4",
+      "slot": 2135,
+      "japanese": "無理しなくても、今日はがんばらなくていいよ。",
+      "reason": "La condicional 無理しなくても queda forzada y no coincide con la exhortación española."
+    },
+    {
+      "level": "N4",
+      "slot": 2140,
+      "japanese": "自然保護の件におきまして、ご協力ありがとうございます。",
+      "reason": "件におきまして resulta poco natural para agradecer colaboración sobre un asunto."
+    },
+    {
+      "level": "N4",
+      "slot": 2146,
+      "japanese": "横浜から友だちが来たので、うちは少しにぎやかです。",
+      "reason": "来た debe anotarse きた, no くた."
+    },
+    {
+      "level": "N4",
+      "slot": 2147,
+      "japanese": "このジュースは合成じゃなくて、果物100％です。",
+      "reason": "Slot 2147 inválido: la propia justificación reconoce una frase artificial o poco natural"
+    },
+    {
+      "level": "N4",
+      "slot": 2148,
+      "japanese": "人気の商品を買うには、セールのたびに人と戦うような気持ちで早く行かなければなりません。",
+      "reason": "Unplaceable or incomplete furigana"
+    },
+    {
+      "level": "N4",
+      "slot": 2149,
+      "japanese": "しょうは電車で来ます。",
+      "reason": "来ます debe anotarse きます, no くます."
+    },
+    {
+      "level": "N4",
+      "slot": 2150,
+      "japanese": "旅行会社の支部は札幌にあります。",
+      "reason": "支部 resulta impropio para una sucursal comercial de agencia de viajes en este contexto."
+    },
+    {
+      "level": "N4",
+      "slot": 2151,
+      "japanese": "この健康法に権威はありますか。",
+      "reason": "権威 no expresa por sí solo respaldo de un método de salud; pregunta japonesa poco natural."
+    },
+    {
+      "level": "N4",
+      "slot": 2152,
+      "japanese": "このレポートの形態はグループで相談して決めました。",
+      "reason": "決めました requiere き, pero se aporta けっ y un kanji 定 ausente."
+    },
+    {
+      "level": "N4",
+      "slot": 2160,
+      "japanese": "文化は一つの観点だけで決められないので、資料と現場の両方を見ます。",
+      "reason": "Decidir la cultura y mirar el terreno son formulaciones poco naturales y semánticamente imprecisas."
+    },
+    {
+      "level": "N4",
+      "slot": 2161,
+      "japanese": "長官が来ました。",
+      "reason": "Jefe genérico no conserva el cargo administrativo específico de 長官."
+    },
+    {
+      "level": "N4",
+      "slot": 2163,
+      "japanese": "この味、なー、もう少し濃い？",
+      "reason": "Interjección insertada de modo artificial y pregunta española poco natural."
+    }
+  ]
+}

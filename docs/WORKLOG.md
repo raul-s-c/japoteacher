@@ -151,3 +151,10 @@ Campo de objetivo japonés/español disponible tras cualquier corrección y en h
 
 Nueva autorización independiente de 2.200.000 tokens. Consumo cerrado: 2.106.506 tokens en 753 llamadas, sin reservas pendientes. 348 candidatas revisadas; 247 frases publicadas (494 ejercicios) y 101 descartadas. Niveles editoriales: 60 N5, 70 N4, 34 N3, 63 N2, 20 N1. Banco 7.928 filas, preservadas las 7.434 anteriores y 3.704 lecturas. Mapa 4.274 conceptos / 8.036 ejercicios activos; asociaciones anteriores intactas. Pasan 157 pruebas Node y 15 Python. Caché v169, versión banco/mapa 20260914-editorial-247.
 QA de navegador correcta a 390/1280 px: migración, cupos de planes, práctica y mapa (filtros, fichas, zoom y acceso a ejercicios). Captura móvil revisada. IA simulada durante QA; sin gasto adicional de generación.
+
+
+## 2026-09-15 — Ampliación editorial y cierre de conexión
+
+Presupuesto independiente de 2.200.000 tokens. 769.961 confirmados en 272 llamadas; 14 llamadas sin respuesta conservan reservas de 1.378.441 (máximo conservador 2.148.402). Tras interrupciones repetidas y diagnóstico final UND_ERR_SOCKET, cierre por saldo insuficiente para reservar otra llamada. No se afirma que las reservas sean consumo real. Transporte ahora registra código técnico sin credenciales.
+124 candidatas revisadas; 84 pares publicados (30 N5, 16 N4, 14 N3, 20 N2, 4 N1), 40 descartados. Banco 8.096 filas, mapa 4.324 nodos/8.204 ejercicios. Filas, lecturas y asociaciones anteriores intactas. Cobertura conservadora: 39 conceptos menos sin ejemplos, 18 más con dos contextos; 8.163 pendientes de dos. Pasan 157 pruebas Node y 15 Python. Caché v170.
+QA de navegador correcta a 390/1280 px: planes, cupos, persistencia, práctica, filtros, fichas y zoom del mapa; IA simulada.

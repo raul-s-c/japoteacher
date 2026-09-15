@@ -1,0 +1,41 @@
+{
+  "method": "Conservative map lemma/concept-member matches; unique Japanese sentences including Sakamoto; reference frequency groups, not official JLPT; covered >=2 contexts",
+  "levels": {
+    "N5": {
+      "total": 960,
+      "covered": 679,
+      "zero": 208,
+      "once": 73
+    },
+    "N4": {
+      "total": 1920,
+      "covered": 432,
+      "zero": 535,
+      "once": 953
+    },
+    "N3": {
+      "total": 2880,
+      "covered": 220,
+      "zero": 2430,
+      "once": 230
+    },
+    "N2": {
+      "total": 2880,
+      "covered": 95,
+      "zero": 2671,
+      "once": 114
+    },
+    "N1": {
+      "total": 960,
+      "zero": 923,
+      "covered": 11,
+      "once": 26
+    }
+  },
+  "total": {
+    "total": 9600,
+    "covered": 1437,
+    "zero": 6767,
+    "once": 1396
+  }
+}

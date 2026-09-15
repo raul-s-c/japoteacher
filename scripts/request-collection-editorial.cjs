@@ -10,5 +10,5 @@ process.stdin.on('end',async()=>{
     const response=await fetch('https://japoteacher-ai.raul-nihongo.workers.dev/editorial/generate',{method:'POST',headers:{'Content-Type':'application/json','X-Editorial-Key':(process.env.JAPOTEACHER_EDITORIAL_KEY||'').trim(),'User-Agent':'JapoTeacher-Editorial/1.0'},body:input,signal:AbortSignal.timeout(180000)});
     const data=await response.text();if(!response.ok)throw new Error(`Editorial HTTP ${response.status}: ${data.slice(0,300)}`);
     JSON.parse(data);process.stdout.write(data);
-  }catch(e){process.stderr.write(e.message);process.exitCode=1}
+  }catch(e){const code=e.cause?.code||e.code;process.stderr.write(`${e.message}${typeof code==='string'?` (${code})`:''}`);process.exitCode=1}
 });

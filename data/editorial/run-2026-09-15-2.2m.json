@@ -1,0 +1,28 @@
+{
+  "limit": 2200000,
+  "used": 769961,
+  "calls": 272,
+  "reservations": {
+    "03621cda024044f7bcfb101ff85b860f": 98316,
+    "37612361f8304d37ab7e67a6b0305099": 98316,
+    "d9128ac843bd40d88843375d3c616580": 99178,
+    "5558fe2748c34b16a488a64b3cb74204": 98316,
+    "8066120c5b8c4e9b8c5cd8aa63d88746": 99178,
+    "b967f8eeeb8c4d4dbc6f8ae323e43283": 99178,
+    "f7b48ac081f143c7b82c0b60b8e372a0": 97635,
+    "0e4a99ad84a64ee4aedd2d4e4a351d0f": 98728,
+    "3efe4f0b82b1406e8efae51d92855318": 97635,
+    "96d0a4eac8464966ac3dd4a597712fd8": 98728,
+    "d9f568bf3a454cf88b07f5a3a7c69eb3": 97635,
+    "20d03b2b97204169ae54adba672ca9f9": 98728,
+    "1920a0453a2f43ee90940910199ed577": 98007,
+    "e209c60fb5a845f7ad37c20047862212": 98863
+  },
+  "closed": true,
+  "before": {
+    "N5": 1845,
+    "N4": 1946
+  },
+  "paused_by_user": false,
+  "stop_reason": "Insufficient budget for another fully reserved request"
+}
