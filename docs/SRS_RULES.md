@@ -2,9 +2,9 @@
 
 La calidad 0–5 deriva de la evaluación multidimensional. Los primeros éxitos usan 1, 3 y 7 días; después el intervalo se multiplica por `ease_factor`. Un fallo grave vuelve en 1 día y uno moderado en 2. El cooldown recomendado para una respuesta nueva correcta es de 14 días, reducido a 1–7 según el fallo.
 
-La selección diaria se realiza por separado para cada dirección, descarta ejercicios en cooldown salvo repasos vencidos y penaliza candidatos con alta similitud de tags.
+Desde el 16/09/2026, los planes de estudio seleccionan por última nota válida ascendente, por perfil y dirección. Las fechas calculadas arriba son orientativas: no bloquean una frase débil ni obligan a repetir una dominada. Tres últimas notas consecutivas de al menos 95 retiran la frase del repaso automático. Un resultado posterior menor vuelve a habilitarla. Se respetan los aplazamientos manuales de dominio, las suspensiones, las respuestas del día y los límites de nuevas. Véase STUDY_PLANS.md.
 
-## Progresión temática JLPT
+## Progresión temática JLPT histórica (no selecciona las frases de los planes actuales)
 
 La progresión se calcula por cada valor de `topic_tags`, de N5 hacia N1. Un nivel temático se considera consolidado con al menos tres intentos, media igual o superior a 80 y dos tercios de respuestas aceptables. Entonces el planificador puede probar ejercicios del siguiente JLPT disponible para ese mismo tema, aunque no forme parte de los niveles iniciales seleccionados.
 

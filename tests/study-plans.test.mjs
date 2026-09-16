@@ -24,10 +24,10 @@ test('recalculation cannot reset total/new/weekly consumption and preserves draf
   const result=plans.select({...plan,newLimit:3,weeklyNewLimit:1},rows,a,[],'p',date,[],['done'],true);assert.deepEqual([...result.ids],['done']);
   assert.deepEqual([...plans.select({...plan,paused:true,dailyLimit:0},rows,a,[],'p',date,['draft'],['done','draft'],true).ids],['done','draft']);
 });
-test('review schedules and blocked difficulty are respected; general never consumes collections',()=>{
+test('weak reviews ignore advisory dates while new difficulty and collection scope remain respected',()=>{
   const rows=[ex('future'),ex('hard',{difficulty:90}),ex('s',{source_collection:'sakamoto'})],a=[attempt('future')],p=[{exercise_id:'future',profile_id:'p',last_seen_at:old,next_review_at:'2027-01-01T00:00:00Z'}],{plans}=fixture();
-  const result=plans.select({...plan,adaptive:true},rows,a,p,'p',date);assert.equal(result.ids.length,0);assert.equal(result.stats.locked,1);
-  assert.deepEqual([...plans.select({...plan,adaptive:false},rows,a,p,'p',date).ids],['hard']);
+  const result=plans.select({...plan,adaptive:true},rows,a,p,'p',date);assert.deepEqual([...result.ids],['future']);assert.equal(result.stats.locked,1);
+  assert.deepEqual([...plans.select({...plan,adaptive:false},rows,a,p,'p',date).ids],['future','hard']);
 });
 test('legacy migration is idempotent and preserves aggregate daily quotas',async()=>{
   const {plans}=fixture();const settings={profileId:'p',dailyJaEs:15,dailyEsJa:7,levels:['N5','N4'],studyCollection:'sakamoto',collectionRatio:70,newRatio:60};
@@ -51,7 +51,7 @@ test('changing plan levels cannot reset the new allowance already consumed today
 });
 
 test('manual mastery stays out of daily reselection until its review date',()=>{
-  const e=ex('mastered'),a=[attempt(e.exercise_id)],p=[{profile_id:'p',exercise_id:e.exercise_id,last_seen_at:old,total_attempts:1,mastered:true,next_review_at:'2026-11-09T12:00:00Z'}],{plans}=fixture();
+  const e=ex('mastered'),a=[attempt(e.exercise_id)],p=[{profile_id:'p',exercise_id:e.exercise_id,last_seen_at:old,total_attempts:1,mastered:true,mastered_until:'2026-11-09T12:00:00Z',next_review_at:'2026-11-09T12:00:00Z'}],{plans}=fixture();
   assert.equal(plans.select(plan,[e],a,p,'p',date,[],[],true).ids.length,0);
   assert.equal(plans.select(plan,[e],a,p,'p','2026-11-10',[],[],true).ids.length,1);
 });
@@ -63,4 +63,31 @@ test('nine-day forecast buckets actual review dates, respecting cooldown, scope 
  const c=plans.classify({...plan,cooldownDays:3},rows,a,p,'p',date),forecast=plans.reviewForecast(c,date);
  assert.deepEqual(Array.from(forecast,r=>r.count),[1,1,1,0,0,0,0,0,1]);assert.equal(forecast[8].date,'2026-09-17');
  const boundary=plans.reviewForecast({learned:[]},'2026-12-29');assert.equal(boundary[2].date,'2027-01-01');assert.equal(boundary.length,9);
+});
+
+
+test('last score beats dates, cached assignments, regeneration and legacy new-first preference',()=>{
+ const rows=['weak','medium','strong','new'].map(id=>ex(id)),a=[{...attempt('weak'),overall_score:10},{...attempt('medium'),overall_score:45},{...attempt('strong','2026-07-01T10:00:00Z'),overall_score:90}],p=[{exercise_id:'weak',profile_id:'p',last_seen_at:old,next_review_at:'2027-01-01T00:00:00Z'}],{plans}=fixture();
+ for(const regenerate of [false,true])assert.deepEqual([...plans.select({...plan,dailyLimit:2,reviewsFirst:false},rows,a,p,'p',date,['strong'],[],regenerate).ids],['weak','medium']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,p,'p',date).ids],['weak','medium','strong','new']);
+});
+
+test('three recent 95+ scores retire automatic reviews; a later poor score restores priority',()=>{
+ const rows=[ex('mastered'),ex('weak'),ex('new'),ex('new2')],a=[...['2026-08-01','2026-08-02','2026-08-03'].map((d,i)=>({...attempt('mastered',d+'T10:00:00Z'),overall_score:[100,100,95][i]})),{...attempt('weak'),overall_score:40}],{plans}=fixture();
+ const c=plans.classify(plan,rows,a,[],'p',date);assert.equal(c.mastered.length,1);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,[],'p',date,['mastered']).ids],['weak','new']);
+ a.push({...attempt('mastered','2026-08-04T10:00:00Z'),overall_score:20});
+ assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['mastered','weak']);
+});
+
+test('history uses latest valid score, respects profiles/direction, and merges duplicate sentence IDs',()=>{
+ const rows=[ex('a'),ex('copy',{source_text:'日本語a'}),ex('b'),ex('reverse',{direction:'es_ja',reference_translation:'日本語a'})],a=[{...attempt('copy','2026-08-04T10:00:00Z'),overall_score:20},{...attempt('a'),overall_score:90},{...attempt('b'),overall_score:40},{...attempt('a','2026-08-05T10:00:00Z'),overall_score:100,evaluation_status:'invalid'},{...attempt('a','2026-08-06T10:00:00Z'),overall_score:null},{...attempt('a','2026-08-07T10:00:00Z'),overall_score:100,profile_id:'other'},{...attempt('reverse'),overall_score:0,direction:'es_ja'}],{plans}=fixture();
+ assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['a','b']);
+});
+
+test('existing daily sessions drop mastered pending work and keep completed answers/drafts',async()=>{
+ const rows=['mastered','weak','done','draft'].map(id=>ex(id)),a=[...['2026-08-01','2026-08-02','2026-08-03'].map(d=>({...attempt('mastered',d+'T10:00:00Z'),overall_score:100})),{...attempt('weak'),overall_score:20},attempt('done',today)],{plans,stores}=fixture(rows,a),settings={profileId:'p',dailyJaEs:3,dailyEsJa:0,levels:['N5'],newRatio:0};
+ await plans.ensure(settings);await plans.save('p',plan);
+ stores.daily_sessions.set('p::'+date,{session_id:'p::'+date,study_plan_assignments_json:JSON.stringify({[plan.id]:['mastered','done','draft']}),exercise_ids_ja_es_json:'["mastered","done","draft"]',completed_exercise_ids_json:'["done"]',drafts_json:'{"draft":"saved"}'});
+ const session=await plans.build('p',settings,date);assert.deepEqual(JSON.parse(session.exercise_ids_ja_es_json),['done','draft','weak']);assert.equal(JSON.parse(session.drafts_json).draft,'saved');
 });

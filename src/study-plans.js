@@ -5,7 +5,7 @@
   const key=(profile,id)=>`study-plan:${profile}:${id}`;
   const identity=e=>String(e.direction==='ja_es'?e.source_text:e.reference_translation).normalize('NFKC').replace(/[\s。、！？!?.,]/g,'')+'::'+e.direction;
   const active=e=>e.active!==false&&!e.blocked_by_user;
-  function normalize(p){return {...p,dailyLimit:bounded(p.dailyLimit,15),newLimit:bounded(p.newLimit,5),weeklyNewLimit:bounded(p.weeklyNewLimit,0,1400),quizSize:Math.max(1,bounded(p.quizSize,10,50)),cooldownDays:bounded(p.cooldownDays,1,90),reviewsFirst:p.reviewsFirst!==false,adaptive:p.adaptive!==false,paused:!!p.paused,mode:p.mode==='review'?'review':'learn',levels:(p.levels||['N5']).filter(l=>/^N[1-5]$/.test(l))}}
+  function normalize(p){return {...p,dailyLimit:bounded(p.dailyLimit,15),newLimit:bounded(p.newLimit,5),weeklyNewLimit:bounded(p.weeklyNewLimit,0,1400),quizSize:Math.max(1,bounded(p.quizSize,10,50)),cooldownDays:bounded(p.cooldownDays,1,90),reviewsFirst:true,adaptive:p.adaptive!==false,paused:!!p.paused,mode:p.mode==='review'?'review':'learn',levels:(p.levels||['N5']).filter(l=>/^N[1-5]$/.test(l))}}
   function catalog(){return [...['N5','N4','N3','N2','N1'].map(level=>({id:level,name:level+' · Banco general',collection:'',levels:[level]})),...(window.StudyCollections?.catalog||[]).filter(c=>c.available).map(c=>({id:c.id,name:c.name,collection:c.id,levels:['N5','N4','N3','N2','N1']}))]}
   const matches=(p,e)=>active(e)&&e.direction===p.direction&&(e.source_collection||'')===(p.collection||'')&&p.levels.includes(e.jlpt_level);
   async function all(profile){return (await JapoDB.all('settings')).filter(row=>row.key.startsWith('study-plan:'+profile+':')).map(row=>normalize(row.value)).sort((a,b)=>a.direction.localeCompare(b.direction)||catalog().findIndex(c=>c.id===(a.collection||a.levels[0]))-catalog().findIndex(c=>c.id===(b.collection||b.levels[0])))}
@@ -26,25 +26,32 @@
     await JapoDB.put('settings',{key:marker,value:{version:1},updated_at:new Date().toISOString()});
   }
   function evidence(exercises,attempts,progress,profile,date){
-    const byId=new Map(exercises.map(e=>[e.exercise_id,e])),first=new Map(),latest=new Map(),pMap=new Map();
+    const byId=new Map(exercises.map(e=>[e.exercise_id,e])),first=new Map(),latest=new Map(),pMap=new Map(),history=new Map(),manualUntil=new Map();
     const signature=id=>byId.has(id)?identity(byId.get(id)):id;
     const record=(id,time)=>{if(!time)return;const k=signature(id);if(!first.has(k)||time<first.get(k))first.set(k,time);if(!latest.has(k)||time>latest.get(k))latest.set(k,time)};
-    for(const p of progress.filter(p=>!p.profile_id||p.profile_id===profile)){if(p.last_seen_at||p.total_attempts>0){record(p.exercise_id,p.first_seen_at||p.last_seen_at);record(p.exercise_id,p.last_seen_at)}pMap.set(signature(p.exercise_id),p)}
-    for(const a of attempts.filter(a=>(!a.profile_id||a.profile_id===profile)&&a.evaluation_status!=='invalid'&&Number.isFinite(Number(a.overall_score))))record(a.exercise_id,a.attempted_at);
+    for(const p of progress.filter(p=>!p.profile_id||p.profile_id===profile)){if(p.last_seen_at||p.total_attempts>0){record(p.exercise_id,p.first_seen_at||p.last_seen_at);record(p.exercise_id,p.last_seen_at)}const k=signature(p.exercise_id),previous=pMap.get(k);if(!previous||String(p.last_seen_at||'')>String(previous.last_seen_at||''))pMap.set(k,p);if(p.mastered_until)manualUntil.set(k,Math.max(manualUntil.get(k)||0,Date.parse(p.mastered_until)||0))}
+    for(const a of attempts.filter(a=>(!a.profile_id||a.profile_id===profile)&&a.evaluation_status!=='invalid'&&a.overall_score!==null&&a.overall_score!==undefined&&a.overall_score!==''&&Number.isFinite(Number(a.overall_score))&&Number(a.overall_score)>=0&&Number(a.overall_score)<=100&&Number.isFinite(Date.parse(a.attempted_at))&&day(a.attempted_at)<=date&&(!a.direction||!byId.has(a.exercise_id)||a.direction===byId.get(a.exercise_id).direction))){
+      record(a.exercise_id,a.attempted_at);const k=signature(a.exercise_id);if(!history.has(k))history.set(k,[]);history.get(k).push(a);
+      if(a.mastered_until)manualUntil.set(k,Math.max(manualUntil.get(k)||0,Date.parse(a.mastered_until)||0));
+    }
+    for(const rows of history.values())rows.sort((a,b)=>Date.parse(b.attempted_at)-Date.parse(a.attempted_at)||String(b.attempt_id||'').localeCompare(String(a.attempt_id||'')));
+    const lastScore=e=>{const k=identity(e),a=history.get(k)?.[0],p=pMap.get(k);const score=p&&String(p.last_seen_at||'')>String(a?.attempted_at||'')?p.last_score:a?.overall_score??p?.last_score;return score!==null&&score!==undefined&&score!==''&&Number.isFinite(Number(score))?Number(score):0};
+    const mastered=e=>{const rows=history.get(identity(e))||[];return rows.length>=3&&rows.slice(0,3).every(a=>Number(a.overall_score)>=95)&&lastScore(e)>=95};
     const today=e=>day(latest.get(identity(e)))===date;
-    return {first,latest,pMap,today,isNew:e=>!first.has(identity(e)),newToday:e=>day(first.get(identity(e)))===date};
+    return {first,latest,pMap,history,manualUntil,lastScore,mastered,today,isNew:e=>!first.has(identity(e)),newToday:e=>day(first.get(identity(e)))===date};
   }
   function scopeRows(plan,exercises){const seen=new Set();return exercises.filter(e=>{if(!matches(plan,e))return false;const k=identity(e);if(seen.has(k))return false;seen.add(k);return true})}
   function classify(plan,exercises,attempts,progress,profile,date=SessionPlanner.localDate()){
     const rows=scopeRows(plan,exercises),ev=evidence(exercises,attempts,progress,profile,date),gates=SessionPlanner.difficultyRoadmap(exercises,attempts.filter(a=>!a.profile_id||a.profile_id===profile),plan.direction),now=day(Date.now())===date?Date.now():Date.parse(date+'T23:59:59');
     const eligibleNew=e=>ev.isNew(e)&&(!plan.adaptive||Difficulty.bandFor(e)<=(gates[e.jlpt_level]?.unlockedBand??0));
     const dueAt=e=>{const p=ev.pMap.get(identity(e)),last=Date.parse(ev.latest.get(identity(e))||'')||0;return Math.max(Date.parse(p?.next_review_at||'')||0,last+plan.cooldownDays*86400000)};
-    const due=e=>!ev.isNew(e)&&!ev.today(e)&&!ev.pMap.get(identity(e))?.suspended&&dueAt(e)<=now;
-    return {rows,ev,eligibleNew,due,dueAt,unseen:rows.filter(ev.isNew),reviews:rows.filter(due),learned:rows.filter(e=>!ev.isNew(e)),mastered:rows.filter(e=>ev.pMap.get(identity(e))?.mastered)};
+    // The daily plan is a weakest-last-score queue; SRS dates are advisory only.
+    const due=e=>!ev.isNew(e)&&!ev.today(e)&&!ev.pMap.get(identity(e))?.suspended&&!ev.mastered(e)&&(ev.manualUntil.get(identity(e))||0)<=now;
+    return {rows,ev,eligibleNew,due,dueAt,unseen:rows.filter(ev.isNew),reviews:rows.filter(due),learned:rows.filter(e=>!ev.isNew(e)),mastered:rows.filter(e=>ev.mastered(e)||(ev.manualUntil.get(identity(e))||0)>now)};
   }
   function reviewForecast(classified,date=SessionPlanner.localDate()){
     const days=Array.from({length:9},(_,i)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+i+1);return {offset:i+1,date:day(d),count:0}}),byDate=new Map(days.map(d=>[d.date,d]));
-    for(const e of classified.learned){if(classified.ev.pMap.get(identity(e))?.suspended)continue;const bucket=byDate.get(day(classified.dueAt(e)));if(bucket)bucket.count++;}
+    for(const e of classified.learned){if(classified.ev.pMap.get(identity(e))?.suspended||classified.ev.mastered(e))continue;const bucket=byDate.get(day(classified.dueAt(e)));if(bucket)bucket.count++;}
     return days;
   }
   function select(plan,exercises,attempts,progress,profile,date,old=[],pinned=[],regenerate=false){
@@ -57,12 +64,11 @@
     const pendingNew=selected.filter(id=>c.ev.isNew(byId.get(id))).length;
     let newSlots=Math.max(0,Math.min(plan.newLimit-newToday.length-pendingNew,plan.weeklyNewLimit?plan.weeklyNewLimit-weekly.length-pendingNew:Infinity));
     const readyFresh=c.unseen.filter(c.eligibleNew),readyReviews=c.reviews;
-    const rank=(a,b)=>{if(!regenerate){const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?-1:1}else{const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?1:-1}return c.dueAt(a)-c.dueAt(b)||Difficulty.score(a)-Difficulty.score(b)||a.exercise_id.localeCompare(b.exercise_id)};
+    const rank=(a,b)=>{if(!c.ev.isNew(a)&&!c.ev.isNew(b)){const delta=c.ev.lastScore(a)-c.ev.lastScore(b);if(delta)return delta}if(!regenerate){const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?-1:1}else{const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?1:-1}return c.dueAt(a)-c.dueAt(b)||Difficulty.score(a)-Difficulty.score(b)||a.exercise_id.localeCompare(b.exercise_id)};
     const add=(pool,isNew)=>{for(const e of [...pool].sort(rank)){if(!slots||isNew&&!newSlots)break;if(seen.has(identity(e)))continue;seen.add(identity(e));selected.push(e.exercise_id);slots--;if(isNew)newSlots--}};
     if(!plan.paused&&plan.dailyLimit){
-      if(plan.reviewsFirst)add(readyReviews,false);
-      if(plan.mode==='learn'&&(!plan.reviewsFirst||readyReviews.every(e=>seen.has(identity(e)))))add(readyFresh,true);
-      if(!plan.reviewsFirst)add(readyReviews,false);
+      add(readyReviews,false);
+      if(plan.mode==='learn')add(readyFresh,true);
     }
     return {ids:selected,stats:{total:c.rows.length,unseen:c.unseen.length,learned:c.learned.length,mastered:c.mastered.length,due:c.reviews.length,locked:c.unseen.filter(e=>!c.eligibleNew(e)).length,done:completed.length,newToday:newToday.length}};
   }
@@ -88,7 +94,7 @@
       combined[d].push(...repeats[d].filter(id=>!combined[d].includes(id)));preserved.push(...repeats[d].filter(id=>!preserved.includes(id)));
     }
     const now=new Date().toISOString(),complete=combined.ja_es.length+combined.es_ja.length>0&&[...combined.ja_es,...combined.es_ja].every(id=>completed.has(id));
-    const session={...existing,session_id:profile+'::'+date,profile_id:profile,local_date:date,created_at:existing?.created_at||now,status:complete?'completed':completed.size?'in_progress':'planned',completed_at:complete?(existing?.completed_at||now):null,started_at:existing?.started_at||null,plan_updated_at:now,settings_snapshot_json:JSON.stringify(settings),study_plan_assignments_json:JSON.stringify(assignments),completed_exercise_ids_json:JSON.stringify([...completed]),drafts_json:existing?.drafts_json||'{}',selection_reason_json:JSON.stringify({strategy:'study_plans_v1',diagnostics,preserved,plan_settings:plans})};
+    const session={...existing,session_id:profile+'::'+date,profile_id:profile,local_date:date,created_at:existing?.created_at||now,status:complete?'completed':completed.size?'in_progress':'planned',completed_at:complete?(existing?.completed_at||now):null,started_at:existing?.started_at||null,plan_updated_at:now,settings_snapshot_json:JSON.stringify(settings),study_plan_assignments_json:JSON.stringify(assignments),completed_exercise_ids_json:JSON.stringify([...completed]),drafts_json:existing?.drafts_json||'{}',selection_reason_json:JSON.stringify({strategy:'study_plans_last_score_v2',diagnostics,preserved,plan_settings:plans})};
     for(const d of ['ja_es','es_ja']){session['exercise_ids_'+d+'_json']=JSON.stringify(combined[d]);session['voluntary_repeat_ids_'+d+'_json']=JSON.stringify(repeats[d]);session['planned_'+d]=plans.filter(p=>p.direction===d&&!p.paused).reduce((n,p)=>n+p.dailyLimit,0)}
     const stableKeys=['study_plan_assignments_json','completed_exercise_ids_json','drafts_json','selection_reason_json','exercise_ids_ja_es_json','exercise_ids_es_ja_json'];
     if(existing&&stableKeys.every(k=>existing[k]===session[k]))return existing;
@@ -99,7 +105,7 @@
     const [exercises,attempts,progress]=await Promise.all([JapoDB.all('exercises'),JapoDB.all('attempts'),JapoDB.all('exercise_progress')]),current=exercises.find(e=>e.exercise_id===id);if(!current)return null;
     const plan=await forExercise(settings.profileId,current,session);if(!plan)return null;
     const c=classify(plan,exercises,attempts,progress,settings.profileId,session.local_date),planned=new Set([...parse(session.exercise_ids_ja_es_json),...parse(session.exercise_ids_es_ja_json)]),fresh=c.ev.isNew(current);
-    const candidates=c.rows.filter(e=>!planned.has(e.exercise_id)&&(fresh?c.eligibleNew(e):c.due(e))).sort((a,b)=>{const score=e=>Math.abs(Difficulty.score(e)-Difficulty.score(current))+(reason==='too_hard'&&Difficulty.score(e)>Difficulty.score(current)?100:0)+(reason==='too_easy'&&Difficulty.score(e)<Difficulty.score(current)?100:0);return score(a)-score(b)});
+    const candidates=c.rows.filter(e=>!planned.has(e.exercise_id)&&(fresh?c.eligibleNew(e):c.due(e))).sort((a,b)=>{if(!fresh){const delta=c.ev.lastScore(a)-c.ev.lastScore(b);if(delta)return delta}const score=e=>Math.abs(Difficulty.score(e)-Difficulty.score(current))+(reason==='too_hard'&&Difficulty.score(e)>Difficulty.score(current)?100:0)+(reason==='too_easy'&&Difficulty.score(e)<Difficulty.score(current)?100:0);return score(a)-score(b)});
     const next=candidates[0];if(!next)return null;
     const assignments=parse(session.study_plan_assignments_json,{});for(const key of Object.keys(assignments))assignments[key]=assignments[key].map(x=>x===id?next.exercise_id:x);
     const field='exercise_ids_'+current.direction+'_json',history=parse(session.replacement_history_json);history.push({from:id,to:next.exercise_id,reason,at:new Date().toISOString()});

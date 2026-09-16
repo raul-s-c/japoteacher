@@ -3,7 +3,7 @@
   let context,plans=[],direction='ja_es',editing=null,viewing=null;
   function planRows(p){return StudyPlans.classify(p,context.snap.exercises,context.snap.attempts,context.snap.progress,context.settings.profileId,context.session.local_date)}
   function assigned(p){return StudyPlans.parse(context.session.study_plan_assignments_json,{})[p.id]||[]}
-  function forecastTable(p,c){const rows=StudyPlans.reviewForecast(c,context.session.local_date);return `<table class="plan-forecast"><caption>Repasos programados · próximos 9 días</caption><thead><tr><th scope="col">Dentro de</th><th scope="col">Fecha</th><th scope="col">Repasos</th></tr></thead><tbody>${rows.map(r=>`<tr><th scope="row">+${r.offset} ${r.offset===1?'día':'días'}</th><td>${r.date.slice(8,10)}/${r.date.slice(5,7)}</td><td>${r.count}</td></tr>`).join('')}</tbody></table><p class="plan-note">Fechas actuales de repaso; no incluye nuevas ni atrasados de hoy. Puede cambiar al estudiar. El máximo diario limita cuántos harás.${p.paused?' Plan pausado: estas fechas se conservan, pero no se asignarán repasos mientras siga en pausa.':''}</p>`;}
+  function forecastTable(p,c){const rows=StudyPlans.reviewForecast(c,context.session.local_date);return `<table class="plan-forecast"><caption>Fechas orientativas del SRS · próximos 9 días</caption><thead><tr><th scope="col">Dentro de</th><th scope="col">Fecha</th><th scope="col">Repasos</th></tr></thead><tbody>${rows.map(r=>`<tr><th scope="row">+${r.offset} ${r.offset===1?'día':'días'}</th><td>${r.date.slice(8,10)}/${r.date.slice(5,7)}</td><td>${r.count}</td></tr>`).join('')}</tbody></table><p class="plan-note">Estas fechas no deciden la selección: se prioriza la última nota más baja. Las dominadas por tres notas consecutivas de 95 o más quedan fuera. La tabla no incluye nuevas ni fechas pasadas.${p.paused?' Plan pausado: estas fechas se conservan, pero no se asignarán repasos mientras siga en pausa.':''}</p>`;}
   function draw(){
     if(!context)return;
     document.querySelectorAll('[data-plan-direction]').forEach(b=>{b.classList.toggle('active',b.dataset.planDirection===direction);b.setAttribute('aria-selected',String(b.dataset.planDirection===direction))});
@@ -15,7 +15,7 @@
     }).join('')||'<div class="panel empty"><p>No tienes planes en esta dirección.</p><button class="primary" type="button" data-plan-add>Añadir plan</button></div>';
     const preserved=StudyPlans.parse(context.session.selection_reason_json,{}).preserved||[];
     $('#preservedPlanWork').innerHTML=preserved.length?`<h3>Trabajo conservado</h3><p>${preserved.length} respuestas, borradores o repeticiones voluntarias conservadas.</p><button class="secondary" type="button" data-plan-preserved>Ver trabajo</button>`:'';$('#preservedPlanWork').hidden=!preserved.length;
-    $('#selectionStatus').textContent='Los límites se aplican por plan y dirección. Los repasos pendientes no desaparecen al alcanzar el máximo diario.';
+    $('#selectionStatus').textContent='Primero repasos de menor a mayor última nota; después nuevas hasta el límite. Tres notas consecutivas de 95 o más retiran la frase del repaso automático, en esta dirección.';
   }
   async function render(settings,session,snap){context={settings,session,snap};plans=await StudyPlans.all(settings.profileId);draw()}
   function openEditor(id){
@@ -26,8 +26,8 @@
     const p=editing||{direction,dailyLimit:15,newLimit:5,quizSize:10,weeklyNewLimit:0,cooldownDays:1,reviewsFirst:true,adaptive:true,paused:false,mode:'learn'};
     $('#studyPlanTitle').textContent=editing?'Ajustes del plan':'Añadir plan';$('#studyPlanScope').textContent=(editing?editing.name+' · ':'')+UI.directionName(p.direction);
     f.source.disabled=!!editing;if(editing)f.source.value=editing.collection||editing.levels[0];
-    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit','cooldownDays','mode'])f.elements[k].value=p[k];
-    for(const k of ['reviewsFirst','adaptive','paused'])f.elements[k].checked=p[k];
+    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit','mode'])f.elements[k].value=p[k];
+    for(const k of ['adaptive','paused'])f.elements[k].checked=p[k];
     $('#planLevels').innerHTML=['N5','N4','N3','N2','N1'].map(l=>`<label><input type="checkbox" name="planLevel" value="${l}"${(!editing||p.levels.includes(l))?' checked':''}>${l}</label>`).join('');
     toggleFields();$('#studyPlanSaveStatus').textContent='';dialog.showModal();
   }
@@ -36,8 +36,8 @@
     const levelValues=[...f.querySelectorAll('[name=planLevel]:checked')].map(x=>x.value),d=editing?.direction||direction;
     if(source.collection&&!levelValues.length){$('#studyPlanSaveStatus').textContent='Elige al menos un nivel para este bloque.';return}
     const p={...editing,id:editing?.id||source.id+'::'+d,name:source.name,collection:source.collection,levels:source.collection?levelValues:source.levels,direction:d};
-    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit','cooldownDays'])p[k]=Number(f.elements[k].value);
-    for(const k of ['reviewsFirst','adaptive','paused'])p[k]=f.elements[k].checked;p.mode=f.mode.value;
+    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit'])p[k]=Number(f.elements[k].value);
+    for(const k of ['adaptive','paused'])p[k]=f.elements[k].checked;p.mode=f.mode.value;
     if(p.newLimit>p.dailyLimit&&p.mode!=='review'){$('#studyPlanSaveStatus').textContent='El máximo de nuevas no puede superar el total diario.';return}
     button.disabled=true;try{await StudyPlans.save(context.settings.profileId,p);await App.applyStudyPlans();$('#studyPlanDialog').close();UI.toast('Plan guardado. Pendientes de hoy actualizadas.')}catch(error){$('#studyPlanSaveStatus').textContent=error.message||'No se pudo guardar el plan.'}finally{button.disabled=false}
   }

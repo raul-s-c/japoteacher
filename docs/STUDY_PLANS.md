@@ -8,11 +8,11 @@ Cada tarjeta muestra repasos y nuevas asignadas hoy, completadas, pendientes de 
 
 - **Máximo total al día**: incluye nuevas y repasos, también lo ya respondido hoy.
 - **Máximo de nuevas al día**: limita las frases todavía no estudiadas. Es un máximo, no una cantidad garantizada.
-- **Repasos primero**: las nuevas entran cuando caben los repasos disponibles.
+- **Repasos primero**: regla fija; las nuevas entran solo en el espacio restante y respetan los máximos diario y semanal.
 - **Pausar**: deja de asignar pendientes; conserva historial y borradores.
-- **Opciones avanzadas**: solo repasar, tamaño de tanda, límite semanal de nuevas (0 significa sin límite; semana de lunes a domingo), separación mínima entre repasos y dificultad gradual. Las colecciones permiten escoger niveles.
+- **Opciones avanzadas**: solo repasar, tamaño de tanda, límite semanal de nuevas (0 significa sin límite; semana de lunes a domingo), dificultad gradual. Las colecciones permiten escoger niveles.
 
-Los repasos respetan su fecha SRS y la separación del plan. La dificultad gradual puede dejar frases nuevas todavía bloqueadas; la tarjeta lo explica. Una tanda menor que el máximo diario permite dividir el estudio en varias sesiones. Llegar al máximo no implica haber dominado el contenido.
+Los repasos se seleccionan siempre de menor a mayor última nota válida, aunque su fecha SRS sea futura. Las fechas son orientativas y no dan prioridad a una frase vencida. Las tres últimas notas válidas de 95 o más retiran esa frase del repaso automático; un resultado posterior inferior a 95 la devuelve a la cola. El criterio es independiente por perfil y dirección. No se repite automáticamente una frase ya respondida hoy, ni una suspendida, ni una marcada manualmente como dominada mientras dure su aplazamiento. La dificultad gradual puede dejar frases nuevas todavía bloqueadas; la tarjeta lo explica. Una tanda menor que el máximo diario permite dividir el estudio en varias sesiones. Llegar al máximo no implica haber dominado el contenido.
 
 ## Migración y cambios
 
