@@ -12,7 +12,7 @@ Cada tarjeta muestra repasos y nuevas asignadas hoy, completadas, pendientes de 
 - **Pausar**: deja de asignar pendientes; conserva historial y borradores.
 - **Opciones avanzadas**: solo repasar, tamaño de tanda, límite semanal de nuevas (0 significa sin límite; semana de lunes a domingo), dificultad gradual. Las colecciones permiten escoger niveles.
 
-Los repasos se seleccionan siempre de menor a mayor última nota válida, aunque su fecha SRS sea futura. Las fechas son orientativas y no dan prioridad a una frase vencida. Las tres últimas notas válidas de 95 o más retiran esa frase del repaso automático; un resultado posterior inferior a 95 la devuelve a la cola. El criterio es independiente por perfil y dirección. No se repite automáticamente una frase ya respondida hoy, ni una suspendida, ni una marcada manualmente como dominada mientras dure su aplazamiento. La dificultad gradual puede dejar frases nuevas todavía bloqueadas; la tarjeta lo explica. Una tanda menor que el máximo diario permite dividir el estudio en varias sesiones. Llegar al máximo no implica haber dominado el contenido.
+Los repasos se seleccionan siempre de menor a mayor media de las tres últimas notas válidas disponibles, aunque su fecha SRS sea futura. Las fechas son orientativas y no dan prioridad a una frase vencida. Las tres últimas notas válidas de 95 o más retiran esa frase del repaso automático; un resultado posterior inferior a 95 la devuelve a la cola. El criterio es independiente por perfil y dirección. No se repite automáticamente una frase ya respondida hoy, ni una suspendida, ni una marcada manualmente como dominada mientras dure su aplazamiento. La dificultad gradual puede dejar frases nuevas todavía bloqueadas; la tarjeta lo explica. Una tanda menor que el máximo diario permite dividir el estudio en varias sesiones. Llegar al máximo no implica haber dominado el contenido.
 
 ## Migración y cambios
 
@@ -29,3 +29,10 @@ La opción aparece después de cualquier corrección válida. La instrucción de
 ## Validación
 
 `tests/study-plans.test.mjs` comprueba límites, migración, repasos, conservación, cambios de nivel y sustituciones. `tests/study-plans-mobile.cjs` prueba la interfaz completa a 390 y 1280 px con el banco real y evaluación simulada. `tests/mnemonic-mobile.cjs` comprueba generación a petición, alternativa y persistencia con API simulada. No se realizan llamadas reales a OpenAI en estas pruebas.
+
+
+## Rondas de refuerzo (18/09/2026)
+
+Cada tanda termina cuando todas sus frases alcanzan al menos 50. Al terminar una ronda, las frases cuya última respuesta de esta sesión sigue por debajo de 50 se barajan y forman la siguiente ronda, sin límite de rondas. Se consulta la nota guardada después de los ajustes manuales. 50 exacto permite terminar; una corrección inválida no avanza. La ronda y su orden se guardan para retomarlos al reabrir. Los refuerzos añaden intentos al historial, pero no consumen más frases distintas ni cupo de nuevas.
+
+La prioridad de otro día usa la media aritmética de las tres últimas notas válidas disponibles, incluyendo los intentos de refuerzo y los ajustes manuales: una nota se divide entre 1, dos entre 2 y tres entre 3. No se redondea para ordenar. La exclusión por tres notas recientes >=95 y los aplazamientos manuales siguen vigentes.

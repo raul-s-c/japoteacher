@@ -42,7 +42,7 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
     await card.locator('[data-plan-terms]').click();await page.locator('#planTermFilter').selectOption('today');assert((await page.locator('#planTermsCount').textContent()).startsWith('2 frases'));await page.locator('#closePlanTerms').click();
     for(const width of [390,1280]){await page.setViewportSize({width,height:844});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(process.env.TEMP,`japoteacher-plans-${width}.png`)});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))}
     await page.setViewportSize({width:390,height:844});await card.locator('[data-plan-edit]').click();await page.screenshot({path:path.join(process.env.TEMP,'japoteacher-plan-settings.png')});await page.locator('#closeStudyPlan').click();
-    await card.locator('[data-plan-study]').click();assert.equal(await page.locator('#exerciseChoiceList [data-exercise-id]').count(),1);
+    await card.locator('[data-plan-study]').click();await page.waitForFunction(()=>document.querySelectorAll('#exerciseChoiceList [data-exercise-id]').length===1);assert.equal(await page.locator('#exerciseChoiceList [data-exercise-id]').count(),1);
     await page.locator('#exerciseChoiceList [data-exercise-id]').first().click();await page.waitForFunction(()=>document.querySelector('#sourceText').dataset.exerciseId);
     const oldId=await page.locator('#sourceText').getAttribute('data-exercise-id');assert(oldId.startsWith('SAKAMOTO'));
     await page.locator('#replaceExerciseButton').click();assert(await page.locator('#replaceReasons').evaluate(d=>d.open));

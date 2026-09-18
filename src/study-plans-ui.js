@@ -3,11 +3,11 @@
   let context,plans=[],direction='ja_es',editing=null,viewing=null;
   function planRows(p){return StudyPlans.classify(p,context.snap.exercises,context.snap.attempts,context.snap.progress,context.settings.profileId,context.session.local_date)}
   function assigned(p){return StudyPlans.parse(context.session.study_plan_assignments_json,{})[p.id]||[]}
-  function forecastTable(p,c){const rows=StudyPlans.reviewForecast(c,context.session.local_date);return `<table class="plan-forecast"><caption>Fechas orientativas del SRS · próximos 9 días</caption><thead><tr><th scope="col">Dentro de</th><th scope="col">Fecha</th><th scope="col">Repasos</th></tr></thead><tbody>${rows.map(r=>`<tr><th scope="row">+${r.offset} ${r.offset===1?'día':'días'}</th><td>${r.date.slice(8,10)}/${r.date.slice(5,7)}</td><td>${r.count}</td></tr>`).join('')}</tbody></table><p class="plan-note">Estas fechas no deciden la selección: se prioriza la última nota más baja. Las dominadas por tres notas consecutivas de 95 o más quedan fuera. La tabla no incluye nuevas ni fechas pasadas.${p.paused?' Plan pausado: estas fechas se conservan, pero no se asignarán repasos mientras siga en pausa.':''}</p>`;}
+  function forecastTable(p,c){const rows=StudyPlans.reviewForecast(c,context.session.local_date);return `<table class="plan-forecast"><caption>Fechas orientativas del SRS · próximos 9 días</caption><thead><tr><th scope="col">Dentro de</th><th scope="col">Fecha</th><th scope="col">Repasos</th></tr></thead><tbody>${rows.map(r=>`<tr><th scope="row">+${r.offset} ${r.offset===1?'día':'días'}</th><td>${r.date.slice(8,10)}/${r.date.slice(5,7)}</td><td>${r.count}</td></tr>`).join('')}</tbody></table><p class="plan-note">Estas fechas no deciden la selección: se prioriza la media más baja de las tres últimas notas disponibles. Las dominadas por tres notas consecutivas de 95 o más quedan fuera. La tabla no incluye nuevas ni fechas pasadas.${p.paused?' Plan pausado: estas fechas se conservan, pero no se asignarán repasos mientras siga en pausa.':''}</p>`;}
   function draw(){
     if(!context)return;
     document.querySelectorAll('[data-plan-direction]').forEach(b=>{b.classList.toggle('active',b.dataset.planDirection===direction);b.setAttribute('aria-selected',String(b.dataset.planDirection===direction))});
-    const done=new Set(StudyPlans.parse(context.session.completed_exercise_ids_json));
+    const done=new Set(PracticeRounds.completedIds(context.session,context.snap.attempts));
     $('#directionCards').innerHTML=plans.filter(p=>p.direction===direction).map(p=>{
       const c=planRows(p),ids=assigned(p),pending=ids.filter(id=>!done.has(id)),fresh=pending.filter(id=>c.ev.isNew(context.snap.eMap.get(id)||context.snap.exercises.find(e=>e.exercise_id===id))).length,n=ids.filter(id=>done.has(id)).length;
       const more=c.reviews.filter(e=>!ids.includes(e.exercise_id)).length,locked=c.unseen.filter(e=>!c.eligibleNew(e)).length;
@@ -15,7 +15,7 @@
     }).join('')||'<div class="panel empty"><p>No tienes planes en esta dirección.</p><button class="primary" type="button" data-plan-add>Añadir plan</button></div>';
     const preserved=StudyPlans.parse(context.session.selection_reason_json,{}).preserved||[];
     $('#preservedPlanWork').innerHTML=preserved.length?`<h3>Trabajo conservado</h3><p>${preserved.length} respuestas, borradores o repeticiones voluntarias conservadas.</p><button class="secondary" type="button" data-plan-preserved>Ver trabajo</button>`:'';$('#preservedPlanWork').hidden=!preserved.length;
-    $('#selectionStatus').textContent='Primero repasos de menor a mayor última nota; después nuevas hasta el límite. Tres notas consecutivas de 95 o más retiran la frase del repaso automático, en esta dirección.';
+    $('#selectionStatus').textContent='Primero repasos de menor a mayor media de las tres últimas notas disponibles; después nuevas hasta el límite. Tres notas consecutivas de 95 o más retiran la frase del repaso automático, en esta dirección. Al terminar la ronda se repiten, barajadas, las notas inferiores a 50.';
   }
   async function render(settings,session,snap){context={settings,session,snap};plans=await StudyPlans.all(settings.profileId);draw()}
   function openEditor(id){
@@ -43,7 +43,7 @@
   }
   function openTerms(id){viewing=plans.find(p=>p.id===id);if(!viewing)return;$('#planTermsTitle').textContent=viewing.name+' · '+UI.directionName(viewing.direction);$('#planTermSearch').value='';$('#planTermFilter').value='all';drawTerms();$('#planTermsDialog').showModal()}
   function drawTerms(){
-    if(!viewing)return;const c=planRows(viewing),filter=$('#planTermFilter').value,q=$('#planTermSearch').value.trim().toLowerCase(),ids=new Set(assigned(viewing)),done=new Set(StudyPlans.parse(context.session.completed_exercise_ids_json));
+    if(!viewing)return;const c=planRows(viewing),filter=$('#planTermFilter').value,q=$('#planTermSearch').value.trim().toLowerCase(),ids=new Set(assigned(viewing)),done=new Set(PracticeRounds.completedIds(context.session,context.snap.attempts));
     const rows=c.rows.filter(e=>(!q||(e.source_text+' '+e.reference_translation).toLowerCase().includes(q))&&(filter==='all'||filter==='new'&&c.ev.isNew(e)||filter==='studied'&&!c.ev.isNew(e)||filter==='today'&&ids.has(e.exercise_id)&&!done.has(e.exercise_id)||filter==='due'&&c.due(e)));
     $('#planTermsCount').textContent=`${rows.length} frases${rows.length>100?' · Mostrando las primeras 100. Usa el buscador para concretar.':''}`;
     $('#planTermsList').innerHTML=rows.slice(0,100).map(e=>`<article><span>${esc(e.jlpt_level)} · ${c.ev.isNew(e)?'Por aprender':c.due(e)?'Repaso pendiente':'Estudiada'}${ids.has(e.exercise_id)?' · Seleccionada hoy':''}</span><strong lang="${e.direction==='ja_es'?'ja':'es'}">${e.direction==='ja_es'?UI.japaneseWithFurigana(e.source_text,e.kanji_readings||[]):esc(e.source_text)}</strong><p>${esc(e.reference_translation)}</p></article>`).join('')||'<p class="empty">No hay frases con este filtro.</p>';
@@ -52,7 +52,7 @@
     document.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;
       if(b.hasAttribute('data-plan-direction')){direction=b.dataset.planDirection;draw()}
       if(b.hasAttribute('data-plan-add'))openEditor();if(b.dataset.planEdit)openEditor(b.dataset.planEdit);if(b.dataset.planTerms)openTerms(b.dataset.planTerms);
-      if(b.dataset.planStudy){const p=plans.find(p=>p.id===b.dataset.planStudy),done=new Set(StudyPlans.parse(context.session.completed_exercise_ids_json));App.startPlan(p,assigned(p).filter(id=>!done.has(id)).slice(0,p.quizSize))}
+      if(b.dataset.planStudy){const p=plans.find(p=>p.id===b.dataset.planStudy),done=new Set(PracticeRounds.completedIds(context.session,context.snap.attempts));App.startPlan(p,assigned(p).filter(id=>!done.has(id)).slice(0,p.quizSize))}
       if(b.hasAttribute('data-plan-preserved'))App.startPlan(null,StudyPlans.parse(context.session.selection_reason_json,{}).preserved||[]);
       if(b.hasAttribute('data-plan-home')){UI.showView('hoy');$('#addStudyPlan').focus()}
     });

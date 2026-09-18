@@ -5,7 +5,7 @@ import vm from 'node:vm';
 function fixture(exercises=[],attempts=[],progress=[]){
   const stores={settings:new Map(),daily_sessions:new Map(),exercises:new Map(exercises.map(e=>[e.exercise_id,e])),attempts:new Map(attempts.map((a,i)=>[i,a])),exercise_progress:new Map(progress.map((p,i)=>[i,p]))};
   const context={window:null,Date,Map,Set,JapoDB:{all:async s=>[...stores[s].values()],get:async(s,k)=>stores[s].get(k),put:async(s,v)=>stores[s].set(v.key||v.session_id,v)},TopicProgression:{},StudyCollections:{catalog:[{id:'sakamoto',name:'Sakamoto',available:true}]}};context.window=context;
-  for(const file of ['difficulty','session-planner','study-plans'])vm.runInNewContext(fs.readFileSync(new URL('../src/'+file+'.js',import.meta.url),'utf8'),context);
+  for(const file of ['difficulty','session-planner','practice-rounds','study-plans'])vm.runInNewContext(fs.readFileSync(new URL('../src/'+file+'.js',import.meta.url),'utf8'),context);
   return {plans:context.StudyPlans,stores};
 }
 const ex=(id,extra={})=>({exercise_id:id,source_text:'日本語'+id,reference_translation:'Frase '+id,direction:'ja_es',jlpt_level:'N5',difficulty:10,dataset_version:4,active:true,...extra});
@@ -66,7 +66,7 @@ test('nine-day forecast buckets actual review dates, respecting cooldown, scope 
 });
 
 
-test('last score beats dates, cached assignments, regeneration and legacy new-first preference',()=>{
+test('recent average beats dates, cached assignments, regeneration and legacy new-first preference',()=>{
  const rows=['weak','medium','strong','new'].map(id=>ex(id)),a=[{...attempt('weak'),overall_score:10},{...attempt('medium'),overall_score:45},{...attempt('strong','2026-07-01T10:00:00Z'),overall_score:90}],p=[{exercise_id:'weak',profile_id:'p',last_seen_at:old,next_review_at:'2027-01-01T00:00:00Z'}],{plans}=fixture();
  for(const regenerate of [false,true])assert.deepEqual([...plans.select({...plan,dailyLimit:2,reviewsFirst:false},rows,a,p,'p',date,['strong'],[],regenerate).ids],['weak','medium']);
  assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,p,'p',date).ids],['weak','medium','strong','new']);
@@ -77,12 +77,12 @@ test('three recent 95+ scores retire automatic reviews; a later poor score resto
  const c=plans.classify(plan,rows,a,[],'p',date);assert.equal(c.mastered.length,1);
  assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,[],'p',date,['mastered']).ids],['weak','new']);
  a.push({...attempt('mastered','2026-08-04T10:00:00Z'),overall_score:20});
- assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['mastered','weak']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['weak','mastered']);
 });
 
-test('history uses latest valid score, respects profiles/direction, and merges duplicate sentence IDs',()=>{
+test('history averages valid scores, respects profiles/direction, and merges duplicate sentence IDs',()=>{
  const rows=[ex('a'),ex('copy',{source_text:'日本語a'}),ex('b'),ex('reverse',{direction:'es_ja',reference_translation:'日本語a'})],a=[{...attempt('copy','2026-08-04T10:00:00Z'),overall_score:20},{...attempt('a'),overall_score:90},{...attempt('b'),overall_score:40},{...attempt('a','2026-08-05T10:00:00Z'),overall_score:100,evaluation_status:'invalid'},{...attempt('a','2026-08-06T10:00:00Z'),overall_score:null},{...attempt('a','2026-08-07T10:00:00Z'),overall_score:100,profile_id:'other'},{...attempt('reverse'),overall_score:0,direction:'es_ja'}],{plans}=fixture();
- assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['a','b']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['b','a']);
 });
 
 test('existing daily sessions drop mastered pending work and keep completed answers/drafts',async()=>{
@@ -90,4 +90,20 @@ test('existing daily sessions drop mastered pending work and keep completed answ
  await plans.ensure(settings);await plans.save('p',plan);
  stores.daily_sessions.set('p::'+date,{session_id:'p::'+date,study_plan_assignments_json:JSON.stringify({[plan.id]:['mastered','done','draft']}),exercise_ids_ja_es_json:'["mastered","done","draft"]',completed_exercise_ids_json:'["done"]',drafts_json:'{"draft":"saved"}'});
  const session=await plans.build('p',settings,date);assert.deepEqual(JSON.parse(session.exercise_ids_ja_es_json),['done','draft','weak']);assert.equal(JSON.parse(session.drafts_json).draft,'saved');
+});
+
+
+test('daily priority averages only the last three available valid results, without rounding',()=>{
+ const rows=['one','two','three','four'].map(id=>ex(id)),scores={one:[60],two:[20,90],three:[30,50,80],four:[0,100,100,40]},a=[];
+ for(const [id,values] of Object.entries(scores))values.forEach((score,i)=>a.push({...attempt(id,`2026-08-0${i+1}T10:00:00Z`),overall_score:score}));
+ const {plans}=fixture(),c=plans.classify(plan,rows,a,[],'p',date);
+ assert.equal(c.ev.recentAverage(rows[0]),60);assert.equal(c.ev.recentAverage(rows[1]),55);assert.equal(c.ev.recentAverage(rows[2]),160/3);assert.equal(c.ev.recentAverage(rows[3]),80);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:4,newLimit:0},rows,a,[],'p',date).ids],['three','two','one','four']);
+});
+
+test('answered failures stay assigned without consuming new quota again, but day stays in progress',async()=>{
+ const rows=[ex('failed'),ex('new')],a=[{...attempt('failed',today),session_id:'p::'+date,overall_score:20}],{plans,stores}=fixture(rows,a),settings={profileId:'p',dailyJaEs:1,dailyEsJa:0,levels:['N5'],newRatio:100};
+ await plans.ensure(settings);await plans.save('p',{...plan,dailyLimit:1,newLimit:1});
+ stores.daily_sessions.set('p::'+date,{session_id:'p::'+date,profile_id:'p',exercise_ids_ja_es_json:'["failed"]',study_plan_assignments_json:JSON.stringify({[plan.id]:['failed']}),completed_exercise_ids_json:'["failed"]'});
+ const s=await plans.build('p',settings,date);assert.deepEqual(JSON.parse(s.exercise_ids_ja_es_json),['failed']);assert.equal(s.status,'in_progress');
 });
