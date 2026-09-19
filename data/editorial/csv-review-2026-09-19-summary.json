@@ -1,0 +1,84 @@
+{
+  "reviewed": 338,
+  "accepted_pairs": 123,
+  "rejected": 215,
+  "new_exercises": 246,
+  "levels": {
+    "N4": 28,
+    "N2": 50,
+    "N5": 7,
+    "N3": 33,
+    "N1": 5
+  },
+  "new_openai_tokens": 0,
+  "previous_rows_preserved": 8096,
+  "total_rows": 8342,
+  "graph_nodes": 4426,
+  "graph_exercises": 8450,
+  "coverage_before": {
+    "N5": {
+      "total": 960,
+      "zero": 208,
+      "one": 73,
+      "two_or_more": 679
+    },
+    "N4": {
+      "total": 1920,
+      "zero": 535,
+      "one": 953,
+      "two_or_more": 432
+    },
+    "N3": {
+      "total": 2880,
+      "zero": 2430,
+      "one": 230,
+      "two_or_more": 220
+    },
+    "N2": {
+      "total": 2880,
+      "zero": 2671,
+      "one": 114,
+      "two_or_more": 95
+    },
+    "N1": {
+      "total": 960,
+      "zero": 923,
+      "one": 26,
+      "two_or_more": 11
+    }
+  },
+  "coverage_after": {
+    "N5": {
+      "total": 960,
+      "zero": 203,
+      "one": 76,
+      "two_or_more": 681
+    },
+    "N4": {
+      "total": 1920,
+      "zero": 485,
+      "one": 951,
+      "two_or_more": 484
+    },
+    "N3": {
+      "total": 2880,
+      "zero": 2414,
+      "one": 236,
+      "two_or_more": 230
+    },
+    "N2": {
+      "total": 2880,
+      "zero": 2663,
+      "one": 119,
+      "two_or_more": 98
+    },
+    "N1": {
+      "total": 960,
+      "zero": 921,
+      "one": 27,
+      "two_or_more": 12
+    }
+  },
+  "base_commit": "ecf6d90",
+  "method": "Revisión directa de las 338 candidatas; contraste léxico y de similitud con banco general y Sakamoto; revisión de traducción, contexto, nivel y lecturas. Frecuencias por lema orientativas, no filtro absoluto."
+}

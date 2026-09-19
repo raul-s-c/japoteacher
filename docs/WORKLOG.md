@@ -171,3 +171,9 @@ La explicación de práctica muestra repaso por última nota para los planes act
 
 PracticeRounds guarda la ronda por perfil, sesión y plan en settings; al acabar baraja solo las últimas notas de la sesión <50. Se releen los intentos después del ajuste manual. El día no se marca terminado mientras queden fallos. Se conserva el registro de frases respondidas para que los refuerzos no reinicien los cupos. Borradores de respuestas ya corregidas se limpian antes de repetir. La selección diaria usa la media sin redondear de las últimas 1–3 notas válidas disponibles por frase y dirección. Textos actualizados, caché v173.
 Validación: 167 pruebas Node; navegador Playwright (Browser plugin not available), 390/1280 px, tres rondas, 49 frente a 50, reapertura a mitad de ronda, ajuste manual a 50 y 6 intentos para 3 frases distintas. Evaluación simulada, sin gasto de IA.
+
+## 2026-09-19 — Revisión del CSV aportado
+
+338 candidatas contrastadas con banco y Sakamoto, con revisión directa de traducción, contexto, lecturas y aportación léxica. Publicadas 123 frases / 246 ejercicios: N5 7, N4 28, N3 33, N2 50, N1 5; 215 descartadas. Snapshot independiente y resultados por frase en data/editorial/csv-review-2026-09-19-*. No llamadas OpenAI; colas de generación pendientes sin modificar por este trabajo.
+Conservadas las 8.096 filas y 4.035 lecturas anteriores; asociaciones anteriores del mapa idénticas. Banco 8.342 filas, mapa 4.426 nodos / 8.450 ejercicios. Cobertura conservadora: 81 conceptos antes sin ejemplos reciben contexto; 68 adicionales llegan a dos contextos. Caché v174 y banco 20260919-reviewed-123.
+Validación: 167 pruebas Node, 15 Python (Janome local), verificador de preservación/pares/furigana y repetición del importador con cero nuevas inserciones. QA de mapa y planes a 390/1280 px, captura móvil inspeccionada y sin errores de página. Browser plugin not available: Playwright con perfil aislado e IA simulada.

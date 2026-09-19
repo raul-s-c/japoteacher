@@ -1,0 +1,2030 @@
+{
+  "N5:2051": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2052": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2053": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Fragmento sin contexto: «Es al subir al autobús»."
+  },
+  "N5:2054": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2055": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2056": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2057": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2058": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "La traducción «estoy callado» contradice hablar; 静か no precisa ese sentido."
+  },
+  "N5:2059": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2060": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2061": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2062": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2063": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2064": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2065": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Comprar leche antes de ir de compras resulta forzado sin contexto."
+  },
+  "N5:2066": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2067": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2068": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2069": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2070": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2071": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2072": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lecturas desordenadas respecto del texto; vocabulario además muy repetido."
+  },
+  "N5:2073": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2074": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2075": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2076": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2077": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2078": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2079": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de お姉さん: おねえさん, no おあねさん."
+  },
+  "N5:2080": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2081": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2082": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2083": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2084": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2085": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2086": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2087": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2088": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2089": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 昨日: きのう, no さくひ."
+  },
+  "N5:2090": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2092": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2093": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2094": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2095": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2096": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2097": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2098": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura de 三つ incorrecta: みっつ, no さんつ."
+  },
+  "N5:2099": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Pregunta negativa poco natural y confusión con la invitación ませんか."
+  },
+  "N5:2100": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Variante de un contexto de compras ya suficientemente representado."
+  },
+  "N5:2101": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2102": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2103": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2104": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2105": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2106": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2107": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2166": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2167": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2168": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2169": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Invitación sin destino ni motivo coherente para ir por la lluvia."
+  },
+  "N4:2170": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2171": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2172": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2173": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "助かった expresa alivio/ayuda recibida; la traducción añade un referente útil no especificado."
+  },
+  "N4:2174": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "No se especifica qué se vuelve a mirar; aporta sobre todo variantes en kana de vocabulario ya presente."
+  },
+  "N4:2176": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2177": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Negación aislada sin referente para el miedo."
+  },
+  "N4:2178": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2179": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2180": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2181": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Sustitución de un cargo profesional en una pregunta de transporte; aporta poco contexto para aprender 検事."
+  },
+  "N4:2182": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2183": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "応用 no equivale sin más a avanzado; contraposición traducida de manera imprecisa."
+  },
+  "N4:2184": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas desordenadas: 今 aparece antes de 判断 y 妥当 en la frase."
+  },
+  "N4:2185": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2186": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2187": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2188": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2189": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2190": {
+    "accept": true,
+    "level": "N1",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2191": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2192": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2193": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "宇宙は神秘です resulta poco natural como pregunta aislada."
+  },
+  "N4:2194": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2195": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2196": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2197": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2198": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2199": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2200": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Contexto forzado de lectura ilimitada de manuales en biblioteca y traducción temporal imprecisa."
+  },
+  "N4:2201": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2202": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2203": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2204": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2205": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2206": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "アプリのインタビュー es impreciso sin indicar sobre quién o acerca de qué se entrevista."
+  },
+  "N4:2207": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2208": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2209": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2210": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2211": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2212": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2213": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Restricción de altura en un autobús sin contexto justificativo."
+  },
+  "N4:2214": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2215": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2216": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2217": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2218": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2219": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2220": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2221": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2222": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2223": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2224": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2225": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2226": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2227": {
+    "accept": true,
+    "level": "N1",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2228": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Conectores redundantes y poco naturales."
+  },
+  "N4:2229": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2230": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2231": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2232": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2233": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Uso de numerador en contabilidad sin contexto suficiente."
+  },
+  "N4:2234": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2235": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2236": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2237": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2238": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2239": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2240": {
+    "accept": true,
+    "level": "N1",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2241": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2242": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2243": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2244": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2245": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2108": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2109": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2110": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 旅行."
+  },
+  "N5:2111": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2112": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura de 祭 duplica la terminación り."
+  },
+  "N5:2113": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2114": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2115": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2116": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2117": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2118": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2119": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2120": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2121": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2122": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2123": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2124": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2125": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2126": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2127": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2128": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura de 祭 duplica la terminación り."
+  },
+  "N5:2129": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2130": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2131": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de ご飯."
+  },
+  "N5:2132": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2133": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2134": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2135": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2136": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2137": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2138": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2139": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2140": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2141": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2142": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2143": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2144": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2145": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2146": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2147": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2148": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 今日."
+  },
+  "N5:2149": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2150": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2151": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2152": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2153": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2154": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2155": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2156": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2157": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2158": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lecturas que no coinciden con el texto y están fuera de orden."
+  },
+  "N5:2159": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2160": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2161": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2162": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2163": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2164": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2165": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2166": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2167": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2168": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2169": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2170": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lecturas que no coinciden con el texto."
+  },
+  "N5:2171": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2172": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 景色."
+  },
+  "N5:2173": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incompleta de 受付."
+  },
+  "N5:2174": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 明日."
+  },
+  "N5:2175": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2176": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2177": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2178": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2179": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Duplicado semántico y lectura incorrecta de 昨日."
+  },
+  "N5:2180": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2181": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2182": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2183": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2184": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2185": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2186": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2187": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2188": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2189": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2190": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2191": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2192": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2193": {
+    "accept": true,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2194": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N5:2195": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2196": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2197": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2198": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 旅行."
+  },
+  "N5:2199": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 今朝."
+  },
+  "N5:2200": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2201": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2202": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 安心 y duplicado semántico."
+  },
+  "N5:2203": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2204": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N5:2205": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2206": {
+    "accept": false,
+    "level": "N5",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N5:2207": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2246": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 旅行 e incompleta de 行く."
+  },
+  "N4:2247": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2248": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2249": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2250": {
+    "accept": true,
+    "level": "N1",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2251": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2252": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2253": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2254": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2255": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2256": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Contraste y motivo sin conexión clara con el resto de la oración."
+  },
+  "N4:2257": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2258": {
+    "accept": false,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 部屋 (ぶや en vez de へや)."
+  },
+  "N4:2259": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2260": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2261": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Combinación poco natural de 料金 con 膨大."
+  },
+  "N4:2262": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2263": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Combinación poco natural de objetivo con 遂行."
+  },
+  "N4:2264": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2265": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2266": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2267": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2269": {
+    "accept": true,
+    "level": "N1",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2270": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 来月."
+  },
+  "N4:2271": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2272": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 近所."
+  },
+  "N4:2273": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2274": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2275": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2276": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2277": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2278": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2279": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2280": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2281": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2282": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 喫茶店."
+  },
+  "N4:2283": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2284": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2285": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incompleta de 具合."
+  },
+  "N4:2286": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Causalidad poco coherente entre ser espléndida y terminar antes."
+  },
+  "N4:2287": {
+    "accept": false,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Demasiado próxima a 私はその案を支持します, elegida en esta misma tanda."
+  },
+  "N4:2288": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2289": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2290": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2291": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2292": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2293": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2294": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2295": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2296": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2297": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2298": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2299": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2300": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2301": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2302": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2303": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2304": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2305": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2306": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2307": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Expresión poco natural: conclusión sobre un sabor."
+  },
+  "N4:2308": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2309": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2310": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2311": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Anotaciones duplicadas de la misma aparición de 侵入."
+  },
+  "N4:2312": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2313": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2314": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Uso poco natural de 防衛 para una relación personal."
+  },
+  "N4:2315": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Contraste incoherente: una revista también es un medio."
+  },
+  "N4:2316": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2317": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2318": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2319": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2320": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2321": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2322": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2323": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2324": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2325": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2326": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2327": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "健康食品 designa productos dietéticos o de salud; traducción demasiado amplia."
+  },
+  "N4:2328": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 日本語."
+  },
+  "N4:2329": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2330": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2331": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2332": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2333": {
+    "accept": true,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2334": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2335": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2336": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2337": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2338": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2339": {
+    "accept": true,
+    "level": "N3",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2340": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2341": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Combinación poco natural de 心理的に乱れる."
+  },
+  "N4:2342": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lectura incorrecta de 旅行."
+  },
+  "N4:2343": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2344": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Lecturas fuera del orden del texto."
+  },
+  "N4:2345": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2346": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Vocabulario central muy repetido o variante de un contexto ya suficientemente representado; escasa aportación adicional."
+  },
+  "N4:2347": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  },
+  "N4:2348": {
+    "accept": false,
+    "level": "N4",
+    "difficulty": 35,
+    "reason": "Partícula には inadecuada en esta construcción."
+  },
+  "N4:2349": {
+    "accept": true,
+    "level": "N2",
+    "difficulty": 35,
+    "reason": "Aporta un uso natural de vocabulario poco representado en el banco."
+  }
+}
