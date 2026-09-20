@@ -296,13 +296,18 @@
       }
       if (result.committed) {
         saveCheckpoint(changeVersion !== snapshotVersion);
-        status(`Todo guardado · revisión ${revision}`, "ok");
+        const dirty = changeVersion !== snapshotVersion;
+        status(dirty ? "Guardado en este dispositivo; quedan cambios por sincronizar…" : `Todo guardado · revisión ${revision}`, dirty ? "" : "ok");
+        if (dirty) {
+          commitPending = true;
+          if (commitTimer) clearTimeout(commitTimer);
+          commitTimer = setTimeout(() => { commitTimer = null; runCommit().catch(() => {}); }, 1200);
+        }
         return;
       }
-      payload = merge(payload, result.out_payload);
       restoring = true;
-      await JapoDB.restoreSync(payload);
-      restoring = false;
+      try { payload = await JapoDB.restoreSync(merge(payload, result.out_payload), merge); }
+      finally { restoring = false; }
     }
     throw new Error("No se pudo consolidar el cambio tras varios reintentos.");
   }
@@ -316,12 +321,15 @@
       });
     return operation;
   }
-  function commit() {
+  function markDirty() {
     changeVersion++;
     const saved = checkpoint();
     // Only a completed restore/upload proves which remote revision is local.
     // A failed initial download must never create a fast-start checkpoint.
     if (saved) saveCheckpoint(true, saved.revision);
+  }
+  function commit() {
+    markDirty();
     if (!user || !ready || restoring) return Promise.resolve();
     commitPending = true;
     status("Cambios guardados en este dispositivo; sincronizando…");
@@ -365,9 +373,9 @@
       ? rawRemotePayload
       : window.SyncPolicy?.recoverSettingsFromSessions?.(rawRemotePayload) || rawRemotePayload;
     const mode = window.SyncPolicy?.firstSyncMode?.(accountKnown, remotePayload) || "merge";
-    const combined = mode === "remote" ? remotePayload : merge(local, remotePayload);
+    let combined = mode === "remote" ? remotePayload : merge(local, remotePayload);
     restoring = true;
-    try { await JapoDB.restoreSync(combined); } finally { restoring = false; }
+    try { combined = await JapoDB.restoreSync(combined, mode === "remote" ? null : merge) || combined; } finally { restoring = false; }
     ready = true;
     if (
       JSON.stringify(combined.stores) !==
@@ -391,8 +399,8 @@
     revision = Number(remote.revision);
     const combined = merge(await JapoDB.syncBackup(), remote.payload);
     restoring = true;
-    await JapoDB.restoreSync(combined);
-    restoring = false;
+    try { await JapoDB.restoreSync(combined, merge); } finally { restoring = false; }
+    saveCheckpoint(true);
     status(`Actualizado · revisión ${revision}`, "ok");
     location.reload();
   }
@@ -495,6 +503,7 @@
   }
   window.CloudSync = {
     commit,
+    markDirty,
     flush,
     getAccessToken,
     getClient: () => client,

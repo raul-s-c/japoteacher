@@ -88,6 +88,7 @@
     if (!window.CloudSync?.commit) return;
     if (syncBatchDepth) {
       syncPending = true;
+      window.CloudSync.markDirty?.();
       return;
     }
     await window.CloudSync.commit();
@@ -111,6 +112,11 @@
   function normalizeWrite(store, value) {
     if (store !== "attempts" || !value || value.ranked_xp_version || value.ranked_xp_policy) return value;
     return { ...value, ranked_xp_policy: "guided_usability_v2" };
+  }
+  function syncRows(store, rows) {
+    if (store === 'exercises') return rows.filter(row => !isEditorialExercise(row));
+    if (store !== 'settings') return rows;
+    return rows.map(row => { const value = {...(row.value || {})}; delete value.apiKey; delete value.proxyToken; return {...row, value}; });
   }
   const api = {
     open,
@@ -182,10 +188,16 @@
     },
     async syncBackup() {
       const out = { schema_version: 3, exported_at: new Date().toISOString(), stores: {} };
-      for (const store of syncStores) {
-        const rows = await allRaw(store);
-        out.stores[store] = store === "exercises" ? rows.filter((row) => !isEditorialExercise(row)) : store === "settings" ? rows.map((row) => { const value = { ...(row.value || {}) }; delete value.apiKey; delete value.proxyToken; return { ...row, value }; }) : rows;
-      }
+      const db = await open();
+      await new Promise((resolve, reject) => {
+        const t = db.transaction(syncStores, 'readonly');
+        t.oncomplete = resolve;
+        t.onerror = t.onabort = () => reject(t.error);
+        for (const store of syncStores) {
+          const request = t.objectStore(store).getAll();
+          request.onsuccess = () => { out.stores[store] = syncRows(store, request.result); };
+        }
+      });
       return out;
     },
     async restore(data) {
@@ -199,20 +211,35 @@
       }
       changed();
     },
-    async restoreSync(data) {
+    async restoreSync(data, merger) {
       if (!data?.stores) throw new Error("Copia remota no válida");
-      for (const store of syncStores) {
-        const rows = data.stores[store] || [];
-        if (store === "exercises") {
-          await tx(store, "readwrite", (objectStore) => rows.forEach((row) => objectStore.put(row)));
-          continue;
+      const db = await open();
+      const combined = await new Promise((resolve, reject) => {
+        // Read and merge under the same lock as replacement, including writes
+        // made while the remote snapshot was in flight.
+        const t = db.transaction(syncStores, "readwrite");
+        const local = { stores: {} };
+        let pending = syncStores.length, result = data;
+        t.oncomplete = () => resolve(result);
+        t.onerror = t.onabort = () => reject(t.error || new Error("No se pudo restaurar el progreso"));
+        for (const store of syncStores) {
+          const request = t.objectStore(store).getAll();
+          request.onsuccess = () => {
+            local.stores[store] = syncRows(store, request.result);
+            if (--pending) return;
+            try {
+              result = merger ? merger(local, data) : data;
+              for (const name of syncStores) {
+                const target = t.objectStore(name);
+                if (name !== "exercises") target.clear();
+                for (const row of result.stores[name] || []) target.put(row);
+              }
+            } catch (error) { t.abort(); reject(error); }
+          };
         }
-        await tx(store, "readwrite", (objectStore) => {
-          objectStore.clear();
-          rows.forEach((row) => objectStore.put(row));
-        });
-      }
+      });
       changed();
+      return combined;
     },
   };
   document.documentElement.dataset.dbVersion = String(VERSION);

@@ -27,3 +27,23 @@ test('a restored retry skips an answer manually raised to 50 and ignores blocked
  const rows=[a('a',10,1),a('b',20,2)];let round=R.reconcile(R.create(['a','b'],[],session),rows,session);
  rows[0].overall_score=50;round=R.reconcile(round,rows,session,id=>id!=='b');assert.equal(round.finished,true);
 });
+
+
+test('last passing answer completes yesterday without Next; failed retries remain open',()=>{
+ const day={...session,exercise_ids_ja_es_json:'["a","b"]',exercise_ids_es_ja_json:'[]',completed_exercise_ids_json:'[]',status:'in_progress',drafts_json:'{"b":"answer"}'};
+ const rows=[a('a',100,1),a('b',49,2)];
+ assert.equal(R.sessionResult(day,rows).status,'in_progress');
+ rows.push(a('b',50,3));const recovered=R.sessionResult(day,rows);
+ assert.equal(recovered.status,'completed');assert.equal(recovered.completed_at,rows[2].attempted_at);
+ assert.deepEqual(JSON.parse(recovered.completed_exercise_ids_json),['a','b']);assert.equal(recovered.drafts_json,day.drafts_json);
+ rows[2].overall_score=20;assert.equal(R.sessionResult(recovered,rows).status,'in_progress');
+});
+
+test('historical repair is idempotent and cannot invent answers from another day',async()=>{
+ let sessions=[{...session,exercise_ids_ja_es_json:'["a"]',completed_exercise_ids_json:'[]',drafts_json:'{}',status:'in_progress',completed_at:null}];
+ let attempts=[{...a('a',100,1),session_id:'other'}];
+ const db={all:async name=>name==='attempts'?attempts:sessions,bulkPut:async(_name,rows)=>sessions=rows};
+ assert.equal(await R.repairSessions(db),0);
+ attempts=[a('a',100,1)];assert.equal(await R.repairSessions(db),1);assert.equal(sessions[0].status,'completed');
+ assert.equal(await R.repairSessions(db),0);
+});

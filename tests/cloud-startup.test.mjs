@@ -15,11 +15,11 @@ function fixture({saved,known=true,rev=7,remote,failClaim=false,slowCommit=false
     if(name==='commit_user_state'&&slowCommit)await new Promise(r=>resolveCommit=r);
     return {data:[{committed:true,lease_granted:true,out_revision:rev+1}]};
   },from(){calls.push('remote');return {select(){return this},eq(){return this},maybeSingle:async()=>({data:{revision:rev,payload:remote||{stores}}})}}};
-  const context={console:{warn(){}},Date,AbortController,Response,fetch,crypto:{randomUUID:()=> 'device'},navigator:{platform:'test',userAgent:'test'},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},setTimeout:(fn,ms)=>{timers.push({fn,ms});return timers.length},clearTimeout(){},setInterval(){},document:{addEventListener:(n,f)=>events[n]=f,querySelector:s=>{if(!nodes.has(s))nodes.set(s,{hidden:false,dataset:{},addEventListener(){}});return nodes.get(s)}},location:{reload(){calls.push('reload')}},JapoDB:{syncStores:Object.keys(stores),get:async()=>stores.settings[0],syncBackup:async()=>{calls.push('backup');return {stores:structuredClone(stores)}},restoreSync:async data=>{calls.push('restore');Object.assign(stores,structuredClone(data.stores))},clearUserData:async()=>{calls.push('clear')}}};
+  const context={console:{warn(){}},Date,AbortController,Response,fetch,crypto:{randomUUID:()=> 'device'},navigator:{platform:'test',userAgent:'test'},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},setTimeout:(fn,ms)=>{timers.push({fn,ms});return timers.length},clearTimeout(){},setInterval(){},document:{addEventListener:(n,f)=>events[n]=f,querySelector:s=>{if(!nodes.has(s))nodes.set(s,{hidden:false,dataset:{},addEventListener(){}});return nodes.get(s)}},location:{reload(){calls.push('reload')}},JapoDB:{syncStores:Object.keys(stores),get:async()=>stores.settings[0],syncBackup:async()=>{calls.push('backup');return {stores:structuredClone(stores)}},restoreSync:async(data,merger)=>{calls.push('restore');const result=merger?merger({stores:structuredClone(stores)},data):data;Object.assign(stores,structuredClone(result.stores));return result},clearUserData:async()=>{calls.push('clear')}}};
   context.window={JAPOTEACHER_SUPABASE:{},supabase:{createClient(_u,_k,o){options=o;return client}},addEventListener(){}};
   vm.runInNewContext(fs.readFileSync(new URL('../src/cloud-sync.js',import.meta.url),'utf8'),context);
   const cloud=context.window.CloudSync;
-  return {cloud,calls,storage,timers,options,context,begin:()=>events.DOMContentLoaded(),start:async()=>{events.DOMContentLoaded();await cloud.initialSync},finishCommit:()=>resolveCommit?.()};
+  return {cloud,client,stores,calls,storage,timers,options,context,begin:()=>events.DOMContentLoaded(),start:async()=>{events.DOMContentLoaded();await cloud.initialSync},finishCommit:()=>resolveCommit?.()};
 }
 test('unchanged remote revision opens without downloading, merging or rewriting history',async()=>{
   const f=fixture({saved:{revision:7,dirty:false}});await f.start();assert.deepEqual(f.calls,['claim_user_session']);
@@ -52,4 +52,28 @@ test('changes made during an upload remain dirty for the next upload or reload',
   const f=fixture({saved:{revision:7,dirty:true},slowCommit:true});await f.start();
   const flushing=f.cloud.flush();await new Promise(r=>setImmediate(r));await f.cloud.commit();f.finishCommit();await flushing;
   assert.equal(JSON.parse(f.storage.get('japoteacher_sync_v1:user')).dirty,true);
+});
+
+
+test('a batched local write marks its checkpoint before the batch or upload finishes',async()=>{
+ const f=fixture({saved:{revision:7,dirty:false}});await f.start();
+ f.cloud.markDirty();
+ assert.equal(JSON.parse(f.storage.get('japoteacher_sync_v1:user')).dirty,true);
+ assert(!f.calls.includes('commit_user_state'));
+});
+
+
+test('revision conflict includes answers saved during the rejected upload in the retry',async()=>{
+ const f=fixture({saved:{revision:7,dirty:true}});await f.start();let uploads=0;
+ f.client.rpc=async(name,args)=>{
+  assert.equal(name,'commit_user_state');uploads++;
+  if(uploads===1){
+   f.stores.attempts.push({attempt_id:'during-upload',attempted_at:'2026-09-20T10:00:00Z'});
+   f.cloud.markDirty();
+   return {data:[{committed:false,lease_granted:true,out_revision:8,out_payload:{stores:{settings:[],daily_sessions:[],attempts:[{attempt_id:'remote',attempted_at:'2026-09-19T10:00:00Z'}]}}}]};
+  }
+  assert.deepEqual([...args.p_payload.stores.attempts.map(a=>a.attempt_id)].sort(),['during-upload','remote']);
+  return {data:[{committed:true,lease_granted:true,out_revision:9}]};
+ };
+ await f.cloud.flush();assert.equal(uploads,2);assert.equal(f.stores.attempts.length,2);
 });

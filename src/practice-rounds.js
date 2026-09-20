@@ -22,5 +22,19 @@
     if(!retry.length)return {...round,scope,remaining:[],finished:true};
     return {scope,order:retry,remaining:retry,number:round.number+1,baseline:baseline(attempts,session),finished:false};
   }
-  window.PracticeRounds={latest,failed,completedIds,shuffled,create,reconcile};
+  function sessionResult(session, attempts) {
+    const evidence=latest(attempts,session), answered=new Set([...parse(session.completed_exercise_ids_json),...evidence.keys()]);
+    const planned=[...new Set([...parse(session.exercise_ids_ja_es_json),...parse(session.exercise_ids_es_ja_json)])];
+    const complete=planned.length>0&&planned.every(id=>answered.has(id)&&(!evidence.has(id)||Number(evidence.get(id).overall_score)>=50));
+    const dates=[...evidence.values()].map(a=>a.attempted_at).sort();
+    return {...session,completed_exercise_ids_json:JSON.stringify([...answered]),status:complete?'completed':answered.size?'in_progress':session.status,
+      completed_at:complete?(session.completed_at||dates.at(-1)||session.started_at||session.created_at):null};
+  }
+  async function repairSessions(db) {
+    const [sessions,attempts]=await Promise.all([db.all('daily_sessions'),db.all('attempts')]);
+    const updated=sessions.map(session=>sessionResult(session,attempts)).filter((session,index)=>JSON.stringify(session)!==JSON.stringify(sessions[index]));
+    if(updated.length)await db.bulkPut('daily_sessions',updated);
+    return updated.length;
+  }
+  window.PracticeRounds={sessionResult,repairSessions,latest,failed,completedIds,shuffled,create,reconcile};
 })();
