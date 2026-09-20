@@ -107,3 +107,20 @@ test('answered failures stay assigned without consuming new quota again, but day
  stores.daily_sessions.set('p::'+date,{session_id:'p::'+date,profile_id:'p',exercise_ids_ja_es_json:'["failed"]',study_plan_assignments_json:JSON.stringify({[plan.id]:['failed']}),completed_exercise_ids_json:'["failed"]'});
  const s=await plans.build('p',settings,date);assert.deepEqual(JSON.parse(s.exercise_ids_ja_es_json),['failed']);assert.equal(s.status,'in_progress');
 });
+
+
+test('after 6, 10 or 100 answers only the latest three valid scores rank selection',()=>{
+ for(const count of [6,10,100]){
+  const rows=[ex('many'),ex('medium')],a=[];
+  for(let i=0;i<count;i++)a.push({...attempt('many',new Date(Date.UTC(2026,7,1,0,i)).toISOString()),attempt_id:String(i),overall_score:i<count-3?100:[10,20,30][i-(count-3)]});
+  a.push({...attempt('medium'),overall_score:25});
+  a.push({...attempt('many','2026-08-02T10:00:00Z'),overall_score:100,evaluation_status:'invalid'});
+  a.reverse(); // IndexedDB order is not chronological.
+  const {plans}=fixture(),c=plans.classify(plan,rows,a,[],'p',date);
+  assert.equal(c.ev.recentAverage(rows[0]),20);
+  assert.deepEqual([...plans.select({...plan,dailyLimit:1,newLimit:0},rows,a,[],'p',date).ids],['many']);
+  const latest=a.find(row=>row.attempt_id===String(count-1));latest.overall_score=90;
+  assert.equal(plans.classify(plan,rows,a,[],'p',date).ev.recentAverage(rows[0]),40);
+  assert.deepEqual([...plans.select({...plan,dailyLimit:1,newLimit:0},rows,a,[],'p',date).ids],['medium']);
+ }
+});
