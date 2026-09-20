@@ -1,5 +1,11 @@
 # Japoteacher
 
+## Lupa para Windows
+
+[Descargar JapoTeacher Lupa 1.0.0 para Windows x64](https://github.com/raul-s-c/japoteacher/releases/download/windows-lupa-v1.0.0/JapoTeacher-Lupa-1.0.0-Windows-x64.zip) · [Instrucciones](desktop/README.md)
+
+Descomprime toda la carpeta y abre **JapoTeacher-Lupa.exe**. Recorta con **Ctrl + Mayús + L**, pega imágenes con **Ctrl + Mayús + V** o activa la recepción automática del portapapeles en ajustes. Comparte el historial y las frases potenciales con tu cuenta.
+
 ## 📲 Descargar para Android
 
 ### [⬇ Descargar la última APK](https://raul-s-c.github.io/japoteacher/download.html)

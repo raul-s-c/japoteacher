@@ -1,0 +1,11 @@
+{
+  "name": "japoteacher-lupa",
+  "productName": "JapoTeacher Lupa",
+  "version": "1.0.0",
+  "description": "Lupa de japonés para Windows",
+  "author": "JapoTeacher",
+  "main": "main.cjs",
+  "scripts": {"start": "electron .", "package": "node package.cjs"},
+  "dependencies": {"tesseract.js": "7.0.0", "@tesseract.js-data/jpn": "1.0.0"},
+  "devDependencies": {"electron": "44.4.3", "@electron/packager": "20.3.0"}
+}

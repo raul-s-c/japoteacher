@@ -1,7 +1,7 @@
 (function(){
   const $=selector=>document.querySelector(selector),
     esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const state={capture:null,messages:[],image:null};
+  const state={capture:null,messages:[],image:null,busy:false,nativeCaptureId:null};
   function endpoint(settings){return (settings?.aiEndpoint||'https://japoteacher-ai.raul-nihongo.workers.dev/evaluate').replace(/\/evaluate$/,'/lens')}
   function mode(){return document.querySelector('[name="lensMode"]:checked')?.value==='vision'?'vision':'text'}
   function localDate(){const now=new Date();return [now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-')}
@@ -60,22 +60,28 @@
     const settings=(await JapoDB.get('settings','app'))?.value||{},now=new Date().toISOString(),capture=data.analysis||{},captureId=data.capture_id||crypto.randomUUID();
     data.capture_id=captureId;
     const candidates=capture.reusable_phrase_candidates||[];
-    await JapoDB.put('lens_captures',{capture_id:captureId,profile_id:settings.profileId||'local-default',created_at:now,updated_at:now,local_date:localDate(),mode:data.capture_mode||mode(),context:$('#lensContext')?.value||'',context_detail:$('#lensContextDetail')?.value.trim()||'',input_text:$('#lensText')?.value.trim()||'',ocr_text:capture.ocr_text||'',title_es:capture.title_es||'',translation_es:capture.translation_es||'',jlpt_estimate:capture.jlpt_estimate||'',overlay_summary_es:capture.overlay_summary_es||'',analysis_json:JSON.stringify(capture),reusable_phrase_candidates_json:JSON.stringify(candidates),candidate_count:candidates.length,candidate_status:candidates.length?'pending_editorial_review':'none',candidate_source:'lens',usage_json:JSON.stringify(data.usage||{}),model:data.model||'',response_id:data.response_id||'',has_image:data.capture_mode==='vision'});
+    await JapoDB.put('lens_captures',{capture_id:captureId,profile_id:settings.profileId||'local-default',created_at:now,updated_at:now,local_date:localDate(),mode:data.capture_mode||mode(),context:$('#lensContext')?.value||'',context_detail:$('#lensContextDetail')?.value.trim()||'',input_text:$('#lensText')?.value.trim()||'',ocr_text:capture.ocr_text||'',title_es:capture.title_es||'',translation_es:capture.translation_es||'',jlpt_estimate:capture.jlpt_estimate||'',overlay_summary_es:capture.overlay_summary_es||'',analysis_json:JSON.stringify(capture),reusable_phrase_candidates_json:JSON.stringify(candidates),candidate_count:candidates.length,candidate_status:candidates.length?'pending_editorial_review':'none',candidate_source:window.DesktopLens?'lens_desktop':'lens',usage_json:JSON.stringify(data.usage||{}),model:data.model||'',response_id:data.response_id||'',has_image:data.capture_mode==='vision'});
     await renderHistory();
   }
   async function analyze(){
+    if(state.busy)return false;
     const button=$('#lensAnalyze'),target=$('#lensOutput'),selectedMode=mode(),text=$('#lensText')?.value.trim()||'',context=$('#lensContext')?.value||'',contextDetail=$('#lensContextDetail')?.value.trim()||'';
     if(selectedMode==='text'&&!text){window.UI?.toast?.('Pega texto japonés o cambia a modo visión.');return}
     if(selectedMode==='vision'&&!state.image&&!text){window.UI?.toast?.('Añade una imagen o una transcripción.');return}
+    state.busy=true;let saved=false;
+    document.dispatchEvent(new CustomEvent('japoteacher:lens-started'));
     setBusy(button,true,selectedMode==='vision'?'Analizando imagen...':'Analizando texto...');
     target.innerHTML='<div class="feedback-empty lens-loading"><span>⌕</span><h3>Analizando con IA</h3><p>Extrayendo texto, traducción y explicación didáctica.</p></div>';
     try{
       const data=await callLens({operation:'analyze',mode:selectedMode,context,context_detail:contextDetail,text,image_data_url:selectedMode==='vision'?state.image:''});
+      if(state.nativeCaptureId)data.capture_id=state.nativeCaptureId;
       data.capture_mode=selectedMode;
       renderAnalysis(data);
       await saveCapture(data);
+      saved=true;state.nativeCaptureId=null;
     }catch(error){target.innerHTML=`<p class="dictionary-ai-error">${esc(error.message||'No se pudo analizar la captura.')}</p>`}
-    finally{setBusy(button,false)}
+    finally{state.busy=false;setBusy(button,false);document.dispatchEvent(new CustomEvent('japoteacher:lens-finished',{detail:{saved}}))}
+    return saved;
   }
   async function ask(){
     const button=$('#lensAsk'),input=$('#lensQuestion'),question=input?.value.trim();
@@ -118,7 +124,7 @@
     $('#lensImageTools').hidden=!vision;
   }
   function clear(){
-    state.capture=null;state.messages=[];state.image=null;
+    state.capture=null;state.messages=[];state.image=null;state.nativeCaptureId=null;
     $('#lensText').value='';$('#lensQuestion').value='';$('#lensContextDetail').value='';$('#lensPreview').innerHTML='';$('#lensAsk').disabled=true;
     $('#lensOutput').innerHTML='<div class="feedback-empty"><span>⌕</span><h3>La explicación aparecerá aquí</h3><p>Elige solo texto para ahorrar o visión si necesitas OCR de una captura.</p></div>';
     $('#lensThread').innerHTML='<p class="empty">Todavía no hay una captura activa sobre la que preguntar.</p>';
@@ -137,15 +143,17 @@
     if(radio){radio.checked=true;updateMode()}
   }
   function showLensView(){
+    if(window.DesktopLens)return;
     const button=document.querySelector('.nav-item[data-view="lupa"]');
     if(button)button.click();
     else location.hash='lupa';
   }
   function receiveNativeCapture(payload){
     const data=typeof payload==='string'?parseJson(payload,{}):(payload||{}),text=String(data.text||'').trim(),image=String(data.imageDataUrl||'').trim(),context=String(data.context||'').trim();
+    state.nativeCaptureId=typeof data.captureId==='string'?data.captureId:null;
     showLensView();
     if(context)$('#lensContextDetail').value=context;
-    if(text)$('#lensText').value=text;
+    $('#lensText').value=text;
     state.image=image||null;
     if(image){
       setLensMode('vision');
@@ -171,4 +179,5 @@
     updateMode();setNativeVisible();renderHistory();
   });
   window.JapoNativeLens={receiveCapture:receiveNativeCapture};
+  window.JapoLens={analyze,renderHistory,isBusy:()=>state.busy};
 })();

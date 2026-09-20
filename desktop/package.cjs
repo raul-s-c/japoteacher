@@ -1,0 +1,2 @@
+const path=require('node:path');
+(async()=>{const {packager}=await import('@electron/packager');const result=await packager({dir:__dirname,out:path.join(__dirname,'dist'),name:'JapoTeacher-Lupa',platform:'win32',arch:'x64',icon:path.join(__dirname,'icon.ico'),overwrite:true,asar:false,ignore:[/^\/dist(?:\/|$)/,/^\/.*\.test\.cjs$/],win32metadata:{CompanyName:'JapoTeacher',FileDescription:'Lupa de japonés para Windows',ProductName:'JapoTeacher Lupa'}});console.log(result)})().catch(e=>{console.error(e);process.exitCode=1});

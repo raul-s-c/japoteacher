@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JapoTeacher · Lupa de Windows</title><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://japoteacher-ai.raul-nihongo.workers.dev; object-src 'none'; base-uri 'self'; frame-src 'none'"><link rel="stylesheet" href="src/desktop-lens.css?v=1"></head>
+<body>
+<header class="toolbar"><div><small>JAPOTEACHER</small><h1>Lupa</h1></div><button id="desktopHide" title="Minimizar y seguir leyendo">Minimizar</button></header>
+<main>
+<section class="capture-actions" aria-label="Capturas"><button id="desktopCapture">Capturar zona</button><button id="desktopPaste">Pegar imagen</button><button id="desktopOpen">Abrir imágenes</button></section>
+<p class="hint">Ctrl + Mayús + L: recortar · Ctrl + Mayús + V: pegar.<br>También puedes arrastrar imágenes aquí.</p>
+<p id="desktopStatus" role="status" aria-live="polite">Inicia sesión una vez con tu cuenta de JapoTeacher.</p>
+<details id="desktopSettings"><summary>Ajustes y cuenta</summary><div class="settings">
+<label>Procesar capturas<select id="desktopMode"><option value="vision">Visión: enviar imagen a la IA</option><option value="text">OCR local: enviar solo el texto</option></select></label>
+<label class="check"><input type="checkbox" id="desktopAuto" checked>Analizar al recibir una captura</label>
+<label class="check"><input type="checkbox" id="desktopWatch">Recibir automáticamente nuevas imágenes del portapapeles</label>
+<p class="hint">Si activas ambas opciones, las nuevas imágenes copiadas se analizarán sin otra confirmación mientras la lupa esté abierta.</p>
+<label class="check"><input type="checkbox" id="desktopTop" checked>Mantener el panel encima de otras ventanas</label>
+<label class="check"><input type="checkbox" id="desktopVertical">Texto vertical para OCR local</label>
+<p class="hint">El OCR local puede fallar con tipografías de manga. Puedes revisar el texto antes de analizar desactivando el envío automático. Nunca cambia a visión por su cuenta.</p>
+<div id="authSignedOut"><label>Correo<input id="authEmail" type="email" autocomplete="username"></label><label>Contraseña<input id="authPassword" type="password" autocomplete="current-password"></label><button id="signInButton">Iniciar sesión</button><button id="signUpButton">Crear cuenta</button></div>
+<div id="authSignedIn" hidden><p id="authUserEmail"></p><button id="signOutButton">Cerrar sesión</button></div><p id="cloudStatus" role="status"></p>
+<button id="desktopQuit" class="danger">Cerrar la lupa…</button>
+</div></details>
+<section id="sessionLock" hidden><p id="sessionLockMessage"></p><button id="takeSessionButton">Usar mi cuenta en este PC</button><button id="sessionLockSignOut">Cerrar sesión</button></section>
+<details id="inputDetails" open><summary>Captura actual</summary><div class="settings">
+<div id="lensPreview"></div>
+<div class="radios"><label><input type="radio" name="lensMode" value="vision" checked>Visión</label><label><input type="radio" name="lensMode" value="text">Solo texto</label></div>
+<div id="lensImageTools"><label>Imagen<input id="lensImageInput" type="file" accept="image/png,image/jpeg,image/webp,image/bmp"></label></div>
+<label>Texto japonés<textarea id="lensText" rows="3" maxlength="5000" placeholder="Pega texto o recibe una captura"></textarea></label>
+<label>Contexto<select id="lensContext"><option value="manga">Manga o viñeta</option><option value="web">Web o app</option><option value="noticia">Noticia o artículo</option><option value="menu">Menú o tienda</option><option value="chat">Chat</option><option value="documento">Documento</option><option value="otro">Otro</option></select></label>
+<label>Detalle opcional<input id="lensContextDetail" maxlength="160" placeholder="Quién habla, qué está pasando…"></label>
+<div class="capture-actions"><button id="lensAnalyze">Analizar</button><button id="desktopDiscard">Descartar captura pendiente</button><button id="lensClear">Limpiar</button></div>
+</div></details>
+<div id="lensOutput"><p>Recorta una viñeta para ver aquí la traducción y su explicación.</p></div>
+<details><summary>Preguntar sobre este fragmento</summary><div class="settings"><div id="lensThread"></div><label>Tu pregunta<textarea id="lensQuestion" rows="2" maxlength="900"></textarea></label><button id="lensAsk" disabled>Preguntar</button></div></details>
+<details id="historyDetails"><summary>Historial y frases potenciales</summary><p class="hint">Los análisis y las frases candidatas se guardan en tu cuenta. Las candidatas quedan pendientes de revisión, no se añaden automáticamente a tus ejercicios.</p><button id="lensRefreshHistory">Actualizar historial</button><div id="lensHistory"></div></details>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="src/supabase-config.js?v=11"></script><script src="src/ai-transport.js?v=1"></script><script src="src/db.js?v=33"></script><script src="src/sync-policy.js?v=2"></script><script src="src/cloud-sync.js?v=43"></script><script src="src/lens.js?v=7"></script><script src="src/desktop-lens.js?v=1"></script>
+</body></html>
