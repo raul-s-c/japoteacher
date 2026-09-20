@@ -8,7 +8,7 @@
   function parseJson(value,fallback){try{return JSON.parse(value||'')}catch{return fallback}}
   function setBusy(button,busy,label){if(!button)return;button.disabled=busy;button.textContent=busy?label:button.dataset.label}
   function japaneseWithFurigana(text,readings=[]){
-    const source=String(text||''),items=(Array.isArray(readings)?readings:[]).map(item=>({characters:item.characters||item.item,reading_hiragana:item.reading_hiragana||item.reading})).filter(item=>item.characters&&item.reading_hiragana).sort((a,b)=>b.characters.length-a.characters.length);
+    const source=String(text||''),items=(Array.isArray(readings)?readings:[]).map(item=>({characters:item.characters||item.term||item.item,reading_hiragana:item.reading_hiragana||item.reading})).filter(item=>item.characters&&item.reading_hiragana).sort((a,b)=>b.characters.length-a.characters.length);
     let html='',index=0;
     while(index<source.length){const item=items.find(candidate=>source.startsWith(candidate.characters,index));if(item){html+=`<ruby>${esc(item.characters)}<rt>${esc(item.reading_hiragana)}</rt></ruby>`;index+=item.characters.length}else{html+=esc(source[index]);index++}}
     return html;
