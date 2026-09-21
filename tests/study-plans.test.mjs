@@ -138,3 +138,22 @@ test('new quota is reserved before filling with lowest-average reviews, includin
  assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:1},rows,consumed,[],'p',date,[],['new1']).ids],['new1','weak','middle']);
  assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:2,weeklyNewLimit:1},rows,consumed,[],'p',date,[],['new1']).ids],['new1','weak','middle']);
 });
+
+
+test('recalculating today twice leaves attempts, progress and previous days byte-for-byte intact',async()=>{
+ const rows=['done','draft','review','new1','new2'].map(id=>ex(id));
+ const attempts=[{...attempt('done',today),overall_score:30,session_id:'p::'+date},attempt('review')];
+ const progress=[{progress_id:'p::done',profile_id:'p',exercise_id:'done',total_attempts:6,last_score:30,last_seen_at:today}];
+ const {plans,stores}=fixture(rows,attempts,progress),settings={profileId:'p',dailyJaEs:4,dailyEsJa:0,levels:['N5'],newRatio:50};
+ await plans.ensure(settings);await plans.save('p',{...plan,dailyLimit:4,newLimit:2});
+ const yesterday={session_id:'p::2026-09-07',completed_exercise_ids_json:'["review"]',status:'completed',local_date:'2026-09-07'};
+ stores.daily_sessions.set(yesterday.session_id,yesterday);
+ stores.daily_sessions.set('p::'+date,{session_id:'p::'+date,profile_id:'p',exercise_ids_ja_es_json:'["done","draft","review"]',study_plan_assignments_json:JSON.stringify({[plan.id]:['done','draft','review']}),completed_exercise_ids_json:'["done"]',drafts_json:'{"draft":"respuesta sin terminar"}'});
+ const before=JSON.stringify([Array.from(stores.attempts),Array.from(stores.exercise_progress),yesterday]);
+ for(let n=0;n<2;n++){
+  const day=await plans.build('p',settings,date,{regenerate:true});
+  assert(JSON.parse(day.exercise_ids_ja_es_json).includes('done'));assert(JSON.parse(day.exercise_ids_ja_es_json).includes('draft'));
+  assert.equal(JSON.parse(day.drafts_json).draft,'respuesta sin terminar');assert.equal(day.status,'in_progress');
+  assert.equal(JSON.stringify([Array.from(stores.attempts),Array.from(stores.exercise_progress),stores.daily_sessions.get(yesterday.session_id)]),before);
+ }
+});
