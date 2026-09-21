@@ -66,9 +66,10 @@
     let newSlots=Math.max(0,Math.min(plan.newLimit-newToday.length-pendingNew,plan.weeklyNewLimit?plan.weeklyNewLimit-weekly.length-pendingNew:Infinity));
     const readyFresh=c.unseen.filter(c.eligibleNew),readyReviews=c.reviews;
     const rank=(a,b)=>{if(!c.ev.isNew(a)&&!c.ev.isNew(b)){const delta=c.ev.recentAverage(a)-c.ev.recentAverage(b);if(delta)return delta}if(!regenerate){const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?-1:1}else{const aOld=old.includes(a.exercise_id),bOld=old.includes(b.exercise_id);if(aOld!==bOld)return aOld?1:-1}return c.dueAt(a)-c.dueAt(b)||Difficulty.score(a)-Difficulty.score(b)||a.exercise_id.localeCompare(b.exercise_id)};
-    const add=(pool,isNew)=>{for(const e of [...pool].sort(rank)){if(!slots||isNew&&!newSlots)break;if(seen.has(identity(e)))continue;seen.add(identity(e));selected.push(e.exercise_id);slots--;if(isNew)newSlots--}};
+    const add=(pool,isNew,limit=Infinity)=>{for(const e of [...pool].sort(rank)){if(!slots||!limit||isNew&&!newSlots)break;if(seen.has(identity(e)))continue;seen.add(identity(e));selected.push(e.exercise_id);slots--;limit--;if(isNew)newSlots--}};
     if(!plan.paused&&plan.dailyLimit){
-      add(readyReviews,false);
+      const reserved=plan.mode==='learn'?Math.min(slots,newSlots,readyFresh.filter(e=>!seen.has(identity(e))).length):0;
+      add(readyReviews,false,slots-reserved);
       if(plan.mode==='learn')add(readyFresh,true);
     }
     return {ids:selected,stats:{total:c.rows.length,unseen:c.unseen.length,learned:c.learned.length,mastered:c.mastered.length,due:c.reviews.length,locked:c.unseen.filter(e=>!c.eligibleNew(e)).length,done:completed.length,newToday:newToday.length}};

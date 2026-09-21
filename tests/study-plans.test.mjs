@@ -68,7 +68,7 @@ test('nine-day forecast buckets actual review dates, respecting cooldown, scope 
 
 test('recent average beats dates, cached assignments, regeneration and legacy new-first preference',()=>{
  const rows=['weak','medium','strong','new'].map(id=>ex(id)),a=[{...attempt('weak'),overall_score:10},{...attempt('medium'),overall_score:45},{...attempt('strong','2026-07-01T10:00:00Z'),overall_score:90}],p=[{exercise_id:'weak',profile_id:'p',last_seen_at:old,next_review_at:'2027-01-01T00:00:00Z'}],{plans}=fixture();
- for(const regenerate of [false,true])assert.deepEqual([...plans.select({...plan,dailyLimit:2,reviewsFirst:false},rows,a,p,'p',date,['strong'],[],regenerate).ids],['weak','medium']);
+ for(const regenerate of [false,true])assert.deepEqual([...plans.select({...plan,dailyLimit:2,newLimit:0,reviewsFirst:false},rows,a,p,'p',date,['strong'],[],regenerate).ids],['weak','medium']);
  assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,p,'p',date).ids],['weak','medium','strong','new']);
 });
 
@@ -77,7 +77,7 @@ test('three recent 95+ scores retire automatic reviews; a later poor score resto
  const c=plans.classify(plan,rows,a,[],'p',date);assert.equal(c.mastered.length,1);
  assert.deepEqual([...plans.select({...plan,dailyLimit:8},rows,a,[],'p',date,['mastered']).ids],['weak','new']);
  a.push({...attempt('mastered','2026-08-04T10:00:00Z'),overall_score:20});
- assert.deepEqual([...plans.select({...plan,dailyLimit:2},rows,a,[],'p',date).ids],['weak','mastered']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:2,newLimit:0},rows,a,[],'p',date).ids],['weak','mastered']);
 });
 
 test('history averages valid scores, respects profiles/direction, and merges duplicate sentence IDs',()=>{
@@ -123,4 +123,18 @@ test('after 6, 10 or 100 answers only the latest three valid scores rank selecti
   assert.equal(plans.classify(plan,rows,a,[],'p',date).ev.recentAverage(rows[0]),40);
   assert.deepEqual([...plans.select({...plan,dailyLimit:1,newLimit:0},rows,a,[],'p',date).ids],['medium']);
  }
+});
+
+
+test('new quota is reserved before filling with lowest-average reviews, including reselection',()=>{
+ const rows=['weak','middle','strong','new1','new2'].map(id=>ex(id)),a=[{...attempt('weak'),overall_score:10},{...attempt('middle'),overall_score:40},{...attempt('strong'),overall_score:80}],{plans}=fixture();
+ for(const regenerate of [false,true]){
+  assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:1},rows,a,[],'p',date,['weak','middle','strong'],[],regenerate).ids],['weak','middle','new1']);
+ }
+ assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:0},rows,a,[],'p',date).ids],['weak','middle','strong']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:3,mode:'review'},rows,a,[],'p',date).ids],['weak','middle','strong']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:2},rows.slice(0,4),a,[],'p',date).ids],['weak','middle','new1']);
+ const consumed=[...a,attempt('new1',today)];
+ assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:1},rows,consumed,[],'p',date,[],['new1']).ids],['new1','weak','middle']);
+ assert.deepEqual([...plans.select({...plan,dailyLimit:3,newLimit:2,weeklyNewLimit:1},rows,consumed,[],'p',date,[],['new1']).ids],['new1','weak','middle']);
 });
