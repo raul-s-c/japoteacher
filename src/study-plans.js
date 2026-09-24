@@ -83,9 +83,10 @@
     for(const d of ['ja_es','es_ja'])repeats[d]=[...new Set([...parse(existing?.['voluntary_repeat_ids_'+d+'_json']),...SessionPlanner.voluntaryRepeatIds(exercises,attempts,profile,date,d)])].filter(id=>active(byId.get(id)||{active:false}));
     const repeatSet=new Set([...repeats.ja_es,...repeats.es_ja]);
     for(const plan of plans){
+      const swaps=parse(existing?.review_new_swaps_json).filter(x=>x.plan_id===plan.id),excluded=new Set(swaps.map(x=>x.from));
       const old=oldAssignments[plan.id]||parse(existing?.['exercise_ids_'+plan.direction+'_json']).filter(id=>matches(plan,byId.get(id)||{}));
-      const pinned=[...new Set([...old.filter(id=>completed.has(id)||drafts[id]),...[...completed].filter(id=>matches(plan,byId.get(id)||{}))])].filter(id=>byId.has(id)&&!repeatSet.has(id)&&!used.has(identity(byId.get(id))));
-      const result=select(plan,exercises.filter(e=>!used.has(identity(e))&&!repeatSet.has(e.exercise_id)),attempts,progress,profile,date,old,pinned,!!options.regenerate);
+      const pinned=[...new Set([...old.filter(id=>completed.has(id)||drafts[id]||(!plan.paused&&plan.mode==='learn'&&swaps.some(x=>x.to===id))),...[...completed].filter(id=>matches(plan,byId.get(id)||{}))])].filter(id=>byId.has(id)&&!repeatSet.has(id)&&!used.has(identity(byId.get(id))));
+      const result=select({...plan,newLimit:plan.newLimit+swaps.length},exercises.filter(e=>!excluded.has(e.exercise_id)&&!used.has(identity(e))&&!repeatSet.has(e.exercise_id)),attempts,progress,profile,date,old,pinned,!!options.regenerate);
       assignments[plan.id]=result.ids;diagnostics[plan.id]=result.stats;
       for(const id of result.ids){used.add(identity(byId.get(id)));combined[plan.direction].push(id)}
     }
@@ -103,6 +104,35 @@
     if(existing&&stableKeys.every(k=>existing[k]===session[k]))return existing;
     await JapoDB.put('daily_sessions',session);return session;
   }
+  function swapOptions(plan,session,exercises,attempts,progress,profile){
+    const c=classify(plan,exercises,attempts,progress,profile,session.local_date),assigned=parse(session.study_plan_assignments_json,{})[plan.id]||[];
+    const done=new Set(parse(session.completed_exercise_ids_json)),drafts=parse(session.drafts_json,{}),planned=new Set([...parse(session.exercise_ids_ja_es_json),...parse(session.exercise_ids_es_ja_json)]);
+    const reviews=plan.paused||plan.mode!=='learn'?[]:c.rows.filter(e=>assigned.includes(e.exercise_id)&&!done.has(e.exercise_id)&&!drafts[e.exercise_id]&&!c.ev.today(e)&&!c.ev.isNew(e)&&c.ev.recentAverage(e)>50).map(e=>({exercise:e,average:c.ev.recentAverage(e),scores:(c.ev.history.get(identity(e))||[]).slice(0,3).map(a=>Number(a.overall_score))}));
+    const plannedKeys=new Set(exercises.filter(e=>planned.has(e.exercise_id)).map(identity));
+    const fresh=c.rows.filter(e=>c.eligibleNew(e)&&!plannedKeys.has(identity(e))).sort((a,b)=>Difficulty.score(a)-Difficulty.score(b)||a.exercise_id.localeCompare(b.exercise_id));
+    const start=new Date(session.local_date+'T12:00:00');start.setDate(start.getDate()-((start.getDay()+6)%7));const week=day(start);
+    const tagged=new Set(attempts.filter(a=>a.study_plan_id===plan.id&&(!a.profile_id||a.profile_id===profile)).map(a=>a.exercise_id));
+    const counted=[...new Map([...c.rows,...exercises.filter(e=>tagged.has(e.exercise_id))].map(e=>[identity(e),e])).values()];
+    const learnedThisWeek=counted.filter(e=>{const d=day(c.ev.first.get(identity(e)));return d>=week&&d<=session.local_date}).length;
+    const pendingFresh=c.rows.filter(e=>planned.has(e.exercise_id)&&c.ev.isNew(e)).length;
+    const capacity=Math.min(fresh.length,plan.weeklyNewLimit?Math.max(0,plan.weeklyNewLimit-learnedThisWeek-pendingFresh):Infinity);
+    return {reviews,fresh:fresh.slice(0,capacity),fingerprint:JSON.stringify([...assigned].sort())};
+  }
+  async function chooseNewSwaps(profile,sessionId,planId,requested=[]){
+    const [session,plans,exercises,attempts,progress]=await Promise.all([JapoDB.get('daily_sessions',sessionId),all(profile),JapoDB.all('exercises'),JapoDB.all('attempts'),JapoDB.all('exercise_progress')]);
+    const plan=plans.find(p=>p.id===planId);
+    if(!session||session.profile_id!==profile||session.local_date!==SessionPlanner.localDate()||!plan)throw Error('La selección ha cambiado. Vuelve a abrir el bloque.');
+    const options=swapOptions(plan,session,exercises,attempts,progress,profile),wanted=[...new Set(requested)];
+    if(wanted.some(id=>!options.reviews.some(r=>r.exercise.exercise_id===id)))throw Error('Alguna frase ya no se puede sustituir. Vuelve a revisar la selección.');
+    if(wanted.length>options.fresh.length)throw Error('No hay suficientes nuevas disponibles con los límites actuales. Elige menos frases.');
+    const now=new Date().toISOString(),mapping=new Map(wanted.map((id,i)=>[id,options.fresh[i].exercise_id])),assignments=parse(session.study_plan_assignments_json,{});
+    assignments[planId]=assignments[planId].map(id=>mapping.get(id)||id);
+    const swaps=[...parse(session.review_new_swaps_json),...wanted.map(id=>({plan_id:planId,from:id,to:mapping.get(id),at:now}))];
+    const decisions={...parse(session.plan_swap_choices_json,{}),[planId]:JSON.stringify([...assignments[planId]].sort())};
+    const field='exercise_ids_'+plan.direction+'_json';
+    const updated={...session,[field]:JSON.stringify(parse(session[field]).map(id=>mapping.get(id)||id)),study_plan_assignments_json:JSON.stringify(assignments),review_new_swaps_json:JSON.stringify(swaps),plan_swap_choices_json:JSON.stringify(decisions),plan_updated_at:now};
+    await JapoDB.put('daily_sessions',updated);return updated;
+  }
   async function forExercise(profile,exercise,session){const plans=await all(profile),assignments=parse(session?.study_plan_assignments_json,{});return plans.find(p=>assignments[p.id]?.includes(exercise.exercise_id))||plans.find(p=>matches(p,exercise))}
   async function replace(session,id,reason,settings){
     const [exercises,attempts,progress]=await Promise.all([JapoDB.all('exercises'),JapoDB.all('attempts'),JapoDB.all('exercise_progress')]),current=exercises.find(e=>e.exercise_id===id);if(!current)return null;
@@ -114,5 +144,5 @@
     const field='exercise_ids_'+current.direction+'_json',history=parse(session.replacement_history_json);history.push({from:id,to:next.exercise_id,reason,at:new Date().toISOString()});
     const updated={...session,[field]:JSON.stringify(parse(session[field]).map(x=>x===id?next.exercise_id:x)),study_plan_assignments_json:JSON.stringify(assignments),replacement_history_json:JSON.stringify(history),plan_updated_at:new Date().toISOString()};await JapoDB.put('daily_sessions',updated);return {session:updated,exerciseId:next.exercise_id,previousId:id};
   }
-  window.StudyPlans={reviewForecast,all,save,ensure,normalize,catalog,matches,scopeRows,classify,select,build,forExercise,replace,parse};
+  window.StudyPlans={swapOptions,chooseNewSwaps,reviewForecast,all,save,ensure,normalize,catalog,matches,scopeRows,classify,select,build,forExercise,replace,parse};
 })();

@@ -77,3 +77,11 @@ test('revision conflict includes answers saved during the rejected upload in the
  };
  await f.cloud.flush();assert.equal(uploads,2);assert.equal(f.stores.attempts.length,2);
 });
+
+
+test('latest daily selection keeps its voluntary new swaps when syncing another device',async()=>{
+ const remoteSession={session_id:'day',plan_updated_at:'2026-09-24T12:00:00Z',exercise_ids_ja_es_json:'["new"]',completed_exercise_ids_json:'[]',review_new_swaps_json:'[{"plan_id":"N5","from":"old","to":"new"}]',plan_swap_choices_json:'{"N5":"new"}'};
+ const f=fixture({saved:{revision:6,dirty:true},remote:{stores:{settings:[],attempts:[],daily_sessions:[remoteSession]}}});
+ f.stores.daily_sessions.push({session_id:'day',plan_updated_at:'2026-09-24T10:00:00Z',exercise_ids_ja_es_json:'["old"]',review_new_swaps_json:'[]'});
+ await f.start();const saved=f.stores.daily_sessions[0];assert.equal(saved.review_new_swaps_json,remoteSession.review_new_swaps_json);assert.equal(saved.plan_swap_choices_json,remoteSession.plan_swap_choices_json);assert.deepEqual(JSON.parse(saved.exercise_ids_ja_es_json),['new']);
+});

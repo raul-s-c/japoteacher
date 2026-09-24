@@ -56,6 +56,8 @@
   }
   async function open(){
     if(!plan||busy)return;
+    if(window.PlanNewReview&&!await PlanNewReview.reviewAll())return;
+    if(!plan||busy)return;
     busy=true;const active=plan,activeCache=cache;
     $('#openDailyLesson').disabled=true;$('#dailyLessonContent').hidden=false;render();
     $('#dailyLessonContent').focus();

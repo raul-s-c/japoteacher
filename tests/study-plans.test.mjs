@@ -157,3 +157,39 @@ test('recalculating today twice leaves attempts, progress and previous days byte
   assert.equal(JSON.stringify([Array.from(stores.attempts),Array.from(stores.exercise_progress),stores.daily_sessions.get(yesterday.session_id)]),before);
  }
 });
+
+
+test('preview is strictly above 50 using last three; excludes new, today, drafts and other blocks',()=>{
+ const rows=['high','edge','draft','today','new','other'].map(id=>ex(id)),a=[...Array.from({length:6},(_,i)=>({...attempt('high',`2026-08-0${i+1}T10:00:00Z`),overall_score:i<3?0:60})),{...attempt('edge'),overall_score:50},{...attempt('draft'),overall_score:80},attempt('today',today),attempt('other')],{plans}=fixture();
+ const session={profile_id:'p',local_date:date,study_plan_assignments_json:JSON.stringify({[plan.id]:['high','edge','draft','today','new']}),exercise_ids_ja_es_json:'["high","edge","draft","today","new"]',completed_exercise_ids_json:'["today"]',drafts_json:'{"draft":"saved"}'};
+ const preview=plans.swapOptions(plan,session,rows,a,[],'p');assert.deepEqual(preview.reviews.map(r=>r.exercise.exercise_id),['high']);assert.equal(preview.reviews[0].average,60);
+});
+
+test('chosen swaps survive recalculation, increase only today new quota and preserve all history',async()=>{
+ const now=new Date(),todayDate=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+ const rows=['r1','r2','n1','n2','n3','inverse'].map(id=>ex(id,id==='inverse'?{direction:'es_ja'}:{}));
+ const attempts=[{...attempt('r1'),overall_score:70},{...attempt('r2'),overall_score:30}];
+ const {plans,stores}=fixture(rows,attempts),settings={profileId:'p',dailyJaEs:3,dailyEsJa:0,levels:['N5'],newRatio:30};
+ await plans.ensure(settings);await plans.save('p',{...plan,dailyLimit:3,newLimit:1});const session=await plans.build('p',settings,todayDate);
+ const before=JSON.stringify([...stores.attempts]);
+ await assert.rejects(()=>plans.chooseNewSwaps('p',session.session_id,plan.id,['r2']),/ya no/);
+ const changed=await plans.chooseNewSwaps('p',session.session_id,plan.id,['r1']);assert.equal(JSON.parse(changed.exercise_ids_ja_es_json).length,3);assert(!JSON.parse(changed.exercise_ids_ja_es_json).includes('r1'));
+ const rebuilt=await plans.build('p',settings,todayDate,{regenerate:true}),ids=JSON.parse(rebuilt.exercise_ids_ja_es_json);
+ assert.equal(ids.length,3);assert(ids.includes('r2'));assert.equal(ids.filter(id=>id.startsWith('n')).length,2);assert(!ids.includes('r1'));
+ assert.equal((await plans.all('p')).find(p=>p.id===plan.id).newLimit,1);assert.equal(JSON.stringify([...stores.attempts]),before);
+ await assert.rejects(()=>plans.chooseNewSwaps('p',session.session_id,plan.id,['inverse']),/ya no/);
+});
+
+test('swap availability respects the weekly cap and cannot propose already planned new phrases',()=>{
+ const rows=['review','new1','new2'].map(id=>ex(id)),attempts=[attempt('review')],{plans}=fixture();
+ const session={profile_id:'p',local_date:date,study_plan_assignments_json:JSON.stringify({[plan.id]:['review','new1']}),exercise_ids_ja_es_json:'["review","new1"]'};
+ assert.equal(plans.swapOptions({...plan,weeklyNewLimit:1},session,rows,attempts,[],'p').fresh.length,0);
+ assert.deepEqual(plans.swapOptions(plan,session,rows,attempts,[],'p').fresh.map(e=>e.exercise_id),['new2']);
+});
+
+
+test('changing levels cannot bypass the weekly allowance through voluntary swaps',()=>{
+ const rows=[ex('review'),ex('new'),ex('learned',{jlpt_level:'N4'})],a=[attempt('review'),{...attempt('learned','2026-09-07T10:00:00Z'),study_plan_id:plan.id}],{plans}=fixture();
+ const session={profile_id:'p',local_date:date,study_plan_assignments_json:JSON.stringify({[plan.id]:['review']}),exercise_ids_ja_es_json:'["review"]'};
+ assert.equal(plans.swapOptions({...plan,weeklyNewLimit:1},session,rows,a,[],'p').fresh.length,0);
+});
