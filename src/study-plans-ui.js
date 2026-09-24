@@ -24,10 +24,10 @@
     const available=StudyPlans.catalog().filter(c=>!plans.some(p=>p.id===c.id+'::'+direction));
     f.source.innerHTML=(editing?StudyPlans.catalog():available).map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
     if(!editing&&!available.length){UI.toast('Ya tienes todos los planes de esta dirección. Puedes reanudar los pausados.');return}
-    const p=editing||{direction,dailyLimit:15,newLimit:5,quizSize:10,weeklyNewLimit:0,cooldownDays:1,reviewsFirst:true,adaptive:true,paused:false,mode:'learn'};
+    const p=editing||{direction,dailyLimit:15,newLimit:5,weeklyNewLimit:0,cooldownDays:1,reviewsFirst:true,adaptive:true,paused:false,mode:'learn'};
     $('#studyPlanTitle').textContent=editing?'Ajustes del plan':'Añadir plan';$('#studyPlanScope').textContent=(editing?editing.name+' · ':'')+UI.directionName(p.direction);
     f.source.disabled=!!editing;if(editing)f.source.value=editing.collection||editing.levels[0];
-    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit','mode'])f.elements[k].value=p[k];
+    for(const k of ['dailyLimit','newLimit','weeklyNewLimit','mode'])f.elements[k].value=p[k];
     for(const k of ['adaptive','paused'])f.elements[k].checked=p[k];
     $('#planLevels').innerHTML=['N5','N4','N3','N2','N1'].map(l=>`<label><input type="checkbox" name="planLevel" value="${l}"${(!editing||p.levels.includes(l))?' checked':''}>${l}</label>`).join('');
     toggleFields();$('#studyPlanSaveStatus').textContent='';dialog.showModal();
@@ -37,7 +37,7 @@
     const levelValues=[...f.querySelectorAll('[name=planLevel]:checked')].map(x=>x.value),d=editing?.direction||direction;
     if(source.collection&&!levelValues.length){$('#studyPlanSaveStatus').textContent='Elige al menos un nivel para este bloque.';return}
     const p={...editing,id:editing?.id||source.id+'::'+d,name:source.name,collection:source.collection,levels:source.collection?levelValues:source.levels,direction:d};
-    for(const k of ['dailyLimit','newLimit','quizSize','weeklyNewLimit'])p[k]=Number(f.elements[k].value);
+    for(const k of ['dailyLimit','newLimit','weeklyNewLimit'])p[k]=Number(f.elements[k].value);
     for(const k of ['adaptive','paused'])p[k]=f.elements[k].checked;p.mode=f.mode.value;
     if(p.newLimit>p.dailyLimit&&p.mode!=='review'){$('#studyPlanSaveStatus').textContent='El máximo de nuevas no puede superar el total diario.';return}
     button.disabled=true;try{await StudyPlans.save(context.settings.profileId,p);await App.applyStudyPlans();$('#studyPlanDialog').close();UI.toast('Plan guardado. Pendientes de hoy actualizadas.')}catch(error){$('#studyPlanSaveStatus').textContent=error.message||'No se pudo guardar el plan.'}finally{button.disabled=false}
@@ -53,7 +53,7 @@
     document.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;
       if(b.hasAttribute('data-plan-direction')){direction=b.dataset.planDirection;draw()}
       if(b.hasAttribute('data-plan-add'))openEditor();if(b.dataset.planEdit)openEditor(b.dataset.planEdit);if(b.dataset.planTerms)openTerms(b.dataset.planTerms);
-      if(b.dataset.planStudy){const p=plans.find(p=>p.id===b.dataset.planStudy),done=new Set(PracticeRounds.completedIds(context.session,context.snap.attempts));App.startPlan(p,assigned(p).filter(id=>!done.has(id)).slice(0,p.quizSize))}
+      if(b.dataset.planStudy){const p=plans.find(p=>p.id===b.dataset.planStudy),done=new Set(PracticeRounds.completedIds(context.session,context.snap.attempts));App.startPlan(p,assigned(p).filter(id=>!done.has(id)))}
       if(b.hasAttribute('data-plan-preserved'))App.startPlan(null,StudyPlans.parse(context.session.selection_reason_json,{}).preserved||[]);
       if(b.hasAttribute('data-plan-home')){UI.showView('hoy');$('#addStudyPlan').focus()}
     });

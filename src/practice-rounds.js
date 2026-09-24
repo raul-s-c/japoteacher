@@ -14,6 +14,11 @@
   function shuffled(ids,random=Math.random){const out=[...ids];for(let i=out.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out}
   const baseline=(attempts,session)=>Object.fromEntries([...latest(attempts,session)].map(([id,a])=>[id,a.attempt_id]));
   function create(ids,attempts,session){const scope=[...new Set(ids)];return {scope,order:scope,remaining:scope,number:1,baseline:baseline(attempts,session)}}
+  function expand(round,ids,attempts,session){
+    const missing=[...new Set(ids)].filter(id=>!round.scope.includes(id));
+    if(!missing.length)return round;
+    return {...round,scope:[...round.scope,...missing],order:[...round.order,...missing],remaining:[...round.remaining,...missing],baseline:{...baseline(attempts,session),...round.baseline},finished:false};
+  }
   function reconcile(round,attempts,session,available=()=>true,random=Math.random){
     const byId=latest(attempts,session),scope=round.scope.filter(available);
     const remaining=round.remaining.filter(id=>available(id)&&!(round.number>1&&byId.has(id)&&Number(byId.get(id).overall_score)>=50)&&(!byId.has(id)||byId.get(id).attempt_id===round.baseline[id]));
@@ -36,5 +41,5 @@
     if(updated.length)await db.bulkPut('daily_sessions',updated);
     return updated.length;
   }
-  window.PracticeRounds={sessionResult,repairSessions,latest,failed,completedIds,shuffled,create,reconcile};
+  window.PracticeRounds={sessionResult,repairSessions,latest,failed,completedIds,shuffled,create,expand,reconcile};
 })();

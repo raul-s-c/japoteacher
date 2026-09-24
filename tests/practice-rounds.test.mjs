@@ -47,3 +47,23 @@ test('historical repair is idempotent and cannot invent answers from another day
  attempts=[a('a',100,1)];assert.equal(await R.repairSessions(db),1);assert.equal(sessions[0].status,'completed');
  assert.equal(await R.repairSessions(db),0);
 });
+
+test('expand an old ten-question round to the full plan without replaying passed answers',()=>{
+ const ids=Array.from({length:20},(_,i)=>'q'+i),rows=[];
+ let round=R.create(ids.slice(0,10),rows,session);
+ rows.push(a('q0',90,1),a('q1',20,2));
+ round=R.reconcile(round,rows,session);
+ const snapshot=JSON.stringify(rows);
+ for(const size of [15,20]){
+  round=R.reconcile(R.expand(round,ids.slice(1,size),rows,session),rows,session);
+  assert.equal(round.scope.length,size);
+  assert.equal(round.remaining.length,size-2);
+  assert(!round.remaining.includes('q0'));
+  assert(!round.remaining.includes('q1'));
+  assert.equal(round.number,1);
+ }
+ for(let i=2;i<20;i++)rows.push(a('q'+i,80,i+1));
+ round=R.reconcile(round,rows,session);
+ assert.deepEqual([...round.remaining],['q1']);assert.equal(round.number,2);
+ assert.equal(JSON.stringify(rows.slice(0,2)),snapshot);
+});
