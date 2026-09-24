@@ -1,0 +1,702 @@
+[
+  {
+    "slot": 1,
+    "new": "Los guantes están en el bolsillo derecho del abrigo.",
+    "nearest_id": "JAES-N4-EDITORIAL-1321",
+    "nearest": "Los documentos están en aquel escritorio.",
+    "similarity": 0.5714
+  },
+  {
+    "slot": 2,
+    "new": "Quiero dos pares de calcetines negros y un par de calcetines blancos, por favor.",
+    "nearest_id": "JAES-N5-EDITORIAL-1136",
+    "nearest": "Un amigo me enseñó canciones japonesas y me despertó interés por la cultura.",
+    "similarity": 0.4706
+  },
+  {
+    "slot": 3,
+    "new": "El jabón del hotel es pequeño y huele bien.",
+    "nearest_id": "JAES-N5-MORE-0082",
+    "nearest": "la biblioteca es pequeño.",
+    "similarity": 0.5455
+  },
+  {
+    "slot": 4,
+    "new": "¿Has metido el cepillo de dientes en la bolsa de viaje?",
+    "nearest_id": "JAES-N4-EDITORIAL-2014",
+    "nearest": "El dependiente estimó la causa de la avería.",
+    "similarity": 0.5417
+  },
+  {
+    "slot": 5,
+    "new": "La toalla del baño es azul y el paño de la cocina es amarillo.",
+    "nearest_id": "JAES-N5-EDITORIAL-0244",
+    "nearest": "Al salir del trabajo voy a la tienda de la estación a mirar ropa.",
+    "similarity": 0.544
+  },
+  {
+    "slot": 6,
+    "new": "La llave de repuesto está en el cajón de arriba del escritorio.",
+    "nearest_id": "JAES-N5-EDITORIAL-0390",
+    "nearest": "El jefe está delante del escritorio.",
+    "similarity": 0.6186
+  },
+  {
+    "slot": 7,
+    "new": "Quiero limpiar la lámpara del techo, pero no llego con la mano.",
+    "nearest_id": "JAES-N4-EDITORIAL-1254",
+    "nearest": "Quiero viajar con un príncipe, pero no tengo vacaciones.",
+    "similarity": 0.5391
+  },
+  {
+    "slot": 8,
+    "new": "El suelo está mojado; no camines por aquí, por favor.",
+    "nearest_id": "JAES-N5-CURATED-0019",
+    "nearest": "Enséñeme esa camisa roja, por favor.",
+    "similarity": 0.619
+  },
+  {
+    "slot": 9,
+    "new": "Esta noche hace frío, así que quisiera que me prestaran una manta más.",
+    "nearest_id": "JAES-N5-EDITORIAL-0792",
+    "nearest": "Esta manzana es dulce, así que quiero comer otra más.",
+    "similarity": 0.5714
+  },
+  {
+    "slot": 10,
+    "new": "Como hace muy buen tiempo, he sacado el futón al balcón para airearlo al sol.",
+    "nearest_id": "JAES-N5-EDITORIAL-2262",
+    "nearest": "Como hace buen tiempo, voy al mar.",
+    "similarity": 0.5421
+  },
+  {
+    "slot": 11,
+    "new": "He calentado en el microondas el arroz que se había enfriado.",
+    "nearest_id": "JAES-N5-EDITORIAL-1015",
+    "nearest": "Me contagié del virus del resfriado.",
+    "similarity": 0.5474
+  },
+  {
+    "slot": 12,
+    "new": "La lavadora hizo un ruido extraño, así que la paré enseguida.",
+    "nearest_id": "JAES-N5-EDITORIAL-1326",
+    "nearest": "La computadora va mal, así que la reinicio.",
+    "similarity": 0.54
+  },
+  {
+    "slot": 13,
+    "new": "He programado la arrocera para que el arroz esté listo a las siete de la mañana.",
+    "nearest_id": "JAES-N4-EDITORIAL-0223",
+    "nearest": "Dejo libre la tarde para asistir a la reunión de la asociación vecinal.",
+    "similarity": 0.5235
+  },
+  {
+    "slot": 14,
+    "new": "Llevaba paraguas, pero hacía tanto viento que hasta se me mojó la bolsa.",
+    "nearest_id": "JAES-N4-EDITORIAL-0289",
+    "nearest": "En cuanto llego a casa, me lavo las manos.",
+    "similarity": 0.4727
+  },
+  {
+    "slot": 15,
+    "new": "He doblado las camisas secas y después las he guardado en el cajón.",
+    "nearest_id": "JAES-N4-EDITORIAL-1370",
+    "nearest": "El tejado de la casa nueva de los dos es rojo.",
+    "similarity": 0.5045
+  },
+  {
+    "slot": 16,
+    "new": "Voy a despejar la mesa antes de que vengan mis amigos.",
+    "nearest_id": "JAES-N5-EDITORIAL-0325",
+    "nearest": "Hago la tarea antes de ver a mi familia.",
+    "similarity": 0.587
+  },
+  {
+    "slot": 17,
+    "new": "He envuelto los vasos uno por uno en papel de periódico para que no se rompan.",
+    "nearest_id": "JAES-N4-EDITORIAL-1796",
+    "nearest": "Este bolso es un poco demasiado caro, así que hoy no lo compraré.",
+    "similarity": 0.5143
+  },
+  {
+    "slot": 18,
+    "new": "Intenté desatar el cordel de la caja, pero el nudo estaba tan apretado que no pude.",
+    "nearest_id": "JAES-N4-EDITORIAL-0484",
+    "nearest": "Fui a la tienda el día de rebajas, pero no había el bolso que quería.",
+    "similarity": 0.5
+  },
+  {
+    "slot": 19,
+    "new": "El camino estaba helado y era fácil resbalar, así que caminé despacio hasta la estación.",
+    "nearest_id": "JAES-N4-EDITORIAL-1890",
+    "nearest": "La habitación estaba tan fría que encendí la calefacción.",
+    "similarity": 0.507
+  },
+  {
+    "slot": 20,
+    "new": "Mientras transportaba una caja grande, choqué con la puerta sin querer.",
+    "nearest_id": "JAES-N4-EDITORIAL-0521",
+    "nearest": "Mientras mi hermano está en casa, voy de compras con mi madre.",
+    "similarity": 0.5271
+  },
+  {
+    "slot": 21,
+    "new": "La primera vez que hablé ante mucha gente, me temblaron las manos de los nervios.",
+    "nearest_id": "JAES-N4-EDITORIAL-0236",
+    "nearest": "A esta hora, seguramente no habrá mucha gente en el camino de la montaña.",
+    "similarity": 0.5333
+  },
+  {
+    "slot": 22,
+    "new": "Me agobié al ver cuánto tiempo quedaba de examen, pero primero comprobé que había puesto mi nombre.",
+    "nearest_id": "JAES-N4-EDITORIAL-0136",
+    "nearest": "Antes del examen, conviene comprobar las respuestas con el diccionario.",
+    "similarity": 0.4458
+  },
+  {
+    "slot": 23,
+    "new": "Me alarmé al pensar que no tenía la cartera, pero estaba en el bolsillo del abrigo.",
+    "nearest_id": "new-1",
+    "nearest": "Los guantes están en el bolsillo derecho del abrigo.",
+    "similarity": 0.5303
+  },
+  {
+    "slot": 24,
+    "new": "Como me lesioné la pierna, renuncié a participar en el maratón de este año.",
+    "nearest_id": "JAES-N4-EDITORIAL-0207",
+    "nearest": "¿Piensas participar en el voluntariado de este pueblo?",
+    "similarity": 0.576
+  },
+  {
+    "slot": 25,
+    "new": "Animé a un amigo que había suspendido el examen diciéndole que la próxima vez seguro que le iría bien.",
+    "nearest_id": "JAES-N4-EDITORIAL-1708",
+    "nearest": "Ayudé a un amigo que se había perdido en la montaña.",
+    "similarity": 0.5263
+  },
+  {
+    "slot": 26,
+    "new": "La madre regañó con severidad al niño que había salido corriendo a la calzada.",
+    "nearest_id": "JAES-N4-EDITORIAL-1290",
+    "nearest": "Ella es seria, así que puedo confiar en ella enseguida.",
+    "similarity": 0.4769
+  },
+  {
+    "slot": 27,
+    "new": "Derramé café sobre los documentos de un compañero y me disculpé enseguida.",
+    "nearest_id": "JAES-N4-EDITORIAL-2230",
+    "nearest": "Vi la convocatoria del viaje y me apunté enseguida.",
+    "similarity": 0.5203
+  },
+  {
+    "slot": 28,
+    "new": "Llevé a la oficina el almuerzo que mi hermana mayor se había olvidado.",
+    "nearest_id": "new-11",
+    "nearest": "He calentado en el microondas el arroz que se había enfriado.",
+    "similarity": 0.5426
+  },
+  {
+    "slot": 29,
+    "new": "Como el mando a distancia no funcionaba, cambié las pilas por unas nuevas.",
+    "nearest_id": "JAES-N4-ORGANIC-202608-0475",
+    "nearest": "Como este documento es importante, no lo pierdas, por favor.",
+    "similarity": 0.4961
+  },
+  {
+    "slot": 30,
+    "new": "Había reservado dos veces el mismo hotel, así que cancelé una de las reservas.",
+    "nearest_id": "JAES-N4-EDITORIAL-1986",
+    "nearest": "Este electrodoméstico tiene el circuito roto, así que necesita reparación.",
+    "similarity": 0.4865
+  },
+  {
+    "slot": 31,
+    "new": "Como me gustó la isla, alargué mi estancia dos días.",
+    "nearest_id": "JAES-N5-EDITORIAL-0324",
+    "nearest": "Como me gusta el japonés, estudio un poco todos los días.",
+    "similarity": 0.5714
+  },
+  {
+    "slot": 32,
+    "new": "He retrasado la reunión una hora para que no coincida con la pausa del almuerzo.",
+    "nearest_id": "JAES-N4-EDITORIAL-0415",
+    "nearest": "Hoy regreso temprano a casa para participar en la limpieza del barrio.",
+    "similarity": 0.527
+  },
+  {
+    "slot": 33,
+    "new": "La boda de un amigo coincide con un viaje de trabajo y no puedo asistir a la ceremonia.",
+    "nearest_id": "JAES-N4-EDITORIAL-1979",
+    "nearest": "No es un viaje de trabajo, sino unas vacaciones.",
+    "similarity": 0.5152
+  },
+  {
+    "slot": 34,
+    "new": "Si sobra arroz, lo reparto en recipientes pequeños y lo congelo.",
+    "nearest_id": "SAKAMOTO-e3b553ac3605d43b-JA_ES",
+    "nearest": "Os lo he preparado especialmente, así que cambiaos de ropa.",
+    "similarity": 0.5042
+  },
+  {
+    "slot": 35,
+    "new": "La sopa está demasiado caliente, así que la tomaré después de dejarla enfriar un poco.",
+    "nearest_id": "JAES-N4-EDITORIAL-1926",
+    "nearest": "Esta maleta es demasiado grande, así que es difícil llevarla en tren.",
+    "similarity": 0.5695
+  },
+  {
+    "slot": 36,
+    "new": "Estoy hirviendo agua en la tetera para preparar té.",
+    "nearest_id": "JAES-N4-EDITORIAL-0631",
+    "nearest": "Espero cada día en la estación para poder verla.",
+    "similarity": 0.5361
+  },
+  {
+    "slot": 37,
+    "new": "Este pescado lo cocinaré al vapor con verduras, en lugar de asarlo.",
+    "nearest_id": "JAES-N5-EDITORIAL-1520",
+    "nearest": "Este año quiero ir a ver el festival de Kioto.",
+    "similarity": 0.4909
+  },
+  {
+    "slot": 38,
+    "new": "Las croquetas recién fritas están crujientes por fuera y muy ricas.",
+    "nearest_id": "JAES-N4-EDITORIAL-1822",
+    "nearest": "La puesta en escena de esta tienda es buena y los productos destacan.",
+    "similarity": 0.4925
+  },
+  {
+    "slot": 39,
+    "new": "Después de mezclar los huevos y la leche, añadimos la harina poco a poco.",
+    "nearest_id": "JAES-N4-EDITORIAL-0678",
+    "nearest": "Después de repasar kanji todos los días tras la clase, poco a poco pude leerlos.",
+    "similarity": 0.5369
+  },
+  {
+    "slot": 40,
+    "new": "He pesado la maleta antes de ir al aeropuerto.",
+    "nearest_id": "JAES-N5-EDITORIAL-2245",
+    "nearest": "Compro el billete antes de subir al autobús.",
+    "similarity": 0.6364
+  },
+  {
+    "slot": 41,
+    "new": "Pica fina la cebolla y mézclala con la carne picada, por favor.",
+    "nearest_id": "JAES-N4-CONVERSATION-20260924-016",
+    "nearest": "No eches toda la salsa; deja la mitad, por favor.",
+    "similarity": 0.5234
+  },
+  {
+    "slot": 42,
+    "new": "He pelado la pera y después la he cortado en cuatro trozos.",
+    "nearest_id": "new-15",
+    "nearest": "He doblado las camisas secas y después las he guardado en el cajón.",
+    "similarity": 0.6452
+  },
+  {
+    "slot": 43,
+    "new": "Prueba la comida antes de añadir más sal, por favor.",
+    "nearest_id": "JAES-N4-EXP-0094",
+    "nearest": "Comprueba el nombre antes de enviar el archivo.",
+    "similarity": 0.6042
+  },
+  {
+    "slot": 44,
+    "new": "Si le añades un poco de pimienta a esta sopa, mejora su aroma.",
+    "nearest_id": "JAES-N4-EDITORIAL-0811",
+    "nearest": "Esta tienda ha estado ocupada desde su apertura.",
+    "similarity": 0.5047
+  },
+  {
+    "slot": 45,
+    "new": "Se me ha acabado la harina, así que iré a comprarla antes de hacer el pastel.",
+    "nearest_id": "JAES-N4-EDITORIAL-1032",
+    "nearest": "Quería pedir la reparación, así que probé a preguntar en esta ventanilla.",
+    "similarity": 0.5342
+  },
+  {
+    "slot": 46,
+    "new": "El tofu está en la parte de abajo del frigorífico.",
+    "nearest_id": "JAES-N5-EDITORIAL-0390",
+    "nearest": "El jefe está delante del escritorio.",
+    "similarity": 0.619
+  },
+  {
+    "slot": 47,
+    "new": "Corta el rábano daikon para la ensalada lo más fino posible, por favor.",
+    "nearest_id": "JAES-N4-CONVERSATION-20260924-016",
+    "nearest": "No eches toda la salsa; deja la mitad, por favor.",
+    "similarity": 0.5217
+  },
+  {
+    "slot": 48,
+    "new": "Corta una zanahoria en tiras finas, por favor.",
+    "nearest_id": "JAES-N5-EDITORIAL-1714",
+    "nearest": "Tanaka-san, pase, por favor.",
+    "similarity": 0.5588
+  },
+  {
+    "slot": 49,
+    "new": "Compré tres pepinos y utilicé uno para la ensalada.",
+    "nearest_id": "JAES-N5-EDITORIAL-0448",
+    "nearest": "Hoy compro tres pasteles para la familia.",
+    "similarity": 0.5778
+  },
+  {
+    "slot": 50,
+    "new": "He cortado demasiada col, así que usaré lo que sobra en la sopa de mañana.",
+    "nearest_id": "JAES-N4-EDITORIAL-0164",
+    "nearest": "La oferta termina hoy, así que tengo que comprar pronto la ropa que necesito.",
+    "similarity": 0.5714
+  },
+  {
+    "slot": 51,
+    "new": "Cada bolsa contiene cinco patatas.",
+    "nearest_id": "JAES-N4-EDITORIAL-1297",
+    "nearest": "La continuidad del ejercicio es importante.",
+    "similarity": 0.5067
+  },
+  {
+    "slot": 52,
+    "new": "He preparado pasta usando setas en lugar de carne.",
+    "nearest_id": "JAES-N4-EDITORIAL-1673",
+    "nearest": "Esta mansión no es un lugar de trabajo.",
+    "similarity": 0.5517
+  },
+  {
+    "slot": 53,
+    "new": "Este melocotón está blando; no lo aprietes con fuerza, por favor.",
+    "nearest_id": "new-8",
+    "nearest": "El suelo está mojado; no camines por aquí, por favor.",
+    "similarity": 0.6429
+  },
+  {
+    "slot": 54,
+    "new": "Las uvas que compré en el mercado estaban dulces y ricas.",
+    "nearest_id": "JAES-N5-MORE-0190",
+    "nearest": "No se puede comer en el restaurante.",
+    "similarity": 0.5275
+  },
+  {
+    "slot": 55,
+    "new": "Sobre el pastel hay seis fresas colocadas en fila.",
+    "nearest_id": "JAES-N5-EDITORIAL-0448",
+    "nearest": "Hoy compro tres pasteles para la familia.",
+    "similarity": 0.5169
+  },
+  {
+    "slot": 56,
+    "new": "Al levantar la tapa de la olla, se me empañaron las gafas con el vapor.",
+    "nearest_id": "JAES-N5-EDITORIAL-1388",
+    "nearest": "Cuando llega la primavera, la atención se centra en las flores.",
+    "similarity": 0.5077
+  },
+  {
+    "slot": 57,
+    "new": "Olía a quemado, así que abrí el horno precipitadamente.",
+    "nearest_id": "JAES-N5-MORE-0030",
+    "nearest": "Hay un cuaderno en el restaurante.",
+    "similarity": 0.4884
+  },
+  {
+    "slot": 58,
+    "new": "Este café está amargo, así que le voy a poner un poco de azúcar.",
+    "nearest_id": "JAES-N5-EDITORIAL-2322",
+    "nearest": "La casa es vieja, así que hace un poco de frío.",
+    "similarity": 0.5794
+  },
+  {
+    "slot": 59,
+    "new": "Esta mandarina no está dulce; está un poco ácida.",
+    "nearest_id": "JAES-N5-EDITORIAL-0432",
+    "nearest": "Esta manzana es un poco pequeña.",
+    "similarity": 0.6154
+  },
+  {
+    "slot": 60,
+    "new": "La sopa tenía un sabor demasiado concentrado, así que añadí agua caliente para rebajarla.",
+    "nearest_id": "new-35",
+    "nearest": "La sopa está demasiado caliente, así que la tomaré después de dejarla enfriar un poco.",
+    "similarity": 0.5263
+  },
+  {
+    "slot": 61,
+    "new": "Aunque es pan que horneé ayer, todavía está tierno y rico.",
+    "nearest_id": "JAES-N5-EXP-0017",
+    "nearest": "¿Hasta qué hora está abierto el banco?",
+    "similarity": 0.5435
+  },
+  {
+    "slot": 62,
+    "new": "El té se había quedado tibio, así que preparé otro caliente.",
+    "nearest_id": "JAES-N4-EDITORIAL-0178",
+    "nearest": "Si hablamos en casa, preparo té caliente.",
+    "similarity": 0.5773
+  },
+  {
+    "slot": 63,
+    "new": "Es para entregarlo en la empresa; pon el recibo a nombre de la empresa, por favor.",
+    "nearest_id": "JAES-N4-EXP-0060",
+    "nearest": "Tengo que entregar los resultados de la prueba para mañana.",
+    "similarity": 0.5109
+  },
+  {
+    "slot": 64,
+    "new": "Pagué mil yenes y me dieron doscientos yenes de cambio.",
+    "nearest_id": "JAES-N5-EDITORIAL-0457",
+    "nearest": "Ahorro mil yenes al mes de mi sueldo.",
+    "similarity": 0.5111
+  },
+  {
+    "slot": 65,
+    "new": "No tengo monedas para la lavandería automática, así que primero voy a cambiar dinero.",
+    "nearest_id": "JAES-N5-EDITORIAL-0414",
+    "nearest": "Hoy tengo mucho trabajo, así que me voy a casa temprano.",
+    "similarity": 0.5693
+  },
+  {
+    "slot": 66,
+    "new": "Te espero justo al salir de los tornos de la estación. No estoy en el andén.",
+    "nearest_id": "JAES-N5-0002",
+    "nearest": "Estoy esperando a un amigo delante de la estación.",
+    "similarity": 0.5366
+  },
+  {
+    "slot": 67,
+    "new": "Como volveré en el coche de un amigo, sólo compré un billete de ida.",
+    "nearest_id": "JAES-N4-EDITORIAL-1454",
+    "nearest": "Como tengo deudas, no puedo comprar un móvil nuevo.",
+    "similarity": 0.5043
+  },
+  {
+    "slot": 68,
+    "new": "Ir y volver al aeropuerto en autobús cuesta tres mil yenes en total.",
+    "nearest_id": "JAES-N5-EXP-0038",
+    "nearest": "Fui en autobús desde el aeropuerto hasta el hotel.",
+    "similarity": 0.5
+  },
+  {
+    "slot": 69,
+    "new": "Me entretuve tanto conversando que perdí el último tren y volví en taxi.",
+    "nearest_id": "JAES-N4-EDITORIAL-1543",
+    "nearest": "En verano, no conviene recibir el sol de frente.",
+    "similarity": 0.4786
+  },
+  {
+    "slot": 70,
+    "new": "Quiero llegar al mar temprano, así que pienso tomar el primer tren del día.",
+    "nearest_id": "JAES-N4-EDITORIAL-0218",
+    "nearest": "Hoy puedo salir temprano, así que puedo ver a mi novia.",
+    "similarity": 0.5397
+  },
+  {
+    "slot": 71,
+    "new": "Estaba sentado en un asiento prioritario, pero se lo cedí a una persona que iba con bastón.",
+    "nearest_id": "JAES-N4-EDITORIAL-1504",
+    "nearest": "Pensé que había pasado algo y llamé, pero solo fue un error de comunicación.",
+    "similarity": 0.5153
+  },
+  {
+    "slot": 72,
+    "new": "Metí la mermelada casera en una caja y se la envié a mis padres por mensajería.",
+    "nearest_id": "JAES-N4-EDITORIAL-1220",
+    "nearest": "En la zona de recuerdos compré una caja con la imagen de una reina.",
+    "similarity": 0.4722
+  },
+  {
+    "slot": 73,
+    "new": "Por la tarde no estaré en casa; ¿podrían entregarme el paquete por la mañana?",
+    "nearest_id": "JAES-N5-EDITORIAL-0511",
+    "nearest": "En casa, mi madre prepara el desayuno todas las mañanas.",
+    "similarity": 0.5156
+  },
+  {
+    "slot": 74,
+    "new": "No pude recibir el paquete, así que pedí que lo volvieran a entregar mañana por la noche.",
+    "nearest_id": "JAES-N4-EDITORIAL-0218",
+    "nearest": "Hoy puedo salir temprano, así que puedo ver a mi novia.",
+    "similarity": 0.5
+  },
+  {
+    "slot": 75,
+    "new": "Como el nombre del destinatario era incorrecto, no me entregaron el paquete.",
+    "nearest_id": "JAES-N5-EDITORIAL-1884",
+    "nearest": "Hoy, como el sendero de la montaña está mojado, es mejor no entrar en el bosque.",
+    "similarity": 0.5695
+  },
+  {
+    "slot": 76,
+    "new": "El sobre no llevaba el nombre del remitente y no sabía de quién era la carta.",
+    "nearest_id": "JAES-N5-EDITORIAL-0462",
+    "nearest": "El trabajo es duro, así que quiero descansar.",
+    "similarity": 0.4706
+  },
+  {
+    "slot": 77,
+    "new": "Al introducir el código postal, aparece automáticamente parte de la dirección.",
+    "nearest_id": "JAES-N4-EDITORIAL-1575",
+    "nearest": "¿Puede decirme el procedimiento para tomar la medicina?",
+    "similarity": 0.4806
+  },
+  {
+    "slot": 78,
+    "new": "Me equivoqué de destinatario al enviar el correo y se lo mandé a otra persona.",
+    "nearest_id": "new-75",
+    "nearest": "Como el nombre del destinatario era incorrecto, no me entregaron el paquete.",
+    "similarity": 0.543
+  },
+  {
+    "slot": 79,
+    "new": "He metido la foto y la carta en el mismo sobre.",
+    "nearest_id": "JAES-N3-CONVERSATION-20260924-020",
+    "nearest": "He borrado la foto que había publicado porque en ella se veía mi dirección.",
+    "similarity": 0.5333
+  },
+  {
+    "slot": 80,
+    "new": "¿Para este trámite hace falta un sello personal o basta con la firma?",
+    "nearest_id": "JAES-N5-EDITORIAL-1267",
+    "nearest": "En esta tienda no se puede entrar con armas.",
+    "similarity": 0.5091
+  },
+  {
+    "slot": 81,
+    "new": "El número de teléfono de la solicitud cuesta leerlo; escríbelo de nuevo, por favor.",
+    "nearest_id": "JAES-N4-EDITORIAL-1658",
+    "nearest": "El interrogatorio de la policía fue más largo de lo esperado.",
+    "similarity": 0.5
+  },
+  {
+    "slot": 82,
+    "new": "El plazo para entregar el informe termina mañana, pero sólo he conseguido escribir la mitad.",
+    "nearest_id": "new-7",
+    "nearest": "Quiero limpiar la lámpara del techo, pero no llego con la mano.",
+    "similarity": 0.4636
+  },
+  {
+    "slot": 83,
+    "new": "Como me voy a mudar, quiero dar de baja el contrato de internet a finales de este mes.",
+    "nearest_id": "JAES-N5-EDITORIAL-1704",
+    "nearest": "Como quiero aprenderme los kanji, repaso el cuaderno todos los días.",
+    "similarity": 0.4933
+  },
+  {
+    "slot": 84,
+    "new": "En este banco se cobra una comisión si envías dinero desde la ventanilla.",
+    "nearest_id": "JAES-N4-EDITORIAL-0836",
+    "nearest": "En Kioto, uso una aplicación nueva mientras miro el mapa para buscar la estación.",
+    "similarity": 0.5033
+  },
+  {
+    "slot": 85,
+    "new": "El color que quería estaba agotado, así que salí de la tienda sin comprar nada.",
+    "nearest_id": "JAES-N5-EDITORIAL-0180",
+    "nearest": "El supermercado frente a la estación es barato, así que allí compro té.",
+    "similarity": 0.5205
+  },
+  {
+    "slot": 86,
+    "new": "Como no tienen este libro en la tienda, ¿podrían pedirlo para mí?",
+    "nearest_id": "JAES-N5-EDITORIAL-1332",
+    "nearest": "Como solo se puede comprar en una tienda concreta, lo encargo antes.",
+    "similarity": 0.5312
+  },
+  {
+    "slot": 87,
+    "new": "Voy a preguntar en la ventanilla si quedan asientos libres en el próximo tren.",
+    "nearest_id": "JAES-N4-EDITORIAL-0982",
+    "nearest": "Compruebo en la pantalla de la estación el próximo tren.",
+    "similarity": 0.6061
+  },
+  {
+    "slot": 88,
+    "new": "En esta cafetería está prohibido fumar en todos los asientos, incluida la terraza.",
+    "nearest_id": "JAES-N5-EDITORIAL-0956",
+    "nearest": "Es el interior de un bosque profundo donde se siente el dominio de la naturaleza.",
+    "similarity": 0.5
+  },
+  {
+    "slot": 89,
+    "new": "Llevé al punto de información a un niño que se había perdido dentro de la tienda.",
+    "nearest_id": "JAES-N4-EDITORIAL-1708",
+    "nearest": "Ayudé a un amigo que se había perdido en la montaña.",
+    "similarity": 0.5954
+  },
+  {
+    "slot": 90,
+    "new": "Perdí las llaves en la estación y pregunté si alguien las había entregado como objeto perdido.",
+    "nearest_id": "new-73",
+    "nearest": "Por la tarde no estaré en casa; ¿podrían entregarme el paquete por la mañana?",
+    "similarity": 0.491
+  },
+  {
+    "slot": 91,
+    "new": "Durante el simulacro, evacuamos al patio del colegio siguiendo las instrucciones del profesor.",
+    "nearest_id": "JAES-N4-EDITORIAL-2024",
+    "nearest": "Para estudiar el desarrollo del lenguaje, registro cada día las conversaciones de los niños.",
+    "similarity": 0.4945
+  },
+  {
+    "slot": 92,
+    "new": "Un corte de luz dejó la habitación a oscuras y busqué una linterna.",
+    "nearest_id": "JAES-N5-EDITORIAL-2274",
+    "nearest": "Como no se enciende la luz, la habitación está oscura.",
+    "similarity": 0.5424
+  },
+  {
+    "slot": 93,
+    "new": "Mañana cortarán el agua por unas obras, así que he dejado preparada agua para beber.",
+    "nearest_id": "JAES-N4-EDITORIAL-0611",
+    "nearest": "Hoy hay mucha gente por las rebajas, así que dejaré el trabajo para mañana.",
+    "similarity": 0.5161
+  },
+  {
+    "slot": 94,
+    "new": "Como se acumula humedad en el armario, de vez en cuando dejo las puertas abiertas.",
+    "nearest_id": "JAES-N2-CONVERSATION-20260924-023",
+    "nearest": "Hemos alargado el tiempo de descanso teniendo en cuenta la edad de los participantes.",
+    "similarity": 0.4878
+  },
+  {
+    "slot": 95,
+    "new": "Mientras tenía la ventana abierta, entraron varios mosquitos.",
+    "nearest_id": "JAES-N4-EDITORIAL-1138",
+    "nearest": "Abro la ventana para respirar un poco mejor.",
+    "similarity": 0.5294
+  },
+  {
+    "slot": 96,
+    "new": "Al quitarle el polvo a un libro viejo, estornudé.",
+    "nearest_id": "JAES-N4-EDITORIAL-0149",
+    "nearest": "No, leo un libro mientras viajo en tren.",
+    "similarity": 0.5412
+  },
+  {
+    "slot": 97,
+    "new": "Después de hablar mucho se me secó la garganta y bebí un vaso de agua.",
+    "nearest_id": "JAES-N4-EDITORIAL-0150",
+    "nearest": "Después de llegar a la estación, recibí un mapa.",
+    "similarity": 0.5391
+  },
+  {
+    "slot": 98,
+    "new": "Esta mañana me quedé dormido y no tuve tiempo de desayunar.",
+    "nearest_id": "JAES-N4-EDITORIAL-1662",
+    "nearest": "La conferencia fue larga, así que por la tarde no tuve tiempo de repasar.",
+    "similarity": 0.5736
+  },
+  {
+    "slot": 99,
+    "new": "Como era difícil hacerse entender sólo con la explicación, adjunté un esquema al correo.",
+    "nearest_id": "JAES-N5-EDITORIAL-2294",
+    "nearest": "Compré el billete en la estación y subí enseguida al tren.",
+    "similarity": 0.5035
+  },
+  {
+    "slot": 100,
+    "new": "Se me olvidó el PIN y no pude sacar dinero en efectivo.",
+    "nearest_id": "JAES-N4-EDITORIAL-0814",
+    "nearest": "Voy a asegurar el dinero en efectivo.",
+    "similarity": 0.5333
+  }
+]
