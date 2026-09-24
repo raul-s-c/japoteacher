@@ -1,0 +1,13 @@
+{
+  "limit": 2200000,
+  "used": 2104602,
+  "calls": 795,
+  "reservations": {},
+  "closed": true,
+  "before": {
+    "N5": 2057,
+    "N4": 2198
+  },
+  "paused_by_user": false,
+  "stop_reason": "Insufficient budget for another fully reserved request"
+}

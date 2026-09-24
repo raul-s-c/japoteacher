@@ -1,0 +1,470 @@
+[
+  {
+    "level": "N5",
+    "slot": 2209,
+    "reason": "Falta el referente de lo que es popular; において introduce además un registro formal sin contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 2212,
+    "reason": "見に行く se refiere a ir a mirar algo a la tienda; la traducción cambia el objeto a la propia tienda."
+  },
+  {
+    "level": "N4",
+    "slot": 2350,
+    "reason": "重い aplicado a una aplicación suele referirse a lentitud o carga; pesa demasiado resulta ambiguo sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2352,
+    "reason": "La salida del mikoshi no justifica por sí sola que el número de turistas aumente cada año."
+  },
+  {
+    "level": "N4",
+    "slot": 2355,
+    "reason": "Conmoverse por la comida resulta poco natural para esta práctica autónoma."
+  },
+  {
+    "level": "N4",
+    "slot": 2357,
+    "reason": "Negación genérica sobre un asiento compartido sin situación que aclare el sentido."
+  },
+  {
+    "level": "N5",
+    "slot": 2221,
+    "reason": "Falta el objeto de la reparación."
+  },
+  {
+    "level": "N5",
+    "slot": 2225,
+    "reason": "Negación sin contexto ni contraste útil."
+  },
+  {
+    "level": "N4",
+    "slot": 2358,
+    "reason": "La competencia del viaje no tiene referente o situación comprensible."
+  },
+  {
+    "level": "N4",
+    "slot": 2359,
+    "reason": "Consecuencia física vaga y colocación poco natural en español."
+  },
+  {
+    "level": "N4",
+    "slot": 2362,
+    "reason": "La traducción añade el poseedor de los bienes sin evidencia."
+  },
+  {
+    "level": "N4",
+    "slot": 2363,
+    "reason": "Uso genérico y poco natural de 強制 sin explicar qué acción se exige."
+  },
+  {
+    "level": "N5",
+    "slot": 2229,
+    "reason": "No se indica el destino o contexto de la alternativa en autobús."
+  },
+  {
+    "level": "N4",
+    "slot": 2369,
+    "reason": "Negación genérica sin identificar el rumor."
+  },
+  {
+    "level": "N4",
+    "slot": 2371,
+    "reason": "Comparación del dulzor de un flan con un ángel poco natural y forzada."
+  },
+  {
+    "level": "N4",
+    "slot": 2373,
+    "reason": "La aglomeración del tren no justifica arrepentirse de perderlo: relación lógica contradictoria."
+  },
+  {
+    "level": "N5",
+    "slot": 2237,
+    "reason": "Prohibición sin contexto que identifique el lugar o la situación."
+  },
+  {
+    "level": "N4",
+    "slot": 2379,
+    "reason": "強化 requiere indicar qué se mejora dentro del juego; la traducción cambia el sentido a mejorar el juego."
+  },
+  {
+    "level": "N4",
+    "slot": 2381,
+    "reason": "Usar una tienda es una traducción poco natural y sin contexto de servicio concreto."
+  },
+  {
+    "level": "N5",
+    "slot": 2243,
+    "reason": "La traducción contrapone ramen a toda la comida japonesa; 和食 necesita el matiz de cocina tradicional para evitar la contradicción."
+  },
+  {
+    "level": "N4",
+    "slot": 2383,
+    "reason": "派遣の人 corresponde a personal temporal o de agencia; persona enviada temporalmente es una traducción artificial e imprecisa."
+  },
+  {
+    "level": "N4",
+    "slot": 2385,
+    "reason": "La organización o sistema no tiene referente suficiente; pregunta genérica."
+  },
+  {
+    "level": "N4",
+    "slot": 2387,
+    "reason": "Contraste absurdo entre un encurtido y un disparo, creado para insertar vocabulario."
+  },
+  {
+    "level": "N4",
+    "slot": 2388,
+    "reason": "Contraste arbitrario entre amor y gastos cotidianos para justificar comprar zapatos."
+  },
+  {
+    "level": "N4",
+    "slot": 2389,
+    "reason": "その他の案内 carece de referente concreto y produce una frase artificial sobre una parada."
+  },
+  {
+    "level": "N5",
+    "slot": 2250,
+    "reason": "La presencia de él como vecino no explica la tranquilidad sin contexto adicional."
+  },
+  {
+    "level": "N4",
+    "slot": 2393,
+    "reason": "Negación arbitraria entre trabajo presencial y remoto sin referente; frase no autónoma."
+  },
+  {
+    "level": "N4",
+    "slot": 2394,
+    "reason": "司法の話 es excesivamente genérico y la traducción cuestión judicial puede implicar un caso no expresado."
+  },
+  {
+    "level": "N5",
+    "slot": 2252,
+    "reason": "La traducción omite el matiz きれいに, importante para reconstruir el japonés."
+  },
+  {
+    "level": "N5",
+    "slot": 2255,
+    "reason": "Negación de tirar basura en todo un pueblo sin aclarar una prohibición o situación; ejemplo poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2405,
+    "reason": "No se identifica el objetivo ni el tipo de ruta; ejemplo genérico y forzado."
+  },
+  {
+    "level": "N5",
+    "slot": 2256,
+    "reason": "Percibir la cultura es una traducción abstracta y poco natural para un ejemplo autónomo."
+  },
+  {
+    "level": "N4",
+    "slot": 2409,
+    "reason": "従業しています no es la expresión habitual para preguntar si alguien está empleado; colocación poco natural."
+  },
+  {
+    "level": "N4",
+    "slot": 2412,
+    "reason": "Desarrollo sin tipo ni contexto; generalización ecológica forzada en una frase autónoma."
+  },
+  {
+    "level": "N5",
+    "slot": 2266,
+    "reason": "てもいい expresa permiso; podemos comer juntos sin contexto no permite distinguirlo de capacidad o propuesta."
+  },
+  {
+    "level": "N5",
+    "slot": 2273,
+    "reason": "紅茶 es té negro; la traducción omite ese matiz."
+  },
+  {
+    "level": "N4",
+    "slot": 2414,
+    "reason": "Uso forzado de 女王 para una aplicación; ejemplo artificial."
+  },
+  {
+    "level": "N4",
+    "slot": 2417,
+    "reason": "Negación sin referente suficiente."
+  },
+  {
+    "level": "N4",
+    "slot": 2421,
+    "reason": "Pregunta fragmentaria que no aclara qué se identifica como el siguiente tren."
+  },
+  {
+    "level": "N5",
+    "slot": 2279,
+    "reason": "Mini diálogo que no responde a la pregunta de qué duele; contexto incompleto."
+  },
+  {
+    "level": "N4",
+    "slot": 2423,
+    "reason": "応答 para efecto de un medicamento resulta técnico y poco natural en este contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2425,
+    "reason": "本来 no significa por naturaleza en esta descripción laboral; traducción incorrecta."
+  },
+  {
+    "level": "N4",
+    "slot": 2427,
+    "reason": "司令 implica mando u órdenes, no instrucciones genéricas de un juego."
+  },
+  {
+    "level": "N4",
+    "slot": 2429,
+    "reason": "Negación genérica sin referente para la previsión."
+  },
+  {
+    "level": "N5",
+    "slot": 2280,
+    "reason": "Está silencioso es una traducción poco natural y no concreta qué lugar está en silencio."
+  },
+  {
+    "level": "N5",
+    "slot": 2282,
+    "reason": "妹 especifica hermana menor; falta el matiz en español."
+  },
+  {
+    "level": "N5",
+    "slot": 2286,
+    "reason": "No identifica el dispositivo que deja de funcionar."
+  },
+  {
+    "level": "N4",
+    "slot": 2434,
+    "reason": "社長 es presidente o director de una empresa; presidente sin contexto puede cambiar el referente."
+  },
+  {
+    "level": "N4",
+    "slot": 2437,
+    "reason": "Frase tautológica y poco útil sin contexto de una parada compartida con otros transportes."
+  },
+  {
+    "level": "N4",
+    "slot": 2447,
+    "reason": "Negación genérica que no identifica la restricción."
+  },
+  {
+    "level": "N4",
+    "slot": 2449,
+    "reason": "Fragmento que no identifica qué ha mejorado."
+  },
+  {
+    "level": "N4",
+    "slot": 2453,
+    "reason": "Referencia genérica a un asunto sin contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2454,
+    "reason": "No identifica para qué transporte faltó el billete; la alternativa en barco carece de contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2455,
+    "reason": "Construcción y traducción poco naturales al ubicar el interés en medicina en la universidad."
+  },
+  {
+    "level": "N4",
+    "slot": 2456,
+    "reason": "先輩 no equivale necesariamente a superior jerárquico; traducción demasiado restrictiva."
+  },
+  {
+    "level": "N4",
+    "slot": 2460,
+    "reason": "No identifica el fenómeno de montaña y mezcla raro con frecuente sin explicación concreta."
+  },
+  {
+    "level": "N4",
+    "slot": 2462,
+    "reason": "Nivel de una aplicación carece de significado concreto sin más contexto."
+  },
+  {
+    "level": "N4",
+    "slot": 2464,
+    "reason": "Secuencia poco coherente: entregar el cadáver a la familia antes de confirmar la identidad."
+  },
+  {
+    "level": "N4",
+    "slot": 2465,
+    "reason": "Negación genérica sin referente de la gravedad."
+  },
+  {
+    "level": "N5",
+    "slot": 2290,
+    "reason": "Juegas a un juego en casa hoy resulta redundante y poco natural en español."
+  },
+  {
+    "level": "N4",
+    "slot": 2469,
+    "reason": "Evolución de un tren sin comparación o contexto técnico; uso forzado del vocabulario."
+  },
+  {
+    "level": "N4",
+    "slot": 2477,
+    "reason": "Negación genérica sin referente; 構成 admite sentidos que el contexto no resuelve."
+  },
+  {
+    "level": "N5",
+    "slot": 2305,
+    "reason": "No especifica qué se mira o compra; frase genérica de escaso contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 2309,
+    "reason": "Contraste incoherente entre medio de transporte y destino; la traducción no repara el japonés."
+  },
+  {
+    "level": "N4",
+    "slot": 2484,
+    "reason": "La falta de testigos no explica impedir una devolución; causalidad artificial."
+  },
+  {
+    "level": "N4",
+    "slot": 2488,
+    "reason": "Repite decidir sin aportar una decisión concreta; ejemplo redundante y forzado."
+  },
+  {
+    "level": "N4",
+    "slot": 2489,
+    "reason": "No identifica qué no puede continuar."
+  },
+  {
+    "level": "N4",
+    "slot": 2490,
+    "reason": "Traducción personifica al apartamento y confunde apartamento con edificio de apartamentos."
+  },
+  {
+    "level": "N5",
+    "slot": 2324,
+    "reason": "No queda claro si mira su cartera o una cartera en venta ni qué acaba comprando."
+  },
+  {
+    "level": "N4",
+    "slot": 2496,
+    "reason": "Contraste entre época imperial y precio de entrada sin relación contextual suficiente."
+  },
+  {
+    "level": "N4",
+    "slot": 2497,
+    "reason": "La traducción fija un sentimiento personal donde el japonés también puede describir el día o la situación."
+  },
+  {
+    "level": "N4",
+    "slot": 2502,
+    "reason": "La conclusión del viaje no explica visitar la ciudad al día siguiente; contexto temporal poco coherente."
+  },
+  {
+    "level": "N4",
+    "slot": 2503,
+    "reason": "こう exige el contenido de lo dicho, que falta en el ejemplo."
+  },
+  {
+    "level": "N5",
+    "slot": 2337,
+    "reason": "Pregunta sin destino ni actividad de referencia."
+  },
+  {
+    "level": "N4",
+    "slot": 2510,
+    "reason": "新聞社 se traduce de manera poco natural como la redacción; cubrir la noticia presupone una noticia no identificada."
+  },
+  {
+    "level": "N4",
+    "slot": 2513,
+    "reason": "発信 puede ser transmitir o emitir; falta contexto para fijar hacer una llamada."
+  },
+  {
+    "level": "N5",
+    "slot": 2342,
+    "reason": "Mañana tengo ganas no traduce 明日が楽しみ ni es una frase española completa."
+  },
+  {
+    "level": "N5",
+    "slot": 2345,
+    "reason": "Negación genérica sin contexto laboral."
+  },
+  {
+    "level": "N4",
+    "slot": 2514,
+    "reason": "La traducción omite 一段: bajar la balda un nivel, no simplemente bajar una balda."
+  },
+  {
+    "level": "N4",
+    "slot": 2518,
+    "reason": "A partir de ahora me dirijo sugiere habitualidad; aquí 今から significa salir o dirigirse ahora."
+  },
+  {
+    "level": "N4",
+    "slot": 2519,
+    "reason": "Comparación diagnóstica y judicial sin contexto que explique la metáfora."
+  },
+  {
+    "level": "N4",
+    "slot": 2520,
+    "reason": "Manual para hombres sin tema definido; contraste forzado y sin contexto."
+  },
+  {
+    "level": "N5",
+    "slot": 2348,
+    "reason": "静かな風 es una colocación poco natural para viento suave."
+  },
+  {
+    "level": "N4",
+    "slot": 2525,
+    "reason": "Negación genérica sin referente para consumo."
+  },
+  {
+    "level": "N5",
+    "slot": 2236,
+    "reason": "Similitud extrema con frase existente: この公園で写真を撮ってもいいですか。",
+    "similarity": 0.9091
+  },
+  {
+    "level": "N5",
+    "slot": 2242,
+    "reason": "Similitud extrema con frase existente: うちで映画を見ませんか。",
+    "similarity": 0.9167
+  },
+  {
+    "level": "N5",
+    "slot": 2299,
+    "reason": "Similitud extrema con frase existente: 昨日、友だちと映画を見た。",
+    "similarity": 0.9167
+  },
+  {
+    "level": "N5",
+    "slot": 2315,
+    "reason": "Similitud extrema con frase existente: ここではゲームをしません。",
+    "similarity": 0.9167
+  },
+  {
+    "level": "N5",
+    "slot": 2317,
+    "reason": "Similitud extrema con frase existente: 家から港までバスで行きます。",
+    "similarity": 0.9231
+  },
+  {
+    "level": "N5",
+    "slot": 2338,
+    "reason": "Similitud extrema con frase existente: 部屋にいすが四つあります。",
+    "similarity": 0.9167
+  },
+  {
+    "level": "N5",
+    "slot": 2361,
+    "reason": "Similitud extrema con frase existente: 一緒に行きましょうか。",
+    "similarity": 0.9
+  },
+  {
+    "level": "N5",
+    "slot": 2362,
+    "reason": "Similitud extrema con frase existente: 一緒にご飯を食べませんか。",
+    "similarity": 0.96
+  }
+]
