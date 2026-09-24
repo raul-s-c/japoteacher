@@ -1,0 +1,5723 @@
+{
+  "provenance": "Authored and linguistically reviewed in Codex conversation; local deterministic checks. No independent API review.",
+  "api_calls": 0,
+  "api_tokens": 0,
+  "pairs": 100,
+  "exercises": 200,
+  "levels": {
+    "N4": 39,
+    "N3": 59,
+    "N5": 2
+  },
+  "checks": [
+    "schema",
+    "explicit ordered kanji readings",
+    "exact and character similarity vs bank + Sakamoto + batch",
+    "morphology evidence for target",
+    "append-only previous rows and graph"
+  ],
+  "items": [
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-001",
+      "target": "腰",
+      "japanese": "重い箱を持ち上げたとき、腰に痛みを感じました。",
+      "spanish": "Al levantar una caja pesada, noté dolor en la zona lumbar.",
+      "estimated_level": "N4",
+      "review_note": "腰 indica la zona de la cintura o parte baja de la espalda.",
+      "authored_ruby": "[重|おも]い[箱|はこ]を[持|も]ち[上|あ]げたとき、[腰|こし]に[痛|いた]みを[感|かん]じました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1948",
+      "nearest_japanese": "山頂で写真を撮ったあと、一同は静かにごみを拾いました。",
+      "character_similarity": 0.3913,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "重い",
+          "surface": "重い",
+          "start": 0,
+          "end": 2,
+          "reading": "おもい"
+        },
+        {
+          "term": "箱",
+          "surface": "箱",
+          "start": 2,
+          "end": 3,
+          "reading": "はこ"
+        },
+        {
+          "term": "持ち上げる",
+          "surface": "持ち上げ",
+          "start": 4,
+          "end": 8,
+          "reading": "もちあげ"
+        },
+        {
+          "term": "腰",
+          "surface": "腰",
+          "start": 12,
+          "end": 13,
+          "reading": "こし"
+        },
+        {
+          "term": "痛み",
+          "surface": "痛み",
+          "start": 14,
+          "end": 16,
+          "reading": "いたみ"
+        },
+        {
+          "term": "感じる",
+          "surface": "感じ",
+          "start": 17,
+          "end": 19,
+          "reading": "かんじ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0225",
+      "nearest_lexical_japanese": "この箱を開けてください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-002",
+      "target": "膝",
+      "japanese": "猫が膝の上で寝ていて、立ち上がれません。",
+      "spanish": "Tengo al gato dormido en el regazo y no puedo levantarme.",
+      "estimated_level": "N4",
+      "review_note": "膝の上 se traduce aquí como el regazo.",
+      "authored_ruby": "[猫|ねこ]が[膝|ひざ]の[上|うえ]で[寝|ね]ていて、[立|た]ち[上|あ]がれません。",
+      "nearest_id": "JAES-N5-CURATED-0021",
+      "nearest_japanese": "猫はテーブルの下で寝ています。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "猫",
+          "surface": "猫",
+          "start": 0,
+          "end": 1,
+          "reading": "ねこ"
+        },
+        {
+          "term": "膝",
+          "surface": "膝",
+          "start": 2,
+          "end": 3,
+          "reading": "ひざ"
+        },
+        {
+          "term": "寝る",
+          "surface": "寝",
+          "start": 6,
+          "end": 7,
+          "reading": "ね"
+        },
+        {
+          "term": "立ち上がれる",
+          "surface": "立ち上がれ",
+          "start": 11,
+          "end": 16,
+          "reading": "たちあがれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2162",
+      "nearest_lexical_japanese": "うちでは猫が窓辺で寝ています。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-003",
+      "target": "肘",
+      "japanese": "狭い席で、隣の人と肘がぶつかりました。",
+      "spanish": "En el asiento estrecho, mi codo chocó con el de la persona de al lado.",
+      "estimated_level": "N4",
+      "review_note": "肘 significa codo.",
+      "authored_ruby": "[狭|せま]い[席|せき]で、[隣|となり]の[人|ひと]と[肘|ひじ]がぶつかりました。",
+      "nearest_id": "SAKAMOTO-8543b4fb25231d21-JA_ES",
+      "nearest_japanese": "はいはい 分かりましたよ。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "狭い",
+          "surface": "狭い",
+          "start": 0,
+          "end": 2,
+          "reading": "せまい"
+        },
+        {
+          "term": "席",
+          "surface": "席",
+          "start": 2,
+          "end": 3,
+          "reading": "せき"
+        },
+        {
+          "term": "隣",
+          "surface": "隣",
+          "start": 5,
+          "end": 6,
+          "reading": "となり"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 7,
+          "end": 8,
+          "reading": "ひと"
+        },
+        {
+          "term": "肘",
+          "surface": "肘",
+          "start": 9,
+          "end": 10,
+          "reading": "ひじ"
+        },
+        {
+          "term": "ぶつかる",
+          "surface": "ぶつかり",
+          "start": 11,
+          "end": 15,
+          "reading": "ぶつかり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0171",
+      "nearest_lexical_japanese": "映画館でとなりの人に席を取られましたか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-004",
+      "target": "爪",
+      "japanese": "爪が伸びて、手袋の先に穴が開いてしまいました。",
+      "spanish": "Me habían crecido las uñas y acabé agujereando la punta del guante.",
+      "estimated_level": "N4",
+      "review_note": "爪 se refiere a las uñas de los dedos.",
+      "authored_ruby": "[爪|つめ]が[伸|の]びて、[手袋|てぶくろ]の[先|さき]に[穴|あな]が[開|あ]いてしまいました。",
+      "nearest_id": "JAES-N4-EXP-0083",
+      "nearest_japanese": "財布を家に忘れてしまいました。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "爪",
+          "surface": "爪",
+          "start": 0,
+          "end": 1,
+          "reading": "つめ"
+        },
+        {
+          "term": "伸びる",
+          "surface": "伸び",
+          "start": 2,
+          "end": 4,
+          "reading": "のび"
+        },
+        {
+          "term": "手袋",
+          "surface": "手袋",
+          "start": 6,
+          "end": 8,
+          "reading": "てぶくろ"
+        },
+        {
+          "term": "先",
+          "surface": "先",
+          "start": 9,
+          "end": 10,
+          "reading": "さき"
+        },
+        {
+          "term": "穴",
+          "surface": "穴",
+          "start": 11,
+          "end": 12,
+          "reading": "あな"
+        },
+        {
+          "term": "開く",
+          "surface": "開い",
+          "start": 13,
+          "end": 15,
+          "reading": "ひらい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1786",
+      "nearest_lexical_japanese": "先に食べてもいいですよ。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-005",
+      "target": "眉",
+      "japanese": "驚いた顔を描くため、眉を高い位置に描きました。",
+      "spanish": "Para dibujar una cara sorprendida, coloqué las cejas más arriba.",
+      "estimated_level": "N3",
+      "review_note": "眉 significa ceja.",
+      "authored_ruby": "[驚|おどろ]いた[顔|かお]を[描|か]くため、[眉|まゆ]を[高|たか]い[位置|いち]に[描|か]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1652",
+      "nearest_japanese": "値札の違いを解明するため、店員に聞きました。",
+      "character_similarity": 0.439,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "驚く",
+          "surface": "驚い",
+          "start": 0,
+          "end": 2,
+          "reading": "おどろい"
+        },
+        {
+          "term": "顔",
+          "surface": "顔",
+          "start": 3,
+          "end": 4,
+          "reading": "かお"
+        },
+        {
+          "term": "描く",
+          "surface": "描く",
+          "start": 5,
+          "end": 7,
+          "reading": "えがく"
+        },
+        {
+          "term": "眉",
+          "surface": "眉",
+          "start": 10,
+          "end": 11,
+          "reading": "まゆ"
+        },
+        {
+          "term": "高い",
+          "surface": "高い",
+          "start": 12,
+          "end": 14,
+          "reading": "たかい"
+        },
+        {
+          "term": "位置",
+          "surface": "位置",
+          "start": 14,
+          "end": 16,
+          "reading": "いち"
+        },
+        {
+          "term": "描く",
+          "surface": "描き",
+          "start": 17,
+          "end": 19,
+          "reading": "えがき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0577",
+      "nearest_lexical_japanese": "実際は高いです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-006",
+      "target": "唇",
+      "japanese": "寒い外に長くいて、唇が乾きました。",
+      "spanish": "Se me resecaron los labios por estar mucho tiempo fuera con frío.",
+      "estimated_level": "N3",
+      "review_note": "唇 son los labios.",
+      "authored_ruby": "[寒|さむ]い[外|そと]に[長|なが]くいて、[唇|くちびる]が[乾|かわ]きました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1037",
+      "nearest_japanese": "いいえ、すでに払いました。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "寒い",
+          "surface": "寒い",
+          "start": 0,
+          "end": 2,
+          "reading": "さむい"
+        },
+        {
+          "term": "外",
+          "surface": "外",
+          "start": 2,
+          "end": 3,
+          "reading": "そと"
+        },
+        {
+          "term": "長い",
+          "surface": "長く",
+          "start": 4,
+          "end": 6,
+          "reading": "ながく"
+        },
+        {
+          "term": "いる",
+          "surface": "い",
+          "start": 6,
+          "end": 7,
+          "reading": "い"
+        },
+        {
+          "term": "唇",
+          "surface": "唇",
+          "start": 9,
+          "end": 10,
+          "reading": "くちびる"
+        },
+        {
+          "term": "乾く",
+          "surface": "乾き",
+          "start": 11,
+          "end": 13,
+          "reading": "かわき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-097",
+      "nearest_lexical_japanese": "長く話して喉が乾いたので、水を一杯飲みました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-007",
+      "target": "頬",
+      "japanese": "冷たい風が頬に当たって、目が覚めました。",
+      "spanish": "El viento frío me dio en las mejillas y me despejó.",
+      "estimated_level": "N3",
+      "review_note": "頬 se lee aquí ほお y significa mejilla.",
+      "authored_ruby": "[冷|つめ]たい[風|かぜ]が[頬|ほお]に[当|あ]たって、[目|め]が[覚|さ]めました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-002-035",
+      "nearest_japanese": "夜中に猫の声で目が覚めました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "冷たい",
+          "surface": "冷たい",
+          "start": 0,
+          "end": 3,
+          "reading": "つめたい"
+        },
+        {
+          "term": "風",
+          "surface": "風",
+          "start": 3,
+          "end": 4,
+          "reading": "かぜ"
+        },
+        {
+          "term": "頬",
+          "surface": "頬",
+          "start": 5,
+          "end": 6,
+          "reading": "ほお"
+        },
+        {
+          "term": "当たる",
+          "surface": "当たっ",
+          "start": 7,
+          "end": 10,
+          "reading": "あたっ"
+        },
+        {
+          "term": "目",
+          "surface": "目",
+          "start": 12,
+          "end": 13,
+          "reading": "め"
+        },
+        {
+          "term": "覚める",
+          "surface": "覚め",
+          "start": 14,
+          "end": 16,
+          "reading": "さめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-002-035",
+      "nearest_lexical_japanese": "夜中に猫の声で目が覚めました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-008",
+      "target": "額",
+      "japanese": "額の汗をタオルで拭いてから、帽子をかぶりました。",
+      "spanish": "Me sequé el sudor de la frente con una toalla antes de ponerme el sombrero.",
+      "estimated_level": "N3",
+      "review_note": "額 se lee ひたい cuando significa frente.",
+      "authored_ruby": "[額|ひたい]の[汗|あせ]をタオルで[拭|ふ]いてから、[帽子|ぼうし]をかぶりました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-042",
+      "nearest_japanese": "梨の皮を剥いてから、四つに切りました。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "額",
+          "surface": "額",
+          "start": 0,
+          "end": 1,
+          "reading": "がく"
+        },
+        {
+          "term": "汗",
+          "surface": "汗",
+          "start": 2,
+          "end": 3,
+          "reading": "あせ"
+        },
+        {
+          "term": "タオル",
+          "surface": "タオル",
+          "start": 4,
+          "end": 7,
+          "reading": "たおる"
+        },
+        {
+          "term": "拭く",
+          "surface": "拭い",
+          "start": 8,
+          "end": 10,
+          "reading": "ふい"
+        },
+        {
+          "term": "帽子",
+          "surface": "帽子",
+          "start": 14,
+          "end": 16,
+          "reading": "ぼうし"
+        },
+        {
+          "term": "かぶる",
+          "surface": "かぶり",
+          "start": 17,
+          "end": 20,
+          "reading": "かぶり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2515",
+      "nearest_lexical_japanese": "帽子をかぶったまま食べないでください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-009",
+      "target": "肩",
+      "japanese": "鳥が飼い主の肩にとまっています。",
+      "spanish": "El pájaro está posado en el hombro de su dueño.",
+      "estimated_level": "N4",
+      "review_note": "肩 significa hombro; とまる describe dónde se posa el ave.",
+      "authored_ruby": "[鳥|とり]が[飼|か]い[主|ぬし]の[肩|かた]にとまっています。",
+      "nearest_id": "JAES-N5-EDITORIAL-1141",
+      "nearest_japanese": "この電車は完全に止まっています。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "鳥",
+          "surface": "鳥",
+          "start": 0,
+          "end": 1,
+          "reading": "とり"
+        },
+        {
+          "term": "飼い主",
+          "surface": "飼い主",
+          "start": 2,
+          "end": 5,
+          "reading": "かいぬし"
+        },
+        {
+          "term": "肩",
+          "surface": "肩",
+          "start": 6,
+          "end": 7,
+          "reading": "かた"
+        },
+        {
+          "term": "とまる",
+          "surface": "とまっ",
+          "start": 8,
+          "end": 11,
+          "reading": "とまっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1089",
+      "nearest_lexical_japanese": "鳥たちはどこ？"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-010",
+      "target": "背中",
+      "japanese": "子供を背中に乗せて、部屋をゆっくり歩きました。",
+      "spanish": "Llevé al niño a la espalda y caminé despacio por la habitación.",
+      "estimated_level": "N4",
+      "review_note": "背中 es la espalda.",
+      "authored_ruby": "[子供|こども]を[背中|せなか]に[乗|の]せて、[部屋|へや]をゆっくり[歩|ある]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0412",
+      "nearest_japanese": "公園の係の人は子どもたちに森の小道をゆっくり歩かせました。",
+      "character_similarity": 0.449,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 0,
+          "end": 2,
+          "reading": "こども"
+        },
+        {
+          "term": "背中",
+          "surface": "背中",
+          "start": 3,
+          "end": 5,
+          "reading": "せなか"
+        },
+        {
+          "term": "乗せる",
+          "surface": "乗せ",
+          "start": 6,
+          "end": 8,
+          "reading": "のせ"
+        },
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 10,
+          "end": 12,
+          "reading": "へや"
+        },
+        {
+          "term": "ゆっくり",
+          "surface": "ゆっくり",
+          "start": 13,
+          "end": 17,
+          "reading": "ゆっくり"
+        },
+        {
+          "term": "歩く",
+          "surface": "歩き",
+          "start": 17,
+          "end": 19,
+          "reading": "あるき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-019",
+      "nearest_lexical_japanese": "道が凍っていて滑りやすいので、駅までゆっくり歩きました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-011",
+      "target": "足首",
+      "japanese": "浅い川でしたが、水は足首までありました。",
+      "spanish": "El río era poco profundo, pero el agua llegaba hasta los tobillos.",
+      "estimated_level": "N3",
+      "review_note": "足首 es el tobillo.",
+      "authored_ruby": "[浅|あさ]い[川|かわ]でしたが、[水|みず]は[足首|あしくび]までありました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1831",
+      "nearest_japanese": "初日は少し熱がありました。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "浅い",
+          "surface": "浅い",
+          "start": 0,
+          "end": 2,
+          "reading": "あさい"
+        },
+        {
+          "term": "川",
+          "surface": "川",
+          "start": 2,
+          "end": 3,
+          "reading": "かわ"
+        },
+        {
+          "term": "水",
+          "surface": "水",
+          "start": 8,
+          "end": 9,
+          "reading": "みず"
+        },
+        {
+          "term": "足首",
+          "surface": "足首",
+          "start": 10,
+          "end": 12,
+          "reading": "あしくび"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 14,
+          "end": 16,
+          "reading": "あり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.4,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2049",
+      "nearest_lexical_japanese": "水もありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-012",
+      "target": "手首",
+      "japanese": "腕時計のベルトがきつくて、手首に跡が残りました。",
+      "spanish": "La correa del reloj estaba tan apretada que me dejó una marca en la muñeca.",
+      "estimated_level": "N3",
+      "review_note": "手首 es la muñeca, no el brazo entero.",
+      "authored_ruby": "[腕時計|うでどけい]のベルトがきつくて、[手首|てくび]に[跡|あと]が[残|のこ]りました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2158",
+      "nearest_japanese": "新しいスマホの設定ができなくて、弟が怒りました。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "腕時計",
+          "surface": "腕時計",
+          "start": 0,
+          "end": 3,
+          "reading": "うでどけい"
+        },
+        {
+          "term": "ベルト",
+          "surface": "ベルト",
+          "start": 4,
+          "end": 7,
+          "reading": "べると"
+        },
+        {
+          "term": "きつい",
+          "surface": "きつく",
+          "start": 8,
+          "end": 11,
+          "reading": "きつく"
+        },
+        {
+          "term": "手首",
+          "surface": "手首",
+          "start": 13,
+          "end": 15,
+          "reading": "てくび"
+        },
+        {
+          "term": "跡",
+          "surface": "跡",
+          "start": 16,
+          "end": 17,
+          "reading": "あと"
+        },
+        {
+          "term": "残る",
+          "surface": "残り",
+          "start": 18,
+          "end": 20,
+          "reading": "のこり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.1111111111111111,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0898",
+      "nearest_lexical_japanese": "帰る前に腕時計をかけます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-013",
+      "target": "指先",
+      "japanese": "手袋をしていても、指先が冷たくなりました。",
+      "spanish": "Aunque llevaba guantes, se me enfriaron las puntas de los dedos.",
+      "estimated_level": "N3",
+      "review_note": "指先 son los extremos de los dedos.",
+      "authored_ruby": "[手袋|てぶくろ]をしていても、[指先|ゆびさき]が[冷|つめ]たくなりました。",
+      "nearest_id": "JAES-N4-EXP-0098",
+      "nearest_japanese": "新しいシステムで作業が速くなりました。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "手袋",
+          "surface": "手袋",
+          "start": 0,
+          "end": 2,
+          "reading": "てぶくろ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 3,
+          "end": 4,
+          "reading": "し"
+        },
+        {
+          "term": "指先",
+          "surface": "指先",
+          "start": 9,
+          "end": 11,
+          "reading": "ゆびさき"
+        },
+        {
+          "term": "冷たい",
+          "surface": "冷たく",
+          "start": 12,
+          "end": 15,
+          "reading": "つめたく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 15,
+          "end": 17,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0595",
+      "nearest_lexical_japanese": "来月から残業することになりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-014",
+      "target": "息",
+      "japanese": "坂道を走ったので、息が切れました。",
+      "spanish": "Me quedé sin aliento por correr cuesta arriba.",
+      "estimated_level": "N3",
+      "review_note": "息が切れる es quedarse sin aliento.",
+      "authored_ruby": "[坂道|さかみち]を[走|はし]ったので、[息|いき]が[切|き]れました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1254",
+      "nearest_japanese": "議論が長かったので、出発が遅れました。",
+      "character_similarity": 0.5625,
+      "target_literal_previous_occurrences": 4,
+      "morphology_evidence": [
+        {
+          "term": "坂道",
+          "surface": "坂道",
+          "start": 0,
+          "end": 2,
+          "reading": "さかみち"
+        },
+        {
+          "term": "走る",
+          "surface": "走っ",
+          "start": 3,
+          "end": 5,
+          "reading": "はしっ"
+        },
+        {
+          "term": "息",
+          "surface": "息",
+          "start": 9,
+          "end": 10,
+          "reading": "いき"
+        },
+        {
+          "term": "切れる",
+          "surface": "切れ",
+          "start": 11,
+          "end": 13,
+          "reading": "きれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0797",
+      "nearest_lexical_japanese": "ここで走ってはいけません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-015",
+      "target": "咳",
+      "japanese": "映画の静かな場面で、咳が出てしまいました。",
+      "spanish": "Me entró tos justo en una escena silenciosa de la película.",
+      "estimated_level": "N4",
+      "review_note": "咳が出る expresa toser.",
+      "authored_ruby": "[映画|えいが]の[静|しず]かな[場面|ばめん]で、[咳|せき]が[出|で]てしまいました。",
+      "nearest_id": "JAES-N4-EXP-0084",
+      "nearest_japanese": "大事なメールを消してしまいました。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "映画",
+          "surface": "映画",
+          "start": 0,
+          "end": 2,
+          "reading": "えいが"
+        },
+        {
+          "term": "静か",
+          "surface": "静か",
+          "start": 3,
+          "end": 5,
+          "reading": "しずか"
+        },
+        {
+          "term": "場面",
+          "surface": "場面",
+          "start": 6,
+          "end": 8,
+          "reading": "ばめん"
+        },
+        {
+          "term": "咳",
+          "surface": "咳",
+          "start": 10,
+          "end": 11,
+          "reading": "せき"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 12,
+          "end": 13,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0187",
+      "nearest_lexical_japanese": "映画は六時から八時までです。"
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-C3000-003-016",
+      "target": "鼻",
+      "japanese": "犬が鼻で私の手を軽く押しました。",
+      "spanish": "El perro me empujó suavemente la mano con el hocico.",
+      "estimated_level": "N5",
+      "review_note": "鼻 puede traducirse como hocico al hablar de un perro.",
+      "authored_ruby": "[犬|いぬ]が[鼻|はな]で[私|わたし]の[手|て]を[軽|かる]く[押|お]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0217",
+      "nearest_japanese": "部長が私に資料をくれました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "犬",
+          "surface": "犬",
+          "start": 0,
+          "end": 1,
+          "reading": "いぬ"
+        },
+        {
+          "term": "鼻",
+          "surface": "鼻",
+          "start": 2,
+          "end": 3,
+          "reading": "はな"
+        },
+        {
+          "term": "私",
+          "surface": "私",
+          "start": 4,
+          "end": 5,
+          "reading": "わたし"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 6,
+          "end": 7,
+          "reading": "て"
+        },
+        {
+          "term": "軽い",
+          "surface": "軽く",
+          "start": 8,
+          "end": 10,
+          "reading": "かるく"
+        },
+        {
+          "term": "押す",
+          "surface": "押し",
+          "start": 10,
+          "end": 12,
+          "reading": "おし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924-041",
+      "nearest_lexical_japanese": "犬がいきなり走り出したので、手に持っていた帽子を落としました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-017",
+      "target": "眠気",
+      "japanese": "昼食の後に眠気が出て、何度もあくびをしました。",
+      "spanish": "Después de comer me entró sueño y bostecé varias veces.",
+      "estimated_level": "N3",
+      "review_note": "眠気 es la sensación de sueño.",
+      "authored_ruby": "[昼食|ちゅうしょく]の[後|あと]に[眠気|ねむけ]が[出|で]て、[何度|なんど]もあくびをしました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1345",
+      "nearest_japanese": "勇気が出ました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "昼食",
+          "surface": "昼食",
+          "start": 0,
+          "end": 2,
+          "reading": "ちゅうしょく"
+        },
+        {
+          "term": "眠気",
+          "surface": "眠気",
+          "start": 5,
+          "end": 7,
+          "reading": "ねむけ"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 8,
+          "end": 9,
+          "reading": "で"
+        },
+        {
+          "term": "あくび",
+          "surface": "あくび",
+          "start": 14,
+          "end": 17,
+          "reading": "あくび"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1518",
+      "nearest_lexical_japanese": "昼食が遅れたので、スマホの更新は午後にします。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-018",
+      "target": "昼寝",
+      "japanese": "昼寝を長くしすぎて、夜はなかなか眠れませんでした。",
+      "spanish": "Dormí una siesta demasiado larga y por la noche me costó conciliar el sueño.",
+      "estimated_level": "N4",
+      "review_note": "昼寝 es dormir durante el día.",
+      "authored_ruby": "[昼寝|ひるね]を[長|なが]くしすぎて、[夜|よる]はなかなか[眠|ねむ]れませんでした。",
+      "nearest_id": "JAES-N4-EXP-0075",
+      "nearest_japanese": "昼ご飯を食べすぎて、眠くなりました。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "昼寝",
+          "surface": "昼寝",
+          "start": 0,
+          "end": 2,
+          "reading": "ひるね"
+        },
+        {
+          "term": "長い",
+          "surface": "長く",
+          "start": 3,
+          "end": 5,
+          "reading": "ながく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 5,
+          "end": 6,
+          "reading": "し"
+        },
+        {
+          "term": "夜",
+          "surface": "夜",
+          "start": 10,
+          "end": 11,
+          "reading": "よる"
+        },
+        {
+          "term": "なかなか",
+          "surface": "なかなか",
+          "start": 12,
+          "end": 16,
+          "reading": "なかなか"
+        },
+        {
+          "term": "眠れる",
+          "surface": "眠れ",
+          "start": 16,
+          "end": 18,
+          "reading": "ねむれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2459",
+      "nearest_lexical_japanese": "ここは長く滞在するには向きません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-019",
+      "target": "早起き",
+      "japanese": "早起きして、誰もいない浜辺を散歩しました。",
+      "spanish": "Madrugué y paseé por la playa cuando aún no había nadie.",
+      "estimated_level": "N4",
+      "review_note": "早起きする es levantarse temprano.",
+      "authored_ruby": "[早起|はやお]きして、[誰|だれ]もいない[浜辺|はまべ]を[散歩|さんぽ]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1466",
+      "nearest_japanese": "彼女とともに公園を散歩しました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "早起き",
+          "surface": "早起き",
+          "start": 0,
+          "end": 3,
+          "reading": "はやおき"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 3,
+          "end": 4,
+          "reading": "し"
+        },
+        {
+          "term": "誰",
+          "surface": "誰",
+          "start": 6,
+          "end": 7,
+          "reading": "だれ"
+        },
+        {
+          "term": "いる",
+          "surface": "い",
+          "start": 8,
+          "end": 9,
+          "reading": "い"
+        },
+        {
+          "term": "浜辺",
+          "surface": "浜辺",
+          "start": 11,
+          "end": 13,
+          "reading": "はまべ"
+        },
+        {
+          "term": "散歩",
+          "surface": "散歩",
+          "start": 14,
+          "end": 16,
+          "reading": "さんぽ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2321",
+      "nearest_lexical_japanese": "そこには誰もいません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-020",
+      "target": "徹夜",
+      "japanese": "徹夜でレポートを書いたので、翌日は疲れていました。",
+      "spanish": "Pasé la noche escribiendo el informe y al día siguiente estaba cansado.",
+      "estimated_level": "N3",
+      "review_note": "徹夜 significa pasar toda la noche sin dormir.",
+      "authored_ruby": "[徹夜|てつや]でレポートを[書|か]いたので、[翌日|よくじつ]は[疲|つか]れていました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0358",
+      "nearest_japanese": "旅行先でパスポートをなくしてしまいました。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "徹夜",
+          "surface": "徹夜",
+          "start": 0,
+          "end": 2,
+          "reading": "てつや"
+        },
+        {
+          "term": "レポート",
+          "surface": "レポート",
+          "start": 3,
+          "end": 7,
+          "reading": "れぽーと"
+        },
+        {
+          "term": "書く",
+          "surface": "書い",
+          "start": 8,
+          "end": 10,
+          "reading": "かい"
+        },
+        {
+          "term": "翌日",
+          "surface": "翌日",
+          "start": 14,
+          "end": 16,
+          "reading": "よくじつ"
+        },
+        {
+          "term": "疲れる",
+          "surface": "疲れ",
+          "start": 17,
+          "end": 19,
+          "reading": "つかれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1848",
+      "nearest_lexical_japanese": "レポートを書くときはキーボードを打つので、目が疲れます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-021",
+      "target": "特技",
+      "japanese": "自己紹介で、特技は手品だと話しました。",
+      "spanish": "En mi presentación dije que mi habilidad especial eran los trucos de magia.",
+      "estimated_level": "N3",
+      "review_note": "特技 es una destreza que se domina especialmente bien.",
+      "authored_ruby": "[自己紹介|じこしょうかい]で、[特技|とくぎ]は[手品|てじな]だと[話|はな]しました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1754",
+      "nearest_japanese": "友だちと会って話しました。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "自己",
+          "surface": "自己",
+          "start": 0,
+          "end": 2,
+          "reading": "じこ"
+        },
+        {
+          "term": "紹介",
+          "surface": "紹介",
+          "start": 2,
+          "end": 4,
+          "reading": "しょうかい"
+        },
+        {
+          "term": "特技",
+          "surface": "特技",
+          "start": 6,
+          "end": 8,
+          "reading": "とくぎ"
+        },
+        {
+          "term": "手品",
+          "surface": "手品",
+          "start": 9,
+          "end": 11,
+          "reading": "てじな"
+        },
+        {
+          "term": "話す",
+          "surface": "話し",
+          "start": 13,
+          "end": 15,
+          "reading": "はなし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0706",
+      "nearest_lexical_japanese": "私は自己紹介をします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-022",
+      "target": "手品",
+      "japanese": "弟の手品で、コインが手の中から消えました。",
+      "spanish": "En el truco de magia de mi hermano pequeño, la moneda desapareció de su mano.",
+      "estimated_level": "N3",
+      "review_note": "手品 son trucos de magia o ilusionismo.",
+      "authored_ruby": "[弟|おとうと]の[手品|てじな]で、コインが[手|て]の[中|なか]から[消|き]えました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2467",
+      "nearest_japanese": "一瞬で電気が消えました。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "弟",
+          "surface": "弟",
+          "start": 0,
+          "end": 1,
+          "reading": "おとうと"
+        },
+        {
+          "term": "手品",
+          "surface": "手品",
+          "start": 2,
+          "end": 4,
+          "reading": "てじな"
+        },
+        {
+          "term": "コイン",
+          "surface": "コイン",
+          "start": 6,
+          "end": 9,
+          "reading": "こいん"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 10,
+          "end": 11,
+          "reading": "て"
+        },
+        {
+          "term": "消える",
+          "surface": "消え",
+          "start": 15,
+          "end": 17,
+          "reading": "きえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1081",
+      "nearest_lexical_japanese": "最初に手を洗います。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-023",
+      "target": "習字",
+      "japanese": "習字の時間に、筆で大きく名前を書きました。",
+      "spanish": "En la clase de caligrafía escribí mi nombre en grande con un pincel.",
+      "estimated_level": "N4",
+      "review_note": "習字 es la práctica de la escritura caligráfica.",
+      "authored_ruby": "[習字|しゅうじ]の[時間|じかん]に、[筆|ふで]で[大|おお]きく[名前|なまえ]を[書|か]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2474",
+      "nearest_japanese": "あの将軍は娘に手紙を書きました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "習字",
+          "surface": "習字",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅうじ"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 3,
+          "end": 5,
+          "reading": "じかん"
+        },
+        {
+          "term": "筆",
+          "surface": "筆",
+          "start": 7,
+          "end": 8,
+          "reading": "ふで"
+        },
+        {
+          "term": "大きい",
+          "surface": "大きく",
+          "start": 9,
+          "end": 12,
+          "reading": "おおきく"
+        },
+        {
+          "term": "名前",
+          "surface": "名前",
+          "start": 12,
+          "end": 14,
+          "reading": "なまえ"
+        },
+        {
+          "term": "書く",
+          "surface": "書き",
+          "start": 15,
+          "end": 17,
+          "reading": "かき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0311",
+      "nearest_lexical_japanese": "すみません、ここに名前を書いてください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-024",
+      "target": "絵の具",
+      "japanese": "青と黄色の絵の具を混ぜて、緑を作りました。",
+      "spanish": "Mezclé pintura azul y amarilla para obtener verde.",
+      "estimated_level": "N4",
+      "review_note": "絵の具 es pintura utilizada para dibujar o pintar.",
+      "authored_ruby": "[青|あお]と[黄色|きいろ]の[絵|え]の[具|ぐ]を[混|ま]ぜて、[緑|みどり]を[作|つく]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-052",
+      "nearest_japanese": "肉の代わりにきのこを使って、パスタを作りました。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "青",
+          "surface": "青",
+          "start": 0,
+          "end": 1,
+          "reading": "あお"
+        },
+        {
+          "term": "黄色",
+          "surface": "黄色",
+          "start": 2,
+          "end": 4,
+          "reading": "きいろ"
+        },
+        {
+          "term": "絵の具",
+          "surface": "絵の具",
+          "start": 5,
+          "end": 8,
+          "reading": "えのぐ"
+        },
+        {
+          "term": "混ぜる",
+          "surface": "混ぜ",
+          "start": 9,
+          "end": 11,
+          "reading": "まぜ"
+        },
+        {
+          "term": "緑",
+          "surface": "緑",
+          "start": 13,
+          "end": 14,
+          "reading": "みどり"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 15,
+          "end": 17,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1363",
+      "nearest_lexical_japanese": "料理は指示どおりに作ります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-025",
+      "target": "筆",
+      "japanese": "使った筆を洗って、毛の形を整えました。",
+      "spanish": "Lavé el pincel después de usarlo y di forma a sus cerdas.",
+      "estimated_level": "N4",
+      "review_note": "筆 significa pincel de escritura o pintura.",
+      "authored_ruby": "[使|つか]った[筆|ふで]を[洗|あら]って、[毛|け]の[形|かたち]を[整|ととの]えました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0246",
+      "nearest_japanese": "切符を買ってから駅の地図をもらいました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "使う",
+          "surface": "使っ",
+          "start": 0,
+          "end": 2,
+          "reading": "つかっ"
+        },
+        {
+          "term": "筆",
+          "surface": "筆",
+          "start": 3,
+          "end": 4,
+          "reading": "ふで"
+        },
+        {
+          "term": "洗う",
+          "surface": "洗っ",
+          "start": 5,
+          "end": 7,
+          "reading": "あらっ"
+        },
+        {
+          "term": "毛",
+          "surface": "毛",
+          "start": 9,
+          "end": 10,
+          "reading": "け"
+        },
+        {
+          "term": "形",
+          "surface": "形",
+          "start": 11,
+          "end": 12,
+          "reading": "かたち"
+        },
+        {
+          "term": "整える",
+          "surface": "整え",
+          "start": 13,
+          "end": 15,
+          "reading": "ととのえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1653",
+      "nearest_lexical_japanese": "電車を使いますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-026",
+      "target": "彫刻",
+      "japanese": "公園の彫刻は、見る角度によって違う形に見えます。",
+      "spanish": "La escultura del parque parece tener una forma distinta según el ángulo desde el que se mire.",
+      "estimated_level": "N3",
+      "review_note": "彫刻 es escultura.",
+      "authored_ruby": "[公園|こうえん]の[彫刻|ちょうこく]は、[見|み]る[角度|かくど]によって[違|ちが]う[形|かたち]に[見|み]えます。",
+      "nearest_id": "JAES-N4-EDITORIAL-2006",
+      "nearest_japanese": "この角度なら富士山がよく見えます。",
+      "character_similarity": 0.4211,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "公園",
+          "surface": "公園",
+          "start": 0,
+          "end": 2,
+          "reading": "こうえん"
+        },
+        {
+          "term": "彫刻",
+          "surface": "彫刻",
+          "start": 3,
+          "end": 5,
+          "reading": "ちょうこく"
+        },
+        {
+          "term": "見る",
+          "surface": "見る",
+          "start": 7,
+          "end": 9,
+          "reading": "みる"
+        },
+        {
+          "term": "角度",
+          "surface": "角度",
+          "start": 9,
+          "end": 11,
+          "reading": "かくど"
+        },
+        {
+          "term": "違う",
+          "surface": "違う",
+          "start": 15,
+          "end": 17,
+          "reading": "ちがう"
+        },
+        {
+          "term": "形",
+          "surface": "形",
+          "start": 17,
+          "end": 18,
+          "reading": "かたち"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 19,
+          "end": 21,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0856",
+      "nearest_lexical_japanese": "きのう公園で鳥を見ました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-027",
+      "target": "陶芸",
+      "japanese": "陶芸の体験で、少し曲がった茶碗を作りました。",
+      "spanish": "En una actividad de cerámica hice un cuenco algo torcido.",
+      "estimated_level": "N3",
+      "review_note": "陶芸 es el arte de hacer objetos de cerámica.",
+      "authored_ruby": "[陶芸|とうげい]の[体験|たいけん]で、[少|すこ]し[曲|ま]がった[茶碗|ちゃわん]を[作|つく]りました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1831",
+      "nearest_japanese": "初日は少し熱がありました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "陶芸",
+          "surface": "陶芸",
+          "start": 0,
+          "end": 2,
+          "reading": "とうげい"
+        },
+        {
+          "term": "体験",
+          "surface": "体験",
+          "start": 3,
+          "end": 5,
+          "reading": "たいけん"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 7,
+          "end": 9,
+          "reading": "すこし"
+        },
+        {
+          "term": "曲がる",
+          "surface": "曲がっ",
+          "start": 9,
+          "end": 12,
+          "reading": "まがっ"
+        },
+        {
+          "term": "茶碗",
+          "surface": "茶碗",
+          "start": 13,
+          "end": 15,
+          "reading": "ちゃわん"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 16,
+          "end": 18,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.15384615384615385,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0128",
+      "nearest_lexical_japanese": "週末に茶道の体験教室へ行って、作法を少し学ぼうと思います。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-028",
+      "target": "裁縫",
+      "japanese": "祖母に裁縫を教わって、ボタンを付けられるようになりました。",
+      "spanish": "Mi abuela me enseñó a coser y aprendí a poner botones.",
+      "estimated_level": "N3",
+      "review_note": "裁縫 es costura.",
+      "authored_ruby": "[祖母|そぼ]に[裁縫|さいほう]を[教|おそ]わって、ボタンを[付|つ]けられるようになりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0649",
+      "nearest_japanese": "母に貯金を手伝ってもらいました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "祖母",
+          "surface": "祖母",
+          "start": 0,
+          "end": 2,
+          "reading": "そぼ"
+        },
+        {
+          "term": "裁縫",
+          "surface": "裁縫",
+          "start": 3,
+          "end": 5,
+          "reading": "さいほう"
+        },
+        {
+          "term": "教わる",
+          "surface": "教わっ",
+          "start": 6,
+          "end": 9,
+          "reading": "おそわっ"
+        },
+        {
+          "term": "ボタン",
+          "surface": "ボタン",
+          "start": 11,
+          "end": 14,
+          "reading": "ぼたん"
+        },
+        {
+          "term": "付ける",
+          "surface": "付け",
+          "start": 15,
+          "end": 17,
+          "reading": "つけ"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 23,
+          "end": 25,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0547",
+      "nearest_lexical_japanese": "来年から祖母と同じ家に住むことになりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-029",
+      "target": "編む",
+      "japanese": "冬に向けて、妹にマフラーを編んでいます。",
+      "spanish": "Estoy tejiendo una bufanda para mi hermana pequeña de cara al invierno.",
+      "estimated_level": "N3",
+      "review_note": "編む significa tejer con hilo o lana.",
+      "authored_ruby": "[冬|ふゆ]に[向|む]けて、[妹|いもうと]にマフラーを[編|あ]んでいます。",
+      "nearest_id": "JAES-N4-EDITORIAL-1921",
+      "nearest_japanese": "私は郊外に住んでいます。",
+      "character_similarity": 0.4138,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "冬",
+          "surface": "冬",
+          "start": 0,
+          "end": 1,
+          "reading": "ふゆ"
+        },
+        {
+          "term": "向ける",
+          "surface": "向け",
+          "start": 2,
+          "end": 4,
+          "reading": "むけ"
+        },
+        {
+          "term": "妹",
+          "surface": "妹",
+          "start": 6,
+          "end": 7,
+          "reading": "いもうと"
+        },
+        {
+          "term": "マフラー",
+          "surface": "マフラー",
+          "start": 8,
+          "end": 12,
+          "reading": "まふらー"
+        },
+        {
+          "term": "編む",
+          "surface": "編ん",
+          "start": 13,
+          "end": 15,
+          "reading": "あん"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1562",
+      "nearest_lexical_japanese": "田中さんには妹がいます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-030",
+      "target": "縫う",
+      "japanese": "破れた袋を縫って、もう一度使うことにしました。",
+      "spanish": "Cosí la bolsa rota y decidí volver a usarla.",
+      "estimated_level": "N3",
+      "review_note": "縫う es coser con aguja e hilo.",
+      "authored_ruby": "[破|やぶ]れた[袋|ふくろ]を[縫|ぬ]って、もう[一度|いちど][使|つか]うことにしました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0354",
+      "nearest_japanese": "今日は古いタンスを捨てることにしました。",
+      "character_similarity": 0.45,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "破れる",
+          "surface": "破れ",
+          "start": 0,
+          "end": 2,
+          "reading": "やぶれ"
+        },
+        {
+          "term": "袋",
+          "surface": "袋",
+          "start": 3,
+          "end": 4,
+          "reading": "ふくろ"
+        },
+        {
+          "term": "縫う",
+          "surface": "縫っ",
+          "start": 5,
+          "end": 7,
+          "reading": "ぬっ"
+        },
+        {
+          "term": "もう一度",
+          "surface": "もう一度",
+          "start": 9,
+          "end": 13,
+          "reading": "もういちど"
+        },
+        {
+          "term": "使う",
+          "surface": "使う",
+          "start": 13,
+          "end": 15,
+          "reading": "つかう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1694",
+      "nearest_lexical_japanese": "スマホを充電して使います。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-031",
+      "target": "糸",
+      "japanese": "針の穴が小さくて、糸を通すのに時間がかかりました。",
+      "spanish": "El ojo de la aguja era tan pequeño que tardé en enhebrarla.",
+      "estimated_level": "N4",
+      "review_note": "糸を通す significa pasar el hilo por la aguja.",
+      "authored_ruby": "[針|はり]の[穴|あな]が[小|ちい]さくて、[糸|いと]を[通|とお]すのに[時間|じかん]がかかりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0812",
+      "nearest_japanese": "この技術の推進には時間がかかります。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "針",
+          "surface": "針",
+          "start": 0,
+          "end": 1,
+          "reading": "はり"
+        },
+        {
+          "term": "穴",
+          "surface": "穴",
+          "start": 2,
+          "end": 3,
+          "reading": "あな"
+        },
+        {
+          "term": "小さい",
+          "surface": "小さく",
+          "start": 4,
+          "end": 7,
+          "reading": "ちいさく"
+        },
+        {
+          "term": "糸",
+          "surface": "糸",
+          "start": 9,
+          "end": 10,
+          "reading": "いと"
+        },
+        {
+          "term": "通す",
+          "surface": "通す",
+          "start": 11,
+          "end": 13,
+          "reading": "とおす"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 15,
+          "end": 17,
+          "reading": "じかん"
+        },
+        {
+          "term": "かかる",
+          "surface": "かかり",
+          "start": 18,
+          "end": 21,
+          "reading": "かかり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0812",
+      "nearest_lexical_japanese": "この技術の推進には時間がかかります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-032",
+      "target": "針",
+      "japanese": "使った針は、子供の手が届かない箱にしまいました。",
+      "spanish": "Guardé la aguja usada en una caja fuera del alcance de los niños.",
+      "estimated_level": "N4",
+      "review_note": "針 significa aguja.",
+      "authored_ruby": "[使|つか]った[針|はり]は、[子供|こども]の[手|て]が[届|とど]かない[箱|はこ]にしまいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2180",
+      "nearest_japanese": "商品の記載がないので、店員に確認しました。",
+      "character_similarity": 0.439,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "使う",
+          "surface": "使っ",
+          "start": 0,
+          "end": 2,
+          "reading": "つかっ"
+        },
+        {
+          "term": "針",
+          "surface": "針",
+          "start": 3,
+          "end": 4,
+          "reading": "はり"
+        },
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 6,
+          "end": 8,
+          "reading": "こども"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 9,
+          "end": 10,
+          "reading": "て"
+        },
+        {
+          "term": "届く",
+          "surface": "届か",
+          "start": 11,
+          "end": 13,
+          "reading": "とどか"
+        },
+        {
+          "term": "箱",
+          "surface": "箱",
+          "start": 15,
+          "end": 16,
+          "reading": "はこ"
+        },
+        {
+          "term": "しまう",
+          "surface": "しまい",
+          "start": 17,
+          "end": 20,
+          "reading": "しまい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-020",
+      "nearest_lexical_japanese": "高価なカメラなので、使わないときはケースにしまいます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-033",
+      "target": "布",
+      "japanese": "余った布で、小さな袋を作りました。",
+      "spanish": "Hice una bolsita con la tela que había sobrado.",
+      "estimated_level": "N4",
+      "review_note": "布 es tela.",
+      "authored_ruby": "[余|あま]った[布|ぬの]で、[小|ちい]さな[袋|ふくろ]を[作|つく]りました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-001-025",
+      "nearest_japanese": "姪が生まれたので、小さな靴下を贈りました。",
+      "character_similarity": 0.5882,
+      "target_literal_previous_occurrences": 14,
+      "morphology_evidence": [
+        {
+          "term": "余る",
+          "surface": "余っ",
+          "start": 0,
+          "end": 2,
+          "reading": "あまっ"
+        },
+        {
+          "term": "布",
+          "surface": "布",
+          "start": 3,
+          "end": 4,
+          "reading": "ぬの"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 6,
+          "end": 9,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "袋",
+          "surface": "袋",
+          "start": 9,
+          "end": 10,
+          "reading": "ふくろ"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 11,
+          "end": 13,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-034",
+      "nearest_lexical_japanese": "ご飯が余ったら、小さな容器に分けて冷凍します。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-034",
+      "target": "模様",
+      "japanese": "細かい模様のカーテンを選びました。",
+      "spanish": "Elegí unas cortinas con un estampado pequeño.",
+      "estimated_level": "N4",
+      "review_note": "模様 puede ser un estampado o dibujo repetido.",
+      "authored_ruby": "[細|こま]かい[模様|もよう]のカーテンを[選|えら]びました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0754",
+      "nearest_japanese": "きのうサッカーの番組を見ました。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "細かい",
+          "surface": "細かい",
+          "start": 0,
+          "end": 3,
+          "reading": "こまかい"
+        },
+        {
+          "term": "模様",
+          "surface": "模様",
+          "start": 3,
+          "end": 5,
+          "reading": "もよう"
+        },
+        {
+          "term": "カーテン",
+          "surface": "カーテン",
+          "start": 6,
+          "end": 10,
+          "reading": "かーてん"
+        },
+        {
+          "term": "選ぶ",
+          "surface": "選び",
+          "start": 11,
+          "end": 13,
+          "reading": "えらび"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N4-ORGANIC-202608-0478",
+      "nearest_lexical_japanese": "倍の値段でも、安全な物を選ぶつもりです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-035",
+      "target": "縞",
+      "japanese": "弟は縞のあるシャツを好んで着ます。",
+      "spanish": "A mi hermano pequeño le gusta llevar camisas de rayas.",
+      "estimated_level": "N3",
+      "review_note": "縞 significa rayas como patrón de una tela.",
+      "authored_ruby": "[弟|おとうと]は[縞|しま]のあるシャツを[好|この]んで[着|き]ます。",
+      "nearest_id": "JAES-N5-EDITORIAL-1082",
+      "nearest_japanese": "アメリカのシャツを買います。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "弟",
+          "surface": "弟",
+          "start": 0,
+          "end": 1,
+          "reading": "おとうと"
+        },
+        {
+          "term": "縞",
+          "surface": "縞",
+          "start": 2,
+          "end": 3,
+          "reading": "しま"
+        },
+        {
+          "term": "ある",
+          "surface": "ある",
+          "start": 4,
+          "end": 6,
+          "reading": "ある"
+        },
+        {
+          "term": "シャツ",
+          "surface": "シャツ",
+          "start": 6,
+          "end": 9,
+          "reading": "しゃつ"
+        },
+        {
+          "term": "好む",
+          "surface": "好ん",
+          "start": 10,
+          "end": 12,
+          "reading": "このん"
+        },
+        {
+          "term": "着る",
+          "surface": "着",
+          "start": 13,
+          "end": 14,
+          "reading": "き"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2501",
+      "nearest_lexical_japanese": "いいえ、ドイツ行きではありません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-036",
+      "target": "無地",
+      "japanese": "仕事用に、無地の落ち着いた色の服を買いました。",
+      "spanish": "Compré ropa lisa de colores discretos para trabajar.",
+      "estimated_level": "N3",
+      "review_note": "無地 significa sin estampado.",
+      "authored_ruby": "[仕事|しごと][用|よう]に、[無地|むじ]の[落|お]ち[着|つ]いた[色|いろ]の[服|ふく]を[買|か]いました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-017",
+      "nearest_japanese": "川に落ちた犬の命を、近所の人が救いました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "仕事",
+          "surface": "仕事",
+          "start": 0,
+          "end": 2,
+          "reading": "しごと"
+        },
+        {
+          "term": "無地",
+          "surface": "無地",
+          "start": 5,
+          "end": 7,
+          "reading": "むじ"
+        },
+        {
+          "term": "落ち着く",
+          "surface": "落ち着い",
+          "start": 8,
+          "end": 12,
+          "reading": "おちつい"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 13,
+          "end": 14,
+          "reading": "いろ"
+        },
+        {
+          "term": "服",
+          "surface": "服",
+          "start": 15,
+          "end": 16,
+          "reading": "ふく"
+        },
+        {
+          "term": "買う",
+          "surface": "買い",
+          "start": 17,
+          "end": 19,
+          "reading": "かい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2046",
+      "nearest_lexical_japanese": "パソコンを買うと、仕事が速くなります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-037",
+      "target": "袖",
+      "japanese": "袖が長すぎるので、少し折って着ています。",
+      "spanish": "Como las mangas son demasiado largas, las llevo un poco dobladas.",
+      "estimated_level": "N4",
+      "review_note": "袖 significa manga de una prenda.",
+      "authored_ruby": "[袖|そで]が[長|なが]すぎるので、[少|すこ]し[折|お]って[着|き]ています。",
+      "nearest_id": "JAES-N4-CONVERSATION-20260924B-035",
+      "nearest_japanese": "スープが熱すぎるので、少し冷ましてから飲みます。",
+      "character_similarity": 0.55,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "袖",
+          "surface": "袖",
+          "start": 0,
+          "end": 1,
+          "reading": "そで"
+        },
+        {
+          "term": "長い",
+          "surface": "長",
+          "start": 2,
+          "end": 3,
+          "reading": "なが"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 9,
+          "end": 11,
+          "reading": "すこし"
+        },
+        {
+          "term": "折る",
+          "surface": "折っ",
+          "start": 11,
+          "end": 13,
+          "reading": "おっ"
+        },
+        {
+          "term": "着る",
+          "surface": "着",
+          "start": 14,
+          "end": 15,
+          "reading": "き"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0519",
+      "nearest_lexical_japanese": "この本は少し長すぎますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "target": "襟",
+      "japanese": "シャツの襟に汚れが残っていました。",
+      "spanish": "Quedaba una mancha en el cuello de la camisa.",
+      "estimated_level": "N3",
+      "review_note": "襟 es el cuello de una prenda.",
+      "authored_ruby": "シャツの[襟|えり]に[汚|よご]れが[残|のこ]っていました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1564",
+      "nearest_japanese": "友だちに山へ連れて行ってもらいました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "シャツ",
+          "surface": "シャツ",
+          "start": 0,
+          "end": 3,
+          "reading": "しゃつ"
+        },
+        {
+          "term": "襟",
+          "surface": "襟",
+          "start": 4,
+          "end": 5,
+          "reading": "えり"
+        },
+        {
+          "term": "汚れ",
+          "surface": "汚れ",
+          "start": 6,
+          "end": 8,
+          "reading": "よごれ"
+        },
+        {
+          "term": "残る",
+          "surface": "残っ",
+          "start": 9,
+          "end": 11,
+          "reading": "のこっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1082",
+      "nearest_lexical_japanese": "アメリカのシャツを買います。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-039",
+      "target": "裾",
+      "japanese": "雨でズボンの裾が濡れました。",
+      "spanish": "Se me mojaron los bajos del pantalón con la lluvia.",
+      "estimated_level": "N3",
+      "review_note": "裾 es el borde inferior de una prenda.",
+      "authored_ruby": "[雨|あめ]でズボンの[裾|すそ]が[濡|ぬ]れました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1830",
+      "nearest_japanese": "雨とかで、飛行機が遅れました。",
+      "character_similarity": 0.5385,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "雨",
+          "surface": "雨",
+          "start": 0,
+          "end": 1,
+          "reading": "あめ"
+        },
+        {
+          "term": "ズボン",
+          "surface": "ズボン",
+          "start": 2,
+          "end": 5,
+          "reading": "ずぼん"
+        },
+        {
+          "term": "裾",
+          "surface": "裾",
+          "start": 6,
+          "end": 7,
+          "reading": "すそ"
+        },
+        {
+          "term": "濡れる",
+          "surface": "濡れ",
+          "start": 8,
+          "end": 10,
+          "reading": "ぬれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0319",
+      "nearest_lexical_japanese": "午後は雨です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-040",
+      "target": "裏地",
+      "japanese": "このコートは裏地が厚くて、風を通しにくいです。",
+      "spanish": "Este abrigo tiene un forro grueso y deja pasar poco el viento.",
+      "estimated_level": "N3",
+      "review_note": "裏地 es el forro interior de una prenda.",
+      "authored_ruby": "このコートは[裏地|うらじ]が[厚|あつ]くて、[風|かぜ]を[通|とお]しにくいです。",
+      "nearest_id": "JAES-N4-EDITORIAL-0662",
+      "nearest_japanese": "この教科書は字が小さくて読みにくいです。",
+      "character_similarity": 0.55,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "コート",
+          "surface": "コート",
+          "start": 2,
+          "end": 5,
+          "reading": "こーと"
+        },
+        {
+          "term": "裏地",
+          "surface": "裏地",
+          "start": 6,
+          "end": 8,
+          "reading": "うらじ"
+        },
+        {
+          "term": "厚い",
+          "surface": "厚く",
+          "start": 9,
+          "end": 11,
+          "reading": "あつく"
+        },
+        {
+          "term": "風",
+          "surface": "風",
+          "start": 13,
+          "end": 14,
+          "reading": "かぜ"
+        },
+        {
+          "term": "通す",
+          "surface": "通し",
+          "start": 15,
+          "end": 17,
+          "reading": "とおし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1455",
+      "nearest_lexical_japanese": "この部隊は何人ですか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-041",
+      "target": "毛糸",
+      "japanese": "毛糸が足りなくなり、同じ色を探しに行きました。",
+      "spanish": "Se me acabó la lana y fui a buscar más del mismo color.",
+      "estimated_level": "N4",
+      "review_note": "毛糸 es hilo de lana para tejer.",
+      "authored_ruby": "[毛糸|けいと]が[足|た]りなくなり、[同|おな]じ[色|いろ]を[探|さが]しに[行|い]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1785",
+      "nearest_japanese": "在庫はなくなりましたか？",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "毛糸",
+          "surface": "毛糸",
+          "start": 0,
+          "end": 2,
+          "reading": "けいと"
+        },
+        {
+          "term": "足りる",
+          "surface": "足り",
+          "start": 3,
+          "end": 5,
+          "reading": "たり"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 7,
+          "end": 9,
+          "reading": "なり"
+        },
+        {
+          "term": "同じ",
+          "surface": "同じ",
+          "start": 10,
+          "end": 12,
+          "reading": "おなじ"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 12,
+          "end": 13,
+          "reading": "いろ"
+        },
+        {
+          "term": "探す",
+          "surface": "探し",
+          "start": 14,
+          "end": 16,
+          "reading": "さがし"
+        },
+        {
+          "term": "行く",
+          "surface": "行き",
+          "start": 17,
+          "end": 19,
+          "reading": "いき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0870",
+      "nearest_lexical_japanese": "旅行のビデオを見てから、京都へ行きたくなりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-042",
+      "target": "革",
+      "japanese": "革のかばんは、使ううちに柔らかくなりました。",
+      "spanish": "El bolso de cuero se fue ablandando con el uso.",
+      "estimated_level": "N3",
+      "review_note": "革 es cuero curtido, distinto de la piel de un animal vivo.",
+      "authored_ruby": "[革|かわ]のかばんは、[使|つか]ううちに[柔|やわ]らかくなりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0632",
+      "nearest_japanese": "このアプリを使ううちに漢字の読み方が分かるようになりました。",
+      "character_similarity": 0.4898,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "革",
+          "surface": "革",
+          "start": 0,
+          "end": 1,
+          "reading": "かわ"
+        },
+        {
+          "term": "かばん",
+          "surface": "かばん",
+          "start": 2,
+          "end": 5,
+          "reading": "かばん"
+        },
+        {
+          "term": "使う",
+          "surface": "使う",
+          "start": 7,
+          "end": 9,
+          "reading": "つかう"
+        },
+        {
+          "term": "柔らかい",
+          "surface": "柔らかく",
+          "start": 12,
+          "end": 16,
+          "reading": "やわらかく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 16,
+          "end": 18,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1956",
+      "nearest_lexical_japanese": "この店でかばんを買うと、ポイントが二倍になります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-043",
+      "target": "綿",
+      "japanese": "汗をかくので、綿のシャツを着ています。",
+      "spanish": "Llevo una camisa de algodón porque sudo.",
+      "estimated_level": "N3",
+      "review_note": "綿 se lee めん cuando se refiere a la fibra de un tejido.",
+      "authored_ruby": "[汗|あせ]をかくので、[綿|めん]のシャツを[着|き]ています。",
+      "nearest_id": "JAES-N5-EDITORIAL-1082",
+      "nearest_japanese": "アメリカのシャツを買います。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "汗",
+          "surface": "汗",
+          "start": 0,
+          "end": 1,
+          "reading": "あせ"
+        },
+        {
+          "term": "かく",
+          "surface": "かく",
+          "start": 2,
+          "end": 4,
+          "reading": "かく"
+        },
+        {
+          "term": "綿",
+          "surface": "綿",
+          "start": 7,
+          "end": 8,
+          "reading": "めん"
+        },
+        {
+          "term": "シャツ",
+          "surface": "シャツ",
+          "start": 9,
+          "end": 12,
+          "reading": "しゃつ"
+        },
+        {
+          "term": "着る",
+          "surface": "着",
+          "start": 13,
+          "end": 14,
+          "reading": "き"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924-013",
+      "nearest_lexical_japanese": "坂を上って汗をかいたので、木の下で少し休みました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-044",
+      "target": "絹",
+      "japanese": "展示されていた絹の着物は、光で色が変わって見えました。",
+      "spanish": "El kimono de seda expuesto parecía cambiar de color con la luz.",
+      "estimated_level": "N3",
+      "review_note": "絹 es seda.",
+      "authored_ruby": "[展示|てんじ]されていた[絹|きぬ]の[着物|きもの]は、[光|ひかり]で[色|いろ]が[変|か]わって[見|み]えました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-090",
+      "nearest_japanese": "言い返したかったのですが、少し黙って考えました。",
+      "character_similarity": 0.4681,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "展示",
+          "surface": "展示",
+          "start": 0,
+          "end": 2,
+          "reading": "てんじ"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 2,
+          "end": 3,
+          "reading": "さ"
+        },
+        {
+          "term": "絹",
+          "surface": "絹",
+          "start": 7,
+          "end": 8,
+          "reading": "きぬ"
+        },
+        {
+          "term": "着物",
+          "surface": "着物",
+          "start": 9,
+          "end": 11,
+          "reading": "きもの"
+        },
+        {
+          "term": "光",
+          "surface": "光",
+          "start": 13,
+          "end": 14,
+          "reading": "ひかり"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 15,
+          "end": 16,
+          "reading": "いろ"
+        },
+        {
+          "term": "変わる",
+          "surface": "変わっ",
+          "start": 17,
+          "end": 20,
+          "reading": "かわっ"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 21,
+          "end": 23,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.23076923076923078,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1340",
+      "nearest_lexical_japanese": "日光は植物の成長に大きく作用するので、森の色も変わります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-045",
+      "target": "染める",
+      "japanese": "白い布を、植物から取った色で染めました。",
+      "spanish": "Teñí la tela blanca con un colorante obtenido de plantas.",
+      "estimated_level": "N3",
+      "review_note": "染める es dar color mediante tinte.",
+      "authored_ruby": "[白|しろ]い[布|ぬの]を、[植物|しょくぶつ]から[取|と]った[色|いろ]で[染|そ]めました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-014",
+      "nearest_japanese": "坂道を走ったので、息が切れました。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "白い",
+          "surface": "白い",
+          "start": 0,
+          "end": 2,
+          "reading": "しろい"
+        },
+        {
+          "term": "布",
+          "surface": "布",
+          "start": 2,
+          "end": 3,
+          "reading": "ぬの"
+        },
+        {
+          "term": "植物",
+          "surface": "植物",
+          "start": 5,
+          "end": 7,
+          "reading": "しょくぶつ"
+        },
+        {
+          "term": "取る",
+          "surface": "取っ",
+          "start": 9,
+          "end": 11,
+          "reading": "とっ"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 12,
+          "end": 13,
+          "reading": "いろ"
+        },
+        {
+          "term": "染める",
+          "surface": "染め",
+          "start": 14,
+          "end": 16,
+          "reading": "そめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1340",
+      "nearest_lexical_japanese": "日光は植物の成長に大きく作用するので、森の色も変わります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-046",
+      "target": "色落ち",
+      "japanese": "新しいタオルが色落ちして、白いシャツに色が移りました。",
+      "spanish": "La toalla nueva destiñó y manchó de color la camisa blanca.",
+      "estimated_level": "N3",
+      "review_note": "色落ち significa que un tejido pierde o suelta color.",
+      "authored_ruby": "[新|あたら]しいタオルが[色落|いろお]ちして、[白|しろ]いシャツに[色|いろ]が[移|うつ]りました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2158",
+      "nearest_japanese": "新しいスマホの設定ができなくて、弟が怒りました。",
+      "character_similarity": 0.4255,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "新しい",
+          "surface": "新しい",
+          "start": 0,
+          "end": 3,
+          "reading": "あたらしい"
+        },
+        {
+          "term": "タオル",
+          "surface": "タオル",
+          "start": 3,
+          "end": 6,
+          "reading": "たおる"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 7,
+          "end": 8,
+          "reading": "いろ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 10,
+          "end": 11,
+          "reading": "し"
+        },
+        {
+          "term": "白い",
+          "surface": "白い",
+          "start": 13,
+          "end": 15,
+          "reading": "しろい"
+        },
+        {
+          "term": "シャツ",
+          "surface": "シャツ",
+          "start": 15,
+          "end": 18,
+          "reading": "しゃつ"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 19,
+          "end": 20,
+          "reading": "いろ"
+        },
+        {
+          "term": "移る",
+          "surface": "移り",
+          "start": 21,
+          "end": 23,
+          "reading": "うつり"
+        },
+        {
+          "term": "色落ち",
+          "surface": "色落ち",
+          "start": 7,
+          "end": 10,
+          "reading": "いろおち"
+        }
+      ],
+      "curated_compound": {
+        "term": "色落ち",
+        "surface": "色落ち",
+        "start": 7,
+        "end": 10,
+        "reading": "いろおち"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1156",
+      "nearest_lexical_japanese": "どの色を選択しますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-047",
+      "target": "縮む",
+      "japanese": "セーターを洗ったら縮んで、着られなくなりました。",
+      "spanish": "El jersey encogió al lavarlo y ya no pude ponérmelo.",
+      "estimated_level": "N3",
+      "review_note": "縮む es disminuir de tamaño.",
+      "authored_ruby": "セーターを[洗|あら]ったら[縮|ちぢ]んで、[着|き]られなくなりました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0463",
+      "nearest_japanese": "カーテンを替えたら、部屋が明るくなりました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "セーター",
+          "surface": "セーター",
+          "start": 0,
+          "end": 4,
+          "reading": "せーたー"
+        },
+        {
+          "term": "洗う",
+          "surface": "洗っ",
+          "start": 5,
+          "end": 7,
+          "reading": "あらっ"
+        },
+        {
+          "term": "縮む",
+          "surface": "縮ん",
+          "start": 9,
+          "end": 11,
+          "reading": "ちぢん"
+        },
+        {
+          "term": "着る",
+          "surface": "着",
+          "start": 13,
+          "end": 14,
+          "reading": "き"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 18,
+          "end": 20,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1618",
+      "nearest_lexical_japanese": "お皿を二枚洗ってください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-048",
+      "target": "伸ばす",
+      "japanese": "しわを伸ばしてから、シャツをハンガーにかけました。",
+      "spanish": "Alisé las arrugas antes de colgar la camisa en una percha.",
+      "estimated_level": "N4",
+      "review_note": "しわを伸ばす es eliminar o alisar arrugas.",
+      "authored_ruby": "しわを[伸|の]ばしてから、シャツをハンガーにかけました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-061",
+      "nearest_japanese": "勇気を出して、初めて自分から話しかけました。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "しわ",
+          "surface": "しわ",
+          "start": 0,
+          "end": 2,
+          "reading": "しわ"
+        },
+        {
+          "term": "伸ばす",
+          "surface": "伸ばし",
+          "start": 3,
+          "end": 6,
+          "reading": "のばし"
+        },
+        {
+          "term": "シャツ",
+          "surface": "シャツ",
+          "start": 10,
+          "end": 13,
+          "reading": "しゃつ"
+        },
+        {
+          "term": "ハンガー",
+          "surface": "ハンガー",
+          "start": 14,
+          "end": 18,
+          "reading": "はんがー"
+        },
+        {
+          "term": "かける",
+          "surface": "かけ",
+          "start": 19,
+          "end": 21,
+          "reading": "かけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1433",
+      "nearest_lexical_japanese": "めがねをかけていません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-049",
+      "target": "しわ",
+      "japanese": "かばんに詰めた服が、しわだらけになりました。",
+      "spanish": "La ropa que metí apretada en la maleta quedó llena de arrugas.",
+      "estimated_level": "N4",
+      "review_note": "だらけ indica abundancia de algo generalmente indeseado.",
+      "authored_ruby": "かばんに[詰|つ]めた[服|ふく]が、しわだらけになりました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-042",
+      "nearest_japanese": "革のかばんは、使ううちに柔らかくなりました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "かばん",
+          "surface": "かばん",
+          "start": 0,
+          "end": 3,
+          "reading": "かばん"
+        },
+        {
+          "term": "詰める",
+          "surface": "詰め",
+          "start": 4,
+          "end": 6,
+          "reading": "つめ"
+        },
+        {
+          "term": "服",
+          "surface": "服",
+          "start": 7,
+          "end": 8,
+          "reading": "ふく"
+        },
+        {
+          "term": "しわ",
+          "surface": "しわ",
+          "start": 10,
+          "end": 12,
+          "reading": "しわ"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 16,
+          "end": 18,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1956",
+      "nearest_lexical_japanese": "この店でかばんを買うと、ポイントが二倍になります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-050",
+      "target": "染み",
+      "japanese": "カーペットにコーヒーの染みが残ってしまいました。",
+      "spanish": "Quedó una mancha de café en la alfombra.",
+      "estimated_level": "N3",
+      "review_note": "染み es una mancha que penetra en el material.",
+      "authored_ruby": "カーペットにコーヒーの[染|し]みが[残|のこ]ってしまいました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-027",
+      "nearest_japanese": "同僚の書類にコーヒーをこぼしてしまい、すぐに謝りました。",
+      "character_similarity": 0.4898,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "カーペット",
+          "surface": "カーペット",
+          "start": 0,
+          "end": 5,
+          "reading": "かーぺっと"
+        },
+        {
+          "term": "コーヒー",
+          "surface": "コーヒー",
+          "start": 6,
+          "end": 10,
+          "reading": "こーひー"
+        },
+        {
+          "term": "染み",
+          "surface": "染み",
+          "start": 11,
+          "end": 13,
+          "reading": "しみ"
+        },
+        {
+          "term": "残る",
+          "surface": "残っ",
+          "start": 14,
+          "end": 16,
+          "reading": "のこっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0419",
+      "nearest_lexical_japanese": "どこでコーヒーを買いますか。"
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-C3000-003-051",
+      "target": "雲",
+      "japanese": "白い雲が、山の上をゆっくり動いています。",
+      "spanish": "Una nube blanca se mueve despacio sobre la montaña.",
+      "estimated_level": "N5",
+      "review_note": "雲 es nube; no debe confundirse con 蜘蛛, araña.",
+      "authored_ruby": "[白|しろ]い[雲|くも]が、[山|やま]の[上|うえ]をゆっくり[動|うご]いています。",
+      "nearest_id": "JAES-N5-CONVERSATION-C3000-001-011",
+      "nearest_japanese": "庭に花が沢山咲いています。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "白い",
+          "surface": "白い",
+          "start": 0,
+          "end": 2,
+          "reading": "しろい"
+        },
+        {
+          "term": "雲",
+          "surface": "雲",
+          "start": 2,
+          "end": 3,
+          "reading": "くも"
+        },
+        {
+          "term": "ゆっくり",
+          "surface": "ゆっくり",
+          "start": 9,
+          "end": 13,
+          "reading": "ゆっくり"
+        },
+        {
+          "term": "動く",
+          "surface": "動い",
+          "start": 13,
+          "end": 15,
+          "reading": "うごい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0318",
+      "nearest_lexical_japanese": "もう一度ゆっくり読んでください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-052",
+      "target": "霧",
+      "japanese": "霧が濃くて、湖の向こう岸が見えません。",
+      "spanish": "Hay tanta niebla que no se ve la otra orilla del lago.",
+      "estimated_level": "N3",
+      "review_note": "霧 significa niebla.",
+      "authored_ruby": "[霧|きり]が[濃|こ]くて、[湖|みずうみ]の[向|む]こう[岸|ぎし]が[見|み]えません。",
+      "nearest_id": "JAES-N5-EDITORIAL-1758",
+      "nearest_japanese": "電池がないので、スマホが使えません。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "霧",
+          "surface": "霧",
+          "start": 0,
+          "end": 1,
+          "reading": "きり"
+        },
+        {
+          "term": "濃い",
+          "surface": "濃く",
+          "start": 2,
+          "end": 4,
+          "reading": "こく"
+        },
+        {
+          "term": "湖",
+          "surface": "湖",
+          "start": 6,
+          "end": 7,
+          "reading": "みずうみ"
+        },
+        {
+          "term": "向こう岸",
+          "surface": "向こう岸",
+          "start": 8,
+          "end": 12,
+          "reading": "むこうぎし"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 13,
+          "end": 15,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2444",
+      "nearest_lexical_japanese": "山へ行ったのに、霧で景色が見えず、不満が残りました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-053",
+      "target": "露",
+      "japanese": "朝の草に露がついていて、靴が濡れました。",
+      "spanish": "La hierba tenía rocío por la mañana y se me mojaron los zapatos.",
+      "estimated_level": "N3",
+      "review_note": "露 se lee つゆ y significa rocío.",
+      "authored_ruby": "[朝|あさ]の[草|くさ]に[露|つゆ]がついていて、[靴|くつ]が[濡|ぬ]れました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1007",
+      "nearest_japanese": "彼との関係について話しました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "朝",
+          "surface": "朝",
+          "start": 0,
+          "end": 1,
+          "reading": "あさ"
+        },
+        {
+          "term": "草",
+          "surface": "草",
+          "start": 2,
+          "end": 3,
+          "reading": "くさ"
+        },
+        {
+          "term": "つく",
+          "surface": "つい",
+          "start": 6,
+          "end": 8,
+          "reading": "つい"
+        },
+        {
+          "term": "靴",
+          "surface": "靴",
+          "start": 12,
+          "end": 13,
+          "reading": "くつ"
+        },
+        {
+          "term": "濡れる",
+          "surface": "濡れ",
+          "start": 14,
+          "end": 16,
+          "reading": "ぬれ"
+        },
+        {
+          "term": "露",
+          "surface": "露",
+          "start": 4,
+          "end": 5,
+          "reading": "つゆ"
+        }
+      ],
+      "curated_compound": {
+        "term": "露",
+        "surface": "露",
+        "start": 4,
+        "end": 5,
+        "reading": "つゆ"
+      },
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1987",
+      "nearest_lexical_japanese": "朝ごはんは七時から八時までです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-054",
+      "target": "霜",
+      "japanese": "車の窓に霜が降りていました。",
+      "spanish": "Había escarcha en las ventanillas del coche.",
+      "estimated_level": "N3",
+      "review_note": "霜が降りる es formarse escarcha.",
+      "authored_ruby": "[車|くるま]の[窓|まど]に[霜|しも]が[降|お]りていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "車",
+          "surface": "車",
+          "start": 0,
+          "end": 1,
+          "reading": "くるま"
+        },
+        {
+          "term": "窓",
+          "surface": "窓",
+          "start": 2,
+          "end": 3,
+          "reading": "まど"
+        },
+        {
+          "term": "霜",
+          "surface": "霜",
+          "start": 4,
+          "end": 5,
+          "reading": "しも"
+        },
+        {
+          "term": "降りる",
+          "surface": "降り",
+          "start": 6,
+          "end": 8,
+          "reading": "おり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2357",
+      "nearest_lexical_japanese": "ここで降りてはいけません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-055",
+      "target": "氷",
+      "japanese": "氷が溶けて、ジュースの味が薄くなりました。",
+      "spanish": "El hielo se derritió y el zumo se aguó.",
+      "estimated_level": "N4",
+      "review_note": "氷 es hielo; 溶ける indica que se derrite.",
+      "authored_ruby": "[氷|こおり]が[溶|と]けて、ジュースの[味|あじ]が[薄|うす]くなりました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-002-024",
+      "nearest_japanese": "息子の身長が伸びて、去年のズボンが短くなりました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "氷",
+          "surface": "氷",
+          "start": 0,
+          "end": 1,
+          "reading": "こおり"
+        },
+        {
+          "term": "溶ける",
+          "surface": "溶け",
+          "start": 2,
+          "end": 4,
+          "reading": "とけ"
+        },
+        {
+          "term": "ジュース",
+          "surface": "ジュース",
+          "start": 6,
+          "end": 10,
+          "reading": "じゅーす"
+        },
+        {
+          "term": "味",
+          "surface": "味",
+          "start": 11,
+          "end": 12,
+          "reading": "あじ"
+        },
+        {
+          "term": "薄い",
+          "surface": "薄く",
+          "start": 13,
+          "end": 15,
+          "reading": "うすく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 15,
+          "end": 17,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-ORGANIC-202608-0471",
+      "nearest_lexical_japanese": "味が薄かったら、少ししょうゆを入れてもいいですよ。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-056",
+      "target": "雷",
+      "japanese": "遠くで雷の音がしたので、洗濯物を取り込みました。",
+      "spanish": "Oí truenos a lo lejos y recogí la ropa tendida.",
+      "estimated_level": "N4",
+      "review_note": "雷の音 se refiere al trueno.",
+      "authored_ruby": "[遠|とお]くで[雷|かみなり]の[音|おと]がしたので、[洗濯物|せんたくもの]を[取|と]り[込|こ]みました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0386",
+      "nearest_japanese": "雨が降っても、ベランダの洗濯物を取り込みます。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "遠く",
+          "surface": "遠く",
+          "start": 0,
+          "end": 2,
+          "reading": "とおく"
+        },
+        {
+          "term": "雷",
+          "surface": "雷",
+          "start": 3,
+          "end": 4,
+          "reading": "かみなり"
+        },
+        {
+          "term": "音",
+          "surface": "音",
+          "start": 5,
+          "end": 6,
+          "reading": "おと"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 7,
+          "end": 8,
+          "reading": "し"
+        },
+        {
+          "term": "洗濯",
+          "surface": "洗濯",
+          "start": 12,
+          "end": 14,
+          "reading": "せんたく"
+        },
+        {
+          "term": "取り込む",
+          "surface": "取り込み",
+          "start": 16,
+          "end": 20,
+          "reading": "とりこみ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-012",
+      "nearest_lexical_japanese": "洗濯機から変な音がしたので、すぐに止めました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-057",
+      "target": "稲妻",
+      "japanese": "窓の外で稲妻が光り、部屋が一瞬明るくなりました。",
+      "spanish": "Un relámpago iluminó el exterior y la habitación se aclaró por un instante.",
+      "estimated_level": "N3",
+      "review_note": "稲妻 es el destello visible del rayo.",
+      "authored_ruby": "[窓|まど]の[外|そと]で[稲妻|いなずま]が[光|ひか]り、[部屋|へや]が[一瞬|いっしゅん][明|あか]るくなりました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0463",
+      "nearest_japanese": "カーテンを替えたら、部屋が明るくなりました。",
+      "character_similarity": 0.5238,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "窓",
+          "surface": "窓",
+          "start": 0,
+          "end": 1,
+          "reading": "まど"
+        },
+        {
+          "term": "外",
+          "surface": "外",
+          "start": 2,
+          "end": 3,
+          "reading": "そと"
+        },
+        {
+          "term": "稲妻",
+          "surface": "稲妻",
+          "start": 4,
+          "end": 6,
+          "reading": "いなづま"
+        },
+        {
+          "term": "光る",
+          "surface": "光り",
+          "start": 7,
+          "end": 9,
+          "reading": "ひかり"
+        },
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 10,
+          "end": 12,
+          "reading": "へや"
+        },
+        {
+          "term": "一瞬",
+          "surface": "一瞬",
+          "start": 13,
+          "end": 15,
+          "reading": "いっしゅん"
+        },
+        {
+          "term": "明るい",
+          "surface": "明るく",
+          "start": 15,
+          "end": 18,
+          "reading": "あかるく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 18,
+          "end": 20,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0362",
+      "nearest_lexical_japanese": "窓の外は明るいです。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-058",
+      "target": "虹",
+      "japanese": "雨がやんだ後、川の上に虹が出ました。",
+      "spanish": "Después de parar de llover, apareció un arcoíris sobre el río.",
+      "estimated_level": "N4",
+      "review_note": "虹 significa arcoíris.",
+      "authored_ruby": "[雨|あめ]がやんだ[後|あと]、[川|かわ]の[上|うえ]に[虹|にじ]が[出|で]ました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2166",
+      "nearest_japanese": "雨がやんだら、店から人が出てきた。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "雨",
+          "surface": "雨",
+          "start": 0,
+          "end": 1,
+          "reading": "あめ"
+        },
+        {
+          "term": "やむ",
+          "surface": "やん",
+          "start": 2,
+          "end": 4,
+          "reading": "やん"
+        },
+        {
+          "term": "川",
+          "surface": "川",
+          "start": 7,
+          "end": 8,
+          "reading": "かわ"
+        },
+        {
+          "term": "虹",
+          "surface": "虹",
+          "start": 11,
+          "end": 12,
+          "reading": "にじ"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 13,
+          "end": 14,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.42857142857142855,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2166",
+      "nearest_lexical_japanese": "雨がやんだら、店から人が出てきた。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-059",
+      "target": "夕焼け",
+      "japanese": "夕焼けがきれいで、帰る途中に何度も空を見ました。",
+      "spanish": "El cielo del atardecer estaba tan bonito que lo miré varias veces de camino a casa.",
+      "estimated_level": "N4",
+      "review_note": "夕焼け es el color rojizo del cielo al anochecer.",
+      "authored_ruby": "[夕焼|ゆうや]けがきれいで、[帰|かえ]る[途中|とちゅう]に[何度|なんど]も[空|そら]を[見|み]ました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0856",
+      "nearest_japanese": "きのう公園で鳥を見ました。",
+      "character_similarity": 0.4118,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "夕焼け",
+          "surface": "夕焼け",
+          "start": 0,
+          "end": 3,
+          "reading": "ゆうやけ"
+        },
+        {
+          "term": "きれい",
+          "surface": "きれい",
+          "start": 4,
+          "end": 7,
+          "reading": "きれい"
+        },
+        {
+          "term": "帰る",
+          "surface": "帰る",
+          "start": 9,
+          "end": 11,
+          "reading": "かえる"
+        },
+        {
+          "term": "途中",
+          "surface": "途中",
+          "start": 11,
+          "end": 13,
+          "reading": "とちゅう"
+        },
+        {
+          "term": "空",
+          "surface": "空",
+          "start": 17,
+          "end": 18,
+          "reading": "そら"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 19,
+          "end": 20,
+          "reading": "み"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2124",
+      "nearest_lexical_japanese": "空がきれいだから、星がよく見えます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-060",
+      "target": "日の出",
+      "japanese": "日の出を見るため、暗いうちに丘へ登りました。",
+      "spanish": "Subí a la colina todavía de noche para ver amanecer.",
+      "estimated_level": "N4",
+      "review_note": "日の出 es la salida del sol.",
+      "authored_ruby": "[日|ひ]の[出|で]を[見|み]るため、[暗|くら]いうちに[丘|おか]へ[登|のぼ]りました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1494",
+      "nearest_japanese": "芸術を見るために京都へ行きました。",
+      "character_similarity": 0.5556,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "日の出",
+          "surface": "日の出",
+          "start": 0,
+          "end": 3,
+          "reading": "ひので"
+        },
+        {
+          "term": "見る",
+          "surface": "見る",
+          "start": 4,
+          "end": 6,
+          "reading": "みる"
+        },
+        {
+          "term": "暗い",
+          "surface": "暗い",
+          "start": 9,
+          "end": 11,
+          "reading": "くらい"
+        },
+        {
+          "term": "丘",
+          "surface": "丘",
+          "start": 14,
+          "end": 15,
+          "reading": "おか"
+        },
+        {
+          "term": "登る",
+          "surface": "登り",
+          "start": 16,
+          "end": 18,
+          "reading": "のぼり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2265",
+      "nearest_lexical_japanese": "書類を見てください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-061",
+      "target": "日陰",
+      "japanese": "暑くなったので、日陰のベンチへ移りました。",
+      "spanish": "Como empezó a hacer calor, me cambié a un banco a la sombra.",
+      "estimated_level": "N4",
+      "review_note": "日陰 es un lugar protegido de la luz directa del sol.",
+      "authored_ruby": "[暑|あつ]くなったので、[日陰|ひかげ]のベンチへ[移|うつ]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-097",
+      "nearest_japanese": "直行便が取れなかったので、別の空港経由で帰りました。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "暑い",
+          "surface": "暑く",
+          "start": 0,
+          "end": 2,
+          "reading": "あつく"
+        },
+        {
+          "term": "なる",
+          "surface": "なっ",
+          "start": 2,
+          "end": 4,
+          "reading": "なっ"
+        },
+        {
+          "term": "日陰",
+          "surface": "日陰",
+          "start": 8,
+          "end": 10,
+          "reading": "ひかげ"
+        },
+        {
+          "term": "ベンチ",
+          "surface": "ベンチ",
+          "start": 11,
+          "end": 14,
+          "reading": "べんち"
+        },
+        {
+          "term": "移る",
+          "surface": "移り",
+          "start": 15,
+          "end": 17,
+          "reading": "うつり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2171",
+      "nearest_lexical_japanese": "ここにはベンチがありません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-062",
+      "target": "日差し",
+      "japanese": "午後の日差しが強くて、カーテンを半分閉めました。",
+      "spanish": "El sol de la tarde entraba con fuerza y cerré las cortinas a medias.",
+      "estimated_level": "N3",
+      "review_note": "日差し es la luz solar que incide sobre algo.",
+      "authored_ruby": "[午後|ごご]の[日差|ひざ]しが[強|つよ]くて、カーテンを[半分|はんぶん][閉|し]めました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-034",
+      "nearest_japanese": "細かい模様のカーテンを選びました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "午後",
+          "surface": "午後",
+          "start": 0,
+          "end": 2,
+          "reading": "ごご"
+        },
+        {
+          "term": "日差し",
+          "surface": "日差し",
+          "start": 3,
+          "end": 6,
+          "reading": "ひざし"
+        },
+        {
+          "term": "強い",
+          "surface": "強く",
+          "start": 7,
+          "end": 9,
+          "reading": "つよく"
+        },
+        {
+          "term": "カーテン",
+          "surface": "カーテン",
+          "start": 11,
+          "end": 15,
+          "reading": "かーてん"
+        },
+        {
+          "term": "半分",
+          "surface": "半分",
+          "start": 16,
+          "end": 18,
+          "reading": "はんぶん"
+        },
+        {
+          "term": "閉める",
+          "surface": "閉め",
+          "start": 18,
+          "end": 20,
+          "reading": "しめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EXP-0049",
+      "nearest_lexical_japanese": "風が強いから窓を閉めます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-063",
+      "target": "気温",
+      "japanese": "昼と夜で気温の差が大きい町です。",
+      "spanish": "Es una ciudad donde hay mucha diferencia de temperatura entre el día y la noche.",
+      "estimated_level": "N4",
+      "review_note": "気温 es la temperatura del aire.",
+      "authored_ruby": "[昼|ひる]と[夜|よる]で[気温|きおん]の[差|さ]が[大|おお]きい[町|まち]です。",
+      "nearest_id": "JAES-N5-EDITORIAL-1982",
+      "nearest_japanese": "このパソコンは音が大きいです。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "昼",
+          "surface": "昼",
+          "start": 0,
+          "end": 1,
+          "reading": "ひる"
+        },
+        {
+          "term": "夜",
+          "surface": "夜",
+          "start": 2,
+          "end": 3,
+          "reading": "よる"
+        },
+        {
+          "term": "気温",
+          "surface": "気温",
+          "start": 4,
+          "end": 6,
+          "reading": "きおん"
+        },
+        {
+          "term": "差",
+          "surface": "差",
+          "start": 7,
+          "end": 8,
+          "reading": "さ"
+        },
+        {
+          "term": "大きい",
+          "surface": "大きい",
+          "start": 9,
+          "end": 12,
+          "reading": "おおきい"
+        },
+        {
+          "term": "町",
+          "surface": "町",
+          "start": 12,
+          "end": 13,
+          "reading": "まち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1593",
+      "nearest_lexical_japanese": "夜に働きますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-064",
+      "target": "湿度",
+      "japanese": "湿度が高く、洗濯物がなかなか乾きません。",
+      "spanish": "La humedad es alta y la ropa tarda mucho en secarse.",
+      "estimated_level": "N3",
+      "review_note": "湿度 es el grado de humedad del aire.",
+      "authored_ruby": "[湿度|しつど]が[高|たか]く、[洗濯物|せんたくもの]がなかなか[乾|かわ]きません。",
+      "nearest_id": "JAES-N5-EDITORIAL-1586",
+      "nearest_japanese": "まだ洗濯物は乾いていません。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "湿度",
+          "surface": "湿度",
+          "start": 0,
+          "end": 2,
+          "reading": "しつど"
+        },
+        {
+          "term": "高い",
+          "surface": "高く",
+          "start": 3,
+          "end": 5,
+          "reading": "たかく"
+        },
+        {
+          "term": "洗濯",
+          "surface": "洗濯",
+          "start": 6,
+          "end": 8,
+          "reading": "せんたく"
+        },
+        {
+          "term": "なかなか",
+          "surface": "なかなか",
+          "start": 10,
+          "end": 14,
+          "reading": "なかなか"
+        },
+        {
+          "term": "乾く",
+          "surface": "乾き",
+          "start": 14,
+          "end": 16,
+          "reading": "かわき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1586",
+      "nearest_lexical_japanese": "まだ洗濯物は乾いていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-065",
+      "target": "乾燥",
+      "japanese": "部屋が乾燥していて、鉢の土がすぐ乾きます。",
+      "spanish": "El ambiente de la habitación está seco y la tierra de las macetas se seca enseguida.",
+      "estimated_level": "N3",
+      "review_note": "乾燥する es perder humedad o estar seco.",
+      "authored_ruby": "[部屋|へや]が[乾燥|かんそう]していて、[鉢|はち]の[土|つち]がすぐ[乾|かわ]きます。",
+      "nearest_id": "JAES-N5-EDITORIAL-1506",
+      "nearest_japanese": "部屋が寒いので、すぐに対処します。",
+      "character_similarity": 0.5294,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 0,
+          "end": 2,
+          "reading": "へや"
+        },
+        {
+          "term": "乾燥",
+          "surface": "乾燥",
+          "start": 3,
+          "end": 5,
+          "reading": "かんそう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 5,
+          "end": 6,
+          "reading": "し"
+        },
+        {
+          "term": "鉢",
+          "surface": "鉢",
+          "start": 10,
+          "end": 11,
+          "reading": "はち"
+        },
+        {
+          "term": "土",
+          "surface": "土",
+          "start": 12,
+          "end": 13,
+          "reading": "ど"
+        },
+        {
+          "term": "すぐ",
+          "surface": "すぐ",
+          "start": 14,
+          "end": 16,
+          "reading": "すぐ"
+        },
+        {
+          "term": "乾く",
+          "surface": "乾き",
+          "start": 16,
+          "end": 18,
+          "reading": "かわき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1506",
+      "nearest_lexical_japanese": "部屋が寒いので、すぐに対処します。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-066",
+      "target": "梅雨",
+      "japanese": "梅雨の間は、傘を玄関に置いています。",
+      "spanish": "Durante la temporada de lluvias dejo el paraguas en la entrada.",
+      "estimated_level": "N4",
+      "review_note": "梅雨 es la estación lluviosa japonesa.",
+      "authored_ruby": "[梅雨|つゆ]の[間|あいだ]は、[傘|かさ]を[玄関|げんかん]に[置|お]いています。",
+      "nearest_id": "JAES-N5-CONVERSATION-C3000-001-006",
+      "nearest_japanese": "寝室の窓は東を向いています。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "梅雨",
+          "surface": "梅雨",
+          "start": 0,
+          "end": 2,
+          "reading": "つゆ"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 3,
+          "end": 4,
+          "reading": "ま"
+        },
+        {
+          "term": "傘",
+          "surface": "傘",
+          "start": 6,
+          "end": 7,
+          "reading": "かさ"
+        },
+        {
+          "term": "玄関",
+          "surface": "玄関",
+          "start": 8,
+          "end": 10,
+          "reading": "げんかん"
+        },
+        {
+          "term": "置く",
+          "surface": "置い",
+          "start": 11,
+          "end": 13,
+          "reading": "おい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924-042",
+      "nearest_lexical_japanese": "災害に備えて、玄関の棚に水と懐中電灯を置いています。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-067",
+      "target": "猛暑",
+      "japanese": "猛暑の日は、公園の人影もまばらでした。",
+      "spanish": "En los días de calor extremo, apenas se veía gente en el parque.",
+      "estimated_level": "N3",
+      "review_note": "猛暑 significa calor intenso.",
+      "authored_ruby": "[猛暑|もうしょ]の[日|ひ]は、[公園|こうえん]の[人影|ひとかげ]もまばらでした。",
+      "nearest_id": "JAES-N5-EDITORIAL-1505",
+      "nearest_japanese": "昨日は何も与えませんでした。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "猛暑",
+          "surface": "猛暑",
+          "start": 0,
+          "end": 2,
+          "reading": "もうしょ"
+        },
+        {
+          "term": "公園",
+          "surface": "公園",
+          "start": 6,
+          "end": 8,
+          "reading": "こうえん"
+        },
+        {
+          "term": "人影",
+          "surface": "人影",
+          "start": 9,
+          "end": 11,
+          "reading": "ひとかげ"
+        },
+        {
+          "term": "まばら",
+          "surface": "まばら",
+          "start": 12,
+          "end": 15,
+          "reading": "まばら"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1945",
+      "nearest_lexical_japanese": "仕事の後で公園を歩きます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-068",
+      "target": "冷え込む",
+      "japanese": "夜は冷え込むと聞いて、厚い上着を持ってきました。",
+      "spanish": "Me dijeron que por la noche refrescaría mucho y traje una chaqueta gruesa.",
+      "estimated_level": "N3",
+      "review_note": "冷え込む indica una bajada marcada de temperatura.",
+      "authored_ruby": "[夜|よる]は[冷|ひ]え[込|こ]むと[聞|き]いて、[厚|あつ]い[上着|うわぎ]を[持|も]ってきました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1360",
+      "nearest_japanese": "入院した祖母に、花と手紙を持って行きました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "夜",
+          "surface": "夜",
+          "start": 0,
+          "end": 1,
+          "reading": "よる"
+        },
+        {
+          "term": "冷え込む",
+          "surface": "冷え込む",
+          "start": 2,
+          "end": 6,
+          "reading": "ひえこむ"
+        },
+        {
+          "term": "聞く",
+          "surface": "聞い",
+          "start": 7,
+          "end": 9,
+          "reading": "きい"
+        },
+        {
+          "term": "厚い",
+          "surface": "厚い",
+          "start": 11,
+          "end": 13,
+          "reading": "あつい"
+        },
+        {
+          "term": "上着",
+          "surface": "上着",
+          "start": 13,
+          "end": 15,
+          "reading": "うわぎ"
+        },
+        {
+          "term": "持つ",
+          "surface": "持っ",
+          "start": 16,
+          "end": 18,
+          "reading": "もっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1593",
+      "nearest_lexical_japanese": "夜に働きますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-069",
+      "target": "吹雪",
+      "japanese": "吹雪で道路が見えにくくなり、バスは途中で止まりました。",
+      "spanish": "La ventisca redujo la visibilidad de la carretera y el autobús se detuvo en el trayecto.",
+      "estimated_level": "N3",
+      "review_note": "吹雪 combina viento fuerte y nieve.",
+      "authored_ruby": "[吹雪|ふぶき]で[道路|どうろ]が[見|み]えにくくなり、バスは[途中|とちゅう]で[止|と]まりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0348",
+      "nearest_japanese": "この森は冬になると雪で道が見えなくなると言うので、地元の人はあまり入りません。",
+      "character_similarity": 0.3871,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "吹雪",
+          "surface": "吹雪",
+          "start": 0,
+          "end": 2,
+          "reading": "ふぶき"
+        },
+        {
+          "term": "道路",
+          "surface": "道路",
+          "start": 3,
+          "end": 5,
+          "reading": "どうろ"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 6,
+          "end": 8,
+          "reading": "みえ"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 11,
+          "end": 13,
+          "reading": "なり"
+        },
+        {
+          "term": "バス",
+          "surface": "バス",
+          "start": 14,
+          "end": 16,
+          "reading": "ばす"
+        },
+        {
+          "term": "途中",
+          "surface": "途中",
+          "start": 17,
+          "end": 19,
+          "reading": "とちゅう"
+        },
+        {
+          "term": "止まる",
+          "surface": "止まり",
+          "start": 20,
+          "end": 23,
+          "reading": "とまり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1461",
+      "nearest_lexical_japanese": "こうしたバスは駅前に止まりますか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-070",
+      "target": "積もる",
+      "japanese": "一晩で雪が積もり、庭が真っ白になりました。",
+      "spanish": "Nevó durante la noche y el jardín amaneció completamente blanco.",
+      "estimated_level": "N4",
+      "review_note": "積もる describe la acumulación de nieve.",
+      "authored_ruby": "[一晩|ひとばん]で[雪|ゆき]が[積|つ]もり、[庭|にわ]が[真|ま]っ[白|しろ]になりました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-092",
+      "nearest_japanese": "停電で部屋が真っ暗になり、懐中電灯を探しました。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "雪",
+          "surface": "雪",
+          "start": 3,
+          "end": 4,
+          "reading": "ゆき"
+        },
+        {
+          "term": "積もる",
+          "surface": "積もり",
+          "start": 5,
+          "end": 8,
+          "reading": "つもり"
+        },
+        {
+          "term": "庭",
+          "surface": "庭",
+          "start": 9,
+          "end": 10,
+          "reading": "にわ"
+        },
+        {
+          "term": "真っ白",
+          "surface": "真っ白",
+          "start": 11,
+          "end": 14,
+          "reading": "まっしろ"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 15,
+          "end": 17,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EXP-0028",
+      "nearest_lexical_japanese": "この雲を見ると、雪になりそうです。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-071",
+      "target": "溶ける",
+      "japanese": "持ち帰る間にアイスが溶けてしまいました。",
+      "spanish": "El helado se derritió mientras lo llevaba a casa.",
+      "estimated_level": "N4",
+      "review_note": "溶ける es derretirse.",
+      "authored_ruby": "[持|も]ち[帰|かえ]る[間|あいだ]にアイスが[溶|と]けてしまいました。",
+      "nearest_id": "JAES-N4-EXP-0083",
+      "nearest_japanese": "財布を家に忘れてしまいました。",
+      "character_similarity": 0.4848,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "持ち帰る",
+          "surface": "持ち帰る",
+          "start": 0,
+          "end": 4,
+          "reading": "もちかえる"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 4,
+          "end": 5,
+          "reading": "ま"
+        },
+        {
+          "term": "アイス",
+          "surface": "アイス",
+          "start": 6,
+          "end": 9,
+          "reading": "あいす"
+        },
+        {
+          "term": "溶ける",
+          "surface": "溶け",
+          "start": 10,
+          "end": 12,
+          "reading": "とけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0329",
+      "nearest_lexical_japanese": "仕事の間は会えません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-072",
+      "target": "凍る",
+      "japanese": "朝、池の表面が薄く凍っていました。",
+      "spanish": "Por la mañana había una fina capa de hielo en la superficie del estanque.",
+      "estimated_level": "N4",
+      "review_note": "凍る significa congelarse.",
+      "authored_ruby": "[朝|あさ]、[池|いけ]の[表面|ひょうめん]が[薄|うす]く[凍|こお]っていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "朝",
+          "surface": "朝",
+          "start": 0,
+          "end": 1,
+          "reading": "あさ"
+        },
+        {
+          "term": "表面",
+          "surface": "表面",
+          "start": 4,
+          "end": 6,
+          "reading": "ひょうめん"
+        },
+        {
+          "term": "薄い",
+          "surface": "薄く",
+          "start": 7,
+          "end": 9,
+          "reading": "うすく"
+        },
+        {
+          "term": "凍る",
+          "surface": "凍っ",
+          "start": 9,
+          "end": 11,
+          "reading": "こおっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1987",
+      "nearest_lexical_japanese": "朝ごはんは七時から八時までです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-073",
+      "target": "嵐",
+      "japanese": "嵐の翌朝、庭に枝がたくさん落ちていました。",
+      "spanish": "La mañana después de la tormenta había muchas ramas caídas en el jardín.",
+      "estimated_level": "N3",
+      "review_note": "嵐 es una tormenta fuerte.",
+      "authored_ruby": "[嵐|あらし]の[翌朝|よくあさ]、[庭|にわ]に[枝|えだ]がたくさん[落|お]ちていました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1814",
+      "nearest_japanese": "その町には古い遺産がたくさん残っています。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "嵐",
+          "surface": "嵐",
+          "start": 0,
+          "end": 1,
+          "reading": "あらし"
+        },
+        {
+          "term": "翌朝",
+          "surface": "翌朝",
+          "start": 2,
+          "end": 4,
+          "reading": "よくあさ"
+        },
+        {
+          "term": "庭",
+          "surface": "庭",
+          "start": 5,
+          "end": 6,
+          "reading": "にわ"
+        },
+        {
+          "term": "枝",
+          "surface": "枝",
+          "start": 7,
+          "end": 8,
+          "reading": "えだ"
+        },
+        {
+          "term": "たくさん",
+          "surface": "たくさん",
+          "start": 9,
+          "end": 13,
+          "reading": "たくさん"
+        },
+        {
+          "term": "落ちる",
+          "surface": "落ち",
+          "start": 13,
+          "end": 15,
+          "reading": "おち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1073",
+      "nearest_lexical_japanese": "本は落ちませんでした。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-074",
+      "target": "強風",
+      "japanese": "強風のため、橋を渡る電車が遅れていました。",
+      "spanish": "El tren que cruza el puente llevaba retraso por el viento fuerte.",
+      "estimated_level": "N3",
+      "review_note": "強風 significa viento intenso.",
+      "authored_ruby": "[強風|きょうふう]のため、[橋|はし]を[渡|わた]る[電車|でんしゃ]が[遅|おく]れていました。",
+      "nearest_id": "JAES-N4-EXP-0044",
+      "nearest_japanese": "大切な傘を電車に忘れてしまいました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "強風",
+          "surface": "強風",
+          "start": 0,
+          "end": 2,
+          "reading": "きょうふう"
+        },
+        {
+          "term": "橋",
+          "surface": "橋",
+          "start": 6,
+          "end": 7,
+          "reading": "はし"
+        },
+        {
+          "term": "渡る",
+          "surface": "渡る",
+          "start": 8,
+          "end": 10,
+          "reading": "わたる"
+        },
+        {
+          "term": "電車",
+          "surface": "電車",
+          "start": 10,
+          "end": 12,
+          "reading": "でんしゃ"
+        },
+        {
+          "term": "遅れる",
+          "surface": "遅れ",
+          "start": 13,
+          "end": 15,
+          "reading": "おくれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1909",
+      "nearest_lexical_japanese": "電車はおそらく遅れます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-075",
+      "target": "洪水",
+      "japanese": "洪水の後、町の人たちが道の泥を片付けました。",
+      "spanish": "Después de la inundación, los vecinos retiraron el barro de las calles.",
+      "estimated_level": "N3",
+      "review_note": "洪水 es una inundación.",
+      "authored_ruby": "[洪水|こうずい]の[後|あと]、[町|まち]の[人|ひと]たちが[道|みち]の[泥|どろ]を[片付|かたづ]けました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924-024",
+      "nearest_japanese": "近所の人たちが騒音の被害を市に訴えました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "洪水",
+          "surface": "洪水",
+          "start": 0,
+          "end": 2,
+          "reading": "こうずい"
+        },
+        {
+          "term": "町",
+          "surface": "町",
+          "start": 5,
+          "end": 6,
+          "reading": "まち"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 7,
+          "end": 8,
+          "reading": "ひと"
+        },
+        {
+          "term": "道",
+          "surface": "道",
+          "start": 11,
+          "end": 12,
+          "reading": "みち"
+        },
+        {
+          "term": "泥",
+          "surface": "泥",
+          "start": 13,
+          "end": 14,
+          "reading": "どろ"
+        },
+        {
+          "term": "片付ける",
+          "surface": "片付け",
+          "start": 15,
+          "end": 18,
+          "reading": "かたづけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0959",
+      "nearest_lexical_japanese": "あいつはこの町の人じゃありません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-076",
+      "target": "泥",
+      "japanese": "畑を歩いて、靴の底に泥がつきました。",
+      "spanish": "Se me pegó barro en las suelas al caminar por el campo de cultivo.",
+      "estimated_level": "N4",
+      "review_note": "泥 es barro.",
+      "authored_ruby": "[畑|はたけ]を[歩|ある]いて、[靴|くつ]の[底|そこ]に[泥|どろ]がつきました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2188",
+      "nearest_japanese": "山で花を見ていたら、きれいな蝶に気がつきました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "畑",
+          "surface": "畑",
+          "start": 0,
+          "end": 1,
+          "reading": "はたけ"
+        },
+        {
+          "term": "歩く",
+          "surface": "歩い",
+          "start": 2,
+          "end": 4,
+          "reading": "あるい"
+        },
+        {
+          "term": "靴",
+          "surface": "靴",
+          "start": 6,
+          "end": 7,
+          "reading": "くつ"
+        },
+        {
+          "term": "底",
+          "surface": "底",
+          "start": 8,
+          "end": 9,
+          "reading": "そこ"
+        },
+        {
+          "term": "泥",
+          "surface": "泥",
+          "start": 10,
+          "end": 11,
+          "reading": "どろ"
+        },
+        {
+          "term": "つく",
+          "surface": "つき",
+          "start": 12,
+          "end": 14,
+          "reading": "つき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1911",
+      "nearest_lexical_japanese": "いっしょに歩きましょうか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-077",
+      "target": "砂",
+      "japanese": "海辺で遊んだ後、靴の中から砂が出てきました。",
+      "spanish": "Después de jugar junto al mar, salió arena del interior de mis zapatos.",
+      "estimated_level": "N4",
+      "review_note": "砂 significa arena.",
+      "authored_ruby": "[海辺|うみべ]で[遊|あそ]んだ[後|あと]、[靴|くつ]の[中|なか]から[砂|すな]が[出|で]てきました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2166",
+      "nearest_japanese": "雨がやんだら、店から人が出てきた。",
+      "character_similarity": 0.5143,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "海辺",
+          "surface": "海辺",
+          "start": 0,
+          "end": 2,
+          "reading": "うみべ"
+        },
+        {
+          "term": "遊ぶ",
+          "surface": "遊ん",
+          "start": 3,
+          "end": 5,
+          "reading": "あそん"
+        },
+        {
+          "term": "靴",
+          "surface": "靴",
+          "start": 8,
+          "end": 9,
+          "reading": "くつ"
+        },
+        {
+          "term": "砂",
+          "surface": "砂",
+          "start": 13,
+          "end": 14,
+          "reading": "すな"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 15,
+          "end": 16,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1481",
+      "nearest_lexical_japanese": "表示は出ていません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-078",
+      "target": "砂浜",
+      "japanese": "砂浜に足跡が残りましたが、波で消えました。",
+      "spanish": "Mis huellas quedaron en la playa de arena, pero las borraron las olas.",
+      "estimated_level": "N4",
+      "review_note": "砂浜 es una playa arenosa.",
+      "authored_ruby": "[砂浜|すなはま]に[足跡|あしあと]が[残|のこ]りましたが、[波|なみ]で[消|き]えました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0768",
+      "nearest_japanese": "警察に提案をしましたが、聞いてもらえませんでした。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "砂浜",
+          "surface": "砂浜",
+          "start": 0,
+          "end": 2,
+          "reading": "すなはま"
+        },
+        {
+          "term": "足跡",
+          "surface": "足跡",
+          "start": 3,
+          "end": 5,
+          "reading": "あしあと"
+        },
+        {
+          "term": "残る",
+          "surface": "残り",
+          "start": 6,
+          "end": 8,
+          "reading": "のこり"
+        },
+        {
+          "term": "波",
+          "surface": "波",
+          "start": 13,
+          "end": 14,
+          "reading": "なみ"
+        },
+        {
+          "term": "消える",
+          "surface": "消え",
+          "start": 15,
+          "end": 17,
+          "reading": "きえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2467",
+      "nearest_lexical_japanese": "一瞬で電気が消えました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-079",
+      "target": "貝殻",
+      "japanese": "拾った貝殻を洗い、窓辺に飾りました。",
+      "spanish": "Lavé las conchas que había recogido y las puse de adorno junto a la ventana.",
+      "estimated_level": "N3",
+      "review_note": "貝殻 es la concha vacía de un molusco.",
+      "authored_ruby": "[拾|ひろ]った[貝殻|かいがら]を[洗|あら]い、[窓辺|まどべ]に[飾|かざ]りました。",
+      "nearest_id": "JAES-N5-CONVERSATION-C3000-001-008",
+      "nearest_japanese": "川で拾った石を、庭に並べました。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "拾う",
+          "surface": "拾っ",
+          "start": 0,
+          "end": 2,
+          "reading": "ひろっ"
+        },
+        {
+          "term": "貝殻",
+          "surface": "貝殻",
+          "start": 3,
+          "end": 5,
+          "reading": "かいがら"
+        },
+        {
+          "term": "洗う",
+          "surface": "洗い",
+          "start": 6,
+          "end": 8,
+          "reading": "あらい"
+        },
+        {
+          "term": "窓辺",
+          "surface": "窓辺",
+          "start": 9,
+          "end": 11,
+          "reading": "まどべ"
+        },
+        {
+          "term": "飾る",
+          "surface": "飾り",
+          "start": 12,
+          "end": 14,
+          "reading": "かざり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1618",
+      "nearest_lexical_japanese": "お皿を二枚洗ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-080",
+      "target": "潮",
+      "japanese": "潮が引くと、岩の間に小さな魚が見えます。",
+      "spanish": "Cuando baja la marea, se ven peces pequeños entre las rocas.",
+      "estimated_level": "N3",
+      "review_note": "潮が引く significa bajar la marea.",
+      "authored_ruby": "[潮|しお]が[引|ひ]くと、[岩|いわ]の[間|あいだ]に[小|ちい]さな[魚|さかな]が[見|み]えます。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0460",
+      "nearest_japanese": "この坂を上がると、右に古い寺が見えます。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "潮",
+          "surface": "潮",
+          "start": 0,
+          "end": 1,
+          "reading": "しお"
+        },
+        {
+          "term": "引く",
+          "surface": "引く",
+          "start": 2,
+          "end": 4,
+          "reading": "ひく"
+        },
+        {
+          "term": "岩",
+          "surface": "岩",
+          "start": 6,
+          "end": 7,
+          "reading": "いわ"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 8,
+          "end": 9,
+          "reading": "ま"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 10,
+          "end": 13,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "魚",
+          "surface": "魚",
+          "start": 13,
+          "end": 14,
+          "reading": "さかな"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 15,
+          "end": 17,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1177",
+      "nearest_lexical_japanese": "小さな会社です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-081",
+      "target": "沖",
+      "japanese": "漁船が沖へ出ていくのを、港から見ていました。",
+      "spanish": "Desde el puerto observaba cómo los barcos pesqueros salían mar adentro.",
+      "estimated_level": "N3",
+      "review_note": "沖 es la zona del mar alejada de la orilla.",
+      "authored_ruby": "[漁船|ぎょせん]が[沖|おき]へ[出|で]ていくのを、[港|みなと]から[見|み]ていました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0902",
+      "nearest_japanese": "飛行機が上昇するのを窓から見ました。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "漁船",
+          "surface": "漁船",
+          "start": 0,
+          "end": 2,
+          "reading": "ぎょせん"
+        },
+        {
+          "term": "沖",
+          "surface": "沖",
+          "start": 3,
+          "end": 4,
+          "reading": "おき"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 5,
+          "end": 6,
+          "reading": "で"
+        },
+        {
+          "term": "港",
+          "surface": "港",
+          "start": 12,
+          "end": 13,
+          "reading": "みなと"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 15,
+          "end": 16,
+          "reading": "み"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2265",
+      "nearest_lexical_japanese": "書類を見てください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-082",
+      "target": "岸",
+      "japanese": "岸に座って、川の流れを眺めました。",
+      "spanish": "Me senté en la orilla a contemplar la corriente del río.",
+      "estimated_level": "N4",
+      "review_note": "岸 es una orilla o ribera.",
+      "authored_ruby": "[岸|きし]に[座|すわ]って、[川|かわ]の[流|なが]れを[眺|なが]めました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-002-016",
+      "nearest_japanese": "大きな岩の上に座って、海を眺めました。",
+      "character_similarity": 0.625,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "岸",
+          "surface": "岸",
+          "start": 0,
+          "end": 1,
+          "reading": "きし"
+        },
+        {
+          "term": "座る",
+          "surface": "座っ",
+          "start": 2,
+          "end": 4,
+          "reading": "すわっ"
+        },
+        {
+          "term": "川",
+          "surface": "川",
+          "start": 6,
+          "end": 7,
+          "reading": "かわ"
+        },
+        {
+          "term": "流れ",
+          "surface": "流れ",
+          "start": 8,
+          "end": 10,
+          "reading": "ながれ"
+        },
+        {
+          "term": "眺める",
+          "surface": "眺め",
+          "start": 11,
+          "end": 13,
+          "reading": "ながめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-002-016",
+      "nearest_lexical_japanese": "大きな岩の上に座って、海を眺めました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-083",
+      "target": "滝",
+      "japanese": "森を抜けると、大きな滝の音が聞こえました。",
+      "spanish": "Al salir del bosque se oía el ruido de una gran cascada.",
+      "estimated_level": "N4",
+      "review_note": "滝 significa cascada.",
+      "authored_ruby": "[森|もり]を[抜|ぬ]けると、[大|おお]きな[滝|たき]の[音|おと]が[聞|き]こえました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0454",
+      "nearest_japanese": "海岸を歩きながら、将来のことを考えました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "森",
+          "surface": "森",
+          "start": 0,
+          "end": 1,
+          "reading": "もり"
+        },
+        {
+          "term": "抜ける",
+          "surface": "抜ける",
+          "start": 2,
+          "end": 5,
+          "reading": "ぬける"
+        },
+        {
+          "term": "大きな",
+          "surface": "大きな",
+          "start": 7,
+          "end": 10,
+          "reading": "おおきな"
+        },
+        {
+          "term": "滝",
+          "surface": "滝",
+          "start": 10,
+          "end": 11,
+          "reading": "たき"
+        },
+        {
+          "term": "音",
+          "surface": "音",
+          "start": 12,
+          "end": 13,
+          "reading": "おと"
+        },
+        {
+          "term": "聞こえる",
+          "surface": "聞こえ",
+          "start": 14,
+          "end": 17,
+          "reading": "きこえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1790",
+      "nearest_lexical_japanese": "このスマホからは時々大きな音が出る。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-084",
+      "target": "泉",
+      "japanese": "村の近くに、一年中水がわく泉があります。",
+      "spanish": "Cerca del pueblo hay un manantial del que brota agua todo el año.",
+      "estimated_level": "N3",
+      "review_note": "泉 es un manantial.",
+      "authored_ruby": "[村|むら]の[近|ちか]くに、[一年中|いちねんじゅう][水|みず]がわく[泉|いずみ]があります。",
+      "nearest_id": "JAES-N5-EDITORIAL-0150",
+      "nearest_japanese": "駅の近くにホテルがあります。",
+      "character_similarity": 0.5806,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "村",
+          "surface": "村",
+          "start": 0,
+          "end": 1,
+          "reading": "むら"
+        },
+        {
+          "term": "近く",
+          "surface": "近く",
+          "start": 2,
+          "end": 4,
+          "reading": "ちかく"
+        },
+        {
+          "term": "一年中",
+          "surface": "一年中",
+          "start": 6,
+          "end": 9,
+          "reading": "いちねんじゅう"
+        },
+        {
+          "term": "水",
+          "surface": "水",
+          "start": 9,
+          "end": 10,
+          "reading": "みず"
+        },
+        {
+          "term": "わく",
+          "surface": "わく",
+          "start": 11,
+          "end": 13,
+          "reading": "わく"
+        },
+        {
+          "term": "泉",
+          "surface": "泉",
+          "start": 13,
+          "end": 14,
+          "reading": "いずみ"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 15,
+          "end": 17,
+          "reading": "あり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2049",
+      "nearest_lexical_japanese": "水もありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-085",
+      "target": "谷",
+      "japanese": "谷の向こうから、人の声が聞こえました。",
+      "spanish": "Se oía una voz desde el otro lado del valle.",
+      "estimated_level": "N3",
+      "review_note": "谷 significa valle.",
+      "authored_ruby": "[谷|たに]の[向|む]こうから、[人|ひと]の[声|こえ]が[聞|き]こえました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-002-005",
+      "nearest_japanese": "橋の上から花火がよく見えました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "谷",
+          "surface": "谷",
+          "start": 0,
+          "end": 1,
+          "reading": "たに"
+        },
+        {
+          "term": "向こう",
+          "surface": "向こう",
+          "start": 2,
+          "end": 5,
+          "reading": "むこう"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 8,
+          "end": 9,
+          "reading": "ひと"
+        },
+        {
+          "term": "声",
+          "surface": "声",
+          "start": 10,
+          "end": 11,
+          "reading": "こえ"
+        },
+        {
+          "term": "聞こえる",
+          "surface": "聞こえ",
+          "start": 12,
+          "end": 15,
+          "reading": "きこえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0156",
+      "nearest_lexical_japanese": "この谷は静かすぎるので、地元の人は神の谷と言うんです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-086",
+      "target": "崖",
+      "japanese": "道の片側は崖で、下に海が広がっていました。",
+      "spanish": "A un lado del camino había un acantilado y abajo se extendía el mar.",
+      "estimated_level": "N3",
+      "review_note": "崖 es un precipicio o pared de terreno escarpada.",
+      "authored_ruby": "[道|みち]の[片側|かたがわ]は[崖|がけ]で、[下|した]に[海|うみ]が[広|ひろ]がっていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.5143,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "道",
+          "surface": "道",
+          "start": 0,
+          "end": 1,
+          "reading": "みち"
+        },
+        {
+          "term": "片側",
+          "surface": "片側",
+          "start": 2,
+          "end": 4,
+          "reading": "かたがわ"
+        },
+        {
+          "term": "崖",
+          "surface": "崖",
+          "start": 5,
+          "end": 6,
+          "reading": "がけ"
+        },
+        {
+          "term": "下",
+          "surface": "下",
+          "start": 8,
+          "end": 9,
+          "reading": "した"
+        },
+        {
+          "term": "海",
+          "surface": "海",
+          "start": 10,
+          "end": 11,
+          "reading": "うみ"
+        },
+        {
+          "term": "広がる",
+          "surface": "広がっ",
+          "start": 12,
+          "end": 15,
+          "reading": "ひろがっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1358",
+      "nearest_lexical_japanese": "どの道か分かります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-087",
+      "target": "頂上",
+      "japanese": "頂上に着くと、雲の下に町が見えました。",
+      "spanish": "Al llegar a la cima, vimos la ciudad debajo de las nubes.",
+      "estimated_level": "N3",
+      "review_note": "頂上 es el punto más alto de una montaña.",
+      "authored_ruby": "[頂上|ちょうじょう]に[着|つ]くと、[雲|くも]の[下|した]に[町|まち]が[見|み]えました。",
+      "nearest_id": "SAKAMOTO-afc6abc36d275409-JA_ES",
+      "nearest_japanese": "僕には見えました。",
+      "character_similarity": 0.48,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "頂上",
+          "surface": "頂上",
+          "start": 0,
+          "end": 2,
+          "reading": "ちょうじょう"
+        },
+        {
+          "term": "着く",
+          "surface": "着く",
+          "start": 3,
+          "end": 5,
+          "reading": "つく"
+        },
+        {
+          "term": "雲",
+          "surface": "雲",
+          "start": 7,
+          "end": 8,
+          "reading": "くも"
+        },
+        {
+          "term": "下",
+          "surface": "下",
+          "start": 9,
+          "end": 10,
+          "reading": "した"
+        },
+        {
+          "term": "町",
+          "surface": "町",
+          "start": 11,
+          "end": 12,
+          "reading": "まち"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 13,
+          "end": 15,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1270",
+      "nearest_lexical_japanese": "無事に着いてよかったです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-088",
+      "target": "麓",
+      "japanese": "山の麓の宿で、一晩休みました。",
+      "spanish": "Pasamos la noche en un alojamiento al pie de la montaña.",
+      "estimated_level": "N3",
+      "review_note": "麓 es la base o pie de una montaña.",
+      "authored_ruby": "[山|やま]の[麓|ふもと]の[宿|やど]で、[一晩|ひとばん][休|やす]みました。",
+      "nearest_id": "JAES-N5-EDITORIAL-2329",
+      "nearest_japanese": "山で働きました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "山",
+          "surface": "山",
+          "start": 0,
+          "end": 1,
+          "reading": "やま"
+        },
+        {
+          "term": "麓",
+          "surface": "麓",
+          "start": 2,
+          "end": 3,
+          "reading": "ふもと"
+        },
+        {
+          "term": "宿",
+          "surface": "宿",
+          "start": 4,
+          "end": 5,
+          "reading": "やど"
+        },
+        {
+          "term": "休む",
+          "surface": "休み",
+          "start": 9,
+          "end": 11,
+          "reading": "やすみ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2476",
+      "nearest_lexical_japanese": "山で転んだ友だちの背中をさすって、少し休ませました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-089",
+      "target": "斜面",
+      "japanese": "日当たりのいい斜面に、花が咲いていました。",
+      "spanish": "Había flores en la ladera soleada.",
+      "estimated_level": "N3",
+      "review_note": "斜面 es una superficie inclinada.",
+      "authored_ruby": "[日当|ひあ]たりのいい[斜面|しゃめん]に、[花|はな]が[咲|さ]いていました。",
+      "nearest_id": "JAES-N5-CONVERSATION-C3000-001-011",
+      "nearest_japanese": "庭に花が沢山咲いています。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "日当たり",
+          "surface": "日当たり",
+          "start": 0,
+          "end": 4,
+          "reading": "ひあたり"
+        },
+        {
+          "term": "いい",
+          "surface": "いい",
+          "start": 5,
+          "end": 7,
+          "reading": "いい"
+        },
+        {
+          "term": "斜面",
+          "surface": "斜面",
+          "start": 7,
+          "end": 9,
+          "reading": "しゃめん"
+        },
+        {
+          "term": "花",
+          "surface": "花",
+          "start": 11,
+          "end": 12,
+          "reading": "はな"
+        },
+        {
+          "term": "咲く",
+          "surface": "咲い",
+          "start": 13,
+          "end": 15,
+          "reading": "さい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-CONVERSATION-C3000-001-011",
+      "nearest_lexical_japanese": "庭に花が沢山咲いています。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-090",
+      "target": "平野",
+      "japanese": "列車が山を越えると、広い平野が見えてきました。",
+      "spanish": "Cuando el tren cruzó la montaña, apareció una amplia llanura.",
+      "estimated_level": "N3",
+      "review_note": "平野 es una extensión de terreno llano.",
+      "authored_ruby": "[列車|れっしゃ]が[山|やま]を[越|こ]えると、[広|ひろ]い[平野|へいや]が[見|み]えてきました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0460",
+      "nearest_japanese": "この坂を上がると、右に古い寺が見えます。",
+      "character_similarity": 0.4103,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "列車",
+          "surface": "列車",
+          "start": 0,
+          "end": 2,
+          "reading": "れっしゃ"
+        },
+        {
+          "term": "山",
+          "surface": "山",
+          "start": 3,
+          "end": 4,
+          "reading": "やま"
+        },
+        {
+          "term": "越える",
+          "surface": "越える",
+          "start": 5,
+          "end": 8,
+          "reading": "こえる"
+        },
+        {
+          "term": "広い",
+          "surface": "広い",
+          "start": 10,
+          "end": 12,
+          "reading": "ひろい"
+        },
+        {
+          "term": "平野",
+          "surface": "平野",
+          "start": 12,
+          "end": 14,
+          "reading": "へいや"
+        },
+        {
+          "term": "見える",
+          "surface": "見え",
+          "start": 15,
+          "end": 17,
+          "reading": "みえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-001-056",
+      "nearest_lexical_japanese": "列車の窓から見える風景が、次第に山に変わっていきました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-091",
+      "target": "草原",
+      "japanese": "草原で馬が草を食べていました。",
+      "spanish": "Había caballos pastando en la pradera.",
+      "estimated_level": "N3",
+      "review_note": "草原 es una extensión cubierta de hierba.",
+      "authored_ruby": "[草原|そうげん]で[馬|うま]が[草|くさ]を[食|た]べていました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1858",
+      "nearest_japanese": "うちでパンを三つ食べました。",
+      "character_similarity": 0.5185,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "草原",
+          "surface": "草原",
+          "start": 0,
+          "end": 2,
+          "reading": "そうげん"
+        },
+        {
+          "term": "馬",
+          "surface": "馬",
+          "start": 3,
+          "end": 4,
+          "reading": "うま"
+        },
+        {
+          "term": "草",
+          "surface": "草",
+          "start": 5,
+          "end": 6,
+          "reading": "くさ"
+        },
+        {
+          "term": "食べる",
+          "surface": "食べ",
+          "start": 7,
+          "end": 9,
+          "reading": "たべ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1459",
+      "nearest_lexical_japanese": "三分以内に食べます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-092",
+      "target": "茂る",
+      "japanese": "庭の木の葉が茂って、窓が暗くなりました。",
+      "spanish": "Las hojas del árbol del jardín crecieron tanto que dejaron la ventana en sombra.",
+      "estimated_level": "N3",
+      "review_note": "茂る indica crecimiento abundante de vegetación.",
+      "authored_ruby": "[庭|にわ]の[木|き]の[葉|は]が[茂|しげ]って、[窓|まど]が[暗|くら]くなりました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1314",
+      "nearest_japanese": "突然電気が消えたので、部屋が暗くなりました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "庭",
+          "surface": "庭",
+          "start": 0,
+          "end": 1,
+          "reading": "にわ"
+        },
+        {
+          "term": "木の葉",
+          "surface": "木の葉",
+          "start": 2,
+          "end": 5,
+          "reading": "このは"
+        },
+        {
+          "term": "茂る",
+          "surface": "茂っ",
+          "start": 6,
+          "end": 8,
+          "reading": "しげっ"
+        },
+        {
+          "term": "窓",
+          "surface": "窓",
+          "start": 10,
+          "end": 11,
+          "reading": "まど"
+        },
+        {
+          "term": "暗い",
+          "surface": "暗く",
+          "start": 12,
+          "end": 14,
+          "reading": "くらく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 14,
+          "end": 16,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2172",
+      "nearest_lexical_japanese": "森のなかは静かですが、暗くなると道が見えにくいです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-093",
+      "target": "枯れる",
+      "japanese": "旅行の間に鉢の花が枯れてしまいました。",
+      "spanish": "Las flores de la maceta se marchitaron mientras estaba de viaje.",
+      "estimated_level": "N3",
+      "review_note": "枯れる es secarse o morir una planta.",
+      "authored_ruby": "[旅行|りょこう]の[間|あいだ]に[鉢|はち]の[花|はな]が[枯|か]れてしまいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0406",
+      "nearest_japanese": "旅行先でホテルに地図を忘れてしまいました。",
+      "character_similarity": 0.5789,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 0,
+          "end": 2,
+          "reading": "りょこう"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 3,
+          "end": 4,
+          "reading": "ま"
+        },
+        {
+          "term": "鉢",
+          "surface": "鉢",
+          "start": 5,
+          "end": 6,
+          "reading": "はち"
+        },
+        {
+          "term": "花",
+          "surface": "花",
+          "start": 7,
+          "end": 8,
+          "reading": "はな"
+        },
+        {
+          "term": "枯れる",
+          "surface": "枯れ",
+          "start": 9,
+          "end": 11,
+          "reading": "かれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0665",
+      "nearest_lexical_japanese": "貯金している間に旅行します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-094",
+      "target": "芽",
+      "japanese": "先週まいた種から、小さな芽が出ました。",
+      "spanish": "Han brotado pequeños tallos de las semillas que sembré la semana pasada.",
+      "estimated_level": "N3",
+      "review_note": "芽 es un brote.",
+      "authored_ruby": "[先週|せんしゅう]まいた[種|たね]から、[小|ちい]さな[芽|め]が[出|で]ました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1237",
+      "nearest_japanese": "本部から司令が出ました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "先週",
+          "surface": "先週",
+          "start": 0,
+          "end": 2,
+          "reading": "せんしゅう"
+        },
+        {
+          "term": "まく",
+          "surface": "まい",
+          "start": 2,
+          "end": 4,
+          "reading": "まい"
+        },
+        {
+          "term": "種",
+          "surface": "種",
+          "start": 5,
+          "end": 6,
+          "reading": "たね"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 9,
+          "end": 12,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "芽",
+          "surface": "芽",
+          "start": 12,
+          "end": 13,
+          "reading": "め"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 14,
+          "end": 15,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-015",
+      "nearest_lexical_japanese": "掃除のために扇風機を分解したら、小さなねじが出てきました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-095",
+      "target": "根",
+      "japanese": "鉢を持ち上げると、底の穴から根が出ていました。",
+      "spanish": "Al levantar la maceta vi raíces saliendo por el agujero del fondo.",
+      "estimated_level": "N3",
+      "review_note": "根 significa raíz de una planta.",
+      "authored_ruby": "[鉢|はち]を[持|も]ち[上|あ]げると、[底|そこ]の[穴|あな]から[根|ね]が[出|で]ていました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-015",
+      "nearest_japanese": "映画の静かな場面で、咳が出てしまいました。",
+      "character_similarity": 0.45,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "鉢",
+          "surface": "鉢",
+          "start": 0,
+          "end": 1,
+          "reading": "はち"
+        },
+        {
+          "term": "持ち上げる",
+          "surface": "持ち上げる",
+          "start": 2,
+          "end": 7,
+          "reading": "もちあげる"
+        },
+        {
+          "term": "底",
+          "surface": "底",
+          "start": 9,
+          "end": 10,
+          "reading": "そこ"
+        },
+        {
+          "term": "穴",
+          "surface": "穴",
+          "start": 11,
+          "end": 12,
+          "reading": "あな"
+        },
+        {
+          "term": "根",
+          "surface": "根",
+          "start": 14,
+          "end": 15,
+          "reading": "ね"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 16,
+          "end": 17,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1481",
+      "nearest_lexical_japanese": "表示は出ていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-096",
+      "target": "幹",
+      "japanese": "古い木の幹は、大人二人で抱えるほど太いです。",
+      "spanish": "El tronco del árbol viejo es tan grueso que hacen falta dos adultos para rodearlo.",
+      "estimated_level": "N3",
+      "review_note": "幹 es el tronco de un árbol.",
+      "authored_ruby": "[古|ふる]い[木|き]の[幹|みき]は、[大人|おとな][二人|ふたり]で[抱|かか]えるほど[太|ふと]いです。",
+      "nearest_id": "JAES-N5-EDITORIAL-2322",
+      "nearest_japanese": "家が古いので、少し寒いです。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "古い",
+          "surface": "古い",
+          "start": 0,
+          "end": 2,
+          "reading": "ふるい"
+        },
+        {
+          "term": "木",
+          "surface": "木",
+          "start": 2,
+          "end": 3,
+          "reading": "き"
+        },
+        {
+          "term": "幹",
+          "surface": "幹",
+          "start": 4,
+          "end": 5,
+          "reading": "みき"
+        },
+        {
+          "term": "大人",
+          "surface": "大人",
+          "start": 7,
+          "end": 9,
+          "reading": "おとな"
+        },
+        {
+          "term": "抱える",
+          "surface": "抱える",
+          "start": 12,
+          "end": 15,
+          "reading": "かかえる"
+        },
+        {
+          "term": "太い",
+          "surface": "太い",
+          "start": 17,
+          "end": 19,
+          "reading": "ふとい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1293",
+      "nearest_lexical_japanese": "あなたは大人ですか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-097",
+      "target": "枝",
+      "japanese": "窓に当たる枝を、庭師に切ってもらいました。",
+      "spanish": "Pedí al jardinero que cortara la rama que golpeaba la ventana.",
+      "estimated_level": "N4",
+      "review_note": "枝 significa rama.",
+      "authored_ruby": "[窓|まど]に[当|あ]たる[枝|えだ]を、[庭師|にわし]に[切|き]ってもらいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0649",
+      "nearest_japanese": "母に貯金を手伝ってもらいました。",
+      "character_similarity": 0.5882,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "窓",
+          "surface": "窓",
+          "start": 0,
+          "end": 1,
+          "reading": "まど"
+        },
+        {
+          "term": "当たる",
+          "surface": "当たる",
+          "start": 2,
+          "end": 5,
+          "reading": "あたる"
+        },
+        {
+          "term": "枝",
+          "surface": "枝",
+          "start": 5,
+          "end": 6,
+          "reading": "えだ"
+        },
+        {
+          "term": "庭師",
+          "surface": "庭師",
+          "start": 8,
+          "end": 10,
+          "reading": "にわし"
+        },
+        {
+          "term": "切る",
+          "surface": "切っ",
+          "start": 11,
+          "end": 13,
+          "reading": "きっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0345",
+      "nearest_lexical_japanese": "窓を開けてください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-098",
+      "target": "葉",
+      "japanese": "雨の後、葉の上に水滴が残っていました。",
+      "spanish": "Después de la lluvia quedaban gotas de agua sobre las hojas.",
+      "estimated_level": "N4",
+      "review_note": "葉 es hoja de una planta.",
+      "authored_ruby": "[雨|あめ]の[後|あと]、[葉|は]の[上|うえ]に[水滴|すいてき]が[残|のこ]っていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.6061,
+      "target_literal_previous_occurrences": 16,
+      "morphology_evidence": [
+        {
+          "term": "雨",
+          "surface": "雨",
+          "start": 0,
+          "end": 1,
+          "reading": "あめ"
+        },
+        {
+          "term": "葉",
+          "surface": "葉",
+          "start": 4,
+          "end": 5,
+          "reading": "は"
+        },
+        {
+          "term": "水滴",
+          "surface": "水滴",
+          "start": 8,
+          "end": 10,
+          "reading": "すいてき"
+        },
+        {
+          "term": "残る",
+          "surface": "残っ",
+          "start": 11,
+          "end": 13,
+          "reading": "のこっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0319",
+      "nearest_lexical_japanese": "午後は雨です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-003-099",
+      "target": "実",
+      "japanese": "庭の木に赤い実がなり、鳥が集まってきました。",
+      "spanish": "El árbol del jardín dio frutos rojos y empezaron a acercarse los pájaros.",
+      "estimated_level": "N3",
+      "review_note": "実がなる significa dar fruto.",
+      "authored_ruby": "[庭|にわ]の[木|き]に[赤|あか]い[実|み]がなり、[鳥|とり]が[集|あつ]まってきました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-092",
+      "nearest_japanese": "庭の木の葉が茂って、窓が暗くなりました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 35,
+      "morphology_evidence": [
+        {
+          "term": "庭",
+          "surface": "庭",
+          "start": 0,
+          "end": 1,
+          "reading": "にわ"
+        },
+        {
+          "term": "木",
+          "surface": "木",
+          "start": 2,
+          "end": 3,
+          "reading": "き"
+        },
+        {
+          "term": "赤い",
+          "surface": "赤い",
+          "start": 4,
+          "end": 6,
+          "reading": "あかい"
+        },
+        {
+          "term": "実",
+          "surface": "実",
+          "start": 6,
+          "end": 7,
+          "reading": "み"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 8,
+          "end": 10,
+          "reading": "なり"
+        },
+        {
+          "term": "鳥",
+          "surface": "鳥",
+          "start": 11,
+          "end": 12,
+          "reading": "とり"
+        },
+        {
+          "term": "集まる",
+          "surface": "集まっ",
+          "start": 13,
+          "end": 16,
+          "reading": "あつまっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-001-078",
+      "nearest_lexical_japanese": "夕方になると、木の影が庭いっぱいに伸びます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-003-100",
+      "target": "種",
+      "japanese": "来年も育てたいので、花の種を取っておきました。",
+      "spanish": "Guardé semillas de las flores porque quiero cultivarlas también el año que viene.",
+      "estimated_level": "N4",
+      "review_note": "種 es semilla; ておく expresa reservar para después.",
+      "authored_ruby": "[来年|らいねん]も[育|そだ]てたいので、[花|はな]の[種|たね]を[取|と]っておきました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-031",
+      "nearest_japanese": "舞台の袖で、次の出番を待っていました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 8,
+      "morphology_evidence": [
+        {
+          "term": "来年",
+          "surface": "来年",
+          "start": 0,
+          "end": 2,
+          "reading": "らいねん"
+        },
+        {
+          "term": "育てる",
+          "surface": "育て",
+          "start": 3,
+          "end": 5,
+          "reading": "そだて"
+        },
+        {
+          "term": "花",
+          "surface": "花",
+          "start": 10,
+          "end": 11,
+          "reading": "はな"
+        },
+        {
+          "term": "種",
+          "surface": "種",
+          "start": 12,
+          "end": 13,
+          "reading": "たね"
+        },
+        {
+          "term": "取る",
+          "surface": "取っ",
+          "start": 14,
+          "end": 16,
+          "reading": "とっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924-004",
+      "nearest_lexical_japanese": "ベランダで育てているトマトに、今朝初めて花が咲きました。"
+    }
+  ],
+  "previous_rows_preserved": 9478,
+  "previous_graph_sentences_preserved": 9586,
+  "total_rows": 9678
+}

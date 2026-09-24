@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+腰	N4	vida_diaria	[重|おも]い[箱|はこ]を[持|も]ち[上|あ]げたとき、[腰|こし]に[痛|いた]みを[感|かん]じました。	Al levantar una caja pesada, noté dolor en la zona lumbar.	腰 indica la zona de la cintura o parte baja de la espalda.
+膝	N4	vida_diaria	[猫|ねこ]が[膝|ひざ]の[上|うえ]で[寝|ね]ていて、[立|た]ち[上|あ]がれません。	Tengo al gato dormido en el regazo y no puedo levantarme.	膝の上 se traduce aquí como el regazo.
+肘	N4	vida_diaria	[狭|せま]い[席|せき]で、[隣|となり]の[人|ひと]と[肘|ひじ]がぶつかりました。	En el asiento estrecho, mi codo chocó con el de la persona de al lado.	肘 significa codo.
+爪	N4	vida_diaria	[爪|つめ]が[伸|の]びて、[手袋|てぶくろ]の[先|さき]に[穴|あな]が[開|あ]いてしまいました。	Me habían crecido las uñas y acabé agujereando la punta del guante.	爪 se refiere a las uñas de los dedos.
+眉	N3	vida_diaria	[驚|おどろ]いた[顔|かお]を[描|か]くため、[眉|まゆ]を[高|たか]い[位置|いち]に[描|か]きました。	Para dibujar una cara sorprendida, coloqué las cejas más arriba.	眉 significa ceja.
+唇	N3	vida_diaria	[寒|さむ]い[外|そと]に[長|なが]くいて、[唇|くちびる]が[乾|かわ]きました。	Se me resecaron los labios por estar mucho tiempo fuera con frío.	唇 son los labios.
+頬	N3	vida_diaria	[冷|つめ]たい[風|かぜ]が[頬|ほお]に[当|あ]たって、[目|め]が[覚|さ]めました。	El viento frío me dio en las mejillas y me despejó.	頬 se lee aquí ほお y significa mejilla.
+額	N3	vida_diaria	[額|ひたい]の[汗|あせ]をタオルで[拭|ふ]いてから、[帽子|ぼうし]をかぶりました。	Me sequé el sudor de la frente con una toalla antes de ponerme el sombrero.	額 se lee ひたい cuando significa frente.
+肩	N4	vida_diaria	[鳥|とり]が[飼|か]い[主|ぬし]の[肩|かた]にとまっています。	El pájaro está posado en el hombro de su dueño.	肩 significa hombro; とまる describe dónde se posa el ave.
+背中	N4	vida_diaria	[子供|こども]を[背中|せなか]に[乗|の]せて、[部屋|へや]をゆっくり[歩|ある]きました。	Llevé al niño a la espalda y caminé despacio por la habitación.	背中 es la espalda.
+足首	N3	vida_diaria	[浅|あさ]い[川|かわ]でしたが、[水|みず]は[足首|あしくび]までありました。	El río era poco profundo, pero el agua llegaba hasta los tobillos.	足首 es el tobillo.
+手首	N3	vida_diaria	[腕時計|うでどけい]のベルトがきつくて、[手首|てくび]に[跡|あと]が[残|のこ]りました。	La correa del reloj estaba tan apretada que me dejó una marca en la muñeca.	手首 es la muñeca, no el brazo entero.
+指先	N3	vida_diaria	[手袋|てぶくろ]をしていても、[指先|ゆびさき]が[冷|つめ]たくなりました。	Aunque llevaba guantes, se me enfriaron las puntas de los dedos.	指先 son los extremos de los dedos.
+息	N3	ocio	[坂道|さかみち]を[走|はし]ったので、[息|いき]が[切|き]れました。	Me quedé sin aliento por correr cuesta arriba.	息が切れる es quedarse sin aliento.
+咳	N4	vida_diaria	[映画|えいが]の[静|しず]かな[場面|ばめん]で、[咳|せき]が[出|で]てしまいました。	Me entró tos justo en una escena silenciosa de la película.	咳が出る expresa toser.
+鼻	N5	vida_diaria	[犬|いぬ]が[鼻|はな]で[私|わたし]の[手|て]を[軽|かる]く[押|お]しました。	El perro me empujó suavemente la mano con el hocico.	鼻 puede traducirse como hocico al hablar de un perro.
+眠気	N3	vida_diaria	[昼食|ちゅうしょく]の[後|あと]に[眠気|ねむけ]が[出|で]て、[何度|なんど]もあくびをしました。	Después de comer me entró sueño y bostecé varias veces.	眠気 es la sensación de sueño.
+昼寝	N4	vida_diaria	[昼寝|ひるね]を[長|なが]くしすぎて、[夜|よる]はなかなか[眠|ねむ]れませんでした。	Dormí una siesta demasiado larga y por la noche me costó conciliar el sueño.	昼寝 es dormir durante el día.
+早起き	N4	ocio	[早起|はやお]きして、[誰|だれ]もいない[浜辺|はまべ]を[散歩|さんぽ]しました。	Madrugué y paseé por la playa cuando aún no había nadie.	早起きする es levantarse temprano.
+徹夜	N3	educacion	[徹夜|てつや]でレポートを[書|か]いたので、[翌日|よくじつ]は[疲|つか]れていました。	Pasé la noche escribiendo el informe y al día siguiente estaba cansado.	徹夜 significa pasar toda la noche sin dormir.
+特技	N3	vida_diaria	[自己紹介|じこしょうかい]で、[特技|とくぎ]は[手品|てじな]だと[話|はな]しました。	En mi presentación dije que mi habilidad especial eran los trucos de magia.	特技 es una destreza que se domina especialmente bien.
+手品	N3	ocio	[弟|おとうと]の[手品|てじな]で、コインが[手|て]の[中|なか]から[消|き]えました。	En el truco de magia de mi hermano pequeño, la moneda desapareció de su mano.	手品 son trucos de magia o ilusionismo.
+習字	N4	educacion	[習字|しゅうじ]の[時間|じかん]に、[筆|ふで]で[大|おお]きく[名前|なまえ]を[書|か]きました。	En la clase de caligrafía escribí mi nombre en grande con un pincel.	習字 es la práctica de la escritura caligráfica.
+絵の具	N4	cultura	[青|あお]と[黄色|きいろ]の[絵|え]の[具|ぐ]を[混|ま]ぜて、[緑|みどり]を[作|つく]りました。	Mezclé pintura azul y amarilla para obtener verde.	絵の具 es pintura utilizada para dibujar o pintar.
+筆	N4	cultura	[使|つか]った[筆|ふで]を[洗|あら]って、[毛|け]の[形|かたち]を[整|ととの]えました。	Lavé el pincel después de usarlo y di forma a sus cerdas.	筆 significa pincel de escritura o pintura.
+彫刻	N3	cultura	[公園|こうえん]の[彫刻|ちょうこく]は、[見|み]る[角度|かくど]によって[違|ちが]う[形|かたち]に[見|み]えます。	La escultura del parque parece tener una forma distinta según el ángulo desde el que se mire.	彫刻 es escultura.
+陶芸	N3	ocio	[陶芸|とうげい]の[体験|たいけん]で、[少|すこ]し[曲|ま]がった[茶碗|ちゃわん]を[作|つく]りました。	En una actividad de cerámica hice un cuenco algo torcido.	陶芸 es el arte de hacer objetos de cerámica.
+裁縫	N3	vida_diaria	[祖母|そぼ]に[裁縫|さいほう]を[教|おそ]わって、ボタンを[付|つ]けられるようになりました。	Mi abuela me enseñó a coser y aprendí a poner botones.	裁縫 es costura.
+編む	N3	vida_diaria	[冬|ふゆ]に[向|む]けて、[妹|いもうと]にマフラーを[編|あ]んでいます。	Estoy tejiendo una bufanda para mi hermana pequeña de cara al invierno.	編む significa tejer con hilo o lana.
+縫う	N3	vida_diaria	[破|やぶ]れた[袋|ふくろ]を[縫|ぬ]って、もう[一度|いちど][使|つか]うことにしました。	Cosí la bolsa rota y decidí volver a usarla.	縫う es coser con aguja e hilo.
+糸	N4	vida_diaria	[針|はり]の[穴|あな]が[小|ちい]さくて、[糸|いと]を[通|とお]すのに[時間|じかん]がかかりました。	El ojo de la aguja era tan pequeño que tardé en enhebrarla.	糸を通す significa pasar el hilo por la aguja.
+針	N4	vida_diaria	[使|つか]った[針|はり]は、[子供|こども]の[手|て]が[届|とど]かない[箱|はこ]にしまいました。	Guardé la aguja usada en una caja fuera del alcance de los niños.	針 significa aguja.
+布	N4	vida_diaria	[余|あま]った[布|ぬの]で、[小|ちい]さな[袋|ふくろ]を[作|つく]りました。	Hice una bolsita con la tela que había sobrado.	布 es tela.
+模様	N4	compras	[細|こま]かい[模様|もよう]のカーテンを[選|えら]びました。	Elegí unas cortinas con un estampado pequeño.	模様 puede ser un estampado o dibujo repetido.
+縞	N3	compras	[弟|おとうと]は[縞|しま]のあるシャツを[好|この]んで[着|き]ます。	A mi hermano pequeño le gusta llevar camisas de rayas.	縞 significa rayas como patrón de una tela.
+無地	N3	compras	[仕事|しごと][用|よう]に、[無地|むじ]の[落|お]ち[着|つ]いた[色|いろ]の[服|ふく]を[買|か]いました。	Compré ropa lisa de colores discretos para trabajar.	無地 significa sin estampado.
+袖	N4	compras	[袖|そで]が[長|なが]すぎるので、[少|すこ]し[折|お]って[着|き]ています。	Como las mangas son demasiado largas, las llevo un poco dobladas.	袖 significa manga de una prenda.
+襟	N3	vida_diaria	シャツの[襟|えり]に[汚|よご]れが[残|のこ]っていました。	Quedaba una mancha en el cuello de la camisa.	襟 es el cuello de una prenda.
+裾	N3	vida_diaria	[雨|あめ]でズボンの[裾|すそ]が[濡|ぬ]れました。	Se me mojaron los bajos del pantalón con la lluvia.	裾 es el borde inferior de una prenda.
+裏地	N3	compras	このコートは[裏地|うらじ]が[厚|あつ]くて、[風|かぜ]を[通|とお]しにくいです。	Este abrigo tiene un forro grueso y deja pasar poco el viento.	裏地 es el forro interior de una prenda.
+毛糸	N4	vida_diaria	[毛糸|けいと]が[足|た]りなくなり、[同|おな]じ[色|いろ]を[探|さが]しに[行|い]きました。	Se me acabó la lana y fui a buscar más del mismo color.	毛糸 es hilo de lana para tejer.
+革	N3	compras	[革|かわ]のかばんは、[使|つか]ううちに[柔|やわ]らかくなりました。	El bolso de cuero se fue ablandando con el uso.	革 es cuero curtido, distinto de la piel de un animal vivo.
+綿	N3	compras	[汗|あせ]をかくので、[綿|めん]のシャツを[着|き]ています。	Llevo una camisa de algodón porque sudo.	綿 se lee めん cuando se refiere a la fibra de un tejido.
+絹	N3	cultura	[展示|てんじ]されていた[絹|きぬ]の[着物|きもの]は、[光|ひかり]で[色|いろ]が[変|か]わって[見|み]えました。	El kimono de seda expuesto parecía cambiar de color con la luz.	絹 es seda.
+染める	N3	ocio	[白|しろ]い[布|ぬの]を、[植物|しょくぶつ]から[取|と]った[色|いろ]で[染|そ]めました。	Teñí la tela blanca con un colorante obtenido de plantas.	染める es dar color mediante tinte.
+色落ち	N3	vida_diaria	[新|あたら]しいタオルが[色落|いろお]ちして、[白|しろ]いシャツに[色|いろ]が[移|うつ]りました。	La toalla nueva destiñó y manchó de color la camisa blanca.	色落ち significa que un tejido pierde o suelta color.
+縮む	N3	vida_diaria	セーターを[洗|あら]ったら[縮|ちぢ]んで、[着|き]られなくなりました。	El jersey encogió al lavarlo y ya no pude ponérmelo.	縮む es disminuir de tamaño.
+伸ばす	N4	vida_diaria	しわを[伸|の]ばしてから、シャツをハンガーにかけました。	Alisé las arrugas antes de colgar la camisa en una percha.	しわを伸ばす es eliminar o alisar arrugas.
+しわ	N4	vida_diaria	かばんに[詰|つ]めた[服|ふく]が、しわだらけになりました。	La ropa que metí apretada en la maleta quedó llena de arrugas.	だらけ indica abundancia de algo generalmente indeseado.
+染み	N3	vida_diaria	カーペットにコーヒーの[染|し]みが[残|のこ]ってしまいました。	Quedó una mancha de café en la alfombra.	染み es una mancha que penetra en el material.
+雲	N5	vida_diaria	[白|しろ]い[雲|くも]が、[山|やま]の[上|うえ]をゆっくり[動|うご]いています。	Una nube blanca se mueve despacio sobre la montaña.	雲 es nube; no debe confundirse con 蜘蛛, araña.
+霧	N3	transporte	[霧|きり]が[濃|こ]くて、[湖|みずうみ]の[向|む]こう[岸|ぎし]が[見|み]えません。	Hay tanta niebla que no se ve la otra orilla del lago.	霧 significa niebla.
+露	N3	vida_diaria	[朝|あさ]の[草|くさ]に[露|つゆ]がついていて、[靴|くつ]が[濡|ぬ]れました。	La hierba tenía rocío por la mañana y se me mojaron los zapatos.	露 se lee つゆ y significa rocío.
+霜	N3	vida_diaria	[車|くるま]の[窓|まど]に[霜|しも]が[降|お]りていました。	Había escarcha en las ventanillas del coche.	霜が降りる es formarse escarcha.
+氷	N4	comida	[氷|こおり]が[溶|と]けて、ジュースの[味|あじ]が[薄|うす]くなりました。	El hielo se derritió y el zumo se aguó.	氷 es hielo; 溶ける indica que se derrite.
+雷	N4	vida_diaria	[遠|とお]くで[雷|かみなり]の[音|おと]がしたので、[洗濯物|せんたくもの]を[取|と]り[込|こ]みました。	Oí truenos a lo lejos y recogí la ropa tendida.	雷の音 se refiere al trueno.
+稲妻	N3	vida_diaria	[窓|まど]の[外|そと]で[稲妻|いなずま]が[光|ひか]り、[部屋|へや]が[一瞬|いっしゅん][明|あか]るくなりました。	Un relámpago iluminó el exterior y la habitación se aclaró por un instante.	稲妻 es el destello visible del rayo.
+虹	N4	ocio	[雨|あめ]がやんだ[後|あと]、[川|かわ]の[上|うえ]に[虹|にじ]が[出|で]ました。	Después de parar de llover, apareció un arcoíris sobre el río.	虹 significa arcoíris.
+夕焼け	N4	ocio	[夕焼|ゆうや]けがきれいで、[帰|かえ]る[途中|とちゅう]に[何度|なんど]も[空|そら]を[見|み]ました。	El cielo del atardecer estaba tan bonito que lo miré varias veces de camino a casa.	夕焼け es el color rojizo del cielo al anochecer.
+日の出	N4	ocio	[日|ひ]の[出|で]を[見|み]るため、[暗|くら]いうちに[丘|おか]へ[登|のぼ]りました。	Subí a la colina todavía de noche para ver amanecer.	日の出 es la salida del sol.
+日陰	N4	vida_diaria	[暑|あつ]くなったので、[日陰|ひかげ]のベンチへ[移|うつ]りました。	Como empezó a hacer calor, me cambié a un banco a la sombra.	日陰 es un lugar protegido de la luz directa del sol.
+日差し	N3	vida_diaria	[午後|ごご]の[日差|ひざ]しが[強|つよ]くて、カーテンを[半分|はんぶん][閉|し]めました。	El sol de la tarde entraba con fuerza y cerré las cortinas a medias.	日差し es la luz solar que incide sobre algo.
+気温	N4	vida_diaria	[昼|ひる]と[夜|よる]で[気温|きおん]の[差|さ]が[大|おお]きい[町|まち]です。	Es una ciudad donde hay mucha diferencia de temperatura entre el día y la noche.	気温 es la temperatura del aire.
+湿度	N3	vida_diaria	[湿度|しつど]が[高|たか]く、[洗濯物|せんたくもの]がなかなか[乾|かわ]きません。	La humedad es alta y la ropa tarda mucho en secarse.	湿度 es el grado de humedad del aire.
+乾燥	N3	vida_diaria	[部屋|へや]が[乾燥|かんそう]していて、[鉢|はち]の[土|つち]がすぐ[乾|かわ]きます。	El ambiente de la habitación está seco y la tierra de las macetas se seca enseguida.	乾燥する es perder humedad o estar seco.
+梅雨	N4	vida_diaria	[梅雨|つゆ]の[間|あいだ]は、[傘|かさ]を[玄関|げんかん]に[置|お]いています。	Durante la temporada de lluvias dejo el paraguas en la entrada.	梅雨 es la estación lluviosa japonesa.
+猛暑	N3	vida_diaria	[猛暑|もうしょ]の[日|ひ]は、[公園|こうえん]の[人影|ひとかげ]もまばらでした。	En los días de calor extremo, apenas se veía gente en el parque.	猛暑 significa calor intenso.
+冷え込む	N3	vida_diaria	[夜|よる]は[冷|ひ]え[込|こ]むと[聞|き]いて、[厚|あつ]い[上着|うわぎ]を[持|も]ってきました。	Me dijeron que por la noche refrescaría mucho y traje una chaqueta gruesa.	冷え込む indica una bajada marcada de temperatura.
+吹雪	N3	transporte	[吹雪|ふぶき]で[道路|どうろ]が[見|み]えにくくなり、バスは[途中|とちゅう]で[止|と]まりました。	La ventisca redujo la visibilidad de la carretera y el autobús se detuvo en el trayecto.	吹雪 combina viento fuerte y nieve.
+積もる	N4	vida_diaria	[一晩|ひとばん]で[雪|ゆき]が[積|つ]もり、[庭|にわ]が[真|ま]っ[白|しろ]になりました。	Nevó durante la noche y el jardín amaneció completamente blanco.	積もる describe la acumulación de nieve.
+溶ける	N4	comida	[持|も]ち[帰|かえ]る[間|あいだ]にアイスが[溶|と]けてしまいました。	El helado se derritió mientras lo llevaba a casa.	溶ける es derretirse.
+凍る	N4	vida_diaria	[朝|あさ]、[池|いけ]の[表面|ひょうめん]が[薄|うす]く[凍|こお]っていました。	Por la mañana había una fina capa de hielo en la superficie del estanque.	凍る significa congelarse.
+嵐	N3	vida_diaria	[嵐|あらし]の[翌朝|よくあさ]、[庭|にわ]に[枝|えだ]がたくさん[落|お]ちていました。	La mañana después de la tormenta había muchas ramas caídas en el jardín.	嵐 es una tormenta fuerte.
+強風	N3	transporte	[強風|きょうふう]のため、[橋|はし]を[渡|わた]る[電車|でんしゃ]が[遅|おく]れていました。	El tren que cruza el puente llevaba retraso por el viento fuerte.	強風 significa viento intenso.
+洪水	N3	vida_diaria	[洪水|こうずい]の[後|あと]、[町|まち]の[人|ひと]たちが[道|みち]の[泥|どろ]を[片付|かたづ]けました。	Después de la inundación, los vecinos retiraron el barro de las calles.	洪水 es una inundación.
+泥	N4	vida_diaria	[畑|はたけ]を[歩|ある]いて、[靴|くつ]の[底|そこ]に[泥|どろ]がつきました。	Se me pegó barro en las suelas al caminar por el campo de cultivo.	泥 es barro.
+砂	N4	ocio	[海辺|うみべ]で[遊|あそ]んだ[後|あと]、[靴|くつ]の[中|なか]から[砂|すな]が[出|で]てきました。	Después de jugar junto al mar, salió arena del interior de mis zapatos.	砂 significa arena.
+砂浜	N4	ocio	[砂浜|すなはま]に[足跡|あしあと]が[残|のこ]りましたが、[波|なみ]で[消|き]えました。	Mis huellas quedaron en la playa de arena, pero las borraron las olas.	砂浜 es una playa arenosa.
+貝殻	N3	ocio	[拾|ひろ]った[貝殻|かいがら]を[洗|あら]い、[窓辺|まどべ]に[飾|かざ]りました。	Lavé las conchas que había recogido y las puse de adorno junto a la ventana.	貝殻 es la concha vacía de un molusco.
+潮	N3	ocio	[潮|しお]が[引|ひ]くと、[岩|いわ]の[間|あいだ]に[小|ちい]さな[魚|さかな]が[見|み]えます。	Cuando baja la marea, se ven peces pequeños entre las rocas.	潮が引く significa bajar la marea.
+沖	N3	ocio	[漁船|ぎょせん]が[沖|おき]へ[出|で]ていくのを、[港|みなと]から[見|み]ていました。	Desde el puerto observaba cómo los barcos pesqueros salían mar adentro.	沖 es la zona del mar alejada de la orilla.
+岸	N4	ocio	[岸|きし]に[座|すわ]って、[川|かわ]の[流|なが]れを[眺|なが]めました。	Me senté en la orilla a contemplar la corriente del río.	岸 es una orilla o ribera.
+滝	N4	ocio	[森|もり]を[抜|ぬ]けると、[大|おお]きな[滝|たき]の[音|おと]が[聞|き]こえました。	Al salir del bosque se oía el ruido de una gran cascada.	滝 significa cascada.
+泉	N3	ocio	[村|むら]の[近|ちか]くに、[一年中|いちねんじゅう][水|みず]がわく[泉|いずみ]があります。	Cerca del pueblo hay un manantial del que brota agua todo el año.	泉 es un manantial.
+谷	N3	ocio	[谷|たに]の[向|む]こうから、[人|ひと]の[声|こえ]が[聞|き]こえました。	Se oía una voz desde el otro lado del valle.	谷 significa valle.
+崖	N3	ocio	[道|みち]の[片側|かたがわ]は[崖|がけ]で、[下|した]に[海|うみ]が[広|ひろ]がっていました。	A un lado del camino había un acantilado y abajo se extendía el mar.	崖 es un precipicio o pared de terreno escarpada.
+頂上	N3	ocio	[頂上|ちょうじょう]に[着|つ]くと、[雲|くも]の[下|した]に[町|まち]が[見|み]えました。	Al llegar a la cima, vimos la ciudad debajo de las nubes.	頂上 es el punto más alto de una montaña.
+麓	N3	ocio	[山|やま]の[麓|ふもと]の[宿|やど]で、[一晩|ひとばん][休|やす]みました。	Pasamos la noche en un alojamiento al pie de la montaña.	麓 es la base o pie de una montaña.
+斜面	N3	ocio	[日当|ひあ]たりのいい[斜面|しゃめん]に、[花|はな]が[咲|さ]いていました。	Había flores en la ladera soleada.	斜面 es una superficie inclinada.
+平野	N3	transporte	[列車|れっしゃ]が[山|やま]を[越|こ]えると、[広|ひろ]い[平野|へいや]が[見|み]えてきました。	Cuando el tren cruzó la montaña, apareció una amplia llanura.	平野 es una extensión de terreno llano.
+草原	N3	ocio	[草原|そうげん]で[馬|うま]が[草|くさ]を[食|た]べていました。	Había caballos pastando en la pradera.	草原 es una extensión cubierta de hierba.
+茂る	N3	vida_diaria	[庭|にわ]の[木|き]の[葉|は]が[茂|しげ]って、[窓|まど]が[暗|くら]くなりました。	Las hojas del árbol del jardín crecieron tanto que dejaron la ventana en sombra.	茂る indica crecimiento abundante de vegetación.
+枯れる	N3	vida_diaria	[旅行|りょこう]の[間|あいだ]に[鉢|はち]の[花|はな]が[枯|か]れてしまいました。	Las flores de la maceta se marchitaron mientras estaba de viaje.	枯れる es secarse o morir una planta.
+芽	N3	vida_diaria	[先週|せんしゅう]まいた[種|たね]から、[小|ちい]さな[芽|め]が[出|で]ました。	Han brotado pequeños tallos de las semillas que sembré la semana pasada.	芽 es un brote.
+根	N3	vida_diaria	[鉢|はち]を[持|も]ち[上|あ]げると、[底|そこ]の[穴|あな]から[根|ね]が[出|で]ていました。	Al levantar la maceta vi raíces saliendo por el agujero del fondo.	根 significa raíz de una planta.
+幹	N3	ocio	[古|ふる]い[木|き]の[幹|みき]は、[大人|おとな][二人|ふたり]で[抱|かか]えるほど[太|ふと]いです。	El tronco del árbol viejo es tan grueso que hacen falta dos adultos para rodearlo.	幹 es el tronco de un árbol.
+枝	N4	vida_diaria	[窓|まど]に[当|あ]たる[枝|えだ]を、[庭師|にわし]に[切|き]ってもらいました。	Pedí al jardinero que cortara la rama que golpeaba la ventana.	枝 significa rama.
+葉	N4	vida_diaria	[雨|あめ]の[後|あと]、[葉|は]の[上|うえ]に[水滴|すいてき]が[残|のこ]っていました。	Después de la lluvia quedaban gotas de agua sobre las hojas.	葉 es hoja de una planta.
+実	N3	vida_diaria	[庭|にわ]の[木|き]に[赤|あか]い[実|み]がなり、[鳥|とり]が[集|あつ]まってきました。	El árbol del jardín dio frutos rojos y empezaron a acercarse los pájaros.	実がなる significa dar fruto.
+種	N4	vida_diaria	[来年|らいねん]も[育|そだ]てたいので、[花|はな]の[種|たね]を[取|と]っておきました。	Guardé semillas de las flores porque quiero cultivarlas también el año que viene.	種 es semilla; ておく expresa reservar para después.

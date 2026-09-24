@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+問い合わせ	N3	servicios	[営業時間|えいぎょうじかん]についての[問|と]い[合|あ]わせが、[朝|あさ]から[続|つづ]いています。	Desde esta mañana no paran de llegar consultas sobre el horario de apertura.	問い合わせ es una consulta para obtener información.
+見積もり	N3	servicios	[修理|しゅうり]を[頼|たの]む[前|まえ]に、[見積|みつ]もりを[二社|にしゃ]から[取|と]りました。	Antes de encargar la reparación, pedí presupuesto a dos empresas.	見積もり es una estimación previa del coste.
+納期	N3	trabajo	[部品|ぶひん]が[届|とど]かず、[納期|のうき]を[一週間|いっしゅうかん][延|の]ばしてもらいました。	Como no llegaban las piezas, conseguí que ampliaran una semana el plazo de entrega.	納期 es el plazo para entregar un producto.
+在庫	N3	compras	[売|う]り[場|ば]にない[色|いろ]の[在庫|ざいこ]を、[店員|てんいん]が[確認|かくにん]してくれました。	El dependiente comprobó si quedaban existencias del color que no estaba expuesto.	在庫 son existencias disponibles.
+発注	N3	trabajo	[必要|ひつよう]な[数|かず]を[確認|かくにん]してから、[部品|ぶひん]を[発注|はっちゅう]しました。	Encargué las piezas después de comprobar la cantidad necesaria.	発注する es realizar un pedido a un proveedor.
+仕入れ	N3	trabajo	[仕入|しい]れの[値段|ねだん]が[上|あ]がり、[店|みせ]の[利益|りえき]が[減|へ]りました。	Subió el precio de compra a los proveedores y bajó el beneficio de la tienda.	仕入れ es adquirir mercancía para venderla.
+請求書	N3	trabajo	[請求書|せいきゅうしょ]の[住所|じゅうしょ]が[古|ふる]かったので、[修正|しゅうせい]をお[願|ねが]いしました。	La factura llevaba mi dirección antigua y pedí que la corrigieran.	請求書 es una factura o solicitud de pago.
+振込	N3	servicios	[振込|ふりこみ]が[完了|かんりょう]したことを、メールで[知|し]らせました。	Avisé por correo de que la transferencia se había realizado.	振込 es una transferencia bancaria.
+残高	N3	servicios	[買|か]い[物|もの]の[前|まえ]に、カードの[残高|ざんだか]を[確認|かくにん]しました。	Comprobé el saldo de la tarjeta antes de comprar.	残高 es la cantidad que queda disponible.
+引き落とし	N3	servicios	[今月|こんげつ]の[引|ひ]き[落|お]とし[日|び]を、カレンダーに[書|か]きました。	Anoté en el calendario la fecha del cargo automático de este mes.	引き落とし es un cargo automático en una cuenta.
+領収	N3	trabajo	[支払|しはら]いの[後|あと]、[領収|りょうしゅう]の[印|しるし]を[書類|しょるい]に[押|お]してもらいました。	Después de pagar, pedí que pusieran en el documento la marca de pago recibido.	領収 significa recepción de un pago.
+控え	N3	servicios	[提出|ていしゅつ]した[書類|しょるい]の[控|ひか]えを、[封筒|ふうとう]に[入|い]れて[保管|ほかん]しています。	Guardo en un sobre una copia de los documentos que presenté.	控え significa aquí copia para conservar.
+記入	N3	servicios	[申込書|もうしこみしょ]には、[黒|くろ]いペンで[記入|きにゅう]してください。	Rellena la solicitud con bolígrafo negro, por favor.	記入する es escribir los datos en un formulario.
+欄	N3	servicios	[電話番号|でんわばんごう]の[欄|らん]を[空白|くうはく]のまま[出|だ]してしまいました。	Entregué el formulario dejando en blanco la casilla del número de teléfono.	欄 es un espacio o campo de un formulario.
+訂正	N3	trabajo	[会議|かいぎ]の[日付|ひづけ]を[訂正|ていせい]した[案内|あんない]が[届|とど]きました。	Llegó un aviso que corregía la fecha de la reunión.	訂正 es corregir un dato erróneo.
+印刷	N4	tecnologia	[両面|りょうめん]に[印刷|いんさつ]したので、[紙|かみ]を[半分|はんぶん]で[済|す]ませられました。	Al imprimir por ambas caras, pude usar la mitad de papel.	両面に印刷する es imprimir a doble cara.
+用紙	N3	servicios	[受付|うけつけ]で[専用|せんよう]の[用紙|ようし]をもらい、[待|ま]っている[間|あいだ]に[書|か]きました。	Pedí el formulario específico en recepción y lo rellené mientras esperaba.	用紙 es papel destinado a una función concreta.
+郵送	N3	servicios	[窓口|まどぐち]へ[行|い]けないので、[書類|しょるい]を[郵送|ゆうそう]しました。	Como no podía ir a la oficina, envié los documentos por correo postal.	郵送する es enviar por correo físico.
+書留	N3	servicios	[大切|たいせつ]な[書類|しょるい]なので、[書留|かきとめ]で[送|おく]りました。	Como eran documentos importantes, los envié por correo certificado.	書留 es un servicio de correo registrado.
+速達	N3	servicios	[明日|あした]までに[届|とど]けたくて、[速達|そくたつ]を[選|えら]びました。	Elegí el envío urgente porque quería que llegara antes de mañana.	速達 es correo urgente; la frase expresa la intención, no garantiza el plazo.
+返送	N3	servicios	[署名|しょめい]した[用紙|ようし]を、[同封|どうふう]の[封筒|ふうとう]で[返送|へんそう]してください。	Devuelve el formulario firmado en el sobre adjunto, por favor.	返送する es enviar algo de vuelta.
+同封	N3	vida_diaria	[手紙|てがみ]に、[旅行|りょこう]で[撮|と]った[写真|しゃしん]を[同封|どうふう]しました。	Adjunté a la carta unas fotos que hice durante el viaje.	同封 es incluir algo en el mismo sobre.
+宛名	N3	servicios	[宛名|あてな]の[漢字|かんじ]を[間違|まちが]えて、[封筒|ふうとう]を[書|か]き[直|なお]しました。	Me equivoqué en un kanji del nombre del destinatario y rehice el sobre.	宛名 es el nombre de la persona destinataria.
+差し出す	N3	vida_diaria	[雨|あめ]に[濡|ぬ]れた[友人|ゆうじん]に、[乾|かわ]いたタオルを[差|さ]し[出|だ]しました。	Le tendí una toalla seca a mi amigo, que se había mojado con la lluvia.	差し出す es ofrecer algo extendiéndolo hacia alguien.
+受け付ける	N3	servicios	[電話|でんわ]では[変更|へんこう]を[受|う]け[付|つ]けていないと[言|い]われました。	Me dijeron que no aceptaban cambios por teléfono.	受け付ける es aceptar solicitudes o trámites.
+応対	N3	trabajo	[電話|でんわ]の[応対|おうたい]をしている[間|あいだ]に、[同僚|どうりょう]が[客|きゃく]を[案内|あんない]しました。	Mientras atendía al teléfono, un compañero acompañó al cliente.	応対 es atender a una persona o llamada.
+留守	N4	vida_diaria	[留守|るす]の[間|あいだ]、[隣|となり]の[人|ひと]に[花|はな]の[水|みず]やりを[頼|たの]みました。	Pedí al vecino que regara las flores durante mi ausencia.	留守 es estar fuera de casa o del lugar habitual.
+離席	N3	trabajo	[担当者|たんとうしゃ]は[離席|りせき]していますので、[戻|もど]り[次第|しだい][連絡|れんらく]します。	La persona encargada no está en su puesto; le avisaremos en cuanto vuelva.	離席 significa ausentarse momentáneamente del puesto.
+折り返す	N3	trabajo	[会議|かいぎ]が[終|お]わったら、こちらから[折|お]り[返|かえ]します。	Le devolveré la llamada cuando termine la reunión.	折り返す se usa aquí para devolver una llamada.
+伝言	N4	trabajo	[伝言|でんごん]を[忘|わす]れないように、[机|つくえ]の[上|うえ]にメモを[残|のこ]しました。	Dejé una nota en el escritorio para no olvidar el recado.	伝言 es un mensaje que se transmite a otra persona.
+保留	N3	trabajo	[詳|くわ]しい[情報|じょうほう]がないため、[判断|はんだん]を[保留|ほりゅう]しました。	Dejé la decisión pendiente porque no tenía información detallada.	保留する es dejar algo en suspenso.
+承認	N3	trabajo	[上司|じょうし]の[承認|しょうにん]を[得|え]てから、[備品|びひん]を[購入|こうにゅう]します。	Compraré el material de oficina después de obtener la aprobación de mi superior.	承認 es una aprobación formal.
+許可	N4	cultura	[撮影|さつえい]の[許可|きょか]を[取|と]ってから、[店内|てんない]の[写真|しゃしん]を[撮|と]りました。	Hice fotos del interior de la tienda después de pedir permiso para fotografiar.	許可 es permiso para realizar una acción.
+申請	N3	trabajo	[休暇|きゅうか]の[申請|しんせい]を[出|だ]しましたが、まだ[返事|へんじ]はありません。	He presentado la solicitud de vacaciones, pero todavía no tengo respuesta.	申請 es una petición formal pendiente de decisión.
+提出	N3	educacion	[提出|ていしゅつ]の[前|まえ]に、[名前|なまえ]と[日付|ひづけ]を[確|たし]かめました。	Comprobé el nombre y la fecha antes de entregar el trabajo.	提出 es presentar o entregar un documento.
+添える	N3	vida_diaria	プレゼントに、[短|みじか]いメッセージを[添|そ]えました。	Añadí un mensaje breve al regalo.	添える es acompañar algo principal con un añadido.
+添付	N3	tecnologia	メールは[届|とど]きましたが、[添付|てんぷ]されたファイルが[開|ひら]けません。	El correo ha llegado, pero no puedo abrir el archivo adjunto.	添付された modifica el archivo incluido en el correo.
+送信	N3	tecnologia	[送信|そうしん]する[前|まえ]に、[宛先|あてさき]をもう[一度|いちど][確認|かくにん]します。	Antes de enviarlo, compruebo una vez más el destinatario.	送信 es transmitir un mensaje o datos.
+受信	N3	tecnologia	[山|やま]の[中|なか]では、メールを[受信|じゅしん]できませんでした。	En medio de la montaña no podía recibir correos.	受信 es recibir una transmisión.
+返信	N4	tecnologia	[返信|へんしん]が[必要|ひつよう]なメールに、[印|しるし]をつけておきました。	Marqué los correos que necesitaban respuesta.	返信 es contestar a un mensaje.
+署名	N3	servicios	[内容|ないよう]を[読|よ]まずに[署名|しょめい]しそうになり、[手|て]を[止|と]めました。	Estuve a punto de firmar sin leer el contenido, pero me detuve.	署名する es escribir la firma propia.
+捺印	N2	servicios	[捺印|なついん]する[場所|ばしょ]を、[係|かかり]の[人|ひと]に[教|おし]えてもらいました。	La persona encargada me indicó dónde debía estampar el sello.	捺印 es poner un sello personal en un documento.
+複写	N2	trabajo	[複写|ふくしゃ]した[資料|しりょう]の[文字|もじ]が[薄|うす]く、[読|よ]みにくくなっていました。	Las letras de la copia del documento habían quedado tenues y costaba leerlas.	複写 es reproducir un documento.
+原本	N3	servicios	[窓口|まどぐち]で[原本|げんぽん]を[見|み]せてから、コピーを[提出|ていしゅつ]しました。	Mostré el original en la oficina y después entregué una copia.	原本 es el documento original.
+保管	N3	vida_diaria	[古|ふる]い[写真|しゃしん]は、[光|ひかり]の[当|あ]たらない[箱|はこ]に[保管|ほかん]しています。	Guardo las fotos antiguas en una caja donde no les da la luz.	保管する es guardar algo para conservarlo.
+整理	N4	vida_diaria	[書類|しょるい]を[年|とし]ごとに[整理|せいり]したら、[必要|ひつよう]なものが[探|さが]しやすくなりました。	Al ordenar los documentos por años, resultó más fácil encontrar lo necesario.	整理する es ordenar con un criterio.
+分類	N3	educacion	[集|あつ]めた[葉|は]を、[形|かたち]と[大|おお]きさで[分類|ぶんるい]しました。	Clasifiqué las hojas recogidas por su forma y tamaño.	分類 es agrupar según características compartidas.
+処分	N3	vida_diaria	[壊|こわ]れた[家具|かぐ]を[処分|しょぶん]する[方法|ほうほう]を、[市|し]のサイトで[調|しら]べました。	Consulté en la web municipal cómo deshacerme de los muebles rotos.	処分する significa aquí retirar o desechar.
+廃棄	N3	trabajo	[期限|きげん]の[切|き]れた[材料|ざいりょう]を、[記録|きろく]してから[廃棄|はいき]しました。	Registré los materiales caducados antes de desecharlos.	廃棄 es desechar definitivamente.
+再利用	N3	vida_diaria	[空|あ]いた[瓶|びん]を[洗|あら]って、[花瓶|かびん]として[再利用|さいりよう]しました。	Lavé el frasco vacío y lo reutilicé como florero.	再利用 es volver a utilizar algo, también con otra función.
+備品	N3	trabajo	[会議|かいぎ][室|しつ]の[備品|びひん]を[数|かぞ]えて、[足|た]りないいすを[運|はこ]びました。	Conté el equipamiento de la sala de reuniones y llevé las sillas que faltaban.	備品 son los objetos de uso habitual en una instalación.
+消耗品	N3	trabajo	ペンや[紙|かみ]などの[消耗品|しょうもうひん]は、[月|つき]に[一度|いちど]まとめて[買|か]います。	Compro juntos una vez al mes los consumibles, como bolígrafos y papel.	消耗品 son materiales que se gastan con el uso.
+経費	N3	trabajo	[出張|しゅっちょう]の[経費|けいひ]を、[帰|かえ]ってから[一覧|いちらん]にしました。	Al volver, hice una lista de los gastos del viaje de trabajo.	経費 son gastos vinculados a una actividad.
+精算	N3	trabajo	[立|た]て[替|か]えた[電車|でんしゃ][代|だい]を、[月末|げつまつ]に[精算|せいさん]します。	A final de mes liquidaré los billetes de tren que pagué por adelantado.	精算 es ajustar y liquidar cuentas.
+予算	N3	trabajo	[予算|よさん]が[限|かぎ]られているので、[必要性|ひつようせい]の[高|たか]いものから[買|か]います。	Como el presupuesto es limitado, compraré primero lo más necesario.	予算 es el dinero previsto para un fin.
+費用	N3	servicios	[修理|しゅうり]の[費用|ひよう]には、[部品|ぶひん][代|だい]も[含|ふく]まれています。	El coste de la reparación también incluye las piezas.	費用 es el coste de una actividad o servicio.
+負担	N3	trabajo	[一人|ひとり]に[負担|ふたん]が[集|あつ]まらないように、[当番|とうばん]を[交代|こうたい]しています。	Nos turnamos para que la carga no recaiga siempre en una sola persona.	負担 es una carga de trabajo o responsabilidad.
+分担	N3	vida_diaria	[料理|りょうり]と[片付|かたづ]けを[分担|ぶんたん]したら、[夕食|ゆうしょく]の[準備|じゅんび]が[早|はや]く[終|お]わりました。	Al repartirnos cocinar y recoger, terminamos antes de preparar la cena.	分担する es repartir tareas entre personas.
+担当	N3	trabajo	[私|わたし]は[受付|うけつけ]を[担当|たんとう]し、[同僚|どうりょう]は[案内|あんない]を[担当|たんとう]します。	Yo me encargo de recepción y mi compañero de acompañar a los visitantes.	担当する es tener asignada una función.
+引き継ぎ	N3	trabajo	[引|ひ]き[継|つ]ぎが[済|す]むまで、[前|まえ]の[担当者|たんとうしゃ]に[質問|しつもん]できることになっています。	Hasta que termine el traspaso, podremos hacer preguntas a la persona que se encargaba antes.	引き継ぎ es el relevo con transmisión de información.
+手順	N3	trabajo	[手順|てじゅん]を[一|ひと]つ[飛|と]ばしたため、[最初|さいしょ]からやり[直|なお]しました。	Me salté un paso del procedimiento y tuve que empezar de nuevo.	手順 es el orden de los pasos de una tarea.
+工程	N2	trabajo	[最後|さいご]の[工程|こうてい]で[不具合|ふぐあい]が[見|み]つかり、[出荷|しゅっか]を[止|と]めました。	En la última fase se detectó un fallo y detuvimos el envío.	工程 es una etapa de un proceso de producción.
+進捗	N2	trabajo	[進捗|しんちょく]を[共有|きょうゆう]するため、[短|みじか]い[報告|ほうこく]を[毎朝|まいあさ][送|おく]っています。	Envío un informe breve cada mañana para compartir el avance del trabajo.	進捗 es el grado de avance de una tarea.
+締切	N3	trabajo	[締切|しめきり]が[近|ちか]いので、[細部|さいぶ]より[全体|ぜんたい]を[先|さき]に[仕上|しあ]げます。	Como se acerca el plazo, terminaré primero el conjunto antes de afinar los detalles.	締切 es otra escritura de 締め切り.
+延期	N3	ocio	[出演者|しゅつえんしゃ]の[都合|つごう]で、[公演|こうえん]が[来月|らいげつ]に[延期|えんき]されました。	La función se aplazó al mes que viene por circunstancias del intérprete.	延期 es trasladar algo a una fecha posterior.
+前倒し	N2	trabajo	[予定|よてい]を[前倒|まえだお]しして、[金曜日|きんようび]に[発送|はっそう]することにしました。	Adelantamos lo previsto y decidimos hacer el envío el viernes.	前倒し es adelantar una fecha planificada.
+調整	N3	trabajo	[三人|さんにん]の[予定|よてい]を[調整|ちょうせい]して、[午後|ごご]に[集|あつ]まることにしました。	Coordinamos los horarios de los tres y quedamos por la tarde.	調整する es ajustar elementos para que encajen.
+変更	N4	transporte	[座席|ざせき]の[変更|へんこう]を[頼|たの]みましたが、[空|あ]きがありませんでした。	Pedí cambiar de asiento, pero no quedaban libres.	変更 es modificar lo previsto.
+追加	N3	compras	[人数|にんずう]が[増|ふ]えたので、[料理|りょうり]を[二品|にひん][追加|ついか]しました。	Como vino más gente, pedimos dos platos adicionales.	追加 es añadir a una cantidad existente.
+削減	N2	trabajo	[印刷|いんさつ]を[減|へ]らして、[紙|かみ]の[使用量|しようりょう]を[削減|さくげん]しました。	Redujimos el consumo de papel imprimiendo menos.	削減 es disminuir una cantidad de forma deliberada.
+節約	N3	vida_diaria	[外食|がいしょく]を[減|へ]らして、[旅行|りょこう]のために[節約|せつやく]しています。	Estoy ahorrando para el viaje comiendo menos fuera de casa.	節約 es gastar menos recursos o dinero.
+効率	N3	trabajo	[道具|どうぐ]の[置|お]き[場所|ばしょ]を[変|か]えたら、[作業|さぎょう]の[効率|こうりつ]が[上|あ]がりました。	Al cambiar dónde guardábamos las herramientas, mejoró la eficiencia del trabajo.	効率 compara los resultados con el esfuerzo empleado.
+能率	N2	trabajo	[周囲|しゅうい]が[騒|さわ]がしくて、[仕事|しごと]の[能率|のうりつ]が[落|お]ちました。	Con el ruido alrededor, bajó mi rendimiento en el trabajo.	能率 es la productividad al realizar una tarea.
+改善	N3	trabajo	[利用者|りようしゃ]の[声|こえ]を[聞|き]いて、[案内|あんない]の[表示|ひょうじ]を[改善|かいぜん]しました。	Mejoramos la señalización después de escuchar a los usuarios.	改善する es introducir cambios para mejorar.
+工夫	N3	vida_diaria	[狭|せま]い[部屋|へや]でも[使|つか]いやすいように、[収納|しゅうのう]を[工夫|くふう]しました。	Busqué una forma ingeniosa de organizar el almacenaje para aprovechar la habitación pequeña.	工夫 es buscar una solución práctica con ingenio.
+提案	N3	trabajo	[昼休|ひるやす]みの[時間|じかん]をずらす[提案|ていあん]をしました。	Propuse cambiar la hora de la pausa del almuerzo.	提案 es presentar una idea para que se considere.
+採用	N3	trabajo	[私|わたし]の[案|あん]が[採用|さいよう]され、[来週|らいしゅう]から[試|ため]すことになりました。	Aceptaron mi propuesta y la probaremos a partir de la semana que viene.	採用 significa aquí adoptar una propuesta, no contratar a alguien.
+却下	N2	trabajo	[理由|りゆう]を[聞|き]かずに[案|あん]を[却下|きゃっか]されたので、[説明|せつめい]を[求|もと]めました。	Rechazaron mi propuesta sin escuchar mis razones, así que pedí una explicación.	却下 es rechazar formalmente una propuesta o solicitud.
+検討	N3	trabajo	[新|あたら]しい[機械|きかい]を[買|か]うか、[今|いま]のものを[直|なお]すか[検討|けんとう]しています。	Estamos estudiando si comprar una máquina nueva o reparar la actual.	検討する es examinar opciones antes de decidir.
+比較	N3	compras	[同|おな]じ[条件|じょうけん]で[料金|りょうきん]を[比較|ひかく]してから、[店|みせ]を[選|えら]びました。	Comparé los precios en las mismas condiciones antes de elegir la tienda.	比較する es contrastar elementos.
+評価	N3	trabajo	[結果|けっか]だけでなく、[準備|じゅんび]の[過程|かてい]も[評価|ひょうか]してもらいました。	Valoraron tanto el resultado como el proceso de preparación.	評価する es valorar con algún criterio.
+判断	N3	trabajo	[情報|じょうほう]が[少|すく]なく、すぐには[判断|はんだん]できませんでした。	Había poca información y no pude decidir de inmediato.	判断 es formarse un juicio o tomar una decisión.
+決定	N3	ocio	[投票|とうひょう]の[結果|けっか]、[旅行|りょこう]の[行|い]き[先|さき]が[決定|けってい]しました。	El destino del viaje quedó decidido tras la votación.	決定する expresa una decisión ya tomada.
+実施	N3	trabajo	[新|あたら]しい[方法|ほうほう]を[実施|じっし]する[前|まえ]に、[全員|ぜんいん]で[練習|れんしゅう]しました。	Practicamos todos antes de poner en marcha el método nuevo.	実施する es llevar un plan a la práctica.
+実行	N3	vida_diaria	[計画|けいかく]を[立|た]てるだけでなく、[小|ちい]さなことから[実行|じっこう]しました。	Además de planearlo, empecé a ponerlo en práctica con cosas pequeñas.	実行する es actuar según lo previsto.
+中断	N3	trabajo	[電話|でんわ]が[入|はい]り、[作業|さぎょう]を[一時|いちじ][中断|ちゅうだん]しました。	Una llamada me obligó a interrumpir el trabajo temporalmente.	中断 es interrumpir algo antes de terminarlo.
+再開	N3	trabajo	[昼休|ひるやす]みが[終|お]わり、[作業|さぎょう]を[再開|さいかい]しました。	Al terminar la pausa del almuerzo, reanudé el trabajo.	再開する es volver a empezar lo interrumpido.
+継続	N3	educacion	[短|みじか]い[時間|じかん]でも、[毎日|まいにち]の[練習|れんしゅう]を[継続|けいぞく]しています。	Mantengo la práctica diaria, aunque sea por poco tiempo.	継続する es sostener una actividad en el tiempo.
+完了	N3	tecnologia	[更新|こうしん]が[完了|かんりょう]するまで、[画面|がめん]を[閉|と]じずに[待|ま]ちました。	Esperé sin cerrar la pantalla hasta que terminó la actualización.	完了 es la finalización de un proceso.
+未完	N2	cultura	[展示|てんじ]には、[作者|さくしゃ]が[残|のこ]した[未完|みかん]の[作品|さくひん]もありました。	En la exposición también había obras que el autor dejó sin terminar.	未完 significa no concluido.
+進行	N3	trabajo	[会議|かいぎ]の[進行|しんこう]を[任|まか]され、[時間|じかん]を[見|み]ながら[話|はなし]を[進|すす]めました。	Me encargaron conducir la reunión y fui moderándola pendiente del tiempo.	進行 se refiere aquí a conducir el desarrollo de una reunión.
+停滞	N2	trabajo	[材料|ざいりょう]が[足|た]りず、[工事|こうじ]が[停滞|ていたい]していました。	La obra estaba estancada por falta de materiales.	停滞 es falta de avance.
+促進	N2	trabajo	[部署|ぶしょ]の[交流|こうりゅう]を[促進|そくしん]するため、[共同|きょうどう]の[勉強会|べんきょうかい]を[開|ひら]きました。	Organizamos una sesión de formación conjunta para fomentar el intercambio entre departamentos.	促進する es favorecer que algo avance.
+達成	N3	trabajo	[目標|もくひょう]を[達成|たっせい]したので、チームで[小|ちい]さなお[祝|いわ]いをしました。	Como alcanzamos el objetivo, hicimos una pequeña celebración con el equipo.	達成する es llegar a una meta.
+成果	N3	educacion	[半年|はんとし]の[練習|れんしゅう]の[成果|せいか]を、[発表会|はっぴょうかい]で[見|み]せました。	Mostré en la exhibición el resultado de seis meses de práctica.	成果 es un resultado logrado mediante esfuerzo.
+課題	N3	educacion	[課題|かだい]は[終|お]わりましたが、[見直|みなお]しの[時間|じかん]が[必要|ひつよう]です。	He terminado la tarea, pero necesito tiempo para revisarla.	課題 puede ser una tarea asignada.
+対策	N3	vida_diaria	[虫|むし]への[対策|たいさく]として、[窓|まど]に[網戸|あみど]をつけました。	Puse mosquiteras en las ventanas como medida contra los insectos.	対策 es una medida para afrontar un problema.
+対応	N3	servicios	[予約|よやく]の[変更|へんこう]にすぐ[対応|たいおう]してもらい、[助|たす]かりました。	Me ayudó mucho que atendieran enseguida el cambio de reserva.	対応する es atender o responder a una necesidad.
+措置	N2	trabajo	[水漏|みずも]れが[見|み]つかり、[機械|きかい]を[止|と]める[措置|そち]を[取|と]りました。	Al detectar una fuga de agua, tomamos la medida de detener la máquina.	措置を取る es adoptar una medida concreta.
+防止	N3	vida_diaria	[転倒|てんとう][防止|ぼうし]のため、[棚|たな]を[壁|かべ]に[固定|こてい]しました。	Fijé la estantería a la pared para evitar que se volcara.	防止 es impedir que ocurra un resultado indeseado.

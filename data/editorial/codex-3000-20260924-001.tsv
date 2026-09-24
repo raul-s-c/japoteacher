@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+形	N5	vida_diaria	このクッキーは[星|ほし]の[形|かたち]をしています。	Esta galleta tiene forma de estrella.	形をしている describe la forma de un objeto.
+約	N4	transporte	[港|みなと]から[島|しま]までは、[船|ふね]で[約|やく][四十分|よんじゅっぷん]です。	Del puerto a la isla se tarda unos cuarenta minutos en barco.	約 indica que la duración es aproximada.
+夫	N5	vida_diaria	[夫|おっと]は[朝|あさ]ご[飯|はん]を[作|つく]り、[私|わたし]は[弁当|べんとう]を[作|つく]ります。	Mi marido prepara el desayuno y yo preparo el almuerzo para llevar.	夫 se emplea aquí para hablar del propio marido.
+馬	N5	ocio	[牧場|ぼくじょう]に、[大|おお]きな[馬|うま]と[小|ちい]さな[馬|うま]がいます。	En la granja hay un caballo grande y uno pequeño.	います se utiliza para seres vivos como los caballos.
+横	N5	vida_diaria	[自転車|じてんしゃ]は[家|いえ]の[横|よこ]に[置|お]いてください。	Deja la bicicleta al lado de la casa, por favor.	横 indica la posición lateral junto a algo.
+東	N5	vida_diaria	[寝室|しんしつ]の[窓|まど]は[東|ひがし]を[向|む]いています。	La ventana del dormitorio da al este.	東を向いている describe la orientación hacia el este.
+南	N5	transporte	この[村|むら]の[南|みなみ]に、[大|おお]きな[湖|みずうみ]があります。	Al sur de este pueblo hay un lago grande.	の南に sitúa el lago respecto del pueblo.
+石	N5	ocio	[川|かわ]で[拾|ひろ]った[石|いし]を、[庭|にわ]に[並|なら]べました。	Coloqué en el jardín las piedras que recogí en el río.	拾った modifica 石 e identifica de dónde proceden las piedras.
+白	N5	compras	このシャツは、[青|あお]より[白|しろ]のほうが[好|す]きです。	Esta camisa me gusta más en blanco que en azul.	白 y 青 funcionan aquí como nombres de colores.
+西	N5	transporte	[駅|えき]の[西|にし]に[新|あたら]しい[公園|こうえん]ができました。	Han construido un parque nuevo al oeste de la estación.	できました significa aquí que se ha creado o construido algo.
+沢山	N5	vida_diaria	[庭|にわ]に[花|はな]が[沢山|たくさん][咲|さ]いています。	Hay muchas flores abiertas en el jardín.	沢山 se lee たくさん y también suele escribirse en hiragana.
+親	N4	vida_diaria	[引|ひ]っ[越|こ]してからも、[週|しゅう]に[一度|いちど]は[親|おや]に[電話|でんわ]しています。	Incluso después de mudarme, llamo a mis padres al menos una vez a la semana.	親 puede referirse colectivamente a los padres; は enfatiza el mínimo habitual.
+半	N4	vida_diaria	[集合|しゅうごう]は[六時|ろくじ][半|はん]です。[遅|おく]れないでください。	Nos reunimos a las seis y media. No llegues tarde, por favor.	半 después de una hora indica treinta minutos.
+四	N5	vida_diaria	[箱|はこ]には[四|よん]と[書|か]いてありますが、[中|なか]の[皿|さら]は[三枚|さんまい]です。	En la caja pone cuatro, pero dentro hay tres platos.	El número aislado 四 se lee aquí よん.
+女	N5	transporte	[赤|あか]い[帽子|ぼうし]の[女|おんな]の[人|ひと]が、[駅|えき]への[道|みち]を[教|おし]えてくれました。	La mujer del sombrero rojo me indicó el camino a la estación.	女の人 es una forma habitual de decir mujer; くれた marca que me ayudó.
+飛行	N3	transporte	[飛行|ひこう][中|ちゅう]は[揺|ゆ]れましたが、[予定|よてい]どおりに[着|つ]きました。	Hubo turbulencias durante el vuelo, pero llegamos según lo previsto.	飛行中 significa durante el vuelo; 揺れた describe el movimiento del avión.
+命	N3	vida_diaria	[川|かわ]に[落|お]ちた[犬|いぬ]の[命|いのち]を、[近所|きんじょ]の[人|ひと]が[救|すく]いました。	Un vecino salvó la vida de un perro que había caído al río.	命を救う significa salvar una vida.
+県	N4	transporte	この[県|けん]には、[海|うみ]に[面|めん]した[町|まち]がいくつもあります。	En esta prefectura hay varias localidades junto al mar.	県 es una división administrativa japonesa; いくつも indica varias.
+確か	N4	vida_diaria	[店|みせ]が[休|やす]みなのは、[確|たし]か[水曜日|すいようび]だったと[思|おも]います。	Creo que el día que cierra la tienda era el miércoles, si no recuerdo mal.	確か expresa un recuerdo probable, no seguridad absoluta.
+姿	N3	vida_diaria	[改札|かいさつ]の[前|まえ]で[待|ま]ちましたが、[弟|おとうと]の[姿|すがた]は[見|み]えませんでした。	Esperé delante de los tornos, pero no vi a mi hermano pequeño por ninguna parte.	姿が見えない indica que no se ve a la persona en el lugar esperado.
+年度	N3	trabajo	[新|あたら]しい[年度|ねんど]から、[交通費|こうつうひ]の[申請|しんせい][方法|ほうほう]が[変|か]わります。	A partir del nuevo ejercicio, cambiará la forma de solicitar el reembolso de los gastos de transporte.	年度 es un período administrativo; no tiene por qué empezar en enero.
+訳	N3	vida_diaria	[返事|へんじ]が[遅|おそ]くなった[訳|わけ]を、[相手|あいて]に[説明|せつめい]しました。	Le expliqué a la otra persona por qué había tardado en contestar.	訳 se lee わけ y significa motivo en esta frase.
+お話	N4	trabajo	[少|すこ]しお[話|はなし]したいことがあるので、[会議|かいぎ]の[後|あと]に[時間|じかん]をいただけますか。	Quisiera hablar de algo con usted; ¿podría dedicarme un momento después de la reunión?	お話 y いただけますか aportan cortesía a la petición.
+上げる	N4	vida_diaria	[床|ゆか]を[掃除|そうじ]するので、いすをテーブルの[上|うえ]に[上|あ]げてください。	Voy a limpiar el suelo; sube las sillas a la mesa, por favor.	上げる indica mover algo hacia una posición más alta.
+生まれる	N4	vida_diaria	[姪|めい]が[生|う]まれたので、[小|ちい]さな[靴下|くつした]を[贈|おく]りました。	Ha nacido mi sobrina, así que le he regalado unos calcetines pequeños.	姪 significa sobrina; 生まれる es nacer.
+思える	N3	vida_diaria	[最初|さいしょ]は[難|むずか]しく[思|おも]えましたが、[説明|せつめい]を[読|よ]むと[簡単|かんたん]でした。	Al principio parecía difícil, pero al leer las instrucciones resultó sencillo.	思える expresa la impresión que produce algo.
+むしろ	N3	vida_diaria	[雨|あめ]の[日|ひ]は、[外|そと]へ[出|で]るよりむしろ[家|いえ]で[本|ほん]を[読|よ]みたいです。	En los días de lluvia, prefiero leer en casa antes que salir.	むしろ señala la opción que se considera preferible.
+差	N3	compras	[二|ふた]つのかばんは[似|に]ていますが、[値段|ねだん]には[大|おお]きな[差|さ]があります。	Las dos bolsas se parecen, pero hay una gran diferencia de precio.	差 es la diferencia entre dos cantidades o características.
+左	N5	vida_diaria	[左|ひだり]の[靴|くつ]だけ、ひもがほどけています。	Sólo el zapato izquierdo tiene el cordón desatado.	だけ limita el estado al zapato izquierdo.
+超える	N3	transporte	[荷物|にもつ]の[重|おも]さが[制限|せいげん]を[超|こ]えていたので、[本|ほん]を[一冊|いっさつ][出|だ]しました。	La maleta superaba el límite de peso, así que saqué un libro.	超える indica superar un límite cuantitativo.
+ぜひ	N4	ocio	[近|ちか]くに[来|き]たら、ぜひ[私|わたし]たちの[店|みせ]にも[寄|よ]ってください。	Si vienes por aquí, no dejes de pasarte también por nuestra tienda.	ぜひ refuerza una invitación entusiasta, no una obligación.
+秒	N4	vida_diaria	ボタンを[三|さん][秒|びょう][押|お]し[続|つづ]けると、[電源|でんげん]が[切|き]れます。	Si mantienes pulsado el botón tres segundos, el aparato se apaga.	秒 es la unidad de tiempo segundo; 押し続ける exige mantener la pulsación.
+勝つ	N4	ocio	[最後|さいご]の[試合|しあい]に[勝|か]って、チームのみんなで[喜|よろこ]びました。	Ganamos el último partido y lo celebramos todos los del equipo.	試合に勝つ significa ganar un partido.
+皆	N4	trabajo	[皆|みな]の[都合|つごう]を[聞|き]いてから、[打|う]ち[合|あ]わせの[日|ひ]を[決|き]めます。	Fijaré el día de la reunión después de consultar la disponibilidad de todos.	皆 se lee aquí みな; 都合 se refiere a la disponibilidad.
+まだまだ	N4	educacion	[漢字|かんじ]は[少|すこ]し[読|よ]めますが、[手|て]で[書|か]く[練習|れんしゅう]はまだまだ[必要|ひつよう]です。	Puedo leer algunos kanji, pero todavía necesito practicar mucho su escritura a mano.	まだまだ enfatiza que queda bastante por hacer.
+北	N5	transporte	[空港|くうこう]は[町|まち]の[北|きた]にあります。	El aeropuerto está al norte de la ciudad.	北 es el punto cardinal norte.
+裏	N4	vida_diaria	[写真|しゃしん]の[裏|うら]に、[撮|と]った[日付|ひづけ]を[書|か]きました。	Escribí en el reverso de la foto la fecha en que la hice.	裏 designa la cara posterior de un objeto.
+扱う	N3	trabajo	この[機械|きかい]を[扱|あつか]う[前|まえ]に、[安全|あんぜん]の[説明|せつめい]を[聞|き]いてください。	Escucha las instrucciones de seguridad antes de manejar esta máquina.	扱う significa manejar o utilizar una máquina en este contexto.
+挙げる	N3	educacion	[分|わ]かりやすい[例|れい]を[挙|あ]げて、[自分|じぶん]の[考|かんが]えを[説明|せつめい]してください。	Explica tu idea poniendo un ejemplo fácil de entender.	例を挙げる significa poner o citar un ejemplo.
+かつて	N3	cultura	この[建物|たてもの]は、かつて[郵便局|ゆうびんきょく]として[使|つか]われていました。	Este edificio se utilizaba antiguamente como oficina de correos.	かつて sitúa el uso en una época pasada.
+更に	N3	trabajo	[資料|しりょう]を[直|なお]した[後|あと]、[更|さら]に[図|ず]を[二枚|にまい][加|くわ]えました。	Después de corregir el documento, añadí además dos diagramas.	更に introduce una acción adicional.
+したがって	N3	vida_diaria	[入口|いりぐち]は[工事|こうじ][中|ちゅう]です。したがって、[裏口|うらぐち]からお[入|はい]りください。	La entrada está en obras. Por tanto, entren por la puerta trasera, por favor.	したがって introduce una consecuencia lógica con registro formal.
+コード	N4	vida_diaria	[掃除機|そうじき]のコードが[短|みじか]くて、[廊下|ろうか]の[奥|おく]まで[届|とど]きません。	El cable de la aspiradora es corto y no llega hasta el fondo del pasillo.	コード significa aquí cable eléctrico, no código informático.
+長期	N3	trabajo	[長期|ちょうき]の[休暇|きゅうか]を[取|と]る[前|まえ]に、[仕事|しごと]の[引|ひ]き[継|つ]ぎをします。	Antes de tomar unas vacaciones largas, dejaré el trabajo traspasado a quien me sustituya.	引き継ぎ es el traspaso de tareas e información a otra persona.
+著者	N3	cultura	この[本|ほん]の[著者|ちょしゃ]は、[自分|じぶん]の[旅|たび]の[経験|けいけん]をもとに[物語|ものがたり]を[書|か]いています。	El autor de este libro escribe historias basadas en sus experiencias de viaje.	著者 es la persona que escribe una obra; をもとに señala la base utilizada.
+ソフトウェア	N3	tecnologia	このソフトウェアは、[写真|しゃしん]の[明|あか]るさを[調整|ちょうせい]するのに[使|つか]います。	Este programa se utiliza para ajustar el brillo de las fotos.	のに使う explica para qué sirve una herramienta.
+単位	N3	educacion	[長|なが]さの[単位|たんい]をセンチメートルにそろえてから、[数字|すうじ]を[比|くら]べてください。	Pon todas las longitudes en centímetros antes de comparar las cifras.	単位 es la unidad de medida; そろえる significa unificarla.
+涙	N4	vida_diaria	[久|ひさ]しぶりに[祖母|そぼ]に[会|あ]えて、うれしくて[涙|なみだ]が[出|で]ました。	Lloré de alegría al poder ver a mi abuela después de tanto tiempo.	涙が出る expresa que salen lágrimas; el motivo aquí es alegría.
+インタビュー	N3	trabajo	[選手|せんしゅ]へのインタビューを[録音|ろくおん]して、[後|あと]で[記事|きじ]にまとめました。	Grabé la entrevista al deportista y después la convertí en un artículo.	記事にまとめる es organizar el contenido en forma de artículo.
+普段	N4	vida_diaria	[普段|ふだん]は[眼鏡|めがね]をかけていますが、[運動|うんどう]するときは[外|はず]します。	Normalmente llevo gafas, pero me las quito cuando hago ejercicio.	普段 se refiere a lo habitual; 外す es quitarse las gafas.
+適切	N3	trabajo	[相手|あいて]に[合|あ]わせて、[適切|てきせつ]な[言葉|ことば]を[選|えら]ぶことが[大切|たいせつ]です。	Es importante elegir las palabras adecuadas según la persona con la que hablas.	適切 significa adecuado a una situación concreta.
+観点	N2	trabajo	[使|つか]いやすさの[観点|かんてん]から、ボタンの[位置|いち]を[見直|みなお]しました。	Revisamos la posición de los botones desde el punto de vista de la facilidad de uso.	の観点から identifica el criterio desde el que se evalúa algo.
+品質	N3	compras	[安|やす]いだけでなく、[品質|ひんしつ]も[確|たし]かめてから[買|か]いたいです。	Antes de comprar, quiero comprobar la calidad además de que el precio sea bajo.	だけでなく…も añade un segundo criterio al primero.
+食品	N4	compras	[冷凍|れいとう][食品|しょくひん]は、[買|か]い[物|もの]の[最後|さいご]にかごへ[入|い]れます。	Pongo los alimentos congelados en la cesta al final de la compra.	食品 se refiere a productos alimentarios.
+伺う	N3	trabajo	[明日|あした]の[午後|ごご]、そちらの[事務所|じむしょ]へ[伺|うかが]ってもよろしいでしょうか。	¿Le vendría bien que visitara su oficina mañana por la tarde?	伺う es una forma humilde de visitar; aquí no significa preguntar.
+風景	N3	ocio	[列車|れっしゃ]の[窓|まど]から[見|み]える[風景|ふうけい]が、[次第|しだい]に[山|やま]に[変|か]わっていきました。	El paisaje que se veía desde la ventana del tren fue volviéndose montañoso poco a poco.	風景 es el paisaje visible; 次第に indica un cambio gradual.
+高齢	N3	vida_diaria	[高齢|こうれい]の[父|ちち]でも[使|つか]いやすいように、[文字|もじ]を[大|おお]きくしました。	Agrandé las letras para que a mi padre, que es mayor, también le resultara fácil usarlo.	高齢 describe una edad avanzada; ように expresa el propósito del ajuste.
+実感	N3	educacion	[字幕|じまく]なしで[映画|えいが]が[分|わ]かって、[日本語|にほんご]の[上達|じょうたつ]を[実感|じっかん]しました。	Al entender una película sin subtítulos, noté de verdad que mi japonés había mejorado.	実感する es sentir o comprobar algo mediante la experiencia propia.
+波	N4	ocio	[波|なみ]が[高|たか]かったので、[海|うみ]には[入|はい]らずに[浜辺|はまべ]を[歩|ある]きました。	Como había olas altas, paseé por la playa sin meterme en el mar.	入らずに significa sin entrar; 波 se refiere al oleaje.
+素材	N3	compras	[肌|はだ]が[弱|よわ]いので、[服|ふく]の[素材|そざい]を[確|たし]かめるようにしています。	Como tengo la piel sensible, procuro comprobar de qué material está hecha la ropa.	素材 indica el material; ようにしている expresa una costumbre intencional.
+児童	N3	educacion	この[図書館|としょかん]では、[児童|じどう][向|む]けの[読|よ]み[聞|き]かせを[行|おこな]っています。	En esta biblioteca se organizan lecturas en voz alta para niños.	読み聞かせ es leer a alguien en voz alta, especialmente a niños.
+前後	N3	transporte	バスの[到着|とうちゃく]は、[道路|どうろ]の[混雑|こんざつ]で[十分|じゅっぷん][前後|ぜんご]することがあります。	La llegada del autobús puede variar unos diez minutos según el tráfico.	前後する indica variación hacia antes o después del horario previsto.
+発想	N3	trabajo	[子供|こども]の[自由|じゆう]な[発想|はっそう]から、[新|あたら]しい[遊|あそ]びが[生|う]まれました。	De la imaginación libre de los niños surgió un juego nuevo.	発想 es una idea o manera de concebir algo.
+反省	N3	vida_diaria	[相手|あいて]の[話|はなし]を[最後|さいご]まで[聞|き]かなかったことを[反省|はんせい]しています。	Lamento no haber escuchado a la otra persona hasta el final y estoy reflexionando sobre ello.	反省する implica examinar la propia conducta para corregirla.
+製作	N3	cultura	[地域|ちいき]の[歴史|れきし]を[紹介|しょうかい]する[短|みじか]い[映像|えいぞう]を[製作|せいさく]しました。	Hemos producido un vídeo corto que presenta la historia de la zona.	製作 se emplea aquí para la elaboración de una obra audiovisual.
+主催	N3	ocio	[市|し]が[主催|しゅさい]する[料理|りょうり][教室|きょうしつ]に[申|もう]し[込|こ]みました。	Me he apuntado a un curso de cocina organizado por el ayuntamiento.	主催する identifica a quien organiza el evento.
+景気	N3	trabajo	[景気|けいき]が[悪|わる]くなっても、[常連|じょうれん]のお[客|きゃく]さんは[通|かよ]ってくれました。	Aunque empeoró la economía, los clientes habituales siguieron viniendo.	景気 se refiere a la situación económica; 常連 son los clientes frecuentes.
+初期	N3	tecnologia	[初期|しょき]の[設定|せってい]では[通知|つうち]が[多|おお]かったので、[必要|ひつよう]なものだけ[残|のこ]しました。	Con la configuración inicial había muchas notificaciones, así que dejé sólo las necesarias.	初期 describe el estado inicial antes de personalizarlo.
+大手	N3	trabajo	[大手|おおて]の[会社|かいしゃ]より、[地域|ちいき]の[小|ちい]さな[会社|かいしゃ]で[働|はたら]きたいです。	Prefiero trabajar en una empresa pequeña de la zona que en una gran compañía.	大手 designa una empresa importante de su sector.
+根本	N2	trabajo	[同|おな]じミスが[続|つづ]いたので、[作業|さぎょう]の[手順|てじゅん]を[根本|こんぽん]から[変|か]えました。	Como se repetía el mismo error, cambiamos por completo el procedimiento de trabajo desde su base.	根本から significa desde la raíz o la base del problema.
+市内	N4	transporte	[市内|しない]の[移動|いどう]には、この[一日|いちにち][乗車券|じょうしゃけん]が[便利|べんり]です。	Este abono de un día resulta práctico para desplazarse por la ciudad.	市内 limita el recorrido al interior de la ciudad.
+代理	N3	trabajo	[担当者|たんとうしゃ]が[休|やす]みなので、[私|わたし]が[代理|だいり]で[会議|かいぎ]に[出|で]ます。	Como la persona encargada está de descanso, asistiré a la reunión en su lugar.	代理で significa en representación o sustitución de alguien.
+大型	N3	compras	[大型|おおがた]の[家具|かぐ]は、[購入|こうにゅう]する[前|まえ]に[玄関|げんかん]を[通|とお]るか[確認|かくにん]してください。	Antes de comprar muebles grandes, comprueba que pasan por la puerta de entrada.	大型 indica un tamaño grande; か introduce lo que debe comprobarse.
+成績	N4	educacion	[成績|せいせき]は[上|あ]がりましたが、[文章|ぶんしょう]を[書|か]くのはまだ[苦手|にがて]です。	Mis notas han mejorado, pero todavía se me da mal redactar.	成績 se refiere al rendimiento o las calificaciones escolares.
+測定	N3	trabajo	[部屋|へや]の[温度|おんど]を[一時間|いちじかん]ごとに[測定|そくてい]して、[表|ひょう]に[記録|きろく]しました。	Medí la temperatura de la habitación cada hora y la anoté en una tabla.	測定する significa medir de forma sistemática; ごとに marca el intervalo.
+個性	N3	cultura	[同|おな]じ[花|はな]を[描|えが]いても、[絵|え]には[一人|ひとり][一人|ひとり]の[個性|こせい]が[出|で]ます。	Aunque dibujen la misma flor, en cada dibujo se refleja la personalidad de quien lo hace.	個性 es lo que distingue la expresión o el carácter de una persona.
+電力	N3	vida_diaria	[古|ふる]い[冷蔵庫|れいぞうこ]を[替|か]えたら、[使|つか]う[電力|でんりょく]が[減|へ]りました。	Al cambiar el frigorífico viejo, disminuyó el consumo de electricidad.	電力 se refiere a la energía eléctrica utilizada en este contexto.
+影	N4	vida_diaria	[夕方|ゆうがた]になると、[木|き]の[影|かげ]が[庭|にわ]いっぱいに[伸|の]びます。	Al atardecer, la sombra del árbol se alarga por todo el jardín.	影 significa sombra proyectada; 伸びる describe cómo se alarga.
+観客	N3	ocio	[演奏|えんそう]が[終|お]わると、[観客|かんきゃく]が[一斉|いっせい]に[拍手|はくしゅ]しました。	Al terminar la interpretación, el público aplaudió al unísono.	観客 es el público que presencia un espectáculo.
+方面	N3	transporte	[山|やま][方面|ほうめん]へ[行|い]くバスは、[三番|さんばん]の[乗|の]り[場|ば]から[出|で]ます。	El autobús que va hacia la montaña sale de la parada número tres.	方面 señala la dirección general de un destino.
+人事	N3	trabajo	[住所|じゅうしょ]が[変|か]わったので、[人事|じんじ]の[担当者|たんとうしゃ]に[連絡|れんらく]しました。	Como he cambiado de dirección, avisé a la persona responsable de recursos humanos.	人事 se refiere aquí al área de personal de la empresa.
+応用	N3	educacion	[授業|じゅぎょう]で[習|なら]った[方法|ほうほう]を、[自分|じぶん]の[仕事|しごと]にも[応用|おうよう]してみました。	Probé a aplicar a mi trabajo el método que había aprendido en clase.	応用する es trasladar un conocimiento a otra situación práctica.
+実力	N3	educacion	[試験|しけん]では[緊張|きんちょう]して、[普段|ふだん]の[実力|じつりょく]を[出|だ]せませんでした。	En el examen me puse nervioso y no pude demostrar lo que normalmente sé hacer.	実力 es la capacidad real, no sólo una nota puntual.
+作曲	N3	cultura	[妹|いもうと]はピアノを[弾|ひ]くだけでなく、[短|みじか]い[曲|きょく]の[作曲|さっきょく]もしています。	Mi hermana pequeña no sólo toca el piano; también compone piezas cortas.	作曲 se refiere a crear la música de una pieza.
+半年	N4	educacion	[半年|はんとし]ぶりに[泳|およ]いだので、[少|すこ]し[泳|およ]いだだけで[疲|つか]れました。	Nadé por primera vez en seis meses y me cansé con muy poco.	半年ぶり indica que habían pasado seis meses desde la última vez.
+進歩	N3	educacion	[毎週|まいしゅう][録音|ろくおん]を[聞|き]き[比|くら]べると、[発音|はつおん]の[進歩|しんぽ]が[分|わ]かります。	Al comparar las grabaciones de cada semana, se nota la mejora de la pronunciación.	進歩 expresa progreso; 聞き比べる es comparar mediante la escucha.
+あちこち	N4	vida_diaria	[引|ひ]っ[越|こ]しの[後|あと]で、あちこちにまだ[段|だん]ボールが[残|のこ]っています。	Después de la mudanza todavía quedan cajas de cartón por todas partes.	あちこち significa en distintos lugares, aquí y allá.
+美術	N3	cultura	[美術|びじゅつ]の[授業|じゅぎょう]で、[身近|みぢか]な[道具|どうぐ]を[使|つか]って[版画|はんが]を[作|つく]りました。	En clase de arte hicimos un grabado utilizando utensilios cotidianos.	美術 se refiere a las artes visuales; 版画 es una obra hecha mediante impresión de una plancha.
+商売	N3	trabajo	[商売|しょうばい]を[始|はじ]める[前|まえ]に、[近|ちか]くにどんな[店|みせ]があるか[調|しら]べました。	Antes de montar el negocio, investigué qué tiendas había cerca.	商売を始める es iniciar una actividad comercial.
+門	N4	vida_diaria	[学校|がっこう]の[門|もん]は[閉|し]まっていましたが、[職員|しょくいん][室|しつ]には[明|あ]かりがついていました。	La puerta principal del colegio estaba cerrada, pero había luz en la sala de profesores.	門 es la puerta de acceso al recinto, no la de un aula.
+人工	N3	vida_diaria	この[池|いけ]は[自然|しぜん]のものではなく、[人工|じんこう]の[池|いけ]です。	Este estanque es artificial, no natural.	人工 indica que algo ha sido hecho por personas.
+反論	N2	trabajo	[反論|はんろん]する[前|まえ]に、[相手|あいて]の[主張|しゅちょう]を[正確|せいかく]に[理解|りかい]したいです。	Antes de rebatirlo, quiero comprender con precisión el argumento de la otra persona.	反論する es formular una objeción o argumento contrario.
+分離	N2	vida_diaria	[油|あぶら]と[水|みず]が[分離|ぶんり]しているので、よく[振|ふ]ってから[使|つか]ってください。	El aceite y el agua están separados; agítalo bien antes de usarlo.	分離している describe dos componentes que han quedado separados.
+出産	N3	vida_diaria	[姉|あね]の[出産|しゅっさん]を[手伝|てつだ]うため、[母|はは]がしばらく[姉|あね]の[家|いえ]に[泊|と]まります。	Mi madre se quedará un tiempo en casa de mi hermana mayor para ayudarla con el nacimiento del bebé.	出産 es dar a luz; 手伝う se refiere aquí a prestarle apoyo en ese período.
+車両	N3	transporte	[前|まえ]の[車両|しゃりょう]は[混|こ]んでいたので、[後|うし]ろの[車両|しゃりょう]に[移|うつ]りました。	El vagón de delante estaba lleno, así que me cambié al de atrás.	車両 designa aquí un vagón del tren.
+愛情	N3	vida_diaria	[父|ちち]は[言葉|ことば]ではなく、[毎日|まいにち]の[料理|りょうり]で[愛情|あいじょう]を[示|しめ]してくれます。	Mi padre me demuestra su cariño con la comida de cada día, más que con palabras.	愛情 es afecto o cariño; 示す es expresarlo mediante acciones.
+経由	N3	transporte	[直行便|ちょっこうびん]が[取|と]れなかったので、[別|べつ]の[空港|くうこう][経由|けいゆ]で[帰|かえ]りました。	Como no conseguí un vuelo directo, volví haciendo escala en otro aeropuerto.	経由 indica un punto intermedio del trayecto.
+鉄	N4	vida_diaria	この[棚|たな]は[鉄|てつ]でできていて、[思|おも]ったより[重|おも]いです。	Esta estantería es de hierro y pesa más de lo que pensaba.	でできている identifica el material del objeto.
+先頭	N3	vida_diaria	[列|れつ]の[先頭|せんとう]にいた[人|ひと]が、[店員|てんいん]に[声|こえ]をかけました。	La persona que estaba al principio de la cola llamó la atención del dependiente.	先頭 es la primera posición de una fila; 声をかける es dirigirse a alguien.
+共感	N3	cultura	[主人公|しゅじんこう]の[迷|まよ]いに[共感|きょうかん]して、[小説|しょうせつ]を[一気|いっき]に[読|よ]みました。	Me identifiqué con las dudas del protagonista y leí la novela de un tirón.	共感する significa identificarse con los sentimientos o ideas de alguien.

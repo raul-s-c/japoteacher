@@ -1,0 +1,5996 @@
+{
+  "provenance": "Authored and linguistically reviewed in Codex conversation; local deterministic checks. No independent API review.",
+  "api_calls": 0,
+  "api_tokens": 0,
+  "pairs": 100,
+  "exercises": 200,
+  "levels": {
+    "N3": 81,
+    "N4": 7,
+    "N2": 12
+  },
+  "checks": [
+    "schema",
+    "explicit ordered kanji readings",
+    "exact and character similarity vs bank + Sakamoto + batch",
+    "morphology evidence for target",
+    "append-only previous rows and graph"
+  ],
+  "items": [
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-001",
+      "target": "問い合わせ",
+      "japanese": "営業時間についての問い合わせが、朝から続いています。",
+      "spanish": "Desde esta mañana no paran de llegar consultas sobre el horario de apertura.",
+      "estimated_level": "N3",
+      "review_note": "問い合わせ es una consulta para obtener información.",
+      "authored_ruby": "[営業時間|えいぎょうじかん]についての[問|と]い[合|あ]わせが、[朝|あさ]から[続|つづ]いています。",
+      "nearest_id": "JAES-N5-EDITORIAL-1256",
+      "nearest_japanese": "この事業について、図書館で資料を集めながら毎日勉強しています。",
+      "character_similarity": 0.4151,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "営業",
+          "surface": "営業",
+          "start": 0,
+          "end": 2,
+          "reading": "えいぎょう"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 2,
+          "end": 4,
+          "reading": "じかん"
+        },
+        {
+          "term": "問い合わせ",
+          "surface": "問い合わせ",
+          "start": 9,
+          "end": 14,
+          "reading": "といあわせ"
+        },
+        {
+          "term": "朝",
+          "surface": "朝",
+          "start": 16,
+          "end": 17,
+          "reading": "あさ"
+        },
+        {
+          "term": "続く",
+          "surface": "続い",
+          "start": 19,
+          "end": 21,
+          "reading": "つづい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-098",
+      "nearest_lexical_japanese": "今朝は寝坊して、朝ご飯を食べる時間がありませんでした。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-002",
+      "target": "見積もり",
+      "japanese": "修理を頼む前に、見積もりを二社から取りました。",
+      "spanish": "Antes de encargar la reparación, pedí presupuesto a dos empresas.",
+      "estimated_level": "N3",
+      "review_note": "見積もり es una estimación previa del coste.",
+      "authored_ruby": "[修理|しゅうり]を[頼|たの]む[前|まえ]に、[見積|みつ]もりを[二社|にしゃ]から[取|と]りました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0205",
+      "nearest_japanese": "お金を払う前に番号札を取ります。",
+      "character_similarity": 0.3889,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "修理",
+          "surface": "修理",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅうり"
+        },
+        {
+          "term": "頼む",
+          "surface": "頼む",
+          "start": 3,
+          "end": 5,
+          "reading": "たのむ"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 5,
+          "end": 6,
+          "reading": "まえ"
+        },
+        {
+          "term": "見積もり",
+          "surface": "見積もり",
+          "start": 8,
+          "end": 12,
+          "reading": "みつもり"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 17,
+          "end": 19,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0205",
+      "nearest_lexical_japanese": "お金を払う前に番号札を取ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-003",
+      "target": "納期",
+      "japanese": "部品が届かず、納期を一週間延ばしてもらいました。",
+      "spanish": "Como no llegaban las piezas, conseguí que ampliaran una semana el plazo de entrega.",
+      "estimated_level": "N3",
+      "review_note": "納期 es el plazo para entregar un producto.",
+      "authored_ruby": "[部品|ぶひん]が[届|とど]かず、[納期|のうき]を[一週間|いっしゅうかん][延|の]ばしてもらいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0169",
+      "nearest_japanese": "同僚に資料を直してもらいました。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "部品",
+          "surface": "部品",
+          "start": 0,
+          "end": 2,
+          "reading": "ぶひん"
+        },
+        {
+          "term": "届く",
+          "surface": "届か",
+          "start": 3,
+          "end": 5,
+          "reading": "とどか"
+        },
+        {
+          "term": "納期",
+          "surface": "納期",
+          "start": 7,
+          "end": 9,
+          "reading": "のうき"
+        },
+        {
+          "term": "延ばす",
+          "surface": "延ばし",
+          "start": 13,
+          "end": 16,
+          "reading": "のばし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2205",
+      "nearest_lexical_japanese": "貨物はいつ届きますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-004",
+      "target": "在庫",
+      "japanese": "売り場にない色の在庫を、店員が確認してくれました。",
+      "spanish": "El dependiente comprobó si quedaban existencias del color que no estaba expuesto.",
+      "estimated_level": "N3",
+      "review_note": "在庫 son existencias disponibles.",
+      "authored_ruby": "[売|う]り[場|ば]にない[色|いろ]の[在庫|ざいこ]を、[店員|てんいん]が[確認|かくにん]してくれました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2180",
+      "nearest_japanese": "商品の記載がないので、店員に確認しました。",
+      "character_similarity": 0.5238,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "売り場",
+          "surface": "売り場",
+          "start": 0,
+          "end": 3,
+          "reading": "うりば"
+        },
+        {
+          "term": "ない",
+          "surface": "ない",
+          "start": 4,
+          "end": 6,
+          "reading": "ない"
+        },
+        {
+          "term": "色",
+          "surface": "色",
+          "start": 6,
+          "end": 7,
+          "reading": "いろ"
+        },
+        {
+          "term": "在庫",
+          "surface": "在庫",
+          "start": 8,
+          "end": 10,
+          "reading": "ざいこ"
+        },
+        {
+          "term": "店員",
+          "surface": "店員",
+          "start": 12,
+          "end": 14,
+          "reading": "てんいん"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 15,
+          "end": 17,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.4444444444444444,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2180",
+      "nearest_lexical_japanese": "商品の記載がないので、店員に確認しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-005",
+      "target": "発注",
+      "japanese": "必要な数を確認してから、部品を発注しました。",
+      "spanish": "Encargué las piezas después de comprobar la cantidad necesaria.",
+      "estimated_level": "N3",
+      "review_note": "発注する es realizar un pedido a un proveedor.",
+      "authored_ruby": "[必要|ひつよう]な[数|かず]を[確認|かくにん]してから、[部品|ぶひん]を[発注|はっちゅう]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0968",
+      "nearest_japanese": "前提を確認してから、レポートの内容を見直しました。",
+      "character_similarity": 0.5581,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 0,
+          "end": 2,
+          "reading": "ひつよう"
+        },
+        {
+          "term": "数",
+          "surface": "数",
+          "start": 3,
+          "end": 4,
+          "reading": "かず"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 5,
+          "end": 7,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 7,
+          "end": 8,
+          "reading": "し"
+        },
+        {
+          "term": "部品",
+          "surface": "部品",
+          "start": 12,
+          "end": 14,
+          "reading": "ぶひん"
+        },
+        {
+          "term": "発注",
+          "surface": "発注",
+          "start": 15,
+          "end": 17,
+          "reading": "はっちゅう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0967",
+      "nearest_lexical_japanese": "番号を確認してください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-006",
+      "target": "仕入れ",
+      "japanese": "仕入れの値段が上がり、店の利益が減りました。",
+      "spanish": "Subió el precio de compra a los proveedores y bajó el beneficio de la tienda.",
+      "estimated_level": "N3",
+      "review_note": "仕入れ es adquirir mercancía para venderla.",
+      "authored_ruby": "[仕入|しい]れの[値段|ねだん]が[上|あ]がり、[店|みせ]の[利益|りえき]が[減|へ]りました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0379",
+      "nearest_japanese": "昨日、仕事で利益が出ました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "仕入れ",
+          "surface": "仕入れ",
+          "start": 0,
+          "end": 3,
+          "reading": "しいれ"
+        },
+        {
+          "term": "値段",
+          "surface": "値段",
+          "start": 4,
+          "end": 6,
+          "reading": "ねだん"
+        },
+        {
+          "term": "上がる",
+          "surface": "上がり",
+          "start": 7,
+          "end": 10,
+          "reading": "あがり"
+        },
+        {
+          "term": "店",
+          "surface": "店",
+          "start": 11,
+          "end": 12,
+          "reading": "みせ"
+        },
+        {
+          "term": "利益",
+          "surface": "利益",
+          "start": 13,
+          "end": 15,
+          "reading": "りえき"
+        },
+        {
+          "term": "減る",
+          "surface": "減り",
+          "start": 16,
+          "end": 18,
+          "reading": "へり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1519",
+      "nearest_lexical_japanese": "石油の値段が上がると、家計にひびきます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-007",
+      "target": "請求書",
+      "japanese": "請求書の住所が古かったので、修正をお願いしました。",
+      "spanish": "La factura llevaba mi dirección antigua y pedí que la corrigieran.",
+      "estimated_level": "N3",
+      "review_note": "請求書 es una factura o solicitud de pago.",
+      "authored_ruby": "[請求書|せいきゅうしょ]の[住所|じゅうしょ]が[古|ふる]かったので、[修正|しゅうせい]をお[願|ねが]いしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924-020",
+      "nearest_japanese": "住所が写っていたので、投稿した写真を削除しました。",
+      "character_similarity": 0.5217,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "請求",
+          "surface": "請求",
+          "start": 0,
+          "end": 2,
+          "reading": "せいきゅう"
+        },
+        {
+          "term": "住所",
+          "surface": "住所",
+          "start": 4,
+          "end": 6,
+          "reading": "じゅうしょ"
+        },
+        {
+          "term": "古い",
+          "surface": "古かっ",
+          "start": 7,
+          "end": 10,
+          "reading": "ふるかっ"
+        },
+        {
+          "term": "修正",
+          "surface": "修正",
+          "start": 14,
+          "end": 16,
+          "reading": "しゅうせい"
+        },
+        {
+          "term": "お願い",
+          "surface": "お願い",
+          "start": 17,
+          "end": 20,
+          "reading": "おねがい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        },
+        {
+          "term": "請求書",
+          "surface": "請求書",
+          "start": 0,
+          "end": 3,
+          "reading": "せいきゅうしょ"
+        }
+      ],
+      "curated_compound": {
+        "term": "請求書",
+        "surface": "請求書",
+        "start": 0,
+        "end": 3,
+        "reading": "せいきゅうしょ"
+      },
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1438",
+      "nearest_lexical_japanese": "住所を検索してください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-008",
+      "target": "振込",
+      "japanese": "振込が完了したことを、メールで知らせました。",
+      "spanish": "Avisé por correo de que la transferencia se había realizado.",
+      "estimated_level": "N3",
+      "review_note": "振込 es una transferencia bancaria.",
+      "authored_ruby": "[振込|ふりこみ]が[完了|かんりょう]したことを、メールで[知|し]らせました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1402",
+      "nearest_japanese": "祖母の死亡を知らせました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "振込",
+          "surface": "振込",
+          "start": 0,
+          "end": 2,
+          "reading": "ふりこみ"
+        },
+        {
+          "term": "完了",
+          "surface": "完了",
+          "start": 3,
+          "end": 5,
+          "reading": "かんりょう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 5,
+          "end": 6,
+          "reading": "し"
+        },
+        {
+          "term": "メール",
+          "surface": "メール",
+          "start": 11,
+          "end": 14,
+          "reading": "めーる"
+        },
+        {
+          "term": "知らせる",
+          "surface": "知らせ",
+          "start": 15,
+          "end": 18,
+          "reading": "しらせ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1166",
+      "nearest_lexical_japanese": "メールあるいは電話で連絡します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-009",
+      "target": "残高",
+      "japanese": "買い物の前に、カードの残高を確認しました。",
+      "spanish": "Comprobé el saldo de la tarjeta antes de comprar.",
+      "estimated_level": "N3",
+      "review_note": "残高 es la cantidad que queda disponible.",
+      "authored_ruby": "[買|か]い[物|もの]の[前|まえ]に、カードの[残高|ざんだか]を[確認|かくにん]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0914",
+      "nearest_japanese": "インドの引用を確認しました。",
+      "character_similarity": 0.5625,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "買い物",
+          "surface": "買い物",
+          "start": 0,
+          "end": 3,
+          "reading": "かいもの"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 4,
+          "end": 5,
+          "reading": "まえ"
+        },
+        {
+          "term": "カード",
+          "surface": "カード",
+          "start": 7,
+          "end": 10,
+          "reading": "かーど"
+        },
+        {
+          "term": "残高",
+          "surface": "残高",
+          "start": 11,
+          "end": 13,
+          "reading": "ざんだか"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 14,
+          "end": 16,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0708",
+      "nearest_lexical_japanese": "買い物の前に少し運動をします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-010",
+      "target": "引き落とし",
+      "japanese": "今月の引き落とし日を、カレンダーに書きました。",
+      "spanish": "Anoté en el calendario la fecha del cargo automático de este mes.",
+      "estimated_level": "N3",
+      "review_note": "引き落とし es un cargo automático en una cuenta.",
+      "authored_ruby": "[今月|こんげつ]の[引|ひ]き[落|お]とし[日|び]を、カレンダーに[書|か]きました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0259",
+      "nearest_japanese": "昨日カレーを食べました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "今月",
+          "surface": "今月",
+          "start": 0,
+          "end": 2,
+          "reading": "こんげつ"
+        },
+        {
+          "term": "引き落とし",
+          "surface": "引き落とし",
+          "start": 3,
+          "end": 8,
+          "reading": "ひきおとし"
+        },
+        {
+          "term": "カレンダー",
+          "surface": "カレンダー",
+          "start": 11,
+          "end": 16,
+          "reading": "かれんだー"
+        },
+        {
+          "term": "書く",
+          "surface": "書き",
+          "start": 17,
+          "end": 19,
+          "reading": "かき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1965",
+      "nearest_lexical_japanese": "住所を書いてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-011",
+      "target": "領収",
+      "japanese": "支払いの後、領収の印を書類に押してもらいました。",
+      "spanish": "Después de pagar, pedí que pusieran en el documento la marca de pago recibido.",
+      "estimated_level": "N3",
+      "review_note": "領収 significa recepción de un pago.",
+      "authored_ruby": "[支払|しはら]いの[後|あと]、[領収|りょうしゅう]の[印|しるし]を[書類|しょるい]に[押|お]してもらいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0169",
+      "nearest_japanese": "同僚に資料を直してもらいました。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "支払い",
+          "surface": "支払い",
+          "start": 0,
+          "end": 3,
+          "reading": "しはらい"
+        },
+        {
+          "term": "領収",
+          "surface": "領収",
+          "start": 6,
+          "end": 8,
+          "reading": "りょうしゅう"
+        },
+        {
+          "term": "印",
+          "surface": "印",
+          "start": 9,
+          "end": 10,
+          "reading": "しるし"
+        },
+        {
+          "term": "書類",
+          "surface": "書類",
+          "start": 11,
+          "end": 13,
+          "reading": "しょるい"
+        },
+        {
+          "term": "押す",
+          "surface": "押し",
+          "start": 14,
+          "end": 16,
+          "reading": "おし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2313",
+      "nearest_lexical_japanese": "書類を出しますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-012",
+      "target": "控え",
+      "japanese": "提出した書類の控えを、封筒に入れて保管しています。",
+      "spanish": "Guardo en un sobre una copia de los documentos que presenté.",
+      "estimated_level": "N3",
+      "review_note": "控え significa aquí copia para conservar.",
+      "authored_ruby": "[提出|ていしゅつ]した[書類|しょるい]の[控|ひか]えを、[封筒|ふうとう]に[入|い]れて[保管|ほかん]しています。",
+      "nearest_id": "JAES-N5-EDITORIAL-0834",
+      "nearest_japanese": "事務の仕事をしています。",
+      "character_similarity": 0.4118,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "提出",
+          "surface": "提出",
+          "start": 0,
+          "end": 2,
+          "reading": "ていしゅつ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 2,
+          "end": 3,
+          "reading": "し"
+        },
+        {
+          "term": "書類",
+          "surface": "書類",
+          "start": 4,
+          "end": 6,
+          "reading": "しょるい"
+        },
+        {
+          "term": "控え",
+          "surface": "控え",
+          "start": 7,
+          "end": 9,
+          "reading": "ひかえ"
+        },
+        {
+          "term": "封筒",
+          "surface": "封筒",
+          "start": 11,
+          "end": 13,
+          "reading": "ふうとう"
+        },
+        {
+          "term": "入れる",
+          "surface": "入れ",
+          "start": 14,
+          "end": 16,
+          "reading": "いれ"
+        },
+        {
+          "term": "保管",
+          "surface": "保管",
+          "start": 17,
+          "end": 19,
+          "reading": "ほかん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 19,
+          "end": 20,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1028",
+      "nearest_lexical_japanese": "この仕事では、明日までに書類を提出しなければなりません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-013",
+      "target": "記入",
+      "japanese": "申込書には、黒いペンで記入してください。",
+      "spanish": "Rellena la solicitud con bolígrafo negro, por favor.",
+      "estimated_level": "N3",
+      "review_note": "記入する es escribir los datos en un formulario.",
+      "authored_ruby": "[申込書|もうしこみしょ]には、[黒|くろ]いペンで[記入|きにゅう]してください。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-081",
+      "nearest_japanese": "申込書の電話番号が読みにくいので、書き直してください。",
+      "character_similarity": 0.5581,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "申込",
+          "surface": "申込",
+          "start": 0,
+          "end": 2,
+          "reading": "もうしこみ"
+        },
+        {
+          "term": "黒い",
+          "surface": "黒い",
+          "start": 6,
+          "end": 8,
+          "reading": "くろい"
+        },
+        {
+          "term": "ペン",
+          "surface": "ペン",
+          "start": 8,
+          "end": 10,
+          "reading": "ぺん"
+        },
+        {
+          "term": "記入",
+          "surface": "記入",
+          "start": 11,
+          "end": 13,
+          "reading": "きにゅう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0323",
+      "nearest_lexical_japanese": "この黒いペンは私のです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-014",
+      "target": "欄",
+      "japanese": "電話番号の欄を空白のまま出してしまいました。",
+      "spanish": "Entregué el formulario dejando en blanco la casilla del número de teléfono.",
+      "estimated_level": "N3",
+      "review_note": "欄 es un espacio o campo de un formulario.",
+      "authored_ruby": "[電話番号|でんわばんごう]の[欄|らん]を[空白|くうはく]のまま[出|だ]してしまいました。",
+      "nearest_id": "JAES-N4-EXP-0086",
+      "nearest_japanese": "借りた本を汚してしまいました。",
+      "character_similarity": 0.5143,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "電話",
+          "surface": "電話",
+          "start": 0,
+          "end": 2,
+          "reading": "でんわ"
+        },
+        {
+          "term": "番号",
+          "surface": "番号",
+          "start": 2,
+          "end": 4,
+          "reading": "ばんごう"
+        },
+        {
+          "term": "欄",
+          "surface": "欄",
+          "start": 5,
+          "end": 6,
+          "reading": "らん"
+        },
+        {
+          "term": "空白",
+          "surface": "空白",
+          "start": 7,
+          "end": 9,
+          "reading": "くうはく"
+        },
+        {
+          "term": "出す",
+          "surface": "出し",
+          "start": 12,
+          "end": 14,
+          "reading": "だし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0285",
+      "nearest_lexical_japanese": "ここに電話番号を書いてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-015",
+      "target": "訂正",
+      "japanese": "会議の日付を訂正した案内が届きました。",
+      "spanish": "Llegó un aviso que corregía la fecha de la reunión.",
+      "estimated_level": "N3",
+      "review_note": "訂正 es corregir un dato erróneo.",
+      "authored_ruby": "[会議|かいぎ]の[日付|ひづけ]を[訂正|ていせい]した[案内|あんない]が[届|とど]きました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-001-037",
+      "nearest_japanese": "写真の裏に、撮った日付を書きました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "会議",
+          "surface": "会議",
+          "start": 0,
+          "end": 2,
+          "reading": "かいぎ"
+        },
+        {
+          "term": "日付",
+          "surface": "日付",
+          "start": 3,
+          "end": 5,
+          "reading": "ひづけ"
+        },
+        {
+          "term": "訂正",
+          "surface": "訂正",
+          "start": 6,
+          "end": 8,
+          "reading": "ていせい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 8,
+          "end": 9,
+          "reading": "し"
+        },
+        {
+          "term": "案内",
+          "surface": "案内",
+          "start": 10,
+          "end": 12,
+          "reading": "あんない"
+        },
+        {
+          "term": "届く",
+          "surface": "届き",
+          "start": 13,
+          "end": 15,
+          "reading": "とどき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1405",
+      "nearest_lexical_japanese": "あたしが案内します。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-016",
+      "target": "印刷",
+      "japanese": "両面に印刷したので、紙を半分で済ませられました。",
+      "spanish": "Al imprimir por ambas caras, pude usar la mitad de papel.",
+      "estimated_level": "N4",
+      "review_note": "両面に印刷する es imprimir a doble cara.",
+      "authored_ruby": "[両面|りょうめん]に[印刷|いんさつ]したので、[紙|かみ]を[半分|はんぶん]で[済|す]ませられました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1126",
+      "nearest_japanese": "連続で欠航したので旅行が遅れました。",
+      "character_similarity": 0.4103,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "両面",
+          "surface": "両面",
+          "start": 0,
+          "end": 2,
+          "reading": "りょうめん"
+        },
+        {
+          "term": "印刷",
+          "surface": "印刷",
+          "start": 3,
+          "end": 5,
+          "reading": "いんさつ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 5,
+          "end": 6,
+          "reading": "し"
+        },
+        {
+          "term": "紙",
+          "surface": "紙",
+          "start": 10,
+          "end": 11,
+          "reading": "かみ"
+        },
+        {
+          "term": "半分",
+          "surface": "半分",
+          "start": 12,
+          "end": 14,
+          "reading": "はんぶん"
+        },
+        {
+          "term": "済ませる",
+          "surface": "済ませ",
+          "start": 15,
+          "end": 18,
+          "reading": "すませ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N2-CONVERSATION-C3000-002-037",
+      "nearest_lexical_japanese": "紙に書き出すと、複雑な思考を整理しやすくなります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-017",
+      "target": "用紙",
+      "japanese": "受付で専用の用紙をもらい、待っている間に書きました。",
+      "spanish": "Pedí el formulario específico en recepción y lo rellené mientras esperaba.",
+      "estimated_level": "N3",
+      "review_note": "用紙 es papel destinado a una función concreta.",
+      "authored_ruby": "[受付|うけつけ]で[専用|せんよう]の[用紙|ようし]をもらい、[待|ま]っている[間|あいだ]に[書|か]きました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-031",
+      "nearest_japanese": "舞台の袖で、次の出番を待っていました。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "受付",
+          "surface": "受付",
+          "start": 0,
+          "end": 2,
+          "reading": "うけつけ"
+        },
+        {
+          "term": "専用",
+          "surface": "専用",
+          "start": 3,
+          "end": 5,
+          "reading": "せんよう"
+        },
+        {
+          "term": "用紙",
+          "surface": "用紙",
+          "start": 6,
+          "end": 8,
+          "reading": "ようし"
+        },
+        {
+          "term": "もらう",
+          "surface": "もらい",
+          "start": 9,
+          "end": 12,
+          "reading": "もらい"
+        },
+        {
+          "term": "待つ",
+          "surface": "待っ",
+          "start": 13,
+          "end": 15,
+          "reading": "まっ"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 18,
+          "end": 19,
+          "reading": "ま"
+        },
+        {
+          "term": "書く",
+          "surface": "書き",
+          "start": 20,
+          "end": 22,
+          "reading": "かき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2325",
+      "nearest_lexical_japanese": "バス停で待ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-018",
+      "target": "郵送",
+      "japanese": "窓口へ行けないので、書類を郵送しました。",
+      "spanish": "Como no podía ir a la oficina, envié los documentos por correo postal.",
+      "estimated_level": "N3",
+      "review_note": "郵送する es enviar por correo físico.",
+      "authored_ruby": "[窓口|まどぐち]へ[行|い]けないので、[書類|しょるい]を[郵送|ゆうそう]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1789",
+      "nearest_japanese": "判事が書類を確認しました。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "窓口",
+          "surface": "窓口",
+          "start": 0,
+          "end": 2,
+          "reading": "まどぐち"
+        },
+        {
+          "term": "行ける",
+          "surface": "行け",
+          "start": 3,
+          "end": 5,
+          "reading": "いけ"
+        },
+        {
+          "term": "書類",
+          "surface": "書類",
+          "start": 10,
+          "end": 12,
+          "reading": "しょるい"
+        },
+        {
+          "term": "郵送",
+          "surface": "郵送",
+          "start": 13,
+          "end": 15,
+          "reading": "ゆうそう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1076",
+      "nearest_lexical_japanese": "ああ、こちらの窓口で手続きします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-019",
+      "target": "書留",
+      "japanese": "大切な書類なので、書留で送りました。",
+      "spanish": "Como eran documentos importantes, los envié por correo certificado.",
+      "estimated_level": "N3",
+      "review_note": "書留 es un servicio de correo registrado.",
+      "authored_ruby": "[大切|たいせつ]な[書類|しょるい]なので、[書留|かきとめ]で[送|おく]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-018",
+      "nearest_japanese": "窓口へ行けないので、書類を郵送しました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "大切",
+          "surface": "大切",
+          "start": 0,
+          "end": 2,
+          "reading": "たいせつ"
+        },
+        {
+          "term": "書類",
+          "surface": "書類",
+          "start": 3,
+          "end": 5,
+          "reading": "しょるい"
+        },
+        {
+          "term": "書留",
+          "surface": "書留",
+          "start": 9,
+          "end": 11,
+          "reading": "かきとめ"
+        },
+        {
+          "term": "送る",
+          "surface": "送り",
+          "start": 12,
+          "end": 14,
+          "reading": "おくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2313",
+      "nearest_lexical_japanese": "書類を出しますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-020",
+      "target": "速達",
+      "japanese": "明日までに届けたくて、速達を選びました。",
+      "spanish": "Elegí el envío urgente porque quería que llegara antes de mañana.",
+      "estimated_level": "N3",
+      "review_note": "速達 es correo urgente; la frase expresa la intención, no garantiza el plazo.",
+      "authored_ruby": "[明日|あした]までに[届|とど]けたくて、[速達|そくたつ]を[選|えら]びました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0499",
+      "nearest_japanese": "昨日会社で契約を結びました。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "明日",
+          "surface": "明日",
+          "start": 0,
+          "end": 2,
+          "reading": "あした"
+        },
+        {
+          "term": "届ける",
+          "surface": "届け",
+          "start": 5,
+          "end": 7,
+          "reading": "とどけ"
+        },
+        {
+          "term": "速達",
+          "surface": "速達",
+          "start": 11,
+          "end": 13,
+          "reading": "そくたつ"
+        },
+        {
+          "term": "選ぶ",
+          "surface": "選び",
+          "start": 14,
+          "end": 16,
+          "reading": "えらび"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EXP-0050",
+      "nearest_lexical_japanese": "明日は晴れます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-021",
+      "target": "返送",
+      "japanese": "署名した用紙を、同封の封筒で返送してください。",
+      "spanish": "Devuelve el formulario firmado en el sobre adjunto, por favor.",
+      "estimated_level": "N3",
+      "review_note": "返送する es enviar algo de vuelta.",
+      "authored_ruby": "[署名|しょめい]した[用紙|ようし]を、[同封|どうふう]の[封筒|ふうとう]で[返送|へんそう]してください。",
+      "nearest_id": "JAES-N5-MORE-0163",
+      "nearest_japanese": "手紙を見せてください。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "署名",
+          "surface": "署名",
+          "start": 0,
+          "end": 2,
+          "reading": "しょめい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 2,
+          "end": 3,
+          "reading": "し"
+        },
+        {
+          "term": "用紙",
+          "surface": "用紙",
+          "start": 4,
+          "end": 6,
+          "reading": "ようし"
+        },
+        {
+          "term": "同封",
+          "surface": "同封",
+          "start": 8,
+          "end": 10,
+          "reading": "どうふう"
+        },
+        {
+          "term": "封筒",
+          "surface": "封筒",
+          "start": 11,
+          "end": 13,
+          "reading": "ふうとう"
+        },
+        {
+          "term": "返送",
+          "surface": "返送",
+          "start": 14,
+          "end": 16,
+          "reading": "へんそう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0590",
+      "nearest_lexical_japanese": "この用紙を使用します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-022",
+      "target": "同封",
+      "japanese": "手紙に、旅行で撮った写真を同封しました。",
+      "spanish": "Adjunté a la carta unas fotos que hice durante el viaje.",
+      "estimated_level": "N3",
+      "review_note": "同封 es incluir algo en el mismo sobre.",
+      "authored_ruby": "[手紙|てがみ]に、[旅行|りょこう]で[撮|と]った[写真|しゃしん]を[同封|どうふう]しました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0278",
+      "nearest_japanese": "旅行の写真を見ました。",
+      "character_similarity": 0.5714,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "手紙",
+          "surface": "手紙",
+          "start": 0,
+          "end": 2,
+          "reading": "てがみ"
+        },
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 4,
+          "end": 6,
+          "reading": "りょこう"
+        },
+        {
+          "term": "撮る",
+          "surface": "撮っ",
+          "start": 7,
+          "end": 9,
+          "reading": "とっ"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 10,
+          "end": 12,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "同封",
+          "surface": "同封",
+          "start": 13,
+          "end": 15,
+          "reading": "どうふう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.42857142857142855,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0555",
+      "nearest_lexical_japanese": "旅行先でだれかに写真を撮られましたか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-023",
+      "target": "宛名",
+      "japanese": "宛名の漢字を間違えて、封筒を書き直しました。",
+      "spanish": "Me equivoqué en un kanji del nombre del destinatario y rehice el sobre.",
+      "estimated_level": "N3",
+      "review_note": "宛名 es el nombre de la persona destinataria.",
+      "authored_ruby": "[宛名|あてな]の[漢字|かんじ]を[間違|まちが]えて、[封筒|ふうとう]を[書|か]き[直|なお]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0118",
+      "nearest_japanese": "ホテルの予約を間違えてしまいました。",
+      "character_similarity": 0.5405,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "宛名",
+          "surface": "宛名",
+          "start": 0,
+          "end": 2,
+          "reading": "あてな"
+        },
+        {
+          "term": "漢字",
+          "surface": "漢字",
+          "start": 3,
+          "end": 5,
+          "reading": "かんじ"
+        },
+        {
+          "term": "間違える",
+          "surface": "間違え",
+          "start": 6,
+          "end": 9,
+          "reading": "まちがえ"
+        },
+        {
+          "term": "封筒",
+          "surface": "封筒",
+          "start": 11,
+          "end": 13,
+          "reading": "ふうとう"
+        },
+        {
+          "term": "書き直す",
+          "surface": "書き直し",
+          "start": 14,
+          "end": 18,
+          "reading": "かきなおし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1736",
+      "nearest_lexical_japanese": "さあ、漢字の復習を始めます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-024",
+      "target": "差し出す",
+      "japanese": "雨に濡れた友人に、乾いたタオルを差し出しました。",
+      "spanish": "Le tendí una toalla seca a mi amigo, que se había mojado con la lluvia.",
+      "estimated_level": "N3",
+      "review_note": "差し出す es ofrecer algo extendiéndolo hacia alguien.",
+      "authored_ruby": "[雨|あめ]に[濡|ぬ]れた[友人|ゆうじん]に、[乾|かわ]いたタオルを[差|さ]し[出|だ]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2439",
+      "nearest_japanese": "倒れた人を目撃しましたか。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "雨",
+          "surface": "雨",
+          "start": 0,
+          "end": 1,
+          "reading": "あめ"
+        },
+        {
+          "term": "濡れる",
+          "surface": "濡れ",
+          "start": 2,
+          "end": 4,
+          "reading": "ぬれ"
+        },
+        {
+          "term": "友人",
+          "surface": "友人",
+          "start": 5,
+          "end": 7,
+          "reading": "ゆうじん"
+        },
+        {
+          "term": "乾く",
+          "surface": "乾い",
+          "start": 9,
+          "end": 11,
+          "reading": "かわい"
+        },
+        {
+          "term": "タオル",
+          "surface": "タオル",
+          "start": 12,
+          "end": 15,
+          "reading": "たおる"
+        },
+        {
+          "term": "差し出す",
+          "surface": "差し出し",
+          "start": 16,
+          "end": 20,
+          "reading": "さしだし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-003-039",
+      "nearest_lexical_japanese": "雨でズボンの裾が濡れました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-025",
+      "target": "受け付ける",
+      "japanese": "電話では変更を受け付けていないと言われました。",
+      "spanish": "Me dijeron que no aceptaban cambios por teléfono.",
+      "estimated_level": "N3",
+      "review_note": "受け付ける es aceptar solicitudes o trámites.",
+      "authored_ruby": "[電話|でんわ]では[変更|へんこう]を[受|う]け[付|つ]けていないと[言|い]われました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1935",
+      "nearest_japanese": "ここに名前を書いてくださいと言われましたか。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "電話",
+          "surface": "電話",
+          "start": 0,
+          "end": 2,
+          "reading": "でんわ"
+        },
+        {
+          "term": "変更",
+          "surface": "変更",
+          "start": 4,
+          "end": 6,
+          "reading": "へんこう"
+        },
+        {
+          "term": "受け付ける",
+          "surface": "受け付け",
+          "start": 7,
+          "end": 11,
+          "reading": "うけつけ"
+        },
+        {
+          "term": "言う",
+          "surface": "言わ",
+          "start": 16,
+          "end": 18,
+          "reading": "いわ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1665",
+      "nearest_lexical_japanese": "もう一度言ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-026",
+      "target": "応対",
+      "japanese": "電話の応対をしている間に、同僚が客を案内しました。",
+      "spanish": "Mientras atendía al teléfono, un compañero acompañó al cliente.",
+      "estimated_level": "N3",
+      "review_note": "応対 es atender a una persona o llamada.",
+      "authored_ruby": "[電話|でんわ]の[応対|おうたい]をしている[間|あいだ]に、[同僚|どうりょう]が[客|きゃく]を[案内|あんない]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-014",
+      "nearest_japanese": "電話番号の欄を空白のまま出してしまいました。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "電話",
+          "surface": "電話",
+          "start": 0,
+          "end": 2,
+          "reading": "でんわ"
+        },
+        {
+          "term": "応対",
+          "surface": "応対",
+          "start": 3,
+          "end": 5,
+          "reading": "おうたい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 6,
+          "end": 7,
+          "reading": "し"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 10,
+          "end": 11,
+          "reading": "ま"
+        },
+        {
+          "term": "同僚",
+          "surface": "同僚",
+          "start": 13,
+          "end": 15,
+          "reading": "どうりょう"
+        },
+        {
+          "term": "客",
+          "surface": "客",
+          "start": 16,
+          "end": 17,
+          "reading": "きゃく"
+        },
+        {
+          "term": "案内",
+          "surface": "案内",
+          "start": 18,
+          "end": 20,
+          "reading": "あんない"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0377",
+      "nearest_lexical_japanese": "会議の間は電話しません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-027",
+      "target": "留守",
+      "japanese": "留守の間、隣の人に花の水やりを頼みました。",
+      "spanish": "Pedí al vecino que regara las flores durante mi ausencia.",
+      "estimated_level": "N4",
+      "review_note": "留守 es estar fuera de casa o del lugar habitual.",
+      "authored_ruby": "[留守|るす]の[間|あいだ]、[隣|となり]の[人|ひと]に[花|はな]の[水|みず]やりを[頼|たの]みました。",
+      "nearest_id": "JAES-N5-CURATED-0007",
+      "nearest_japanese": "母の誕生日に花を買いました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "留守",
+          "surface": "留守",
+          "start": 0,
+          "end": 2,
+          "reading": "るす"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 3,
+          "end": 4,
+          "reading": "ま"
+        },
+        {
+          "term": "隣",
+          "surface": "隣",
+          "start": 5,
+          "end": 6,
+          "reading": "となり"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 7,
+          "end": 8,
+          "reading": "ひと"
+        },
+        {
+          "term": "花",
+          "surface": "花",
+          "start": 9,
+          "end": 10,
+          "reading": "はな"
+        },
+        {
+          "term": "水",
+          "surface": "水",
+          "start": 11,
+          "end": 12,
+          "reading": "みず"
+        },
+        {
+          "term": "やる",
+          "surface": "やり",
+          "start": 12,
+          "end": 14,
+          "reading": "やり"
+        },
+        {
+          "term": "頼む",
+          "surface": "頼み",
+          "start": 15,
+          "end": 17,
+          "reading": "たのみ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.23076923076923078,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0364",
+      "nearest_lexical_japanese": "母は子どもたちに庭の花に水をやらせましたが、みんな笑っていました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-028",
+      "target": "離席",
+      "japanese": "担当者は離席していますので、戻り次第連絡します。",
+      "spanish": "La persona encargada no está en su puesto; le avisaremos en cuanto vuelva.",
+      "estimated_level": "N3",
+      "review_note": "離席 significa ausentarse momentáneamente del puesto.",
+      "authored_ruby": "[担当者|たんとうしゃ]は[離席|りせき]していますので、[戻|もど]り[次第|しだい][連絡|れんらく]します。",
+      "nearest_id": "JAES-N5-EDITORIAL-1456",
+      "nearest_japanese": "通常は集まりの前に連絡します。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "担当",
+          "surface": "担当",
+          "start": 0,
+          "end": 2,
+          "reading": "たんとう"
+        },
+        {
+          "term": "席",
+          "surface": "席",
+          "start": 5,
+          "end": 6,
+          "reading": "せき"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 6,
+          "end": 7,
+          "reading": "し"
+        },
+        {
+          "term": "戻る",
+          "surface": "戻り",
+          "start": 14,
+          "end": 16,
+          "reading": "もどり"
+        },
+        {
+          "term": "次第",
+          "surface": "次第",
+          "start": 16,
+          "end": 18,
+          "reading": "しだい"
+        },
+        {
+          "term": "連絡",
+          "surface": "連絡",
+          "start": 18,
+          "end": 20,
+          "reading": "れんらく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        },
+        {
+          "term": "離席",
+          "surface": "離席",
+          "start": 4,
+          "end": 6,
+          "reading": "りせき"
+        }
+      ],
+      "curated_compound": {
+        "term": "離席",
+        "surface": "離席",
+        "start": 4,
+        "end": 6,
+        "reading": "りせき"
+      },
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0970",
+      "nearest_lexical_japanese": "ご都合次第で連絡してください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-029",
+      "target": "折り返す",
+      "japanese": "会議が終わったら、こちらから折り返します。",
+      "spanish": "Le devolveré la llamada cuando termine la reunión.",
+      "estimated_level": "N3",
+      "review_note": "折り返す se usa aquí para devolver una llamada.",
+      "authored_ruby": "[会議|かいぎ]が[終|お]わったら、こちらから[折|お]り[返|かえ]します。",
+      "nearest_id": "JAES-N5-EXP-0018",
+      "nearest_japanese": "会議は午後三時に終わります。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "会議",
+          "surface": "会議",
+          "start": 0,
+          "end": 2,
+          "reading": "かいぎ"
+        },
+        {
+          "term": "終わる",
+          "surface": "終わっ",
+          "start": 3,
+          "end": 6,
+          "reading": "おわっ"
+        },
+        {
+          "term": "こちら",
+          "surface": "こちら",
+          "start": 9,
+          "end": 12,
+          "reading": "こちら"
+        },
+        {
+          "term": "折り返す",
+          "surface": "折り返し",
+          "start": 14,
+          "end": 18,
+          "reading": "おりかえし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.4,
+      "nearest_lexical_id": "JAES-N5-EXP-0018",
+      "nearest_lexical_japanese": "会議は午後三時に終わります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-030",
+      "target": "伝言",
+      "japanese": "伝言を忘れないように、机の上にメモを残しました。",
+      "spanish": "Dejé una nota en el escritorio para no olvidar el recado.",
+      "estimated_level": "N4",
+      "review_note": "伝言 es un mensaje que se transmite a otra persona.",
+      "authored_ruby": "[伝言|でんごん]を[忘|わす]れないように、[机|つくえ]の[上|うえ]にメモを[残|のこ]しました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1878",
+      "nearest_japanese": "パスポートを忘れないように、前の日にかばんに入れます。",
+      "character_similarity": 0.4681,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "伝言",
+          "surface": "伝言",
+          "start": 0,
+          "end": 2,
+          "reading": "でんごん"
+        },
+        {
+          "term": "忘れる",
+          "surface": "忘れ",
+          "start": 3,
+          "end": 5,
+          "reading": "わすれ"
+        },
+        {
+          "term": "机",
+          "surface": "机",
+          "start": 11,
+          "end": 12,
+          "reading": "つくえ"
+        },
+        {
+          "term": "メモ",
+          "surface": "メモ",
+          "start": 15,
+          "end": 17,
+          "reading": "めも"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 18,
+          "end": 20,
+          "reading": "のこし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2000",
+      "nearest_lexical_japanese": "あら、傘を忘れた。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-031",
+      "target": "保留",
+      "japanese": "詳しい情報がないため、判断を保留しました。",
+      "spanish": "Dejé la decisión pendiente porque no tenía información detallada.",
+      "estimated_level": "N3",
+      "review_note": "保留する es dejar algo en suspenso.",
+      "authored_ruby": "[詳|くわ]しい[情報|じょうほう]がないため、[判断|はんだん]を[保留|ほりゅう]しました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-019",
+      "nearest_japanese": "早起きして、誰もいない浜辺を散歩しました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "詳しい",
+          "surface": "詳しい",
+          "start": 0,
+          "end": 3,
+          "reading": "くわしい"
+        },
+        {
+          "term": "情報",
+          "surface": "情報",
+          "start": 3,
+          "end": 5,
+          "reading": "じょうほう"
+        },
+        {
+          "term": "ない",
+          "surface": "ない",
+          "start": 6,
+          "end": 8,
+          "reading": "ない"
+        },
+        {
+          "term": "判断",
+          "surface": "判断",
+          "start": 11,
+          "end": 13,
+          "reading": "はんだん"
+        },
+        {
+          "term": "保留",
+          "surface": "保留",
+          "start": 14,
+          "end": 16,
+          "reading": "ほりゅう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1062",
+      "nearest_lexical_japanese": "情報がないので、窓口で聞きます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-032",
+      "target": "承認",
+      "japanese": "上司の承認を得てから、備品を購入します。",
+      "spanish": "Compraré el material de oficina después de obtener la aprobación de mi superior.",
+      "estimated_level": "N3",
+      "review_note": "承認 es una aprobación formal.",
+      "authored_ruby": "[上司|じょうし]の[承認|しょうにん]を[得|え]てから、[備品|びひん]を[購入|こうにゅう]します。",
+      "nearest_id": "JAES-N4-EDITORIAL-1399",
+      "nearest_japanese": "金額を見てから財布を出しました。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "上司",
+          "surface": "上司",
+          "start": 0,
+          "end": 2,
+          "reading": "じょうし"
+        },
+        {
+          "term": "承認",
+          "surface": "承認",
+          "start": 3,
+          "end": 5,
+          "reading": "しょうにん"
+        },
+        {
+          "term": "得る",
+          "surface": "得",
+          "start": 6,
+          "end": 7,
+          "reading": "え"
+        },
+        {
+          "term": "備品",
+          "surface": "備品",
+          "start": 11,
+          "end": 13,
+          "reading": "びひん"
+        },
+        {
+          "term": "購入",
+          "surface": "購入",
+          "start": 14,
+          "end": 16,
+          "reading": "こうにゅう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0645",
+      "nearest_lexical_japanese": "購入しますか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-033",
+      "target": "許可",
+      "japanese": "撮影の許可を取ってから、店内の写真を撮りました。",
+      "spanish": "Hice fotos del interior de la tienda después de pedir permiso para fotografiar.",
+      "estimated_level": "N4",
+      "review_note": "許可 es permiso para realizar una acción.",
+      "authored_ruby": "[撮影|さつえい]の[許可|きょか]を[取|と]ってから、[店内|てんない]の[写真|しゃしん]を[撮|と]りました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1814",
+      "nearest_japanese": "京都へ行って、写真を撮りました。",
+      "character_similarity": 0.5556,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "撮影",
+          "surface": "撮影",
+          "start": 0,
+          "end": 2,
+          "reading": "さつえい"
+        },
+        {
+          "term": "許可",
+          "surface": "許可",
+          "start": 3,
+          "end": 5,
+          "reading": "きょか"
+        },
+        {
+          "term": "取る",
+          "surface": "取っ",
+          "start": 6,
+          "end": 8,
+          "reading": "とっ"
+        },
+        {
+          "term": "店内",
+          "surface": "店内",
+          "start": 12,
+          "end": 14,
+          "reading": "てんない"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 15,
+          "end": 17,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "撮る",
+          "surface": "撮り",
+          "start": 18,
+          "end": 20,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EXP-0059",
+      "nearest_lexical_japanese": "写真を撮ってはいけません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-034",
+      "target": "申請",
+      "japanese": "休暇の申請を出しましたが、まだ返事はありません。",
+      "spanish": "He presentado la solicitud de vacaciones, pero todavía no tengo respuesta.",
+      "estimated_level": "N3",
+      "review_note": "申請 es una petición formal pendiente de decisión.",
+      "authored_ruby": "[休暇|きゅうか]の[申請|しんせい]を[出|だ]しましたが、まだ[返事|へんじ]はありません。",
+      "nearest_id": "JAES-N5-EDITORIAL-0869",
+      "nearest_japanese": "いただくことはありません。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "休暇",
+          "surface": "休暇",
+          "start": 0,
+          "end": 2,
+          "reading": "きゅうか"
+        },
+        {
+          "term": "申請",
+          "surface": "申請",
+          "start": 3,
+          "end": 5,
+          "reading": "しんせい"
+        },
+        {
+          "term": "出す",
+          "surface": "出し",
+          "start": 6,
+          "end": 8,
+          "reading": "だし"
+        },
+        {
+          "term": "まだ",
+          "surface": "まだ",
+          "start": 13,
+          "end": 15,
+          "reading": "まだ"
+        },
+        {
+          "term": "返事",
+          "surface": "返事",
+          "start": 15,
+          "end": 17,
+          "reading": "へんじ"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 18,
+          "end": 20,
+          "reading": "あり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1108",
+      "nearest_lexical_japanese": "すみません、あれはまだありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-035",
+      "target": "提出",
+      "japanese": "提出の前に、名前と日付を確かめました。",
+      "spanish": "Comprobé el nombre y la fecha antes de entregar el trabajo.",
+      "estimated_level": "N3",
+      "review_note": "提出 es presentar o entregar un documento.",
+      "authored_ruby": "[提出|ていしゅつ]の[前|まえ]に、[名前|なまえ]と[日付|ひづけ]を[確|たし]かめました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-001-037",
+      "nearest_japanese": "写真の裏に、撮った日付を書きました。",
+      "character_similarity": 0.4848,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "提出",
+          "surface": "提出",
+          "start": 0,
+          "end": 2,
+          "reading": "ていしゅつ"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 3,
+          "end": 4,
+          "reading": "まえ"
+        },
+        {
+          "term": "名前",
+          "surface": "名前",
+          "start": 6,
+          "end": 8,
+          "reading": "なまえ"
+        },
+        {
+          "term": "日付",
+          "surface": "日付",
+          "start": 9,
+          "end": 11,
+          "reading": "ひづけ"
+        },
+        {
+          "term": "確かめる",
+          "surface": "確かめ",
+          "start": 12,
+          "end": 15,
+          "reading": "たしかめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1351",
+      "nearest_lexical_japanese": "国境を越える前に、体調を確かめます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-036",
+      "target": "添える",
+      "japanese": "プレゼントに、短いメッセージを添えました。",
+      "spanish": "Añadí un mensaje breve al regalo.",
+      "estimated_level": "N3",
+      "review_note": "添える es acompañar algo principal con un añadido.",
+      "authored_ruby": "プレゼントに、[短|みじか]いメッセージを[添|そ]えました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1031",
+      "nearest_japanese": "彼女にプレゼントを買っておきました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "プレゼント",
+          "surface": "プレゼント",
+          "start": 0,
+          "end": 5,
+          "reading": "ぷれぜんと"
+        },
+        {
+          "term": "短い",
+          "surface": "短い",
+          "start": 7,
+          "end": 9,
+          "reading": "みじかい"
+        },
+        {
+          "term": "メッセージ",
+          "surface": "メッセージ",
+          "start": 9,
+          "end": 14,
+          "reading": "めっせーじ"
+        },
+        {
+          "term": "添える",
+          "surface": "添え",
+          "start": 15,
+          "end": 17,
+          "reading": "そえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-065",
+      "nearest_lexical_japanese": "短いメッセージで誤解を招いたので、電話で説明しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-037",
+      "target": "添付",
+      "japanese": "メールは届きましたが、添付されたファイルが開けません。",
+      "spanish": "El correo ha llegado, pero no puedo abrir el archivo adjunto.",
+      "estimated_level": "N3",
+      "review_note": "添付された modifica el archivo incluido en el correo.",
+      "authored_ruby": "メールは[届|とど]きましたが、[添付|てんぷ]されたファイルが[開|ひら]けません。",
+      "nearest_id": "JAES-N5-EDITORIAL-1246",
+      "nearest_japanese": "メールは九時過ぎに送りました。",
+      "character_similarity": 0.359,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "メール",
+          "surface": "メール",
+          "start": 0,
+          "end": 3,
+          "reading": "めーる"
+        },
+        {
+          "term": "届く",
+          "surface": "届き",
+          "start": 4,
+          "end": 6,
+          "reading": "とどき"
+        },
+        {
+          "term": "添付",
+          "surface": "添付",
+          "start": 11,
+          "end": 13,
+          "reading": "てんぷ"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 13,
+          "end": 14,
+          "reading": "さ"
+        },
+        {
+          "term": "ファイル",
+          "surface": "ファイル",
+          "start": 16,
+          "end": 20,
+          "reading": "ふぁいる"
+        },
+        {
+          "term": "開ける",
+          "surface": "開け",
+          "start": 21,
+          "end": 23,
+          "reading": "あけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924B-099",
+      "nearest_lexical_japanese": "説明だけでは伝わりにくいので、メールに図を添付しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-038",
+      "target": "送信",
+      "japanese": "送信する前に、宛先をもう一度確認します。",
+      "spanish": "Antes de enviarlo, compruebo una vez más el destinatario.",
+      "estimated_level": "N3",
+      "review_note": "送信 es transmitir un mensaje o datos.",
+      "authored_ruby": "[送信|そうしん]する[前|まえ]に、[宛先|あてさき]をもう[一度|いちど][確認|かくにん]します。",
+      "nearest_id": "JAES-N5-EDITORIAL-0415",
+      "nearest_japanese": "宿題をする前に、日本語を復習します。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "送信",
+          "surface": "送信",
+          "start": 0,
+          "end": 2,
+          "reading": "そうしん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 4,
+          "end": 5,
+          "reading": "まえ"
+        },
+        {
+          "term": "宛先",
+          "surface": "宛先",
+          "start": 7,
+          "end": 9,
+          "reading": "あてさき"
+        },
+        {
+          "term": "もう一度",
+          "surface": "もう一度",
+          "start": 10,
+          "end": 14,
+          "reading": "もういちど"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 14,
+          "end": 16,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EXP-0094",
+      "nearest_lexical_japanese": "ファイルを送る前に、名前を確認してください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-039",
+      "target": "受信",
+      "japanese": "山の中では、メールを受信できませんでした。",
+      "spanish": "En medio de la montaña no podía recibir correos.",
+      "estimated_level": "N3",
+      "review_note": "受信 es recibir una transmisión.",
+      "authored_ruby": "[山|やま]の[中|なか]では、メールを[受信|じゅしん]できませんでした。",
+      "nearest_id": "SAKAMOTO-a59641d4578fa24a-JA_ES",
+      "nearest_japanese": "認証できませんでした。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "山",
+          "surface": "山",
+          "start": 0,
+          "end": 1,
+          "reading": "やま"
+        },
+        {
+          "term": "メール",
+          "surface": "メール",
+          "start": 6,
+          "end": 9,
+          "reading": "めーる"
+        },
+        {
+          "term": "受信",
+          "surface": "受信",
+          "start": 10,
+          "end": 12,
+          "reading": "じゅしん"
+        },
+        {
+          "term": "できる",
+          "surface": "でき",
+          "start": 12,
+          "end": 14,
+          "reading": "でき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1393",
+      "nearest_lexical_japanese": "ここは電波を受信できます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-040",
+      "target": "返信",
+      "japanese": "返信が必要なメールに、印をつけておきました。",
+      "spanish": "Marqué los correos que necesitaban respuesta.",
+      "estimated_level": "N4",
+      "review_note": "返信 es contestar a un mensaje.",
+      "authored_ruby": "[返信|へんしん]が[必要|ひつよう]なメールに、[印|しるし]をつけておきました。",
+      "nearest_id": "JAES-N4-EXP-0084",
+      "nearest_japanese": "大事なメールを消してしまいました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "返信",
+          "surface": "返信",
+          "start": 0,
+          "end": 2,
+          "reading": "へんしん"
+        },
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 3,
+          "end": 5,
+          "reading": "ひつよう"
+        },
+        {
+          "term": "メール",
+          "surface": "メール",
+          "start": 6,
+          "end": 9,
+          "reading": "めーる"
+        },
+        {
+          "term": "印",
+          "surface": "印",
+          "start": 11,
+          "end": 12,
+          "reading": "しるし"
+        },
+        {
+          "term": "つける",
+          "surface": "つけ",
+          "start": 13,
+          "end": 15,
+          "reading": "つけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1934",
+      "nearest_lexical_japanese": "パソコンをつけてメールを送ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-041",
+      "target": "署名",
+      "japanese": "内容を読まずに署名しそうになり、手を止めました。",
+      "spanish": "Estuve a punto de firmar sin leer el contenido, pero me detuve.",
+      "estimated_level": "N3",
+      "review_note": "署名する es escribir la firma propia.",
+      "authored_ruby": "[内容|ないよう]を[読|よ]まずに[署名|しょめい]しそうになり、[手|て]を[止|と]めました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-099",
+      "nearest_japanese": "契約の内容を慎重に読んでから、署名しました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "内容",
+          "surface": "内容",
+          "start": 0,
+          "end": 2,
+          "reading": "ないよう"
+        },
+        {
+          "term": "読む",
+          "surface": "読ま",
+          "start": 3,
+          "end": 5,
+          "reading": "よま"
+        },
+        {
+          "term": "署名",
+          "surface": "署名",
+          "start": 7,
+          "end": 9,
+          "reading": "しょめい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 9,
+          "end": 10,
+          "reading": "し"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 13,
+          "end": 15,
+          "reading": "なり"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 16,
+          "end": 17,
+          "reading": "て"
+        },
+        {
+          "term": "止める",
+          "surface": "止め",
+          "start": 18,
+          "end": 20,
+          "reading": "とめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.4444444444444444,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-099",
+      "nearest_lexical_japanese": "契約の内容を慎重に読んでから、署名しました。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-042",
+      "target": "捺印",
+      "japanese": "捺印する場所を、係の人に教えてもらいました。",
+      "spanish": "La persona encargada me indicó dónde debía estampar el sello.",
+      "estimated_level": "N2",
+      "review_note": "捺印 es poner un sello personal en un documento.",
+      "authored_ruby": "[捺印|なついん]する[場所|ばしょ]を、[係|かかり]の[人|ひと]に[教|おし]えてもらいました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-097",
+      "nearest_japanese": "窓に当たる枝を、庭師に切ってもらいました。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "捺印",
+          "surface": "捺印",
+          "start": 0,
+          "end": 2,
+          "reading": "なついん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "場所",
+          "surface": "場所",
+          "start": 4,
+          "end": 6,
+          "reading": "ばしょ"
+        },
+        {
+          "term": "係",
+          "surface": "係",
+          "start": 8,
+          "end": 9,
+          "reading": "かかり"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 10,
+          "end": 11,
+          "reading": "ひと"
+        },
+        {
+          "term": "教える",
+          "surface": "教え",
+          "start": 12,
+          "end": 14,
+          "reading": "おしえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0123",
+      "nearest_lexical_japanese": "コンサートで係の人に注意されましたか。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-043",
+      "target": "複写",
+      "japanese": "複写した資料の文字が薄く、読みにくくなっていました。",
+      "spanish": "Las letras de la copia del documento habían quedado tenues y costaba leerlas.",
+      "estimated_level": "N2",
+      "review_note": "複写 es reproducir un documento.",
+      "authored_ruby": "[複写|ふくしゃ]した[資料|しりょう]の[文字|もじ]が[薄|うす]く、[読|よ]みにくくなっていました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-072",
+      "nearest_japanese": "朝、池の表面が薄く凍っていました。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "複写",
+          "surface": "複写",
+          "start": 0,
+          "end": 2,
+          "reading": "ふくしゃ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 2,
+          "end": 3,
+          "reading": "し"
+        },
+        {
+          "term": "資料",
+          "surface": "資料",
+          "start": 4,
+          "end": 6,
+          "reading": "しりょう"
+        },
+        {
+          "term": "文字",
+          "surface": "文字",
+          "start": 7,
+          "end": 9,
+          "reading": "もじ"
+        },
+        {
+          "term": "薄い",
+          "surface": "薄く",
+          "start": 10,
+          "end": 12,
+          "reading": "うすく"
+        },
+        {
+          "term": "読む",
+          "surface": "読み",
+          "start": 13,
+          "end": 15,
+          "reading": "よみ"
+        },
+        {
+          "term": "なる",
+          "surface": "なっ",
+          "start": 18,
+          "end": 20,
+          "reading": "なっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0612",
+      "nearest_lexical_japanese": "残業したり、資料を直したりして、仕事が終わるのが遅くなりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-044",
+      "target": "原本",
+      "japanese": "窓口で原本を見せてから、コピーを提出しました。",
+      "spanish": "Mostré el original en la oficina y después entregué una copia.",
+      "estimated_level": "N3",
+      "review_note": "原本 es el documento original.",
+      "authored_ruby": "[窓口|まどぐち]で[原本|げんぽん]を[見|み]せてから、コピーを[提出|ていしゅつ]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1399",
+      "nearest_japanese": "金額を見てから財布を出しました。",
+      "character_similarity": 0.6111,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "窓口",
+          "surface": "窓口",
+          "start": 0,
+          "end": 2,
+          "reading": "まどぐち"
+        },
+        {
+          "term": "原本",
+          "surface": "原本",
+          "start": 3,
+          "end": 5,
+          "reading": "げんぽん"
+        },
+        {
+          "term": "見せる",
+          "surface": "見せ",
+          "start": 6,
+          "end": 8,
+          "reading": "みせ"
+        },
+        {
+          "term": "コピー",
+          "surface": "コピー",
+          "start": 12,
+          "end": 15,
+          "reading": "こぴー"
+        },
+        {
+          "term": "提出",
+          "surface": "提出",
+          "start": 16,
+          "end": 18,
+          "reading": "ていしゅつ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2025",
+      "nearest_lexical_japanese": "これをコピーしてくださいませんか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-045",
+      "target": "保管",
+      "japanese": "古い写真は、光の当たらない箱に保管しています。",
+      "spanish": "Guardo las fotos antiguas en una caja donde no les da la luz.",
+      "estimated_level": "N3",
+      "review_note": "保管する es guardar algo para conservarlo.",
+      "authored_ruby": "[古|ふる]い[写真|しゃしん]は、[光|ひかり]の[当|あ]たらない[箱|はこ]に[保管|ほかん]しています。",
+      "nearest_id": "JAES-N5-MORE-0224",
+      "nearest_japanese": "写真は公園の前にあります。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "古い",
+          "surface": "古い",
+          "start": 0,
+          "end": 2,
+          "reading": "ふるい"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 2,
+          "end": 4,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "光",
+          "surface": "光",
+          "start": 6,
+          "end": 7,
+          "reading": "ひかり"
+        },
+        {
+          "term": "当たる",
+          "surface": "当たら",
+          "start": 8,
+          "end": 11,
+          "reading": "あたら"
+        },
+        {
+          "term": "箱",
+          "surface": "箱",
+          "start": 13,
+          "end": 14,
+          "reading": "はこ"
+        },
+        {
+          "term": "保管",
+          "surface": "保管",
+          "start": 15,
+          "end": 17,
+          "reading": "ほかん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924-005",
+      "nearest_lexical_japanese": "注文した品物と違うので、証拠として箱の写真を撮りました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-046",
+      "target": "整理",
+      "japanese": "書類を年ごとに整理したら、必要なものが探しやすくなりました。",
+      "spanish": "Al ordenar los documentos por años, resultó más fácil encontrar lo necesario.",
+      "estimated_level": "N4",
+      "review_note": "整理する es ordenar con un criterio.",
+      "authored_ruby": "[書類|しょるい]を[年|とし]ごとに[整理|せいり]したら、[必要|ひつよう]なものが[探|さが]しやすくなりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1316",
+      "nearest_japanese": "デパートで帽子を見ていたら、冬用のものがほしくなりました。",
+      "character_similarity": 0.4727,
+      "target_literal_previous_occurrences": 14,
+      "morphology_evidence": [
+        {
+          "term": "書類",
+          "surface": "書類",
+          "start": 0,
+          "end": 2,
+          "reading": "しょるい"
+        },
+        {
+          "term": "年",
+          "surface": "年",
+          "start": 3,
+          "end": 4,
+          "reading": "とし"
+        },
+        {
+          "term": "整理",
+          "surface": "整理",
+          "start": 7,
+          "end": 9,
+          "reading": "せいり"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 9,
+          "end": 10,
+          "reading": "し"
+        },
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 13,
+          "end": 15,
+          "reading": "ひつよう"
+        },
+        {
+          "term": "探す",
+          "surface": "探し",
+          "start": 19,
+          "end": 21,
+          "reading": "さがし"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 24,
+          "end": 26,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0834",
+      "nearest_lexical_japanese": "事務所で書類を整理します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-047",
+      "target": "分類",
+      "japanese": "集めた葉を、形と大きさで分類しました。",
+      "spanish": "Clasifiqué las hojas recogidas por su forma y tamaño.",
+      "estimated_level": "N3",
+      "review_note": "分類 es agrupar según características compartidas.",
+      "authored_ruby": "[集|あつ]めた[葉|は]を、[形|かたち]と[大|おお]きさで[分類|ぶんるい]しました。",
+      "nearest_id": "JAES-N5-EXP-0054",
+      "nearest_japanese": "宿題を図書館でしました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "集める",
+          "surface": "集め",
+          "start": 0,
+          "end": 2,
+          "reading": "あつめ"
+        },
+        {
+          "term": "葉",
+          "surface": "葉",
+          "start": 3,
+          "end": 4,
+          "reading": "は"
+        },
+        {
+          "term": "形",
+          "surface": "形",
+          "start": 6,
+          "end": 7,
+          "reading": "かたち"
+        },
+        {
+          "term": "大きい",
+          "surface": "大き",
+          "start": 8,
+          "end": 10,
+          "reading": "おおき"
+        },
+        {
+          "term": "分類",
+          "surface": "分類",
+          "start": 12,
+          "end": 14,
+          "reading": "ぶんるい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 14,
+          "end": 15,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1591",
+      "nearest_lexical_japanese": "症状を分類しています。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-048",
+      "target": "処分",
+      "japanese": "壊れた家具を処分する方法を、市のサイトで調べました。",
+      "spanish": "Consulté en la web municipal cómo deshacerme de los muebles rotos.",
+      "estimated_level": "N3",
+      "review_note": "処分する significa aquí retirar o desechar.",
+      "authored_ruby": "[壊|こわ]れた[家具|かぐ]を[処分|しょぶん]する[方法|ほうほう]を、[市|し]のサイトで[調|しら]べました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1488",
+      "nearest_japanese": "通報が遅れたので、私たちは原因を自分で調べました。",
+      "character_similarity": 0.4255,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "壊れる",
+          "surface": "壊れ",
+          "start": 0,
+          "end": 2,
+          "reading": "こわれ"
+        },
+        {
+          "term": "家具",
+          "surface": "家具",
+          "start": 3,
+          "end": 5,
+          "reading": "かぐ"
+        },
+        {
+          "term": "処分",
+          "surface": "処分",
+          "start": 6,
+          "end": 8,
+          "reading": "しょぶん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 8,
+          "end": 10,
+          "reading": "する"
+        },
+        {
+          "term": "方法",
+          "surface": "方法",
+          "start": 10,
+          "end": 12,
+          "reading": "ほうほう"
+        },
+        {
+          "term": "市",
+          "surface": "市",
+          "start": 14,
+          "end": 15,
+          "reading": "し"
+        },
+        {
+          "term": "サイト",
+          "surface": "サイト",
+          "start": 16,
+          "end": 19,
+          "reading": "さいと"
+        },
+        {
+          "term": "調べる",
+          "surface": "調べ",
+          "start": 20,
+          "end": 22,
+          "reading": "しらべ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0748",
+      "nearest_lexical_japanese": "原因を調べて、実施します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-049",
+      "target": "廃棄",
+      "japanese": "期限の切れた材料を、記録してから廃棄しました。",
+      "spanish": "Registré los materiales caducados antes de desecharlos.",
+      "estimated_level": "N3",
+      "review_note": "廃棄 es desechar definitivamente.",
+      "authored_ruby": "[期限|きげん]の[切|き]れた[材料|ざいりょう]を、[記録|きろく]してから[廃棄|はいき]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2156",
+      "nearest_japanese": "観察した鳥の数を記入してから、記録を提出しました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "期限",
+          "surface": "期限",
+          "start": 0,
+          "end": 2,
+          "reading": "きげん"
+        },
+        {
+          "term": "切れる",
+          "surface": "切れ",
+          "start": 3,
+          "end": 5,
+          "reading": "きれ"
+        },
+        {
+          "term": "材料",
+          "surface": "材料",
+          "start": 6,
+          "end": 8,
+          "reading": "ざいりょう"
+        },
+        {
+          "term": "記録",
+          "surface": "記録",
+          "start": 10,
+          "end": 12,
+          "reading": "きろく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 12,
+          "end": 13,
+          "reading": "し"
+        },
+        {
+          "term": "廃棄",
+          "surface": "廃棄",
+          "start": 16,
+          "end": 18,
+          "reading": "はいき"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2094",
+      "nearest_lexical_japanese": "電池が切れたから、充電します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-050",
+      "target": "再利用",
+      "japanese": "空いた瓶を洗って、花瓶として再利用しました。",
+      "spanish": "Lavé el frasco vacío y lo reutilicé como florero.",
+      "estimated_level": "N3",
+      "review_note": "再利用 es volver a utilizar algo, también con otra función.",
+      "authored_ruby": "[空|あ]いた[瓶|びん]を[洗|あら]って、[花瓶|かびん]として[再利用|さいりよう]しました。",
+      "nearest_id": "JAES-N4-EXP-0086",
+      "nearest_japanese": "借りた本を汚してしまいました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "空く",
+          "surface": "空い",
+          "start": 0,
+          "end": 2,
+          "reading": "あい"
+        },
+        {
+          "term": "瓶",
+          "surface": "瓶",
+          "start": 3,
+          "end": 4,
+          "reading": "びん"
+        },
+        {
+          "term": "洗う",
+          "surface": "洗っ",
+          "start": 5,
+          "end": 7,
+          "reading": "あらっ"
+        },
+        {
+          "term": "花瓶",
+          "surface": "花瓶",
+          "start": 9,
+          "end": 11,
+          "reading": "かびん"
+        },
+        {
+          "term": "利用",
+          "surface": "利用",
+          "start": 15,
+          "end": 17,
+          "reading": "りよう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        },
+        {
+          "term": "再利用",
+          "surface": "再利用",
+          "start": 14,
+          "end": 17,
+          "reading": "さいりよう"
+        }
+      ],
+      "curated_compound": {
+        "term": "再利用",
+        "surface": "再利用",
+        "start": 14,
+        "end": 17,
+        "reading": "さいりよう"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0568",
+      "nearest_lexical_japanese": "会社でこの道具を利用します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-051",
+      "target": "備品",
+      "japanese": "会議室の備品を数えて、足りないいすを運びました。",
+      "spanish": "Conté el equipamiento de la sala de reuniones y llevé las sillas que faltaban.",
+      "estimated_level": "N3",
+      "review_note": "備品 son los objetos de uso habitual en una instalación.",
+      "authored_ruby": "[会議|かいぎ][室|しつ]の[備品|びひん]を[数|かぞ]えて、[足|た]りないいすを[運|はこ]びました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1049",
+      "nearest_japanese": "会議の間に、商品を識別する番号を確認しました。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "会議",
+          "surface": "会議",
+          "start": 0,
+          "end": 2,
+          "reading": "かいぎ"
+        },
+        {
+          "term": "備品",
+          "surface": "備品",
+          "start": 4,
+          "end": 6,
+          "reading": "びひん"
+        },
+        {
+          "term": "数える",
+          "surface": "数え",
+          "start": 7,
+          "end": 9,
+          "reading": "かぞえ"
+        },
+        {
+          "term": "足りる",
+          "surface": "足り",
+          "start": 11,
+          "end": 13,
+          "reading": "たり"
+        },
+        {
+          "term": "いす",
+          "surface": "いす",
+          "start": 15,
+          "end": 17,
+          "reading": "いす"
+        },
+        {
+          "term": "運ぶ",
+          "surface": "運び",
+          "start": 18,
+          "end": 20,
+          "reading": "はこび"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0790",
+      "nearest_lexical_japanese": "会議は九時ですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-052",
+      "target": "消耗品",
+      "japanese": "ペンや紙などの消耗品は、月に一度まとめて買います。",
+      "spanish": "Compro juntos una vez al mes los consumibles, como bolígrafos y papel.",
+      "estimated_level": "N3",
+      "review_note": "消耗品 son materiales que se gastan con el uso.",
+      "authored_ruby": "ペンや[紙|かみ]などの[消耗品|しょうもうひん]は、[月|つき]に[一度|いちど]まとめて[買|か]います。",
+      "nearest_id": "JAES-N4-EDITORIAL-1723",
+      "nearest_japanese": "うちの会社では、役員が月に一度集まります。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ペン",
+          "surface": "ペン",
+          "start": 0,
+          "end": 2,
+          "reading": "ぺん"
+        },
+        {
+          "term": "紙",
+          "surface": "紙",
+          "start": 3,
+          "end": 4,
+          "reading": "かみ"
+        },
+        {
+          "term": "消耗",
+          "surface": "消耗",
+          "start": 7,
+          "end": 9,
+          "reading": "しょうもう"
+        },
+        {
+          "term": "月",
+          "surface": "月",
+          "start": 12,
+          "end": 13,
+          "reading": "つき"
+        },
+        {
+          "term": "まとめる",
+          "surface": "まとめ",
+          "start": 16,
+          "end": 19,
+          "reading": "まとめ"
+        },
+        {
+          "term": "買う",
+          "surface": "買い",
+          "start": 20,
+          "end": 22,
+          "reading": "かい"
+        },
+        {
+          "term": "消耗品",
+          "surface": "消耗品",
+          "start": 7,
+          "end": 10,
+          "reading": "しょうもうひん"
+        }
+      ],
+      "curated_compound": {
+        "term": "消耗品",
+        "surface": "消耗品",
+        "start": 7,
+        "end": 10,
+        "reading": "しょうもうひん"
+      },
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1188",
+      "nearest_lexical_japanese": "この店でまとめて買うなら、口座から引き落としができます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-053",
+      "target": "経費",
+      "japanese": "出張の経費を、帰ってから一覧にしました。",
+      "spanish": "Al volver, hice una lista de los gastos del viaje de trabajo.",
+      "estimated_level": "N3",
+      "review_note": "経費 son gastos vinculados a una actividad.",
+      "authored_ruby": "[出張|しゅっちょう]の[経費|けいひ]を、[帰|かえ]ってから[一覧|いちらん]にしました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1954",
+      "nearest_japanese": "実家に帰ってから母に電話しました。",
+      "character_similarity": 0.5882,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "出張",
+          "surface": "出張",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅっちょう"
+        },
+        {
+          "term": "経費",
+          "surface": "経費",
+          "start": 3,
+          "end": 5,
+          "reading": "けいひ"
+        },
+        {
+          "term": "帰る",
+          "surface": "帰っ",
+          "start": 7,
+          "end": 9,
+          "reading": "かえっ"
+        },
+        {
+          "term": "一覧",
+          "surface": "一覧",
+          "start": 12,
+          "end": 14,
+          "reading": "いちらん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0193",
+      "nearest_lexical_japanese": "家に帰ったら宿題をします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-054",
+      "target": "精算",
+      "japanese": "立て替えた電車代を、月末に精算します。",
+      "spanish": "A final de mes liquidaré los billetes de tren que pagué por adelantado.",
+      "estimated_level": "N3",
+      "review_note": "精算 es ajustar y liquidar cuentas.",
+      "authored_ruby": "[立|た]て[替|か]えた[電車|でんしゃ][代|だい]を、[月末|げつまつ]に[精算|せいさん]します。",
+      "nearest_id": "JAES-N5-EDITORIAL-1542",
+      "nearest_japanese": "安いので、この電車にします。",
+      "character_similarity": 0.4138,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "立て替える",
+          "surface": "立て替え",
+          "start": 0,
+          "end": 4,
+          "reading": "たてかえ"
+        },
+        {
+          "term": "電車",
+          "surface": "電車",
+          "start": 5,
+          "end": 7,
+          "reading": "でんしゃ"
+        },
+        {
+          "term": "月末",
+          "surface": "月末",
+          "start": 10,
+          "end": 12,
+          "reading": "げつまつ"
+        },
+        {
+          "term": "精算",
+          "surface": "精算",
+          "start": 13,
+          "end": 15,
+          "reading": "せいさん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1542",
+      "nearest_lexical_japanese": "安いので、この電車にします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-055",
+      "target": "予算",
+      "japanese": "予算が限られているので、必要性の高いものから買います。",
+      "spanish": "Como el presupuesto es limitado, compraré primero lo más necesario.",
+      "estimated_level": "N3",
+      "review_note": "予算 es el dinero previsto para un fin.",
+      "authored_ruby": "[予算|よさん]が[限|かぎ]られているので、[必要性|ひつようせい]の[高|たか]いものから[買|か]います。",
+      "nearest_id": "JAES-N4-EDITORIAL-1986",
+      "nearest_japanese": "この家電は回路が壊れているので、修理が必要です。",
+      "character_similarity": 0.4255,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "予算",
+          "surface": "予算",
+          "start": 0,
+          "end": 2,
+          "reading": "よさん"
+        },
+        {
+          "term": "限る",
+          "surface": "限ら",
+          "start": 3,
+          "end": 5,
+          "reading": "かぎら"
+        },
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 12,
+          "end": 14,
+          "reading": "ひつよう"
+        },
+        {
+          "term": "高い",
+          "surface": "高い",
+          "start": 16,
+          "end": 18,
+          "reading": "たかい"
+        },
+        {
+          "term": "買う",
+          "surface": "買い",
+          "start": 22,
+          "end": 24,
+          "reading": "かい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0822",
+      "nearest_lexical_japanese": "このかばんは高いですから、買いません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-056",
+      "target": "費用",
+      "japanese": "修理の費用には、部品代も含まれています。",
+      "spanish": "El coste de la reparación también incluye las piezas.",
+      "estimated_level": "N3",
+      "review_note": "費用 es el coste de una actividad o servicio.",
+      "authored_ruby": "[修理|しゅうり]の[費用|ひよう]には、[部品|ぶひん][代|だい]も[含|ふく]まれています。",
+      "nearest_id": "JAES-N4-EDITORIAL-1231",
+      "nearest_japanese": "この展示には歴史の説明も含まれています。",
+      "character_similarity": 0.5946,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "修理",
+          "surface": "修理",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅうり"
+        },
+        {
+          "term": "費用",
+          "surface": "費用",
+          "start": 3,
+          "end": 5,
+          "reading": "ひよう"
+        },
+        {
+          "term": "部品",
+          "surface": "部品",
+          "start": 8,
+          "end": 10,
+          "reading": "ぶひん"
+        },
+        {
+          "term": "含む",
+          "surface": "含ま",
+          "start": 12,
+          "end": 14,
+          "reading": "ふくま"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2349",
+      "nearest_lexical_japanese": "修理もできますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-057",
+      "target": "負担",
+      "japanese": "一人に負担が集まらないように、当番を交代しています。",
+      "spanish": "Nos turnamos para que la carga no recaiga siempre en una sola persona.",
+      "estimated_level": "N3",
+      "review_note": "負担 es una carga de trabajo o responsabilidad.",
+      "authored_ruby": "[一人|ひとり]に[負担|ふたん]が[集|あつ]まらないように、[当番|とうばん]を[交代|こうたい]しています。",
+      "nearest_id": "JAES-N4-EXP-0108",
+      "nearest_japanese": "使わない電気は消すようにしています。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "負担",
+          "surface": "負担",
+          "start": 3,
+          "end": 5,
+          "reading": "ふたん"
+        },
+        {
+          "term": "集まる",
+          "surface": "集まら",
+          "start": 6,
+          "end": 9,
+          "reading": "あつまら"
+        },
+        {
+          "term": "当番",
+          "surface": "当番",
+          "start": 15,
+          "end": 17,
+          "reading": "とうばん"
+        },
+        {
+          "term": "交代",
+          "surface": "交代",
+          "start": 18,
+          "end": 20,
+          "reading": "こうたい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1376",
+      "nearest_lexical_japanese": "自然保護の署名が集まったので、知事に提出しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-058",
+      "target": "分担",
+      "japanese": "料理と片付けを分担したら、夕食の準備が早く終わりました。",
+      "spanish": "Al repartirnos cocinar y recoger, terminamos antes de preparar la cena.",
+      "estimated_level": "N3",
+      "review_note": "分担する es repartir tareas entre personas.",
+      "authored_ruby": "[料理|りょうり]と[片付|かたづ]けを[分担|ぶんたん]したら、[夕食|ゆうしょく]の[準備|じゅんび]が[早|はや]く[終|お]わりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0824",
+      "nearest_japanese": "会社の方針を変えてから、会議の準備は前より早く終わるようになりました。",
+      "character_similarity": 0.4407,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "料理",
+          "surface": "料理",
+          "start": 0,
+          "end": 2,
+          "reading": "りょうり"
+        },
+        {
+          "term": "片付け",
+          "surface": "片付け",
+          "start": 3,
+          "end": 6,
+          "reading": "かたづけ"
+        },
+        {
+          "term": "分担",
+          "surface": "分担",
+          "start": 7,
+          "end": 9,
+          "reading": "ぶんたん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 9,
+          "end": 10,
+          "reading": "し"
+        },
+        {
+          "term": "夕食",
+          "surface": "夕食",
+          "start": 13,
+          "end": 15,
+          "reading": "ゆうしょく"
+        },
+        {
+          "term": "準備",
+          "surface": "準備",
+          "start": 16,
+          "end": 18,
+          "reading": "じゅんび"
+        },
+        {
+          "term": "早い",
+          "surface": "早く",
+          "start": 19,
+          "end": 21,
+          "reading": "はやく"
+        },
+        {
+          "term": "終わる",
+          "surface": "終わり",
+          "start": 21,
+          "end": 24,
+          "reading": "おわり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.21428571428571427,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0824",
+      "nearest_lexical_japanese": "会社の方針を変えてから、会議の準備は前より早く終わるようになりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-059",
+      "target": "担当",
+      "japanese": "私は受付を担当し、同僚は案内を担当します。",
+      "spanish": "Yo me encargo de recepción y mi compañero de acompañar a los visitantes.",
+      "estimated_level": "N3",
+      "review_note": "担当する es tener asignada una función.",
+      "authored_ruby": "[私|わたし]は[受付|うけつけ]を[担当|たんとう]し、[同僚|どうりょう]は[案内|あんない]を[担当|たんとう]します。",
+      "nearest_id": "JAES-N5-EDITORIAL-1405",
+      "nearest_japanese": "あたしが案内します。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 9,
+      "morphology_evidence": [
+        {
+          "term": "私",
+          "surface": "私",
+          "start": 0,
+          "end": 1,
+          "reading": "わたし"
+        },
+        {
+          "term": "受付",
+          "surface": "受付",
+          "start": 2,
+          "end": 4,
+          "reading": "うけつけ"
+        },
+        {
+          "term": "担当",
+          "surface": "担当",
+          "start": 5,
+          "end": 7,
+          "reading": "たんとう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 7,
+          "end": 8,
+          "reading": "し"
+        },
+        {
+          "term": "同僚",
+          "surface": "同僚",
+          "start": 9,
+          "end": 11,
+          "reading": "どうりょう"
+        },
+        {
+          "term": "案内",
+          "surface": "案内",
+          "start": 12,
+          "end": 14,
+          "reading": "あんない"
+        },
+        {
+          "term": "担当",
+          "surface": "担当",
+          "start": 15,
+          "end": 17,
+          "reading": "たんとう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1004",
+      "nearest_lexical_japanese": "この仕事なら、来月から私が担当するはずです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-060",
+      "target": "引き継ぎ",
+      "japanese": "引き継ぎが済むまで、前の担当者に質問できることになっています。",
+      "spanish": "Hasta que termine el traspaso, podremos hacer preguntas a la persona que se encargaba antes.",
+      "estimated_level": "N3",
+      "review_note": "引き継ぎ es el relevo con transmisión de información.",
+      "authored_ruby": "[引|ひ]き[継|つ]ぎが[済|す]むまで、[前|まえ]の[担当者|たんとうしゃ]に[質問|しつもん]できることになっています。",
+      "nearest_id": "JAES-N4-EDITORIAL-1592",
+      "nearest_japanese": "きっと明日までに、この問題を自分で解けるようになります。",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "引き継ぎ",
+          "surface": "引き継ぎ",
+          "start": 0,
+          "end": 4,
+          "reading": "ひきつぎ"
+        },
+        {
+          "term": "済む",
+          "surface": "済む",
+          "start": 5,
+          "end": 7,
+          "reading": "すむ"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 10,
+          "end": 11,
+          "reading": "まえ"
+        },
+        {
+          "term": "担当",
+          "surface": "担当",
+          "start": 12,
+          "end": 14,
+          "reading": "たんとう"
+        },
+        {
+          "term": "質問",
+          "surface": "質問",
+          "start": 16,
+          "end": 18,
+          "reading": "しつもん"
+        },
+        {
+          "term": "できる",
+          "surface": "できる",
+          "start": 18,
+          "end": 21,
+          "reading": "できる"
+        },
+        {
+          "term": "なる",
+          "surface": "なっ",
+          "start": 24,
+          "end": 26,
+          "reading": "なっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.21428571428571427,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0680",
+      "nearest_lexical_japanese": "毎日窓口で同じ質問をしていたら、今は手続きが自分でできるようになりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-061",
+      "target": "手順",
+      "japanese": "手順を一つ飛ばしたため、最初からやり直しました。",
+      "spanish": "Me salté un paso del procedimiento y tuve que empezar de nuevo.",
+      "estimated_level": "N3",
+      "review_note": "手順 es el orden de los pasos de una tarea.",
+      "authored_ruby": "[手順|てじゅん]を[一|ひと]つ[飛|と]ばしたため、[最初|さいしょ]からやり[直|なお]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-061",
+      "nearest_japanese": "勇気を出して、初めて自分から話しかけました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "手順",
+          "surface": "手順",
+          "start": 0,
+          "end": 2,
+          "reading": "てじゅん"
+        },
+        {
+          "term": "一つ",
+          "surface": "一つ",
+          "start": 3,
+          "end": 5,
+          "reading": "ひとつ"
+        },
+        {
+          "term": "飛ばす",
+          "surface": "飛ばし",
+          "start": 5,
+          "end": 8,
+          "reading": "とばし"
+        },
+        {
+          "term": "最初",
+          "surface": "最初",
+          "start": 12,
+          "end": 14,
+          "reading": "さいしょ"
+        },
+        {
+          "term": "やり直す",
+          "surface": "やり直し",
+          "start": 16,
+          "end": 20,
+          "reading": "やりなおし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1081",
+      "nearest_lexical_japanese": "最初に手を洗います。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-062",
+      "target": "工程",
+      "japanese": "最後の工程で不具合が見つかり、出荷を止めました。",
+      "spanish": "En la última fase se detectó un fallo y detuvimos el envío.",
+      "estimated_level": "N2",
+      "review_note": "工程 es una etapa de un proceso de producción.",
+      "authored_ruby": "[最後|さいご]の[工程|こうてい]で[不具合|ふぐあい]が[見|み]つかり、[出荷|しゅっか]を[止|と]めました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-003",
+      "nearest_japanese": "狭い席で、隣の人と肘がぶつかりました。",
+      "character_similarity": 0.4103,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "最後",
+          "surface": "最後",
+          "start": 0,
+          "end": 2,
+          "reading": "さいご"
+        },
+        {
+          "term": "工程",
+          "surface": "工程",
+          "start": 3,
+          "end": 5,
+          "reading": "こうてい"
+        },
+        {
+          "term": "不具合",
+          "surface": "不具合",
+          "start": 6,
+          "end": 9,
+          "reading": "ふぐあい"
+        },
+        {
+          "term": "見つかる",
+          "surface": "見つかり",
+          "start": 10,
+          "end": 14,
+          "reading": "みつかり"
+        },
+        {
+          "term": "出荷",
+          "surface": "出荷",
+          "start": 15,
+          "end": 17,
+          "reading": "しゅっか"
+        },
+        {
+          "term": "止める",
+          "surface": "止め",
+          "start": 18,
+          "end": 20,
+          "reading": "とめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.1111111111111111,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1339",
+      "nearest_lexical_japanese": "今日は映画をここで止める。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-063",
+      "target": "進捗",
+      "japanese": "進捗を共有するため、短い報告を毎朝送っています。",
+      "spanish": "Envío un informe breve cada mañana para compartir el avance del trabajo.",
+      "estimated_level": "N2",
+      "review_note": "進捗 es el grado de avance de una tarea.",
+      "authored_ruby": "[進捗|しんちょく]を[共有|きょうゆう]するため、[短|みじか]い[報告|ほうこく]を[毎朝|まいあさ][送|おく]っています。",
+      "nearest_id": "JAES-N4-EXP-0069",
+      "nearest_japanese": "漢字を覚えるために、短い文を書いています。",
+      "character_similarity": 0.5366,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "進捗",
+          "surface": "進捗",
+          "start": 0,
+          "end": 2,
+          "reading": "しんちょく"
+        },
+        {
+          "term": "共有",
+          "surface": "共有",
+          "start": 3,
+          "end": 5,
+          "reading": "きょうゆう"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 5,
+          "end": 7,
+          "reading": "する"
+        },
+        {
+          "term": "短い",
+          "surface": "短い",
+          "start": 10,
+          "end": 12,
+          "reading": "みじかい"
+        },
+        {
+          "term": "報告",
+          "surface": "報告",
+          "start": 12,
+          "end": 14,
+          "reading": "ほうこく"
+        },
+        {
+          "term": "毎朝",
+          "surface": "毎朝",
+          "start": 15,
+          "end": 17,
+          "reading": "まいあさ"
+        },
+        {
+          "term": "送る",
+          "surface": "送っ",
+          "start": 17,
+          "end": 19,
+          "reading": "おくっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2071",
+      "nearest_lexical_japanese": "毎朝ジョギングをします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-064",
+      "target": "締切",
+      "japanese": "締切が近いので、細部より全体を先に仕上げます。",
+      "spanish": "Como se acerca el plazo, terminaré primero el conjunto antes de afinar los detalles.",
+      "estimated_level": "N3",
+      "review_note": "締切 es otra escritura de 締め切り.",
+      "authored_ruby": "[締切|しめきり]が[近|ちか]いので、[細部|さいぶ]より[全体|ぜんたい]を[先|さき]に[仕上|しあ]げます。",
+      "nearest_id": "JAES-N5-EDITORIAL-1050",
+      "nearest_japanese": "任務があるので、先に帰ります。",
+      "character_similarity": 0.4118,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "締切",
+          "surface": "締切",
+          "start": 0,
+          "end": 2,
+          "reading": "しめきり"
+        },
+        {
+          "term": "近い",
+          "surface": "近い",
+          "start": 3,
+          "end": 5,
+          "reading": "ちかい"
+        },
+        {
+          "term": "細部",
+          "surface": "細部",
+          "start": 8,
+          "end": 10,
+          "reading": "さいぶ"
+        },
+        {
+          "term": "全体",
+          "surface": "全体",
+          "start": 12,
+          "end": 14,
+          "reading": "ぜんたい"
+        },
+        {
+          "term": "先",
+          "surface": "先",
+          "start": 15,
+          "end": 16,
+          "reading": "さき"
+        },
+        {
+          "term": "仕上げる",
+          "surface": "仕上げ",
+          "start": 17,
+          "end": 20,
+          "reading": "しあげ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1786",
+      "nearest_lexical_japanese": "先に食べてもいいですよ。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-065",
+      "target": "延期",
+      "japanese": "出演者の都合で、公演が来月に延期されました。",
+      "spanish": "La función se aplazó al mes que viene por circunstancias del intérprete.",
+      "estimated_level": "N3",
+      "review_note": "延期 es trasladar algo a una fecha posterior.",
+      "authored_ruby": "[出演者|しゅつえんしゃ]の[都合|つごう]で、[公演|こうえん]が[来月|らいげつ]に[延期|えんき]されました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-014",
+      "nearest_japanese": "坂道を走ったので、息が切れました。",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "出演",
+          "surface": "出演",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅつえん"
+        },
+        {
+          "term": "都合",
+          "surface": "都合",
+          "start": 4,
+          "end": 6,
+          "reading": "つごう"
+        },
+        {
+          "term": "公演",
+          "surface": "公演",
+          "start": 8,
+          "end": 10,
+          "reading": "こうえん"
+        },
+        {
+          "term": "来月",
+          "surface": "来月",
+          "start": 11,
+          "end": 13,
+          "reading": "らいげつ"
+        },
+        {
+          "term": "延期",
+          "surface": "延期",
+          "start": 14,
+          "end": 16,
+          "reading": "えんき"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 16,
+          "end": 17,
+          "reading": "さ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0687",
+      "nearest_lexical_japanese": "来月結婚するつもりですか。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-066",
+      "target": "前倒し",
+      "japanese": "予定を前倒しして、金曜日に発送することにしました。",
+      "spanish": "Adelantamos lo previsto y decidimos hacer el envío el viernes.",
+      "estimated_level": "N2",
+      "review_note": "前倒し es adelantar una fecha planificada.",
+      "authored_ruby": "[予定|よてい]を[前倒|まえだお]しして、[金曜日|きんようび]に[発送|はっそう]することにしました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0546",
+      "nearest_japanese": "来月から英語を勉強することにしました。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "予定",
+          "surface": "予定",
+          "start": 0,
+          "end": 2,
+          "reading": "よてい"
+        },
+        {
+          "term": "前倒し",
+          "surface": "前倒し",
+          "start": 3,
+          "end": 6,
+          "reading": "まえだおし"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 6,
+          "end": 7,
+          "reading": "し"
+        },
+        {
+          "term": "金曜日",
+          "surface": "金曜日",
+          "start": 9,
+          "end": 12,
+          "reading": "きんようび"
+        },
+        {
+          "term": "発送",
+          "surface": "発送",
+          "start": 13,
+          "end": 15,
+          "reading": "はっそう"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 15,
+          "end": 17,
+          "reading": "する"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1449",
+      "nearest_lexical_japanese": "その予定は承知していますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-067",
+      "target": "調整",
+      "japanese": "三人の予定を調整して、午後に集まることにしました。",
+      "spanish": "Coordinamos los horarios de los tres y quedamos por la tarde.",
+      "estimated_level": "N3",
+      "review_note": "調整する es ajustar elementos para que encajen.",
+      "authored_ruby": "[三人|さんにん]の[予定|よてい]を[調整|ちょうせい]して、[午後|ごご]に[集|あつ]まることにしました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-004-066",
+      "nearest_japanese": "予定を前倒しして、金曜日に発送することにしました。",
+      "character_similarity": 0.6087,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "予定",
+          "surface": "予定",
+          "start": 3,
+          "end": 5,
+          "reading": "よてい"
+        },
+        {
+          "term": "調整",
+          "surface": "調整",
+          "start": 6,
+          "end": 8,
+          "reading": "ちょうせい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 8,
+          "end": 9,
+          "reading": "し"
+        },
+        {
+          "term": "午後",
+          "surface": "午後",
+          "start": 11,
+          "end": 13,
+          "reading": "ごご"
+        },
+        {
+          "term": "集まる",
+          "surface": "集まる",
+          "start": 14,
+          "end": 17,
+          "reading": "あつまる"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1501",
+      "nearest_lexical_japanese": "料金を調整します。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-004-068",
+      "target": "変更",
+      "japanese": "座席の変更を頼みましたが、空きがありませんでした。",
+      "spanish": "Pedí cambiar de asiento, pero no quedaban libres.",
+      "estimated_level": "N4",
+      "review_note": "変更 es modificar lo previsto.",
+      "authored_ruby": "[座席|ざせき]の[変更|へんこう]を[頼|たの]みましたが、[空|あ]きがありませんでした。",
+      "nearest_id": "JAES-N5-EDITORIAL-0156",
+      "nearest_japanese": "弟と川の近くを歩きましたが、雨が降りました。",
+      "character_similarity": 0.5116,
+      "target_literal_previous_occurrences": 6,
+      "morphology_evidence": [
+        {
+          "term": "座席",
+          "surface": "座席",
+          "start": 0,
+          "end": 2,
+          "reading": "ざせき"
+        },
+        {
+          "term": "変更",
+          "surface": "変更",
+          "start": 3,
+          "end": 5,
+          "reading": "へんこう"
+        },
+        {
+          "term": "頼む",
+          "surface": "頼み",
+          "start": 6,
+          "end": 8,
+          "reading": "たのみ"
+        },
+        {
+          "term": "空き",
+          "surface": "空き",
+          "start": 13,
+          "end": 15,
+          "reading": "あき"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 16,
+          "end": 18,
+          "reading": "あり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1925",
+      "nearest_lexical_japanese": "運賃につきましては、変更ありません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-069",
+      "target": "追加",
+      "japanese": "人数が増えたので、料理を二品追加しました。",
+      "spanish": "Como vino más gente, pedimos dos platos adicionales.",
+      "estimated_level": "N3",
+      "review_note": "追加 es añadir a una cantidad existente.",
+      "authored_ruby": "[人数|にんずう]が[増|ふ]えたので、[料理|りょうり]を[二品|にひん][追加|ついか]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1842",
+      "nearest_japanese": "電気が消えたので再度確認しました。",
+      "character_similarity": 0.5143,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "人数",
+          "surface": "人数",
+          "start": 0,
+          "end": 2,
+          "reading": "にんずう"
+        },
+        {
+          "term": "増える",
+          "surface": "増え",
+          "start": 3,
+          "end": 5,
+          "reading": "ふえ"
+        },
+        {
+          "term": "料理",
+          "surface": "料理",
+          "start": 9,
+          "end": 11,
+          "reading": "りょうり"
+        },
+        {
+          "term": "追加",
+          "surface": "追加",
+          "start": 14,
+          "end": 16,
+          "reading": "ついか"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1311",
+      "nearest_lexical_japanese": "人数はどれくらいだと予想しますか。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-070",
+      "target": "削減",
+      "japanese": "印刷を減らして、紙の使用量を削減しました。",
+      "spanish": "Redujimos el consumo de papel imprimiendo menos.",
+      "estimated_level": "N2",
+      "review_note": "削減 es disminuir una cantidad de forma deliberada.",
+      "authored_ruby": "[印刷|いんさつ]を[減|へ]らして、[紙|かみ]の[使用量|しようりょう]を[削減|さくげん]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0968",
+      "nearest_japanese": "前提を確認してから、レポートの内容を見直しました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "印刷",
+          "surface": "印刷",
+          "start": 0,
+          "end": 2,
+          "reading": "いんさつ"
+        },
+        {
+          "term": "減らす",
+          "surface": "減らし",
+          "start": 3,
+          "end": 6,
+          "reading": "へらし"
+        },
+        {
+          "term": "紙",
+          "surface": "紙",
+          "start": 8,
+          "end": 9,
+          "reading": "かみ"
+        },
+        {
+          "term": "使用",
+          "surface": "使用",
+          "start": 10,
+          "end": 12,
+          "reading": "しよう"
+        },
+        {
+          "term": "削減",
+          "surface": "削減",
+          "start": 14,
+          "end": 16,
+          "reading": "さくげん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0590",
+      "nearest_lexical_japanese": "この用紙を使用します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-071",
+      "target": "節約",
+      "japanese": "外食を減らして、旅行のために節約しています。",
+      "spanish": "Estoy ahorrando para el viaje comiendo menos fuera de casa.",
+      "estimated_level": "N3",
+      "review_note": "節約 es gastar menos recursos o dinero.",
+      "authored_ruby": "[外食|がいしょく]を[減|へ]らして、[旅行|りょこう]のために[節約|せつやく]しています。",
+      "nearest_id": "JAES-N4-EXP-0107",
+      "nearest_japanese": "ごみを減らすために、買い物袋を持参しています。",
+      "character_similarity": 0.5366,
+      "target_literal_previous_occurrences": 7,
+      "morphology_evidence": [
+        {
+          "term": "外食",
+          "surface": "外食",
+          "start": 0,
+          "end": 2,
+          "reading": "がいしょく"
+        },
+        {
+          "term": "減らす",
+          "surface": "減らし",
+          "start": 3,
+          "end": 6,
+          "reading": "へらし"
+        },
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 8,
+          "end": 10,
+          "reading": "りょこう"
+        },
+        {
+          "term": "節約",
+          "surface": "節約",
+          "start": 14,
+          "end": 16,
+          "reading": "せつやく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0501",
+      "nearest_lexical_japanese": "お金を節約しなくてもいいですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-072",
+      "target": "効率",
+      "japanese": "道具の置き場所を変えたら、作業の効率が上がりました。",
+      "spanish": "Al cambiar dónde guardábamos las herramientas, mejoró la eficiencia del trabajo.",
+      "estimated_level": "N3",
+      "review_note": "効率 compara los resultados con el esfuerzo empleado.",
+      "authored_ruby": "[道具|どうぐ]の[置|お]き[場所|ばしょ]を[変|か]えたら、[作業|さぎょう]の[効率|こうりつ]が[上|あ]がりました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0463",
+      "nearest_japanese": "カーテンを替えたら、部屋が明るくなりました。",
+      "character_similarity": 0.4091,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "道具",
+          "surface": "道具",
+          "start": 0,
+          "end": 2,
+          "reading": "どうぐ"
+        },
+        {
+          "term": "置き場",
+          "surface": "置き場",
+          "start": 3,
+          "end": 6,
+          "reading": "おきば"
+        },
+        {
+          "term": "変える",
+          "surface": "変え",
+          "start": 8,
+          "end": 10,
+          "reading": "かえ"
+        },
+        {
+          "term": "作業",
+          "surface": "作業",
+          "start": 13,
+          "end": 15,
+          "reading": "さぎょう"
+        },
+        {
+          "term": "効率",
+          "surface": "効率",
+          "start": 16,
+          "end": 18,
+          "reading": "こうりつ"
+        },
+        {
+          "term": "上がる",
+          "surface": "上がり",
+          "start": 19,
+          "end": 22,
+          "reading": "あがり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N2-CONVERSATION-C3000-001-070",
+      "nearest_lexical_japanese": "同じミスが続いたので、作業の手順を根本から変えました。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-073",
+      "target": "能率",
+      "japanese": "周囲が騒がしくて、仕事の能率が落ちました。",
+      "spanish": "Con el ruido alrededor, bajó mi rendimiento en el trabajo.",
+      "estimated_level": "N2",
+      "review_note": "能率 es la productividad al realizar una tarea.",
+      "authored_ruby": "[周囲|しゅうい]が[騒|さわ]がしくて、[仕事|しごと]の[能率|のうりつ]が[落|お]ちました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0137",
+      "nearest_japanese": "仕事の間に電話しました。",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "周囲",
+          "surface": "周囲",
+          "start": 0,
+          "end": 2,
+          "reading": "しゅうい"
+        },
+        {
+          "term": "騒がしい",
+          "surface": "騒がしく",
+          "start": 3,
+          "end": 7,
+          "reading": "さわがしく"
+        },
+        {
+          "term": "仕事",
+          "surface": "仕事",
+          "start": 9,
+          "end": 11,
+          "reading": "しごと"
+        },
+        {
+          "term": "能率",
+          "surface": "能率",
+          "start": 12,
+          "end": 14,
+          "reading": "のうりつ"
+        },
+        {
+          "term": "落ちる",
+          "surface": "落ち",
+          "start": 15,
+          "end": 17,
+          "reading": "おち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0217",
+      "nearest_lexical_japanese": "仕事は九時から五時までです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-074",
+      "target": "改善",
+      "japanese": "利用者の声を聞いて、案内の表示を改善しました。",
+      "spanish": "Mejoramos la señalización después de escuchar a los usuarios.",
+      "estimated_level": "N3",
+      "review_note": "改善する es introducir cambios para mejorar.",
+      "authored_ruby": "[利用者|りようしゃ]の[声|こえ]を[聞|き]いて、[案内|あんない]の[表示|ひょうじ]を[改善|かいぜん]しました。",
+      "nearest_id": "JAES-N2-CONVERSATION-20260924-023",
+      "nearest_japanese": "参加者の年齢を考慮して、休憩の時間を長くしました。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "利用",
+          "surface": "利用",
+          "start": 0,
+          "end": 2,
+          "reading": "りよう"
+        },
+        {
+          "term": "声",
+          "surface": "声",
+          "start": 4,
+          "end": 5,
+          "reading": "こえ"
+        },
+        {
+          "term": "聞く",
+          "surface": "聞い",
+          "start": 6,
+          "end": 8,
+          "reading": "きい"
+        },
+        {
+          "term": "案内",
+          "surface": "案内",
+          "start": 10,
+          "end": 12,
+          "reading": "あんない"
+        },
+        {
+          "term": "表示",
+          "surface": "表示",
+          "start": 13,
+          "end": 15,
+          "reading": "ひょうじ"
+        },
+        {
+          "term": "改善",
+          "surface": "改善",
+          "start": 16,
+          "end": 18,
+          "reading": "かいぜん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1405",
+      "nearest_lexical_japanese": "あたしが案内します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-075",
+      "target": "工夫",
+      "japanese": "狭い部屋でも使いやすいように、収納を工夫しました。",
+      "spanish": "Busqué una forma ingeniosa de organizar el almacenaje para aprovechar la habitación pequeña.",
+      "estimated_level": "N3",
+      "review_note": "工夫 es buscar una solución práctica con ingenio.",
+      "authored_ruby": "[狭|せま]い[部屋|へや]でも[使|つか]いやすいように、[収納|しゅうのう]を[工夫|くふう]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-057",
+      "nearest_japanese": "高齢の父でも使いやすいように、文字を大きくしました。",
+      "character_similarity": 0.6383,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "狭い",
+          "surface": "狭い",
+          "start": 0,
+          "end": 2,
+          "reading": "せまい"
+        },
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 2,
+          "end": 4,
+          "reading": "へや"
+        },
+        {
+          "term": "使う",
+          "surface": "使い",
+          "start": 6,
+          "end": 8,
+          "reading": "つかい"
+        },
+        {
+          "term": "収納",
+          "surface": "収納",
+          "start": 15,
+          "end": 17,
+          "reading": "しゅうのう"
+        },
+        {
+          "term": "工夫",
+          "surface": "工夫",
+          "start": 18,
+          "end": 20,
+          "reading": "くふう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-ORGANIC-202608-0461",
+      "nearest_lexical_japanese": "電気代が高いので、使わない部屋の電気を消すことにしました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-076",
+      "target": "提案",
+      "japanese": "昼休みの時間をずらす提案をしました。",
+      "spanish": "Propuse cambiar la hora de la pausa del almuerzo.",
+      "estimated_level": "N3",
+      "review_note": "提案 es presentar una idea para que se considere.",
+      "authored_ruby": "[昼休|ひるやす]みの[時間|じかん]をずらす[提案|ていあん]をしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-032",
+      "nearest_japanese": "昼休みと重ならないように、会議を一時間後ろにずらしました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "昼休み",
+          "surface": "昼休み",
+          "start": 0,
+          "end": 3,
+          "reading": "ひるやすみ"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 4,
+          "end": 6,
+          "reading": "じかん"
+        },
+        {
+          "term": "ずらす",
+          "surface": "ずらす",
+          "start": 7,
+          "end": 10,
+          "reading": "ずらす"
+        },
+        {
+          "term": "提案",
+          "surface": "提案",
+          "start": 10,
+          "end": 12,
+          "reading": "ていあん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0768",
+      "nearest_lexical_japanese": "警察に提案をしましたが、聞いてもらえませんでした。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-077",
+      "target": "採用",
+      "japanese": "私の案が採用され、来週から試すことになりました。",
+      "spanish": "Aceptaron mi propuesta y la probaremos a partir de la semana que viene.",
+      "estimated_level": "N3",
+      "review_note": "採用 significa aquí adoptar una propuesta, no contratar a alguien.",
+      "authored_ruby": "[私|わたし]の[案|あん]が[採用|さいよう]され、[来週|らいしゅう]から[試|ため]すことになりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0595",
+      "nearest_japanese": "来月から残業することになりました。",
+      "character_similarity": 0.6316,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "私",
+          "surface": "私",
+          "start": 0,
+          "end": 1,
+          "reading": "わたし"
+        },
+        {
+          "term": "案",
+          "surface": "案",
+          "start": 2,
+          "end": 3,
+          "reading": "あん"
+        },
+        {
+          "term": "採用",
+          "surface": "採用",
+          "start": 4,
+          "end": 6,
+          "reading": "さいよう"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 6,
+          "end": 7,
+          "reading": "さ"
+        },
+        {
+          "term": "来週",
+          "surface": "来週",
+          "start": 9,
+          "end": 11,
+          "reading": "らいしゅう"
+        },
+        {
+          "term": "試す",
+          "surface": "試す",
+          "start": 13,
+          "end": 15,
+          "reading": "ためす"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 18,
+          "end": 20,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0810",
+      "nearest_lexical_japanese": "この案は採用しません。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-078",
+      "target": "却下",
+      "japanese": "理由を聞かずに案を却下されたので、説明を求めました。",
+      "spanish": "Rechazaron mi propuesta sin escuchar mis razones, así que pedí una explicación.",
+      "estimated_level": "N2",
+      "review_note": "却下 es rechazar formalmente una propuesta o solicitud.",
+      "authored_ruby": "[理由|りゆう]を[聞|き]かずに[案|あん]を[却下|きゃっか]されたので、[説明|せつめい]を[求|もと]めました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-074",
+      "nearest_japanese": "荷物を受け取れなかったので、明日の夜の再配達を頼みました。",
+      "character_similarity": 0.3922,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "理由",
+          "surface": "理由",
+          "start": 0,
+          "end": 2,
+          "reading": "りゆう"
+        },
+        {
+          "term": "聞く",
+          "surface": "聞か",
+          "start": 3,
+          "end": 5,
+          "reading": "きか"
+        },
+        {
+          "term": "案",
+          "surface": "案",
+          "start": 7,
+          "end": 8,
+          "reading": "あん"
+        },
+        {
+          "term": "却下",
+          "surface": "却下",
+          "start": 9,
+          "end": 11,
+          "reading": "きゃっか"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 11,
+          "end": 12,
+          "reading": "さ"
+        },
+        {
+          "term": "説明",
+          "surface": "説明",
+          "start": 17,
+          "end": 19,
+          "reading": "せつめい"
+        },
+        {
+          "term": "求める",
+          "surface": "求め",
+          "start": 20,
+          "end": 22,
+          "reading": "もとめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-086",
+      "nearest_lexical_japanese": "説明を聞きながらうなずいて、理解したことを伝えました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-079",
+      "target": "検討",
+      "japanese": "新しい機械を買うか、今のものを直すか検討しています。",
+      "spanish": "Estamos estudiando si comprar una máquina nueva o reparar la actual.",
+      "estimated_level": "N3",
+      "review_note": "検討する es examinar opciones antes de decidir.",
+      "authored_ruby": "[新|あたら]しい[機械|きかい]を[買|か]うか、[今|いま]のものを[直|なお]すか[検討|けんとう]しています。",
+      "nearest_id": "JAES-N5-EDITORIAL-1300",
+      "nearest_japanese": "新しい靴を買う時期を店員さんと相談します。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "新しい",
+          "surface": "新しい",
+          "start": 0,
+          "end": 3,
+          "reading": "あたらしい"
+        },
+        {
+          "term": "機械",
+          "surface": "機械",
+          "start": 3,
+          "end": 5,
+          "reading": "きかい"
+        },
+        {
+          "term": "買う",
+          "surface": "買う",
+          "start": 6,
+          "end": 8,
+          "reading": "かう"
+        },
+        {
+          "term": "今",
+          "surface": "今",
+          "start": 10,
+          "end": 11,
+          "reading": "いま"
+        },
+        {
+          "term": "直す",
+          "surface": "直す",
+          "start": 15,
+          "end": 17,
+          "reading": "なおす"
+        },
+        {
+          "term": "検討",
+          "surface": "検討",
+          "start": 18,
+          "end": 20,
+          "reading": "けんとう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1352",
+      "nearest_lexical_japanese": "新しい勉強法を家でゆっくり検討します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-080",
+      "target": "比較",
+      "japanese": "同じ条件で料金を比較してから、店を選びました。",
+      "spanish": "Comparé los precios en las mismas condiciones antes de elegir la tienda.",
+      "estimated_level": "N3",
+      "review_note": "比較する es contrastar elementos.",
+      "authored_ruby": "[同|おな]じ[条件|じょうけん]で[料金|りょうきん]を[比較|ひかく]してから、[店|みせ]を[選|えら]びました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0169",
+      "nearest_japanese": "同僚に資料を直してもらいました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "同じ",
+          "surface": "同じ",
+          "start": 0,
+          "end": 2,
+          "reading": "おなじ"
+        },
+        {
+          "term": "条件",
+          "surface": "条件",
+          "start": 2,
+          "end": 4,
+          "reading": "じょうけん"
+        },
+        {
+          "term": "料金",
+          "surface": "料金",
+          "start": 5,
+          "end": 7,
+          "reading": "りょうきん"
+        },
+        {
+          "term": "比較",
+          "surface": "比較",
+          "start": 8,
+          "end": 10,
+          "reading": "ひかく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 10,
+          "end": 11,
+          "reading": "し"
+        },
+        {
+          "term": "店",
+          "surface": "店",
+          "start": 15,
+          "end": 16,
+          "reading": "みせ"
+        },
+        {
+          "term": "選ぶ",
+          "surface": "選び",
+          "start": 17,
+          "end": 19,
+          "reading": "えらび"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1501",
+      "nearest_lexical_japanese": "料金を調整します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-081",
+      "target": "評価",
+      "japanese": "結果だけでなく、準備の過程も評価してもらいました。",
+      "spanish": "Valoraron tanto el resultado como el proceso de preparación.",
+      "estimated_level": "N3",
+      "review_note": "評価する es valorar con algún criterio.",
+      "authored_ruby": "[結果|けっか]だけでなく、[準備|じゅんび]の[過程|かてい]も[評価|ひょうか]してもらいました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-084",
+      "nearest_japanese": "妹はピアノを弾くだけでなく、短い曲の作曲もしています。",
+      "character_similarity": 0.4583,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "結果",
+          "surface": "結果",
+          "start": 0,
+          "end": 2,
+          "reading": "けっか"
+        },
+        {
+          "term": "準備",
+          "surface": "準備",
+          "start": 8,
+          "end": 10,
+          "reading": "じゅんび"
+        },
+        {
+          "term": "過程",
+          "surface": "過程",
+          "start": 11,
+          "end": 13,
+          "reading": "かてい"
+        },
+        {
+          "term": "評価",
+          "surface": "評価",
+          "start": 14,
+          "end": 16,
+          "reading": "ひょうか"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 16,
+          "end": 17,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1198",
+      "nearest_lexical_japanese": "評価をお願いします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-082",
+      "target": "判断",
+      "japanese": "情報が少なく、すぐには判断できませんでした。",
+      "spanish": "Había poca información y no pude decidir de inmediato.",
+      "estimated_level": "N3",
+      "review_note": "判断 es formarse un juicio o tomar una decisión.",
+      "authored_ruby": "[情報|じょうほう]が[少|すく]なく、すぐには[判断|はんだん]できませんでした。",
+      "nearest_id": "SAKAMOTO-a59641d4578fa24a-JA_ES",
+      "nearest_japanese": "認証できませんでした。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "情報",
+          "surface": "情報",
+          "start": 0,
+          "end": 2,
+          "reading": "じょうほう"
+        },
+        {
+          "term": "少ない",
+          "surface": "少なく",
+          "start": 3,
+          "end": 6,
+          "reading": "すくなく"
+        },
+        {
+          "term": "すぐ",
+          "surface": "すぐ",
+          "start": 7,
+          "end": 9,
+          "reading": "すぐ"
+        },
+        {
+          "term": "判断",
+          "surface": "判断",
+          "start": 11,
+          "end": 13,
+          "reading": "はんだん"
+        },
+        {
+          "term": "できる",
+          "surface": "でき",
+          "start": 13,
+          "end": 15,
+          "reading": "でき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EXP-0034",
+      "nearest_lexical_japanese": "説明が分かりやすかったので、すぐ理解できました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-083",
+      "target": "決定",
+      "japanese": "投票の結果、旅行の行き先が決定しました。",
+      "spanish": "El destino del viaje quedó decidido tras la votación.",
+      "estimated_level": "N3",
+      "review_note": "決定する expresa una decisión ya tomada.",
+      "authored_ruby": "[投票|とうひょう]の[結果|けっか]、[旅行|りょこう]の[行|い]き[先|さき]が[決定|けってい]しました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1201",
+      "nearest_japanese": "私が決定しました。",
+      "character_similarity": 0.5385,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "投票",
+          "surface": "投票",
+          "start": 0,
+          "end": 2,
+          "reading": "とうひょう"
+        },
+        {
+          "term": "結果",
+          "surface": "結果",
+          "start": 3,
+          "end": 5,
+          "reading": "けっか"
+        },
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 6,
+          "end": 8,
+          "reading": "りょこう"
+        },
+        {
+          "term": "行き先",
+          "surface": "行き先",
+          "start": 9,
+          "end": 12,
+          "reading": "ゆきさき"
+        },
+        {
+          "term": "決定",
+          "surface": "決定",
+          "start": 13,
+          "end": 15,
+          "reading": "けってい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1201",
+      "nearest_lexical_japanese": "私が決定しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-084",
+      "target": "実施",
+      "japanese": "新しい方法を実施する前に、全員で練習しました。",
+      "spanish": "Practicamos todos antes de poner en marcha el método nuevo.",
+      "estimated_level": "N3",
+      "review_note": "実施する es llevar un plan a la práctica.",
+      "authored_ruby": "[新|あたら]しい[方法|ほうほう]を[実施|じっし]する[前|まえ]に、[全員|ぜんいん]で[練習|れんしゅう]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2020",
+      "nearest_japanese": "新しい家を買う前に、相続のことも家族と確認しました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "新しい",
+          "surface": "新しい",
+          "start": 0,
+          "end": 3,
+          "reading": "あたらしい"
+        },
+        {
+          "term": "方法",
+          "surface": "方法",
+          "start": 3,
+          "end": 5,
+          "reading": "ほうほう"
+        },
+        {
+          "term": "実施",
+          "surface": "実施",
+          "start": 6,
+          "end": 8,
+          "reading": "じっし"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 8,
+          "end": 10,
+          "reading": "する"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 10,
+          "end": 11,
+          "reading": "まえ"
+        },
+        {
+          "term": "全員",
+          "surface": "全員",
+          "start": 13,
+          "end": 15,
+          "reading": "ぜんいん"
+        },
+        {
+          "term": "練習",
+          "surface": "練習",
+          "start": 16,
+          "end": 18,
+          "reading": "れんしゅう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2020",
+      "nearest_lexical_japanese": "新しい家を買う前に、相続のことも家族と確認しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-085",
+      "target": "実行",
+      "japanese": "計画を立てるだけでなく、小さなことから実行しました。",
+      "spanish": "Además de planearlo, empecé a ponerlo en práctica con cosas pequeñas.",
+      "estimated_level": "N3",
+      "review_note": "実行する es actuar según lo previsto.",
+      "authored_ruby": "[計画|けいかく]を[立|た]てるだけでなく、[小|ちい]さなことから[実行|じっこう]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0354",
+      "nearest_japanese": "今日は古いタンスを捨てることにしました。",
+      "character_similarity": 0.4186,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "計画",
+          "surface": "計画",
+          "start": 0,
+          "end": 2,
+          "reading": "けいかく"
+        },
+        {
+          "term": "立てる",
+          "surface": "立てる",
+          "start": 3,
+          "end": 6,
+          "reading": "たてる"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 12,
+          "end": 15,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "実行",
+          "surface": "実行",
+          "start": 19,
+          "end": 21,
+          "reading": "じっこう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 21,
+          "end": 22,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.42857142857142855,
+      "nearest_lexical_id": "JAES-N4-EXP-0068",
+      "nearest_lexical_japanese": "試験に合格するために、計画を立てました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-086",
+      "target": "中断",
+      "japanese": "電話が入り、作業を一時中断しました。",
+      "spanish": "Una llamada me obligó a interrumpir el trabajo temporalmente.",
+      "estimated_level": "N3",
+      "review_note": "中断 es interrumpir algo antes de terminarlo.",
+      "authored_ruby": "[電話|でんわ]が[入|はい]り、[作業|さぎょう]を[一時|いちじ][中断|ちゅうだん]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2029",
+      "nearest_japanese": "通信が中断しました。",
+      "character_similarity": 0.56,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "電話",
+          "surface": "電話",
+          "start": 0,
+          "end": 2,
+          "reading": "でんわ"
+        },
+        {
+          "term": "入る",
+          "surface": "入り",
+          "start": 3,
+          "end": 5,
+          "reading": "はいり"
+        },
+        {
+          "term": "作業",
+          "surface": "作業",
+          "start": 6,
+          "end": 8,
+          "reading": "さぎょう"
+        },
+        {
+          "term": "一時",
+          "surface": "一時",
+          "start": 9,
+          "end": 11,
+          "reading": "いちじ"
+        },
+        {
+          "term": "中断",
+          "surface": "中断",
+          "start": 11,
+          "end": 13,
+          "reading": "ちゅうだん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2297",
+      "nearest_lexical_japanese": "勤務中は電話をしてはいけない。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-087",
+      "target": "再開",
+      "japanese": "昼休みが終わり、作業を再開しました。",
+      "spanish": "Al terminar la pausa del almuerzo, reanudé el trabajo.",
+      "estimated_level": "N3",
+      "review_note": "再開する es volver a empezar lo interrumpido.",
+      "authored_ruby": "[昼休|ひるやす]みが[終|お]わり、[作業|さぎょう]を[再開|さいかい]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-086",
+      "nearest_japanese": "電話が入り、作業を一時中断しました。",
+      "character_similarity": 0.5625,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "昼休み",
+          "surface": "昼休み",
+          "start": 0,
+          "end": 3,
+          "reading": "ひるやすみ"
+        },
+        {
+          "term": "終わる",
+          "surface": "終わり",
+          "start": 4,
+          "end": 7,
+          "reading": "おわり"
+        },
+        {
+          "term": "作業",
+          "surface": "作業",
+          "start": 8,
+          "end": 10,
+          "reading": "さぎょう"
+        },
+        {
+          "term": "再開",
+          "surface": "再開",
+          "start": 11,
+          "end": 13,
+          "reading": "さいかい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1016",
+      "nearest_lexical_japanese": "宿題が終わって、やっと解放されました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-088",
+      "target": "継続",
+      "japanese": "短い時間でも、毎日の練習を継続しています。",
+      "spanish": "Mantengo la práctica diaria, aunque sea por poco tiempo.",
+      "estimated_level": "N3",
+      "review_note": "継続する es sostener una actividad en el tiempo.",
+      "authored_ruby": "[短|みじか]い[時間|じかん]でも、[毎日|まいにち]の[練習|れんしゅう]を[継続|けいぞく]しています。",
+      "nearest_id": "JAES-N4-EDITORIAL-2398",
+      "nearest_japanese": "この工場では毎日部品を製造しています。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "短い",
+          "surface": "短い",
+          "start": 0,
+          "end": 2,
+          "reading": "みじかい"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 2,
+          "end": 4,
+          "reading": "じかん"
+        },
+        {
+          "term": "練習",
+          "surface": "練習",
+          "start": 10,
+          "end": 12,
+          "reading": "れんしゅう"
+        },
+        {
+          "term": "継続",
+          "surface": "継続",
+          "start": 13,
+          "end": 15,
+          "reading": "けいぞく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.375,
+      "nearest_lexical_id": "JAES-N4-EXP-0110",
+      "nearest_lexical_japanese": "水を無駄にしないように、シャワーの時間を短くします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-089",
+      "target": "完了",
+      "japanese": "更新が完了するまで、画面を閉じずに待ちました。",
+      "spanish": "Esperé sin cerrar la pantalla hasta que terminó la actualización.",
+      "estimated_level": "N3",
+      "review_note": "完了 es la finalización de un proceso.",
+      "authored_ruby": "[更新|こうしん]が[完了|かんりょう]するまで、[画面|がめん]を[閉|と]じずに[待|ま]ちました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1962",
+      "nearest_japanese": "順番が来るまで待ちますか。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "更新",
+          "surface": "更新",
+          "start": 0,
+          "end": 2,
+          "reading": "こうしん"
+        },
+        {
+          "term": "完了",
+          "surface": "完了",
+          "start": 3,
+          "end": 5,
+          "reading": "かんりょう"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 5,
+          "end": 7,
+          "reading": "する"
+        },
+        {
+          "term": "画面",
+          "surface": "画面",
+          "start": 10,
+          "end": 12,
+          "reading": "がめん"
+        },
+        {
+          "term": "閉じる",
+          "surface": "閉じ",
+          "start": 13,
+          "end": 15,
+          "reading": "とじ"
+        },
+        {
+          "term": "待つ",
+          "surface": "待ち",
+          "start": 17,
+          "end": 19,
+          "reading": "まち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0685",
+      "nearest_lexical_japanese": "更新します。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-090",
+      "target": "未完",
+      "japanese": "展示には、作者が残した未完の作品もありました。",
+      "spanish": "En la exposición también había obras que el autor dejó sin terminar.",
+      "estimated_level": "N2",
+      "review_note": "未完 significa no concluido.",
+      "authored_ruby": "[展示|てんじ]には、[作者|さくしゃ]が[残|のこ]した[未完|みかん]の[作品|さくひん]もありました。",
+      "nearest_id": "JAES-N5-EDITORIAL-2359",
+      "nearest_japanese": "昨日は熱がありました。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "展示",
+          "surface": "展示",
+          "start": 0,
+          "end": 2,
+          "reading": "てんじ"
+        },
+        {
+          "term": "作者",
+          "surface": "作者",
+          "start": 5,
+          "end": 7,
+          "reading": "さくしゃ"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 8,
+          "end": 10,
+          "reading": "のこし"
+        },
+        {
+          "term": "未完",
+          "surface": "未完",
+          "start": 11,
+          "end": 13,
+          "reading": "みかん"
+        },
+        {
+          "term": "作品",
+          "surface": "作品",
+          "start": 14,
+          "end": 16,
+          "reading": "さくひん"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 17,
+          "end": 19,
+          "reading": "あり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0599",
+      "nearest_lexical_japanese": "この作品はきれいではありません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-091",
+      "target": "進行",
+      "japanese": "会議の進行を任され、時間を見ながら話を進めました。",
+      "spanish": "Me encargaron conducir la reunión y fui moderándola pendiente del tiempo.",
+      "estimated_level": "N3",
+      "review_note": "進行 se refiere aquí a conducir el desarrollo de una reunión.",
+      "authored_ruby": "[会議|かいぎ]の[進行|しんこう]を[任|まか]され、[時間|じかん]を[見|み]ながら[話|はなし]を[進|すす]めました。",
+      "nearest_id": "JAES-N4-EXP-0097",
+      "nearest_japanese": "会議の時間が三時に変更になりました。",
+      "character_similarity": 0.45,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "会議",
+          "surface": "会議",
+          "start": 0,
+          "end": 2,
+          "reading": "かいぎ"
+        },
+        {
+          "term": "進行",
+          "surface": "進行",
+          "start": 3,
+          "end": 5,
+          "reading": "しんこう"
+        },
+        {
+          "term": "任す",
+          "surface": "任さ",
+          "start": 6,
+          "end": 8,
+          "reading": "まかさ"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 10,
+          "end": 12,
+          "reading": "じかん"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 13,
+          "end": 14,
+          "reading": "み"
+        },
+        {
+          "term": "話",
+          "surface": "話",
+          "start": 17,
+          "end": 18,
+          "reading": "はなし"
+        },
+        {
+          "term": "進める",
+          "surface": "進め",
+          "start": 19,
+          "end": 21,
+          "reading": "すすめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EXP-0097",
+      "nearest_lexical_japanese": "会議の時間が三時に変更になりました。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-092",
+      "target": "停滞",
+      "japanese": "材料が足りず、工事が停滞していました。",
+      "spanish": "La obra estaba estancada por falta de materiales.",
+      "estimated_level": "N2",
+      "review_note": "停滞 es falta de avance.",
+      "authored_ruby": "[材料|ざいりょう]が[足|た]りず、[工事|こうじ]が[停滞|ていたい]していました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1423",
+      "nearest_japanese": "工事は停止しました。",
+      "character_similarity": 0.5385,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "材料",
+          "surface": "材料",
+          "start": 0,
+          "end": 2,
+          "reading": "ざいりょう"
+        },
+        {
+          "term": "足りる",
+          "surface": "足り",
+          "start": 3,
+          "end": 5,
+          "reading": "たり"
+        },
+        {
+          "term": "工事",
+          "surface": "工事",
+          "start": 7,
+          "end": 9,
+          "reading": "こうじ"
+        },
+        {
+          "term": "停滞",
+          "surface": "停滞",
+          "start": 10,
+          "end": 12,
+          "reading": "ていたい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 12,
+          "end": 13,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1423",
+      "nearest_lexical_japanese": "工事は停止しました。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-093",
+      "target": "促進",
+      "japanese": "部署の交流を促進するため、共同の勉強会を開きました。",
+      "spanish": "Organizamos una sesión de formación conjunta para fomentar el intercambio entre departamentos.",
+      "estimated_level": "N2",
+      "review_note": "促進する es favorecer que algo avance.",
+      "authored_ruby": "[部署|ぶしょ]の[交流|こうりゅう]を[促進|そくしん]するため、[共同|きょうどう]の[勉強会|べんきょうかい]を[開|ひら]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1652",
+      "nearest_japanese": "値札の違いを解明するため、店員に聞きました。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "部署",
+          "surface": "部署",
+          "start": 0,
+          "end": 2,
+          "reading": "ぶしょ"
+        },
+        {
+          "term": "交流",
+          "surface": "交流",
+          "start": 3,
+          "end": 5,
+          "reading": "こうりゅう"
+        },
+        {
+          "term": "促進",
+          "surface": "促進",
+          "start": 6,
+          "end": 8,
+          "reading": "そくしん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 8,
+          "end": 10,
+          "reading": "する"
+        },
+        {
+          "term": "共同",
+          "surface": "共同",
+          "start": 13,
+          "end": 15,
+          "reading": "きょうどう"
+        },
+        {
+          "term": "勉強",
+          "surface": "勉強",
+          "start": 16,
+          "end": 18,
+          "reading": "べんきょう"
+        },
+        {
+          "term": "開く",
+          "surface": "開き",
+          "start": 20,
+          "end": 22,
+          "reading": "ひらき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2727272727272727,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1882",
+      "nearest_lexical_japanese": "このイベントは会員同士の交流を促進します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-094",
+      "target": "達成",
+      "japanese": "目標を達成したので、チームで小さなお祝いをしました。",
+      "spanish": "Como alcanzamos el objetivo, hicimos una pequeña celebración con el equipo.",
+      "estimated_level": "N3",
+      "review_note": "達成する es llegar a una meta.",
+      "authored_ruby": "[目標|もくひょう]を[達成|たっせい]したので、チームで[小|ちい]さなお[祝|いわ]いをしました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1818",
+      "nearest_japanese": "駅に到達したので、みんな安心しました。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "目標",
+          "surface": "目標",
+          "start": 0,
+          "end": 2,
+          "reading": "もくひょう"
+        },
+        {
+          "term": "達成",
+          "surface": "達成",
+          "start": 3,
+          "end": 5,
+          "reading": "たっせい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 5,
+          "end": 6,
+          "reading": "し"
+        },
+        {
+          "term": "チーム",
+          "surface": "チーム",
+          "start": 10,
+          "end": 13,
+          "reading": "ちーむ"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 14,
+          "end": 17,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "お祝い",
+          "surface": "お祝い",
+          "start": 17,
+          "end": 20,
+          "reading": "おいわい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 21,
+          "end": 22,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0846",
+      "nearest_lexical_japanese": "仕事をすると、達成感があります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-095",
+      "target": "成果",
+      "japanese": "半年の練習の成果を、発表会で見せました。",
+      "spanish": "Mostré en la exhibición el resultado de seis meses de práctica.",
+      "estimated_level": "N3",
+      "review_note": "成果 es un resultado logrado mediante esfuerzo.",
+      "authored_ruby": "[半年|はんとし]の[練習|れんしゅう]の[成果|せいか]を、[発表会|はっぴょうかい]で[見|み]せました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1988",
+      "nearest_japanese": "デパートの靴の値段を見ました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 4,
+      "morphology_evidence": [
+        {
+          "term": "半年",
+          "surface": "半年",
+          "start": 0,
+          "end": 2,
+          "reading": "はんとし"
+        },
+        {
+          "term": "練習",
+          "surface": "練習",
+          "start": 3,
+          "end": 5,
+          "reading": "れんしゅう"
+        },
+        {
+          "term": "成果",
+          "surface": "成果",
+          "start": 6,
+          "end": 8,
+          "reading": "せいか"
+        },
+        {
+          "term": "発表",
+          "surface": "発表",
+          "start": 10,
+          "end": 12,
+          "reading": "はっぴょう"
+        },
+        {
+          "term": "見せる",
+          "surface": "見せ",
+          "start": 14,
+          "end": 16,
+          "reading": "みせ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0621",
+      "nearest_lexical_japanese": "ニュースの発表ですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-096",
+      "target": "課題",
+      "japanese": "課題は終わりましたが、見直しの時間が必要です。",
+      "spanish": "He terminado la tarea, pero necesito tiempo para revisarla.",
+      "estimated_level": "N3",
+      "review_note": "課題 puede ser una tarea asignada.",
+      "authored_ruby": "[課題|かだい]は[終|お]わりましたが、[見直|みなお]しの[時間|じかん]が[必要|ひつよう]です。",
+      "nearest_id": "JAES-N5-EDITORIAL-2216",
+      "nearest_japanese": "宿題はもう終わりましたが、復習はまだです。",
+      "character_similarity": 0.55,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "課題",
+          "surface": "課題",
+          "start": 0,
+          "end": 2,
+          "reading": "かだい"
+        },
+        {
+          "term": "終わる",
+          "surface": "終わり",
+          "start": 3,
+          "end": 6,
+          "reading": "おわり"
+        },
+        {
+          "term": "見直し",
+          "surface": "見直し",
+          "start": 11,
+          "end": 14,
+          "reading": "みなおし"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 15,
+          "end": 17,
+          "reading": "じかん"
+        },
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 18,
+          "end": 20,
+          "reading": "ひつよう"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0744",
+      "nearest_lexical_japanese": "企画の改正が必要ですが、今は時間がありません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-097",
+      "target": "対策",
+      "japanese": "虫への対策として、窓に網戸をつけました。",
+      "spanish": "Puse mosquiteras en las ventanas como medida contra los insectos.",
+      "estimated_level": "N3",
+      "review_note": "対策 es una medida para afrontar un problema.",
+      "authored_ruby": "[虫|むし]への[対策|たいさく]として、[窓|まど]に[網戸|あみど]をつけました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1650",
+      "nearest_japanese": "寒さに対抗して窓を閉めました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "虫",
+          "surface": "虫",
+          "start": 0,
+          "end": 1,
+          "reading": "むし"
+        },
+        {
+          "term": "対策",
+          "surface": "対策",
+          "start": 3,
+          "end": 5,
+          "reading": "たいさく"
+        },
+        {
+          "term": "窓",
+          "surface": "窓",
+          "start": 9,
+          "end": 10,
+          "reading": "まど"
+        },
+        {
+          "term": "網戸",
+          "surface": "網戸",
+          "start": 11,
+          "end": 13,
+          "reading": "あみど"
+        },
+        {
+          "term": "つける",
+          "surface": "つけ",
+          "start": 14,
+          "end": 16,
+          "reading": "つけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0146",
+      "nearest_lexical_japanese": "窓を閉めても部屋が寒いです。だから、暖房をつけます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-098",
+      "target": "対応",
+      "japanese": "予約の変更にすぐ対応してもらい、助かりました。",
+      "spanish": "Me ayudó mucho que atendieran enseguida el cambio de reserva.",
+      "estimated_level": "N3",
+      "review_note": "対応する es atender o responder a una necesidad.",
+      "authored_ruby": "[予約|よやく]の[変更|へんこう]にすぐ[対応|たいおう]してもらい、[助|たす]かりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0169",
+      "nearest_japanese": "同僚に資料を直してもらいました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "予約",
+          "surface": "予約",
+          "start": 0,
+          "end": 2,
+          "reading": "よやく"
+        },
+        {
+          "term": "変更",
+          "surface": "変更",
+          "start": 3,
+          "end": 5,
+          "reading": "へんこう"
+        },
+        {
+          "term": "すぐ",
+          "surface": "すぐ",
+          "start": 6,
+          "end": 8,
+          "reading": "すぐ"
+        },
+        {
+          "term": "対応",
+          "surface": "対応",
+          "start": 8,
+          "end": 10,
+          "reading": "たいおう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 10,
+          "end": 11,
+          "reading": "し"
+        },
+        {
+          "term": "助かる",
+          "surface": "助かり",
+          "start": 16,
+          "end": 19,
+          "reading": "たすかり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0753",
+      "nearest_lexical_japanese": "主張を変更しますか。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-004-099",
+      "target": "措置",
+      "japanese": "水漏れが見つかり、機械を止める措置を取りました。",
+      "spanish": "Al detectar una fuga de agua, tomamos la medida de detener la máquina.",
+      "estimated_level": "N2",
+      "review_note": "措置を取る es adoptar una medida concreta.",
+      "authored_ruby": "[水漏|みずも]れが[見|み]つかり、[機械|きかい]を[止|と]める[措置|そち]を[取|と]りました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-004-062",
+      "nearest_japanese": "最後の工程で不具合が見つかり、出荷を止めました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "水",
+          "surface": "水",
+          "start": 0,
+          "end": 1,
+          "reading": "みず"
+        },
+        {
+          "term": "見つかる",
+          "surface": "見つかり",
+          "start": 4,
+          "end": 8,
+          "reading": "みつかり"
+        },
+        {
+          "term": "機械",
+          "surface": "機械",
+          "start": 9,
+          "end": 11,
+          "reading": "きかい"
+        },
+        {
+          "term": "止める",
+          "surface": "止める",
+          "start": 12,
+          "end": 15,
+          "reading": "とめる"
+        },
+        {
+          "term": "措置",
+          "surface": "措置",
+          "start": 15,
+          "end": 17,
+          "reading": "そち"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 18,
+          "end": 20,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2049",
+      "nearest_lexical_japanese": "水もありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-004-100",
+      "target": "防止",
+      "japanese": "転倒防止のため、棚を壁に固定しました。",
+      "spanish": "Fijé la estantería a la pared para evitar que se volcara.",
+      "estimated_level": "N3",
+      "review_note": "防止 es impedir que ocurra un resultado indeseado.",
+      "authored_ruby": "[転倒|てんとう][防止|ぼうし]のため、[棚|たな]を[壁|かべ]に[固定|こてい]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2439",
+      "nearest_japanese": "倒れた人を目撃しましたか。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "転倒",
+          "surface": "転倒",
+          "start": 0,
+          "end": 2,
+          "reading": "てんとう"
+        },
+        {
+          "term": "防止",
+          "surface": "防止",
+          "start": 2,
+          "end": 4,
+          "reading": "ぼうし"
+        },
+        {
+          "term": "棚",
+          "surface": "棚",
+          "start": 8,
+          "end": 9,
+          "reading": "たな"
+        },
+        {
+          "term": "壁",
+          "surface": "壁",
+          "start": 10,
+          "end": 11,
+          "reading": "かべ"
+        },
+        {
+          "term": "固定",
+          "surface": "固定",
+          "start": 12,
+          "end": 14,
+          "reading": "こてい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 14,
+          "end": 15,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0592",
+      "nearest_lexical_japanese": "この祭りでは飾りが固定されています。"
+    }
+  ],
+  "previous_rows_preserved": 9678,
+  "previous_graph_sentences_preserved": 9786,
+  "total_rows": 9878
+}
