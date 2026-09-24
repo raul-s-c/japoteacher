@@ -4,7 +4,7 @@
   "api_calls": 0,
   "api_tokens": 0,
   "accepted_pairs": 500,
-  "published_pairs": 0,
+  "published_pairs": 500,
   "remaining_pairs": 2500,
   "status": "in_progress",
   "baseline_commit": "c101757",
@@ -64,5 +64,8 @@
         "N4": 8
       }
     }
-  ]
+  ],
+  "published_commit": "d84ef1d51743373cb272937c86fe13e2f3133689",
+  "deployment_run": 36066714639,
+  "verified_live_cache": "japoteacher-v186"
 }
