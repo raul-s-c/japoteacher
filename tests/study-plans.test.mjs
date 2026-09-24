@@ -6,7 +6,7 @@ function fixture(exercises=[],attempts=[],progress=[]){
   const stores={settings:new Map(),daily_sessions:new Map(),exercises:new Map(exercises.map(e=>[e.exercise_id,e])),attempts:new Map(attempts.map((a,i)=>[i,a])),exercise_progress:new Map(progress.map((p,i)=>[i,p]))};
   const context={window:null,Date,Map,Set,JapoDB:{all:async s=>[...stores[s].values()],get:async(s,k)=>stores[s].get(k),put:async(s,v)=>stores[s].set(v.key||v.session_id,v)},TopicProgression:{},StudyCollections:{catalog:[{id:'sakamoto',name:'Sakamoto',available:true}]}};context.window=context;
   for(const file of ['difficulty','session-planner','practice-rounds','study-plans'])vm.runInNewContext(fs.readFileSync(new URL('../src/'+file+'.js',import.meta.url),'utf8'),context);
-  return {plans:context.StudyPlans,stores};
+  return {plans:context.StudyPlans,stores,planner:context.SessionPlanner};
 }
 const ex=(id,extra={})=>({exercise_id:id,source_text:'日本語'+id,reference_translation:'Frase '+id,direction:'ja_es',jlpt_level:'N5',difficulty:10,dataset_version:4,active:true,...extra});
 const date='2026-09-08',old='2026-08-01T10:00:00Z',today=date+'T10:00:00Z';
@@ -166,7 +166,7 @@ test('preview is strictly above 50 using last three; excludes new, today, drafts
 });
 
 test('chosen swaps survive recalculation, increase only today new quota and preserve all history',async()=>{
- const now=new Date(),todayDate=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+ const todayDate=fixture().planner.localDate();
  const rows=['r1','r2','n1','n2','n3','inverse'].map(id=>ex(id,id==='inverse'?{direction:'es_ja'}:{}));
  const attempts=[{...attempt('r1'),overall_score:70},{...attempt('r2'),overall_score:30}];
  const {plans,stores}=fixture(rows,attempts),settings={profileId:'p',dailyJaEs:3,dailyEsJa:0,levels:['N5'],newRatio:30};
@@ -192,4 +192,18 @@ test('changing levels cannot bypass the weekly allowance through voluntary swaps
  const rows=[ex('review'),ex('new'),ex('learned',{jlpt_level:'N4'})],a=[attempt('review'),{...attempt('learned','2026-09-07T10:00:00Z'),study_plan_id:plan.id}],{plans}=fixture();
  const session={profile_id:'p',local_date:date,study_plan_assignments_json:JSON.stringify({[plan.id]:['review']}),exercise_ids_ja_es_json:'["review"]'};
  assert.equal(plans.swapOptions({...plan,weeklyNewLimit:1},session,rows,a,[],'p').fresh.length,0);
+});
+
+test('after-midnight answers consume the previous study day limits until 03:00',()=>{
+ const rows=[ex('done'),ex('fresh')],a=[attempt('done',new Date('2026-09-08T02:30:00').toISOString())],{plans}=fixture();
+ const before=JSON.stringify(a),p={...plan,dailyLimit:1,newLimit:1};
+ const previous=plans.select(p,rows,a,[],'p','2026-09-07');
+ assert.equal(previous.stats.done,1);assert.equal(previous.stats.newToday,1);assert.equal(previous.ids.length,0);
+ const next=plans.select(p,rows,a,[],'p','2026-09-08');
+ assert.equal(next.stats.done,0);assert.equal(next.stats.newToday,0);assert.deepEqual([...next.ids],['fresh']);assert.equal(JSON.stringify(a),before);
+});
+test('Monday before 03:00 still consumes Sunday weekly quota',()=>{
+ const rows=[ex('done'),ex('fresh')],a=[attempt('done',new Date('2026-09-07T02:30:00').toISOString())],{plans}=fixture(),p={...plan,dailyLimit:2,newLimit:2,weeklyNewLimit:1};
+ assert.equal(plans.select(p,rows,a,[],'p','2026-09-06').ids.includes('fresh'),false);
+ assert.equal(plans.select(p,rows,a,[],'p','2026-09-07').ids.includes('fresh'),true);
 });

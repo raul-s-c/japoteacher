@@ -1,5 +1,7 @@
 (function(){
-  const localDate=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+  // Study days follow local wall time, including daylight-saving transitions.
+  const localDate=(value=new Date())=>{const d=new Date(value);if(!Number.isFinite(d.getTime()))return '';if(d.getHours()<3)d.setDate(d.getDate()-1);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+  const dayStart=(date=localDate())=>new Date(`${date}T03:00:00`);
   const nextLocalDate=(date=localDate())=>{const d=new Date(`${date}T12:00:00`);d.setDate(d.getDate()+1);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
   const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
   const seededSort=(items,seed)=>[...items].sort((a,b)=>hash(seed+a.exercise_id)-hash(seed+b.exercise_id));
@@ -146,7 +148,7 @@
     if(settings.studyPlansVersion&&window.StudyPlans)return StudyPlans.build(profileId,settings,date,options);
     const id=profileId+'::'+date,[existing,exercises,allProgress,allAttempts]=await Promise.all([JapoDB.get('daily_sessions',id),JapoDB.all('exercises'),JapoDB.all('exercise_progress'),JapoDB.all('attempts')]);
     const attempts=profileRows(allAttempts,profileId),progress=profileRows(allProgress,profileId),byId=new Map(exercises.map(e=>[e.exercise_id,e])),completed=new Set(list(existing?.completed_exercise_ids_json)),drafts=JSON.parse(existing?.drafts_json||'{}');
-    for(const a of validAttempts(attempts)){const d=new Date(a.attempted_at);if([d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')===date)completed.add(a.exercise_id)}
+    for(const a of validAttempts(attempts))if(localDate(a.attempted_at)===date)completed.add(a.exercise_id)
     const roadmaps={ja_es:TopicProgression.analyze(exercises,attempts,'ja_es'),es_ja:TopicProgression.analyze(exercises,attempts,'es_ja')},repeats={},plans={},diagnostics={};
     const oldReason=JSON.parse(existing?.selection_reason_json||'{}'),rebalance=Boolean(options.regenerate)||needsRebalance(existing,settings),revision=Number(oldReason.revision||0)+(options.regenerate?1:0);
     for(const direction of ['ja_es','es_ja']){
@@ -156,7 +158,7 @@
       const pinned=[...new Set([...old.filter(id=>completed.has(id)||drafts[id]),...[...completed].filter(id=>byId.get(id)?.direction===direction)])].filter(id=>!repeatSet.has(id));
       const extraCount=list(existing?.extra_study_history_json).reduce((sum,item)=>sum+Math.max(0,Number(item['added_'+direction])||0),0),limit=Math.max(target+extraCount,pinned.length),kept=[...pinned];
       if(!rebalance)for(const exerciseId of old){if(kept.length>=limit)break;if(active(exerciseId)&&!repeatSet.has(exerciseId)&&!kept.includes(exerciseId))kept.push(exerciseId)}
-      const beforeDay=attempts.filter(a=>new Date(a.attempted_at)<new Date(date+'T00:00:00')),historical=historyFor(exercises,progress.filter(p=>p.last_seen_at&&new Date(p.last_seen_at)<new Date(date+'T00:00:00')),beforeDay,direction);
+      const beforeDay=attempts.filter(a=>new Date(a.attempted_at)<dayStart(date)),historical=historyFor(exercises,progress.filter(p=>p.last_seen_at&&new Date(p.last_seen_at)<dayStart(date)),beforeDay,direction);
       const alreadyNew=kept.filter(id=>!historical.seen.has(historical.key(id))).length;
       const quota=Math.max(0,Math.min(limit-kept.length,Math.ceil(target*normalizedNewRatio(settings)/100)-alreadyNew));
       const removed=rebalance?old.filter(id=>!completed.has(id)&&!repeatSet.has(id)&&!drafts[id]):[];
@@ -188,5 +190,5 @@
     const scored=pool.map(exercise=>{const distance=Math.abs(Difficulty.score(exercise)-currentScore),recentPenalty=recent.has(exercise.exercise_id)?70:0,plannedPenalty=planned.has(exercise.exercise_id)?25:0;let preference=0;if(reason==='too_hard')preference=Difficulty.score(exercise)<=currentScore?80:0;if(reason==='too_easy')preference=Difficulty.score(exercise)>=currentScore?80:0;if(reason==='recent')preference=recent.has(exercise.exercise_id)?-120:40;return {exercise,score:preference-distance-recentPenalty-plannedPenalty+hash(`${session.session_id}:${reason}:${exercise.exercise_id}`)%17}}).sort((left,right)=>right.score-left.score);
     const replacement=scored[0]?.exercise;if(!replacement)return null;const field=current.direction==='ja_es'?'exercise_ids_ja_es_json':'exercise_ids_es_ja_json',ids=JSON.parse(session[field]||'[]'),index=ids.indexOf(exerciseId),nextIds=index<0?[replacement.exercise_id,...ids.filter(id=>id!==replacement.exercise_id)]:ids.map(id=>id===exerciseId?replacement.exercise_id:id),history=JSON.parse(session.replacement_history_json||'[]');history.push({from:exerciseId,to:replacement.exercise_id,reason,at:new Date().toISOString()});const next={...session,plan_updated_at:new Date().toISOString(),[field]:JSON.stringify(nextIds),replacement_history_json:JSON.stringify(history)};await JapoDB.put('daily_sessions',next);return {session:next,exerciseId:replacement.exercise_id,previousId:exerciseId};
   }
-  window.SessionPlanner={localDate,nextLocalDate,getOrCreate,regenerate,createExtra,choose,difficultyRoadmap,coverageProfile,needsRebalance,replaceExercise,voluntaryRepeatIds};
+  window.SessionPlanner={localDate,dayStart,nextLocalDate,getOrCreate,regenerate,createExtra,choose,difficultyRoadmap,coverageProfile,needsRebalance,replaceExercise,voluntaryRepeatIds};
 })();

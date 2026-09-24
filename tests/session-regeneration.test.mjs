@@ -5,7 +5,9 @@ import vm from 'node:vm';
 
 const source = fs.readFileSync(new URL('../src/session-planner.js', import.meta.url), 'utf8');
 const config = { profileId: 'profile', levels: ['N5', 'N4'], dailyJaEs: 20, dailyEsJa: 10, newRatio: 90, cooldownDays: 14 };
-const date = new Date().toLocaleDateString('en-CA');
+const dateContext = { window: {}, Date, Map, Set };
+vm.runInNewContext(source, dateContext);
+const date = dateContext.window.SessionPlanner.localDate();
 const ago = days => new Date(Date.now() - days * 86400000).toISOString();
 const exercise = (id, extra = {}) => ({ exercise_id: id, direction: 'ja_es', jlpt_level: 'N5', active: true, difficulty: 10, topic_tags: [id], vocabulary_tags: [], grammar_tags: [], ...extra });
 const attempt = (id, days = 30, extra = {}) => ({ attempt_id: id, exercise_id: id, profile_id: 'profile', direction: 'ja_es', attempted_at: ago(days), overall_score: 70, evaluation_status: 'valid', ...extra });

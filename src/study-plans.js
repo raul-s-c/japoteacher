@@ -1,7 +1,7 @@
 (function(){
   const parse=(value,fallback=[])=>{try{return JSON.parse(value)||fallback}catch{return fallback}};
   const bounded=(value,fallback,max=200)=>Number.isFinite(Number(value))?Math.max(0,Math.min(max,Math.floor(Number(value)))):fallback;
-  const day=value=>{const d=new Date(value);return Number.isFinite(d.getTime())?[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'):''};
+  const day=value=>value===undefined||value===null?'':SessionPlanner.localDate(value);
   const key=(profile,id)=>`study-plan:${profile}:${id}`;
   const identity=e=>String(e.direction==='ja_es'?e.source_text:e.reference_translation).normalize('NFKC').replace(/[\s。、！？!?.,]/g,'')+'::'+e.direction;
   const active=e=>e.active!==false&&!e.blocked_by_user;
@@ -43,7 +43,7 @@
   }
   function scopeRows(plan,exercises){const seen=new Set();return exercises.filter(e=>{if(!matches(plan,e))return false;const k=identity(e);if(seen.has(k))return false;seen.add(k);return true})}
   function classify(plan,exercises,attempts,progress,profile,date=SessionPlanner.localDate()){
-    const rows=scopeRows(plan,exercises),ev=evidence(exercises,attempts,progress,profile,date),gates=SessionPlanner.difficultyRoadmap(exercises,attempts.filter(a=>!a.profile_id||a.profile_id===profile),plan.direction),now=day(Date.now())===date?Date.now():Date.parse(date+'T23:59:59');
+    const rows=scopeRows(plan,exercises),ev=evidence(exercises,attempts,progress,profile,date),gates=SessionPlanner.difficultyRoadmap(exercises,attempts.filter(a=>!a.profile_id||a.profile_id===profile),plan.direction),now=day(Date.now())===date?Date.now():SessionPlanner.dayStart(SessionPlanner.nextLocalDate(date)).getTime()-1;
     const eligibleNew=e=>ev.isNew(e)&&(!plan.adaptive||Difficulty.bandFor(e)<=(gates[e.jlpt_level]?.unlockedBand??0));
     const dueAt=e=>{const p=ev.pMap.get(identity(e)),last=Date.parse(ev.latest.get(identity(e))||'')||0;return Math.max(Date.parse(p?.next_review_at||'')||0,last+plan.cooldownDays*86400000)};
     // The daily plan is a lowest-recent-average queue; SRS dates are advisory only.
