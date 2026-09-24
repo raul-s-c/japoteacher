@@ -1,0 +1,3345 @@
+{
+  "provenance": "Authored and linguistically reviewed in Codex conversation; local deterministic checks. No independent API review.",
+  "api_calls": 0,
+  "api_tokens": 0,
+  "pairs": 50,
+  "exercises": 100,
+  "levels": {
+    "N4": 23,
+    "N3": 19,
+    "N5": 4,
+    "N2": 4
+  },
+  "checks": [
+    "schema",
+    "explicit ordered kanji readings",
+    "exact and character similarity vs bank + Sakamoto + batch",
+    "morphology evidence for target",
+    "append-only previous rows and graph"
+  ],
+  "items": [
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-001",
+      "target": "ようやく",
+      "japanese": "三か月かかりましたが、ようやく部屋の修理が終わりました。",
+      "spanish": "Tardó tres meses, pero por fin terminó la reparación de la habitación.",
+      "estimated_level": "N4",
+      "review_note": "ようやく expresa el final de una espera o un esfuerzo prolongado.",
+      "nearest_id": "JAES-N4-EDITORIAL-0908",
+      "nearest_japanese": "従来より増加しました。関係は少し変わりました。",
+      "character_similarity": 0.383,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "かかる",
+          "surface": "かかり",
+          "start": 3,
+          "end": 6,
+          "reading": "かかり"
+        },
+        {
+          "term": "ようやく",
+          "surface": "ようやく",
+          "start": 11,
+          "end": 15,
+          "reading": "ようやく"
+        },
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 15,
+          "end": 17,
+          "reading": "へや"
+        },
+        {
+          "term": "修理",
+          "surface": "修理",
+          "start": 18,
+          "end": 20,
+          "reading": "しゅうり"
+        },
+        {
+          "term": "終わる",
+          "surface": "終わり",
+          "start": 21,
+          "end": 24,
+          "reading": "おわり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-002",
+      "target": "悩む",
+      "japanese": "転職するかどうか悩んでいますが、まだ家族には話していません。",
+      "spanish": "Estoy dándole vueltas a si cambiar de trabajo, pero todavía no se lo he contado a mi familia.",
+      "estimated_level": "N3",
+      "review_note": "かどうか introduce una duda; 悩む indica que la decisión preocupa.",
+      "nearest_id": "JAES-N5-EDITORIAL-1556",
+      "nearest_japanese": "もう財布はありますが、まだ買い物は終わっていません。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "転職",
+          "surface": "転職",
+          "start": 0,
+          "end": 2,
+          "reading": "てんしょく"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "どうか",
+          "surface": "どうか",
+          "start": 5,
+          "end": 8,
+          "reading": "どうか"
+        },
+        {
+          "term": "悩む",
+          "surface": "悩ん",
+          "start": 8,
+          "end": 10,
+          "reading": "なやん"
+        },
+        {
+          "term": "まだ",
+          "surface": "まだ",
+          "start": 16,
+          "end": 18,
+          "reading": "まだ"
+        },
+        {
+          "term": "家族",
+          "surface": "家族",
+          "start": 18,
+          "end": 20,
+          "reading": "かぞく"
+        },
+        {
+          "term": "話す",
+          "surface": "話し",
+          "start": 22,
+          "end": 24,
+          "reading": "はなし"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-003",
+      "target": "就職",
+      "japanese": "姉は旅行会社に就職して、来月から働きます。",
+      "spanish": "Mi hermana mayor ha conseguido empleo en una agencia de viajes y empezará a trabajar el mes que viene.",
+      "estimated_level": "N4",
+      "review_note": "就職する es conseguir empleo; no equivale a trabajar en este momento.",
+      "nearest_id": "JAES-N5-EDITORIAL-1657",
+      "nearest_japanese": "会社で九時から五時まで働きます。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "姉",
+          "surface": "姉",
+          "start": 0,
+          "end": 1,
+          "reading": "あね"
+        },
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 2,
+          "end": 4,
+          "reading": "りょこう"
+        },
+        {
+          "term": "会社",
+          "surface": "会社",
+          "start": 4,
+          "end": 6,
+          "reading": "かいしゃ"
+        },
+        {
+          "term": "就職",
+          "surface": "就職",
+          "start": 7,
+          "end": 9,
+          "reading": "しゅうしょく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 9,
+          "end": 10,
+          "reading": "し"
+        },
+        {
+          "term": "来月",
+          "surface": "来月",
+          "start": 12,
+          "end": 14,
+          "reading": "らいげつ"
+        },
+        {
+          "term": "働く",
+          "surface": "働き",
+          "start": 16,
+          "end": 18,
+          "reading": "はたらき"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-004",
+      "target": "育てる",
+      "japanese": "ベランダで育てているトマトに、今朝初めて花が咲きました。",
+      "spanish": "Esta mañana han salido flores por primera vez en las tomateras que estoy cultivando en el balcón.",
+      "estimated_level": "N4",
+      "review_note": "育てる es transitivo: alguien cultiva o cría algo.",
+      "nearest_id": "JAES-N4-EDITORIAL-2188",
+      "nearest_japanese": "山で花を見ていたら、きれいな蝶に気がつきました。",
+      "character_similarity": 0.375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ベランダ",
+          "surface": "ベランダ",
+          "start": 0,
+          "end": 4,
+          "reading": "べらんだ"
+        },
+        {
+          "term": "育てる",
+          "surface": "育て",
+          "start": 5,
+          "end": 7,
+          "reading": "そだて"
+        },
+        {
+          "term": "トマト",
+          "surface": "トマト",
+          "start": 10,
+          "end": 13,
+          "reading": "とまと"
+        },
+        {
+          "term": "今朝",
+          "surface": "今朝",
+          "start": 15,
+          "end": 17,
+          "reading": "けさ"
+        },
+        {
+          "term": "初めて",
+          "surface": "初めて",
+          "start": 17,
+          "end": 20,
+          "reading": "はじめて"
+        },
+        {
+          "term": "花",
+          "surface": "花",
+          "start": 20,
+          "end": 21,
+          "reading": "はな"
+        },
+        {
+          "term": "咲く",
+          "surface": "咲き",
+          "start": 22,
+          "end": 24,
+          "reading": "さき"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-005",
+      "target": "証拠",
+      "japanese": "注文した品物と違うので、証拠として箱の写真を撮りました。",
+      "spanish": "Como no es el artículo que pedí, he hecho una foto de la caja como prueba.",
+      "estimated_level": "N3",
+      "review_note": "として señala la función de la fotografía: servir de prueba.",
+      "nearest_id": "JAES-N5-EDITORIAL-1920",
+      "nearest_japanese": "お祭りのあとで、神社の前で写真を撮りました。",
+      "character_similarity": 0.4783,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "注文",
+          "surface": "注文",
+          "start": 0,
+          "end": 2,
+          "reading": "ちゅうもん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 2,
+          "end": 3,
+          "reading": "し"
+        },
+        {
+          "term": "品物",
+          "surface": "品物",
+          "start": 4,
+          "end": 6,
+          "reading": "しなもの"
+        },
+        {
+          "term": "違う",
+          "surface": "違う",
+          "start": 7,
+          "end": 9,
+          "reading": "ちがう"
+        },
+        {
+          "term": "証拠",
+          "surface": "証拠",
+          "start": 12,
+          "end": 14,
+          "reading": "しょうこ"
+        },
+        {
+          "term": "箱",
+          "surface": "箱",
+          "start": 17,
+          "end": 18,
+          "reading": "はこ"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 19,
+          "end": 21,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "撮る",
+          "surface": "撮り",
+          "start": 22,
+          "end": 24,
+          "reading": "とり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-006",
+      "target": "ラジオ",
+      "japanese": "祖父は毎朝、ラジオで天気予報を聞きます。",
+      "spanish": "Mi abuelo escucha el pronóstico del tiempo en la radio todas las mañanas.",
+      "estimated_level": "N5",
+      "review_note": "で indica el medio por el que escucha la información.",
+      "nearest_id": "JAES-N5-MORE-0103",
+      "nearest_japanese": "駅で音楽を聞きます",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "祖父",
+          "surface": "祖父",
+          "start": 0,
+          "end": 2,
+          "reading": "そふ"
+        },
+        {
+          "term": "毎朝",
+          "surface": "毎朝",
+          "start": 3,
+          "end": 5,
+          "reading": "まいあさ"
+        },
+        {
+          "term": "ラジオ",
+          "surface": "ラジオ",
+          "start": 6,
+          "end": 9,
+          "reading": "らじお"
+        },
+        {
+          "term": "天気",
+          "surface": "天気",
+          "start": 10,
+          "end": 12,
+          "reading": "てんき"
+        },
+        {
+          "term": "予報",
+          "surface": "予報",
+          "start": 12,
+          "end": 14,
+          "reading": "よほう"
+        },
+        {
+          "term": "聞く",
+          "surface": "聞き",
+          "start": 15,
+          "end": 17,
+          "reading": "きき"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-007",
+      "target": "やり方",
+      "japanese": "この結び方は難しいので、やり方をもう一度見せてください。",
+      "spanish": "Esta forma de hacer el nudo es difícil; por favor, enséñame otra vez cómo se hace.",
+      "estimated_level": "N4",
+      "review_note": "やり方 se refiere al procedimiento; no pide una explicación del motivo.",
+      "nearest_id": "JAES-N5-CURATED-0019",
+      "nearest_japanese": "その赤いシャツを見せてください。",
+      "character_similarity": 0.4878,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "結び方",
+          "surface": "結び方",
+          "start": 2,
+          "end": 5,
+          "reading": "むすびかた"
+        },
+        {
+          "term": "難しい",
+          "surface": "難しい",
+          "start": 6,
+          "end": 9,
+          "reading": "むずかしい"
+        },
+        {
+          "term": "やり方",
+          "surface": "やり方",
+          "start": 12,
+          "end": 15,
+          "reading": "やりかた"
+        },
+        {
+          "term": "もう一度",
+          "surface": "もう一度",
+          "start": 16,
+          "end": 20,
+          "reading": "もういちど"
+        },
+        {
+          "term": "見せる",
+          "surface": "見せ",
+          "start": 20,
+          "end": 22,
+          "reading": "みせ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-008",
+      "target": "抱える",
+      "japanese": "弟は大きなぬいぐるみを両手で抱えて帰ってきました。",
+      "spanish": "Mi hermano pequeño volvió a casa llevando un peluche grande entre las dos manos.",
+      "estimated_level": "N3",
+      "review_note": "Aquí 抱える describe cómo sostiene el objeto, no un problema abstracto.",
+      "nearest_id": "JAES-N4-EDITORIAL-0504",
+      "nearest_japanese": "給料日前なので、安い物を選んで買ってみました。",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "弟",
+          "surface": "弟",
+          "start": 0,
+          "end": 1,
+          "reading": "おとうと"
+        },
+        {
+          "term": "大きな",
+          "surface": "大きな",
+          "start": 2,
+          "end": 5,
+          "reading": "おおきな"
+        },
+        {
+          "term": "ぬいぐるみ",
+          "surface": "ぬいぐるみ",
+          "start": 5,
+          "end": 10,
+          "reading": "ぬいぐるみ"
+        },
+        {
+          "term": "両手",
+          "surface": "両手",
+          "start": 11,
+          "end": 13,
+          "reading": "りょうて"
+        },
+        {
+          "term": "抱える",
+          "surface": "抱え",
+          "start": 14,
+          "end": 16,
+          "reading": "かかえ"
+        },
+        {
+          "term": "帰る",
+          "surface": "帰っ",
+          "start": 17,
+          "end": 19,
+          "reading": "かえっ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-009",
+      "target": "日時",
+      "japanese": "面接の日時が決まったら、メールで知らせてください。",
+      "spanish": "Cuando se fijen la fecha y la hora de la entrevista, avísame por correo electrónico.",
+      "estimated_level": "N3",
+      "review_note": "日時 incluye tanto la fecha como la hora.",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0474",
+      "nearest_japanese": "気分が悪くなったら、すぐ先生に知らせてください。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "面接",
+          "surface": "面接",
+          "start": 0,
+          "end": 2,
+          "reading": "めんせつ"
+        },
+        {
+          "term": "日時",
+          "surface": "日時",
+          "start": 3,
+          "end": 5,
+          "reading": "にちじ"
+        },
+        {
+          "term": "決まる",
+          "surface": "決まっ",
+          "start": 6,
+          "end": 9,
+          "reading": "きまっ"
+        },
+        {
+          "term": "メール",
+          "surface": "メール",
+          "start": 12,
+          "end": 15,
+          "reading": "めーる"
+        },
+        {
+          "term": "知らせる",
+          "surface": "知らせ",
+          "start": 16,
+          "end": 19,
+          "reading": "しらせ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-010",
+      "target": "できるだけ",
+      "japanese": "隣の部屋で赤ちゃんが寝ているので、できるだけ静かに歩いてください。",
+      "spanish": "El bebé está durmiendo en la habitación de al lado; camina haciendo el menor ruido posible, por favor.",
+      "estimated_level": "N4",
+      "review_note": "できるだけ pide el máximo esfuerzo posible, no silencio absoluto.",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0464",
+      "nearest_japanese": "赤ちゃんが寝ている間は、大きな声で話さないでください。",
+      "character_similarity": 0.5357,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "隣",
+          "surface": "隣",
+          "start": 0,
+          "end": 1,
+          "reading": "となり"
+        },
+        {
+          "term": "部屋",
+          "surface": "部屋",
+          "start": 2,
+          "end": 4,
+          "reading": "へや"
+        },
+        {
+          "term": "赤ちゃん",
+          "surface": "赤ちゃん",
+          "start": 5,
+          "end": 9,
+          "reading": "あかちゃん"
+        },
+        {
+          "term": "寝る",
+          "surface": "寝",
+          "start": 10,
+          "end": 11,
+          "reading": "ね"
+        },
+        {
+          "term": "できるだけ",
+          "surface": "できるだけ",
+          "start": 17,
+          "end": 22,
+          "reading": "できるだけ"
+        },
+        {
+          "term": "静か",
+          "surface": "静か",
+          "start": 22,
+          "end": 24,
+          "reading": "しずか"
+        },
+        {
+          "term": "歩く",
+          "surface": "歩い",
+          "start": 25,
+          "end": 27,
+          "reading": "あるい"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-011",
+      "target": "メニュー",
+      "japanese": "この店のメニューには、料理の写真もあります。",
+      "spanish": "La carta de este restaurante también tiene fotos de los platos.",
+      "estimated_level": "N5",
+      "review_note": "メニュー significa aquí carta del restaurante, no menú del día.",
+      "nearest_id": "JAES-N5-EDITORIAL-0980",
+      "nearest_japanese": "この店には在庫無しの商品があります。",
+      "character_similarity": 0.5405,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "店",
+          "surface": "店",
+          "start": 2,
+          "end": 3,
+          "reading": "みせ"
+        },
+        {
+          "term": "メニュー",
+          "surface": "メニュー",
+          "start": 4,
+          "end": 8,
+          "reading": "めにゅー"
+        },
+        {
+          "term": "料理",
+          "surface": "料理",
+          "start": 11,
+          "end": 13,
+          "reading": "りょうり"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 14,
+          "end": 16,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 17,
+          "end": 19,
+          "reading": "あり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-012",
+      "target": "秘密",
+      "japanese": "父へのプレゼントは、誕生日まで秘密にしておきましょう。",
+      "spanish": "Mantengamos en secreto el regalo para mi padre hasta su cumpleaños.",
+      "estimated_level": "N4",
+      "review_note": "秘密にしておく expresa mantener algo en secreto durante un tiempo.",
+      "nearest_id": "JAES-N4-EDITORIAL-1031",
+      "nearest_japanese": "彼女にプレゼントを買っておきました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "父",
+          "surface": "父",
+          "start": 0,
+          "end": 1,
+          "reading": "ちち"
+        },
+        {
+          "term": "プレゼント",
+          "surface": "プレゼント",
+          "start": 3,
+          "end": 8,
+          "reading": "ぷれぜんと"
+        },
+        {
+          "term": "誕生",
+          "surface": "誕生",
+          "start": 10,
+          "end": 12,
+          "reading": "たんじょう"
+        },
+        {
+          "term": "秘密",
+          "surface": "秘密",
+          "start": 15,
+          "end": 17,
+          "reading": "ひみつ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 18,
+          "end": 19,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-013",
+      "target": "汗",
+      "japanese": "坂を上って汗をかいたので、木の下で少し休みました。",
+      "spanish": "Como sudé al subir la cuesta, descansé un poco debajo de un árbol.",
+      "estimated_level": "N4",
+      "review_note": "汗をかく es la expresión habitual para sudar.",
+      "nearest_id": "JAES-N4-EDITORIAL-1032",
+      "nearest_japanese": "修理をお願いしたいので、この窓口で聞いてみました。",
+      "character_similarity": 0.4783,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "坂",
+          "surface": "坂",
+          "start": 0,
+          "end": 1,
+          "reading": "さか"
+        },
+        {
+          "term": "上る",
+          "surface": "上っ",
+          "start": 2,
+          "end": 4,
+          "reading": "のぼっ"
+        },
+        {
+          "term": "汗",
+          "surface": "汗",
+          "start": 5,
+          "end": 6,
+          "reading": "あせ"
+        },
+        {
+          "term": "かく",
+          "surface": "かい",
+          "start": 7,
+          "end": 9,
+          "reading": "かい"
+        },
+        {
+          "term": "木の下",
+          "surface": "木の下",
+          "start": 13,
+          "end": 16,
+          "reading": "このした"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 17,
+          "end": 19,
+          "reading": "すこし"
+        },
+        {
+          "term": "休む",
+          "surface": "休み",
+          "start": 19,
+          "end": 21,
+          "reading": "やすみ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-014",
+      "target": "エンジン",
+      "japanese": "車のエンジンがかからなくて、今朝はバスで出勤しました。",
+      "spanish": "El motor del coche no arrancaba, así que esta mañana fui al trabajo en autobús.",
+      "estimated_level": "N4",
+      "review_note": "エンジンがかかる significa que el motor arranca.",
+      "nearest_id": "JAES-N5-EDITORIAL-1327",
+      "nearest_japanese": "バスはもう出発しました。",
+      "character_similarity": 0.3889,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "車",
+          "surface": "車",
+          "start": 0,
+          "end": 1,
+          "reading": "くるま"
+        },
+        {
+          "term": "エンジン",
+          "surface": "エンジン",
+          "start": 2,
+          "end": 6,
+          "reading": "えんじん"
+        },
+        {
+          "term": "かかる",
+          "surface": "かから",
+          "start": 7,
+          "end": 10,
+          "reading": "かから"
+        },
+        {
+          "term": "今朝",
+          "surface": "今朝",
+          "start": 14,
+          "end": 16,
+          "reading": "けさ"
+        },
+        {
+          "term": "バス",
+          "surface": "バス",
+          "start": 17,
+          "end": 19,
+          "reading": "ばす"
+        },
+        {
+          "term": "出勤",
+          "surface": "出勤",
+          "start": 20,
+          "end": 22,
+          "reading": "しゅっきん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 22,
+          "end": 23,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-015",
+      "target": "チャンス",
+      "japanese": "今回の発表は、自分のアイデアを伝えるチャンスです。",
+      "spanish": "Esta presentación es una oportunidad para dar a conocer mis ideas.",
+      "estimated_level": "N3",
+      "review_note": "チャンス designa una oportunidad favorable, no una probabilidad.",
+      "nearest_id": "JAES-N4-EDITORIAL-1382",
+      "nearest_japanese": "今回の乗り換えはもうクリアです。",
+      "character_similarity": 0.3684,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "今回",
+          "surface": "今回",
+          "start": 0,
+          "end": 2,
+          "reading": "こんかい"
+        },
+        {
+          "term": "発表",
+          "surface": "発表",
+          "start": 3,
+          "end": 5,
+          "reading": "はっぴょう"
+        },
+        {
+          "term": "自分",
+          "surface": "自分",
+          "start": 7,
+          "end": 9,
+          "reading": "じぶん"
+        },
+        {
+          "term": "アイデア",
+          "surface": "アイデア",
+          "start": 10,
+          "end": 14,
+          "reading": "あいであ"
+        },
+        {
+          "term": "伝える",
+          "surface": "伝える",
+          "start": 15,
+          "end": 18,
+          "reading": "つたえる"
+        },
+        {
+          "term": "チャンス",
+          "surface": "チャンス",
+          "start": 18,
+          "end": 22,
+          "reading": "ちゃんす"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-016",
+      "target": "ソース",
+      "japanese": "ソースは全部かけないで、半分残してください。",
+      "spanish": "No eches toda la salsa; deja la mitad, por favor.",
+      "estimated_level": "N4",
+      "review_note": "かける significa aquí echar salsa sobre la comida.",
+      "nearest_id": "JAES-N4-EDITORIAL-0677",
+      "nearest_japanese": "スマホを見ながら歩かないでください。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ソース",
+          "surface": "ソース",
+          "start": 0,
+          "end": 3,
+          "reading": "そーす"
+        },
+        {
+          "term": "全部",
+          "surface": "全部",
+          "start": 4,
+          "end": 6,
+          "reading": "ぜんぶ"
+        },
+        {
+          "term": "かける",
+          "surface": "かけ",
+          "start": 6,
+          "end": 8,
+          "reading": "かけ"
+        },
+        {
+          "term": "半分",
+          "surface": "半分",
+          "start": 12,
+          "end": 14,
+          "reading": "はんぶん"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 14,
+          "end": 16,
+          "reading": "のこし"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-017",
+      "target": "援助",
+      "japanese": "台風で家を失った人たちに、市が援助を行っています。",
+      "spanish": "El ayuntamiento está prestando ayuda a las personas que perdieron su casa por el tifón.",
+      "estimated_level": "N3",
+      "review_note": "援助 se refiere a la ayuda prestada; no especifica que sea dinero.",
+      "nearest_id": "JAES-N4-EDITORIAL-2096",
+      "nearest_japanese": "伝統を守る少数の人たちが祭りを支えています。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "台風",
+          "surface": "台風",
+          "start": 0,
+          "end": 2,
+          "reading": "たいふう"
+        },
+        {
+          "term": "家",
+          "surface": "家",
+          "start": 3,
+          "end": 4,
+          "reading": "いえ"
+        },
+        {
+          "term": "失う",
+          "surface": "失っ",
+          "start": 5,
+          "end": 7,
+          "reading": "うしなっ"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 8,
+          "end": 9,
+          "reading": "ひと"
+        },
+        {
+          "term": "市",
+          "surface": "市",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        },
+        {
+          "term": "援助",
+          "surface": "援助",
+          "start": 15,
+          "end": 17,
+          "reading": "えんじょ"
+        },
+        {
+          "term": "行う",
+          "surface": "行っ",
+          "start": 18,
+          "end": 20,
+          "reading": "おこなっ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-018",
+      "target": "除く",
+      "japanese": "日曜日を除き、この窓口は毎日開いています。",
+      "spanish": "Esta ventanilla está abierta todos los días excepto los domingos.",
+      "estimated_level": "N3",
+      "review_note": "を除き excluye los domingos del conjunto de días.",
+      "nearest_id": "JAES-N5-EDITORIAL-0548",
+      "nearest_japanese": "この企業で毎日働いています。",
+      "character_similarity": 0.5625,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "日曜日",
+          "surface": "日曜日",
+          "start": 0,
+          "end": 3,
+          "reading": "にちようび"
+        },
+        {
+          "term": "除く",
+          "surface": "除き",
+          "start": 4,
+          "end": 6,
+          "reading": "のぞき"
+        },
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 7,
+          "end": 9,
+          "reading": "この"
+        },
+        {
+          "term": "窓口",
+          "surface": "窓口",
+          "start": 9,
+          "end": 11,
+          "reading": "まどぐち"
+        },
+        {
+          "term": "毎日",
+          "surface": "毎日",
+          "start": 12,
+          "end": 14,
+          "reading": "まいにち"
+        },
+        {
+          "term": "開く",
+          "surface": "開い",
+          "start": 14,
+          "end": 16,
+          "reading": "ひらい"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-019",
+      "target": "コーナー",
+      "japanese": "本屋の奥に、子供向けの絵本のコーナーがあります。",
+      "spanish": "Al fondo de la librería hay una sección de libros ilustrados para niños.",
+      "estimated_level": "N4",
+      "review_note": "コーナー es aquí una sección de la tienda, no una esquina literal.",
+      "nearest_id": "JAES-N4-EDITORIAL-1082",
+      "nearest_japanese": "子供向けの本を探しています。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "本屋",
+          "surface": "本屋",
+          "start": 0,
+          "end": 2,
+          "reading": "ほんや"
+        },
+        {
+          "term": "奥",
+          "surface": "奥",
+          "start": 3,
+          "end": 4,
+          "reading": "おく"
+        },
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 6,
+          "end": 8,
+          "reading": "こども"
+        },
+        {
+          "term": "絵本",
+          "surface": "絵本",
+          "start": 11,
+          "end": 13,
+          "reading": "えほん"
+        },
+        {
+          "term": "コーナー",
+          "surface": "コーナー",
+          "start": 14,
+          "end": 18,
+          "reading": "こーなー"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 19,
+          "end": 21,
+          "reading": "あり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-020",
+      "target": "削除",
+      "japanese": "住所が写っていたので、投稿した写真を削除しました。",
+      "spanish": "He borrado la foto que había publicado porque en ella se veía mi dirección.",
+      "estimated_level": "N3",
+      "review_note": "写っている indica que algo aparece en una fotografía.",
+      "nearest_id": "JAES-N4-CONVERSATION-20260924-013",
+      "nearest_japanese": "坂を上って汗をかいたので、木の下で少し休みました。",
+      "character_similarity": 0.4348,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "住所",
+          "surface": "住所",
+          "start": 0,
+          "end": 2,
+          "reading": "じゅうしょ"
+        },
+        {
+          "term": "写る",
+          "surface": "写っ",
+          "start": 3,
+          "end": 5,
+          "reading": "うつっ"
+        },
+        {
+          "term": "投稿",
+          "surface": "投稿",
+          "start": 11,
+          "end": 13,
+          "reading": "とうこう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        },
+        {
+          "term": "写真",
+          "surface": "写真",
+          "start": 15,
+          "end": 17,
+          "reading": "しゃしん"
+        },
+        {
+          "term": "削除",
+          "surface": "削除",
+          "start": 18,
+          "end": 20,
+          "reading": "さくじょ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-021",
+      "target": "きっかけ",
+      "japanese": "友人に誘われたのがきっかけで、週末に山を歩くようになりました。",
+      "spanish": "A raíz de la invitación de un amigo, empecé a hacer senderismo los fines de semana.",
+      "estimated_level": "N3",
+      "review_note": "きっかけ señala el hecho que dio inicio a la nueva costumbre.",
+      "nearest_id": "JAES-N4-EDITORIAL-0488",
+      "nearest_japanese": "毎日漢字を見直したので、前より速く読めるようになりました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "友人",
+          "surface": "友人",
+          "start": 0,
+          "end": 2,
+          "reading": "ゆうじん"
+        },
+        {
+          "term": "誘う",
+          "surface": "誘わ",
+          "start": 3,
+          "end": 5,
+          "reading": "さそわ"
+        },
+        {
+          "term": "きっかけ",
+          "surface": "きっかけ",
+          "start": 9,
+          "end": 13,
+          "reading": "きっかけ"
+        },
+        {
+          "term": "週末",
+          "surface": "週末",
+          "start": 15,
+          "end": 17,
+          "reading": "しゅうまつ"
+        },
+        {
+          "term": "山",
+          "surface": "山",
+          "start": 18,
+          "end": 19,
+          "reading": "やま"
+        },
+        {
+          "term": "歩く",
+          "surface": "歩く",
+          "start": 20,
+          "end": 22,
+          "reading": "あるく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 25,
+          "end": 27,
+          "reading": "なり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-022",
+      "target": "夫婦",
+      "japanese": "あの夫婦は、駅の近くで小さなパン屋を開いています。",
+      "spanish": "Ese matrimonio tiene una pequeña panadería cerca de la estación.",
+      "estimated_level": "N4",
+      "review_note": "夫婦 se refiere a las dos personas que forman el matrimonio.",
+      "nearest_id": "JAES-N5-MORE-0093",
+      "nearest_japanese": "兄は駅で働いています。",
+      "character_similarity": 0.4848,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "あの",
+          "surface": "あの",
+          "start": 0,
+          "end": 2,
+          "reading": "あの"
+        },
+        {
+          "term": "夫婦",
+          "surface": "夫婦",
+          "start": 2,
+          "end": 4,
+          "reading": "ふうふ"
+        },
+        {
+          "term": "駅",
+          "surface": "駅",
+          "start": 6,
+          "end": 7,
+          "reading": "えき"
+        },
+        {
+          "term": "近く",
+          "surface": "近く",
+          "start": 8,
+          "end": 10,
+          "reading": "ちかく"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 11,
+          "end": 14,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "パン",
+          "surface": "パン",
+          "start": 14,
+          "end": 16,
+          "reading": "ぱん"
+        },
+        {
+          "term": "開く",
+          "surface": "開い",
+          "start": 18,
+          "end": 20,
+          "reading": "ひらい"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-023",
+      "target": "考慮",
+      "japanese": "参加者の年齢を考慮して、休憩の時間を長くしました。",
+      "spanish": "Hemos alargado el tiempo de descanso teniendo en cuenta la edad de los participantes.",
+      "estimated_level": "N2",
+      "review_note": "考慮する expresa tener un factor en cuenta al decidir.",
+      "nearest_id": "JAES-N4-EDITORIAL-0968",
+      "nearest_japanese": "前提を確認してから、レポートの内容を見直しました。",
+      "character_similarity": 0.3913,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "参加",
+          "surface": "参加",
+          "start": 0,
+          "end": 2,
+          "reading": "さんか"
+        },
+        {
+          "term": "年齢",
+          "surface": "年齢",
+          "start": 4,
+          "end": 6,
+          "reading": "ねんれい"
+        },
+        {
+          "term": "考慮",
+          "surface": "考慮",
+          "start": 7,
+          "end": 9,
+          "reading": "こうりょ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 9,
+          "end": 10,
+          "reading": "し"
+        },
+        {
+          "term": "休憩",
+          "surface": "休憩",
+          "start": 12,
+          "end": 14,
+          "reading": "きゅうけい"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 15,
+          "end": 17,
+          "reading": "じかん"
+        },
+        {
+          "term": "長い",
+          "surface": "長く",
+          "start": 18,
+          "end": 20,
+          "reading": "ながく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-024",
+      "target": "訴える",
+      "japanese": "近所の人たちが騒音の被害を市に訴えました。",
+      "spanish": "Los vecinos han presentado al ayuntamiento sus quejas por los perjuicios del ruido.",
+      "estimated_level": "N3",
+      "review_note": "訴える es aquí comunicar una queja; no implica una demanda judicial.",
+      "nearest_id": "JAES-N4-EDITORIAL-0896",
+      "nearest_japanese": "前回の祭りでは、地域の人たちが昔の踊りを大切に続けていました。",
+      "character_similarity": 0.449,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "近所",
+          "surface": "近所",
+          "start": 0,
+          "end": 2,
+          "reading": "きんじょ"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 3,
+          "end": 4,
+          "reading": "ひと"
+        },
+        {
+          "term": "騒音",
+          "surface": "騒音",
+          "start": 7,
+          "end": 9,
+          "reading": "そうおん"
+        },
+        {
+          "term": "被害",
+          "surface": "被害",
+          "start": 10,
+          "end": 12,
+          "reading": "ひがい"
+        },
+        {
+          "term": "市",
+          "surface": "市",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        },
+        {
+          "term": "訴える",
+          "surface": "訴え",
+          "start": 15,
+          "end": 17,
+          "reading": "うったえ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-025",
+      "target": "表す",
+      "japanese": "この地図では、青い線が川を表しています。",
+      "spanish": "En este mapa, las líneas azules representan los ríos.",
+      "estimated_level": "N3",
+      "review_note": "表す significa representar mediante un signo o símbolo.",
+      "nearest_id": "JAES-N5-EDITORIAL-0644",
+      "nearest_japanese": "この店では野菜を販売しています。",
+      "character_similarity": 0.6061,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "地図",
+          "surface": "地図",
+          "start": 2,
+          "end": 4,
+          "reading": "ちず"
+        },
+        {
+          "term": "青い",
+          "surface": "青い",
+          "start": 7,
+          "end": 9,
+          "reading": "あおい"
+        },
+        {
+          "term": "線",
+          "surface": "線",
+          "start": 9,
+          "end": 10,
+          "reading": "せん"
+        },
+        {
+          "term": "川",
+          "surface": "川",
+          "start": 11,
+          "end": 12,
+          "reading": "かわ"
+        },
+        {
+          "term": "表す",
+          "surface": "表し",
+          "start": 13,
+          "end": 15,
+          "reading": "あらわし"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-026",
+      "target": "ワイン",
+      "japanese": "このワインは甘くありませんが、果物の香りがします。",
+      "spanish": "Este vino no es dulce, pero huele a fruta.",
+      "estimated_level": "N4",
+      "review_note": "香りがする describe un aroma; no afirma que el vino contenga fruta añadida.",
+      "nearest_id": "JAES-N5-EDITORIAL-0563",
+      "nearest_japanese": "このサイトはありません。",
+      "character_similarity": 0.5294,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "ワイン",
+          "surface": "ワイン",
+          "start": 2,
+          "end": 5,
+          "reading": "わいん"
+        },
+        {
+          "term": "甘い",
+          "surface": "甘く",
+          "start": 6,
+          "end": 8,
+          "reading": "あまく"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 8,
+          "end": 10,
+          "reading": "あり"
+        },
+        {
+          "term": "果物",
+          "surface": "果物",
+          "start": 15,
+          "end": 17,
+          "reading": "くだもの"
+        },
+        {
+          "term": "香り",
+          "surface": "香り",
+          "start": 18,
+          "end": 20,
+          "reading": "かおり"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 21,
+          "end": 22,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-027",
+      "target": "首",
+      "japanese": "高い枕で寝たら、朝から首が痛くなりました。",
+      "spanish": "Después de dormir con una almohada alta, me empezó a doler el cuello por la mañana.",
+      "estimated_level": "N4",
+      "review_note": "首 significa cuello en este contexto.",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0455",
+      "nearest_japanese": "一日中働いたので、足が痛くなりました。",
+      "character_similarity": 0.5556,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "高い",
+          "surface": "高い",
+          "start": 0,
+          "end": 2,
+          "reading": "たかい"
+        },
+        {
+          "term": "枕",
+          "surface": "枕",
+          "start": 2,
+          "end": 3,
+          "reading": "まくら"
+        },
+        {
+          "term": "寝る",
+          "surface": "寝",
+          "start": 4,
+          "end": 5,
+          "reading": "ね"
+        },
+        {
+          "term": "朝",
+          "surface": "朝",
+          "start": 8,
+          "end": 9,
+          "reading": "あさ"
+        },
+        {
+          "term": "首",
+          "surface": "首",
+          "start": 11,
+          "end": 12,
+          "reading": "くび"
+        },
+        {
+          "term": "痛い",
+          "surface": "痛く",
+          "start": 13,
+          "end": 15,
+          "reading": "いたく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 15,
+          "end": 17,
+          "reading": "なり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-028",
+      "target": "血",
+      "japanese": "紙で指を切って、少し血が出ました。",
+      "spanish": "Me he cortado un dedo con el papel y me ha salido un poco de sangre.",
+      "estimated_level": "N4",
+      "review_note": "血が出る describe el sangrado, no una extracción de sangre.",
+      "nearest_id": "JAES-N4-EDITORIAL-1525",
+      "nearest_japanese": "電車で指輪を落としました。",
+      "character_similarity": 0.5185,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "紙",
+          "surface": "紙",
+          "start": 0,
+          "end": 1,
+          "reading": "かみ"
+        },
+        {
+          "term": "指",
+          "surface": "指",
+          "start": 2,
+          "end": 3,
+          "reading": "ゆび"
+        },
+        {
+          "term": "切る",
+          "surface": "切っ",
+          "start": 4,
+          "end": 6,
+          "reading": "きっ"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 8,
+          "end": 10,
+          "reading": "すこし"
+        },
+        {
+          "term": "血",
+          "surface": "血",
+          "start": 10,
+          "end": 11,
+          "reading": "ち"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 12,
+          "end": 13,
+          "reading": "で"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-029",
+      "target": "載る",
+      "japanese": "地元の新聞に、祖母の店の記事が載りました。",
+      "spanish": "Ha salido un artículo sobre la tienda de mi abuela en el periódico local.",
+      "estimated_level": "N4",
+      "review_note": "載る significa aparecer publicado; se distingue de 乗る, subir a un vehículo.",
+      "nearest_id": "JAES-N4-EDITORIAL-0736",
+      "nearest_japanese": "ライブの帰りに事故で電車が止まりました。",
+      "character_similarity": 0.4211,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "地元",
+          "surface": "地元",
+          "start": 0,
+          "end": 2,
+          "reading": "じもと"
+        },
+        {
+          "term": "新聞",
+          "surface": "新聞",
+          "start": 3,
+          "end": 5,
+          "reading": "しんぶん"
+        },
+        {
+          "term": "祖母",
+          "surface": "祖母",
+          "start": 7,
+          "end": 9,
+          "reading": "そぼ"
+        },
+        {
+          "term": "店",
+          "surface": "店",
+          "start": 10,
+          "end": 11,
+          "reading": "みせ"
+        },
+        {
+          "term": "記事",
+          "surface": "記事",
+          "start": 12,
+          "end": 14,
+          "reading": "きじ"
+        },
+        {
+          "term": "載る",
+          "surface": "載り",
+          "start": 15,
+          "end": 17,
+          "reading": "のり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-030",
+      "target": "バイト",
+      "japanese": "今月はバイトを増やして、旅行の費用を貯めるつもりです。",
+      "spanish": "Este mes pienso trabajar más en mi empleo a tiempo parcial para ahorrar para el viaje.",
+      "estimated_level": "N4",
+      "review_note": "バイト es la forma abreviada de アルバイト; 増やす no exige un segundo empleo.",
+      "nearest_id": "JAES-N4-EDITORIAL-1810",
+      "nearest_japanese": "今夜は部屋を片づけるつもりです。",
+      "character_similarity": 0.45,
+      "target_literal_previous_occurrences": 3,
+      "morphology_evidence": [
+        {
+          "term": "今月",
+          "surface": "今月",
+          "start": 0,
+          "end": 2,
+          "reading": "こんげつ"
+        },
+        {
+          "term": "バイト",
+          "surface": "バイト",
+          "start": 3,
+          "end": 6,
+          "reading": "ばいと"
+        },
+        {
+          "term": "増やす",
+          "surface": "増やし",
+          "start": 7,
+          "end": 10,
+          "reading": "ふやし"
+        },
+        {
+          "term": "旅行",
+          "surface": "旅行",
+          "start": 12,
+          "end": 14,
+          "reading": "りょこう"
+        },
+        {
+          "term": "費用",
+          "surface": "費用",
+          "start": 15,
+          "end": 17,
+          "reading": "ひよう"
+        },
+        {
+          "term": "貯める",
+          "surface": "貯める",
+          "start": 18,
+          "end": 21,
+          "reading": "ためる"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-031",
+      "target": "ガス",
+      "japanese": "ガスの火を消したか心配で、台所に戻りました。",
+      "spanish": "Me preocupaba si había apagado el fuego de gas y volví a la cocina.",
+      "estimated_level": "N4",
+      "review_note": "La duda recae sobre una acción ya realizada: haber apagado el fuego.",
+      "nearest_id": "JAES-N4-EDITORIAL-2479",
+      "nearest_japanese": "説明を聞きました。それから家に帰りました。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ガス",
+          "surface": "ガス",
+          "start": 0,
+          "end": 2,
+          "reading": "がす"
+        },
+        {
+          "term": "火",
+          "surface": "火",
+          "start": 3,
+          "end": 4,
+          "reading": "ひ"
+        },
+        {
+          "term": "消す",
+          "surface": "消し",
+          "start": 5,
+          "end": 7,
+          "reading": "けし"
+        },
+        {
+          "term": "心配",
+          "surface": "心配",
+          "start": 9,
+          "end": 11,
+          "reading": "しんぱい"
+        },
+        {
+          "term": "台所",
+          "surface": "台所",
+          "start": 13,
+          "end": 15,
+          "reading": "だいどころ"
+        },
+        {
+          "term": "戻る",
+          "surface": "戻り",
+          "start": 16,
+          "end": 18,
+          "reading": "もどり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-032",
+      "target": "受験",
+      "japanese": "来年大学を受験するので、夏休みも毎日勉強します。",
+      "spanish": "Como el año que viene me presentaré a las pruebas de acceso a la universidad, estudiaré a diario también durante las vacaciones de verano.",
+      "estimated_level": "N3",
+      "review_note": "大学を受験する se refiere a presentarse a las pruebas de acceso.",
+      "nearest_id": "JAES-N4-EDITORIAL-1015",
+      "nearest_japanese": "試験に合格するように毎日勉強します。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "来年",
+          "surface": "来年",
+          "start": 0,
+          "end": 2,
+          "reading": "らいねん"
+        },
+        {
+          "term": "大学",
+          "surface": "大学",
+          "start": 2,
+          "end": 4,
+          "reading": "だいがく"
+        },
+        {
+          "term": "受験",
+          "surface": "受験",
+          "start": 5,
+          "end": 7,
+          "reading": "じゅけん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 7,
+          "end": 9,
+          "reading": "する"
+        },
+        {
+          "term": "夏休み",
+          "surface": "夏休み",
+          "start": 12,
+          "end": 15,
+          "reading": "なつやすみ"
+        },
+        {
+          "term": "毎日",
+          "surface": "毎日",
+          "start": 16,
+          "end": 18,
+          "reading": "まいにち"
+        },
+        {
+          "term": "勉強",
+          "surface": "勉強",
+          "start": 18,
+          "end": 20,
+          "reading": "べんきょう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 20,
+          "end": 21,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-033",
+      "target": "普及",
+      "japanese": "スマートフォンの普及で、外出先でも簡単に地図を見られるようになりました。",
+      "spanish": "Con la generalización de los teléfonos inteligentes, se ha vuelto fácil consultar mapas incluso fuera de casa.",
+      "estimated_level": "N2",
+      "review_note": "普及 expresa la extensión del uso; ようになった marca un cambio de posibilidad.",
+      "nearest_id": "JAES-N4-EXP-0024",
+      "nearest_japanese": "寝る前にスマートフォンを見ないようにしています。",
+      "character_similarity": 0.4561,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "フォン",
+          "surface": "フォン",
+          "start": 4,
+          "end": 7,
+          "reading": "ふぉん"
+        },
+        {
+          "term": "普及",
+          "surface": "普及",
+          "start": 8,
+          "end": 10,
+          "reading": "ふきゅう"
+        },
+        {
+          "term": "外出",
+          "surface": "外出",
+          "start": 12,
+          "end": 14,
+          "reading": "がいしゅつ"
+        },
+        {
+          "term": "簡単",
+          "surface": "簡単",
+          "start": 17,
+          "end": 19,
+          "reading": "かんたん"
+        },
+        {
+          "term": "地図",
+          "surface": "地図",
+          "start": 20,
+          "end": 22,
+          "reading": "ちず"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 23,
+          "end": 24,
+          "reading": "み"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 30,
+          "end": 32,
+          "reading": "なり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-034",
+      "target": "把握",
+      "japanese": "作業を始める前に、全体の流れを把握しておきたいです。",
+      "spanish": "Antes de empezar el trabajo, quiero tener claro cómo será todo el proceso.",
+      "estimated_level": "N2",
+      "review_note": "把握する es comprender el conjunto; ておく señala preparación previa.",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0465",
+      "nearest_japanese": "番組が始まる前に、飲み物を用意しておきます。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "作業",
+          "surface": "作業",
+          "start": 0,
+          "end": 2,
+          "reading": "さぎょう"
+        },
+        {
+          "term": "始める",
+          "surface": "始める",
+          "start": 3,
+          "end": 6,
+          "reading": "はじめる"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 6,
+          "end": 7,
+          "reading": "まえ"
+        },
+        {
+          "term": "全体",
+          "surface": "全体",
+          "start": 9,
+          "end": 11,
+          "reading": "ぜんたい"
+        },
+        {
+          "term": "流れ",
+          "surface": "流れ",
+          "start": 12,
+          "end": 14,
+          "reading": "ながれ"
+        },
+        {
+          "term": "把握",
+          "surface": "把握",
+          "start": 15,
+          "end": 17,
+          "reading": "はあく"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-035",
+      "target": "細かい",
+      "japanese": "この地図は細かい道まで載っているので、町歩きに便利です。",
+      "spanish": "Este mapa muestra hasta las calles pequeñas, así que resulta práctico para pasear por la ciudad.",
+      "estimated_level": "N3",
+      "review_note": "細かい alude a detalles pequeños; まで destaca el alcance de la información.",
+      "nearest_id": "JAES-N4-EDITORIAL-1952",
+      "nearest_japanese": "この物件は駅に近いので、通学にも便利です。",
+      "character_similarity": 0.4889,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "地図",
+          "surface": "地図",
+          "start": 2,
+          "end": 4,
+          "reading": "ちず"
+        },
+        {
+          "term": "細かい",
+          "surface": "細かい",
+          "start": 5,
+          "end": 8,
+          "reading": "こまかい"
+        },
+        {
+          "term": "道",
+          "surface": "道",
+          "start": 8,
+          "end": 9,
+          "reading": "みち"
+        },
+        {
+          "term": "載る",
+          "surface": "載っ",
+          "start": 11,
+          "end": 13,
+          "reading": "のっ"
+        },
+        {
+          "term": "町",
+          "surface": "町",
+          "start": 19,
+          "end": 20,
+          "reading": "まち"
+        },
+        {
+          "term": "歩き",
+          "surface": "歩き",
+          "start": 20,
+          "end": 22,
+          "reading": "あるき"
+        },
+        {
+          "term": "便利",
+          "surface": "便利",
+          "start": 23,
+          "end": 25,
+          "reading": "べんり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-036",
+      "target": "意図",
+      "japanese": "その質問の意図が分からなかったので、答える前に確認しました。",
+      "spanish": "Como no entendía la intención de esa pregunta, pedí una aclaración antes de responder.",
+      "estimated_level": "N2",
+      "review_note": "意図 designa lo que se pretende con la pregunta.",
+      "nearest_id": "JAES-N4-EDITORIAL-2180",
+      "nearest_japanese": "商品の記載がないので、店員に確認しました。",
+      "character_similarity": 0.5106,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "その",
+          "surface": "その",
+          "start": 0,
+          "end": 2,
+          "reading": "その"
+        },
+        {
+          "term": "質問",
+          "surface": "質問",
+          "start": 2,
+          "end": 4,
+          "reading": "しつもん"
+        },
+        {
+          "term": "意図",
+          "surface": "意図",
+          "start": 5,
+          "end": 7,
+          "reading": "いと"
+        },
+        {
+          "term": "分かる",
+          "surface": "分から",
+          "start": 8,
+          "end": 11,
+          "reading": "わから"
+        },
+        {
+          "term": "答える",
+          "surface": "答える",
+          "start": 18,
+          "end": 21,
+          "reading": "こたえる"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 21,
+          "end": 22,
+          "reading": "まえ"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 23,
+          "end": 25,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 25,
+          "end": 26,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-037",
+      "target": "育つ",
+      "japanese": "この野菜は、日がよく当たる場所で育ちます。",
+      "spanish": "Esta hortaliza crece en lugares donde da mucho el sol.",
+      "estimated_level": "N4",
+      "review_note": "育つ es intransitivo: la planta crece; 育てる expresa cultivarla.",
+      "nearest_id": "JAES-N4-EDITORIAL-2203",
+      "nearest_japanese": "この曲はベースがよく聞こえます。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "野菜",
+          "surface": "野菜",
+          "start": 2,
+          "end": 4,
+          "reading": "やさい"
+        },
+        {
+          "term": "日",
+          "surface": "日",
+          "start": 6,
+          "end": 7,
+          "reading": "ひ"
+        },
+        {
+          "term": "よく",
+          "surface": "よく",
+          "start": 8,
+          "end": 10,
+          "reading": "よく"
+        },
+        {
+          "term": "当たる",
+          "surface": "当たる",
+          "start": 10,
+          "end": 13,
+          "reading": "あたる"
+        },
+        {
+          "term": "場所",
+          "surface": "場所",
+          "start": 13,
+          "end": 15,
+          "reading": "ばしょ"
+        },
+        {
+          "term": "育つ",
+          "surface": "育ち",
+          "start": 16,
+          "end": 18,
+          "reading": "そだち"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-038",
+      "target": "物価",
+      "japanese": "物価が上がったので、同じ金額では前ほど買えません。",
+      "spanish": "Como han subido los precios, con la misma cantidad de dinero no puedo comprar tanto como antes.",
+      "estimated_level": "N3",
+      "review_note": "前ほど…ない establece una comparación negativa con el pasado.",
+      "nearest_id": "JAES-N5-EDITORIAL-0948",
+      "nearest_japanese": "許可がないので、それは買えません。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "物価",
+          "surface": "物価",
+          "start": 0,
+          "end": 2,
+          "reading": "ぶっか"
+        },
+        {
+          "term": "上がる",
+          "surface": "上がっ",
+          "start": 3,
+          "end": 6,
+          "reading": "あがっ"
+        },
+        {
+          "term": "同じ",
+          "surface": "同じ",
+          "start": 10,
+          "end": 12,
+          "reading": "おなじ"
+        },
+        {
+          "term": "金額",
+          "surface": "金額",
+          "start": 12,
+          "end": 14,
+          "reading": "きんがく"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 16,
+          "end": 17,
+          "reading": "まえ"
+        },
+        {
+          "term": "買える",
+          "surface": "買え",
+          "start": 19,
+          "end": 21,
+          "reading": "かえ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-039",
+      "target": "苦労",
+      "japanese": "初めての一人暮らしでは、毎日の献立を考えるのに苦労しました。",
+      "spanish": "La primera vez que viví por mi cuenta, me costó planear qué comer cada día.",
+      "estimated_level": "N3",
+      "review_note": "のに苦労する expresa la tarea que resultó difícil.",
+      "nearest_id": "JAES-N5-EDITORIAL-1344",
+      "nearest_japanese": "時間がないので、別の手段を考えました。",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "初めて",
+          "surface": "初めて",
+          "start": 0,
+          "end": 3,
+          "reading": "はじめて"
+        },
+        {
+          "term": "一人暮らし",
+          "surface": "一人暮らし",
+          "start": 4,
+          "end": 9,
+          "reading": "ひとりぐらし"
+        },
+        {
+          "term": "献立",
+          "surface": "献立",
+          "start": 15,
+          "end": 17,
+          "reading": "こんだて"
+        },
+        {
+          "term": "考える",
+          "surface": "考える",
+          "start": 18,
+          "end": 21,
+          "reading": "かんがえる"
+        },
+        {
+          "term": "苦労",
+          "surface": "苦労",
+          "start": 23,
+          "end": 25,
+          "reading": "くろう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 25,
+          "end": 26,
+          "reading": "し"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-040",
+      "target": "貿易",
+      "japanese": "港の博物館で、外国との貿易の歴史を学びました。",
+      "spanish": "En el museo del puerto aprendí sobre la historia del comercio con otros países.",
+      "estimated_level": "N3",
+      "review_note": "貿易 se refiere al comercio internacional.",
+      "nearest_id": "JAES-N5-EDITORIAL-1448",
+      "nearest_japanese": "中央の資料室で歴史を調べました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "港",
+          "surface": "港",
+          "start": 0,
+          "end": 1,
+          "reading": "みなと"
+        },
+        {
+          "term": "博物館",
+          "surface": "博物館",
+          "start": 2,
+          "end": 5,
+          "reading": "はくぶつかん"
+        },
+        {
+          "term": "外国",
+          "surface": "外国",
+          "start": 7,
+          "end": 9,
+          "reading": "がいこく"
+        },
+        {
+          "term": "貿易",
+          "surface": "貿易",
+          "start": 11,
+          "end": 13,
+          "reading": "ぼうえき"
+        },
+        {
+          "term": "歴史",
+          "surface": "歴史",
+          "start": 14,
+          "end": 16,
+          "reading": "れきし"
+        },
+        {
+          "term": "学ぶ",
+          "surface": "学び",
+          "start": 17,
+          "end": 19,
+          "reading": "まなび"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-041",
+      "target": "いきなり",
+      "japanese": "犬がいきなり走り出したので、手に持っていた帽子を落としました。",
+      "spanish": "El perro echó a correr de repente y se me cayó el sombrero que llevaba en la mano.",
+      "estimated_level": "N3",
+      "review_note": "いきなり marca lo inesperado; 走り出す indica el comienzo de la acción.",
+      "nearest_id": "JAES-N4-EDITORIAL-1644",
+      "nearest_japanese": "雨で道がぬかるんでいたので、誘導に従って森の外周を歩きました。",
+      "character_similarity": 0.4138,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "犬",
+          "surface": "犬",
+          "start": 0,
+          "end": 1,
+          "reading": "いぬ"
+        },
+        {
+          "term": "いきなり",
+          "surface": "いきなり",
+          "start": 2,
+          "end": 6,
+          "reading": "いきなり"
+        },
+        {
+          "term": "走り出す",
+          "surface": "走り出し",
+          "start": 6,
+          "end": 10,
+          "reading": "はしりだし"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 14,
+          "end": 15,
+          "reading": "て"
+        },
+        {
+          "term": "持つ",
+          "surface": "持っ",
+          "start": 16,
+          "end": 18,
+          "reading": "もっ"
+        },
+        {
+          "term": "帽子",
+          "surface": "帽子",
+          "start": 21,
+          "end": 23,
+          "reading": "ぼうし"
+        },
+        {
+          "term": "落とす",
+          "surface": "落とし",
+          "start": 24,
+          "end": 27,
+          "reading": "おとし"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-042",
+      "target": "災害",
+      "japanese": "災害に備えて、玄関の棚に水と懐中電灯を置いています。",
+      "spanish": "Para estar preparados ante un desastre, guardamos agua y una linterna en el estante de la entrada.",
+      "estimated_level": "N3",
+      "review_note": "に備えて expresa preparación preventiva, no que ya haya ocurrido el desastre.",
+      "nearest_id": "JAES-N4-EDITORIAL-1538",
+      "nearest_japanese": "今日は玄関を開放しています。",
+      "character_similarity": 0.3784,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "災害",
+          "surface": "災害",
+          "start": 0,
+          "end": 2,
+          "reading": "さいがい"
+        },
+        {
+          "term": "備える",
+          "surface": "備え",
+          "start": 3,
+          "end": 5,
+          "reading": "そなえ"
+        },
+        {
+          "term": "玄関",
+          "surface": "玄関",
+          "start": 7,
+          "end": 9,
+          "reading": "げんかん"
+        },
+        {
+          "term": "棚",
+          "surface": "棚",
+          "start": 10,
+          "end": 11,
+          "reading": "たな"
+        },
+        {
+          "term": "水",
+          "surface": "水",
+          "start": 12,
+          "end": 13,
+          "reading": "みず"
+        },
+        {
+          "term": "懐中",
+          "surface": "懐中",
+          "start": 14,
+          "end": 16,
+          "reading": "かいちゅう"
+        },
+        {
+          "term": "電灯",
+          "surface": "電灯",
+          "start": 16,
+          "end": 18,
+          "reading": "でんとう"
+        },
+        {
+          "term": "置く",
+          "surface": "置い",
+          "start": 19,
+          "end": 21,
+          "reading": "おい"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-043",
+      "target": "狭い",
+      "japanese": "この道は狭いので、車は通れません。",
+      "spanish": "Esta calle es estrecha, así que los coches no pueden pasar.",
+      "estimated_level": "N4",
+      "review_note": "通れません es la forma potencial negativa de 通る.",
+      "nearest_id": "JAES-N4-EDITORIAL-0698",
+      "nearest_japanese": "この坂は自転車では上れません。",
+      "character_similarity": 0.6207,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "この",
+          "surface": "この",
+          "start": 0,
+          "end": 2,
+          "reading": "この"
+        },
+        {
+          "term": "道",
+          "surface": "道",
+          "start": 2,
+          "end": 3,
+          "reading": "みち"
+        },
+        {
+          "term": "狭い",
+          "surface": "狭い",
+          "start": 4,
+          "end": 6,
+          "reading": "せまい"
+        },
+        {
+          "term": "車",
+          "surface": "車",
+          "start": 9,
+          "end": 10,
+          "reading": "くるま"
+        },
+        {
+          "term": "通れる",
+          "surface": "通れ",
+          "start": 11,
+          "end": 13,
+          "reading": "とおれ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-044",
+      "target": "謎",
+      "japanese": "最後まで読んでも、手紙を送った人の正体は謎のままでした。",
+      "spanish": "Incluso después de leer hasta el final, la identidad de quien envió la carta seguía siendo un misterio.",
+      "estimated_level": "N3",
+      "review_note": "のまま señala que el misterio permanece sin resolverse.",
+      "nearest_id": "JAES-N4-EDITORIAL-1355",
+      "nearest_japanese": "あの怪物の正体は猫でした。",
+      "character_similarity": 0.3684,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "最後",
+          "surface": "最後",
+          "start": 0,
+          "end": 2,
+          "reading": "さいご"
+        },
+        {
+          "term": "読む",
+          "surface": "読ん",
+          "start": 4,
+          "end": 6,
+          "reading": "よん"
+        },
+        {
+          "term": "手紙",
+          "surface": "手紙",
+          "start": 9,
+          "end": 11,
+          "reading": "てがみ"
+        },
+        {
+          "term": "送る",
+          "surface": "送っ",
+          "start": 12,
+          "end": 14,
+          "reading": "おくっ"
+        },
+        {
+          "term": "人",
+          "surface": "人",
+          "start": 15,
+          "end": 16,
+          "reading": "ひと"
+        },
+        {
+          "term": "正体",
+          "surface": "正体",
+          "start": 17,
+          "end": 19,
+          "reading": "しょうたい"
+        },
+        {
+          "term": "謎",
+          "surface": "謎",
+          "start": 20,
+          "end": 21,
+          "reading": "なぞ"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-045",
+      "target": "顔",
+      "japanese": "鏡を見てください。顔に黒いインクが付いています。",
+      "spanish": "Mírate en el espejo, por favor. Tienes tinta negra en la cara.",
+      "estimated_level": "N5",
+      "review_note": "付いている describe la tinta adherida a la piel.",
+      "nearest_id": "JAES-N5-MORE-0161",
+      "nearest_japanese": "本を見せてください。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "鏡",
+          "surface": "鏡",
+          "start": 0,
+          "end": 1,
+          "reading": "かがみ"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 2,
+          "end": 3,
+          "reading": "み"
+        },
+        {
+          "term": "顔",
+          "surface": "顔",
+          "start": 9,
+          "end": 10,
+          "reading": "かお"
+        },
+        {
+          "term": "黒い",
+          "surface": "黒い",
+          "start": 11,
+          "end": 13,
+          "reading": "くろい"
+        },
+        {
+          "term": "インク",
+          "surface": "インク",
+          "start": 13,
+          "end": 16,
+          "reading": "いんく"
+        },
+        {
+          "term": "付く",
+          "surface": "付い",
+          "start": 17,
+          "end": 19,
+          "reading": "つい"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-046",
+      "target": "箸",
+      "japanese": "箸を落としました。もう一膳ください。",
+      "spanish": "Se me han caído los palillos. Dame otro par, por favor.",
+      "estimated_level": "N4",
+      "review_note": "一膳 es el contador de pares de palillos; se lee いちぜん.",
+      "nearest_id": "JAES-N5-0005",
+      "nearest_japanese": "コーヒーをもう一杯ください。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "箸",
+          "surface": "箸",
+          "start": 0,
+          "end": 1,
+          "reading": "はし"
+        },
+        {
+          "term": "落とす",
+          "surface": "落とし",
+          "start": 2,
+          "end": 5,
+          "reading": "おとし"
+        },
+        {
+          "term": "もう",
+          "surface": "もう",
+          "start": 9,
+          "end": 11,
+          "reading": "もう"
+        },
+        {
+          "term": "くださる",
+          "surface": "ください",
+          "start": 13,
+          "end": 17,
+          "reading": "ください"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-047",
+      "target": "耳",
+      "japanese": "飛行機が着陸するとき、耳が痛くなりました。",
+      "spanish": "Me dolieron los oídos cuando el avión estaba aterrizando.",
+      "estimated_level": "N4",
+      "review_note": "耳 puede traducirse como oído u oreja; aquí corresponde oído por el contexto.",
+      "nearest_id": "JAES-N4-EDITORIAL-0902",
+      "nearest_japanese": "飛行機が上昇するのを窓から見ました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "飛行機",
+          "surface": "飛行機",
+          "start": 0,
+          "end": 3,
+          "reading": "ひこうき"
+        },
+        {
+          "term": "着陸",
+          "surface": "着陸",
+          "start": 4,
+          "end": 6,
+          "reading": "ちゃくりく"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 6,
+          "end": 8,
+          "reading": "する"
+        },
+        {
+          "term": "耳",
+          "surface": "耳",
+          "start": 11,
+          "end": 12,
+          "reading": "みみ"
+        },
+        {
+          "term": "痛い",
+          "surface": "痛く",
+          "start": 13,
+          "end": 15,
+          "reading": "いたく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 15,
+          "end": 17,
+          "reading": "なり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-048",
+      "target": "壁",
+      "japanese": "机と壁の間に、細い棚があります。",
+      "spanish": "Hay una estantería estrecha entre el escritorio y la pared.",
+      "estimated_level": "N5",
+      "review_note": "AとBの間 expresa la posición entre dos elementos.",
+      "nearest_id": "JAES-N5-EXP-0023",
+      "nearest_japanese": "机の上に鍵があります。",
+      "character_similarity": 0.6667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "机",
+          "surface": "机",
+          "start": 0,
+          "end": 1,
+          "reading": "つくえ"
+        },
+        {
+          "term": "壁",
+          "surface": "壁",
+          "start": 2,
+          "end": 3,
+          "reading": "かべ"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 4,
+          "end": 5,
+          "reading": "ま"
+        },
+        {
+          "term": "細い",
+          "surface": "細い",
+          "start": 7,
+          "end": 9,
+          "reading": "ほそい"
+        },
+        {
+          "term": "棚",
+          "surface": "棚",
+          "start": 9,
+          "end": 10,
+          "reading": "たな"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 11,
+          "end": 13,
+          "reading": "あり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-049",
+      "target": "怖い",
+      "japanese": "怖い映画を見た後は、一人で廊下を歩きたくありません。",
+      "spanish": "Después de ver una película de miedo, no quiero andar por el pasillo a solas.",
+      "estimated_level": "N4",
+      "review_note": "たい en negativo expresa falta de deseo, no incapacidad.",
+      "nearest_id": "JAES-N5-EDITORIAL-0869",
+      "nearest_japanese": "いただくことはありません。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "怖い",
+          "surface": "怖い",
+          "start": 0,
+          "end": 2,
+          "reading": "こわい"
+        },
+        {
+          "term": "映画",
+          "surface": "映画",
+          "start": 2,
+          "end": 4,
+          "reading": "えいが"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 5,
+          "end": 6,
+          "reading": "み"
+        },
+        {
+          "term": "廊下",
+          "surface": "廊下",
+          "start": 13,
+          "end": 15,
+          "reading": "ろうか"
+        },
+        {
+          "term": "歩く",
+          "surface": "歩き",
+          "start": 16,
+          "end": 18,
+          "reading": "あるき"
+        },
+        {
+          "term": "ある",
+          "surface": "あり",
+          "start": 20,
+          "end": 22,
+          "reading": "あり"
+        }
+      ]
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-050",
+      "target": "久しぶり",
+      "japanese": "久しぶりに実家へ帰ったら、庭の木が大きくなっていました。",
+      "spanish": "Cuando volví a casa de mis padres después de mucho tiempo, el árbol del jardín había crecido.",
+      "estimated_level": "N4",
+      "review_note": "久しぶりに indica un intervalo largo; 実家 es la casa familiar de origen.",
+      "nearest_id": "JAES-N4-EDITORIAL-0364",
+      "nearest_japanese": "母は子どもたちに庭の花に水をやらせましたが、みんな笑っていました。",
+      "character_similarity": 0.386,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "久しぶり",
+          "surface": "久しぶり",
+          "start": 0,
+          "end": 4,
+          "reading": "ひさしぶり"
+        },
+        {
+          "term": "実家",
+          "surface": "実家",
+          "start": 5,
+          "end": 7,
+          "reading": "じっか"
+        },
+        {
+          "term": "帰る",
+          "surface": "帰っ",
+          "start": 8,
+          "end": 10,
+          "reading": "かえっ"
+        },
+        {
+          "term": "庭",
+          "surface": "庭",
+          "start": 13,
+          "end": 14,
+          "reading": "にわ"
+        },
+        {
+          "term": "木",
+          "surface": "木",
+          "start": 15,
+          "end": 16,
+          "reading": "き"
+        },
+        {
+          "term": "大きい",
+          "surface": "大きく",
+          "start": 17,
+          "end": 20,
+          "reading": "おおきく"
+        },
+        {
+          "term": "なる",
+          "surface": "なっ",
+          "start": 20,
+          "end": 22,
+          "reading": "なっ"
+        }
+      ]
+    }
+  ],
+  "previous_rows_preserved": 8778,
+  "previous_graph_sentences_preserved": 8886,
+  "total_rows": 8878,
+  "spanish_similarity_review": [
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-001",
+      "similarity": 0.528,
+      "nearest": "JAES-N4-EDITORIAL-0908",
+      "new": "Tardó tres meses, pero por fin terminó la reparación de la habitación.",
+      "old": "Aumentó respecto a lo anterior. La relación cambió un poco."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-002",
+      "similarity": 0.4965,
+      "nearest": "JAES-N5-EDITORIAL-1349",
+      "new": "Estoy dándole vueltas a si cambiar de trabajo, pero todavía no se lo he contado a mi familia.",
+      "old": "El servicio del tren todavía no se ha restablecido."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-003",
+      "similarity": 0.4972,
+      "nearest": "JAES-N4-EDITORIAL-0528",
+      "new": "Mi hermana mayor ha conseguido empleo en una agencia de viajes y empezará a trabajar el mes que viene.",
+      "old": "Según el material, este anime empezará a emitirse otra vez desde el mes que viene."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-004",
+      "similarity": 0.5222,
+      "nearest": "JAES-N5-EDITORIAL-0304",
+      "new": "Esta mañana han salido flores por primera vez en las tomateras que estoy cultivando en el balcón.",
+      "old": "Este producto es un poco caro, pero está en la tienda que está delante de la estación."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-005",
+      "similarity": 0.5079,
+      "nearest": "JAES-N5-EDITORIAL-1980",
+      "new": "Como no es el artículo que pedí, he hecho una foto de la caja como prueba.",
+      "old": "Como dentro del bosque sopla poco viento, descanso aquí."
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-006",
+      "similarity": 0.5397,
+      "nearest": "JAES-N5-EDITORIAL-0511",
+      "new": "Mi abuelo escucha el pronóstico del tiempo en la radio todas las mañanas.",
+      "old": "En casa, mi madre prepara el desayuno todas las mañanas."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-007",
+      "similarity": 0.473,
+      "nearest": "JAES-N5-EDITORIAL-0720",
+      "new": "Esta forma de hacer el nudo es difícil; por favor, enséñame otra vez cómo se hace.",
+      "old": "Este grupo es grande, pero cuando hablamos de cultura, todos se alegran."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-008",
+      "similarity": 0.521,
+      "nearest": "JAES-N5-EXP-0034",
+      "new": "Mi hermano pequeño volvió a casa llevando un peluche grande entre las dos manos.",
+      "old": "Mi hermano pequeño no come mucho pescado."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-009",
+      "similarity": 0.5,
+      "nearest": "JAES-N4-EDITORIAL-1036",
+      "new": "Cuando se fijen la fecha y la hora de la entrevista, avísame por correo electrónico.",
+      "old": "En la empresa, durante las horas de menos gente, nos hacen revisar el inventario."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-010",
+      "similarity": 0.4667,
+      "nearest": "JAES-N5-EDITORIAL-1506",
+      "new": "El bebé está durmiendo en la habitación de al lado; camina haciendo el menor ruido posible, por favor.",
+      "old": "Como la habitación está fría, lo soluciono enseguida."
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-011",
+      "similarity": 0.5564,
+      "nearest": "JAES-N5-EDITORIAL-1484",
+      "new": "La carta de este restaurante también tiene fotos de los platos.",
+      "old": "En este parque natural también venden productos hechos con madera local."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-012",
+      "similarity": 0.4677,
+      "nearest": "JAES-N4-EDITORIAL-0378",
+      "new": "Mantengamos en secreto el regalo para mi padre hasta su cumpleaños.",
+      "old": "Ahora mismo voy a darle a mi novia su regalo de cumpleaños."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-013",
+      "similarity": 0.5094,
+      "nearest": "JAES-N4-EDITORIAL-0698",
+      "new": "Como sudé al subir la cuesta, descansé un poco debajo de un árbol.",
+      "old": "No se puede subir esta cuesta en bicicleta."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-014",
+      "similarity": 0.5323,
+      "nearest": "JAES-N4-EDITORIAL-1797",
+      "new": "El motor del coche no arrancaba, así que esta mañana fui al trabajo en autobús.",
+      "old": "El tren va con retraso, así que, ¿vamos en autobús?"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-015",
+      "similarity": 0.5688,
+      "nearest": "JAES-N5-EDITORIAL-2023",
+      "new": "Esta presentación es una oportunidad para dar a conocer mis ideas.",
+      "old": "Esta aplicación es útil para cuidar la salud."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-016",
+      "similarity": 0.625,
+      "nearest": "JAES-N5-EDITORIAL-1234",
+      "new": "No eches toda la salsa; deja la mitad, por favor.",
+      "old": "Ponlo detrás de la silla, por favor."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-017",
+      "similarity": 0.4933,
+      "nearest": "JAES-N4-EDITORIAL-0820",
+      "new": "El ayuntamiento está prestando ayuda a las personas que perdieron su casa por el tifón.",
+      "old": "En el trabajo, también es importante saber evaluar a las personas."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-018",
+      "similarity": 0.5905,
+      "nearest": "JAES-N5-EDITORIAL-0331",
+      "new": "Esta ventanilla está abierta todos los días excepto los domingos.",
+      "old": "Esta tienda está abierta de nueve a cinco."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-019",
+      "similarity": 0.5075,
+      "nearest": "JAES-N4-EDITORIAL-1746",
+      "new": "Al fondo de la librería hay una sección de libros ilustrados para niños.",
+      "old": "Como hay una inspección de bomberos, ordeno el frente de la casa."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-020",
+      "similarity": 0.4754,
+      "nearest": "JAES-N5-EDITORIAL-1411",
+      "new": "He borrado la foto que había publicado porque en ella se veía mi dirección.",
+      "old": "Cada noche escribo lo que he comido en el diario."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-021",
+      "similarity": 0.5378,
+      "nearest": "JAES-N5-MORE-0010",
+      "new": "A raíz de la invitación de un amigo, empecé a hacer senderismo los fines de semana.",
+      "old": "Me levanto a las seis el fin de semana."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-022",
+      "similarity": 0.6729,
+      "nearest": "JAES-N5-CURATED-0012",
+      "new": "Ese matrimonio tiene una pequeña panadería cerca de la estación.",
+      "old": "Hay una panadería nueva cerca de la estación."
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-023",
+      "similarity": 0.5056,
+      "nearest": "JAES-N4-EDITORIAL-0116",
+      "new": "Hemos alargado el tiempo de descanso teniendo en cuenta la edad de los participantes.",
+      "old": "Hoy es el último día de rebajas, así que tengo que ir pronto a la tienda y comprar lo necesario."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-024",
+      "similarity": 0.5522,
+      "nearest": "JAES-N5-EDITORIAL-1216",
+      "new": "Los vecinos han presentado al ayuntamiento sus quejas por los perjuicios del ruido.",
+      "old": "Los vecinos presentaron una petición al ayuntamiento."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-025",
+      "similarity": 0.5217,
+      "nearest": "JAES-N4-EDITORIAL-1028",
+      "new": "En este mapa, las líneas azules representan los ríos.",
+      "old": "En este trabajo, hay que presentar los documentos antes de mañana."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-026",
+      "similarity": 0.6087,
+      "nearest": "JAES-N5-EDITORIAL-0959",
+      "new": "Este vino no es dulce, pero huele a fruta.",
+      "old": "Ese tipo no es de esta ciudad."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-027",
+      "similarity": 0.4805,
+      "nearest": "JAES-N4-EDITORIAL-2356",
+      "new": "Después de dormir con una almohada alta, me empezó a doler el cuello por la mañana.",
+      "old": "Antes de mudarme, con un amigo me deshice de toda la ropa vieja de una vez."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-028",
+      "similarity": 0.4961,
+      "nearest": "JAES-N4-EDITORIAL-1276",
+      "new": "Me he cortado un dedo con el papel y me ha salido un poco de sangre.",
+      "old": "Anne, ¿quieres dar un paseo juntos en el parque el fin de semana?"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-029",
+      "similarity": 0.5049,
+      "nearest": "JAES-N5-EDITORIAL-1382",
+      "new": "Ha salido un artículo sobre la tienda de mi abuela en el periódico local.",
+      "old": "Leo un artículo de un reportero."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-030",
+      "similarity": 0.4769,
+      "nearest": "JAES-N5-EDITORIAL-1510",
+      "new": "Este mes pienso trabajar más en mi empleo a tiempo parcial para ahorrar para el viaje.",
+      "old": "Cuente el suceso que más le complicó el viaje."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-031",
+      "similarity": 0.5138,
+      "nearest": "JAES-N4-EDITORIAL-1699",
+      "new": "Me preocupaba si había apagado el fuego de gas y volví a la cocina.",
+      "old": "El pan ya se había agotado al día siguiente."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-032",
+      "similarity": 0.4906,
+      "nearest": "JAES-N4-EDITORIAL-0948",
+      "new": "Como el año que viene me presentaré a las pruebas de acceso a la universidad, estudiaré a diario también durante las vacaciones de verano.",
+      "old": "Como esta tienda es barata y tiene buen surtido, aprovecharé las compras para buscar también un libro sobre la Revolución francesa."
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-033",
+      "similarity": 0.4941,
+      "nearest": "JAES-N4-EXP-0039",
+      "new": "Con la generalización de los teléfonos inteligentes, se ha vuelto fácil consultar mapas incluso fuera de casa.",
+      "old": "Con esta aplicación se puede consultar la lectura de los kanji."
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-034",
+      "similarity": 0.6309,
+      "nearest": "JAES-N4-EDITORIAL-0644",
+      "new": "Antes de empezar el trabajo, quiero tener claro cómo será todo el proceso.",
+      "old": "Antes de empezar el trabajo, tengo que revisar todos los documentos necesarios."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-035",
+      "similarity": 0.4751,
+      "nearest": "JAES-N5-EDITORIAL-0960",
+      "new": "Este mapa muestra hasta las calles pequeñas, así que resulta práctico para pasear por la ciudad.",
+      "old": "La salida hacia el festival cultural es temprano, así que esta noche preparo el equipaje."
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-20260924-036",
+      "similarity": 0.5529,
+      "nearest": "JAES-N4-EDITORIAL-1744",
+      "new": "Como no entendía la intención de esa pregunta, pedí una aclaración antes de responder.",
+      "old": "Como quería saber cómo funciona esta fiesta, pedí una explicación al equipo organizador."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-037",
+      "similarity": 0.5185,
+      "nearest": "JAES-N4-EDITORIAL-1387",
+      "new": "Esta hortaliza crece en lugares donde da mucho el sol.",
+      "old": "Ese lugar es como el paraíso."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-038",
+      "similarity": 0.5212,
+      "nearest": "JAES-N4-EDITORIAL-1236",
+      "new": "Como han subido los precios, con la misma cantidad de dinero no puedo comprar tanto como antes.",
+      "old": "Como vienen muchos clientes, en esta tienda no se puede comprar con calma."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-039",
+      "similarity": 0.48,
+      "nearest": "JAES-N4-EDITORIAL-0355",
+      "new": "La primera vez que viví por mi cuenta, me costó planear qué comer cada día.",
+      "old": "A partir del mes que viene prepararé la cena en casa."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-040",
+      "similarity": 0.5246,
+      "nearest": "JAES-N4-EDITORIAL-0335",
+      "new": "En el museo del puerto aprendí sobre la historia del comercio con otros países.",
+      "old": "No, eso es una pregunta sobre la fiesta local."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-041",
+      "similarity": 0.475,
+      "nearest": "JAES-N4-EDITORIAL-1900",
+      "new": "El perro echó a correr de repente y se me cayó el sombrero que llevaba en la mano.",
+      "old": "El cambio de color de la montaña es evidente y siento el paso de las estaciones."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-042",
+      "similarity": 0.503,
+      "nearest": "JAES-N4-EDITORIAL-0236",
+      "new": "Para estar preparados ante un desastre, guardamos agua y una linterna en el estante de la entrada.",
+      "old": "A esta hora, seguramente no habrá mucha gente en el camino de la montaña."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-043",
+      "similarity": 0.5714,
+      "nearest": "JAES-N4-EDITORIAL-1130",
+      "new": "Esta calle es estrecha, así que los coches no pueden pasar.",
+      "old": "No me gusta esa invitación, así que hoy descanso en casa."
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-20260924-044",
+      "similarity": 0.5089,
+      "nearest": "JAES-N4-EDITORIAL-0534",
+      "new": "Incluso después de leer hasta el final, la identidad de quien envió la carta seguía siendo un misterio.",
+      "old": "Después de preparar la cena, la madre les enseñó la tarea a los niños."
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-045",
+      "similarity": 0.5691,
+      "nearest": "JAES-N4-EDITORIAL-0311",
+      "new": "Mírate en el espejo, por favor. Tienes tinta negra en la cara.",
+      "old": "Antes de ir al hospital, dejo la tarjeta del seguro en la cartera."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-046",
+      "similarity": 0.5631,
+      "nearest": "JAES-N5-EXP-0028",
+      "new": "Se me han caído los palillos. Dame otro par, por favor.",
+      "old": "Enséñeme unos zapatos un poco más grandes, por favor."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-047",
+      "similarity": 0.5169,
+      "nearest": "JAES-N4-EDITORIAL-1697",
+      "new": "Me dolieron los oídos cuando el avión estaba aterrizando.",
+      "old": "El avión todavía no ha aterrizado."
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-20260924-048",
+      "similarity": 0.5591,
+      "nearest": "JAES-N5-EXP-0023",
+      "new": "Hay una estantería estrecha entre el escritorio y la pared.",
+      "old": "Hay una llave encima del escritorio."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-049",
+      "similarity": 0.5469,
+      "nearest": "JAES-N4-EDITORIAL-0155",
+      "new": "Después de ver una película de miedo, no quiero andar por el pasillo a solas.",
+      "old": "Hoy no veré una película; creo que voy a jugar en casa."
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-20260924-050",
+      "similarity": 0.6099,
+      "nearest": "JAES-N4-EDITORIAL-1954",
+      "new": "Cuando volví a casa de mis padres después de mucho tiempo, el árbol del jardín había crecido.",
+      "old": "Cuando volví a casa de mis padres, llamé a mi madre."
+    }
+  ],
+  "validation": {
+    "node_tests_passed": 181,
+    "previous_exercises_preserved": 8778,
+    "previous_readings_preserved": 4376,
+    "independent_api_review": false,
+    "linguistic_review": "All 50 JP/ES pairs and explicit readings reviewed in the authoring conversation. Nearest Japanese and Spanish matches inspected; shared grammatical frames retain different meaning and targets."
+  }
+}
