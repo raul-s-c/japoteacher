@@ -16,7 +16,7 @@
   },
   "previous_rows_preserved": 10078,
   "previous_graph_sentences_preserved": 10186,
-  "publication": "pending",
+  "publication": "verified",
   "linguistic_review": "Same conversation, not an independent review model",
   "checks": [
     "Japanese exact/character/lexical similarity",
@@ -28,5 +28,9 @@
   "tests": {
     "passed": 186,
     "failed": 0
-  }
+  },
+  "published_pairs": 500,
+  "published_commit": "6a7115e9585bd06c726c9652e4ecaa1b588981e7",
+  "deployment_run": 36176231448,
+  "verified_live_cache": "japoteacher-v188"
 }

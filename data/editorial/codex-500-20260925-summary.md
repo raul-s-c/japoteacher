@@ -1,6 +1,6 @@
 # Segundo bloque: 500 frases nuevas
 
-500 frases nuevas, equivalentes a 1.000 ejercicios en las dos direcciones. Acumulado del encargo inicial: 1.000 de 3.000; quedan 2.000.
+500 frases nuevas publicadas y verificadas en la app (v188), equivalentes a 1.000 ejercicios en las dos direcciones. Acumulado del encargo inicial: 1.000 de 3.000; quedan 2.000.
 
 Creadas y revisadas en esta conversación, sin API ni agentes adicionales. Las comprobaciones locales revisan formato, furigana, evidencia morfológica, duplicados y similitud japonesa y española. No se ha realizado una segunda revisión independiente por otro modelo. Los niveles son estimaciones pedagógicas.
 
@@ -514,3 +514,5 @@ Creadas y revisadas en esta conversación, sin API ni agentes adicionales. Las c
 | 498 | N4 | 大盛り | 大盛りを頼んだら、思った以上の量でした。 | Pedí una ración grande y resultó ser más cantidad de la que esperaba. |
 | 499 | N3 | 並盛り | 昼は並盛りで十分でした。 | Para comer me bastó la ración normal. |
 | 500 | N4 | おしぼり | おしぼりで手を拭いてから、箸を取りました。 | Me limpié las manos con la toallita antes de coger los palillos. |
+
+Verificación: 186 pruebas superadas. Los 10.078 registros anteriores, sus lecturas y las 10.186 asociaciones anteriores del mapa se mantienen. No se han modificado notas, intentos ni sesiones.
