@@ -1,0 +1,5241 @@
+{
+  "provenance": "Authored and linguistically reviewed in Codex conversation; local deterministic checks. No independent API review.",
+  "api_calls": 0,
+  "api_tokens": 0,
+  "pairs": 100,
+  "exercises": 200,
+  "levels": {
+    "N4": 25,
+    "N3": 73,
+    "N5": 1,
+    "N2": 1
+  },
+  "checks": [
+    "schema",
+    "explicit ordered kanji readings",
+    "exact and character similarity vs bank + Sakamoto + batch",
+    "morphology evidence for target",
+    "append-only previous rows and graph"
+  ],
+  "items": [
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-001",
+      "target": "まな板",
+      "japanese": "魚を切ったまな板を、すぐ洗いました。",
+      "spanish": "Lavé enseguida la tabla donde había cortado el pescado.",
+      "estimated_level": "N4",
+      "review_note": "まな板 es una tabla de cortar.",
+      "authored_ruby": "[魚|さかな]を[切|き]ったまな[板|いた]を、すぐ[洗|あら]いました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-079",
+      "nearest_japanese": "拾った貝殻を洗い、窓辺に飾りました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "魚",
+          "surface": "魚",
+          "start": 0,
+          "end": 1,
+          "reading": "さかな"
+        },
+        {
+          "term": "切る",
+          "surface": "切っ",
+          "start": 2,
+          "end": 4,
+          "reading": "きっ"
+        },
+        {
+          "term": "まな板",
+          "surface": "まな板",
+          "start": 5,
+          "end": 8,
+          "reading": "まないた"
+        },
+        {
+          "term": "すぐ",
+          "surface": "すぐ",
+          "start": 10,
+          "end": 12,
+          "reading": "すぐ"
+        },
+        {
+          "term": "洗う",
+          "surface": "洗い",
+          "start": 12,
+          "end": 14,
+          "reading": "あらい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0289",
+      "nearest_lexical_japanese": "家に着いたら、すぐ手を洗います。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-002",
+      "target": "包丁",
+      "japanese": "包丁の刃を外側に向けないでください。",
+      "spanish": "No dejes el cuchillo con el filo hacia fuera.",
+      "estimated_level": "N4",
+      "review_note": "包丁 es un cuchillo de cocina.",
+      "authored_ruby": "[包丁|ほうちょう]の[刃|は]を[外側|そとがわ]に[向|む]けないでください。",
+      "nearest_id": "JAES-N5-EDITORIAL-0973",
+      "nearest_japanese": "勝手に使わないでください。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "包丁",
+          "surface": "包丁",
+          "start": 0,
+          "end": 2,
+          "reading": "ほうちょう"
+        },
+        {
+          "term": "刃",
+          "surface": "刃",
+          "start": 3,
+          "end": 4,
+          "reading": "は"
+        },
+        {
+          "term": "外側",
+          "surface": "外側",
+          "start": 5,
+          "end": 7,
+          "reading": "そとがわ"
+        },
+        {
+          "term": "向ける",
+          "surface": "向け",
+          "start": 8,
+          "end": 10,
+          "reading": "むけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-003-029",
+      "nearest_lexical_japanese": "冬に向けて、妹にマフラーを編んでいます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-003",
+      "target": "お玉",
+      "japanese": "お玉が見つからず、カップでスープをすくいました。",
+      "spanish": "No encontraba el cucharón y serví la sopa con una taza.",
+      "estimated_level": "N4",
+      "review_note": "お玉 es un cucharón.",
+      "authored_ruby": "お[玉|たま]が[見|み]つからず、カップでスープをすくいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0358",
+      "nearest_japanese": "旅行先でパスポートをなくしてしまいました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "お玉",
+          "surface": "お玉",
+          "start": 0,
+          "end": 2,
+          "reading": "おたま"
+        },
+        {
+          "term": "見つかる",
+          "surface": "見つから",
+          "start": 3,
+          "end": 7,
+          "reading": "みつから"
+        },
+        {
+          "term": "カップ",
+          "surface": "カップ",
+          "start": 9,
+          "end": 12,
+          "reading": "かっぷ"
+        },
+        {
+          "term": "スープ",
+          "surface": "スープ",
+          "start": 13,
+          "end": 16,
+          "reading": "すーぷ"
+        },
+        {
+          "term": "すくう",
+          "surface": "すくい",
+          "start": 17,
+          "end": 20,
+          "reading": "すくい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1779",
+      "nearest_lexical_japanese": "パンもスープも食べますか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-004",
+      "target": "ざる",
+      "japanese": "ゆでた麺をざるに上げました。",
+      "spanish": "Pasé los fideos cocidos al colador.",
+      "estimated_level": "N4",
+      "review_note": "ざる es un colador de rejilla o cesta.",
+      "authored_ruby": "ゆでた[麺|めん]をざるに[上|あ]げました。",
+      "nearest_id": "JAES-N5-CONVERSATION-C3000-001-008",
+      "nearest_japanese": "川で拾った石を、庭に並べました。",
+      "character_similarity": 0.5185,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "ゆでる",
+          "surface": "ゆで",
+          "start": 0,
+          "end": 2,
+          "reading": "ゆで"
+        },
+        {
+          "term": "麺",
+          "surface": "麺",
+          "start": 3,
+          "end": 4,
+          "reading": "めん"
+        },
+        {
+          "term": "ざる",
+          "surface": "ざる",
+          "start": 5,
+          "end": 7,
+          "reading": "ざる"
+        },
+        {
+          "term": "上げる",
+          "surface": "上げ",
+          "start": 8,
+          "end": 10,
+          "reading": "あげ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.1111111111111111,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-001-024",
+      "nearest_lexical_japanese": "床を掃除するので、いすをテーブルの上に上げてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-005",
+      "target": "ふるい",
+      "japanese": "粉をふるいにかけて、だまを取りました。",
+      "spanish": "Tamicé la harina para quitar los grumos.",
+      "estimated_level": "N3",
+      "review_note": "ふるい es un tamiz.",
+      "authored_ruby": "[粉|こな]をふるいにかけて、だまを[取|と]りました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "nearest_japanese": "魚を焼く前に、鱗を取りました。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "粉",
+          "surface": "粉",
+          "start": 0,
+          "end": 1,
+          "reading": "こな"
+        },
+        {
+          "term": "ふるい",
+          "surface": "ふるい",
+          "start": 2,
+          "end": 5,
+          "reading": "ふるい"
+        },
+        {
+          "term": "だま",
+          "surface": "だま",
+          "start": 10,
+          "end": 12,
+          "reading": "だま"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 13,
+          "end": 15,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1357",
+      "nearest_lexical_japanese": "来週は休暇を取ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-006",
+      "target": "泡立て器",
+      "japanese": "泡立て器を使うと、卵がよく混ざります。",
+      "spanish": "Con las varillas se baten bien los huevos.",
+      "estimated_level": "N3",
+      "review_note": "泡立て器 es un batidor de varillas.",
+      "authored_ruby": "[泡立|あわだ]て[器|き]を[使|つか]うと、[卵|たまご]がよく[混|ま]ざります。",
+      "nearest_id": "JAES-N5-EDITORIAL-0216",
+      "nearest_japanese": "この文を読むと、意味がよくわかります。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "泡立てる",
+          "surface": "泡立て",
+          "start": 0,
+          "end": 3,
+          "reading": "あわだて"
+        },
+        {
+          "term": "使う",
+          "surface": "使う",
+          "start": 5,
+          "end": 7,
+          "reading": "つかう"
+        },
+        {
+          "term": "卵",
+          "surface": "卵",
+          "start": 9,
+          "end": 10,
+          "reading": "たまご"
+        },
+        {
+          "term": "よく",
+          "surface": "よく",
+          "start": 11,
+          "end": 13,
+          "reading": "よく"
+        },
+        {
+          "term": "混ざる",
+          "surface": "混ざり",
+          "start": 13,
+          "end": 16,
+          "reading": "まざり"
+        },
+        {
+          "term": "泡立て器",
+          "surface": "泡立て器",
+          "start": 0,
+          "end": 4,
+          "reading": "あわだてき"
+        }
+      ],
+      "curated_compound": {
+        "term": "泡立て器",
+        "surface": "泡立て器",
+        "start": 0,
+        "end": 4,
+        "reading": "あわだてき"
+      },
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1797",
+      "nearest_lexical_japanese": "バスはよく使いますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-007",
+      "target": "へら",
+      "japanese": "へらでボウルの内側のクリームを集めました。",
+      "spanish": "Recogí con una espátula la crema de las paredes del cuenco.",
+      "estimated_level": "N3",
+      "review_note": "へら es una espátula.",
+      "authored_ruby": "へらでボウルの[内側|うちがわ]のクリームを[集|あつ]めました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0966",
+      "nearest_japanese": "掲示板で旅行の案内を見ました。",
+      "character_similarity": 0.4118,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "へ",
+          "surface": "へ",
+          "start": 0,
+          "end": 1,
+          "reading": "へ"
+        },
+        {
+          "term": "ボウル",
+          "surface": "ボウル",
+          "start": 3,
+          "end": 6,
+          "reading": "ぼうる"
+        },
+        {
+          "term": "内側",
+          "surface": "内側",
+          "start": 7,
+          "end": 9,
+          "reading": "うちがわ"
+        },
+        {
+          "term": "クリーム",
+          "surface": "クリーム",
+          "start": 10,
+          "end": 14,
+          "reading": "くりーむ"
+        },
+        {
+          "term": "集める",
+          "surface": "集め",
+          "start": 15,
+          "end": 17,
+          "reading": "あつめ"
+        },
+        {
+          "term": "へら",
+          "surface": "へら",
+          "start": 0,
+          "end": 2,
+          "reading": "へら"
+        }
+      ],
+      "curated_compound": {
+        "term": "へら",
+        "surface": "へら",
+        "start": 0,
+        "end": 2,
+        "reading": "へら"
+      },
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1551",
+      "nearest_lexical_japanese": "みんなでごみを集めましょうか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-008",
+      "target": "菜箸",
+      "japanese": "長い菜箸で、揚げ物を裏返しました。",
+      "spanish": "Di la vuelta a la fritura con unos palillos largos de cocina.",
+      "estimated_level": "N3",
+      "review_note": "菜箸 son palillos largos para cocinar.",
+      "authored_ruby": "[長|なが]い[菜箸|さいばし]で、[揚|あ]げ[物|もの]を[裏返|うらがえ]しました。",
+      "nearest_id": "JAES-N5-MORE-0118",
+      "nearest_japanese": "毎朝病院で買い物をしました",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "長い",
+          "surface": "長い",
+          "start": 0,
+          "end": 2,
+          "reading": "ながい"
+        },
+        {
+          "term": "菜箸",
+          "surface": "菜箸",
+          "start": 2,
+          "end": 4,
+          "reading": "さいばし"
+        },
+        {
+          "term": "揚げ物",
+          "surface": "揚げ物",
+          "start": 6,
+          "end": 9,
+          "reading": "あげもの"
+        },
+        {
+          "term": "裏返す",
+          "surface": "裏返し",
+          "start": 10,
+          "end": 13,
+          "reading": "うらがえし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1279",
+      "nearest_lexical_japanese": "ロシアは冬がとても長いです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-009",
+      "target": "計量",
+      "japanese": "計量を済ませてから、オーブンを温めました。",
+      "spanish": "Después de medir los ingredientes, calenté el horno.",
+      "estimated_level": "N3",
+      "review_note": "計量 es medir cantidades.",
+      "authored_ruby": "[計量|けいりょう]を[済|す]ませてから、オーブンを[温|あたた]めました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-044",
+      "nearest_japanese": "窓口で原本を見せてから、コピーを提出しました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "計量",
+          "surface": "計量",
+          "start": 0,
+          "end": 2,
+          "reading": "けいりょう"
+        },
+        {
+          "term": "済ませる",
+          "surface": "済ませ",
+          "start": 3,
+          "end": 6,
+          "reading": "すませ"
+        },
+        {
+          "term": "オーブン",
+          "surface": "オーブン",
+          "start": 10,
+          "end": 14,
+          "reading": "おーぶん"
+        },
+        {
+          "term": "温める",
+          "surface": "温め",
+          "start": 15,
+          "end": 17,
+          "reading": "あたため"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-009-089",
+      "nearest_lexical_japanese": "夜明けまでに、撮影の準備を済ませました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-010",
+      "target": "目盛り",
+      "japanese": "横から見ると、目盛りを正しく読めます。",
+      "spanish": "Mirando de lado puedes leer bien la escala graduada.",
+      "estimated_level": "N3",
+      "review_note": "目盛り son las marcas de una escala.",
+      "authored_ruby": "[横|よこ]から[見|み]ると、[目盛|めも]りを[正|ただ]しく[読|よ]めます。",
+      "nearest_id": "JAES-N5-EDITORIAL-1554",
+      "nearest_japanese": "寒いから、窓を閉めます。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "横",
+          "surface": "横",
+          "start": 0,
+          "end": 1,
+          "reading": "よこ"
+        },
+        {
+          "term": "見る",
+          "surface": "見る",
+          "start": 3,
+          "end": 5,
+          "reading": "みる"
+        },
+        {
+          "term": "目盛り",
+          "surface": "目盛り",
+          "start": 7,
+          "end": 10,
+          "reading": "めもり"
+        },
+        {
+          "term": "正しい",
+          "surface": "正しく",
+          "start": 11,
+          "end": 14,
+          "reading": "ただしく"
+        },
+        {
+          "term": "読める",
+          "surface": "読め",
+          "start": 14,
+          "end": 16,
+          "reading": "よめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2265",
+      "nearest_lexical_japanese": "書類を見てください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-011",
+      "target": "蓋",
+      "japanese": "蒸気を逃がすため、蓋を少しずらしました。",
+      "spanish": "Dejé la tapa un poco desplazada para que saliera el vapor.",
+      "estimated_level": "N4",
+      "review_note": "蓋 es una tapa.",
+      "authored_ruby": "[蒸気|じょうき]を[逃|に]がすため、[蓋|ふた]を[少|すこ]しずらしました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-002-036",
+      "nearest_japanese": "前年の所得を確認するため、書類を探しました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "蒸気",
+          "surface": "蒸気",
+          "start": 0,
+          "end": 2,
+          "reading": "じょうき"
+        },
+        {
+          "term": "逃がす",
+          "surface": "逃がす",
+          "start": 3,
+          "end": 6,
+          "reading": "にがす"
+        },
+        {
+          "term": "蓋",
+          "surface": "蓋",
+          "start": 9,
+          "end": 10,
+          "reading": "ふた"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 11,
+          "end": 13,
+          "reading": "すこし"
+        },
+        {
+          "term": "ずらす",
+          "surface": "ずらし",
+          "start": 13,
+          "end": 16,
+          "reading": "ずらし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1905",
+      "nearest_lexical_japanese": "少し待ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-012",
+      "target": "取っ手",
+      "japanese": "取っ手が熱くなっていて、布で持ちました。",
+      "spanish": "El asa se había calentado y la sujeté con un paño.",
+      "estimated_level": "N3",
+      "review_note": "取っ手 es un asa o tirador.",
+      "authored_ruby": "[取|と]っ[手|て]が[熱|あつ]くなっていて、[布|ぬの]で[持|も]ちました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-072",
+      "nearest_japanese": "朝、池の表面が薄く凍っていました。",
+      "character_similarity": 0.4848,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "取っ手",
+          "surface": "取っ手",
+          "start": 0,
+          "end": 3,
+          "reading": "とって"
+        },
+        {
+          "term": "熱い",
+          "surface": "熱く",
+          "start": 4,
+          "end": 6,
+          "reading": "あつく"
+        },
+        {
+          "term": "なる",
+          "surface": "なっ",
+          "start": 6,
+          "end": 8,
+          "reading": "なっ"
+        },
+        {
+          "term": "布",
+          "surface": "布",
+          "start": 12,
+          "end": 13,
+          "reading": "ぬの"
+        },
+        {
+          "term": "持つ",
+          "surface": "持ち",
+          "start": 14,
+          "end": 16,
+          "reading": "もち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-062",
+      "nearest_lexical_japanese": "お茶がぬるくなってしまったので、熱いものを入れ直しました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-013",
+      "target": "底",
+      "japanese": "鍋の底に、ご飯が少し残っていました。",
+      "spanish": "Quedaba un poco de arroz en el fondo de la olla.",
+      "estimated_level": "N4",
+      "review_note": "底 es la parte inferior de un recipiente.",
+      "authored_ruby": "[鍋|なべ]の[底|そこ]に、ご[飯|はん]が[少|すこ]し[残|のこ]っていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.625,
+      "target_literal_previous_occurrences": 5,
+      "morphology_evidence": [
+        {
+          "term": "鍋",
+          "surface": "鍋",
+          "start": 0,
+          "end": 1,
+          "reading": "なべ"
+        },
+        {
+          "term": "底",
+          "surface": "底",
+          "start": 2,
+          "end": 3,
+          "reading": "そこ"
+        },
+        {
+          "term": "ご飯",
+          "surface": "ご飯",
+          "start": 5,
+          "end": 7,
+          "reading": "ごはん"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 8,
+          "end": 10,
+          "reading": "すこし"
+        },
+        {
+          "term": "残る",
+          "surface": "残っ",
+          "start": 10,
+          "end": 12,
+          "reading": "のこっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1905",
+      "nearest_lexical_japanese": "少し待ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-014",
+      "target": "縁",
+      "japanese": "カップの縁が欠けていました。",
+      "spanish": "El borde de la taza estaba desportillado.",
+      "estimated_level": "N3",
+      "review_note": "縁 se lee ふち cuando significa borde.",
+      "authored_ruby": "カップの[縁|ふち]が[欠|か]けていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-054",
+      "nearest_japanese": "車の窓に霜が降りていました。",
+      "character_similarity": 0.5385,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "カップ",
+          "surface": "カップ",
+          "start": 0,
+          "end": 3,
+          "reading": "かっぷ"
+        },
+        {
+          "term": "縁",
+          "surface": "縁",
+          "start": 4,
+          "end": 5,
+          "reading": "えん"
+        },
+        {
+          "term": "欠ける",
+          "surface": "欠け",
+          "start": 6,
+          "end": 8,
+          "reading": "かけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.0,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0330",
+      "nearest_lexical_japanese": "日本語の質問が三つあります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-015",
+      "target": "柄",
+      "japanese": "ブラシの柄が長いので、奥まで届きます。",
+      "spanish": "El mango del cepillo es largo y permite llegar hasta el fondo.",
+      "estimated_level": "N3",
+      "review_note": "柄 se lee え cuando significa mango.",
+      "authored_ruby": "ブラシの[柄|え]が[長|なが]いので、[奥|おく]まで[届|とど]きます。",
+      "nearest_id": "JAES-N5-EDITORIAL-1062",
+      "nearest_japanese": "情報がないので、窓口で聞きます。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ブラシ",
+          "surface": "ブラシ",
+          "start": 0,
+          "end": 3,
+          "reading": "ぶらし"
+        },
+        {
+          "term": "柄",
+          "surface": "柄",
+          "start": 4,
+          "end": 5,
+          "reading": "え"
+        },
+        {
+          "term": "長い",
+          "surface": "長い",
+          "start": 6,
+          "end": 8,
+          "reading": "ながい"
+        },
+        {
+          "term": "奥",
+          "surface": "奥",
+          "start": 11,
+          "end": 12,
+          "reading": "おく"
+        },
+        {
+          "term": "届く",
+          "surface": "届き",
+          "start": 14,
+          "end": 16,
+          "reading": "とどき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-001-043",
+      "nearest_lexical_japanese": "掃除機のコードが短くて、廊下の奥まで届きません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-016",
+      "target": "刃",
+      "japanese": "はさみの刃に、テープののりがついています。",
+      "spanish": "Las hojas de las tijeras tienen pegamento de cinta adhesiva.",
+      "estimated_level": "N3",
+      "review_note": "刃 es el filo o la hoja de una herramienta.",
+      "authored_ruby": "はさみの[刃|は]に、テープののりがついています。",
+      "nearest_id": "JAES-N5-EDITORIAL-2258",
+      "nearest_japanese": "母の部屋の窓が開いています。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "はさみ",
+          "surface": "はさみ",
+          "start": 0,
+          "end": 3,
+          "reading": "はさみ"
+        },
+        {
+          "term": "刃",
+          "surface": "刃",
+          "start": 4,
+          "end": 5,
+          "reading": "は"
+        },
+        {
+          "term": "テープ",
+          "surface": "テープ",
+          "start": 7,
+          "end": 10,
+          "reading": "てーぷ"
+        },
+        {
+          "term": "のり",
+          "surface": "のり",
+          "start": 11,
+          "end": 13,
+          "reading": "のり"
+        },
+        {
+          "term": "つく",
+          "surface": "つい",
+          "start": 14,
+          "end": 16,
+          "reading": "つい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0480",
+      "nearest_lexical_japanese": "つくえのうえにほんが三さつあります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-017",
+      "target": "切れ味",
+      "japanese": "研いだら、包丁の切れ味が戻りました。",
+      "spanish": "Al afilarlo, el cuchillo volvió a cortar bien.",
+      "estimated_level": "N3",
+      "review_note": "切れ味 es la capacidad de cortar de un filo.",
+      "authored_ruby": "[研|と]いだら、[包丁|ほうちょう]の[切|き]れ[味|あじ]が[戻|もど]りました。",
+      "nearest_id": "JAES-N4-ORGANIC-202608-0455",
+      "nearest_japanese": "一日中働いたので、足が痛くなりました。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "研く",
+          "surface": "研い",
+          "start": 0,
+          "end": 2,
+          "reading": "みがい"
+        },
+        {
+          "term": "包丁",
+          "surface": "包丁",
+          "start": 5,
+          "end": 7,
+          "reading": "ほうちょう"
+        },
+        {
+          "term": "切れ味",
+          "surface": "切れ味",
+          "start": 8,
+          "end": 11,
+          "reading": "きれあじ"
+        },
+        {
+          "term": "戻る",
+          "surface": "戻り",
+          "start": 12,
+          "end": 14,
+          "reading": "もどり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1431",
+      "nearest_lexical_japanese": "体調はしっかり戻りましたか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-018",
+      "target": "研ぐ",
+      "japanese": "祖父に、刃物を研ぐ角度を教わりました。",
+      "spanish": "Mi abuelo me enseñó el ángulo adecuado para afilar herramientas de corte.",
+      "estimated_level": "N3",
+      "review_note": "研ぐ es afilar; también se usa para lavar arroz.",
+      "authored_ruby": "[祖父|そふ]に、[刃物|はもの]を[研|と]ぐ[角度|かくど]を[教|おそ]わりました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2410",
+      "nearest_japanese": "老人に席をゆずりました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "祖父",
+          "surface": "祖父",
+          "start": 0,
+          "end": 2,
+          "reading": "そふ"
+        },
+        {
+          "term": "刃物",
+          "surface": "刃物",
+          "start": 4,
+          "end": 6,
+          "reading": "はもの"
+        },
+        {
+          "term": "研ぐ",
+          "surface": "研ぐ",
+          "start": 7,
+          "end": 9,
+          "reading": "とぐ"
+        },
+        {
+          "term": "角度",
+          "surface": "角度",
+          "start": 9,
+          "end": 11,
+          "reading": "かくど"
+        },
+        {
+          "term": "教わる",
+          "surface": "教わり",
+          "start": 12,
+          "end": 15,
+          "reading": "おそわり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2006",
+      "nearest_lexical_japanese": "この角度なら富士山がよく見えます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-019",
+      "target": "下ごしらえ",
+      "japanese": "朝のうちに下ごしらえをしておきました。",
+      "spanish": "Dejé preparados los ingredientes por la mañana.",
+      "estimated_level": "N3",
+      "review_note": "下ごしらえ es la preparación previa a cocinar.",
+      "authored_ruby": "[朝|あさ]のうちに[下|した]ごしらえをしておきました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2458",
+      "nearest_japanese": "一応、今朝彼に連絡しておきました。",
+      "character_similarity": 0.5455,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "朝",
+          "surface": "朝",
+          "start": 0,
+          "end": 1,
+          "reading": "あさ"
+        },
+        {
+          "term": "下ごしらえ",
+          "surface": "下ごしらえ",
+          "start": 5,
+          "end": 10,
+          "reading": "したごしらえ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 11,
+          "end": 12,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.5,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0487",
+      "nearest_lexical_japanese": "朝八時から五時まで勉強します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-020",
+      "target": "皮むき",
+      "japanese": "皮むきを子供に手伝ってもらいました。",
+      "spanish": "Los niños me ayudaron a pelar los ingredientes.",
+      "estimated_level": "N3",
+      "review_note": "皮むき es retirar la piel o cáscara.",
+      "authored_ruby": "[皮|かわ]むきを[子供|こども]に[手伝|てつだ]ってもらいました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0649",
+      "nearest_japanese": "母に貯金を手伝ってもらいました。",
+      "character_similarity": 0.6875,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "皮",
+          "surface": "皮",
+          "start": 0,
+          "end": 1,
+          "reading": "かわ"
+        },
+        {
+          "term": "むき",
+          "surface": "むき",
+          "start": 1,
+          "end": 3,
+          "reading": "むき"
+        },
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 4,
+          "end": 6,
+          "reading": "こども"
+        },
+        {
+          "term": "手伝う",
+          "surface": "手伝っ",
+          "start": 7,
+          "end": 10,
+          "reading": "てつだっ"
+        },
+        {
+          "term": "皮むき",
+          "surface": "皮むき",
+          "start": 0,
+          "end": 3,
+          "reading": "かわむき"
+        }
+      ],
+      "curated_compound": {
+        "term": "皮むき",
+        "surface": "皮むき",
+        "start": 0,
+        "end": 3,
+        "reading": "かわむき"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1834",
+      "nearest_lexical_japanese": "手伝ってくれてありがとう。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-021",
+      "target": "輪切り",
+      "japanese": "レモンを薄い輪切りにしました。",
+      "spanish": "Corté el limón en rodajas finas.",
+      "estimated_level": "N3",
+      "review_note": "輪切り es cortar en rodajas.",
+      "authored_ruby": "レモンを[薄|うす]い[輪切|わぎ]りにしました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0913",
+      "nearest_japanese": "スペインを訪問しました。",
+      "character_similarity": 0.48,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "レモン",
+          "surface": "レモン",
+          "start": 0,
+          "end": 3,
+          "reading": "れもん"
+        },
+        {
+          "term": "薄い",
+          "surface": "薄い",
+          "start": 4,
+          "end": 6,
+          "reading": "うすい"
+        },
+        {
+          "term": "輪切り",
+          "surface": "輪切り",
+          "start": 6,
+          "end": 9,
+          "reading": "わぎり"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 10,
+          "end": 11,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N2-CONVERSATION-C3000-004-043",
+      "nearest_lexical_japanese": "複写した資料の文字が薄く、読みにくくなっていました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-022",
+      "target": "千切り",
+      "japanese": "キャベツの千切りを、皿に添えました。",
+      "spanish": "Añadí al plato col cortada en tiras finas.",
+      "estimated_level": "N3",
+      "review_note": "千切り es cortar en juliana.",
+      "authored_ruby": "キャベツの[千切|せんぎ]りを、[皿|さら]に[添|そ]えました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "nearest_japanese": "シャツの襟に汚れが残っていました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "キャベツ",
+          "surface": "キャベツ",
+          "start": 0,
+          "end": 4,
+          "reading": "きゃべつ"
+        },
+        {
+          "term": "千切り",
+          "surface": "千切り",
+          "start": 5,
+          "end": 8,
+          "reading": "せんぎり"
+        },
+        {
+          "term": "皿",
+          "surface": "皿",
+          "start": 10,
+          "end": 11,
+          "reading": "さら"
+        },
+        {
+          "term": "添える",
+          "surface": "添え",
+          "start": 12,
+          "end": 14,
+          "reading": "そえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1618",
+      "nearest_lexical_japanese": "お皿を二枚洗ってください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-023",
+      "target": "みじん切り",
+      "japanese": "みじん切りのにんにくを冷凍して、少しずつ使っています。",
+      "spanish": "Congelo el ajo picado muy fino y lo voy usando en pequeñas cantidades.",
+      "estimated_level": "N3",
+      "review_note": "みじん切り es un picado muy fino.",
+      "authored_ruby": "みじん[切|ぎ]りのにんにくを[冷凍|れいとう]して、[少|すこ]しずつ[使|つか]っています。",
+      "nearest_id": "JAES-N4-EDITORIAL-0511",
+      "nearest_japanese": "留学のために毎月少しずつ貯金しています。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "みじん切り",
+          "surface": "みじん切り",
+          "start": 0,
+          "end": 5,
+          "reading": "みじんぎり"
+        },
+        {
+          "term": "にんにく",
+          "surface": "にんにく",
+          "start": 6,
+          "end": 10,
+          "reading": "にんにく"
+        },
+        {
+          "term": "冷凍",
+          "surface": "冷凍",
+          "start": 11,
+          "end": 13,
+          "reading": "れいとう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 16,
+          "end": 18,
+          "reading": "すこし"
+        },
+        {
+          "term": "使う",
+          "surface": "使っ",
+          "start": 20,
+          "end": 22,
+          "reading": "つかっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0502",
+      "nearest_lexical_japanese": "毎日少しずつ貯金して、結局使ってしまいました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-024",
+      "target": "角切り",
+      "japanese": "角切りの野菜は、大きさを揃えました。",
+      "spanish": "Corté las verduras en dados de tamaño uniforme.",
+      "estimated_level": "N3",
+      "review_note": "角切り es cortar en dados.",
+      "authored_ruby": "[角切|かくぎ]りの[野菜|やさい]は、[大|おお]きさを[揃|そろ]えました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-007-097",
+      "nearest_japanese": "玄関で靴の向きを揃えました。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "角",
+          "surface": "角",
+          "start": 0,
+          "end": 1,
+          "reading": "かく"
+        },
+        {
+          "term": "野菜",
+          "surface": "野菜",
+          "start": 4,
+          "end": 6,
+          "reading": "やさい"
+        },
+        {
+          "term": "大きい",
+          "surface": "大き",
+          "start": 8,
+          "end": 10,
+          "reading": "おおき"
+        },
+        {
+          "term": "揃える",
+          "surface": "揃え",
+          "start": 12,
+          "end": 14,
+          "reading": "そろえ"
+        },
+        {
+          "term": "角切り",
+          "surface": "角切り",
+          "start": 0,
+          "end": 3,
+          "reading": "かくぎり"
+        }
+      ],
+      "curated_compound": {
+        "term": "角切り",
+        "surface": "角切り",
+        "start": 0,
+        "end": 3,
+        "reading": "かくぎり"
+      },
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0753",
+      "nearest_lexical_japanese": "北朝鮮とイギリスはどちらが大きいですか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-025",
+      "target": "薄切り",
+      "japanese": "薄切りの肉を広げて、野菜を巻きました。",
+      "spanish": "Extendí las lonchas finas de carne y enrollé verduras dentro.",
+      "estimated_level": "N4",
+      "review_note": "薄切り es cortar en lonchas finas.",
+      "authored_ruby": "[薄切|うすぎ]りの[肉|にく]を[広|ひろ]げて、[野菜|やさい]を[巻|ま]きました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-011-024",
+      "nearest_japanese": "角切りの野菜は、大きさを揃えました。",
+      "character_similarity": 0.5455,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "薄切り",
+          "surface": "薄切り",
+          "start": 0,
+          "end": 3,
+          "reading": "うすぎり"
+        },
+        {
+          "term": "肉",
+          "surface": "肉",
+          "start": 4,
+          "end": 5,
+          "reading": "にく"
+        },
+        {
+          "term": "広げる",
+          "surface": "広げ",
+          "start": 6,
+          "end": 8,
+          "reading": "ひろげ"
+        },
+        {
+          "term": "野菜",
+          "surface": "野菜",
+          "start": 10,
+          "end": 12,
+          "reading": "やさい"
+        },
+        {
+          "term": "巻く",
+          "surface": "巻き",
+          "start": 13,
+          "end": 15,
+          "reading": "まき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1955",
+      "nearest_lexical_japanese": "うちでは肉を食べません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-026",
+      "target": "煮込む",
+      "japanese": "硬い肉を、弱火でじっくり煮込みました。",
+      "spanish": "Guisé la carne dura lentamente a fuego bajo.",
+      "estimated_level": "N3",
+      "review_note": "煮込む es cocer durante bastante tiempo.",
+      "authored_ruby": "[硬|かた]い[肉|にく]を、[弱火|よわび]でじっくり[煮込|にこ]みました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-003",
+      "nearest_japanese": "細い茎を棒で支えました。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "硬い",
+          "surface": "硬い",
+          "start": 0,
+          "end": 2,
+          "reading": "かたい"
+        },
+        {
+          "term": "肉",
+          "surface": "肉",
+          "start": 2,
+          "end": 3,
+          "reading": "にく"
+        },
+        {
+          "term": "弱火",
+          "surface": "弱火",
+          "start": 5,
+          "end": 7,
+          "reading": "よわび"
+        },
+        {
+          "term": "じっくり",
+          "surface": "じっくり",
+          "start": 8,
+          "end": 12,
+          "reading": "じっくり"
+        },
+        {
+          "term": "煮込む",
+          "surface": "煮込み",
+          "start": 12,
+          "end": 15,
+          "reading": "にこみ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1955",
+      "nearest_lexical_japanese": "うちでは肉を食べません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-027",
+      "target": "蒸す",
+      "japanese": "饅頭を蒸すと、台所に甘い香りが広がりました。",
+      "spanish": "Al cocer los bollos al vapor, un aroma dulce llenó la cocina.",
+      "estimated_level": "N3",
+      "review_note": "蒸す es cocinar al vapor.",
+      "authored_ruby": "[饅頭|まんじゅう]を[蒸|む]すと、[台所|だいどころ]に[甘|あま]い[香|かお]りが[広|ひろ]がりました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-007-082",
+      "nearest_japanese": "値札を剥がすと、のりが残りました。",
+      "character_similarity": 0.5143,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "饅頭",
+          "surface": "饅頭",
+          "start": 0,
+          "end": 2,
+          "reading": "まんじゅう"
+        },
+        {
+          "term": "蒸す",
+          "surface": "蒸す",
+          "start": 3,
+          "end": 5,
+          "reading": "ふかす"
+        },
+        {
+          "term": "台所",
+          "surface": "台所",
+          "start": 7,
+          "end": 9,
+          "reading": "だいどころ"
+        },
+        {
+          "term": "甘い",
+          "surface": "甘い",
+          "start": 10,
+          "end": 12,
+          "reading": "あまい"
+        },
+        {
+          "term": "香り",
+          "surface": "香り",
+          "start": 12,
+          "end": 14,
+          "reading": "かおり"
+        },
+        {
+          "term": "広がる",
+          "surface": "広がり",
+          "start": 15,
+          "end": 18,
+          "reading": "ひろがり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924-026",
+      "nearest_lexical_japanese": "このワインは甘くありませんが、果物の香りがします。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-028",
+      "target": "炒める",
+      "japanese": "香りが出るまで、にんにくを炒めます。",
+      "spanish": "Sofríe el ajo hasta que desprenda aroma.",
+      "estimated_level": "N4",
+      "review_note": "炒める es cocinar removiendo con un poco de aceite.",
+      "authored_ruby": "[香|かお]りが[出|で]るまで、にんにくを[炒|いた]めます。",
+      "nearest_id": "JAES-N4-EDITORIAL-1962",
+      "nearest_japanese": "順番が来るまで待ちますか。",
+      "character_similarity": 0.4286,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "香り",
+          "surface": "香り",
+          "start": 0,
+          "end": 2,
+          "reading": "かおり"
+        },
+        {
+          "term": "出る",
+          "surface": "出る",
+          "start": 3,
+          "end": 5,
+          "reading": "でる"
+        },
+        {
+          "term": "にんにく",
+          "surface": "にんにく",
+          "start": 8,
+          "end": 12,
+          "reading": "にんにく"
+        },
+        {
+          "term": "炒める",
+          "surface": "炒め",
+          "start": 13,
+          "end": 15,
+          "reading": "いため"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1481",
+      "nearest_lexical_japanese": "表示は出ていません。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-029",
+      "target": "揚げる",
+      "japanese": "少量ずつ揚げると、油の温度が下がりにくいです。",
+      "spanish": "Si fríes en pequeñas tandas, la temperatura del aceite baja menos.",
+      "estimated_level": "N4",
+      "review_note": "揚げる es freír con abundante aceite.",
+      "authored_ruby": "[少量|しょうりょう]ずつ[揚|あ]げると、[油|あぶら]の[温度|おんど]が[下|さ]がりにくいです。",
+      "nearest_id": "JAES-N4-EDITORIAL-0689",
+      "nearest_japanese": "毎月少しずつ貯金することがあります。",
+      "character_similarity": 0.4211,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "少量",
+          "surface": "少量",
+          "start": 0,
+          "end": 2,
+          "reading": "しょうりょう"
+        },
+        {
+          "term": "揚げる",
+          "surface": "揚げる",
+          "start": 4,
+          "end": 7,
+          "reading": "あげる"
+        },
+        {
+          "term": "油",
+          "surface": "油",
+          "start": 9,
+          "end": 10,
+          "reading": "あぶら"
+        },
+        {
+          "term": "温度",
+          "surface": "温度",
+          "start": 11,
+          "end": 13,
+          "reading": "おんど"
+        },
+        {
+          "term": "下がる",
+          "surface": "下がり",
+          "start": 14,
+          "end": 17,
+          "reading": "さがり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1303",
+      "nearest_lexical_japanese": "その熱の下がり方は不思議です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-030",
+      "target": "炙る",
+      "japanese": "海苔を軽く炙って、香りを出しました。",
+      "spanish": "Tosté ligeramente el alga nori para realzar su aroma.",
+      "estimated_level": "N3",
+      "review_note": "炙る es acercar un alimento al fuego para tostarlo.",
+      "authored_ruby": "[海苔|のり]を[軽|かる]く[炙|あぶ]って、[香|かお]りを[出|だ]しました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1399",
+      "nearest_japanese": "金額を見てから財布を出しました。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "海苔",
+          "surface": "海苔",
+          "start": 0,
+          "end": 2,
+          "reading": "のり"
+        },
+        {
+          "term": "軽い",
+          "surface": "軽く",
+          "start": 3,
+          "end": 5,
+          "reading": "かるく"
+        },
+        {
+          "term": "炙る",
+          "surface": "炙っ",
+          "start": 5,
+          "end": 7,
+          "reading": "あぶっ"
+        },
+        {
+          "term": "香り",
+          "surface": "香り",
+          "start": 9,
+          "end": 11,
+          "reading": "かおり"
+        },
+        {
+          "term": "出す",
+          "surface": "出し",
+          "start": 12,
+          "end": 14,
+          "reading": "だし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2313",
+      "nearest_lexical_japanese": "書類を出しますか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-031",
+      "target": "炊く",
+      "japanese": "米に雑穀を混ぜて炊きました。",
+      "spanish": "Cocí el arroz mezclado con otros cereales.",
+      "estimated_level": "N4",
+      "review_note": "炊く se usa especialmente para cocer arroz.",
+      "authored_ruby": "[米|こめ]に[雑穀|ざっこく]を[混|ま]ぜて[炊|た]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1031",
+      "nearest_japanese": "彼女にプレゼントを買っておきました。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "雑穀",
+          "surface": "雑穀",
+          "start": 2,
+          "end": 4,
+          "reading": "ざっこく"
+        },
+        {
+          "term": "混ぜる",
+          "surface": "混ぜ",
+          "start": 5,
+          "end": 7,
+          "reading": "まぜ"
+        },
+        {
+          "term": "炊く",
+          "surface": "炊き",
+          "start": 8,
+          "end": 10,
+          "reading": "たき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924B-041",
+      "nearest_lexical_japanese": "玉ねぎを細かく刻んで、ひき肉に混ぜてください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-032",
+      "target": "茹でる",
+      "japanese": "卵を茹でる間に、サラダを作りました。",
+      "spanish": "Preparé la ensalada mientras cocía los huevos.",
+      "estimated_level": "N4",
+      "review_note": "茹でる es cocer en agua hirviendo.",
+      "authored_ruby": "[卵|たまご]を[茹|ゆ]でる[間|あいだ]に、サラダを[作|つく]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-011-005",
+      "nearest_japanese": "粉をふるいにかけて、だまを取りました。",
+      "character_similarity": 0.4848,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "卵",
+          "surface": "卵",
+          "start": 0,
+          "end": 1,
+          "reading": "たまご"
+        },
+        {
+          "term": "茹でる",
+          "surface": "茹でる",
+          "start": 2,
+          "end": 5,
+          "reading": "ゆでる"
+        },
+        {
+          "term": "間",
+          "surface": "間",
+          "start": 5,
+          "end": 6,
+          "reading": "ま"
+        },
+        {
+          "term": "サラダ",
+          "surface": "サラダ",
+          "start": 8,
+          "end": 11,
+          "reading": "さらだ"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 12,
+          "end": 14,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1363",
+      "nearest_lexical_japanese": "料理は指示どおりに作ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-033",
+      "target": "湯通し",
+      "japanese": "油揚げを湯通ししてから切りました。",
+      "spanish": "Escaldé el tofu frito antes de cortarlo.",
+      "estimated_level": "N3",
+      "review_note": "湯通し es pasar brevemente un alimento por agua caliente.",
+      "authored_ruby": "[油揚|あぶらあ]げを[湯通|ゆどお]ししてから[切|き]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-20260924B-042",
+      "nearest_japanese": "梨の皮を剥いてから、四つに切りました。",
+      "character_similarity": 0.5455,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "油揚げ",
+          "surface": "油揚げ",
+          "start": 0,
+          "end": 3,
+          "reading": "あぶらあげ"
+        },
+        {
+          "term": "湯通し",
+          "surface": "湯通し",
+          "start": 4,
+          "end": 7,
+          "reading": "ゆどおし"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 7,
+          "end": 8,
+          "reading": "し"
+        },
+        {
+          "term": "切る",
+          "surface": "切り",
+          "start": 11,
+          "end": 13,
+          "reading": "きり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-005-013",
+      "nearest_lexical_japanese": "子供が野菜を食べやすいように、切り方や味付けを工夫しています。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-034",
+      "target": "湯煎",
+      "japanese": "チョコレートを湯煎でゆっくり溶かしました。",
+      "spanish": "Derretí el chocolate despacio al baño maría.",
+      "estimated_level": "N3",
+      "review_note": "湯煎 es calentar mediante un baño de agua caliente.",
+      "authored_ruby": "チョコレートを[湯煎|ゆせん]でゆっくり[溶|と]かしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-011-026",
+      "nearest_japanese": "硬い肉を、弱火でじっくり煮込みました。",
+      "character_similarity": 0.4324,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "チョコレート",
+          "surface": "チョコレート",
+          "start": 0,
+          "end": 6,
+          "reading": "ちょこれーと"
+        },
+        {
+          "term": "湯煎",
+          "surface": "湯煎",
+          "start": 7,
+          "end": 9,
+          "reading": "ゆせん"
+        },
+        {
+          "term": "ゆっくり",
+          "surface": "ゆっくり",
+          "start": 10,
+          "end": 14,
+          "reading": "ゆっくり"
+        },
+        {
+          "term": "溶かす",
+          "surface": "溶かし",
+          "start": 14,
+          "end": 17,
+          "reading": "とかし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0318",
+      "nearest_lexical_japanese": "もう一度ゆっくり読んでください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-035",
+      "target": "漬ける",
+      "japanese": "肉をたれに漬けて、一時間置きました。",
+      "spanish": "Dejé la carne marinando en la salsa durante una hora.",
+      "estimated_level": "N3",
+      "review_note": "漬ける es dejar sumergido para que tome sabor.",
+      "authored_ruby": "[肉|にく]をたれに[漬|つ]けて、[一時間|いちじかん][置|お]きました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1494",
+      "nearest_japanese": "芸術を見るために京都へ行きました。",
+      "character_similarity": 0.4375,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "肉",
+          "surface": "肉",
+          "start": 0,
+          "end": 1,
+          "reading": "にく"
+        },
+        {
+          "term": "たれる",
+          "surface": "たれ",
+          "start": 2,
+          "end": 4,
+          "reading": "たれ"
+        },
+        {
+          "term": "漬ける",
+          "surface": "漬け",
+          "start": 5,
+          "end": 7,
+          "reading": "つけ"
+        },
+        {
+          "term": "置く",
+          "surface": "置き",
+          "start": 12,
+          "end": 14,
+          "reading": "おき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1955",
+      "nearest_lexical_japanese": "うちでは肉を食べません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-036",
+      "target": "和える",
+      "japanese": "ほうれん草を胡麻で和えました。",
+      "spanish": "Aliñé las espinacas con sésamo.",
+      "estimated_level": "N3",
+      "review_note": "和える es mezclar un alimento con un aliño.",
+      "authored_ruby": "ほうれん[草|そう]を[胡麻|ごま]で[和|あ]えました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-003",
+      "nearest_japanese": "細い茎を棒で支えました。",
+      "character_similarity": 0.48,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ほうれん草",
+          "surface": "ほうれん草",
+          "start": 0,
+          "end": 5,
+          "reading": "ほうれんそう"
+        },
+        {
+          "term": "胡麻",
+          "surface": "胡麻",
+          "start": 6,
+          "end": 8,
+          "reading": "ごま"
+        },
+        {
+          "term": "和える",
+          "surface": "和え",
+          "start": 9,
+          "end": 11,
+          "reading": "あえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.0,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0330",
+      "nearest_lexical_japanese": "日本語の質問が三つあります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-037",
+      "target": "味付け",
+      "japanese": "子供の分は、味付けを控えめにしました。",
+      "spanish": "Sazoné menos la porción de los niños.",
+      "estimated_level": "N4",
+      "review_note": "味付け es dar sabor con condimentos.",
+      "authored_ruby": "[子供|こども]の[分|ぶん]は、[味付|あじつ]けを[控|ひか]えめにしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-007-096",
+      "nearest_japanese": "子供が坂の上からボールを転がしました。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 0,
+          "end": 2,
+          "reading": "こども"
+        },
+        {
+          "term": "分",
+          "surface": "分",
+          "start": 3,
+          "end": 4,
+          "reading": "ぶん"
+        },
+        {
+          "term": "味付け",
+          "surface": "味付け",
+          "start": 6,
+          "end": 9,
+          "reading": "あじつけ"
+        },
+        {
+          "term": "控えめ",
+          "surface": "控えめ",
+          "start": 10,
+          "end": 13,
+          "reading": "ひかえめ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 14,
+          "end": 15,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-005-013",
+      "nearest_lexical_japanese": "子供が野菜を食べやすいように、切り方や味付けを工夫しています。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-038",
+      "target": "下味",
+      "japanese": "揚げる前に、魚に下味をつけました。",
+      "spanish": "Sazoné el pescado antes de freírlo.",
+      "estimated_level": "N3",
+      "review_note": "下味 es el sazonado previo a cocinar.",
+      "authored_ruby": "[揚|あ]げる[前|まえ]に、[魚|さかな]に[下味|したあじ]をつけました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-040",
+      "nearest_japanese": "葉の裏に幼虫を見つけました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "揚げる",
+          "surface": "揚げる",
+          "start": 0,
+          "end": 3,
+          "reading": "あげる"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 3,
+          "end": 4,
+          "reading": "まえ"
+        },
+        {
+          "term": "魚",
+          "surface": "魚",
+          "start": 6,
+          "end": 7,
+          "reading": "さかな"
+        },
+        {
+          "term": "下味",
+          "surface": "下味",
+          "start": 8,
+          "end": 10,
+          "reading": "したあじ"
+        },
+        {
+          "term": "つける",
+          "surface": "つけ",
+          "start": 11,
+          "end": 13,
+          "reading": "つけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "nearest_lexical_japanese": "魚を焼く前に、鱗を取りました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-039",
+      "target": "塩加減",
+      "japanese": "塩加減を見るため、少し味見しました。",
+      "spanish": "Probé un poco para comprobar el punto de sal.",
+      "estimated_level": "N3",
+      "review_note": "塩加減 es la cantidad o intensidad de sal.",
+      "authored_ruby": "[塩加減|しおかげん]を[見|み]るため、[少|すこ]し[味見|あじみ]しました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-011-011",
+      "nearest_japanese": "蒸気を逃がすため、蓋を少しずらしました。",
+      "character_similarity": 0.5294,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "塩加減",
+          "surface": "塩加減",
+          "start": 0,
+          "end": 3,
+          "reading": "しおかげん"
+        },
+        {
+          "term": "見る",
+          "surface": "見る",
+          "start": 4,
+          "end": 6,
+          "reading": "みる"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 9,
+          "end": 11,
+          "reading": "すこし"
+        },
+        {
+          "term": "味見",
+          "surface": "味見",
+          "start": 11,
+          "end": 13,
+          "reading": "あじみ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0932",
+      "nearest_lexical_japanese": "新しい店に少し期待をしていますが、値段も見ます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-040",
+      "target": "隠し味",
+      "japanese": "隠し味に、少しだけ味噌を入れました。",
+      "spanish": "Añadí un poco de miso como toque de sabor secreto.",
+      "estimated_level": "N3",
+      "review_note": "隠し味 es un ingrediente discreto que realza el sabor.",
+      "authored_ruby": "[隠|かく]し[味|あじ]に、[少|すこ]しだけ[味噌|みそ]を[入|い]れました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-001-085",
+      "nearest_japanese": "半年ぶりに泳いだので、少し泳いだだけで疲れました。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "隠し",
+          "surface": "隠し",
+          "start": 0,
+          "end": 2,
+          "reading": "かくし"
+        },
+        {
+          "term": "少し",
+          "surface": "少し",
+          "start": 5,
+          "end": 7,
+          "reading": "すこし"
+        },
+        {
+          "term": "味噌",
+          "surface": "味噌",
+          "start": 9,
+          "end": 11,
+          "reading": "みそ"
+        },
+        {
+          "term": "入れる",
+          "surface": "入れ",
+          "start": 12,
+          "end": 14,
+          "reading": "いれ"
+        },
+        {
+          "term": "隠し味",
+          "surface": "隠し味",
+          "start": 0,
+          "end": 3,
+          "reading": "かくしあじ"
+        }
+      ],
+      "curated_compound": {
+        "term": "隠し味",
+        "surface": "隠し味",
+        "start": 0,
+        "end": 3,
+        "reading": "かくしあじ"
+      },
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2115",
+      "nearest_lexical_japanese": "塩を少し入れてくださいませんか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-041",
+      "target": "出汁",
+      "japanese": "昆布と椎茸で出汁を取りました。",
+      "spanish": "Preparé caldo con alga kombu y setas shiitake.",
+      "estimated_level": "N3",
+      "review_note": "出汁 es un caldo base.",
+      "authored_ruby": "[昆布|こんぶ]と[椎茸|しいたけ]で[出汁|だし]を[取|と]りました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-008-001",
+      "nearest_japanese": "受付で番号札を受け取りました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "昆布",
+          "surface": "昆布",
+          "start": 0,
+          "end": 2,
+          "reading": "こんぶ"
+        },
+        {
+          "term": "椎茸",
+          "surface": "椎茸",
+          "start": 3,
+          "end": 5,
+          "reading": "しいたけ"
+        },
+        {
+          "term": "出汁",
+          "surface": "出汁",
+          "start": 6,
+          "end": 8,
+          "reading": "だし"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 9,
+          "end": 11,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1357",
+      "nearest_lexical_japanese": "来週は休暇を取ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-042",
+      "target": "灰汁",
+      "japanese": "表面に浮いた灰汁を取りました。",
+      "spanish": "Retiré la espuma de impurezas que flotaba en la superficie.",
+      "estimated_level": "N3",
+      "review_note": "灰汁 se lee あく y designa impurezas de ciertos alimentos.",
+      "authored_ruby": "[表面|ひょうめん]に[浮|う]いた[灰汁|あく]を[取|と]りました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "nearest_japanese": "魚を焼く前に、鱗を取りました。",
+      "character_similarity": 0.5185,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "表面",
+          "surface": "表面",
+          "start": 0,
+          "end": 2,
+          "reading": "ひょうめん"
+        },
+        {
+          "term": "浮く",
+          "surface": "浮い",
+          "start": 3,
+          "end": 5,
+          "reading": "うい"
+        },
+        {
+          "term": "灰汁",
+          "surface": "灰汁",
+          "start": 6,
+          "end": 8,
+          "reading": "あく"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 9,
+          "end": 11,
+          "reading": "とり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1643",
+      "nearest_lexical_japanese": "表面は傷ついていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-043",
+      "target": "煮汁",
+      "japanese": "残った煮汁で、翌日うどんを作りました。",
+      "spanish": "Al día siguiente preparé udon con el caldo de cocción sobrante.",
+      "estimated_level": "N3",
+      "review_note": "煮汁 es el líquido donde se ha cocido un alimento.",
+      "authored_ruby": "[残|のこ]った[煮汁|にじる]で、[翌日|よくじつ]うどんを[作|つく]りました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-033",
+      "nearest_japanese": "余った布で、小さな袋を作りました。",
+      "character_similarity": 0.5625,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "残る",
+          "surface": "残っ",
+          "start": 0,
+          "end": 2,
+          "reading": "のこっ"
+        },
+        {
+          "term": "煮汁",
+          "surface": "煮汁",
+          "start": 3,
+          "end": 5,
+          "reading": "にじる"
+        },
+        {
+          "term": "翌日",
+          "surface": "翌日",
+          "start": 7,
+          "end": 9,
+          "reading": "よくじつ"
+        },
+        {
+          "term": "うどん",
+          "surface": "うどん",
+          "start": 9,
+          "end": 12,
+          "reading": "うどん"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 13,
+          "end": 15,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1363",
+      "nearest_lexical_japanese": "料理は指示どおりに作ります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-044",
+      "target": "とろみ",
+      "japanese": "片栗粉で、スープにとろみをつけました。",
+      "spanish": "Espesé la sopa con fécula de patata.",
+      "estimated_level": "N3",
+      "review_note": "とろみ es una consistencia algo espesa.",
+      "authored_ruby": "[片栗粉|かたくりこ]で、スープにとろみをつけました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1474",
+      "nearest_japanese": "部屋で死体を見つけました。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "片栗粉",
+          "surface": "片栗粉",
+          "start": 0,
+          "end": 3,
+          "reading": "かたくりこ"
+        },
+        {
+          "term": "スープ",
+          "surface": "スープ",
+          "start": 5,
+          "end": 8,
+          "reading": "すーぷ"
+        },
+        {
+          "term": "とろみ",
+          "surface": "とろみ",
+          "start": 9,
+          "end": 12,
+          "reading": "とろみ"
+        },
+        {
+          "term": "つける",
+          "surface": "つけ",
+          "start": 13,
+          "end": 15,
+          "reading": "つけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1906",
+      "nearest_lexical_japanese": "電気をつけてもいいですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-045",
+      "target": "焦げ目",
+      "japanese": "表面に焦げ目がついたら、裏返します。",
+      "spanish": "Dale la vuelta cuando la superficie esté dorada.",
+      "estimated_level": "N3",
+      "review_note": "焦げ目 es la marca de tostado de un alimento.",
+      "authored_ruby": "[表面|ひょうめん]に[焦|こ]げ[目|め]がついたら、[裏返|うらがえ]します。",
+      "nearest_id": "JAES-N5-EDITORIAL-0679",
+      "nearest_japanese": "過去について話します。",
+      "character_similarity": 0.4615,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "表面",
+          "surface": "表面",
+          "start": 0,
+          "end": 2,
+          "reading": "ひょうめん"
+        },
+        {
+          "term": "焦げ目",
+          "surface": "焦げ目",
+          "start": 3,
+          "end": 6,
+          "reading": "こげめ"
+        },
+        {
+          "term": "つく",
+          "surface": "つい",
+          "start": 7,
+          "end": 9,
+          "reading": "つい"
+        },
+        {
+          "term": "裏返す",
+          "surface": "裏返し",
+          "start": 12,
+          "end": 15,
+          "reading": "うらがえし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1643",
+      "nearest_lexical_japanese": "表面は傷ついていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-046",
+      "target": "生焼け",
+      "japanese": "中が生焼けだったので、もう少し焼きました。",
+      "spanish": "El interior estaba poco hecho, así que lo cociné un poco más.",
+      "estimated_level": "N3",
+      "review_note": "生焼け significa cocinado de forma insuficiente.",
+      "authored_ruby": "[中|なか]が[生焼|なまや]けだったので、もう[少|すこ]し[焼|や]きました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1056",
+      "nearest_japanese": "旅行中は出来事が多かったので、少し疲れました。",
+      "character_similarity": 0.55,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "中",
+          "surface": "中",
+          "start": 0,
+          "end": 1,
+          "reading": "なか"
+        },
+        {
+          "term": "生焼け",
+          "surface": "生焼け",
+          "start": 2,
+          "end": 5,
+          "reading": "なまやけ"
+        },
+        {
+          "term": "もう少し",
+          "surface": "もう少し",
+          "start": 11,
+          "end": 15,
+          "reading": "もうすこし"
+        },
+        {
+          "term": "焼く",
+          "surface": "焼き",
+          "start": 15,
+          "end": 17,
+          "reading": "やき"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2355",
+      "nearest_lexical_japanese": "もう少し食べてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-047",
+      "target": "余熱",
+      "japanese": "火を止めて、余熱で仕上げました。",
+      "spanish": "Apagué el fuego y terminé la cocción con el calor residual.",
+      "estimated_level": "N3",
+      "review_note": "余熱 es calor que permanece después de apagar la fuente.",
+      "authored_ruby": "[火|ひ]を[止|と]めて、[余熱|よねつ]で[仕上|しあ]げました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-011-004",
+      "nearest_japanese": "ゆでた麺をざるに上げました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "火",
+          "surface": "火",
+          "start": 0,
+          "end": 1,
+          "reading": "ひ"
+        },
+        {
+          "term": "止める",
+          "surface": "止め",
+          "start": 2,
+          "end": 4,
+          "reading": "とめ"
+        },
+        {
+          "term": "余熱",
+          "surface": "余熱",
+          "start": 6,
+          "end": 8,
+          "reading": "よねつ"
+        },
+        {
+          "term": "仕上げる",
+          "surface": "仕上げ",
+          "start": 9,
+          "end": 12,
+          "reading": "しあげ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-C3000-006-045",
+      "nearest_lexical_japanese": "このイカは焼きすぎると硬くなるので、火を止めるタイミングが大切です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-048",
+      "target": "予熱",
+      "japanese": "予熱が終わるまで、生地を冷蔵庫に入れました。",
+      "spanish": "Guardé la masa en el frigorífico mientras terminaba de precalentarse el horno.",
+      "estimated_level": "N3",
+      "review_note": "予熱 es calentar un aparato antes de usarlo.",
+      "authored_ruby": "[予熱|よねつ]が[終|お]わるまで、[生地|きじ]を[冷蔵庫|れいぞうこ]に[入|い]れました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-089",
+      "nearest_japanese": "更新が完了するまで、画面を閉じずに待ちました。",
+      "character_similarity": 0.439,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "予熱",
+          "surface": "予熱",
+          "start": 0,
+          "end": 2,
+          "reading": ""
+        },
+        {
+          "term": "終わる",
+          "surface": "終わる",
+          "start": 3,
+          "end": 6,
+          "reading": "おわる"
+        },
+        {
+          "term": "生地",
+          "surface": "生地",
+          "start": 9,
+          "end": 11,
+          "reading": "きじ"
+        },
+        {
+          "term": "冷蔵庫",
+          "surface": "冷蔵庫",
+          "start": 12,
+          "end": 15,
+          "reading": "れいぞうこ"
+        },
+        {
+          "term": "入れる",
+          "surface": "入れ",
+          "start": 16,
+          "end": 18,
+          "reading": "いれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-008-048",
+      "nearest_lexical_japanese": "開封後は、冷蔵庫に入れてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-049",
+      "target": "盛り付け",
+      "japanese": "盛り付けを変えるだけで、印象が変わります。",
+      "spanish": "Sólo con cambiar la presentación del plato cambia la impresión que da.",
+      "estimated_level": "N3",
+      "review_note": "盛り付け es la disposición de la comida en el plato.",
+      "authored_ruby": "[盛|も]り[付|つ]けを[変|か]えるだけで、[印象|いんしょう]が[変|か]わります。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-077",
+      "nearest_japanese": "峠を越えると、天気が急に変わりました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "盛り",
+          "surface": "盛り",
+          "start": 0,
+          "end": 2,
+          "reading": "もり"
+        },
+        {
+          "term": "変える",
+          "surface": "変える",
+          "start": 5,
+          "end": 8,
+          "reading": "かえる"
+        },
+        {
+          "term": "印象",
+          "surface": "印象",
+          "start": 12,
+          "end": 14,
+          "reading": "いんしょう"
+        },
+        {
+          "term": "変わる",
+          "surface": "変わり",
+          "start": 15,
+          "end": 18,
+          "reading": "かわり"
+        },
+        {
+          "term": "盛り付け",
+          "surface": "盛り付け",
+          "start": 0,
+          "end": 4,
+          "reading": "もりつけ"
+        }
+      ],
+      "curated_compound": {
+        "term": "盛り付け",
+        "surface": "盛り付け",
+        "start": 0,
+        "end": 4,
+        "reading": "もりつけ"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1824",
+      "nearest_lexical_japanese": "内容は同じでも、形式が違うと印象がかなり変わります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-050",
+      "target": "取り分ける",
+      "japanese": "辛くする前に、子供の分を取り分けました。",
+      "spanish": "Aparté la porción de los niños antes de añadir el picante.",
+      "estimated_level": "N3",
+      "review_note": "取り分ける es separar una parte para alguien.",
+      "authored_ruby": "[辛|から]くする[前|まえ]に、[子供|こども]の[分|ぶん]を[取|と]り[分|わ]けました。",
+      "nearest_id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "nearest_japanese": "魚を焼く前に、鱗を取りました。",
+      "character_similarity": 0.5806,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "辛い",
+          "surface": "辛く",
+          "start": 0,
+          "end": 2,
+          "reading": "つらく"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 4,
+          "end": 5,
+          "reading": "まえ"
+        },
+        {
+          "term": "子供",
+          "surface": "子供",
+          "start": 7,
+          "end": 9,
+          "reading": "こども"
+        },
+        {
+          "term": "分",
+          "surface": "分",
+          "start": 10,
+          "end": 11,
+          "reading": "ぶん"
+        },
+        {
+          "term": "取り分ける",
+          "surface": "取り分け",
+          "start": 12,
+          "end": 16,
+          "reading": "とりわけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1705",
+      "nearest_lexical_japanese": "仕事の前に散歩します。"
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-C3000-011-051",
+      "target": "おかわり",
+      "japanese": "おかわりしたいですが、お腹がいっぱいです。",
+      "spanish": "Me gustaría repetir, pero estoy lleno.",
+      "estimated_level": "N5",
+      "review_note": "おかわり es pedir o tomar otra porción.",
+      "authored_ruby": "おかわりしたいですが、お[腹|なか]がいっぱいです。",
+      "nearest_id": "JAES-N5-EDITORIAL-0402",
+      "nearest_japanese": "山は高いですが、景色がいいです。",
+      "character_similarity": 0.5455,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "かわり",
+          "surface": "かわり",
+          "start": 1,
+          "end": 4,
+          "reading": "かわり"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 4,
+          "end": 5,
+          "reading": "し"
+        },
+        {
+          "term": "お腹",
+          "surface": "お腹",
+          "start": 11,
+          "end": 13,
+          "reading": "おなか"
+        },
+        {
+          "term": "いっぱい",
+          "surface": "いっぱい",
+          "start": 14,
+          "end": 18,
+          "reading": "いっぱい"
+        },
+        {
+          "term": "おかわり",
+          "surface": "おかわり",
+          "start": 0,
+          "end": 4,
+          "reading": "おかわり"
+        }
+      ],
+      "curated_compound": {
+        "term": "おかわり",
+        "surface": "おかわり",
+        "start": 0,
+        "end": 4,
+        "reading": "おかわり"
+      },
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1365",
+      "nearest_lexical_japanese": "爆発しましたか？"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-052",
+      "target": "食べ残し",
+      "japanese": "食べ残しが減るように、量を調整しました。",
+      "spanish": "Ajusté las cantidades para que sobrara menos comida en los platos.",
+      "estimated_level": "N3",
+      "review_note": "食べ残し es comida servida que no se ha terminado.",
+      "authored_ruby": "[食|た]べ[残|のこ]しが[減|へ]るように、[量|りょう]を[調整|ちょうせい]しました。",
+      "nearest_id": "JAES-N4-CONVERSATION-20260924B-013",
+      "nearest_japanese": "朝七時にご飯が炊けるように、炊飯器をセットしました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "食べる",
+          "surface": "食べ",
+          "start": 0,
+          "end": 2,
+          "reading": "たべ"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 2,
+          "end": 4,
+          "reading": "のこし"
+        },
+        {
+          "term": "減る",
+          "surface": "減る",
+          "start": 5,
+          "end": 7,
+          "reading": "へる"
+        },
+        {
+          "term": "量",
+          "surface": "量",
+          "start": 11,
+          "end": 12,
+          "reading": "りょう"
+        },
+        {
+          "term": "調整",
+          "surface": "調整",
+          "start": 13,
+          "end": 15,
+          "reading": "ちょうせい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        },
+        {
+          "term": "食べ残し",
+          "surface": "食べ残し",
+          "start": 0,
+          "end": 4,
+          "reading": "たべのこし"
+        }
+      ],
+      "curated_compound": {
+        "term": "食べ残し",
+        "surface": "食べ残し",
+        "start": 0,
+        "end": 4,
+        "reading": "たべのこし"
+      },
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1501",
+      "nearest_lexical_japanese": "料金を調整します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-053",
+      "target": "作り置き",
+      "japanese": "忙しい日のために、おかずを作り置きしました。",
+      "spanish": "Preparé platos con antelación para los días ocupados.",
+      "estimated_level": "N3",
+      "review_note": "作り置き es cocinar para consumir después.",
+      "authored_ruby": "[忙|いそが]しい[日|ひ]のために、おかずを[作|つく]り[置|お]きしました。",
+      "nearest_id": "JAES-N5-EDITORIAL-2248",
+      "nearest_japanese": "勉強のために参考書を三冊借りました。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "忙しい",
+          "surface": "忙しい",
+          "start": 0,
+          "end": 3,
+          "reading": "いそがしい"
+        },
+        {
+          "term": "おかず",
+          "surface": "おかず",
+          "start": 9,
+          "end": 12,
+          "reading": "おかず"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 13,
+          "end": 15,
+          "reading": "つくり"
+        },
+        {
+          "term": "置く",
+          "surface": "置き",
+          "start": 15,
+          "end": 17,
+          "reading": "おき"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 17,
+          "end": 18,
+          "reading": "し"
+        },
+        {
+          "term": "作り置き",
+          "surface": "作り置き",
+          "start": 13,
+          "end": 17,
+          "reading": "つくりおき"
+        }
+      ],
+      "curated_compound": {
+        "term": "作り置き",
+        "surface": "作り置き",
+        "start": 13,
+        "end": 17,
+        "reading": "つくりおき"
+      },
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0579",
+      "nearest_lexical_japanese": "忙しいので、あとで電話してもいいですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-054",
+      "target": "小分け",
+      "japanese": "大袋のナッツを小分けにして、山登りに持っていきました。",
+      "spanish": "Dividí una bolsa grande de frutos secos en porciones para llevarlas a la montaña.",
+      "estimated_level": "N3",
+      "review_note": "小分け es dividir una cantidad en porciones.",
+      "authored_ruby": "[大袋|おおぶくろ]のナッツを[小分|こわ]けにして、[山登|やまのぼ]りに[持|も]っていきました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-011-013",
+      "nearest_japanese": "鍋の底に、ご飯が少し残っていました。",
+      "character_similarity": 0.439,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "ナッツ",
+          "surface": "ナッツ",
+          "start": 3,
+          "end": 6,
+          "reading": "なっつ"
+        },
+        {
+          "term": "小分け",
+          "surface": "小分け",
+          "start": 7,
+          "end": 10,
+          "reading": "こわけ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 11,
+          "end": 12,
+          "reading": "し"
+        },
+        {
+          "term": "山登り",
+          "surface": "山登り",
+          "start": 14,
+          "end": 17,
+          "reading": "やまのぼり"
+        },
+        {
+          "term": "持つ",
+          "surface": "持っ",
+          "start": 18,
+          "end": 20,
+          "reading": "もっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0514",
+      "nearest_lexical_japanese": "節約するなら、毎日お茶を持って行きます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-055",
+      "target": "解凍",
+      "japanese": "解凍した肉を、その日のうちに使いました。",
+      "spanish": "Usé la carne descongelada ese mismo día.",
+      "estimated_level": "N3",
+      "review_note": "解凍 es descongelar.",
+      "authored_ruby": "[解凍|かいとう]した[肉|にく]を、その[日|ひ]のうちに[使|つか]いました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-060",
+      "nearest_japanese": "日の出を見るため、暗いうちに丘へ登りました。",
+      "character_similarity": 0.4211,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "解凍",
+          "surface": "解凍",
+          "start": 0,
+          "end": 2,
+          "reading": "かいとう"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 2,
+          "end": 3,
+          "reading": "し"
+        },
+        {
+          "term": "肉",
+          "surface": "肉",
+          "start": 4,
+          "end": 5,
+          "reading": "にく"
+        },
+        {
+          "term": "その",
+          "surface": "その",
+          "start": 7,
+          "end": 9,
+          "reading": "その"
+        },
+        {
+          "term": "使う",
+          "surface": "使い",
+          "start": 14,
+          "end": 16,
+          "reading": "つかい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1694",
+      "nearest_lexical_japanese": "スマホを充電して使います。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-056",
+      "target": "冷ます",
+      "japanese": "焼いた皿を冷ますため、窯を閉めたままにしました。",
+      "spanish": "Dejé el horno cerámico cerrado para que se enfriaran los platos cocidos.",
+      "estimated_level": "N4",
+      "review_note": "冷ます es hacer que algo pierda calor.",
+      "authored_ruby": "[焼|や]いた[皿|さら]を[冷|さ]ますため、[窯|かま]を[閉|し]めたままにしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-005",
+      "nearest_japanese": "驚いた顔を描くため、眉を高い位置に描きました。",
+      "character_similarity": 0.4651,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "焼く",
+          "surface": "焼い",
+          "start": 0,
+          "end": 2,
+          "reading": "やい"
+        },
+        {
+          "term": "皿",
+          "surface": "皿",
+          "start": 3,
+          "end": 4,
+          "reading": "さら"
+        },
+        {
+          "term": "冷ます",
+          "surface": "冷ます",
+          "start": 5,
+          "end": 8,
+          "reading": "さます"
+        },
+        {
+          "term": "窯",
+          "surface": "窯",
+          "start": 11,
+          "end": 12,
+          "reading": "かま"
+        },
+        {
+          "term": "閉める",
+          "surface": "閉め",
+          "start": 13,
+          "end": 15,
+          "reading": "しめ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 19,
+          "end": 20,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1650",
+      "nearest_lexical_japanese": "寒さに対抗して窓を閉めました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-057",
+      "target": "冷やす",
+      "japanese": "果物を冷やすため、氷水に入れました。",
+      "spanish": "Metí la fruta en agua con hielo para enfriarla.",
+      "estimated_level": "N4",
+      "review_note": "冷やす es bajar la temperatura de algo.",
+      "authored_ruby": "[果物|くだもの]を[冷|ひ]やすため、[氷水|こおりみず]に[入|い]れました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-011-056",
+      "nearest_japanese": "焼いた皿を冷ますため、窯を閉めたままにしました。",
+      "character_similarity": 0.4737,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "果物",
+          "surface": "果物",
+          "start": 0,
+          "end": 2,
+          "reading": "くだもの"
+        },
+        {
+          "term": "冷やす",
+          "surface": "冷やす",
+          "start": 3,
+          "end": 6,
+          "reading": "ひやす"
+        },
+        {
+          "term": "氷水",
+          "surface": "氷水",
+          "start": 9,
+          "end": 11,
+          "reading": "こおりみず"
+        },
+        {
+          "term": "入れる",
+          "surface": "入れ",
+          "start": 12,
+          "end": 14,
+          "reading": "いれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-ORGANIC-202608-0315",
+      "nearest_lexical_japanese": "果物は冷蔵庫の中にあります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-058",
+      "target": "常温",
+      "japanese": "バターを常温に戻してから混ぜました。",
+      "spanish": "Dejé que la mantequilla alcanzara la temperatura ambiente antes de mezclarla.",
+      "estimated_level": "N3",
+      "review_note": "常温 es la temperatura ambiente habitual.",
+      "authored_ruby": "バターを[常温|じょうおん]に[戻|もど]してから[混|ま]ぜました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0884",
+      "nearest_japanese": "さらに話してから付き合いました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "バター",
+          "surface": "バター",
+          "start": 0,
+          "end": 3,
+          "reading": "ばたー"
+        },
+        {
+          "term": "常温",
+          "surface": "常温",
+          "start": 4,
+          "end": 6,
+          "reading": "じょうおん"
+        },
+        {
+          "term": "戻す",
+          "surface": "戻し",
+          "start": 7,
+          "end": 9,
+          "reading": "もどし"
+        },
+        {
+          "term": "混ぜる",
+          "surface": "混ぜ",
+          "start": 12,
+          "end": 14,
+          "reading": "まぜ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-20260924B-041",
+      "nearest_lexical_japanese": "玉ねぎを細かく刻んで、ひき肉に混ぜてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-059",
+      "target": "密閉",
+      "japanese": "湿気を防ぐため、容器を密閉しました。",
+      "spanish": "Cerré herméticamente el recipiente para evitar la humedad.",
+      "estimated_level": "N3",
+      "review_note": "密閉 es cerrar sin dejar pasar aire.",
+      "authored_ruby": "[湿気|しっけ]を[防|ふせ]ぐため、[容器|ようき]を[密閉|みっぺい]しました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-011-011",
+      "nearest_japanese": "蒸気を逃がすため、蓋を少しずらしました。",
+      "character_similarity": 0.5294,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "湿気",
+          "surface": "湿気",
+          "start": 0,
+          "end": 2,
+          "reading": "しっけ"
+        },
+        {
+          "term": "防ぐ",
+          "surface": "防ぐ",
+          "start": 3,
+          "end": 5,
+          "reading": "ふせぐ"
+        },
+        {
+          "term": "容器",
+          "surface": "容器",
+          "start": 8,
+          "end": 10,
+          "reading": "ようき"
+        },
+        {
+          "term": "密閉",
+          "surface": "密閉",
+          "start": 11,
+          "end": 13,
+          "reading": "みっぺい"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 13,
+          "end": 14,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1444",
+      "nearest_lexical_japanese": "感染を防ぐため、マスクをしてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-060",
+      "target": "保存料",
+      "japanese": "保存料を使っていないと、ラベルに書かれています。",
+      "spanish": "La etiqueta indica que no lleva conservantes.",
+      "estimated_level": "N3",
+      "review_note": "保存料 es una sustancia usada para conservar alimentos.",
+      "authored_ruby": "[保存料|ほぞんりょう]を[使|つか]っていないと、ラベルに[書|か]かれています。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-005-001",
+      "nearest_japanese": "その数字を信じてよい根拠が、記事には書かれていません。",
+      "character_similarity": 0.4255,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "保存",
+          "surface": "保存",
+          "start": 0,
+          "end": 2,
+          "reading": "ほぞん"
+        },
+        {
+          "term": "使う",
+          "surface": "使っ",
+          "start": 4,
+          "end": 6,
+          "reading": "つかっ"
+        },
+        {
+          "term": "ラベル",
+          "surface": "ラベル",
+          "start": 12,
+          "end": 15,
+          "reading": "らべる"
+        },
+        {
+          "term": "書く",
+          "surface": "書か",
+          "start": 16,
+          "end": 18,
+          "reading": "かか"
+        },
+        {
+          "term": "保存料",
+          "surface": "保存料",
+          "start": 0,
+          "end": 3,
+          "reading": "ほぞんりょう"
+        }
+      ],
+      "curated_compound": {
+        "term": "保存料",
+        "surface": "保存料",
+        "start": 0,
+        "end": 3,
+        "reading": "ほぞんりょう"
+      },
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1965",
+      "nearest_lexical_japanese": "住所を書いてください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-061",
+      "target": "賞味期限",
+      "japanese": "棚の手前に、賞味期限の近い品を置きました。",
+      "spanish": "Coloqué delante los productos con la fecha de consumo preferente más próxima.",
+      "estimated_level": "N3",
+      "review_note": "賞味期限 es consumo preferente, distinto de 消費期限.",
+      "authored_ruby": "[棚|たな]の[手前|てまえ]に、[賞味期限|しょうみきげん]の[近|ちか]い[品|しな]を[置|お]きました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1846",
+      "nearest_japanese": "その町の境界を歩きました。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "棚",
+          "surface": "棚",
+          "start": 0,
+          "end": 1,
+          "reading": "たな"
+        },
+        {
+          "term": "手前",
+          "surface": "手前",
+          "start": 2,
+          "end": 4,
+          "reading": "てまえ"
+        },
+        {
+          "term": "賞味",
+          "surface": "賞味",
+          "start": 6,
+          "end": 8,
+          "reading": "しょうみ"
+        },
+        {
+          "term": "期限",
+          "surface": "期限",
+          "start": 8,
+          "end": 10,
+          "reading": "きげん"
+        },
+        {
+          "term": "近い",
+          "surface": "近い",
+          "start": 11,
+          "end": 13,
+          "reading": "ちかい"
+        },
+        {
+          "term": "品",
+          "surface": "品",
+          "start": 13,
+          "end": 14,
+          "reading": "しな"
+        },
+        {
+          "term": "置く",
+          "surface": "置き",
+          "start": 15,
+          "end": 17,
+          "reading": "おき"
+        },
+        {
+          "term": "賞味期限",
+          "surface": "賞味期限",
+          "start": 6,
+          "end": 10,
+          "reading": "しょうみきげん"
+        }
+      ],
+      "curated_compound": {
+        "term": "賞味期限",
+        "surface": "賞味期限",
+        "start": 6,
+        "end": 10,
+        "reading": "しょうみきげん"
+      },
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0867",
+      "nearest_lexical_japanese": "この賞味期限はまだ有効ですか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-062",
+      "target": "消費期限",
+      "japanese": "買う前に、弁当の消費期限を確認しました。",
+      "spanish": "Antes de comprar, comprobé la fecha límite de consumo del almuerzo preparado.",
+      "estimated_level": "N3",
+      "review_note": "消費期限 es la fecha de caducidad de un alimento perecedero.",
+      "authored_ruby": "[買|か]う[前|まえ]に、[弁当|べんとう]の[消費期限|しょうひきげん]を[確認|かくにん]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-009",
+      "nearest_japanese": "買い物の前に、カードの残高を確認しました。",
+      "character_similarity": 0.5946,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "買う",
+          "surface": "買う",
+          "start": 0,
+          "end": 2,
+          "reading": "かう"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 2,
+          "end": 3,
+          "reading": "まえ"
+        },
+        {
+          "term": "弁当",
+          "surface": "弁当",
+          "start": 5,
+          "end": 7,
+          "reading": "べんとう"
+        },
+        {
+          "term": "消費",
+          "surface": "消費",
+          "start": 8,
+          "end": 10,
+          "reading": "しょうひ"
+        },
+        {
+          "term": "期限",
+          "surface": "期限",
+          "start": 10,
+          "end": 12,
+          "reading": "きげん"
+        },
+        {
+          "term": "確認",
+          "surface": "確認",
+          "start": 13,
+          "end": 15,
+          "reading": "かくにん"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 15,
+          "end": 16,
+          "reading": "し"
+        },
+        {
+          "term": "消費期限",
+          "surface": "消費期限",
+          "start": 8,
+          "end": 12,
+          "reading": "しょうひきげん"
+        }
+      ],
+      "curated_compound": {
+        "term": "消費期限",
+        "surface": "消費期限",
+        "start": 8,
+        "end": 12,
+        "reading": "しょうひきげん"
+      },
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2020",
+      "nearest_lexical_japanese": "新しい家を買う前に、相続のことも家族と確認しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-063",
+      "target": "原材料",
+      "japanese": "原材料の表示に、小麦が含まれていました。",
+      "spanish": "En la lista de ingredientes figuraba el trigo.",
+      "estimated_level": "N3",
+      "review_note": "原材料 son los ingredientes o materias primas.",
+      "authored_ruby": "[原材料|げんざいりょう]の[表示|ひょうじ]に、[小麦|こむぎ]が[含|ふく]まれていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-054",
+      "nearest_japanese": "車の窓に霜が降りていました。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "原材料",
+          "surface": "原材料",
+          "start": 0,
+          "end": 3,
+          "reading": "げんざいりょう"
+        },
+        {
+          "term": "表示",
+          "surface": "表示",
+          "start": 4,
+          "end": 6,
+          "reading": "ひょうじ"
+        },
+        {
+          "term": "小麦",
+          "surface": "小麦",
+          "start": 8,
+          "end": 10,
+          "reading": "こむぎ"
+        },
+        {
+          "term": "含む",
+          "surface": "含ま",
+          "start": 11,
+          "end": 13,
+          "reading": "ふくま"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1481",
+      "nearest_lexical_japanese": "表示は出ていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-064",
+      "target": "産地",
+      "japanese": "産地が同じでも、品種は違います。",
+      "spanish": "Aunque proceden del mismo lugar, son variedades distintas.",
+      "estimated_level": "N3",
+      "review_note": "産地 es el lugar de producción.",
+      "authored_ruby": "[産地|さんち]が[同|おな]じでも、[品種|ひんしゅ]は[違|ちが]います。",
+      "nearest_id": "JAES-N4-EDITORIAL-1493",
+      "nearest_japanese": "この過程は違います。",
+      "character_similarity": 0.4348,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "産地",
+          "surface": "産地",
+          "start": 0,
+          "end": 2,
+          "reading": "さんち"
+        },
+        {
+          "term": "同じ",
+          "surface": "同じ",
+          "start": 3,
+          "end": 5,
+          "reading": "おなじ"
+        },
+        {
+          "term": "品種",
+          "surface": "品種",
+          "start": 8,
+          "end": 10,
+          "reading": "ひんしゅ"
+        },
+        {
+          "term": "違う",
+          "surface": "違い",
+          "start": 11,
+          "end": 13,
+          "reading": "ちがい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-005-041",
+      "nearest_lexical_japanese": "同じ質問でも、世代によって答えが違うのは興味深いです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-065",
+      "target": "旬",
+      "japanese": "旬の野菜を使った献立にしました。",
+      "spanish": "Preparé un menú con verduras de temporada.",
+      "estimated_level": "N3",
+      "review_note": "旬 es la temporada de mejor calidad de un alimento.",
+      "authored_ruby": "[旬|しゅん]の[野菜|やさい]を[使|つか]った[献立|こんだて]にしました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-011",
+      "nearest_japanese": "弱った苗を日陰に移しました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "旬",
+          "surface": "旬",
+          "start": 0,
+          "end": 1,
+          "reading": "しゅん"
+        },
+        {
+          "term": "野菜",
+          "surface": "野菜",
+          "start": 2,
+          "end": 4,
+          "reading": "やさい"
+        },
+        {
+          "term": "使う",
+          "surface": "使っ",
+          "start": 5,
+          "end": 7,
+          "reading": "つかっ"
+        },
+        {
+          "term": "献立",
+          "surface": "献立",
+          "start": 8,
+          "end": 10,
+          "reading": "こんだて"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 11,
+          "end": 12,
+          "reading": "し"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1694",
+      "nearest_lexical_japanese": "スマホを充電して使います。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-066",
+      "target": "熟す",
+      "japanese": "桃が熟すまで、数日待ちました。",
+      "spanish": "Esperé unos días a que maduraran los melocotones.",
+      "estimated_level": "N3",
+      "review_note": "熟す es madurar una fruta.",
+      "authored_ruby": "[桃|もも]が[熟|じゅく]すまで、[数日|すうじつ][待|ま]ちました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-089",
+      "nearest_japanese": "更新が完了するまで、画面を閉じずに待ちました。",
+      "character_similarity": 0.5294,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "桃",
+          "surface": "桃",
+          "start": 0,
+          "end": 1,
+          "reading": "もも"
+        },
+        {
+          "term": "熟す",
+          "surface": "熟す",
+          "start": 2,
+          "end": 4,
+          "reading": "じゅくす"
+        },
+        {
+          "term": "待つ",
+          "surface": "待ち",
+          "start": 9,
+          "end": 11,
+          "reading": "まち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2325",
+      "nearest_lexical_japanese": "バス停で待ってください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-067",
+      "target": "腐る",
+      "japanese": "袋の中で一つだけみかんが腐っていました。",
+      "spanish": "Sólo una mandarina se había podrido dentro de la bolsa.",
+      "estimated_level": "N4",
+      "review_note": "腐る es pudrirse.",
+      "authored_ruby": "[袋|ふくろ]の[中|なか]で[一|ひと]つだけみかんが[腐|くさ]っていました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-007-091",
+      "nearest_japanese": "袋の底が裂けて、みかんが落ちました。",
+      "character_similarity": 0.5714,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "袋",
+          "surface": "袋",
+          "start": 0,
+          "end": 1,
+          "reading": "ふくろ"
+        },
+        {
+          "term": "一つ",
+          "surface": "一つ",
+          "start": 4,
+          "end": 6,
+          "reading": "ひとつ"
+        },
+        {
+          "term": "みかん",
+          "surface": "みかん",
+          "start": 8,
+          "end": 11,
+          "reading": "みかん"
+        },
+        {
+          "term": "腐る",
+          "surface": "腐っ",
+          "start": 12,
+          "end": 14,
+          "reading": "くさっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-007-091",
+      "nearest_lexical_japanese": "袋の底が裂けて、みかんが落ちました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-068",
+      "target": "傷む",
+      "japanese": "葉物野菜は傷みやすいので、先に使います。",
+      "spanish": "Uso primero las verduras de hoja porque se estropean con facilidad.",
+      "estimated_level": "N3",
+      "review_note": "傷む significa deteriorarse.",
+      "authored_ruby": "[葉物|はもの][野菜|やさい]は[傷|いた]みやすいので、[先|さき]に[使|つか]います。",
+      "nearest_id": "JAES-N4-EDITORIAL-0614",
+      "nearest_japanese": "この教科書は読みやすいです。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "葉",
+          "surface": "葉",
+          "start": 0,
+          "end": 1,
+          "reading": "は"
+        },
+        {
+          "term": "野菜",
+          "surface": "野菜",
+          "start": 2,
+          "end": 4,
+          "reading": "やさい"
+        },
+        {
+          "term": "傷む",
+          "surface": "傷み",
+          "start": 5,
+          "end": 7,
+          "reading": "いたみ"
+        },
+        {
+          "term": "先",
+          "surface": "先",
+          "start": 13,
+          "end": 14,
+          "reading": "さき"
+        },
+        {
+          "term": "使う",
+          "surface": "使い",
+          "start": 15,
+          "end": 17,
+          "reading": "つかい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.18181818181818182,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-065",
+      "nearest_lexical_japanese": "コインランドリーで使う小銭がないので、先に両替します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-069",
+      "target": "湿気る",
+      "japanese": "袋を開けたままにして、せんべいが湿気りました。",
+      "spanish": "Dejé la bolsa abierta y las galletas de arroz perdieron su textura crujiente por la humedad.",
+      "estimated_level": "N3",
+      "review_note": "湿気る es absorber humedad y ablandarse.",
+      "authored_ruby": "[袋|ふくろ]を[開|あ]けたままにして、せんべいが[湿気|しけ]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-013",
+      "nearest_japanese": "手袋をしていても、指先が冷たくなりました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "袋",
+          "surface": "袋",
+          "start": 0,
+          "end": 1,
+          "reading": "ふくろ"
+        },
+        {
+          "term": "開ける",
+          "surface": "開け",
+          "start": 2,
+          "end": 4,
+          "reading": "あけ"
+        },
+        {
+          "term": "する",
+          "surface": "し",
+          "start": 8,
+          "end": 9,
+          "reading": "し"
+        },
+        {
+          "term": "せんべい",
+          "surface": "せんべい",
+          "start": 11,
+          "end": 15,
+          "reading": "せんべい"
+        },
+        {
+          "term": "湿気る",
+          "surface": "湿気",
+          "start": 16,
+          "end": 18,
+          "reading": "しけ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1138",
+      "nearest_lexical_japanese": "窓を開けて少し呼吸しやすくします。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-070",
+      "target": "乾燥",
+      "japanese": "乾燥を防ぐため、パンを布で包みました。",
+      "spanish": "Envolví el pan en un paño para que no se secara.",
+      "estimated_level": "N3",
+      "review_note": "乾燥 es pérdida de humedad.",
+      "authored_ruby": "[乾燥|かんそう]を[防|ふせ]ぐため、パンを[布|ぬの]で[包|つつ]みました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-011-059",
+      "nearest_japanese": "湿気を防ぐため、容器を密閉しました。",
+      "character_similarity": 0.5455,
+      "target_literal_previous_occurrences": 2,
+      "morphology_evidence": [
+        {
+          "term": "乾燥",
+          "surface": "乾燥",
+          "start": 0,
+          "end": 2,
+          "reading": "かんそう"
+        },
+        {
+          "term": "防ぐ",
+          "surface": "防ぐ",
+          "start": 3,
+          "end": 5,
+          "reading": "ふせぐ"
+        },
+        {
+          "term": "パン",
+          "surface": "パン",
+          "start": 8,
+          "end": 10,
+          "reading": "ぱん"
+        },
+        {
+          "term": "布",
+          "surface": "布",
+          "start": 11,
+          "end": 12,
+          "reading": "ぬの"
+        },
+        {
+          "term": "包む",
+          "surface": "包み",
+          "start": 13,
+          "end": 15,
+          "reading": "つつみ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2259",
+      "nearest_lexical_japanese": "パンも食べますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-071",
+      "target": "発酵",
+      "japanese": "気温が低く、生地の発酵に時間がかかりました。",
+      "spanish": "Con la temperatura baja, la masa tardó en fermentar.",
+      "estimated_level": "N3",
+      "review_note": "発酵 es fermentación.",
+      "authored_ruby": "[気温|きおん]が[低|ひく]く、[生地|きじ]の[発酵|はっこう]に[時間|じかん]がかかりました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-031",
+      "nearest_japanese": "針の穴が小さくて、糸を通すのに時間がかかりました。",
+      "character_similarity": 0.6047,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "気温",
+          "surface": "気温",
+          "start": 0,
+          "end": 2,
+          "reading": "きおん"
+        },
+        {
+          "term": "低い",
+          "surface": "低く",
+          "start": 3,
+          "end": 5,
+          "reading": "ひくく"
+        },
+        {
+          "term": "生地",
+          "surface": "生地",
+          "start": 6,
+          "end": 8,
+          "reading": "きじ"
+        },
+        {
+          "term": "発酵",
+          "surface": "発酵",
+          "start": 9,
+          "end": 11,
+          "reading": "はっこう"
+        },
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 12,
+          "end": 14,
+          "reading": "じかん"
+        },
+        {
+          "term": "かかる",
+          "surface": "かかり",
+          "start": 15,
+          "end": 18,
+          "reading": "かかり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1537",
+      "nearest_lexical_japanese": "今日は気温が低いです。"
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-011-072",
+      "target": "熟成",
+      "japanese": "熟成によって、チーズの香りが強くなりました。",
+      "spanish": "La maduración intensificó el aroma del queso.",
+      "estimated_level": "N2",
+      "review_note": "熟成 es maduración controlada de un producto.",
+      "authored_ruby": "[熟成|じゅくせい]によって、チーズの[香|かお]りが[強|つよ]くなりました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-003-055",
+      "nearest_japanese": "氷が溶けて、ジュースの味が薄くなりました。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "熟成",
+          "surface": "熟成",
+          "start": 0,
+          "end": 2,
+          "reading": "じゅくせい"
+        },
+        {
+          "term": "チーズ",
+          "surface": "チーズ",
+          "start": 7,
+          "end": 10,
+          "reading": "ちーず"
+        },
+        {
+          "term": "香り",
+          "surface": "香り",
+          "start": 11,
+          "end": 13,
+          "reading": "かおり"
+        },
+        {
+          "term": "強い",
+          "surface": "強く",
+          "start": 14,
+          "end": 16,
+          "reading": "つよく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 16,
+          "end": 18,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-005-046",
+      "nearest_lexical_japanese": "暗い洞窟に入るとき、好奇心より恐怖のほうが強くなりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-073",
+      "target": "風味",
+      "japanese": "挽きたての胡椒で、風味が増しました。",
+      "spanish": "La pimienta recién molida realzó el sabor y el aroma.",
+      "estimated_level": "N3",
+      "review_note": "風味 engloba el sabor y aroma de un alimento.",
+      "authored_ruby": "[挽|ひ]きたての[胡椒|こしょう]で、[風味|ふうみ]が[増|ま]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-008-052",
+      "nearest_japanese": "代引きで注文したので、現金を用意しました。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "挽く",
+          "surface": "挽き",
+          "start": 0,
+          "end": 2,
+          "reading": "ひき"
+        },
+        {
+          "term": "胡椒",
+          "surface": "胡椒",
+          "start": 5,
+          "end": 7,
+          "reading": "こしょう"
+        },
+        {
+          "term": "風味",
+          "surface": "風味",
+          "start": 9,
+          "end": 11,
+          "reading": "ふうみ"
+        },
+        {
+          "term": "増す",
+          "surface": "増し",
+          "start": 12,
+          "end": 14,
+          "reading": "まし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.09090909090909091,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-044",
+      "nearest_lexical_japanese": "このスープには、胡椒を少し入れると香りがよくなります。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-074",
+      "target": "渋み",
+      "japanese": "お茶を長く置くと、渋みが強くなります。",
+      "spanish": "Si dejas el té infusionando mucho tiempo, aumenta su astringencia.",
+      "estimated_level": "N3",
+      "review_note": "渋み es la sensación astringente en la boca.",
+      "authored_ruby": "お[茶|ちゃ]を[長|なが]く[置|お]くと、[渋|しぶ]みが[強|つよ]くなります。",
+      "nearest_id": "JAES-N4-EDITORIAL-1735",
+      "nearest_japanese": "虐殺のニュースを聞くと、食欲がなくなります。",
+      "character_similarity": 0.4865,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "お茶",
+          "surface": "お茶",
+          "start": 0,
+          "end": 2,
+          "reading": "おちゃ"
+        },
+        {
+          "term": "長い",
+          "surface": "長く",
+          "start": 3,
+          "end": 5,
+          "reading": "ながく"
+        },
+        {
+          "term": "置く",
+          "surface": "置く",
+          "start": 5,
+          "end": 7,
+          "reading": "おく"
+        },
+        {
+          "term": "渋み",
+          "surface": "渋み",
+          "start": 9,
+          "end": 11,
+          "reading": "しぶみ"
+        },
+        {
+          "term": "強い",
+          "surface": "強く",
+          "start": 12,
+          "end": 14,
+          "reading": "つよく"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 14,
+          "end": 16,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924B-062",
+      "nearest_lexical_japanese": "お茶がぬるくなってしまったので、熱いものを入れ直しました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-075",
+      "target": "苦み",
+      "japanese": "焦がしたため、ソースに苦みが出ました。",
+      "spanish": "Al quemarse, la salsa adquirió amargor.",
+      "estimated_level": "N3",
+      "review_note": "苦み es sabor amargo.",
+      "authored_ruby": "[焦|こ]がしたため、ソースに[苦|にが]みが[出|で]ました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2485",
+      "nearest_japanese": "優勝したチームのバスが来ました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "焦がす",
+          "surface": "焦がし",
+          "start": 0,
+          "end": 3,
+          "reading": "こがし"
+        },
+        {
+          "term": "ソース",
+          "surface": "ソース",
+          "start": 7,
+          "end": 10,
+          "reading": "そーす"
+        },
+        {
+          "term": "苦み",
+          "surface": "苦み",
+          "start": 11,
+          "end": 13,
+          "reading": "にがみ"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 14,
+          "end": 15,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1481",
+      "nearest_lexical_japanese": "表示は出ていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-076",
+      "target": "酸味",
+      "japanese": "酸味のあるりんごで、ジャムを作りました。",
+      "spanish": "Hice mermelada con manzanas ácidas.",
+      "estimated_level": "N3",
+      "review_note": "酸味 es sabor ácido.",
+      "authored_ruby": "[酸味|さんみ]のあるりんごで、ジャムを[作|つく]りました。",
+      "nearest_id": "JAES-N4-EDITORIAL-2179",
+      "nearest_japanese": "夕食のあと、家族で対戦ゲームをしました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "酸味",
+          "surface": "酸味",
+          "start": 0,
+          "end": 2,
+          "reading": "さんみ"
+        },
+        {
+          "term": "ある",
+          "surface": "ある",
+          "start": 3,
+          "end": 5,
+          "reading": "ある"
+        },
+        {
+          "term": "りんご",
+          "surface": "りんご",
+          "start": 5,
+          "end": 8,
+          "reading": "りんご"
+        },
+        {
+          "term": "ジャム",
+          "surface": "ジャム",
+          "start": 10,
+          "end": 13,
+          "reading": "じゃむ"
+        },
+        {
+          "term": "作る",
+          "surface": "作り",
+          "start": 14,
+          "end": 16,
+          "reading": "つくり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.4,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0309",
+      "nearest_lexical_japanese": "りんごもありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-077",
+      "target": "甘み",
+      "japanese": "加熱すると、玉ねぎの甘みが増します。",
+      "spanish": "Al cocinarla, aumenta el dulzor de la cebolla.",
+      "estimated_level": "N3",
+      "review_note": "甘み es dulzor.",
+      "authored_ruby": "[加熱|かねつ]すると、[玉|たま]ねぎの[甘|あま]みが[増|ま]します。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-010-089",
+      "nearest_japanese": "進級すると、実験の授業が増えます。",
+      "character_similarity": 0.5161,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "加熱",
+          "surface": "加熱",
+          "start": 0,
+          "end": 2,
+          "reading": "かねつ"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "玉ねぎ",
+          "surface": "玉ねぎ",
+          "start": 6,
+          "end": 9,
+          "reading": "たまねぎ"
+        },
+        {
+          "term": "甘み",
+          "surface": "甘み",
+          "start": 10,
+          "end": 12,
+          "reading": "あまみ"
+        },
+        {
+          "term": "増す",
+          "surface": "増し",
+          "start": 13,
+          "end": 15,
+          "reading": "まし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1365",
+      "nearest_lexical_japanese": "爆発しましたか？"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-078",
+      "target": "塩気",
+      "japanese": "塩気が強かったので、豆腐を足しました。",
+      "spanish": "Como estaba demasiado salado, añadí tofu.",
+      "estimated_level": "N3",
+      "review_note": "塩気 es el grado de sabor salado.",
+      "authored_ruby": "[塩気|しおけ]が[強|つよ]かったので、[豆腐|とうふ]を[足|た]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-007",
+      "nearest_japanese": "請求書の住所が古かったので、修正をお願いしました。",
+      "character_similarity": 0.55,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "塩気",
+          "surface": "塩気",
+          "start": 0,
+          "end": 2,
+          "reading": "しおけ"
+        },
+        {
+          "term": "強い",
+          "surface": "強かっ",
+          "start": 3,
+          "end": 6,
+          "reading": "つよかっ"
+        },
+        {
+          "term": "豆腐",
+          "surface": "豆腐",
+          "start": 10,
+          "end": 12,
+          "reading": "とうふ"
+        },
+        {
+          "term": "足す",
+          "surface": "足し",
+          "start": 13,
+          "end": 15,
+          "reading": "たし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EXP-0049",
+      "nearest_lexical_japanese": "風が強いから窓を閉めます。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-079",
+      "target": "歯ごたえ",
+      "japanese": "茹ですぎず、歯ごたえを残しました。",
+      "spanish": "Lo cocí sin pasarme para que conservara firmeza al morder.",
+      "estimated_level": "N3",
+      "review_note": "歯ごたえ es la resistencia que ofrece un alimento al morderlo.",
+      "authored_ruby": "[茹|ゆ]ですぎず、[歯|は]ごたえを[残|のこ]しました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-048",
+      "nearest_japanese": "道端で弱った子猫を保護しました。",
+      "character_similarity": 0.4667,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "茹でる",
+          "surface": "茹で",
+          "start": 0,
+          "end": 2,
+          "reading": "ゆで"
+        },
+        {
+          "term": "歯ごたえ",
+          "surface": "歯ごたえ",
+          "start": 6,
+          "end": 10,
+          "reading": "はごたえ"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 11,
+          "end": 13,
+          "reading": "のこし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1583",
+      "nearest_lexical_japanese": "ここに名前をまだ残さないでください。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-080",
+      "target": "口当たり",
+      "japanese": "裏ごしすると、口当たりが滑らかになります。",
+      "spanish": "Al pasarlo por un tamiz, la textura en boca queda suave.",
+      "estimated_level": "N3",
+      "review_note": "口当たり es la sensación de un alimento en la boca.",
+      "authored_ruby": "[裏|うら]ごしすると、[口当|くちあ]たりが[滑|なめ]らかになります。",
+      "nearest_id": "JAES-N4-EDITORIAL-0936",
+      "nearest_japanese": "勉強すると、魅力がもっと分かります。",
+      "character_similarity": 0.4571,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "裏ごし",
+          "surface": "裏ごし",
+          "start": 0,
+          "end": 3,
+          "reading": "うらごし"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 3,
+          "end": 5,
+          "reading": "する"
+        },
+        {
+          "term": "口当たり",
+          "surface": "口当たり",
+          "start": 7,
+          "end": 11,
+          "reading": "くちあたり"
+        },
+        {
+          "term": "滑らか",
+          "surface": "滑らか",
+          "start": 12,
+          "end": 15,
+          "reading": "なめらか"
+        },
+        {
+          "term": "なる",
+          "surface": "なり",
+          "start": 16,
+          "end": 18,
+          "reading": "なり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0595",
+      "nearest_lexical_japanese": "来月から残業することになりました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-081",
+      "target": "喉越し",
+      "japanese": "冷たい麺は、喉越しがよかったです。",
+      "spanish": "Los fideos fríos pasaban suavemente por la garganta.",
+      "estimated_level": "N3",
+      "review_note": "喉越し es la sensación al tragar.",
+      "authored_ruby": "[冷|つめ]たい[麺|めん]は、[喉越|のどご]しがよかったです。",
+      "nearest_id": "JAES-N5-EDITORIAL-0643",
+      "nearest_japanese": "当時は毎日忙しかったです。",
+      "character_similarity": 0.5185,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "冷たい",
+          "surface": "冷たい",
+          "start": 0,
+          "end": 3,
+          "reading": "つめたい"
+        },
+        {
+          "term": "麺",
+          "surface": "麺",
+          "start": 3,
+          "end": 4,
+          "reading": "めん"
+        },
+        {
+          "term": "喉",
+          "surface": "喉",
+          "start": 6,
+          "end": 7,
+          "reading": "のど"
+        },
+        {
+          "term": "よい",
+          "surface": "よかっ",
+          "start": 10,
+          "end": 13,
+          "reading": "よかっ"
+        },
+        {
+          "term": "喉越し",
+          "surface": "喉越し",
+          "start": 6,
+          "end": 9,
+          "reading": "のどごし"
+        }
+      ],
+      "curated_compound": {
+        "term": "喉越し",
+        "surface": "喉越し",
+        "start": 6,
+        "end": 9,
+        "reading": "のどごし"
+      },
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0327",
+      "nearest_lexical_japanese": "仕事はよくしますか。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-082",
+      "target": "満腹",
+      "japanese": "満腹で、デザートを半分残しました。",
+      "spanish": "Estaba lleno y dejé la mitad del postre.",
+      "estimated_level": "N4",
+      "review_note": "満腹 es tener el estómago lleno.",
+      "authored_ruby": "[満腹|まんぷく]で、デザートを[半分|はんぶん][残|のこ]しました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1988",
+      "nearest_japanese": "デパートの靴の値段を見ました。",
+      "character_similarity": 0.4828,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "満腹",
+          "surface": "満腹",
+          "start": 0,
+          "end": 2,
+          "reading": "まんぷく"
+        },
+        {
+          "term": "デザート",
+          "surface": "デザート",
+          "start": 4,
+          "end": 8,
+          "reading": "でざーと"
+        },
+        {
+          "term": "半分",
+          "surface": "半分",
+          "start": 9,
+          "end": 11,
+          "reading": "はんぶん"
+        },
+        {
+          "term": "残す",
+          "surface": "残し",
+          "start": 11,
+          "end": 13,
+          "reading": "のこし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N4-CONVERSATION-20260924-016",
+      "nearest_lexical_japanese": "ソースは全部かけないで、半分残してください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-083",
+      "target": "空腹",
+      "japanese": "空腹のまま買い物に行き、買いすぎました。",
+      "spanish": "Fui a comprar con hambre y compré demasiado.",
+      "estimated_level": "N4",
+      "review_note": "空腹 es tener el estómago vacío o hambre.",
+      "authored_ruby": "[空腹|くうふく]のまま[買|か]い[物|もの]に[行|い]き、[買|か]いすぎました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0529",
+      "nearest_japanese": "昨日京都の祭りに行きました。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "空腹",
+          "surface": "空腹",
+          "start": 0,
+          "end": 2,
+          "reading": "くうふく"
+        },
+        {
+          "term": "買い物",
+          "surface": "買い物",
+          "start": 5,
+          "end": 8,
+          "reading": "かいもの"
+        },
+        {
+          "term": "行く",
+          "surface": "行き",
+          "start": 9,
+          "end": 11,
+          "reading": "いき"
+        },
+        {
+          "term": "買う",
+          "surface": "買い",
+          "start": 12,
+          "end": 14,
+          "reading": "かい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2365",
+      "nearest_lexical_japanese": "買い物の前に銀行へ行きます。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-084",
+      "target": "食欲",
+      "japanese": "暑さで食欲が落ちていました。",
+      "spanish": "El calor me había quitado el apetito.",
+      "estimated_level": "N4",
+      "review_note": "食欲 es apetito.",
+      "authored_ruby": "[暑|あつ]さで[食欲|しょくよく]が[落|お]ちていました。",
+      "nearest_id": "JAES-N4-CONVERSATION-C3000-009-029",
+      "nearest_japanese": "池のそばに白い羽が落ちていました。",
+      "character_similarity": 0.5517,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "暑い",
+          "surface": "暑",
+          "start": 0,
+          "end": 1,
+          "reading": "あつ"
+        },
+        {
+          "term": "食欲",
+          "surface": "食欲",
+          "start": 3,
+          "end": 5,
+          "reading": "しょくよく"
+        },
+        {
+          "term": "落ちる",
+          "surface": "落ち",
+          "start": 6,
+          "end": 8,
+          "reading": "おち"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1073",
+      "nearest_lexical_japanese": "本は落ちませんでした。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-085",
+      "target": "偏食",
+      "japanese": "偏食を減らしたくて、新しい食材を試しています。",
+      "spanish": "Estoy probando ingredientes nuevos para comer de forma menos selectiva.",
+      "estimated_level": "N3",
+      "review_note": "偏食 es comer sólo ciertos alimentos y evitar otros.",
+      "authored_ruby": "[偏食|へんしょく]を[減|へ]らしたくて、[新|あたら]しい[食材|しょくざい]を[試|ため]しています。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-004-071",
+      "nearest_japanese": "外食を減らして、旅行のために節約しています。",
+      "character_similarity": 0.5366,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "偏食",
+          "surface": "偏食",
+          "start": 0,
+          "end": 2,
+          "reading": "へんしょく"
+        },
+        {
+          "term": "減らす",
+          "surface": "減らし",
+          "start": 3,
+          "end": 6,
+          "reading": "へらし"
+        },
+        {
+          "term": "新しい",
+          "surface": "新しい",
+          "start": 10,
+          "end": 13,
+          "reading": "あたらしい"
+        },
+        {
+          "term": "食材",
+          "surface": "食材",
+          "start": 13,
+          "end": 15,
+          "reading": "しょくざい"
+        },
+        {
+          "term": "試す",
+          "surface": "試し",
+          "start": 16,
+          "end": 18,
+          "reading": "ためし"
+        }
+      ],
+      "nearest_lexical_similarity": 0.14285714285714285,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1790",
+      "nearest_lexical_japanese": "新しいスマホを買いたいです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-086",
+      "target": "献立",
+      "japanese": "冷蔵庫の残りを見て、献立を決めました。",
+      "spanish": "Decidí el menú viendo lo que quedaba en el frigorífico.",
+      "estimated_level": "N3",
+      "review_note": "献立 es el conjunto de platos planeados para una comida.",
+      "authored_ruby": "[冷蔵庫|れいぞうこ]の[残|のこ]りを[見|み]て、[献立|こんだて]を[決|き]めました。",
+      "nearest_id": "JAES-N5-EDITORIAL-0278",
+      "nearest_japanese": "旅行の写真を見ました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "冷蔵庫",
+          "surface": "冷蔵庫",
+          "start": 0,
+          "end": 3,
+          "reading": "れいぞうこ"
+        },
+        {
+          "term": "残り",
+          "surface": "残り",
+          "start": 4,
+          "end": 6,
+          "reading": "のこり"
+        },
+        {
+          "term": "見る",
+          "surface": "見",
+          "start": 7,
+          "end": 8,
+          "reading": "み"
+        },
+        {
+          "term": "献立",
+          "surface": "献立",
+          "start": 10,
+          "end": 12,
+          "reading": "こんだて"
+        },
+        {
+          "term": "決める",
+          "surface": "決め",
+          "start": 13,
+          "end": 15,
+          "reading": "きめ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1796",
+      "nearest_lexical_japanese": "もう店は見ましたが、まだ買うものを決めていません。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-087",
+      "target": "買い出し",
+      "japanese": "祭りの買い出しに、台車を持っていきました。",
+      "spanish": "Llevé un carro para comprar las provisiones de la fiesta.",
+      "estimated_level": "N3",
+      "review_note": "買い出し es salir a comprar suministros.",
+      "authored_ruby": "[祭|まつ]りの[買|か]い[出|だ]しに、[台車|だいしゃ]を[持|も]っていきました。",
+      "nearest_id": "JAES-N4-EDITORIAL-1360",
+      "nearest_japanese": "入院した祖母に、花と手紙を持って行きました。",
+      "character_similarity": 0.5128,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "祭り",
+          "surface": "祭り",
+          "start": 0,
+          "end": 2,
+          "reading": "まつり"
+        },
+        {
+          "term": "買い出し",
+          "surface": "買い出し",
+          "start": 3,
+          "end": 7,
+          "reading": "かいだし"
+        },
+        {
+          "term": "台車",
+          "surface": "台車",
+          "start": 9,
+          "end": 11,
+          "reading": "だいしゃ"
+        },
+        {
+          "term": "持つ",
+          "surface": "持っ",
+          "start": 12,
+          "end": 14,
+          "reading": "もっ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1077",
+      "nearest_lexical_japanese": "お祭りにくる？"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-088",
+      "target": "割り勘",
+      "japanese": "会計は割り勘にせず、各自で払いました。",
+      "spanish": "No dividimos la cuenta a partes iguales; cada uno pagó lo suyo.",
+      "estimated_level": "N3",
+      "review_note": "割り勘 es repartir la cuenta, normalmente en partes iguales.",
+      "authored_ruby": "[会計|かいけい]は[割|わ]り[勘|かん]にせず、[各自|かくじ]で[払|はら]いました。",
+      "nearest_id": "JAES-N4-EDITORIAL-0899",
+      "nearest_japanese": "料金はもう払いました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "会計",
+          "surface": "会計",
+          "start": 0,
+          "end": 2,
+          "reading": "かいけい"
+        },
+        {
+          "term": "割り勘",
+          "surface": "割り勘",
+          "start": 3,
+          "end": 6,
+          "reading": "わりかん"
+        },
+        {
+          "term": "する",
+          "surface": "せ",
+          "start": 7,
+          "end": 8,
+          "reading": "せ"
+        },
+        {
+          "term": "各自",
+          "surface": "各自",
+          "start": 10,
+          "end": 12,
+          "reading": "かくじ"
+        },
+        {
+          "term": "払う",
+          "surface": "払い",
+          "start": 13,
+          "end": 15,
+          "reading": "はらい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2222222222222222,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-005-009",
+      "nearest_lexical_japanese": "要するに、予約が確定するまで料金は払わなくてよいのですね。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-089",
+      "target": "おごる",
+      "japanese": "手伝ってくれたお礼に、昼食をおごりました。",
+      "spanish": "Le invité a comer para agradecerle la ayuda.",
+      "estimated_level": "N4",
+      "review_note": "おごる es pagar la comida de otra persona.",
+      "authored_ruby": "[手伝|てつだ]ってくれたお[礼|れい]に、[昼食|ちゅうしょく]をおごりました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-002-064",
+      "nearest_japanese": "引っ越しを手伝ってくれた友人に、感謝の手紙を書きました。",
+      "character_similarity": 0.5333,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "手伝う",
+          "surface": "手伝っ",
+          "start": 0,
+          "end": 3,
+          "reading": "てつだっ"
+        },
+        {
+          "term": "お礼",
+          "surface": "お礼",
+          "start": 7,
+          "end": 9,
+          "reading": "おれい"
+        },
+        {
+          "term": "昼食",
+          "surface": "昼食",
+          "start": 11,
+          "end": 13,
+          "reading": "ちゅうしょく"
+        },
+        {
+          "term": "おごる",
+          "surface": "おごり",
+          "start": 14,
+          "end": 17,
+          "reading": "おごり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1834",
+      "nearest_lexical_japanese": "手伝ってくれてありがとう。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-090",
+      "target": "持ち帰り",
+      "japanese": "持ち帰りの注文は、別の窓口で受け取ります。",
+      "spanish": "Los pedidos para llevar se recogen en otra ventanilla.",
+      "estimated_level": "N4",
+      "review_note": "持ち帰り es llevarse algo para consumir fuera.",
+      "authored_ruby": "[持|も]ち[帰|かえ]りの[注文|ちゅうもん]は、[別|べつ]の[窓口|まどぐち]で[受|う]け[取|と]ります。",
+      "nearest_id": "JAES-N4-EDITORIAL-2483",
+      "nearest_japanese": "その注文は受け入れません。",
+      "character_similarity": 0.4516,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "持ち帰り",
+          "surface": "持ち帰り",
+          "start": 0,
+          "end": 4,
+          "reading": "もちかえり"
+        },
+        {
+          "term": "注文",
+          "surface": "注文",
+          "start": 5,
+          "end": 7,
+          "reading": "ちゅうもん"
+        },
+        {
+          "term": "別",
+          "surface": "別",
+          "start": 9,
+          "end": 10,
+          "reading": "べつ"
+        },
+        {
+          "term": "窓口",
+          "surface": "窓口",
+          "start": 11,
+          "end": 13,
+          "reading": "まどぐち"
+        },
+        {
+          "term": "受け取る",
+          "surface": "受け取り",
+          "start": 14,
+          "end": 18,
+          "reading": "うけとり"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1981",
+      "nearest_lexical_japanese": "こちらは窓口です。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-091",
+      "target": "相席",
+      "japanese": "混んでいたので、相席でもよいと伝えました。",
+      "spanish": "Como estaba lleno, dije que no me importaba compartir mesa.",
+      "estimated_level": "N3",
+      "review_note": "相席 es compartir mesa con desconocidos.",
+      "authored_ruby": "[混|こ]んでいたので、[相席|あいせき]でもよいと[伝|つた]えました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-095",
+      "nearest_japanese": "前の車両は混んでいたので、後ろの車両に移りました。",
+      "character_similarity": 0.4762,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "混む",
+          "surface": "混ん",
+          "start": 0,
+          "end": 2,
+          "reading": "こん"
+        },
+        {
+          "term": "相席",
+          "surface": "相席",
+          "start": 8,
+          "end": 10,
+          "reading": "あいせき"
+        },
+        {
+          "term": "伝える",
+          "surface": "伝え",
+          "start": 15,
+          "end": 17,
+          "reading": "つたえ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-1670",
+      "nearest_lexical_japanese": "旅行先で要望を伝えました。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-092",
+      "target": "貸し切り",
+      "japanese": "店が貸し切りで、入れませんでした。",
+      "spanish": "El local estaba reservado para un grupo y no pudimos entrar.",
+      "estimated_level": "N3",
+      "review_note": "貸し切り es reservar un espacio entero para uso exclusivo.",
+      "authored_ruby": "[店|みせ]が[貸|か]し[切|き]りで、[入|はい]れませんでした。",
+      "nearest_id": "JAES-N5-EDITORIAL-0239",
+      "nearest_japanese": "だれも来ませんでした。",
+      "character_similarity": 0.56,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "店",
+          "surface": "店",
+          "start": 0,
+          "end": 1,
+          "reading": "みせ"
+        },
+        {
+          "term": "貸し切り",
+          "surface": "貸し切り",
+          "start": 2,
+          "end": 6,
+          "reading": "かしきり"
+        },
+        {
+          "term": "入れる",
+          "surface": "入れ",
+          "start": 8,
+          "end": 10,
+          "reading": "いれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0427",
+      "nearest_lexical_japanese": "店は九時から五時まで開いています。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-093",
+      "target": "予約席",
+      "japanese": "予約席の札があったので、別の席に座りました。",
+      "spanish": "Como había un cartel de reservado, me senté en otro sitio.",
+      "estimated_level": "N4",
+      "review_note": "予約席 es un asiento o mesa reservados.",
+      "authored_ruby": "[予約席|よやくせき]の[札|ふだ]があったので、[別|べつ]の[席|せき]に[座|すわ]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-001-097",
+      "nearest_japanese": "直行便が取れなかったので、別の空港経由で帰りました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "予約",
+          "surface": "予約",
+          "start": 0,
+          "end": 2,
+          "reading": "よやく"
+        },
+        {
+          "term": "席",
+          "surface": "席",
+          "start": 2,
+          "end": 3,
+          "reading": "せき"
+        },
+        {
+          "term": "札",
+          "surface": "札",
+          "start": 4,
+          "end": 5,
+          "reading": "さつ"
+        },
+        {
+          "term": "ある",
+          "surface": "あっ",
+          "start": 6,
+          "end": 8,
+          "reading": "あっ"
+        },
+        {
+          "term": "別",
+          "surface": "別",
+          "start": 12,
+          "end": 13,
+          "reading": "べつ"
+        },
+        {
+          "term": "席",
+          "surface": "席",
+          "start": 14,
+          "end": 15,
+          "reading": "せき"
+        },
+        {
+          "term": "座る",
+          "surface": "座り",
+          "start": 16,
+          "end": 18,
+          "reading": "すわり"
+        },
+        {
+          "term": "予約席",
+          "surface": "予約席",
+          "start": 0,
+          "end": 3,
+          "reading": "よやくせき"
+        }
+      ],
+      "curated_compound": {
+        "term": "予約席",
+        "surface": "予約席",
+        "start": 0,
+        "end": 3,
+        "reading": "よやくせき"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-0478",
+      "nearest_lexical_japanese": "このアプリには予約という機能があります。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-094",
+      "target": "禁煙",
+      "japanese": "禁煙の席を希望すると、奥へ案内されました。",
+      "spanish": "Al pedir una mesa de no fumadores, me acompañaron al fondo.",
+      "estimated_level": "N4",
+      "review_note": "禁煙 indica que no se permite fumar.",
+      "authored_ruby": "[禁煙|きんえん]の[席|せき]を[希望|きぼう]すると、[奥|おく]へ[案内|あんない]されました。",
+      "nearest_id": "JAES-N5-EDITORIAL-1984",
+      "nearest_japanese": "祭りの日に友だちを神社へ案内しました。",
+      "character_similarity": 0.4324,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "禁煙",
+          "surface": "禁煙",
+          "start": 0,
+          "end": 2,
+          "reading": "きんえん"
+        },
+        {
+          "term": "席",
+          "surface": "席",
+          "start": 3,
+          "end": 4,
+          "reading": "せき"
+        },
+        {
+          "term": "希望",
+          "surface": "希望",
+          "start": 5,
+          "end": 7,
+          "reading": "きぼう"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 7,
+          "end": 9,
+          "reading": "する"
+        },
+        {
+          "term": "奥",
+          "surface": "奥",
+          "start": 11,
+          "end": 12,
+          "reading": "おく"
+        },
+        {
+          "term": "案内",
+          "surface": "案内",
+          "start": 13,
+          "end": 15,
+          "reading": "あんない"
+        },
+        {
+          "term": "する",
+          "surface": "さ",
+          "start": 15,
+          "end": 16,
+          "reading": "さ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2857142857142857,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1405",
+      "nearest_lexical_japanese": "あたしが案内します。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-095",
+      "target": "お通し",
+      "japanese": "注文する前に、小さなお通しが出ました。",
+      "spanish": "Antes de pedir nos sirvieron un pequeño aperitivo.",
+      "estimated_level": "N3",
+      "review_note": "お通し es un aperitivo que suele servirse y cobrarse en ciertos bares japoneses.",
+      "authored_ruby": "[注文|ちゅうもん]する[前|まえ]に、[小|ちい]さなお[通|とお]しが[出|で]ました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-009-062",
+      "nearest_japanese": "岬を回ると、小さな港が見えました。",
+      "character_similarity": 0.5,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "注文",
+          "surface": "注文",
+          "start": 0,
+          "end": 2,
+          "reading": "ちゅうもん"
+        },
+        {
+          "term": "する",
+          "surface": "する",
+          "start": 2,
+          "end": 4,
+          "reading": "する"
+        },
+        {
+          "term": "前",
+          "surface": "前",
+          "start": 4,
+          "end": 5,
+          "reading": "まえ"
+        },
+        {
+          "term": "小さな",
+          "surface": "小さな",
+          "start": 7,
+          "end": 10,
+          "reading": "ちいさな"
+        },
+        {
+          "term": "お通し",
+          "surface": "お通し",
+          "start": 10,
+          "end": 13,
+          "reading": "おとおし"
+        },
+        {
+          "term": "出る",
+          "surface": "出",
+          "start": 14,
+          "end": 15,
+          "reading": "で"
+        }
+      ],
+      "nearest_lexical_similarity": 0.3,
+      "nearest_lexical_id": "JAES-N3-CONVERSATION-C3000-002-015",
+      "nearest_lexical_japanese": "掃除のために扇風機を分解したら、小さなねじが出てきました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-096",
+      "target": "品切れ",
+      "japanese": "目当てのパンは、すでに品切れでした。",
+      "spanish": "El pan que buscaba ya estaba agotado.",
+      "estimated_level": "N4",
+      "review_note": "品切れ es falta de existencias de un producto.",
+      "authored_ruby": "[目当|めあ]てのパンは、すでに[品切|しなぎ]れでした。",
+      "nearest_id": "JAES-N4-EDITORIAL-1699",
+      "nearest_japanese": "パンは翌日にはもう売り切れていました。",
+      "character_similarity": 0.4706,
+      "target_literal_previous_occurrences": 1,
+      "morphology_evidence": [
+        {
+          "term": "目当て",
+          "surface": "目当て",
+          "start": 0,
+          "end": 3,
+          "reading": "めあて"
+        },
+        {
+          "term": "パン",
+          "surface": "パン",
+          "start": 4,
+          "end": 6,
+          "reading": "ぱん"
+        },
+        {
+          "term": "すでに",
+          "surface": "すでに",
+          "start": 8,
+          "end": 11,
+          "reading": "すでに"
+        },
+        {
+          "term": "品切れ",
+          "surface": "品切れ",
+          "start": 11,
+          "end": 14,
+          "reading": "しなぎれ"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-2259",
+      "nearest_lexical_japanese": "パンも食べますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-097",
+      "target": "日替わり",
+      "japanese": "日替わりのスープは、黒板に書いてあります。",
+      "spanish": "La sopa del día está anunciada en la pizarra.",
+      "estimated_level": "N3",
+      "review_note": "日替わり indica que algo cambia cada día.",
+      "authored_ruby": "[日替|ひが]わりのスープは、[黒板|こくばん]に[書|か]いてあります。",
+      "nearest_id": "JAES-N4-EDITORIAL-0575",
+      "nearest_japanese": "この本は社会について書いてあります。",
+      "character_similarity": 0.5556,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "日替わり",
+          "surface": "日替わり",
+          "start": 0,
+          "end": 4,
+          "reading": "ひがわり"
+        },
+        {
+          "term": "スープ",
+          "surface": "スープ",
+          "start": 5,
+          "end": 8,
+          "reading": "すーぷ"
+        },
+        {
+          "term": "黒板",
+          "surface": "黒板",
+          "start": 10,
+          "end": 12,
+          "reading": "こくばん"
+        },
+        {
+          "term": "書く",
+          "surface": "書い",
+          "start": 13,
+          "end": 15,
+          "reading": "かい"
+        }
+      ],
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1965",
+      "nearest_lexical_japanese": "住所を書いてください。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-098",
+      "target": "大盛り",
+      "japanese": "大盛りを頼んだら、思った以上の量でした。",
+      "spanish": "Pedí una ración grande y resultó ser más cantidad de la que esperaba.",
+      "estimated_level": "N4",
+      "review_note": "大盛り es una porción abundante.",
+      "authored_ruby": "[大盛|おおも]りを[頼|たの]んだら、[思|おも]った[以上|いじょう]の[量|りょう]でした。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-014",
+      "nearest_japanese": "坂道を走ったので、息が切れました。",
+      "character_similarity": 0.4242,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "大盛り",
+          "surface": "大盛り",
+          "start": 0,
+          "end": 3,
+          "reading": "おおもり"
+        },
+        {
+          "term": "頼む",
+          "surface": "頼ん",
+          "start": 4,
+          "end": 6,
+          "reading": "たのん"
+        },
+        {
+          "term": "思う",
+          "surface": "思っ",
+          "start": 9,
+          "end": 11,
+          "reading": "おもっ"
+        },
+        {
+          "term": "量",
+          "surface": "量",
+          "start": 15,
+          "end": 16,
+          "reading": "りょう"
+        }
+      ],
+      "nearest_lexical_similarity": 0.16666666666666666,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1094",
+      "nearest_lexical_japanese": "人生は思ったより長いです。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-099",
+      "target": "並盛り",
+      "japanese": "昼は並盛りで十分でした。",
+      "spanish": "Para comer me bastó la ración normal.",
+      "estimated_level": "N3",
+      "review_note": "並盛り es el tamaño estándar de una ración.",
+      "authored_ruby": "[昼|ひる]は[並盛|なみも]りで[十分|じゅうぶん]でした。",
+      "nearest_id": "JAES-N5-EDITORIAL-0838",
+      "nearest_japanese": "十分働きました。",
+      "character_similarity": 0.4444,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "昼",
+          "surface": "昼",
+          "start": 0,
+          "end": 1,
+          "reading": "ひる"
+        },
+        {
+          "term": "並",
+          "surface": "並",
+          "start": 2,
+          "end": 3,
+          "reading": "なみ"
+        },
+        {
+          "term": "十分",
+          "surface": "十分",
+          "start": 6,
+          "end": 8,
+          "reading": "じゅうぶん"
+        },
+        {
+          "term": "並盛り",
+          "surface": "並盛り",
+          "start": 2,
+          "end": 5,
+          "reading": "なみもり"
+        }
+      ],
+      "curated_compound": {
+        "term": "並盛り",
+        "surface": "並盛り",
+        "start": 2,
+        "end": 5,
+        "reading": "なみもり"
+      },
+      "nearest_lexical_similarity": 0.2,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0838",
+      "nearest_lexical_japanese": "十分働きました。"
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-100",
+      "target": "おしぼり",
+      "japanese": "おしぼりで手を拭いてから、箸を取りました。",
+      "spanish": "Me limpié las manos con la toallita antes de coger los palillos.",
+      "estimated_level": "N4",
+      "review_note": "おしぼり es una toalla húmeda para las manos.",
+      "authored_ruby": "おしぼりで[手|て]を[拭|ふ]いてから、[箸|はし]を[取|と]りました。",
+      "nearest_id": "JAES-N3-CONVERSATION-C3000-003-008",
+      "nearest_japanese": "額の汗をタオルで拭いてから、帽子をかぶりました。",
+      "character_similarity": 0.5366,
+      "target_literal_previous_occurrences": 0,
+      "morphology_evidence": [
+        {
+          "term": "しぼる",
+          "surface": "しぼり",
+          "start": 1,
+          "end": 4,
+          "reading": "しぼり"
+        },
+        {
+          "term": "手",
+          "surface": "手",
+          "start": 5,
+          "end": 6,
+          "reading": "て"
+        },
+        {
+          "term": "拭く",
+          "surface": "拭い",
+          "start": 7,
+          "end": 9,
+          "reading": "ふい"
+        },
+        {
+          "term": "箸",
+          "surface": "箸",
+          "start": 13,
+          "end": 14,
+          "reading": "はし"
+        },
+        {
+          "term": "取る",
+          "surface": "取り",
+          "start": 15,
+          "end": 17,
+          "reading": "とり"
+        },
+        {
+          "term": "おしぼり",
+          "surface": "おしぼり",
+          "start": 0,
+          "end": 4,
+          "reading": "おしぼり"
+        }
+      ],
+      "curated_compound": {
+        "term": "おしぼり",
+        "surface": "おしぼり",
+        "start": 0,
+        "end": 4,
+        "reading": "おしぼり"
+      },
+      "nearest_lexical_similarity": 0.125,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-1081",
+      "nearest_lexical_japanese": "最初に手を洗います。"
+    }
+  ],
+  "previous_rows_preserved": 10878,
+  "previous_graph_sentences_preserved": 10986,
+  "total_rows": 11078
+}

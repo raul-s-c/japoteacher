@@ -3,9 +3,9 @@
   "method": "conversation-authored, no external API, no delegated agents",
   "api_calls": 0,
   "api_tokens": 0,
-  "accepted_pairs": 500,
+  "accepted_pairs": 1000,
   "published_pairs": 500,
-  "remaining_pairs": 2500,
+  "remaining_pairs": 2000,
   "status": "in_progress",
   "baseline_commit": "c101757",
   "batches": [
@@ -62,6 +62,52 @@
         "N2": 14,
         "N3": 28,
         "N4": 8
+      }
+    },
+    {
+      "batch": "007",
+      "pairs": 100,
+      "levels": {
+        "N3": 69,
+        "N2": 13,
+        "N4": 18
+      }
+    },
+    {
+      "batch": "008",
+      "pairs": 100,
+      "levels": {
+        "N4": 11,
+        "N3": 69,
+        "N2": 20
+      }
+    },
+    {
+      "batch": "009",
+      "pairs": 100,
+      "levels": {
+        "N3": 64,
+        "N4": 16,
+        "N2": 20
+      }
+    },
+    {
+      "batch": "010",
+      "pairs": 100,
+      "levels": {
+        "N2": 45,
+        "N3": 49,
+        "N4": 6
+      }
+    },
+    {
+      "batch": "011",
+      "pairs": 100,
+      "levels": {
+        "N4": 25,
+        "N3": 73,
+        "N5": 1,
+        "N2": 1
       }
     }
   ],

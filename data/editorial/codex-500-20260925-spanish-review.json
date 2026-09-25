@@ -1,0 +1,3505 @@
+{
+  "method": "Character trigram candidate retrieval, 30 nearest candidates then SequenceMatcher; reviewed in the same conversation, not an independent semantic review.",
+  "checks": [
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-001",
+      "new": "El valor numérico cambia cada vez que hacemos una medición.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2134",
+      "neighbor": "antes del viaje hacemos una reunión en la estación",
+      "similarity": 0.4815
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-002",
+      "new": "Encargamos el mantenimiento de las máquinas a una empresa especializada.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0744",
+      "neighbor": "para el crecimiento de los niños se necesita una institución",
+      "similarity": 0.5191
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-003",
+      "new": "Por las prisas, la explicación carecía de precisión.",
+      "neighbor_id": "JAES-N4-EXP-0037",
+      "neighbor": "tomé notas mientras escuchaba la explicación del profesor",
+      "similarity": 0.5794
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-004",
+      "new": "He traído un libro, preparado para una espera larga.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2459",
+      "neighbor": "aquí no es adecuado para una estancia larga",
+      "similarity": 0.5591
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-005",
+      "new": "A través de los viajes conocí distintas formas de vivir.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1855",
+      "neighbor": "antes del viaje contacté con un amigo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-006",
+      "new": "Esta vez me encargaré de presentar el acto.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0574",
+      "neighbor": "me encargo de gestionar el autobús",
+      "similarity": 0.6579
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-007",
+      "new": "Para reparar el puente hace falta una nueva fuente de financiación.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2297",
+      "neighbor": "no hace falta ninguna cualificación",
+      "similarity": 0.5347
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-008",
+      "new": "El dueño del café hornea él mismo los pasteles.",
+      "neighbor_id": "JAES-N5-CONVERSATION-20260924B-079",
+      "neighbor": "he metido la foto y la carta en el mismo sobre",
+      "similarity": 0.4783
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-009",
+      "new": "Al llevar las cuentas de casa, uno detecta gastos innecesarios.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1370",
+      "neighbor": "el tejado de la casa nueva de los dos es rojo",
+      "similarity": 0.4717
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-010",
+      "new": "Nunca habría imaginado que nos alojábamos en el mismo hotel.",
+      "neighbor_id": "JAES-N5-CONVERSATION-20260924B-079",
+      "neighbor": "he metido la foto y la carta en el mismo sobre",
+      "similarity": 0.4762
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-011",
+      "new": "El ogro del cuento ilustrado era, en realidad, un llorón.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0736",
+      "neighbor": "en el regreso del concierto el tren se detuvo por un accidente",
+      "similarity": 0.4828
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-012",
+      "new": "El intercambio de cartas abrió el diálogo entre padres e hijos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1900",
+      "neighbor": "el cambio de color de la montaña es evidente y siento el paso de las estaciones",
+      "similarity": 0.4965
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-013",
+      "new": "No corre prisa que respondas; el fin de semana está bien.",
+      "neighbor_id": "JAES-N4-EXP-0029",
+      "neighbor": "según el pronóstico dicen que el fin de semana hará sol",
+      "similarity": 0.5636
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-014",
+      "new": "La reunión entre los representantes de ambos países fue a puerta cerrada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1930",
+      "neighbor": "la relación entre los dos es muy buena",
+      "similarity": 0.5091
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-015",
+      "new": "Estamos ordenando los recibos para preparar la auditoría.",
+      "neighbor_id": "JAES-N4-CONVERSATION-20260924B-036",
+      "neighbor": "estoy hirviendo agua en la tetera para preparar té",
+      "similarity": 0.566
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-016",
+      "new": "El agua caliente está a punto de desbordarse de la bañera.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2014",
+      "neighbor": "el dependiente estimó la causa de la avería",
+      "similarity": 0.58
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-017",
+      "new": "Esta pregunta tiene dos opciones correctas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1376",
+      "neighbor": "esta canción tiene muchas expresiones peculiares",
+      "similarity": 0.5778
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-018",
+      "new": "Nos reunimos en familia alrededor del guiso y nos pusimos al día.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1846",
+      "neighbor": "nos reunimos en el aeropuerto",
+      "similarity": 0.4946
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-019",
+      "new": "En los días de calor extremo reducimos el trabajo al aire libre.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-067",
+      "neighbor": "en los días de calor extremo apenas se veía gente en el parque",
+      "similarity": 0.592
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-020",
+      "new": "Los alrededores de la estación se desarrollaron como zona comercial.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1194",
+      "neighbor": "en los alrededores de mi casa no hablo de mi relación con él",
+      "similarity": 0.5039
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-021",
+      "new": "La sopa lleva una buena cantidad de alubias.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1555",
+      "neighbor": "una sopa caliente es una pequeña felicidad",
+      "similarity": 0.5412
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-022",
+      "new": "Publicamos primero la convocatoria dentro de la empresa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1725",
+      "neighbor": "cuáles son las normas de la empresa",
+      "similarity": 0.6
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-023",
+      "new": "Este diccionario también recoge el origen de las palabras.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0350",
+      "neighbor": "con esta aplicación también podrás saber enseguida el horario de la reunión",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-024",
+      "new": "Los jóvenes artesanos asumen la tarea de preservar la tradición.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1296",
+      "neighbor": "dudé pero decidí adoptar esta propuesta para preservar la tradición",
+      "similarity": 0.5538
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-025",
+      "new": "También guardamos comida para las mascotas por si ocurre un desastre.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1900",
+      "neighbor": "no damos un paseo juntos mañana por el parque",
+      "similarity": 0.4425
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-026",
+      "new": "Antes que una pronunciación perfecta, mi objetivo es hacerme entender.",
+      "neighbor_id": "JAES-N4-ORGANIC-202608-0473",
+      "neighbor": "estoy practicando la pronunciación imitando la forma de hablar del presentador",
+      "similarity": 0.4795
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-027",
+      "new": "Una tormenta azotó la isla y los barcos ya no pudieron salir.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0262",
+      "neighbor": "te gustaría ir a la isla en barco la próxima semana",
+      "similarity": 0.5225
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-028",
+      "new": "Al sonar el silbato del árbitro, los jugadores se detuvieron.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1615",
+      "neighbor": "al ver las hormigas del parque los niños se rieron",
+      "similarity": 0.5505
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-029",
+      "new": "Ahora no puedo, pero iré a visitarte en algún momento.",
+      "neighbor_id": "SAKAMOTO-d9e6d190b0b07c65-JA_ES",
+      "neighbor": "ah jefe puedo hablar con usted un momento",
+      "similarity": 0.5376
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-030",
+      "new": "Tomamos muestras de agua para investigar la contaminación del río.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1395",
+      "neighbor": "se come aquí mientras se escucha la interpretación del piano",
+      "similarity": 0.528
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-031",
+      "new": "Incluso cuando sonó la alarma, el personal de orientación mantuvo la calma.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0616",
+      "neighbor": "si tienes problemas en la estación es mejor preguntarle al personal de orientación",
+      "similarity": 0.5032
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-032",
+      "new": "Me extrajeron una pequeña cantidad de sangre para analizarla.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-021",
+      "neighbor": "la sopa lleva una buena cantidad de alubias",
+      "similarity": 0.5243
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-033",
+      "new": "La carretera que uso para ir al trabajo estará en obras desde el mes que viene.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0643",
+      "neighbor": "me han asignado al departamento de ventas desde el mes que viene",
+      "similarity": 0.5775
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-034",
+      "new": "Saborea el dulzor propio de la fruta.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0765",
+      "neighbor": "cuál es el promedio de la historia",
+      "similarity": 0.5429
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-035",
+      "new": "Esta revista la leen personas de edades muy diversas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0223",
+      "neighbor": "esa persona es muy amable",
+      "similarity": 0.5195
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-036",
+      "new": "Un pequeño éxito me dio ganas de volver a intentarlo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0870",
+      "neighbor": "después de ver el video del viaje me dieron ganas de ir a kioto",
+      "similarity": 0.5391
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-037",
+      "new": "Mediré la superficie del jardín antes de encargar el césped.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0295",
+      "neighbor": "me lavo las manos antes de tomar la medicina",
+      "similarity": 0.5243
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-038",
+      "new": "Un alumno muy aplicado vino a hacer preguntas incluso después de clase.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1780",
+      "neighbor": "no vamos de compras mañana después del trabajo",
+      "similarity": 0.4483
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-039",
+      "new": "La caja que encontré en el desván estaba cubierta de polvo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0196",
+      "neighbor": "puedo descansar un poco en el banco de esta tienda",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-040",
+      "new": "El desayuno no está incluido en el precio; es opcional.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-009",
+      "neighbor": "el pájaro está posado en el hombro de su dueño",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-041",
+      "new": "Está en el segundo cajón contando desde arriba.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1195",
+      "neighbor": "estoy en contra de viajar",
+      "similarity": 0.507
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-042",
+      "new": "Las fechas de la formación cambiaron por la disponibilidad del instructor.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-034",
+      "neighbor": "fijaré el día de la reunión después de consultar la disponibilidad de todos",
+      "similarity": 0.5676
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-043",
+      "new": "Pasé la olla al fogón de al lado para que no se quemara.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-006-025",
+      "neighbor": "después de perder las llaves las até al bolso para que no se me volvieran a caer",
+      "similarity": 0.5185
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-044",
+      "new": "Esta planta prefiere la sombra.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1262",
+      "neighbor": "esta pantalla es la más grande",
+      "similarity": 0.6333
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-045",
+      "new": "Decidimos el orden en que cargaríamos los bultos en el camión.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1605",
+      "neighbor": "se pueden cargar los suministros en este autobús",
+      "similarity": 0.5321
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-046",
+      "new": "En clase de educación para la salud aprendimos la importancia del sueño.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2023",
+      "neighbor": "este cansancio se debe en su mayor parte a la falta de sueño",
+      "similarity": 0.5344
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-047",
+      "new": "Estoy escribiendo un libro a partir de mis notas de viaje.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1082",
+      "neighbor": "estoy buscando un libro para niños",
+      "similarity": 0.6154
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-048",
+      "new": "Me dolió tanto despedirme de mi amigo que lloré.",
+      "neighbor_id": "JAES-N5-MORE-0219",
+      "neighbor": "este bolso es de mi amigo",
+      "similarity": 0.5556
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-049",
+      "new": "El sendero de montaña se divide en dos después de la roca grande.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0332",
+      "neighbor": "este sendero de montaña debería tener todavía poca gente ahora no",
+      "similarity": 0.5891
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-050",
+      "new": "Antes de firmar el contrato, pedimos que se detallaran los costes adicionales.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-069",
+      "neighbor": "como vino más gente pedimos dos platos adicionales",
+      "similarity": 0.4762
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-051",
+      "new": "Por la tarde sólo se atiende a pacientes con cita.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2044",
+      "neighbor": "por la tarde voy al parque a dar un paseo con un amigo",
+      "similarity": 0.5631
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-052",
+      "new": "Ambos tienen un nivel parecido y no se puede predecir quién ganará.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0467",
+      "neighbor": "en esta tienda no se puede vender tabaco",
+      "similarity": 0.5094
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-053",
+      "new": "Estoy buscando un carrete compatible con una cámara antigua.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1204",
+      "neighbor": "estoy ayudando a un paciente con las compras",
+      "similarity": 0.5825
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-054",
+      "new": "Ampliamos el espacio de almacenamiento porque aumentó el número de usuarios.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1715",
+      "neighbor": "por cierto el pedido de hace un momento no es soba",
+      "similarity": 0.48
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-055",
+      "new": "Hablo por teléfono cada mes con un amigo que reside en el extranjero.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0511",
+      "neighbor": "estoy ahorrando poco a poco cada mes para estudiar en el extranjero",
+      "similarity": 0.5926
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-056",
+      "new": "Cosí el nombre en la bolsa que se usará en el jardín de infancia.",
+      "neighbor_id": "JAES-N4-EXP-0109",
+      "neighbor": "en esta ciudad cambia la basura que se puede sacar según el día",
+      "similarity": 0.5354
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-057",
+      "new": "El letrero está del revés y no se ve el nombre de la tienda.",
+      "neighbor_id": "JAES-N5-MORE-0225",
+      "neighbor": "el billete está delante de la oficina",
+      "similarity": 0.5833
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-058",
+      "new": "Esta exposición presenta la relación entre el budismo y el arte.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1904",
+      "neighbor": "esta exposición presenta de forma clara la historia de la cirugía",
+      "similarity": 0.5781
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-059",
+      "new": "El centro ha cambiado de nombre, pero sigue en el mismo lugar.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1856",
+      "neighbor": "aún no ha empezado el festival pero ya se oye el sonido del tambor",
+      "similarity": 0.5556
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-060",
+      "new": "Sólo los tres primeros pueden pasar a la final.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1032",
+      "neighbor": "los seres vivos no pueden vivir sin agua",
+      "similarity": 0.5581
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-061",
+      "new": "En los últimos años ha avanzado la reutilización de viviendas vacías en esta localidad.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0846",
+      "neighbor": "en esta tienda hace falta la instalación de cámaras de seguridad",
+      "similarity": 0.5067
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-062",
+      "new": "Comparé distintas fuentes escritas sobre el mismo acontecimiento.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2207",
+      "neighbor": "no el problema no es el precio sino el rendimiento",
+      "similarity": 0.4737
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-063",
+      "new": "Esperaré aquí hasta que quede libre una mesa junto a la ventana.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-079",
+      "neighbor": "lavé las conchas que había recogido y las puse de adorno junto a la ventana",
+      "similarity": 0.5652
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-064",
+      "new": "Aunque cambie el responsable, podrá seguir utilizando el servicio.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1759",
+      "neighbor": "hay que distinguir estos dos servicios",
+      "similarity": 0.4902
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-065",
+      "new": "¿Llegará realmente a hacerse realidad este plan?",
+      "neighbor_id": "JAES-N4-EDITORIAL-0807",
+      "neighbor": "cuál es exactamente el tema en realidad",
+      "similarity": 0.5176
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-066",
+      "new": "Se ha fijado para el mes que viene la toma de posesión del nuevo director.",
+      "neighbor_id": "JAES-N4-EXP-0095",
+      "neighbor": "a partir del mes que viene se ha decidido que trabajaré en un departamento nuevo",
+      "similarity": 0.5229
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-067",
+      "new": "Los pedidos han superado lo previsto y los envíos se están retrasando.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924-024",
+      "neighbor": "los vecinos han presentado al ayuntamiento sus quejas por los perjuicios del ruido",
+      "similarity": 0.5166
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-068",
+      "new": "Agradezco de corazón su colaboración durante tantos años.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2377",
+      "neighbor": "la radio se cortó durante el trabajo",
+      "similarity": 0.5217
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-069",
+      "new": "Conté los sobres antes de repartirlos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-049",
+      "neighbor": "registré los materiales caducados antes de desecharlos",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-070",
+      "new": "Me equivoqué de camino porque llevaba el mapa al revés.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0118",
+      "neighbor": "me equivoqué al hacer la reserva del hotel",
+      "similarity": 0.5208
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-071",
+      "new": "En un plato tan poco hondo se derrama la sopa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0409",
+      "neighbor": "ahorré un poco de dinero cada mes",
+      "similarity": 0.4872
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-072",
+      "new": "Profundicé en mi comprensión al tocar el objeto real.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1557",
+      "neighbor": "puedo comprar el billete antes",
+      "similarity": 0.4634
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-073",
+      "new": "Tardé nada menos que diez minutos en deshacer el nudo apretado.",
+      "neighbor_id": "JAES-N5-MORE-0209",
+      "neighbor": "cada noche a menudo doy un paseo en el supermercado",
+      "similarity": 0.4956
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-074",
+      "new": "Metí el billete entre las páginas para marcar dónde estaba leyendo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-086",
+      "neighbor": "asentí mientras escuchaba la explicación para indicar que había entendido",
+      "similarity": 0.5468
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-075",
+      "new": "Sujetamos el papel con una piedra para que no se lo llevara el viento.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-032",
+      "neighbor": "he retrasado la reunión una hora para que no coincida con la pausa del almuerzo",
+      "similarity": 0.4865
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-076",
+      "new": "El caldo impregnó el rábano y le dio buen sabor.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0467",
+      "neighbor": "esta tienda es barata y además tiene buen sabor",
+      "similarity": 0.5319
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-007-077",
+      "new": "El azúcar se disuelve con dificultad en la leche fría.",
+      "neighbor_id": "JAES-N4-EXP-0039",
+      "neighbor": "con esta aplicación se puede consultar la lectura de los kanji",
+      "similarity": 0.5217
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-078",
+      "new": "No muevas el recipiente hasta que cuaje la gelatina.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1962",
+      "neighbor": "va a esperar hasta que le toque el turno",
+      "similarity": 0.5055
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-079",
+      "new": "La masa del pan subió tanto que sobresalió del cuenco.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1292",
+      "neighbor": "la mitad del bosque sigue cubierta de nieve",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-080",
+      "new": "Las mangas encogieron al meter la prenda en la secadora.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1286",
+      "neighbor": "pedí que recogieran los objetos olvidados en la estación",
+      "similarity": 0.5045
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-081",
+      "new": "Ten cuidado, que la punta de la rama está afilada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2143",
+      "neighbor": "la punta de este paraguas está rota",
+      "similarity": 0.5542
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-082",
+      "new": "Al despegar la etiqueta del precio, quedó pegamento.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1508",
+      "neighbor": "la tela que estaba expuesta en la tienda era muy bonita para el precio que tenía",
+      "similarity": 0.5231
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-083",
+      "new": "Rebajé un poco la esquina del escritorio para redondearla.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-004-030",
+      "neighbor": "dejé una nota en el escritorio para no olvidar el recado",
+      "similarity": 0.6372
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-084",
+      "new": "Si frotas el suelo con fuerza, se raya.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0703",
+      "neighbor": "el esfuerzo se convierte en fuerza",
+      "similarity": 0.507
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-007-085",
+      "new": "Me limpié el sudor de la frente y reanudé el trabajo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-008",
+      "neighbor": "me sequé el sudor de la frente con una toalla antes de ponerme el sombrero",
+      "similarity": 0.5873
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-086",
+      "new": "Sírvelo despacio para que no se forme espuma.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-043",
+      "neighbor": "pasé la olla al fogón de al lado para que no se quemara",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-087",
+      "new": "Dejé las alubias secas en remojo toda la noche.",
+      "neighbor_id": "JAES-N5-CURATED-0024",
+      "neighbor": "mi padre lee el periódico todas las noches",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-088",
+      "new": "Escurro bien la bayeta antes de limpiar el suelo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-040",
+      "neighbor": "he pesado la maleta antes de ir al aeropuerto",
+      "similarity": 0.6237
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-089",
+      "new": "Piqué el hielo y lo puse en el vaso.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0783",
+      "neighbor": "qué quieres ser en el futuro",
+      "similarity": 0.5397
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-090",
+      "new": "Aplasté las alubias con un tenedor hasta hacer una pasta.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-048",
+      "neighbor": "alisé las arrugas antes de colgar la camisa en una percha",
+      "similarity": 0.4779
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-091",
+      "new": "Se rasgó el fondo de la bolsa y se cayeron las mandarinas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1988",
+      "neighbor": "las verduras compradas en el súper son de una granja cercana y se recogieron por la mañana",
+      "similarity": 0.517
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-092",
+      "new": "Até los periódicos viejos con una cuerda y los dejé en la entrada.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-066",
+      "neighbor": "durante la temporada de lluvias dejo el paraguas en la entrada",
+      "similarity": 0.5039
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-093",
+      "new": "Agrupé los cables largos y los fijé detrás del escritorio.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0810",
+      "neighbor": "la bolsa está debajo del escritorio",
+      "similarity": 0.5435
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-094",
+      "new": "Colgué las hierbas en la cocina para secarlas.",
+      "neighbor_id": "JAES-N4-EXP-0025",
+      "neighbor": "anoto los planes en la agenda para no olvidarlos",
+      "similarity": 0.5591
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-095",
+      "new": "La estantería está inclinada hacia la derecha y los libros se caen de lado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2162",
+      "neighbor": "esta estantería está desequilibrada",
+      "similarity": 0.4954
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-096",
+      "new": "El niño hizo rodar una pelota desde lo alto de la cuesta.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0652",
+      "neighbor": "el encargado hizo practicar a la persona nueva el uso de la caja",
+      "similarity": 0.5667
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-097",
+      "new": "Coloqué los zapatos de la entrada orientados en la misma dirección.",
+      "neighbor_id": "JAES-N4-EXP-0103",
+      "neighbor": "en japón uno se quita los zapatos antes de entrar en casa",
+      "similarity": 0.5203
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-098",
+      "new": "La correa del bolso se me desliza cada vez que camino.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1020",
+      "neighbor": "la zona alrededor del bosque está tranquila así que camino a menudo",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-099",
+      "new": "La tapa se abre fácilmente girándola hacia la izquierda.",
+      "neighbor_id": "JAES-N5-MORE-0140",
+      "neighbor": "el restaurante abre desde las seis hasta las nueve",
+      "similarity": 0.5143
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-007-100",
+      "new": "No bloquees la salida de emergencia con muebles.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1099",
+      "neighbor": "en una emergencia no juego a juegos",
+      "similarity": 0.5366
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-001",
+      "new": "Recogí un número de turno en recepción.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1709",
+      "neighbor": "no hay nadie en recepción",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-002",
+      "new": "La ventanilla es distinta según el asunto de la consulta.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1285",
+      "neighbor": "me duele la espalda en el asiento del autobús",
+      "similarity": 0.5545
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-003",
+      "new": "Los números de turno se agotaron antes de abrir la tienda.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0263",
+      "neighbor": "no dejo el agua lista antes de tomar la medicina",
+      "similarity": 0.5905
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-004",
+      "new": "Me tocó el turno mientras estaba fuera de mi asiento.",
+      "neighbor_id": "JAES-N4-ORGANIC-202608-0454",
+      "neighbor": "pensé en el futuro mientras caminaba por la costa",
+      "similarity": 0.5545
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-005",
+      "new": "No oí el aviso por megafonía.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0902",
+      "neighbor": "vi cómo el avión subía por la ventana",
+      "similarity": 0.5538
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-006",
+      "new": "Este trámite debe hacerlo la propia persona interesada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2366",
+      "neighbor": "los trámites del divorcio se pueden hacer por internet",
+      "similarity": 0.537
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-007",
+      "new": "Mostré un documento de identidad con fotografía.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0313",
+      "neighbor": "un compañero de menor antigüedad me ayudó con el trabajo",
+      "similarity": 0.5243
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-008",
+      "new": "Este billete es válido durante tres días desde su emisión.",
+      "neighbor_id": "JAES-N5-MORE-0225",
+      "neighbor": "el billete está delante de la oficina",
+      "similarity": 0.5745
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-009",
+      "new": "No se admiten solicitudes fuera de plazo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2061",
+      "neighbor": "se aceptan solicitudes en la ventanilla",
+      "similarity": 0.6329
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-010",
+      "new": "Me hice las fotos necesarias para renovar el permiso.",
+      "neighbor_id": "JAES-N4-EXP-0068",
+      "neighbor": "hice un plan para aprobar el examen",
+      "similarity": 0.5517
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-011",
+      "new": "Al comunicar la pérdida de la tarjeta, se bloqueó su uso de inmediato.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-009",
+      "neighbor": "comprobé el saldo de la tarjeta antes de comprar",
+      "similarity": 0.4828
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-012",
+      "new": "Me dijeron que emitir un duplicado tenía una tasa.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-068",
+      "neighbor": "me dijeron que por la noche refrescaría mucho y traje una chaqueta gruesa",
+      "similarity": 0.5574
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-013",
+      "new": "La comisión es la misma aunque pagues en efectivo.",
+      "neighbor_id": "JAES-N5-EXP-0030",
+      "neighbor": "puedo pagar en efectivo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-014",
+      "new": "El lanzador suplente tuvo que salir a jugar de improviso.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1004",
+      "neighbor": "si se trata de este trabajo se supone que yo estaré a cargo a partir del mes que viene",
+      "similarity": 0.4507
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-015",
+      "new": "Trae el documento original en lugar de una copia.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-044",
+      "neighbor": "mostré el original en la oficina y después entregué una copia",
+      "similarity": 0.6055
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-016",
+      "new": "Adjunté una copia del certificado al correo.",
+      "neighbor_id": "JAES-N5-MORE-0037",
+      "neighbor": "hay una vaca en correos",
+      "similarity": 0.5152
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-017",
+      "new": "Lo envié a la dirección que figuraba en el sobre.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2271",
+      "neighbor": "el semáforo frente a la estación está ahora en verde o en rojo",
+      "similarity": 0.5273
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-018",
+      "new": "Añadí la fecha junto al apartado corregido.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-005-014",
+      "neighbor": "esta estantería es demasiado ancha para ponerla junto al escritorio",
+      "similarity": 0.4404
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-019",
+      "new": "Antes de firmar, comprobé que no hubiera casillas vacías.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-007-050",
+      "neighbor": "antes de firmar el contrato pedimos que se detallaran los costes adicionales",
+      "similarity": 0.5649
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-020",
+      "new": "Este formulario ya no necesita sello personal.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1193",
+      "neighbor": "esta herida no necesita tratamiento",
+      "similarity": 0.55
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-021",
+      "new": "Preparé una autorización para encargar el trámite a un representante.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0617",
+      "neighbor": "es la agenda del representante",
+      "similarity": 0.4898
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-022",
+      "new": "Asistí a la reunión en representación del jefe de departamento, que estaba ausente.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0495",
+      "neighbor": "piensas asistir a la reunión de la comunidad del mes que viene",
+      "similarity": 0.5175
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-023",
+      "new": "Esperaremos a que se apruebe el presupuesto antes de comprarlo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2276",
+      "neighbor": "ya he gastado el presupuesto así que hoy no compro nada",
+      "similarity": 0.5299
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-024",
+      "new": "La propuesta fue rechazada sin que quedara claro el motivo.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-004-078",
+      "neighbor": "rechazaron mi propuesta sin escuchar mis razones así que pedí una explicación",
+      "similarity": 0.4593
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-025",
+      "new": "Dicen que comunicarán el resultado de la evaluación por correo postal.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-069",
+      "neighbor": "quedé satisfecho con el resultado de la reparación y volví a recurrir a la misma tienda",
+      "similarity": 0.5128
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-026",
+      "new": "La documentación tenía un defecto y tuve que volver a presentarla.",
+      "neighbor_id": "JAES-N4-CONVERSATION-20260924B-089",
+      "neighbor": "llevé al punto de información a un niño que se había perdido dentro de la tienda",
+      "similarity": 0.4828
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-027",
+      "new": "El correo fue devuelto porque la foto adjunta era demasiado grande.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0603",
+      "neighbor": "ese producto fue devuelto por el cliente",
+      "similarity": 0.5094
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-028",
+      "new": "Evita rellenarlo a lápiz.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0387",
+      "neighbor": "esta tienda se llena a menudo",
+      "similarity": 0.4906
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-029",
+      "new": "Cotejé la lista de nombres con los formularios de inscripción.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-005",
+      "neighbor": "a través de los viajes conocí distintas formas de vivir",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-030",
+      "new": "Guardo la garantía junto al manual de instrucciones.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-077",
+      "neighbor": "después de jugar junto al mar salió arena del interior de mis zapatos",
+      "similarity": 0.4833
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-031",
+      "new": "Devolveré las herramientas prestadas después de lavarlas.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-029",
+      "neighbor": "le devolveré la llamada cuando termine la reunión",
+      "similarity": 0.4952
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-032",
+      "new": "Cuando recibas el paquete, avisa a la persona responsable.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-081",
+      "neighbor": "como he cambiado de dirección avisé a la persona responsable de recursos humanos",
+      "similarity": 0.5735
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-033",
+      "new": "Los documentos se repartirán al final de la clase.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-054",
+      "neighbor": "pongo los alimentos congelados en la cesta al final de la compra",
+      "similarity": 0.6018
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-034",
+      "new": "En el acceso a los andenes había un aviso de suspensión del servicio.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-003",
+      "neighbor": "en la entrada de la tienda había un aviso de cierre extraordinario",
+      "similarity": 0.5224
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-035",
+      "new": "Puedes comprobar los cambios de aula en el tablón de anuncios.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1605",
+      "neighbor": "se pueden cargar los suministros en este autobús",
+      "similarity": 0.5688
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-036",
+      "new": "Al desactivar las notificaciones nocturnas, empecé a dormir mejor.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1630",
+      "neighbor": "con esta función puedes evitar las notificaciones molestas",
+      "similarity": 0.5246
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-037",
+      "new": "La nueva normativa se comunicó a todos los departamentos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0679",
+      "neighbor": "para que nuestra relación mejore me comunico con ella todos los días",
+      "similarity": 0.5806
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-038",
+      "new": "El aviso de cancelación llegó tarde y la gente acudió al recinto.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2166",
+      "neighbor": "cuando dejó de llover la gente salió de la tienda",
+      "similarity": 0.531
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-039",
+      "new": "La invitación a la reunión de antiguos alumnos llegó a casa de mis padres.",
+      "neighbor_id": "JAES-N4-EXP-0097",
+      "neighbor": "la hora de la reunión cambió a las tres",
+      "similarity": 0.5179
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-040",
+      "new": "Me di cuenta después de enviarlo de que había puesto mal el destinatario.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-038",
+      "neighbor": "antes de enviarlo compruebo una vez más el destinatario",
+      "similarity": 0.6457
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-041",
+      "new": "Contacté con el remitente para confirmar el contenido del paquete.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-005-028",
+      "neighbor": "leí la descripción general del curso para comprobar si el contenido era lo que necesitaba",
+      "similarity": 0.5195
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-042",
+      "new": "Había entrado agua de lluvia en el buzón.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2297",
+      "neighbor": "no se puede llamar en el trabajo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-043",
+      "new": "Volví antes para estar en casa a la hora del reparto.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0322",
+      "neighbor": "si quieres relajarte en casa hoy te preparo té",
+      "similarity": 0.551
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-044",
+      "new": "Pedí una nueva entrega usando el número del aviso de ausencia.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-007-054",
+      "neighbor": "ampliamos el espacio de almacenamiento porque aumentó el número de usuarios",
+      "similarity": 0.4559
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-045",
+      "new": "El paquete fue devuelto porque no se pudo identificar al destinatario.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0603",
+      "neighbor": "ese producto fue devuelto por el cliente",
+      "similarity": 0.5321
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-046",
+      "new": "Lo embalé con cuidado porque era frágil.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1544",
+      "neighbor": "releí el informe con cuidado hasta el final",
+      "similarity": 0.561
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-047",
+      "new": "Arrugué papel de periódico para usarlo como material de protección.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2323",
+      "neighbor": "estoy preparando deprisa los materiales de la reunión",
+      "similarity": 0.5042
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-048",
+      "new": "Una vez abierto, guárdalo en el frigorífico.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-001-011",
+      "neighbor": "hay muchas flores abiertas en el jardín",
+      "similarity": 0.5185
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-049",
+      "new": "Sólo pudimos devolver las cajas que seguían sin abrir.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1854",
+      "neighbor": "no puedo usar el móvil porque se ha quedado sin batería",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-050",
+      "new": "El envío me costó más que el producto.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1853",
+      "neighbor": "el tren es más rápido que el autobús",
+      "similarity": 0.6301
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-051",
+      "new": "Me indicaron que enviara el producto a cambiar con los portes a cargo del destinatario.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-040",
+      "neighbor": "me di cuenta después de enviarlo de que había puesto mal el destinatario",
+      "similarity": 0.5063
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-052",
+      "new": "Como hice el pedido contra reembolso, preparé dinero en efectivo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-100",
+      "neighbor": "se me olvidó el pin y no pude sacar dinero en efectivo",
+      "similarity": 0.5983
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-053",
+      "new": "Al introducir el número de seguimiento puedes ver dónde está el paquete.",
+      "neighbor_id": "JAES-N5-MORE-0184",
+      "neighbor": "no se puede comer en el parque",
+      "similarity": 0.495
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-054",
+      "new": "Las entregas están suspendidas en algunas zonas por la intensa nevada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2115",
+      "neighbor": "la nevera está ocupada por pasteles",
+      "similarity": 0.4808
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-055",
+      "new": "Como el paquete pesaba mucho, pedí que vinieran a recogerlo a casa.",
+      "neighbor_id": "JAES-N4-EXP-0027",
+      "neighbor": "como el cielo está oscuro parece que va a llover",
+      "similarity": 0.5487
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-056",
+      "new": "El reembolso se hará en la misma tarjeta usada para la compra.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-009",
+      "neighbor": "comprobé el saldo de la tarjeta antes de comprar",
+      "similarity": 0.5138
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-057",
+      "new": "Al cancelarse el vuelo, me reembolsaron el billete.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2335",
+      "neighbor": "antes del viaje compro el billete",
+      "similarity": 0.6098
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-058",
+      "new": "Puse la transferencia a nombre de la empresa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1725",
+      "neighbor": "cuáles son las normas de la empresa",
+      "similarity": 0.6076
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-059",
+      "new": "No tenía saldo suficiente y no pude comprar el abono de transporte.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1364",
+      "neighbor": "no tengo dinero en la cartera así que hoy no puedo comprar nada",
+      "similarity": 0.4961
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-060",
+      "new": "El alquiler se carga en la cuenta a final de mes.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-054",
+      "neighbor": "pongo los alimentos congelados en la cesta al final de la compra",
+      "similarity": 0.6071
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-061",
+      "new": "Al revisar el desglose, vi que el mismo cargo aparecía dos veces.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1421",
+      "neighbor": "eso es lo que se llama un cargo aparte",
+      "similarity": 0.5347
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-062",
+      "new": "Perdí el recibo y se retrasó mi solicitud de reembolso de gastos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-021",
+      "neighbor": "a partir del nuevo ejercicio cambiará la forma de solicitar el reembolso de los gastos de transporte",
+      "similarity": 0.5244
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-063",
+      "new": "Me cobraron por un servicio que no había utilizado.",
+      "neighbor_id": "JAES-N4-EXP-0089",
+      "neighbor": "en las noticias dijeron que el servicio de trenes se había reanudado",
+      "similarity": 0.5593
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-064",
+      "new": "Haremos todos los pagos juntos más tarde.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2271",
+      "neighbor": "colaboramos todos juntos",
+      "similarity": 0.5625
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-065",
+      "new": "Si pagas a plazos, aumenta el importe total.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0654",
+      "neighbor": "repasar los apuntes todos los días es importante",
+      "similarity": 0.5111
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-066",
+      "new": "Pagué los muebles de una sola vez.",
+      "neighbor_id": "SAKAMOTO-fbc4103811b17395-JA_ES",
+      "neighbor": "muere de una vez",
+      "similarity": 0.6122
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-067",
+      "new": "Cuanto más se prolonga la devolución del préstamo, más intereses se acumulan.",
+      "neighbor_id": "SAKAMOTO-eda158545bea230e-JA_ES",
+      "neighbor": "cuanto más se apega el ser humano a la vida más débil se vuelve",
+      "similarity": 0.5217
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-068",
+      "new": "La avería causada por una caída no estaba cubierta por la garantía.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-039",
+      "neighbor": "la caja que encontré en el desván estaba cubierta de polvo",
+      "similarity": 0.5484
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-069",
+      "new": "Si se cumplen ciertas condiciones, se queda exento de pagar el curso.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1188",
+      "neighbor": "si se compra todo junto en esta tienda se puede cargar en la cuenta",
+      "similarity": 0.5224
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-070",
+      "new": "Al revisar el contrato conseguimos reducir la cuota mensual.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-007-050",
+      "neighbor": "antes de firmar el contrato pedimos que se detallaran los costes adicionales",
+      "similarity": 0.4889
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-071",
+      "new": "Añadí nuevos ejemplos de uso al diccionario.",
+      "neighbor_id": "JAES-N4-EXP-0036",
+      "neighbor": "leí el artículo usando el diccionario",
+      "similarity": 0.575
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-072",
+      "new": "Cambié el lugar de salida por las conexiones de transporte.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1993",
+      "neighbor": "el lugar de trabajo es tranquilo",
+      "similarity": 0.5111
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-073",
+      "new": "También se puede cancelar la reserva por teléfono.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2523",
+      "neighbor": "se puede cancelar el registro de este juego",
+      "similarity": 0.6087
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-074",
+      "new": "El partido aplazado por la lluvia se jugará mañana.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0742",
+      "neighbor": "me desplazo por la tierra",
+      "similarity": 0.48
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-075",
+      "new": "Se ha decidido adelantar la reunión una hora.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1563",
+      "neighbor": "a qué hora es la reunión de hoy",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-076",
+      "new": "Retrasaremos la apertura treinta minutos.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1551",
+      "neighbor": "recogemos la basura entre todos",
+      "similarity": 0.6197
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-077",
+      "new": "El servicio está temporalmente suspendido por el viento fuerte.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1532",
+      "neighbor": "la montaña está tranquila pero el viento es fuerte",
+      "similarity": 0.6071
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-078",
+      "new": "La lluvia amainó y se reanudó el partido.",
+      "neighbor_id": "JAES-N4-0006",
+      "neighbor": "aunque llueva hay partido",
+      "similarity": 0.5538
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-079",
+      "new": "Un apagón interrumpió el trabajo y esperamos fuera.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-086",
+      "neighbor": "una llamada me obligó a interrumpir el trabajo temporalmente",
+      "similarity": 0.6
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-008-080",
+      "new": "No cierres la aplicación hasta que termine de guardar.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-089",
+      "neighbor": "esperé sin cerrar la pantalla hasta que terminó la actualización",
+      "similarity": 0.5983
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-081",
+      "new": "El plazo de entrega del manuscrito termina una semana antes de la impresión.",
+      "neighbor_id": "JAES-N5-EXP-0018",
+      "neighbor": "la reunión termina a las tres de la tarde",
+      "similarity": 0.5517
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-082",
+      "new": "Como las visitas se admiten por orden de llegada, me puse pronto a la cola.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0972",
+      "neighbor": "como se retrasó la llegada no se pudieron ver las flores",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-083",
+      "new": "Había muchos interesados y los participantes se eligieron por sorteo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0148",
+      "neighbor": "tres manzanas y dos panes por favor",
+      "similarity": 0.466
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-084",
+      "new": "La notificación de que había ganado el sorteo estaba en la carpeta de spam.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-039",
+      "neighbor": "la caja que encontré en el desván estaba cubierta de polvo",
+      "similarity": 0.5152
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-085",
+      "new": "Mi obra no fue seleccionada, pero volveré a presentarme.",
+      "neighbor_id": "SAKAMOTO-bceaa3d32057a4fa-JA_ES",
+      "neighbor": "ya no puedo volver a ese mundo",
+      "similarity": 0.5476
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-086",
+      "new": "Es una oferta de empleo a la que puedes optar sin experiencia.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0600",
+      "neighbor": "preguntaré al empleado si se puede reparar en esta tienda",
+      "similarity": 0.5763
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-087",
+      "new": "Se buscan voluntarios para ayudar con la limpieza.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0463",
+      "neighbor": "me levanté temprano para participar en la limpieza del barrio",
+      "similarity": 0.5273
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-088",
+      "new": "Se cerró la inscripción porque se alcanzó el número máximo de plazas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1827",
+      "neighbor": "es correcta la descripción de este plato",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-089",
+      "new": "Contratamos personal temporal para cubrir las vacantes.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0786",
+      "neighbor": "la propia persona consultó al fabricante",
+      "similarity": 0.5106
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-090",
+      "new": "El jugador suplente entró en la segunda mitad.",
+      "neighbor_id": "JAES-N5-CURATED-0011",
+      "neighbor": "mi habitación está en la segunda planta",
+      "similarity": 0.5476
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-091",
+      "new": "Tramitaremos primero los asuntos urgentes.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-008-064",
+      "neighbor": "haremos todos los pagos juntos más tarde",
+      "similarity": 0.5679
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-092",
+      "new": "Este curso está dirigido a principiantes.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1368",
+      "neighbor": "este material está dirigido a principiantes así que tiene pocos kanji",
+      "similarity": 0.6606
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-093",
+      "new": "Marca únicamente los apartados que correspondan.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-018",
+      "neighbor": "añadí la fecha junto al apartado corregido",
+      "similarity": 0.5618
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-094",
+      "new": "Compré sin leer las condiciones de devolución.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2245",
+      "neighbor": "sigo las indicaciones del personal en la estación",
+      "similarity": 0.5745
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-095",
+      "new": "Antes de registrarme, revisé los cambios en las condiciones de uso.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-007-050",
+      "neighbor": "antes de firmar el contrato pedimos que se detallaran los costes adicionales",
+      "similarity": 0.5248
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-096",
+      "new": "Si no das tu consentimiento, no se enviará tu ubicación.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2274",
+      "neighbor": "como no se enciende la luz la habitación está oscura",
+      "similarity": 0.4717
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-097",
+      "new": "Obtuve el permiso de la persona antes de publicar su foto.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-009",
+      "neighbor": "comprobé el saldo de la tarjeta antes de comprar",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-098",
+      "new": "Al conocer nuevos hechos, me retracté de lo que había dicho.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1195",
+      "neighbor": "el contenido de este libro es más difícil de lo que pensaba",
+      "similarity": 0.4957
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-008-099",
+      "new": "Declaré en la aduana los artículos que llevaba.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0544",
+      "neighbor": "leo este artículo en la estación",
+      "similarity": 0.4872
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-008-100",
+      "new": "Consulté al departamento responsable sobre los registros anteriores.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1432",
+      "neighbor": "le consulté a un amigo sobre los estudios",
+      "similarity": 0.5556
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-001",
+      "new": "Los insectos se comieron los brotes tiernos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-003",
+      "neighbor": "los números de turno se agotaron antes de abrir la tienda",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-002",
+      "new": "Las raíces son demasiado largas y hay que cambiar la maceta.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-037",
+      "neighbor": "como las mangas son demasiado largas las llevo un poco dobladas",
+      "similarity": 0.541
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-003",
+      "new": "Sujeté el tallo fino con un palo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1579",
+      "neighbor": "ayer jugué en el parque con un amigo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-004",
+      "new": "Una rama rota está enganchada en el cable eléctrico.",
+      "neighbor_id": "JAES-N5-MORE-0226",
+      "neighbor": "el mapa está delante de el banco",
+      "similarity": 0.5301
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-005",
+      "new": "Me resguardé del sol a la sombra del grueso tronco.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-043",
+      "neighbor": "volví antes para estar en casa a la hora del reparto",
+      "similarity": 0.5098
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-006",
+      "new": "Al tocar la corteza, noté que era áspera.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1556",
+      "neighbor": "ya tengo la cartera pero todavía no he terminado de comprar",
+      "similarity": 0.5306
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-007",
+      "new": "Los pétalos caídos flotan en el estanque.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0860",
+      "neighbor": "los nuestros esperaban en el aula",
+      "similarity": 0.5479
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-008",
+      "new": "Cada mañana espero con ilusión que se abran los capullos.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0194",
+      "neighbor": "cada mañana limpio la habitación y abro la ventana",
+      "similarity": 0.5094
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-009",
+      "new": "Sembraré en primavera las semillas que recogí el año pasado.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-001-008",
+      "neighbor": "coloqué en el jardín las piedras que recogí en el río",
+      "similarity": 0.5357
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-010",
+      "new": "Enterré los bulbos de tulipán en la tierra.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0319",
+      "neighbor": "ayer compré un libro en la tienda",
+      "similarity": 0.5067
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-011",
+      "new": "Trasladé a la sombra los plantones debilitados.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-005",
+      "neighbor": "me resguardé del sol a la sombra del grueso tronco",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-012",
+      "new": "Eché demasiado abono y las hojas amarillearon.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1709",
+      "neighbor": "ese tren no es amarillo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-013",
+      "new": "Es más fácil arrancar las malas hierbas al día siguiente de llover.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1699",
+      "neighbor": "el pan ya se había agotado al día siguiente",
+      "similarity": 0.5321
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-014",
+      "new": "El desagüe estaba atascado con hojas caídas.",
+      "neighbor_id": "SAKAMOTO-8fe6054df3687320-JA_ES",
+      "neighbor": "yo no estaba hablando con sinceridad en absoluto",
+      "similarity": 0.5055
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-015",
+      "new": "Recogí las flores antes de que se marchitaran y las prensé.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-093",
+      "neighbor": "las flores de la maceta se marchitaron mientras estaba de viaje",
+      "similarity": 0.5785
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-016",
+      "new": "Este año el árbol del jardín ha dado caquis.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2114",
+      "neighbor": "mi abuela trasplantó ayer el árbol del jardín a una maceta",
+      "similarity": 0.5743
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-017",
+      "new": "Labré el campo que se había endurecido durante el invierno.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1414",
+      "neighbor": "qué pena que hayas perdido la cartera durante el viaje",
+      "similarity": 0.5893
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-018",
+      "new": "Mi primera cosecha fue un único tomate pequeño.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1831",
+      "neighbor": "el primer día tuve un poco de fiebre",
+      "similarity": 0.5366
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-019",
+      "new": "Encargué a un jardinero la poda del ciruelo japonés.",
+      "neighbor_id": "JAES-N5-ORGANIC-202608-0322",
+      "neighbor": "espero a un amigo delante de la oficina de correos",
+      "similarity": 0.5347
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-020",
+      "new": "Elegí plantas que crecen incluso con poca luz solar.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-034",
+      "neighbor": "elegí unas cortinas con un estampado pequeño",
+      "similarity": 0.5263
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-021",
+      "new": "Al regar con menos frecuencia, mejoró el estado de las raíces.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-006-001",
+      "neighbor": "al ajustar un poco la frecuencia de la radio disminuyó el ruido de fondo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-022",
+      "new": "Se me empañaron las gafas al entrar en el invernadero.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-076",
+      "neighbor": "se me pegó barro en las suelas al caminar por el campo de cultivo",
+      "similarity": 0.5763
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-023",
+      "new": "Recogí manzanas directamente de las ramas en el huerto frutal.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0807",
+      "neighbor": "cuál es exactamente el tema en realidad",
+      "similarity": 0.48
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-024",
+      "new": "El agua de los arrozales refleja el cielo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1370",
+      "neighbor": "el tejado de la casa nueva de los dos es rojo",
+      "similarity": 0.4884
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-025",
+      "new": "En un extremo del campo hay una caseta para las herramientas.",
+      "neighbor_id": "JAES-N4-EXP-0106",
+      "neighbor": "en la ceremonia del té también hay reglas para manejar los utensilios",
+      "similarity": 0.5426
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-026",
+      "new": "Vi un ternero recién nacido en la granja ganadera.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0746",
+      "neighbor": "hay un anuncio en un terreno grande",
+      "similarity": 0.4524
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-027",
+      "new": "La bandada de pájaros levantó el vuelo a la vez.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0617",
+      "neighbor": "es la agenda del representante",
+      "similarity": 0.4935
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-028",
+      "new": "Las golondrinas están haciendo un nido bajo el alero.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0962",
+      "neighbor": "la niña está leyendo un libro en la habitación",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-029",
+      "new": "Había una pluma blanca en el suelo junto al estanque.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "neighbor": "quedaba una mancha en el cuello de la camisa",
+      "similarity": 0.625
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-030",
+      "new": "Con el ala herida no puede volar.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1806",
+      "neighbor": "sin batería no se puede usar",
+      "similarity": 0.6
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-031",
+      "new": "El pájaro rompió el fruto seco con el pico.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-003-016",
+      "neighbor": "el perro me empujó suavemente la mano con el hocico",
+      "similarity": 0.5591
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-032",
+      "new": "La cola del perro está golpeando la mesa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0330",
+      "neighbor": "el libro está sobre la mesa",
+      "similarity": 0.6269
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-033",
+      "new": "Las uñas del gato se engancharon en la cortina.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-062",
+      "neighbor": "el sol de la tarde entraba con fuerza y cerré las cortinas a medias",
+      "similarity": 0.5133
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-034",
+      "new": "El sonido de los cascos del caballo resonó sobre el empedrado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1982",
+      "neighbor": "un grupo de drones volaba sobre el parque",
+      "similarity": 0.4902
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-035",
+      "new": "La cornamenta del ciervo se ramifica como las ramas de un árbol.",
+      "neighbor_id": "JAES-N4-CONVERSATION-20260924-013",
+      "neighbor": "como sudé al subir la cuesta descansé un poco debajo de un árbol",
+      "similarity": 0.4567
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "new": "Quité las escamas del pescado antes de asarlo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-049",
+      "neighbor": "registré los materiales caducados antes de desecharlos",
+      "similarity": 0.6263
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-037",
+      "new": "Hice un adorno pasando un cordel por el agujero de una concha.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-095",
+      "neighbor": "al levantar la maceta vi raíces saliendo por el agujero del fondo",
+      "similarity": 0.5079
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-038",
+      "new": "La tortuga se está secando el caparazón sobre una piedra.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1742",
+      "neighbor": "la empresa emitió una declaración sobre la seguridad",
+      "similarity": 0.537
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-039",
+      "new": "El insecto avanzó moviendo las antenas.",
+      "neighbor_id": "JAES-N5-MORE-0001",
+      "neighbor": "me levanto a las siete el lunes",
+      "similarity": 0.4638
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-040",
+      "new": "Encontré una larva en el envés de una hoja.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2194",
+      "neighbor": "compré una lavadora con el plus de este mes",
+      "similarity": 0.5882
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-041",
+      "new": "Vi el momento en que la mariposa salía de la crisálida.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-015",
+      "neighbor": "me entró tos justo en una escena silenciosa de la película",
+      "similarity": 0.5179
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-042",
+      "new": "Colocamos una cámara para observar la eclosión de los huevos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-030",
+      "neighbor": "tomamos muestras de agua para investigar la contaminación del río",
+      "similarity": 0.544
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-043",
+      "new": "Este animal hiberna cuando llega el frío.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2205",
+      "neighbor": "cuándo llega la carga",
+      "similarity": 0.4918
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-044",
+      "new": "El cuidador está pesando a los animales.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2199",
+      "neighbor": "no se le están enfriando los pies",
+      "similarity": 0.5833
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-045",
+      "new": "No des comida a los animales salvajes.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1165",
+      "neighbor": "protejo a los animales",
+      "similarity": 0.6102
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-046",
+      "new": "Se exponen huesos de animales extinguidos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2301",
+      "neighbor": "son tres días seguidos",
+      "similarity": 0.5397
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-047",
+      "new": "Este pez sólo habita en lagos profundos.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-001-007",
+      "neighbor": "al sur de este pueblo hay un lago grande",
+      "similarity": 0.5823
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-048",
+      "new": "Rescaté a un gatito debilitado que estaba al borde del camino.",
+      "neighbor_id": "SAKAMOTO-23a5e298643e8709-JA_ES",
+      "neighbor": "esto era lo que estaba buscando",
+      "similarity": 0.5435
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-049",
+      "new": "Reduje la cantidad de comida que doy a los peces.",
+      "neighbor_id": "SAKAMOTO-617a0bcb16549b0d-JA_ES",
+      "neighbor": "haz que quede como que perdió los poderes",
+      "similarity": 0.5393
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-050",
+      "new": "El halcón buscaba presas desde el aire.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0643",
+      "neighbor": "me han asignado al departamento de ventas desde el mes que viene",
+      "similarity": 0.5294
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-051",
+      "new": "Por las huellas en la nieve supimos que era un ciervo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-094",
+      "neighbor": "colgué las hierbas en la cocina para secarlas",
+      "similarity": 0.5102
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-052",
+      "new": "Del matorral salió un sonido de animal que nunca había oído.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2122",
+      "neighbor": "el matrimonio de ambos es sagrado",
+      "similarity": 0.4783
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-053",
+      "new": "Desde el bosque nocturno se oía el aullido de un lobo.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-083",
+      "neighbor": "al salir del bosque se oía el ruido de una gran cascada",
+      "similarity": 0.5926
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-054",
+      "new": "El perro ladra cuando suena el timbre de la entrada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0226",
+      "neighbor": "si vienes a mi casa pulsa el timbre de la entrada",
+      "similarity": 0.6
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-055",
+      "new": "El cachorro está mordiendo la zapatilla.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0646",
+      "neighbor": "el entrenador está mirando el partido",
+      "similarity": 0.6316
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-056",
+      "new": "El gato que rescaté por fin me ha tomado cariño.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-013",
+      "neighbor": "no corre prisa que respondas el fin de semana está bien",
+      "similarity": 0.4902
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-057",
+      "new": "Los cachorros juguetean sobre el césped.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0540",
+      "neighbor": "tengo una pregunta sobre el mundo",
+      "similarity": 0.5278
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-058",
+      "new": "Se extendieron ondas donde se había sumergido el ave acuática.",
+      "neighbor_id": "JAES-N4-CONVERSATION-20260924B-011",
+      "neighbor": "he calentado en el microondas el arroz que se había enfriado",
+      "similarity": 0.5124
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-059",
+      "new": "Una oruga peluda se arrastra despacio por el muro.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-003-051",
+      "neighbor": "una nube blanca se mueve despacio sobre la montaña",
+      "similarity": 0.5657
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-060",
+      "new": "Un pez saltó en la superficie del agua.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-072",
+      "neighbor": "por la mañana había una fina capa de hielo en la superficie del estanque",
+      "similarity": 0.5636
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-061",
+      "new": "La pelota arrastrada por la corriente llegó a la otra orilla.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-059",
+      "neighbor": "una oruga peluda se arrastra despacio por el muro",
+      "similarity": 0.4587
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-062",
+      "new": "Al rodear el cabo, apareció un pequeño puerto.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-015",
+      "neighbor": "al desmontar el ventilador para limpiarlo apareció un tornillo pequeño",
+      "similarity": 0.5789
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-063",
+      "new": "Dentro de la bahía el oleaje era suave.",
+      "neighbor_id": "JAES-N5-ORGANIC-202608-0315",
+      "neighbor": "la fruta está dentro de la nevera",
+      "similarity": 0.4789
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-064",
+      "new": "Estuve a punto de ser arrastrado mar adentro y nadé hacia la orilla.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-061",
+      "neighbor": "la pelota arrastrada por la corriente llegó a la otra orilla",
+      "similarity": 0.5354
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-065",
+      "new": "Cuando baja la marea, se puede caminar hasta las rocas.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-080",
+      "neighbor": "cuando baja la marea se ven peces pequeños entre las rocas",
+      "similarity": 0.7207
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-066",
+      "new": "Consulté la hora de la bajamar antes de ir a la playa.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-069",
+      "neighbor": "conté los sobres antes de repartirlos",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-067",
+      "new": "Con la pleamar, la playa de arena quedaba casi cubierta.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-078",
+      "neighbor": "mis huellas quedaron en la playa de arena pero las borraron las olas",
+      "similarity": 0.5082
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-068",
+      "new": "Un trozo de madera flota a la deriva sobre el mar.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1982",
+      "neighbor": "un grupo de drones volaba sobre el parque",
+      "similarity": 0.6222
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-069",
+      "new": "Recogimos la basura que había llegado a la playa arrastrada por el mar.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-059",
+      "neighbor": "como había olas altas paseé por la playa sin meterme en el mar",
+      "similarity": 0.5152
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-070",
+      "new": "Caminé descalzo por la orilla donde rompen las olas.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-082",
+      "neighbor": "me senté en la orilla a contemplar la corriente del río",
+      "similarity": 0.5094
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-071",
+      "new": "Puse grava en el jardín para reducir el barro.",
+      "neighbor_id": "JAES-N5-CONVERSATION-C3000-001-008",
+      "neighbor": "coloqué en el jardín las piedras que recogí en el río",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-072",
+      "new": "Entré después de quitar el barro de las botas de agua.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-075",
+      "neighbor": "después de la inundación los vecinos retiraron el barro de las calles",
+      "similarity": 0.5738
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-073",
+      "new": "Hay una valla instalada cerca del precipicio.",
+      "neighbor_id": "JAES-N5-CURATED-0012",
+      "neighbor": "hay una panadería nueva cerca de la estación",
+      "similarity": 0.6136
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-074",
+      "new": "Todavía queda nieve en la ladera norte.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1409",
+      "neighbor": "todavía no es de noche",
+      "similarity": 0.6
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-075",
+      "new": "Al llegar a la cresta, pude ver los valles de ambos lados.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0198",
+      "neighbor": "al llegar a la estación fui a la oficina de turismo",
+      "similarity": 0.5981
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-076",
+      "new": "Se puede llegar en autobús hasta el pie de la montaña, pero desde allí hay que ir a pie.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2444",
+      "neighbor": "fui a la montaña pero no vi el paisaje por la niebla y quedé insatisfecho",
+      "similarity": 0.4654
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-077",
+      "new": "Al cruzar el puerto de montaña, el tiempo cambió de repente.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2204",
+      "neighbor": "como el sendero de la montaña era empinado subimos despacio",
+      "similarity": 0.5641
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-078",
+      "new": "Un sendero de paseo recorre el desfiladero.",
+      "neighbor_id": "JAES-N5-MORE-0159",
+      "neighbor": "quiero dar un paseo en el supermercado",
+      "similarity": 0.55
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-079",
+      "new": "Junto a la cascada apenas se oyen las voces.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0289",
+      "neighbor": "en cuanto llego a casa me lavo las manos",
+      "similarity": 0.5542
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-080",
+      "new": "Brota un manantial entre las rocas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1010",
+      "neighbor": "leo un libro sobre la casa",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-081",
+      "new": "Las ranas croan alrededor de la laguna pantanosa.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-090",
+      "neighbor": "aplasté las alubias con un tenedor hasta hacer una pasta",
+      "similarity": 0.5577
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-082",
+      "new": "Caminamos por la pasarela de madera para proteger el humedal.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1900",
+      "neighbor": "no damos un paseo juntos mañana por el parque",
+      "similarity": 0.4952
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-083",
+      "new": "En la pradera no había sombra y el sombrero me vino bien.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-057",
+      "neighbor": "el letrero está del revés y no se ve el nombre de la tienda",
+      "similarity": 0.487
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-084",
+      "new": "El protagonista del relato viaja solo por un paraje desolado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1574",
+      "neighbor": "abandoné el plan del viaje por un trabajo repentino",
+      "similarity": 0.5225
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-085",
+      "new": "Se veían nubes negras cerca del horizonte terrestre.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0173",
+      "neighbor": "el banco está más cerca que correos",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-086",
+      "new": "El barco desapareció más allá del horizonte del mar.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1769",
+      "neighbor": "lo dejaré para más adelante",
+      "similarity": 0.5385
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-009-087",
+      "new": "La luz del atardecer tiñó de rojo la pared blanca.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-046",
+      "neighbor": "la toalla nueva destiñó y manchó de color la camisa blanca",
+      "similarity": 0.5421
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-088",
+      "new": "Como tomé un vuelo temprano, vi el resplandor del amanecer desde el aire.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0367",
+      "neighbor": "hoy vuelvo temprano a casa para asistir a la reunión del barrio",
+      "similarity": 0.4776
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-089",
+      "new": "Dejé preparado el equipo de grabación antes del amanecer.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0695",
+      "neighbor": "prepare el agua antes de salir",
+      "similarity": 0.5349
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-090",
+      "new": "Después de la puesta de sol, la temperatura bajó de golpe.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1123",
+      "neighbor": "después de cerrar la puerta voy a comer",
+      "similarity": 0.5474
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-091",
+      "new": "Al sentarme a la sombra de los árboles, noté fresca la brisa.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-078",
+      "neighbor": "al atardecer la sombra del árbol se alarga por todo el jardín",
+      "similarity": 0.5833
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-092",
+      "new": "La luz que se filtra entre las hojas dibuja formas en el suelo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0220",
+      "neighbor": "el profesor hizo que los niños recogieran hojas caídas en el parque",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-093",
+      "new": "A medida que se disipaba la niebla, fue apareciendo el faro.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-009-092",
+      "neighbor": "la luz que se filtra entre las hojas dibuja formas en el suelo",
+      "similarity": 0.4833
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-094",
+      "new": "Cubrí los plantones con una tela para protegerlos de la escarcha.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-092",
+      "neighbor": "até los periódicos viejos con una cuerda y los dejé en la entrada",
+      "similarity": 0.5426
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-095",
+      "new": "El rocío de la telaraña brillaba con el sol de la mañana.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-045",
+      "neighbor": "teñí la tela blanca con un colorante obtenido de plantas",
+      "similarity": 0.5357
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-096",
+      "new": "Empezó a caer granizo y me refugié dentro.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0700",
+      "neighbor": "el jefe me obligó a dejar las horas extra y hoy me fui temprano",
+      "similarity": 0.4808
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-097",
+      "new": "La lluvia se convirtió en aguanieve y el camino se volvió resbaladizo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1830",
+      "neighbor": "por lluvia o algo el avión se retrasó",
+      "similarity": 0.4906
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-098",
+      "new": "Nos quedamos en el refugio hasta que amainó la ventisca.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-078",
+      "neighbor": "no muevas el recipiente hasta que cuaje la gelatina",
+      "similarity": 0.6415
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-009-099",
+      "new": "La luna se reflejaba con nitidez en el mar en calma.",
+      "neighbor_id": "JAES-N5-MORE-0186",
+      "neighbor": "no se puede comer en el banco",
+      "similarity": 0.525
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-009-100",
+      "new": "Una ráfaga se llevó la sábana que estaba tendida.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0387",
+      "neighbor": "esta tienda se llena a menudo",
+      "similarity": 0.4675
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-001",
+      "new": "El resultado del experimento contradijo la hipótesis inicial.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1319",
+      "neighbor": "el resultado del reconocimiento médico no es una sentencia",
+      "similarity": 0.5763
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-002",
+      "new": "Aunque repetimos la comprobación con el mismo método, los resultados no coinciden.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0624",
+      "neighbor": "hago la comprobación en el centro de la ciudad",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-003",
+      "new": "Guardé el correo como prueba de lo acordado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1031",
+      "neighbor": "compré el regalo para ella y lo dejé preparado",
+      "similarity": 0.5393
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-004",
+      "new": "Estimé el tamaño del animal por el tamaño de sus huellas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0613",
+      "neighbor": "este tren solo puede pasar por el interior del túnel",
+      "similarity": 0.537
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-005",
+      "new": "Representé en un gráfico la evolución de la temperatura.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0398",
+      "neighbor": "este es un documento de la empresa",
+      "similarity": 0.5169
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-006",
+      "new": "Las respuestas muestran tendencias según la edad.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-005-041",
+      "neighbor": "es interesante que las respuestas a una misma pregunta varíen según la generación",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-007",
+      "new": "Las zonas estudiadas no estaban representadas de forma equilibrada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2162",
+      "neighbor": "esta estantería está desequilibrada",
+      "similarity": 0.5545
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-008",
+      "new": "Hay pequeñas diferencias de medición según quién mida.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0886",
+      "neighbor": "según la generación las preferencias de viaje son distintas",
+      "similarity": 0.4643
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-009",
+      "new": "Al cambiar la configuración mejoró la precisión del reconocimiento.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1566",
+      "neighbor": "cambio la configuración poco a poco en cada dispositivo",
+      "similarity": 0.562
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-010",
+      "new": "Sequé unas hojas para preparar muestras de estudio.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0617",
+      "neighbor": "no ahorro mientras estudio",
+      "similarity": 0.5526
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-011",
+      "new": "Las nubes eran tan densas que renunciamos a observar las estrellas.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-010-006",
+      "neighbor": "las respuestas muestran tendencias según la edad",
+      "similarity": 0.5263
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-012",
+      "new": "Observé la misma flor cada día y la dibujé.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0151",
+      "neighbor": "tomo la medicina cada día para que no me dé fiebre",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-013",
+      "new": "Envié una muestra para analizar la composición de la tierra.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-030",
+      "neighbor": "tomamos muestras de agua para investigar la contaminación del río",
+      "similarity": 0.5806
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-014",
+      "new": "Clasifiqué las piedras que recogí por su dureza, en vez de por su color.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-047",
+      "neighbor": "clasifiqué las hojas recogidas por su forma y tamaño",
+      "similarity": 0.5902
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-015",
+      "new": "Extraje únicamente los nombres de lugares de un texto largo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1673",
+      "neighbor": "esta mansión no es un lugar de trabajo",
+      "similarity": 0.5155
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-016",
+      "new": "Comprobamos entre dos personas el recuento de votos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2008",
+      "neighbor": "sí comprobemos juntos las respuestas de los deberes de hoy",
+      "similarity": 0.5505
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-017",
+      "new": "La media por sí sola no muestra cuánto varían las notas.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-068",
+      "neighbor": "la avería causada por una caída no estaba cubierta por la garantía",
+      "similarity": 0.562
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-018",
+      "new": "Como había valores extremos, calculé también la mediana.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0894",
+      "neighbor": "como hay pocos empleados hoy yo también hago horas extra",
+      "similarity": 0.5273
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-019",
+      "new": "El gráfico muestra proporciones, no cantidades de personas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2027",
+      "neighbor": "esta película no trata de matar personas",
+      "similarity": 0.5361
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-020",
+      "new": "Que haya correlación no implica necesariamente causalidad.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1388",
+      "neighbor": "esa explicación tenía una lógica clara y me convenció enseguida",
+      "similarity": 0.4833
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-021",
+      "new": "Con estos datos solamente no se puede determinar una relación causal.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0918",
+      "neighbor": "si los activos no aumentan no se puede llegar a una conclusión",
+      "similarity": 0.6154
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-022",
+      "new": "Elegí el paraguas después de comparar también su peso.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-005",
+      "neighbor": "encargué las piezas después de comprobar la cantidad necesaria",
+      "similarity": 0.5391
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-023",
+      "new": "Al cotejar las dos traducciones se ven los fragmentos omitidos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-086",
+      "neighbor": "al comparar las grabaciones de cada semana se nota la mejora de la pronunciación",
+      "similarity": 0.4789
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-024",
+      "new": "Aunque las formas se parecen, los significados son distintos.",
+      "neighbor_id": "JAES-N4-EXP-0017",
+      "neighbor": "aunque haga mal tiempo parece que los aviones vuelan",
+      "similarity": 0.5405
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-025",
+      "new": "Había una discrepancia entre el contrato y la explicación.",
+      "neighbor_id": "JAES-N5-CONVERSATION-20260924-048",
+      "neighbor": "hay una estantería estrecha entre el escritorio y la pared",
+      "similarity": 0.5739
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-026",
+      "new": "Los dos tienen una afición en común: cocinar.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1427",
+      "neighbor": "estos dos platos no tienen nada en común",
+      "similarity": 0.6265
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-027",
+      "new": "Ten cuidado, porque esta regla tiene excepciones.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-046",
+      "neighbor": "lo embalé con cuidado porque era frágil",
+      "similarity": 0.5581
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-028",
+      "new": "Procuro no generalizar a partir de una sola experiencia.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2433",
+      "neighbor": "podrás venir a partir de mañana",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-029",
+      "new": "Antes del debate, aclaramos la definición de los términos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-002",
+      "neighbor": "antes de encargar la reparación pedí presupuesto a dos empresas",
+      "similarity": 0.5378
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-030",
+      "new": "Expliqué un concepto abstracto mediante un ejemplo cotidiano.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-039",
+      "neighbor": "explica tu idea poniendo un ejemplo fácil de entender",
+      "similarity": 0.4779
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-031",
+      "new": "Preparé los asientos suponiendo que vendrían todos.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0868",
+      "neighbor": "porque entiendo sus sentimientos pude acercarme más",
+      "similarity": 0.4752
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-032",
+      "new": "No pude llegar a una conclusión por falta de información.",
+      "neighbor_id": "JAES-N4-EXP-0011",
+      "neighbor": "cuando llegues a la estación por favor llama",
+      "similarity": 0.54
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-033",
+      "new": "Leí el resumen del artículo para entender el objetivo de la investigación.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0544",
+      "neighbor": "leo este artículo en la estación",
+      "similarity": 0.5524
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-034",
+      "new": "Indiqué la fuente de las frases citadas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1023",
+      "neighbor": "qué clase de unidad es esta",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-035",
+      "new": "Al rastrear la fuente, encontré un error en las cifras.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1474",
+      "neighbor": "encontré un cadáver en la habitación",
+      "similarity": 0.5169
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-036",
+      "new": "Las palabras antiguas llevan notas explicativas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2101",
+      "neighbor": "sobre las tarifas luego lo explicaré",
+      "similarity": 0.506
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-037",
+      "new": "Reuní las explicaciones complementarias en notas al pie.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0674",
+      "neighbor": "esta explicación es concreta",
+      "similarity": 0.506
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-038",
+      "new": "Busqué el nombre de la persona en el índice alfabético.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-008-097",
+      "neighbor": "obtuve el permiso de la persona antes de publicar su foto",
+      "similarity": 0.5766
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-039",
+      "new": "Consulté el índice y empecé por el capítulo que necesitaba.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1700",
+      "neighbor": "consulté con el dependiente y elegí el mejor producto dentro del presupuesto",
+      "similarity": 0.4925
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-040",
+      "new": "En el último capítulo se revela el secreto del protagonista.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-033",
+      "neighbor": "ganamos el último partido y lo celebramos todos los del equipo",
+      "similarity": 0.4959
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-041",
+      "new": "Separé los párrafos donde cambiaba el tema.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1879",
+      "neighbor": "se me cansaron los ojos de usar demasiado el móvil",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-042",
+      "new": "Sólo con el titular es fácil malinterpretar el contenido del artículo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-041",
+      "neighbor": "contacté con el remitente para confirmar el contenido del paquete",
+      "similarity": 0.5821
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-043",
+      "new": "Busca en el texto principal la información que justifica la respuesta.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0966",
+      "neighbor": "vi en el tablón de anuncios la información del viaje",
+      "similarity": 0.5455
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-044",
+      "new": "Escribí una pequeña nota en el margen.",
+      "neighbor_id": "JAES-N5-MORE-0104",
+      "neighbor": "veo una película en el parque",
+      "similarity": 0.6061
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-045",
+      "new": "Al aumentar el interlineado, el texto largo resultó más fácil de leer.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0614",
+      "neighbor": "este libro de texto es fácil de leer",
+      "similarity": 0.5962
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-046",
+      "new": "Elegí para el letrero una tipografía legible desde lejos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2024",
+      "neighbor": "para estudiar el desarrollo del lenguaje registro cada día las conversaciones de los niños",
+      "similarity": 0.4247
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-047",
+      "new": "La forma de un mismo carácter puede variar según el país.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-062",
+      "neighbor": "la llegada del autobús puede variar unos diez minutos según el tráfico",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-048",
+      "new": "Detecté un error en la fecha al revisar las pruebas antes de imprimir.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-088",
+      "neighbor": "escurro bien la bayeta antes de limpiar el suelo",
+      "similarity": 0.4957
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-049",
+      "new": "Revisé varias veces el texto y eliminé palabras innecesarias.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1534",
+      "neighbor": "la conexión con el exterior todavía es necesaria",
+      "similarity": 0.4815
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-050",
+      "new": "La errata de la portada se corrigió en la reimpresión.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2047",
+      "neighbor": "voy en autobús de la estación a la empresa",
+      "similarity": 0.5684
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-051",
+      "new": "Las ilustraciones ayudan a imaginar las escenas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2245",
+      "neighbor": "sigo las indicaciones del personal en la estación",
+      "similarity": 0.5208
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-052",
+      "new": "La cubierta del libro se onduló por la lluvia.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-035",
+      "neighbor": "la cornamenta del ciervo se ramifica como las ramas de un árbol",
+      "similarity": 0.4815
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-053",
+      "new": "Reconocí el libro que buscaba por el color del lomo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-050",
+      "neighbor": "el halcón buscaba presas desde el aire",
+      "similarity": 0.4719
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-054",
+      "new": "Llevé mi diario impreso a encuadernar a una tienda.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0483",
+      "neighbor": "qué compras en esta tienda",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-055",
+      "new": "El libro agotado se volverá a imprimir el mes que viene.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0937",
+      "neighbor": "el nuevo trabajo empieza el mes que viene",
+      "similarity": 0.625
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-056",
+      "new": "Al saber que estaba descatalogado, pregunté a la editorial si planeaba una edición digital.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-099",
+      "neighbor": "la persona que estaba al principio de la cola llamó la atención del dependiente",
+      "similarity": 0.4881
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-057",
+      "new": "Se reeditó un mapa antiguo y llegó a las librerías.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-080",
+      "neighbor": "brota un manantial entre las rocas",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-058",
+      "new": "Para traducir chistes también hace falta conocer la cultura.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-080",
+      "neighbor": "para este trámite hace falta un sello personal o basta con la firma",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-059",
+      "new": "Hice preguntas al artesano a través de un intérprete.",
+      "neighbor_id": "JAES-N5-EXP-0055",
+      "neighbor": "le hice una pregunta al profesor en japonés",
+      "similarity": 0.5053
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-060",
+      "new": "Como la traducción literal sonaba poco natural, traduje el sentido.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2377",
+      "neighbor": "la radio se cortó durante el trabajo",
+      "similarity": 0.4554
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-061",
+      "new": "Si traduces literalmente esta expresión, no se entiende el sentido.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0216",
+      "neighbor": "cuando leo esta frase entiendo bien el significado",
+      "similarity": 0.5565
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-062",
+      "new": "Conocer la etimología me ayudó a recordar la palabra.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1720",
+      "neighbor": "comprobé la fecha del informe y un amigo me ayudó a revisarlo",
+      "similarity": 0.4956
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-063",
+      "new": "Incluso los sinónimos no siempre se usan en las mismas situaciones.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-080",
+      "neighbor": "comparé los precios en las mismas condiciones antes de elegir la tienda",
+      "similarity": 0.4818
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-064",
+      "new": "Memoricé las palabras junto a sus antónimos.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1491",
+      "neighbor": "en otras palabras qué significa",
+      "similarity": 0.5405
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-065",
+      "new": "El significado de las palabras homófonas se deduce por el contexto.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1688",
+      "neighbor": "estoy organizando el significado de palabras japonesas en una tabla del cuaderno",
+      "similarity": 0.5479
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-066",
+      "new": "Leyendo el contexto anterior y posterior entendí de quién se hablaba.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-086",
+      "neighbor": "a un lado del camino había un acantilado y abajo se extendía el mar",
+      "similarity": 0.4889
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-067",
+      "new": "En japonés a veces se omite el sujeto.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0559",
+      "neighbor": "estudio japonés para estudiar en el extranjero",
+      "similarity": 0.5542
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-068",
+      "new": "La explicación fue demasiado breve, así que la amplié después.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1254",
+      "neighbor": "la discusión fue larga así que la salida se retrasó",
+      "similarity": 0.5946
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-069",
+      "new": "Reformulé los términos técnicos difíciles con palabras sencillas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2232",
+      "neighbor": "aunque los kanji son muchos y difíciles si leo un poco cada día poco a poco los entiendo",
+      "similarity": 0.4211
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-070",
+      "new": "Resumí el artículo en tres frases.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1343",
+      "neighbor": "ese artículo no es el mío",
+      "similarity": 0.6552
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-071",
+      "new": "Al escuchar la lectura en voz alta se aprecia el ritmo del poema.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-061",
+      "neighbor": "en esta biblioteca se organizan lecturas en voz alta para niños",
+      "similarity": 0.5354
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-072",
+      "new": "Primero leímos en silencio y después compartimos nuestras impresiones.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0445",
+      "neighbor": "primero me lavo las manos y después como",
+      "similarity": 0.4954
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-073",
+      "new": "Di más importancia a entender los detalles que a leer deprisa.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0462",
+      "neighbor": "es importante apuntar lo de esta computadora",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-074",
+      "new": "Recité de memoria un poema corto y lo grabé.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1671",
+      "neighbor": "tomamos un poco de agua",
+      "similarity": 0.4848
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-075",
+      "new": "Al leer en voz alta, detecto palabras que me había saltado.",
+      "neighbor_id": "SAKAMOTO-2a930561d6be50bd-JA_ES",
+      "neighbor": "pero bueno me alegro de que este haya salido ileso",
+      "similarity": 0.5234
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-076",
+      "new": "Después del examen escrito hubo una entrevista.",
+      "neighbor_id": "JAES-N5-MORE-0207",
+      "neighbor": "el domingo a menudo escribo una carta en correos",
+      "similarity": 0.5319
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-077",
+      "new": "En el examen oral expliqué también el razonamiento de mi respuesta.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-010-076",
+      "neighbor": "después del examen escrito hubo una entrevista",
+      "similarity": 0.4643
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-078",
+      "new": "Después de corregirme, me explicaron el motivo de los errores.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-066",
+      "neighbor": "sólo después de que me explicaran el desglose del precio me quedé conforme",
+      "similarity": 0.597
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-079",
+      "new": "La última pregunta vale muchos puntos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1074",
+      "neighbor": "deje de repetir la misma pregunta muchas veces",
+      "similarity": 0.5542
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-080",
+      "new": "Aprobé la parte práctica, pero tengo que repetir la escrita.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1556",
+      "neighbor": "ya tengo la cartera pero todavía no he terminado de comprar",
+      "similarity": 0.5128
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-010-081",
+      "new": "Al leer que había suspendido, revisé mi método de estudio.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0776",
+      "neighbor": "cada mes decido por mí mismo el criterio de horas de estudio",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-082",
+      "new": "Hice un examen extraordinario porque falté por enfermedad.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1806",
+      "neighbor": "me hicieron un examen así que hoy estoy un poco aliviado",
+      "similarity": 0.4956
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-083",
+      "new": "Repasaré los temas que peor llevo antes de repetir el examen.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-080",
+      "neighbor": "comparé los precios en las mismas condiciones antes de elegir la tienda",
+      "similarity": 0.5191
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-084",
+      "new": "Hay que cursar esta asignatura antes de graduarse.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-088",
+      "neighbor": "escurro bien la bayeta antes de limpiar el suelo",
+      "similarity": 0.5361
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-085",
+      "new": "Cuando termine las prácticas, tendré todos los créditos necesarios para graduarme.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0375",
+      "neighbor": "hacer demasiado ejercicio todos los días es malo para el cuerpo",
+      "similarity": 0.4895
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-086",
+      "new": "Interrumpí los estudios un año para ayudar a mi familia.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-029",
+      "neighbor": "lo estuve dudando mucho pero decidí volver a vivir cerca de mi familia",
+      "similarity": 0.496
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-087",
+      "new": "Al reincorporarme a los estudios, organicé un horario llevadero.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-010-086",
+      "neighbor": "interrumpí los estudios un año para ayudar a mi familia",
+      "similarity": 0.4957
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-088",
+      "new": "Tuve que repetir curso por no cumplir la asistencia mínima.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-014",
+      "neighbor": "me quedé sin aliento por correr cuesta arriba",
+      "similarity": 0.4466
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-089",
+      "new": "Al pasar de curso aumentan las clases de laboratorio.",
+      "neighbor_id": "SAKAMOTO-8210ead94065dc86-JA_ES",
+      "neighbor": "las personas tienen tres clases de conciencia",
+      "similarity": 0.5155
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-090",
+      "new": "Necesitaba una carta de recomendación para solicitar la ayuda de estudios.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0742",
+      "neighbor": "es una condición para la emisión",
+      "similarity": 0.5143
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-091",
+      "new": "Participé en el seminario por recomendación del profesor.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0826",
+      "neighbor": "participo en la competición del festival de verano",
+      "similarity": 0.5849
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-092",
+      "new": "Mi especialidad es historia, pero también estudio estadística.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0769",
+      "neighbor": "los adultos también estudian cada día",
+      "similarity": 0.5155
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-093",
+      "new": "Lo que aprendí en mi especialidad secundaria me sirvió en el trabajo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0361",
+      "neighbor": "el senpai me ayudó con el trabajo",
+      "similarity": 0.495
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-094",
+      "new": "Elegí las fiestas locales como tema de mi trabajo de fin de grado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0628",
+      "neighbor": "aunque solo hago horas extra y no logro ahorrar dinero trabajo también el fin de semana",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-095",
+      "new": "En el seminario presenta una persona distinta cada semana.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2087",
+      "neighbor": "no es un seminario es una consulta de salud",
+      "similarity": 0.58
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-096",
+      "new": "Vi la clase grabada durante el trayecto a la universidad.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0778",
+      "neighbor": "este restaurante es el más grande de la ciudad",
+      "similarity": 0.5294
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-097",
+      "new": "Apliqué en la sesión práctica el método aprendido en la clase teórica.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-082",
+      "neighbor": "probé a aplicar a mi trabajo el método que había aprendido en clase",
+      "similarity": 0.5882
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-010-098",
+      "new": "En las prácticas manejé una máquina real por primera vez.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-004-088",
+      "neighbor": "mantengo la práctica diaria aunque sea por poco tiempo",
+      "similarity": 0.5818
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-099",
+      "new": "Asisto a esa clase como oyente, sin obtener créditos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1636",
+      "neighbor": "si dices a qué empresa perteneces puedes obtener un descuento",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-010-100",
+      "new": "Durante la pausa de estudios sigo inscrito en la universidad.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-066",
+      "neighbor": "durante la temporada de lluvias dejo el paraguas en la entrada",
+      "similarity": 0.5902
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-001",
+      "new": "Lavé enseguida la tabla donde había cortado el pescado.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0083",
+      "neighbor": "me gusta más la carne que el pescado",
+      "similarity": 0.5111
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-002",
+      "new": "No dejes el cuchillo con el filo hacia fuera.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2105",
+      "neighbor": "no es que vaya con el jefe",
+      "similarity": 0.5143
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-003",
+      "new": "No encontraba el cucharón y serví la sopa con una taza.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1880",
+      "neighbor": "estoy trabajando con empeño en una nueva tarea",
+      "similarity": 0.44
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-004",
+      "new": "Pasé los fideos cocidos al colador.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-001-054",
+      "neighbor": "pongo los alimentos congelados en la cesta al final de la compra",
+      "similarity": 0.4694
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-005",
+      "new": "Tamicé la harina para quitar los grumos.",
+      "neighbor_id": "JAES-N5-EXP-0014",
+      "neighbor": "limpio la habitación los sábados",
+      "similarity": 0.507
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-006",
+      "new": "Con las varillas se baten bien los huevos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2203",
+      "neighbor": "en esta canción se oye bien el bajo",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-007",
+      "new": "Recogí con una espátula la crema de las paredes del cuenco.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-094",
+      "neighbor": "cubrí los plantones con una tela para protegerlos de la escarcha",
+      "similarity": 0.4754
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-008",
+      "new": "Di la vuelta a la fritura con unos palillos largos de cocina.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-008-029",
+      "neighbor": "cotejé la lista de nombres con los formularios de inscripción",
+      "similarity": 0.5289
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-009",
+      "new": "Después de medir los ingredientes, calenté el horno.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1347",
+      "neighbor": "cuál es tu deducción sobre los ingredientes de esta sopa",
+      "similarity": 0.5849
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-010",
+      "new": "Mirando de lado puedes leer bien la escala graduada.",
+      "neighbor_id": "JAES-N5-MORE-0181",
+      "neighbor": "no se puede comer en la escuela",
+      "similarity": 0.6098
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-011",
+      "new": "Dejé la tapa un poco desplazada para que saliera el vapor.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-005-008",
+      "neighbor": "hablé un poco más despacio sólo en las partes que quería destacar de la presentación",
+      "similarity": 0.4681
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-012",
+      "new": "El asa se había calentado y la sujeté con un paño.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1699",
+      "neighbor": "el pan ya se había agotado al día siguiente",
+      "similarity": 0.6087
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-013",
+      "new": "Quedaba un poco de arroz en el fondo de la olla.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-003-038",
+      "neighbor": "quedaba una mancha en el cuello de la camisa",
+      "similarity": 0.6374
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-014",
+      "new": "El borde de la taza estaba desportillado.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1321",
+      "neighbor": "el trabajo de la empresa es estable",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-015",
+      "new": "El mango del cepillo es largo y permite llegar hasta el fondo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0102",
+      "neighbor": "el camino es largo pero la vista es buena",
+      "similarity": 0.5882
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-016",
+      "new": "Las hojas de las tijeras tienen pegamento de cinta adhesiva.",
+      "neighbor_id": "SAKAMOTO-8210ead94065dc86-JA_ES",
+      "neighbor": "las personas tienen tres clases de conciencia",
+      "similarity": 0.5192
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-017",
+      "new": "Al afilarlo, el cuchillo volvió a cortar bien.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-011-002",
+      "neighbor": "no dejes el cuchillo con el filo hacia fuera",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-018",
+      "new": "Mi abuelo me enseñó el ángulo adecuado para afilar herramientas de corte.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-009-025",
+      "neighbor": "en un extremo del campo hay una caseta para las herramientas",
+      "similarity": 0.4848
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-019",
+      "new": "Dejé preparados los ingredientes por la mañana.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-089",
+      "neighbor": "dejé preparado el equipo de grabación antes del amanecer",
+      "similarity": 0.6078
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-020",
+      "new": "Los niños me ayudaron a pelar los ingredientes.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-010-051",
+      "neighbor": "las ilustraciones ayudan a imaginar las escenas",
+      "similarity": 0.5376
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-021",
+      "new": "Corté el limón en rodajas finas.",
+      "neighbor_id": "JAES-N5-CONVERSATION-20260924B-048",
+      "neighbor": "corta una zanahoria en tiras finas por favor",
+      "similarity": 0.5333
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-022",
+      "new": "Añadí al plato col cortada en tiras finas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0766",
+      "neighbor": "por favor añada una partida a las finanzas",
+      "similarity": 0.5542
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-023",
+      "new": "Congelo el ajo picado muy fino y lo voy usando en pequeñas cantidades.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1784",
+      "neighbor": "escribo en el cuaderno y leo kanji cada día",
+      "similarity": 0.4643
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-024",
+      "new": "Corté las verduras en dados de tamaño uniforme.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0950",
+      "neighbor": "cocer verduras en el destino de viaje",
+      "similarity": 0.5783
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-025",
+      "new": "Extendí las lonchas finas de carne y enrollé verduras dentro.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-037",
+      "neighbor": "este pescado lo cocinaré al vapor con verduras en lugar de asarlo",
+      "similarity": 0.464
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-026",
+      "new": "Guisé la carne dura lentamente a fuego bajo.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1659",
+      "neighbor": "sigue todavía la disputa durante el juego",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-027",
+      "new": "Al cocer los bollos al vapor, un aroma dulce llenó la cocina.",
+      "neighbor_id": "JAES-N5-ORGANIC-202608-0322",
+      "neighbor": "espero a un amigo delante de la oficina de correos",
+      "similarity": 0.4771
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-028",
+      "new": "Sofríe el ajo hasta que desprenda aroma.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1627",
+      "neighbor": "desde el sábado hasta el domingo veo películas",
+      "similarity": 0.4941
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-029",
+      "new": "Si fríes en pequeñas tandas, la temperatura del aceite baja menos.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-090",
+      "neighbor": "después de la puesta de sol la temperatura bajó de golpe",
+      "similarity": 0.5833
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-030",
+      "new": "Tosté ligeramente el alga nori para realzar su aroma.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0135",
+      "neighbor": "este medicamento es malo para el cuerpo si se toma demasiado",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-031",
+      "new": "Cocí el arroz mezclado con otros cereales.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-009-014",
+      "neighbor": "el desagüe estaba atascado con hojas caídas",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-032",
+      "new": "Preparé la ensalada mientras cocía los huevos.",
+      "neighbor_id": "JAES-N5-MORE-0049",
+      "neighbor": "mi amigo le gusta los huevos",
+      "similarity": 0.4932
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-033",
+      "new": "Escaldé el tofu frito antes de cortarlo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0385",
+      "neighbor": "gasto dinero antes de ahorrar",
+      "similarity": 0.5882
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-034",
+      "new": "Derretí el chocolate despacio al baño maría.",
+      "neighbor_id": "JAES-N5-ORGANIC-202608-0318",
+      "neighbor": "por favor léalo despacio una vez más",
+      "similarity": 0.481
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-035",
+      "new": "Dejé la carne marinando en la salsa durante una hora.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0406",
+      "neighbor": "olvidé el mapa en el hotel durante el viaje",
+      "similarity": 0.5263
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-036",
+      "new": "Aliñé las espinacas con sésamo.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-003-034",
+      "neighbor": "elegí unas cortinas con un estampado pequeño",
+      "similarity": 0.4865
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-037",
+      "new": "Sazoné menos la porción de los niños.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1595",
+      "neighbor": "no impidas el juego de los niños",
+      "similarity": 0.5882
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-038",
+      "new": "Sazoné el pescado antes de freírlo.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-009-036",
+      "neighbor": "quité las escamas del pescado antes de asarlo",
+      "similarity": 0.6329
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-039",
+      "new": "Probé un poco para comprobar el punto de sal.",
+      "neighbor_id": "JAES-N4-EXP-0068",
+      "neighbor": "hice un plan para aprobar el examen",
+      "similarity": 0.557
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-040",
+      "new": "Añadí un poco de miso como toque de sabor secreto.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-011-039",
+      "neighbor": "probé un poco para comprobar el punto de sal",
+      "similarity": 0.4946
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-041",
+      "new": "Preparé caldo con alga kombu y setas shiitake.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-052",
+      "neighbor": "he preparado pasta usando setas en lugar de carne",
+      "similarity": 0.4894
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-042",
+      "new": "Retiré la espuma de impurezas que flotaba en la superficie.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-017",
+      "neighbor": "lo envié a la dirección que figuraba en el sobre",
+      "similarity": 0.5283
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-043",
+      "new": "Al día siguiente preparé udon con el caldo de cocción sobrante.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-059",
+      "neighbor": "no tenía saldo suficiente y no pude comprar el abono de transporte",
+      "similarity": 0.5156
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-044",
+      "new": "Espesé la sopa con fécula de patata.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-002-095",
+      "neighbor": "desde niño soñaba con vivir cerca del mar",
+      "similarity": 0.5263
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-045",
+      "new": "Dale la vuelta cuando la superficie esté dorada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1643",
+      "neighbor": "la superficie no está dañada",
+      "similarity": 0.5867
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-046",
+      "new": "El interior estaba poco hecho, así que lo cociné un poco más.",
+      "neighbor_id": "JAES-N4-CONVERSATION-20260924-043",
+      "neighbor": "esta calle es estrecha así que los coches no pueden pasar",
+      "similarity": 0.569
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-047",
+      "new": "Apagué el fuego y terminé la cocción con el calor residual.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0624",
+      "neighbor": "hago la comprobación en el centro de la ciudad",
+      "similarity": 0.4808
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-048",
+      "new": "Guardé la masa en el frigorífico mientras terminaba de precalentarse el horno.",
+      "neighbor_id": "JAES-N4-ORGANIC-202608-0454",
+      "neighbor": "pensé en el futuro mientras caminaba por la costa",
+      "similarity": 0.5079
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-049",
+      "new": "Sólo con cambiar la presentación del plato cambia la impresión que da.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-005-049",
+      "neighbor": "al cambiar la proporción de harina y agua también cambia la blandura de la masa",
+      "similarity": 0.5541
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-050",
+      "new": "Aparté la porción de los niños antes de añadir el picante.",
+      "neighbor_id": "JAES-N2-CONVERSATION-C3000-009-066",
+      "neighbor": "consulté la hora de la bajamar antes de ir a la playa",
+      "similarity": 0.5636
+    },
+    {
+      "id": "JAES-N5-CONVERSATION-C3000-011-051",
+      "new": "Me gustaría repetir, pero estoy lleno.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0458",
+      "neighbor": "me gusta leer libros",
+      "similarity": 0.5714
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-052",
+      "new": "Ajusté las cantidades para que sobrara menos comida en los platos.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-009-049",
+      "neighbor": "reduje la cantidad de comida que doy a los peces",
+      "similarity": 0.531
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-053",
+      "new": "Preparé platos con antelación para los días ocupados.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-094",
+      "neighbor": "cubrí los plantones con una tela para protegerlos de la escarcha",
+      "similarity": 0.569
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-054",
+      "new": "Dividí una bolsa grande de frutos secos en porciones para llevarlas a la montaña.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2308",
+      "neighbor": "compro tres manzanas para llevarlas a la oficina",
+      "similarity": 0.4375
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-055",
+      "new": "Usé la carne descongelada ese mismo día.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-011-026",
+      "neighbor": "guisé la carne dura lentamente a fuego bajo",
+      "similarity": 0.5366
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-056",
+      "new": "Dejé el horno cerámico cerrado para que se enfriaran los platos cocidos.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1116",
+      "neighbor": "aunque el sendero esté embarrado si solo se ensucian los zapatos no me importa",
+      "similarity": 0.5369
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-057",
+      "new": "Metí la fruta en agua con hielo para enfriarla.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1442",
+      "neighbor": "si estoy en casa consigo tiempo para relajarme",
+      "similarity": 0.5435
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-058",
+      "new": "Dejé que la mantequilla alcanzara la temperatura ambiente antes de mezclarla.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-090",
+      "neighbor": "después de la puesta de sol la temperatura bajó de golpe",
+      "similarity": 0.5303
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-059",
+      "new": "Cerré herméticamente el recipiente para evitar la humedad.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1575",
+      "neighbor": "puede decirme el procedimiento para tomar la medicina",
+      "similarity": 0.5818
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-060",
+      "new": "La etiqueta indica que no lleva conservantes.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1098",
+      "neighbor": "ella es increíble así que quiero llevarme mejor con ella",
+      "similarity": 0.54
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-061",
+      "new": "Coloqué delante los productos con la fecha de consumo preferente más próxima.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2324",
+      "neighbor": "en esta tienda colocan los productos según lo que piden los clientes",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-062",
+      "new": "Antes de comprar, comprobé la fecha límite de consumo del almuerzo preparado.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-001-053",
+      "neighbor": "antes de comprar quiero comprobar la calidad además de que el precio sea bajo",
+      "similarity": 0.5921
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-063",
+      "new": "En la lista de ingredientes figuraba el trigo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-011-009",
+      "neighbor": "después de medir los ingredientes calenté el horno",
+      "similarity": 0.5474
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-064",
+      "new": "Aunque proceden del mismo lugar, son variedades distintas.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0917",
+      "neighbor": "la interpretación del drama es distinta",
+      "similarity": 0.5263
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-065",
+      "new": "Preparé un menú con verduras de temporada.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2194",
+      "neighbor": "compré una lavadora con el plus de este mes",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-066",
+      "new": "Esperé unos días a que maduraran los melocotones.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-009-008",
+      "neighbor": "cada mañana espero con ilusión que se abran los capullos",
+      "similarity": 0.4808
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-067",
+      "new": "Sólo una mandarina se había podrido dentro de la bolsa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0450",
+      "neighbor": "la cartera está dentro del bolso",
+      "similarity": 0.5581
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-068",
+      "new": "Uso primero las verduras de hoja porque se estropean con facilidad.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1914",
+      "neighbor": "no puedo verla hoy porque está ocupada",
+      "similarity": 0.5577
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-069",
+      "new": "Dejé la bolsa abierta y las galletas de arroz perdieron su textura crujiente por la humedad.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-038",
+      "neighbor": "las croquetas recién fritas están crujientes por fuera y muy ricas",
+      "similarity": 0.4459
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-070",
+      "new": "Envolví el pan en un paño para que no se secara.",
+      "neighbor_id": "JAES-N4-CONVERSATION-C3000-007-043",
+      "neighbor": "pasé la olla al fogón de al lado para que no se quemara",
+      "similarity": 0.6275
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-071",
+      "new": "Con la temperatura baja, la masa tardó en fermentar.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1586",
+      "neighbor": "ahora la temperatura de esta habitación está un poco alta",
+      "similarity": 0.5421
+    },
+    {
+      "id": "JAES-N2-CONVERSATION-C3000-011-072",
+      "new": "La maduración intensificó el aroma del queso.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0701",
+      "neighbor": "la configuración está mal",
+      "similarity": 0.4638
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-073",
+      "new": "La pimienta recién molida realzó el sabor y el aroma.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-058",
+      "neighbor": "esta exposición presenta la relación entre el budismo y el arte",
+      "similarity": 0.5391
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-074",
+      "new": "Si dejas el té infusionando mucho tiempo, aumenta su astringencia.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2084",
+      "neighbor": "las dos tiendas cercanas se fusionaron y aumentó la variedad",
+      "similarity": 0.4839
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-075",
+      "new": "Al quemarse, la salsa adquirió amargor.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-011-035",
+      "neighbor": "dejé la carne marinando en la salsa durante una hora",
+      "similarity": 0.4944
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-076",
+      "new": "Hice mermelada con manzanas ácidas.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1588",
+      "neighbor": "en la tienda compré tres manzanas y dos panes",
+      "similarity": 0.557
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-077",
+      "new": "Al cocinarla, aumenta el dulzor de la cebolla.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-034",
+      "neighbor": "saborea el dulzor propio de la fruta",
+      "similarity": 0.575
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-078",
+      "new": "Como estaba demasiado salado, añadí tofu.",
+      "neighbor_id": "JAES-N4-EXP-0075",
+      "neighbor": "comí demasiado al mediodía y me entró sueño",
+      "similarity": 0.561
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-079",
+      "new": "Lo cocí sin pasarme para que conservara firmeza al morder.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-086",
+      "neighbor": "sírvelo despacio para que no se forme espuma",
+      "similarity": 0.495
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-080",
+      "new": "Al pasarlo por un tamiz, la textura en boca queda suave.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1941",
+      "neighbor": "es legal pasar por esta vía en autobús",
+      "similarity": 0.5
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-081",
+      "new": "Los fideos fríos pasaban suavemente por la garganta.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-068",
+      "neighbor": "la avería causada por una caída no estaba cubierta por la garantía",
+      "similarity": 0.5299
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-082",
+      "new": "Estaba lleno y dejé la mitad del postre.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2026",
+      "neighbor": "puedo comer la mitad de este pastel",
+      "similarity": 0.5676
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-083",
+      "new": "Fui a comprar con hambre y compré demasiado.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0996",
+      "neighbor": "no voy a comprar hoy porque no tengo dinero",
+      "similarity": 0.5116
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-084",
+      "new": "El calor me había quitado el apetito.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1699",
+      "neighbor": "el pan ya se había agotado al día siguiente",
+      "similarity": 0.5823
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-085",
+      "new": "Estoy probando ingredientes nuevos para comer de forma menos selectiva.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2323",
+      "neighbor": "estoy preparando deprisa los materiales de la reunión",
+      "similarity": 0.5041
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-086",
+      "new": "Decidí el menú viendo lo que quedaba en el frigorífico.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-008-048",
+      "neighbor": "una vez abierto guárdalo en el frigorífico",
+      "similarity": 0.5625
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-087",
+      "new": "Llevé un carro para comprar las provisiones de la fiesta.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-010-013",
+      "neighbor": "envié una muestra para analizar la composición de la tierra",
+      "similarity": 0.6087
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-088",
+      "new": "No dividimos la cuenta a partes iguales; cada uno pagó lo suyo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-C3000-007-009",
+      "neighbor": "al llevar las cuentas de casa uno detecta gastos innecesarios",
+      "similarity": 0.4754
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-089",
+      "new": "Le invité a comer para agradecerle la ayuda.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0745",
+      "neighbor": "se necesita conocimiento para aparecer",
+      "similarity": 0.5679
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-090",
+      "new": "Los pedidos para llevar se recogen en otra ventanilla.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0583",
+      "neighbor": "me comunico todos los días para llevarme mejor con ella",
+      "similarity": 0.537
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-091",
+      "new": "Como estaba lleno, dije que no me importaba compartir mesa.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1140",
+      "neighbor": "como estaba barato me quedo con este",
+      "similarity": 0.5591
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-092",
+      "new": "El local estaba reservado para un grupo y no pudimos entrar.",
+      "neighbor_id": "JAES-N4-EDITORIAL-0693",
+      "neighbor": "hace falta reservar para usar esta app",
+      "similarity": 0.5361
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-093",
+      "new": "Como había un cartel de reservado, me senté en otro sitio.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1344",
+      "neighbor": "como no había tiempo pensé en otro método",
+      "similarity": 0.5979
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-094",
+      "new": "Al pedir una mesa de no fumadores, me acompañaron al fondo.",
+      "neighbor_id": "JAES-N3-CONVERSATION-20260924B-056",
+      "neighbor": "al levantar la tapa de la olla se me empañaron las gafas con el vapor",
+      "similarity": 0.5238
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-095",
+      "new": "Antes de pedir nos sirvieron un pequeño aperitivo.",
+      "neighbor_id": "JAES-N5-EDITORIAL-0708",
+      "neighbor": "antes de ir de compras hago un poco de ejercicio",
+      "similarity": 0.5773
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-096",
+      "new": "El pan que buscaba ya estaba agotado.",
+      "neighbor_id": "JAES-N4-EDITORIAL-1699",
+      "neighbor": "el pan ya se había agotado al día siguiente",
+      "similarity": 0.557
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-097",
+      "new": "La sopa del día está anunciada en la pizarra.",
+      "neighbor_id": "JAES-N4-EDITORIAL-2035",
+      "neighbor": "la abuela está en la cocina",
+      "similarity": 0.5915
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-098",
+      "new": "Pedí una ración grande y resultó ser más cantidad de la que esperaba.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1094",
+      "neighbor": "la vida es más larga de lo que pensaba",
+      "similarity": 0.5283
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-C3000-011-099",
+      "new": "Para comer me bastó la ración normal.",
+      "neighbor_id": "JAES-N5-EDITORIAL-2035",
+      "neighbor": "antes de comer me lavo las manos",
+      "similarity": 0.5588
+    },
+    {
+      "id": "JAES-N4-CONVERSATION-C3000-011-100",
+      "new": "Me limpié las manos con la toallita antes de coger los palillos.",
+      "neighbor_id": "JAES-N5-EDITORIAL-1795",
+      "neighbor": "me lavo las manos antes de comer y luego como",
+      "similarity": 0.6111
+    }
+  ]
+}

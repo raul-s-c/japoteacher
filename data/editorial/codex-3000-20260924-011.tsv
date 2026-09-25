@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+まな板	N4	comida	[魚|さかな]を[切|き]ったまな[板|いた]を、すぐ[洗|あら]いました。	Lavé enseguida la tabla donde había cortado el pescado.	まな板 es una tabla de cortar.
+包丁	N4	comida	[包丁|ほうちょう]の[刃|は]を[外側|そとがわ]に[向|む]けないでください。	No dejes el cuchillo con el filo hacia fuera.	包丁 es un cuchillo de cocina.
+お玉	N4	comida	お[玉|たま]が[見|み]つからず、カップでスープをすくいました。	No encontraba el cucharón y serví la sopa con una taza.	お玉 es un cucharón.
+ざる	N4	comida	ゆでた[麺|めん]をざるに[上|あ]げました。	Pasé los fideos cocidos al colador.	ざる es un colador de rejilla o cesta.
+ふるい	N3	comida	[粉|こな]をふるいにかけて、だまを[取|と]りました。	Tamicé la harina para quitar los grumos.	ふるい es un tamiz.
+泡立て器	N3	comida	[泡立|あわだ]て[器|き]を[使|つか]うと、[卵|たまご]がよく[混|ま]ざります。	Con las varillas se baten bien los huevos.	泡立て器 es un batidor de varillas.
+へら	N3	comida	へらでボウルの[内側|うちがわ]のクリームを[集|あつ]めました。	Recogí con una espátula la crema de las paredes del cuenco.	へら es una espátula.
+菜箸	N3	comida	[長|なが]い[菜箸|さいばし]で、[揚|あ]げ[物|もの]を[裏返|うらがえ]しました。	Di la vuelta a la fritura con unos palillos largos de cocina.	菜箸 son palillos largos para cocinar.
+計量	N3	comida	[計量|けいりょう]を[済|す]ませてから、オーブンを[温|あたた]めました。	Después de medir los ingredientes, calenté el horno.	計量 es medir cantidades.
+目盛り	N3	comida	[横|よこ]から[見|み]ると、[目盛|めも]りを[正|ただ]しく[読|よ]めます。	Mirando de lado puedes leer bien la escala graduada.	目盛り son las marcas de una escala.
+蓋	N4	comida	[蒸気|じょうき]を[逃|に]がすため、[蓋|ふた]を[少|すこ]しずらしました。	Dejé la tapa un poco desplazada para que saliera el vapor.	蓋 es una tapa.
+取っ手	N3	vida_diaria	[取|と]っ[手|て]が[熱|あつ]くなっていて、[布|ぬの]で[持|も]ちました。	El asa se había calentado y la sujeté con un paño.	取っ手 es un asa o tirador.
+底	N4	comida	[鍋|なべ]の[底|そこ]に、ご[飯|はん]が[少|すこ]し[残|のこ]っていました。	Quedaba un poco de arroz en el fondo de la olla.	底 es la parte inferior de un recipiente.
+縁	N3	vida_diaria	カップの[縁|ふち]が[欠|か]けていました。	El borde de la taza estaba desportillado.	縁 se lee ふち cuando significa borde.
+柄	N3	vida_diaria	ブラシの[柄|え]が[長|なが]いので、[奥|おく]まで[届|とど]きます。	El mango del cepillo es largo y permite llegar hasta el fondo.	柄 se lee え cuando significa mango.
+刃	N3	vida_diaria	はさみの[刃|は]に、テープののりがついています。	Las hojas de las tijeras tienen pegamento de cinta adhesiva.	刃 es el filo o la hoja de una herramienta.
+切れ味	N3	comida	[研|と]いだら、[包丁|ほうちょう]の[切|き]れ[味|あじ]が[戻|もど]りました。	Al afilarlo, el cuchillo volvió a cortar bien.	切れ味 es la capacidad de cortar de un filo.
+研ぐ	N3	vida_diaria	[祖父|そふ]に、[刃物|はもの]を[研|と]ぐ[角度|かくど]を[教|おそ]わりました。	Mi abuelo me enseñó el ángulo adecuado para afilar herramientas de corte.	研ぐ es afilar; también se usa para lavar arroz.
+下ごしらえ	N3	comida	[朝|あさ]のうちに[下|した]ごしらえをしておきました。	Dejé preparados los ingredientes por la mañana.	下ごしらえ es la preparación previa a cocinar.
+皮むき	N3	comida	[皮|かわ]むきを[子供|こども]に[手伝|てつだ]ってもらいました。	Los niños me ayudaron a pelar los ingredientes.	皮むき es retirar la piel o cáscara.
+輪切り	N3	comida	レモンを[薄|うす]い[輪切|わぎ]りにしました。	Corté el limón en rodajas finas.	輪切り es cortar en rodajas.
+千切り	N3	comida	キャベツの[千切|せんぎ]りを、[皿|さら]に[添|そ]えました。	Añadí al plato col cortada en tiras finas.	千切り es cortar en juliana.
+みじん切り	N3	comida	みじん[切|ぎ]りのにんにくを[冷凍|れいとう]して、[少|すこ]しずつ[使|つか]っています。	Congelo el ajo picado muy fino y lo voy usando en pequeñas cantidades.	みじん切り es un picado muy fino.
+角切り	N3	comida	[角切|かくぎ]りの[野菜|やさい]は、[大|おお]きさを[揃|そろ]えました。	Corté las verduras en dados de tamaño uniforme.	角切り es cortar en dados.
+薄切り	N4	comida	[薄切|うすぎ]りの[肉|にく]を[広|ひろ]げて、[野菜|やさい]を[巻|ま]きました。	Extendí las lonchas finas de carne y enrollé verduras dentro.	薄切り es cortar en lonchas finas.
+煮込む	N3	comida	[硬|かた]い[肉|にく]を、[弱火|よわび]でじっくり[煮込|にこ]みました。	Guisé la carne dura lentamente a fuego bajo.	煮込む es cocer durante bastante tiempo.
+蒸す	N3	comida	[饅頭|まんじゅう]を[蒸|む]すと、[台所|だいどころ]に[甘|あま]い[香|かお]りが[広|ひろ]がりました。	Al cocer los bollos al vapor, un aroma dulce llenó la cocina.	蒸す es cocinar al vapor.
+炒める	N4	comida	[香|かお]りが[出|で]るまで、にんにくを[炒|いた]めます。	Sofríe el ajo hasta que desprenda aroma.	炒める es cocinar removiendo con un poco de aceite.
+揚げる	N4	comida	[少量|しょうりょう]ずつ[揚|あ]げると、[油|あぶら]の[温度|おんど]が[下|さ]がりにくいです。	Si fríes en pequeñas tandas, la temperatura del aceite baja menos.	揚げる es freír con abundante aceite.
+炙る	N3	comida	[海苔|のり]を[軽|かる]く[炙|あぶ]って、[香|かお]りを[出|だ]しました。	Tosté ligeramente el alga nori para realzar su aroma.	炙る es acercar un alimento al fuego para tostarlo.
+炊く	N4	comida	[米|こめ]に[雑穀|ざっこく]を[混|ま]ぜて[炊|た]きました。	Cocí el arroz mezclado con otros cereales.	炊く se usa especialmente para cocer arroz.
+茹でる	N4	comida	[卵|たまご]を[茹|ゆ]でる[間|あいだ]に、サラダを[作|つく]りました。	Preparé la ensalada mientras cocía los huevos.	茹でる es cocer en agua hirviendo.
+湯通し	N3	comida	[油揚|あぶらあ]げを[湯通|ゆどお]ししてから[切|き]りました。	Escaldé el tofu frito antes de cortarlo.	湯通し es pasar brevemente un alimento por agua caliente.
+湯煎	N3	comida	チョコレートを[湯煎|ゆせん]でゆっくり[溶|と]かしました。	Derretí el chocolate despacio al baño maría.	湯煎 es calentar mediante un baño de agua caliente.
+漬ける	N3	comida	[肉|にく]をたれに[漬|つ]けて、[一時間|いちじかん][置|お]きました。	Dejé la carne marinando en la salsa durante una hora.	漬ける es dejar sumergido para que tome sabor.
+和える	N3	comida	ほうれん[草|そう]を[胡麻|ごま]で[和|あ]えました。	Aliñé las espinacas con sésamo.	和える es mezclar un alimento con un aliño.
+味付け	N4	comida	[子供|こども]の[分|ぶん]は、[味付|あじつ]けを[控|ひか]えめにしました。	Sazoné menos la porción de los niños.	味付け es dar sabor con condimentos.
+下味	N3	comida	[揚|あ]げる[前|まえ]に、[魚|さかな]に[下味|したあじ]をつけました。	Sazoné el pescado antes de freírlo.	下味 es el sazonado previo a cocinar.
+塩加減	N3	comida	[塩加減|しおかげん]を[見|み]るため、[少|すこ]し[味見|あじみ]しました。	Probé un poco para comprobar el punto de sal.	塩加減 es la cantidad o intensidad de sal.
+隠し味	N3	comida	[隠|かく]し[味|あじ]に、[少|すこ]しだけ[味噌|みそ]を[入|い]れました。	Añadí un poco de miso como toque de sabor secreto.	隠し味 es un ingrediente discreto que realza el sabor.
+出汁	N3	comida	[昆布|こんぶ]と[椎茸|しいたけ]で[出汁|だし]を[取|と]りました。	Preparé caldo con alga kombu y setas shiitake.	出汁 es un caldo base.
+灰汁	N3	comida	[表面|ひょうめん]に[浮|う]いた[灰汁|あく]を[取|と]りました。	Retiré la espuma de impurezas que flotaba en la superficie.	灰汁 se lee あく y designa impurezas de ciertos alimentos.
+煮汁	N3	comida	[残|のこ]った[煮汁|にじる]で、[翌日|よくじつ]うどんを[作|つく]りました。	Al día siguiente preparé udon con el caldo de cocción sobrante.	煮汁 es el líquido donde se ha cocido un alimento.
+とろみ	N3	comida	[片栗粉|かたくりこ]で、スープにとろみをつけました。	Espesé la sopa con fécula de patata.	とろみ es una consistencia algo espesa.
+焦げ目	N3	comida	[表面|ひょうめん]に[焦|こ]げ[目|め]がついたら、[裏返|うらがえ]します。	Dale la vuelta cuando la superficie esté dorada.	焦げ目 es la marca de tostado de un alimento.
+生焼け	N3	comida	[中|なか]が[生焼|なまや]けだったので、もう[少|すこ]し[焼|や]きました。	El interior estaba poco hecho, así que lo cociné un poco más.	生焼け significa cocinado de forma insuficiente.
+余熱	N3	comida	[火|ひ]を[止|と]めて、[余熱|よねつ]で[仕上|しあ]げました。	Apagué el fuego y terminé la cocción con el calor residual.	余熱 es calor que permanece después de apagar la fuente.
+予熱	N3	comida	[予熱|よねつ]が[終|お]わるまで、[生地|きじ]を[冷蔵庫|れいぞうこ]に[入|い]れました。	Guardé la masa en el frigorífico mientras terminaba de precalentarse el horno.	予熱 es calentar un aparato antes de usarlo.
+盛り付け	N3	comida	[盛|も]り[付|つ]けを[変|か]えるだけで、[印象|いんしょう]が[変|か]わります。	Sólo con cambiar la presentación del plato cambia la impresión que da.	盛り付け es la disposición de la comida en el plato.
+取り分ける	N3	comida	[辛|から]くする[前|まえ]に、[子供|こども]の[分|ぶん]を[取|と]り[分|わ]けました。	Aparté la porción de los niños antes de añadir el picante.	取り分ける es separar una parte para alguien.
+おかわり	N5	comida	おかわりしたいですが、お[腹|なか]がいっぱいです。	Me gustaría repetir, pero estoy lleno.	おかわり es pedir o tomar otra porción.
+食べ残し	N3	vida_diaria	[食|た]べ[残|のこ]しが[減|へ]るように、[量|りょう]を[調整|ちょうせい]しました。	Ajusté las cantidades para que sobrara menos comida en los platos.	食べ残し es comida servida que no se ha terminado.
+作り置き	N3	comida	[忙|いそが]しい[日|ひ]のために、おかずを[作|つく]り[置|お]きしました。	Preparé platos con antelación para los días ocupados.	作り置き es cocinar para consumir después.
+小分け	N3	comida	[大袋|おおぶくろ]のナッツを[小分|こわ]けにして、[山登|やまのぼ]りに[持|も]っていきました。	Dividí una bolsa grande de frutos secos en porciones para llevarlas a la montaña.	小分け es dividir una cantidad en porciones.
+解凍	N3	comida	[解凍|かいとう]した[肉|にく]を、その[日|ひ]のうちに[使|つか]いました。	Usé la carne descongelada ese mismo día.	解凍 es descongelar.
+冷ます	N4	comida	[焼|や]いた[皿|さら]を[冷|さ]ますため、[窯|かま]を[閉|し]めたままにしました。	Dejé el horno cerámico cerrado para que se enfriaran los platos cocidos.	冷ます es hacer que algo pierda calor.
+冷やす	N4	comida	[果物|くだもの]を[冷|ひ]やすため、[氷水|こおりみず]に[入|い]れました。	Metí la fruta en agua con hielo para enfriarla.	冷やす es bajar la temperatura de algo.
+常温	N3	comida	バターを[常温|じょうおん]に[戻|もど]してから[混|ま]ぜました。	Dejé que la mantequilla alcanzara la temperatura ambiente antes de mezclarla.	常温 es la temperatura ambiente habitual.
+密閉	N3	vida_diaria	[湿気|しっけ]を[防|ふせ]ぐため、[容器|ようき]を[密閉|みっぺい]しました。	Cerré herméticamente el recipiente para evitar la humedad.	密閉 es cerrar sin dejar pasar aire.
+保存料	N3	compras	[保存料|ほぞんりょう]を[使|つか]っていないと、ラベルに[書|か]かれています。	La etiqueta indica que no lleva conservantes.	保存料 es una sustancia usada para conservar alimentos.
+賞味期限	N3	compras	[棚|たな]の[手前|てまえ]に、[賞味期限|しょうみきげん]の[近|ちか]い[品|しな]を[置|お]きました。	Coloqué delante los productos con la fecha de consumo preferente más próxima.	賞味期限 es consumo preferente, distinto de 消費期限.
+消費期限	N3	compras	[買|か]う[前|まえ]に、[弁当|べんとう]の[消費期限|しょうひきげん]を[確認|かくにん]しました。	Antes de comprar, comprobé la fecha límite de consumo del almuerzo preparado.	消費期限 es la fecha de caducidad de un alimento perecedero.
+原材料	N3	compras	[原材料|げんざいりょう]の[表示|ひょうじ]に、[小麦|こむぎ]が[含|ふく]まれていました。	En la lista de ingredientes figuraba el trigo.	原材料 son los ingredientes o materias primas.
+産地	N3	compras	[産地|さんち]が[同|おな]じでも、[品種|ひんしゅ]は[違|ちが]います。	Aunque proceden del mismo lugar, son variedades distintas.	産地 es el lugar de producción.
+旬	N3	comida	[旬|しゅん]の[野菜|やさい]を[使|つか]った[献立|こんだて]にしました。	Preparé un menú con verduras de temporada.	旬 es la temporada de mejor calidad de un alimento.
+熟す	N3	comida	[桃|もも]が[熟|じゅく]すまで、[数日|すうじつ][待|ま]ちました。	Esperé unos días a que maduraran los melocotones.	熟す es madurar una fruta.
+腐る	N4	vida_diaria	[袋|ふくろ]の[中|なか]で[一|ひと]つだけみかんが[腐|くさ]っていました。	Sólo una mandarina se había podrido dentro de la bolsa.	腐る es pudrirse.
+傷む	N3	comida	[葉物|はもの][野菜|やさい]は[傷|いた]みやすいので、[先|さき]に[使|つか]います。	Uso primero las verduras de hoja porque se estropean con facilidad.	傷む significa deteriorarse.
+湿気る	N3	comida	[袋|ふくろ]を[開|あ]けたままにして、せんべいが[湿気|しけ]りました。	Dejé la bolsa abierta y las galletas de arroz perdieron su textura crujiente por la humedad.	湿気る es absorber humedad y ablandarse.
+乾燥	N3	vida_diaria	[乾燥|かんそう]を[防|ふせ]ぐため、パンを[布|ぬの]で[包|つつ]みました。	Envolví el pan en un paño para que no se secara.	乾燥 es pérdida de humedad.
+発酵	N3	comida	[気温|きおん]が[低|ひく]く、[生地|きじ]の[発酵|はっこう]に[時間|じかん]がかかりました。	Con la temperatura baja, la masa tardó en fermentar.	発酵 es fermentación.
+熟成	N2	comida	[熟成|じゅくせい]によって、チーズの[香|かお]りが[強|つよ]くなりました。	La maduración intensificó el aroma del queso.	熟成 es maduración controlada de un producto.
+風味	N3	comida	[挽|ひ]きたての[胡椒|こしょう]で、[風味|ふうみ]が[増|ま]しました。	La pimienta recién molida realzó el sabor y el aroma.	風味 engloba el sabor y aroma de un alimento.
+渋み	N3	comida	お[茶|ちゃ]を[長|なが]く[置|お]くと、[渋|しぶ]みが[強|つよ]くなります。	Si dejas el té infusionando mucho tiempo, aumenta su astringencia.	渋み es la sensación astringente en la boca.
+苦み	N3	comida	[焦|こ]がしたため、ソースに[苦|にが]みが[出|で]ました。	Al quemarse, la salsa adquirió amargor.	苦み es sabor amargo.
+酸味	N3	comida	[酸味|さんみ]のあるりんごで、ジャムを[作|つく]りました。	Hice mermelada con manzanas ácidas.	酸味 es sabor ácido.
+甘み	N3	comida	[加熱|かねつ]すると、[玉|たま]ねぎの[甘|あま]みが[増|ま]します。	Al cocinarla, aumenta el dulzor de la cebolla.	甘み es dulzor.
+塩気	N3	comida	[塩気|しおけ]が[強|つよ]かったので、[豆腐|とうふ]を[足|た]しました。	Como estaba demasiado salado, añadí tofu.	塩気 es el grado de sabor salado.
+歯ごたえ	N3	comida	[茹|ゆ]ですぎず、[歯|は]ごたえを[残|のこ]しました。	Lo cocí sin pasarme para que conservara firmeza al morder.	歯ごたえ es la resistencia que ofrece un alimento al morderlo.
+口当たり	N3	comida	[裏|うら]ごしすると、[口当|くちあ]たりが[滑|なめ]らかになります。	Al pasarlo por un tamiz, la textura en boca queda suave.	口当たり es la sensación de un alimento en la boca.
+喉越し	N3	comida	[冷|つめ]たい[麺|めん]は、[喉越|のどご]しがよかったです。	Los fideos fríos pasaban suavemente por la garganta.	喉越し es la sensación al tragar.
+満腹	N4	vida_diaria	[満腹|まんぷく]で、デザートを[半分|はんぶん][残|のこ]しました。	Estaba lleno y dejé la mitad del postre.	満腹 es tener el estómago lleno.
+空腹	N4	vida_diaria	[空腹|くうふく]のまま[買|か]い[物|もの]に[行|い]き、[買|か]いすぎました。	Fui a comprar con hambre y compré demasiado.	空腹 es tener el estómago vacío o hambre.
+食欲	N4	vida_diaria	[暑|あつ]さで[食欲|しょくよく]が[落|お]ちていました。	El calor me había quitado el apetito.	食欲 es apetito.
+偏食	N3	vida_diaria	[偏食|へんしょく]を[減|へ]らしたくて、[新|あたら]しい[食材|しょくざい]を[試|ため]しています。	Estoy probando ingredientes nuevos para comer de forma menos selectiva.	偏食 es comer sólo ciertos alimentos y evitar otros.
+献立	N3	comida	[冷蔵庫|れいぞうこ]の[残|のこ]りを[見|み]て、[献立|こんだて]を[決|き]めました。	Decidí el menú viendo lo que quedaba en el frigorífico.	献立 es el conjunto de platos planeados para una comida.
+買い出し	N3	vida_diaria	[祭|まつ]りの[買|か]い[出|だ]しに、[台車|だいしゃ]を[持|も]っていきました。	Llevé un carro para comprar las provisiones de la fiesta.	買い出し es salir a comprar suministros.
+割り勘	N3	vida_diaria	[会計|かいけい]は[割|わ]り[勘|かん]にせず、[各自|かくじ]で[払|はら]いました。	No dividimos la cuenta a partes iguales; cada uno pagó lo suyo.	割り勘 es repartir la cuenta, normalmente en partes iguales.
+おごる	N4	vida_diaria	[手伝|てつだ]ってくれたお[礼|れい]に、[昼食|ちゅうしょく]をおごりました。	Le invité a comer para agradecerle la ayuda.	おごる es pagar la comida de otra persona.
+持ち帰り	N4	comida	[持|も]ち[帰|かえ]りの[注文|ちゅうもん]は、[別|べつ]の[窓口|まどぐち]で[受|う]け[取|と]ります。	Los pedidos para llevar se recogen en otra ventanilla.	持ち帰り es llevarse algo para consumir fuera.
+相席	N3	comida	[混|こ]んでいたので、[相席|あいせき]でもよいと[伝|つた]えました。	Como estaba lleno, dije que no me importaba compartir mesa.	相席 es compartir mesa con desconocidos.
+貸し切り	N3	ocio	[店|みせ]が[貸|か]し[切|き]りで、[入|はい]れませんでした。	El local estaba reservado para un grupo y no pudimos entrar.	貸し切り es reservar un espacio entero para uso exclusivo.
+予約席	N4	comida	[予約席|よやくせき]の[札|ふだ]があったので、[別|べつ]の[席|せき]に[座|すわ]りました。	Como había un cartel de reservado, me senté en otro sitio.	予約席 es un asiento o mesa reservados.
+禁煙	N4	comida	[禁煙|きんえん]の[席|せき]を[希望|きぼう]すると、[奥|おく]へ[案内|あんない]されました。	Al pedir una mesa de no fumadores, me acompañaron al fondo.	禁煙 indica que no se permite fumar.
+お通し	N3	comida	[注文|ちゅうもん]する[前|まえ]に、[小|ちい]さなお[通|とお]しが[出|で]ました。	Antes de pedir nos sirvieron un pequeño aperitivo.	お通し es un aperitivo que suele servirse y cobrarse en ciertos bares japoneses.
+品切れ	N4	compras	[目当|めあ]てのパンは、すでに[品切|しなぎ]れでした。	El pan que buscaba ya estaba agotado.	品切れ es falta de existencias de un producto.
+日替わり	N3	comida	[日替|ひが]わりのスープは、[黒板|こくばん]に[書|か]いてあります。	La sopa del día está anunciada en la pizarra.	日替わり indica que algo cambia cada día.
+大盛り	N4	comida	[大盛|おおも]りを[頼|たの]んだら、[思|おも]った[以上|いじょう]の[量|りょう]でした。	Pedí una ración grande y resultó ser más cantidad de la que esperaba.	大盛り es una porción abundante.
+並盛り	N3	comida	[昼|ひる]は[並盛|なみも]りで[十分|じゅうぶん]でした。	Para comer me bastó la ración normal.	並盛り es el tamaño estándar de una ración.
+おしぼり	N4	comida	おしぼりで[手|て]を[拭|ふ]いてから、[箸|はし]を[取|と]りました。	Me limpié las manos con la toallita antes de coger los palillos.	おしぼり es una toalla húmeda para las manos.

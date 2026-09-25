@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+仮説	N2	educacion	[実験|じっけん]の[結果|けっか]は、[最初|さいしょ]の[仮説|かせつ]と[矛盾|むじゅん]しました。	El resultado del experimento contradijo la hipótesis inicial.	仮説 es una explicación provisional que se comprueba.
+検証	N2	educacion	[同|おな]じ[方法|ほうほう]で[検証|けんしょう]しても、[結果|けっか]が[一致|いっち]しません。	Aunque repetimos la comprobación con el mismo método, los resultados no coinciden.	検証 es comprobar la validez de una afirmación.
+証拠	N3	vida_diaria	[約束|やくそく]した[証拠|しょうこ]として、メールを[残|のこ]しました。	Guardé el correo como prueba de lo acordado.	証拠 es una prueba que respalda un hecho.
+推測	N3	educacion	[足跡|あしあと]の[大|おお]きさから、[動物|どうぶつ]の[体格|たいかく]を[推測|すいそく]しました。	Estimé el tamaño del animal por el tamaño de sus huellas.	推測 es inferir algo a partir de indicios.
+推移	N2	educacion	[気温|きおん]の[推移|すいい]をグラフにしました。	Representé en un gráfico la evolución de la temperatura.	推移 es la evolución a lo largo del tiempo.
+傾向	N3	educacion	[回答|かいとう]には、[年代|ねんだい]ごとの[傾向|けいこう]が[見|み]られます。	Las respuestas muestran tendencias según la edad.	傾向 es una tendencia observada.
+偏り	N2	educacion	[調査|ちょうさ]した[地域|ちいき]に[偏|かたよ]りがありました。	Las zonas estudiadas no estaban representadas de forma equilibrada.	偏り es un desequilibrio o sesgo.
+誤差	N2	educacion	[測|はか]る[人|ひと]によって、[少|すこ]し[誤差|ごさ]が[出|で]ます。	Hay pequeñas diferencias de medición según quién mida.	誤差 es la diferencia respecto al valor real o esperado.
+精度	N2	tecnologia	[設定|せってい]を[変|か]えると、[認識|にんしき]の[精度|せいど]が[上|あ]がりました。	Al cambiar la configuración mejoró la precisión del reconocimiento.	精度 es precisión.
+標本	N3	educacion	[葉|は]を[乾|かわ]かして、[標本|ひょうほん]を[作|つく]りました。	Sequé unas hojas para preparar muestras de estudio.	標本 es un ejemplar preparado para observarlo.
+観測	N3	educacion	[雲|くも]が[厚|あつ]く、[星|ほし]の[観測|かんそく]を[諦|あきら]めました。	Las nubes eran tan densas que renunciamos a observar las estrellas.	観測 es observar y medir fenómenos.
+観察	N3	educacion	[同|おな]じ[花|はな]を[毎日|まいにち][観察|かんさつ]し、[絵|え]に[描|か]きました。	Observé la misma flor cada día y la dibujé.	観察 es mirar atentamente para conocer detalles.
+分析	N3	educacion	[土|つち]の[成分|せいぶん]を[分析|ぶんせき]するため、[試料|しりょう]を[送|おく]りました。	Envié una muestra para analizar la composición de la tierra.	分析 es separar y estudiar elementos.
+分類	N3	educacion	[拾|ひろ]った[石|いし]を、[色|いろ]ではなく[硬|かた]さで[分類|ぶんるい]しました。	Clasifiqué las piedras que recogí por su dureza, en vez de por su color.	分類 es ordenar por categorías.
+抽出	N2	tecnologia	[長|なが]い[文章|ぶんしょう]から、[地名|ちめい]だけを[抽出|ちゅうしゅつ]しました。	Extraje únicamente los nombres de lugares de un texto largo.	抽出 es seleccionar y extraer ciertos elementos.
+集計	N3	trabajo	[投票|とうひょう]の[集計|しゅうけい]を[二人|ふたり]で[確認|かくにん]しました。	Comprobamos entre dos personas el recuento de votos.	集計 es reunir y sumar datos.
+平均	N4	educacion	[平均|へいきん]だけでは、[点数|てんすう]のばらつきはわかりません。	La media por sí sola no muestra cuánto varían las notas.	平均 es el valor medio.
+中央値	N2	educacion	[極端|きょくたん]な[値|あたい]があるので、[中央値|ちゅうおうち]も[調|しら]べました。	Como había valores extremos, calculé también la mediana.	中央値 es el valor central de los datos ordenados.
+比率	N3	educacion	[図|ず]では、[人数|にんずう]ではなく[比率|ひりつ]を[示|しめ]しています。	El gráfico muestra proporciones, no cantidades de personas.	比率 expresa la relación proporcional entre cantidades.
+相関	N2	educacion	[相関|そうかん]があっても、[原因|げんいん]とは[限|かぎ]りません。	Que haya correlación no implica necesariamente causalidad.	相関 es la relación entre variaciones de dos factores.
+因果	N2	educacion	この[資料|しりょう]だけでは、[因果|いんが][関係|かんけい]は[判断|はんだん]できません。	Con estos datos solamente no se puede determinar una relación causal.	因果関係 vincula una causa con su efecto.
+比較	N3	compras	[重|おも]さも[比較|ひかく]してから、[傘|かさ]を[選|えら]びました。	Elegí el paraguas después de comparar también su peso.	比較 es examinar diferencias y semejanzas.
+対照	N2	educacion	[二|ふた]つの[訳|やく]を[対照|たいしょう]すると、[省略|しょうりゃく]された[部分|ぶぶん]がわかります。	Al cotejar las dos traducciones se ven los fragmentos omitidos.	対照する es poner dos cosas frente a frente para compararlas.
+類似	N2	educacion	[形|かたち]が[類似|るいじ]していても、[意味|いみ]は[別|べつ]です。	Aunque las formas se parecen, los significados son distintos.	類似 es semejanza.
+相違	N2	trabajo	[契約書|けいやくしょ]と[説明|せつめい]に[相違|そうい]がありました。	Había una discrepancia entre el contrato y la explicación.	相違 es una diferencia entre elementos comparados.
+共通	N3	vida_diaria	[二人|ふたり]には、[料理|りょうり]という[共通|きょうつう]の[趣味|しゅみ]があります。	Los dos tienen una afición en común: cocinar.	共通 es lo compartido por varias cosas o personas.
+例外	N3	educacion	この[規則|きそく]には[例外|れいがい]があるので、[注意|ちゅうい]してください。	Ten cuidado, porque esta regla tiene excepciones.	例外 es un caso que queda fuera de una regla.
+一般化	N2	educacion	[一|ひと]つの[経験|けいけん]だけで[一般化|いっぱんか]しないようにしています。	Procuro no generalizar a partir de una sola experiencia.	一般化 es extender una conclusión a muchos casos.
+定義	N3	educacion	[議論|ぎろん]の[前|まえ]に、[言葉|ことば]の[定義|ていぎ]を[確認|かくにん]しました。	Antes del debate, aclaramos la definición de los términos.	定義 fija el significado de un concepto.
+概念	N2	educacion	[抽象|ちゅうしょう][的|てき]な[概念|がいねん]を、[身近|みぢか]な[例|れい]で[説明|せつめい]しました。	Expliqué un concepto abstracto mediante un ejemplo cotidiano.	概念 es una idea general.
+前提	N2	trabajo	[全員|ぜんいん]が[来|く]るという[前提|ぜんてい]で、[席|せき]を[用意|ようい]しました。	Preparé los asientos suponiendo que vendrían todos.	前提 es una condición que se da por supuesta.
+結論	N3	educacion	[資料|しりょう]が[足|た]りず、[結論|けつろん]を[出|だ]せませんでした。	No pude llegar a una conclusión por falta de información.	結論 es el resultado final de un razonamiento.
+要旨	N2	educacion	[論文|ろんぶん]の[要旨|ようし]を[読|よ]んで、[研究|けんきゅう]の[目的|もくてき]を[把握|はあく]しました。	Leí el resumen del artículo para entender el objetivo de la investigación.	要旨 resume el contenido esencial de un texto.
+引用	N3	educacion	[引用|いんよう]した[文|ぶん]には、[出典|しゅってん]を[付|つ]けました。	Indiqué la fuente de las frases citadas.	引用 es reproducir una parte de otra obra.
+出典	N2	educacion	[出典|しゅってん]をたどると、[数字|すうじ]の[誤|あやま]りが[見|み]つかりました。	Al rastrear la fuente, encontré un error en las cifras.	出典 es la obra o documento de procedencia.
+注釈	N2	cultura	[古|ふる]い[言葉|ことば]には、[注釈|ちゅうしゃく]がついています。	Las palabras antiguas llevan notas explicativas.	注釈 aclara detalles de un texto.
+脚注	N2	educacion	[補足|ほそく]の[説明|せつめい]は[脚注|きゃくちゅう]にまとめました。	Reuní las explicaciones complementarias en notas al pie.	脚注 es una nota situada al pie de la página.
+索引	N2	cultura	[索引|さくいん]で[人物|じんぶつ]の[名前|なまえ]を[探|さが]しました。	Busqué el nombre de la persona en el índice alfabético.	索引 permite localizar términos dentro de una obra.
+目次	N4	cultura	[目次|もくじ]を[見|み]て、[必要|ひつよう]な[章|しょう]から[読|よ]みました。	Consulté el índice y empecé por el capítulo que necesitaba.	目次 enumera las partes de una obra.
+章	N3	cultura	[最終|さいしゅう][章|しょう]で、[主人公|しゅじんこう]の[秘密|ひみつ]が[明|あき]らかになります。	En el último capítulo se revela el secreto del protagonista.	章 es un capítulo.
+段落	N3	educacion	[話題|わだい]が[変|か]わるところで、[段落|だんらく]を[分|わ]けました。	Separé los párrafos donde cambiaba el tema.	段落 es un párrafo.
+見出し	N3	cultura	[見出|みだ]しだけでは、[記事|きじ]の[内容|ないよう]を[誤解|ごかい]しそうです。	Sólo con el titular es fácil malinterpretar el contenido del artículo.	見出し es un titular o encabezamiento.
+本文	N3	educacion	[答|こた]えの[根拠|こんきょ]を[本文|ほんぶん]から[探|さが]してください。	Busca en el texto principal la información que justifica la respuesta.	本文 es el cuerpo principal de un texto.
+余白	N3	cultura	[余白|よはく]に[小|ちい]さくメモを[書|か]きました。	Escribí una pequeña nota en el margen.	余白 es el espacio sin contenido de una página.
+行間	N2	tecnologia	[行間|ぎょうかん]を[広|ひろ]げると、[長文|ちょうぶん]が[読|よ]みやすくなりました。	Al aumentar el interlineado, el texto largo resultó más fácil de leer.	行間 es el espacio entre líneas.
+書体	N2	cultura	[看板|かんばん]には、[遠|とお]くから[読|よ]める[書体|しょたい]を[選|えら]びました。	Elegí para el letrero una tipografía legible desde lejos.	書体 es el estilo de las letras.
+字体	N2	educacion	[同|おな]じ[漢字|かんじ]でも、[国|くに]によって[字体|じたい]が[異|こと]なります。	La forma de un mismo carácter puede variar según el país.	字体 es la forma estructural de un carácter.
+校正	N2	trabajo	[印刷|いんさつ][前|まえ]の[校正|こうせい]で、[日付|ひづけ]の[誤|あやま]りに[気|き]づきました。	Detecté un error en la fecha al revisar las pruebas antes de imprimir.	校正 es revisar un texto para corregir errores.
+推敲	N2	cultura	[何度|なんど]も[推敲|すいこう]して、[余分|よぶん]な[言葉|ことば]を[削|けず]りました。	Revisé varias veces el texto y eliminé palabras innecesarias.	推敲 es pulir cuidadosamente una redacción.
+誤植	N2	cultura	[表紙|ひょうし]の[誤植|ごしょく]が、[増刷|ぞうさつ][時|じ]に[直|なお]されました。	La errata de la portada se corrigió en la reimpresión.	誤植 es un error de impresión o composición.
+挿絵	N3	cultura	[挿絵|さしえ]があるので、[場面|ばめん]を[想像|そうぞう]しやすいです。	Las ilustraciones ayudan a imaginar las escenas.	挿絵 es una ilustración que acompaña un texto.
+表紙	N4	cultura	[雨|あめ]で[本|ほん]の[表紙|ひょうし]が[波打|なみう]ってしまいました。	La cubierta del libro se onduló por la lluvia.	表紙 es la cubierta de un libro.
+背表紙	N3	cultura	[背表紙|せびょうし]の[色|いろ]で、[探|さが]していた[本|ほん]がわかりました。	Reconocí el libro que buscaba por el color del lomo.	背表紙 es el lomo del libro.
+製本	N2	cultura	[印刷|いんさつ]した[日記|にっき]を、[店|みせ]で[製本|せいほん]してもらいました。	Llevé mi diario impreso a encuadernar a una tienda.	製本 es encuadernar páginas.
+増刷	N2	cultura	[売|う]り[切|き]れた[本|ほん]は、[来月|らいげつ][増刷|ぞうさつ]されます。	El libro agotado se volverá a imprimir el mes que viene.	増刷 es imprimir más ejemplares de una edición.
+絶版	N2	cultura	[絶版|ぜっぱん]と[聞|き]いて、[出版社|しゅっぱんしゃ]に[電子版|でんしばん]の[予定|よてい]を[尋|たず]ねました。	Al saber que estaba descatalogado, pregunté a la editorial si planeaba una edición digital.	絶版 indica que ya no se publica una edición.
+復刻	N2	cultura	[昔|むかし]の[地図|ちず]が[復刻|ふっこく]され、[書店|しょてん]に[並|なら]びました。	Se reeditó un mapa antiguo y llegó a las librerías.	復刻 es reproducir una edición antigua.
+翻訳	N3	cultura	[冗談|じょうだん]の[翻訳|ほんやく]には、[文化|ぶんか]の[知識|ちしき]も[必要|ひつよう]です。	Para traducir chistes también hace falta conocer la cultura.	翻訳 es trasladar un texto a otra lengua.
+通訳	N3	trabajo	[通訳|つうやく]を[挟|はさ]んで、[職人|しょくにん]に[質問|しつもん]しました。	Hice preguntas al artesano a través de un intérprete.	通訳 es interpretación oral entre lenguas.
+意訳	N2	educacion	[直訳|ちょくやく]では[不自然|ふしぜん]なので、[意訳|いやく]しました。	Como la traducción literal sonaba poco natural, traduje el sentido.	意訳 prioriza el significado sobre la estructura literal.
+直訳	N2	educacion	この[表現|ひょうげん]を[直訳|ちょくやく]すると、[意味|いみ]が[伝|つた]わりません。	Si traduces literalmente esta expresión, no se entiende el sentido.	直訳 sigue de cerca las palabras y la estructura originales.
+語源	N2	educacion	[語源|ごげん]を[知|し]ると、[単語|たんご]を[覚|おぼ]えやすくなりました。	Conocer la etimología me ayudó a recordar la palabra.	語源 es el origen de una palabra.
+類義語	N2	educacion	[類義語|るいぎご]でも、[使|つか]える[場面|ばめん]は[同|おな]じではありません。	Incluso los sinónimos no siempre se usan en las mismas situaciones.	類義語 son palabras de significado parecido.
+対義語	N2	educacion	[単語|たんご]と[対義語|たいぎご]を[対|つい]にして[覚|おぼ]えました。	Memoricé las palabras junto a sus antónimos.	対義語 es una palabra de sentido opuesto.
+同音異義語	N2	educacion	[同音異義語|どうおんいぎご]は、[文脈|ぶんみゃく]から[意味|いみ]を[判断|はんだん]します。	El significado de las palabras homófonas se deduce por el contexto.	同音異義語 comparten pronunciación, pero no significado.
+文脈	N3	educacion	[前後|ぜんご]の[文脈|ぶんみゃく]を[読|よ]んで、[誰|だれ]の[話|はなし]かわかりました。	Leyendo el contexto anterior y posterior entendí de quién se hablaba.	文脈 es el contexto lingüístico.
+省略	N3	educacion	[日本語|にほんご]では、[主語|しゅご]が[省略|しょうりゃく]されることがあります。	En japonés a veces se omite el sujeto.	省略 es dejar fuera un elemento.
+補足	N3	trabajo	[説明|せつめい]が[短|みじか]すぎたので、[後|あと]から[補足|ほそく]しました。	La explicación fue demasiado breve, así que la amplié después.	補足 es añadir información que falta.
+言い換える	N3	educacion	[難|むずか]しい[専門語|せんもんご]を、[簡単|かんたん]な[言葉|ことば]に[言|い]い[換|か]えました。	Reformulé los términos técnicos difíciles con palabras sencillas.	言い換える es expresar lo mismo de otra manera.
+要約	N3	educacion	[記事|きじ]を[三|みっ]つの[文|ぶん]で[要約|ようやく]しました。	Resumí el artículo en tres frases.	要約 es condensar lo esencial de un texto.
+朗読	N3	cultura	[朗読|ろうどく]を[聞|き]くと、[詩|し]のリズムがわかります。	Al escuchar la lectura en voz alta se aprecia el ritmo del poema.	朗読 es leer un texto en voz alta con expresión.
+黙読	N3	educacion	まず[黙読|もくどく]してから、[感想|かんそう]を[話|はな]し[合|あ]いました。	Primero leímos en silencio y después compartimos nuestras impresiones.	黙読 es leer sin pronunciar en voz alta.
+速読	N2	educacion	[速読|そくどく]よりも、[細部|さいぶ]を[理解|りかい]することを[重視|じゅうし]しました。	Di más importancia a entender los detalles que a leer deprisa.	速読 es lectura rápida.
+暗唱	N3	educacion	[短|みじか]い[詩|し]を[暗唱|あんしょう]して、[録音|ろくおん]しました。	Recité de memoria un poema corto y lo grabé.	暗唱 es recitar sin mirar el texto.
+音読	N4	educacion	[音読|おんどく]すると、[読|よ]み[飛|と]ばした[言葉|ことば]に[気|き]づきます。	Al leer en voz alta, detecto palabras que me había saltado.	音読 es leer pronunciando el texto.
+筆記	N3	educacion	[筆記|ひっき][試験|しけん]の[後|あと]に、[面接|めんせつ]がありました。	Después del examen escrito hubo una entrevista.	筆記 es escritura manual o una prueba escrita.
+口述	N2	educacion	[口述|こうじゅつ][試験|しけん]では、[考|かんが]えた[理由|りゆう]も[説明|せつめい]しました。	En el examen oral expliqué también el razonamiento de mi respuesta.	口述 es explicar oralmente.
+採点	N3	educacion	[採点|さいてん][後|ご]に、[間違|まちが]いの[理由|りゆう]を[教|おし]えてもらいました。	Después de corregirme, me explicaron el motivo de los errores.	採点 es evaluar y asignar una nota.
+配点	N2	educacion	[最後|さいご]の[問題|もんだい]は[配点|はいてん]が[高|たか]いです。	La última pregunta vale muchos puntos.	配点 es el reparto de puntos de una prueba.
+合格	N4	educacion	[実技|じつぎ]には[合格|ごうかく]しましたが、[筆記|ひっき]は[再試験|さいしけん]です。	Aprobé la parte práctica, pero tengo que repetir la escrita.	合格 es superar una prueba.
+不合格	N4	educacion	[不合格|ふごうかく]の[通知|つうち]を[読|よ]み、[勉強法|べんきょうほう]を[見直|みなお]しました。	Al leer que había suspendido, revisé mi método de estudio.	不合格 es no superar una prueba.
+追試	N3	educacion	[病気|びょうき]で[休|やす]んだため、[追試|ついし]を[受|う]けました。	Hice un examen extraordinario porque falté por enfermedad.	追試 es una prueba adicional por no haber hecho la ordinaria.
+再試験	N3	educacion	[再試験|さいしけん]までに、[苦手|にがて]な[範囲|はんい]を[復習|ふくしゅう]します。	Repasaré los temas que peor llevo antes de repetir el examen.	再試験 es hacer de nuevo una prueba.
+履修	N2	educacion	[卒業|そつぎょう]までに、この[科目|かもく]を[履修|りしゅう]する[必要|ひつよう]があります。	Hay que cursar esta asignatura antes de graduarse.	履修 es cursar formalmente una asignatura.
+単位	N3	educacion	[実習|じっしゅう]を[終|お]えれば、[卒業|そつぎょう]に[必要|ひつよう]な[単位|たんい]が[揃|そろ]います。	Cuando termine las prácticas, tendré todos los créditos necesarios para graduarme.	単位 significa aquí crédito académico.
+休学	N3	educacion	[家族|かぞく]を[手伝|てつだ]うため、[一年間|いちねんかん][休学|きゅうがく]しました。	Interrumpí los estudios un año para ayudar a mi familia.	休学 es una pausa formal en los estudios.
+復学	N2	educacion	[復学|ふくがく][後|ご]は、[無理|むり]のない[時間割|じかんわり]を[組|く]みました。	Al reincorporarme a los estudios, organicé un horario llevadero.	復学 es retomar estudios tras una suspensión temporal.
+留年	N3	educacion	[出席|しゅっせき]が[足|た]りず、[留年|りゅうねん]することになりました。	Tuve que repetir curso por no cumplir la asistencia mínima.	留年 es permanecer un año más en el mismo curso.
+進級	N3	educacion	[進級|しんきゅう]すると、[実験|じっけん]の[授業|じゅぎょう]が[増|ふ]えます。	Al pasar de curso aumentan las clases de laboratorio.	進級 es pasar al curso siguiente.
+奨学金	N3	educacion	[奨学金|しょうがくきん]の[申請|しんせい]に、[推薦状|すいせんじょう]が[必要|ひつよう]でした。	Necesitaba una carta de recomendación para solicitar la ayuda de estudios.	奨学金 es una ayuda de estudios; puede ser beca o préstamo según el programa.
+推薦	N3	educacion	[先生|せんせい]の[推薦|すいせん]で、[研究会|けんきゅうかい]に[参加|さんか]しました。	Participé en el seminario por recomendación del profesor.	推薦 es recomendar a una persona para algo.
+専攻	N3	educacion	[専攻|せんこう]は[歴史|れきし]ですが、[統計|とうけい]も[学|まな]んでいます。	Mi especialidad es historia, pero también estudio estadística.	専攻 es el campo principal de estudios.
+副専攻	N2	educacion	[副専攻|ふくせんこう]で[学|まな]んだ[知識|ちしき]が、[仕事|しごと]に[役立|やくだ]ちました。	Lo que aprendí en mi especialidad secundaria me sirvió en el trabajo.	副専攻 es un campo complementario de estudios.
+卒論	N3	educacion	[卒論|そつろん]のテーマを、[地域|ちいき]の[祭|まつ]りに[決|き]めました。	Elegí las fiestas locales como tema de mi trabajo de fin de grado.	卒論 abrevia 卒業論文, trabajo final de carrera.
+ゼミ	N3	educacion	[ゼミ|ぜみ]では、[毎週|まいしゅう][一人|ひとり]が[発表|はっぴょう]します。	En el seminario presenta una persona distinta cada semana.	ゼミ es un seminario universitario de grupo reducido.
+講義	N3	educacion	[録画|ろくが]された[講義|こうぎ]を、[通学|つうがく][中|ちゅう]に[見|み]ました。	Vi la clase grabada durante el trayecto a la universidad.	講義 es una clase expositiva.
+演習	N3	educacion	[講義|こうぎ]で[学|まな]んだ[方法|ほうほう]を、[演習|えんしゅう]で[使|つか]いました。	Apliqué en la sesión práctica el método aprendido en la clase teórica.	演習 es práctica guiada para afianzar lo aprendido.
+実習	N3	educacion	[実習|じっしゅう]で[初|はじ]めて、[本物|ほんもの]の[機械|きかい]を[操作|そうさ]しました。	En las prácticas manejé una máquina real por primera vez.	実習 es aprendizaje mediante experiencia práctica.
+聴講	N2	educacion	[単位|たんい]は[取|と]らずに、その[授業|じゅぎょう]を[聴講|ちょうこう]しています。	Asisto a esa clase como oyente, sin obtener créditos.	聴講 es acudir a una clase como oyente.
+学籍	N2	educacion	[休学|きゅうがく][中|ちゅう]も、[大学|だいがく]に[学籍|がくせき]は[残|のこ]ります。	Durante la pausa de estudios sigo inscrito en la universidad.	学籍 es la condición registrada de estudiante de un centro.

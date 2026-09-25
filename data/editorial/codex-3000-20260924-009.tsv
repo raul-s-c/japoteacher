@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+芽	N3	vida_diaria	[柔|やわ]らかい[芽|め]を[虫|むし]に[食|た]べられてしまいました。	Los insectos se comieron los brotes tiernos.	芽 es un brote vegetal.
+根	N3	vida_diaria	[根|ね]が[長|なが]すぎて、[鉢|はち]を[替|か]える[必要|ひつよう]があります。	Las raíces son demasiado largas y hay que cambiar la maceta.	根 es la raíz.
+茎	N3	vida_diaria	[細|ほそ]い[茎|くき]を[棒|ぼう]で[支|ささ]えました。	Sujeté el tallo fino con un palo.	茎 es el tallo.
+枝	N4	vida_diaria	[折|お]れた[枝|えだ]が[電線|でんせん]に[引|ひ]っかかっています。	Una rama rota está enganchada en el cable eléctrico.	枝 es una rama.
+幹	N3	ocio	[太|ふと]い[幹|みき]の[陰|かげ]で、[日差|ひざ]しを[避|さ]けました。	Me resguardé del sol a la sombra del grueso tronco.	幹 es el tronco de un árbol.
+樹皮	N2	educacion	[樹皮|じゅひ]を[触|さわ]ると、ざらざらしていました。	Al tocar la corteza, noté que era áspera.	樹皮 es la corteza de un árbol.
+花びら	N4	vida_diaria	[散|ち]った[花|はな]びらが、[池|いけ]に[浮|う]いています。	Los pétalos caídos flotan en el estanque.	花びら es un pétalo.
+つぼみ	N3	vida_diaria	つぼみが[開|ひら]くのを、[毎朝|まいあさ][楽|たの]しみにしています。	Cada mañana espero con ilusión que se abran los capullos.	つぼみ es una flor antes de abrirse.
+種	N4	vida_diaria	[去年|きょねん][取|と]った[種|たね]を、[春|はる]にまきます。	Sembraré en primavera las semillas que recogí el año pasado.	種 se lee たね y significa semilla.
+球根	N3	vida_diaria	チューリップの[球根|きゅうこん]を[土|つち]に[埋|う]めました。	Enterré los bulbos de tulipán en la tierra.	球根 es un bulbo vegetal.
+苗	N3	vida_diaria	[弱|よわ]った[苗|なえ]を[日陰|ひかげ]に[移|うつ]しました。	Trasladé a la sombra los plantones debilitados.	苗 es una planta joven para trasplantar.
+肥料	N3	vida_diaria	[肥料|ひりょう]をやりすぎて、[葉|は]が[黄色|きいろ]くなりました。	Eché demasiado abono y las hojas amarillearon.	肥料 es fertilizante.
+雑草	N3	vida_diaria	[雨|あめ]の[翌日|よくじつ]は[雑草|ざっそう]を[抜|ぬ]きやすいです。	Es más fácil arrancar las malas hierbas al día siguiente de llover.	雑草 son plantas que crecen donde no se desean.
+落ち葉	N4	vida_diaria	[落|お]ち[葉|ば]で[排水口|はいすいこう]が[詰|つ]まっていました。	El desagüe estaba atascado con hojas caídas.	落ち葉 son hojas desprendidas de los árboles.
+枯れる	N3	vida_diaria	[枯|か]れる[前|まえ]に[花|はな]を[摘|つ]んで、[押|お]し[花|ばな]にしました。	Recogí las flores antes de que se marchitaran y las prensé.	枯れる es secarse o marchitarse una planta.
+実る	N3	vida_diaria	[今年|ことし]は[庭|にわ]の[木|き]に[柿|かき]が[実|みの]りました。	Este año el árbol del jardín ha dado caquis.	実る es dar fruto.
+耕す	N3	vida_diaria	[冬|ふゆ]の[間|あいだ]に[固|かた]くなった[畑|はたけ]を[耕|たがや]しました。	Labré el campo que se había endurecido durante el invierno.	耕す es labrar la tierra.
+収穫	N3	vida_diaria	[初|はじ]めての[収穫|しゅうかく]は、[小|ちい]さなトマト[一|ひと]つでした。	Mi primera cosecha fue un único tomate pequeño.	収穫 es recoger productos cultivados.
+剪定	N2	vida_diaria	[庭師|にわし]に[梅|うめ]の[木|き]の[剪定|せんてい]を[頼|たの]みました。	Encargué a un jardinero la poda del ciruelo japonés.	剪定 es podar ramas de forma selectiva.
+日当たり	N3	vida_diaria	[日当|ひあ]たりが[悪|わる]くても[育|そだ]つ[植物|しょくぶつ]を[選|えら]びました。	Elegí plantas que crecen incluso con poca luz solar.	日当たり es la exposición al sol.
+水やり	N4	vida_diaria	[水|みず]やりの[回数|かいすう]を[減|へ]らしたら、[根|ね]の[状態|じょうたい]がよくなりました。	Al regar con menos frecuencia, mejoró el estado de las raíces.	水やり es regar las plantas.
+温室	N3	ocio	[温室|おんしつ]に[入|はい]ると、[眼鏡|めがね]が[曇|くも]りました。	Se me empañaron las gafas al entrar en el invernadero.	温室 es un invernadero.
+果樹園	N3	ocio	[果樹園|かじゅえん]で、[枝|えだ]から[直接|ちょくせつ]りんごを[取|と]りました。	Recogí manzanas directamente de las ramas en el huerto frutal.	果樹園 es un terreno de árboles frutales.
+田んぼ	N4	ocio	[田|た]んぼに[張|は]った[水|みず]が、[空|そら]を[映|うつ]しています。	El agua de los arrozales refleja el cielo.	田んぼ es un arrozal.
+畑	N4	vida_diaria	[畑|はたけ]の[端|はし]に、[道具|どうぐ]を[置|お]く[小屋|こや]があります。	En un extremo del campo hay una caseta para las herramientas.	畑 es un campo de cultivo no inundado.
+牧場	N3	ocio	[牧場|ぼくじょう]で[生|う]まれたばかりの[子牛|こうし]を[見|み]ました。	Vi un ternero recién nacido en la granja ganadera.	牧場 es una explotación con pastos para ganado.
+群れ	N3	ocio	[鳥|とり]の[群|む]れが[一斉|いっせい]に[飛|と]び[立|た]ちました。	La bandada de pájaros levantó el vuelo a la vez.	群れ es una agrupación de animales.
+巣	N3	vida_diaria	[軒下|のきした]にツバメが[巣|す]を[作|つく]っています。	Las golondrinas están haciendo un nido bajo el alero.	巣 es un nido o refugio de animales.
+羽	N4	ocio	[池|いけ]のそばに[白|しろ]い[羽|はね]が[落|お]ちていました。	Había una pluma blanca en el suelo junto al estanque.	羽 se lee はね y significa aquí pluma.
+翼	N3	cultura	[傷|きず]ついた[翼|つばさ]では、[空|そら]を[飛|と]べません。	Con el ala herida no puede volar.	翼 es un ala.
+くちばし	N3	ocio	[鳥|とり]がくちばしで[木|き]の[実|み]を[割|わ]りました。	El pájaro rompió el fruto seco con el pico.	くちばし es el pico de un ave.
+尻尾	N4	vida_diaria	[犬|いぬ]の[尻尾|しっぽ]が[机|つくえ]に[当|あ]たっています。	La cola del perro está golpeando la mesa.	尻尾 es la cola de un animal.
+爪	N3	vida_diaria	[猫|ねこ]の[爪|つめ]がカーテンに[引|ひ]っかかりました。	Las uñas del gato se engancharon en la cortina.	爪 significa uña o garra.
+蹄	N2	ocio	[馬|うま]の[蹄|ひづめ]の[音|おと]が、[石畳|いしだたみ]に[響|ひび]きました。	El sonido de los cascos del caballo resonó sobre el empedrado.	蹄 es el casco de ciertos mamíferos.
+角	N3	ocio	[鹿|しか]の[角|つの]が[枝|えだ]のように[分|わ]かれています。	La cornamenta del ciervo se ramifica como las ramas de un árbol.	角 se lee つの cuando significa cuerno.
+鱗	N2	comida	[魚|さかな]を[焼|や]く[前|まえ]に、[鱗|うろこ]を[取|と]りました。	Quité las escamas del pescado antes de asarlo.	鱗 es una escama.
+貝殻	N3	ocio	[貝殻|かいがら]の[穴|あな]にひもを[通|とお]して、[飾|かざ]りを[作|つく]りました。	Hice un adorno pasando un cordel por el agujero de una concha.	貝殻 es la concha de un molusco.
+甲羅	N2	ocio	[亀|かめ]が[石|いし]の[上|うえ]で[甲羅|こうら]を[乾|かわ]かしています。	La tortuga se está secando el caparazón sobre una piedra.	甲羅 es el caparazón de ciertos animales.
+触角	N2	educacion	[虫|むし]は[触角|しょっかく]を[動|うご]かしながら[進|すす]みました。	El insecto avanzó moviendo las antenas.	触角 son las antenas de un insecto.
+幼虫	N3	educacion	[葉|は]の[裏|うら]に[幼虫|ようちゅう]を[見|み]つけました。	Encontré una larva en el envés de una hoja.	幼虫 es la fase larvaria de un insecto.
+蛹	N2	educacion	[蛹|さなぎ]から[蝶|ちょう]が[出|で]てくる[瞬間|しゅんかん]を[見|み]ました。	Vi el momento en que la mariposa salía de la crisálida.	蛹 es una pupa o crisálida.
+孵化	N2	educacion	[卵|たまご]の[孵化|ふか]を[観察|かんさつ]するため、カメラを[置|お]きました。	Colocamos una cámara para observar la eclosión de los huevos.	孵化 es la salida del animal del huevo.
+冬眠	N3	educacion	この[動物|どうぶつ]は[寒|さむ]くなると[冬眠|とうみん]します。	Este animal hiberna cuando llega el frío.	冬眠 es hibernación.
+飼育	N3	trabajo	[飼育|しいく][係|がかり]が、[動物|どうぶつ]の[体重|たいじゅう]を[量|はか]っています。	El cuidador está pesando a los animales.	飼育 es criar y cuidar animales.
+野生	N3	ocio	[野生|やせい]の[動物|どうぶつ]には、[食|た]べ[物|もの]を[与|あた]えないでください。	No des comida a los animales salvajes.	野生 describe animales que viven sin domesticación.
+絶滅	N3	educacion	[絶滅|ぜつめつ]した[動物|どうぶつ]の[骨|ほね]が[展示|てんじ]されています。	Se exponen huesos de animales extinguidos.	絶滅 es la desaparición completa de una especie.
+生息	N2	educacion	この[魚|さかな]は[深|ふか]い[湖|みずうみ]にしか[生息|せいそく]していません。	Este pez sólo habita en lagos profundos.	生息する es habitar un medio natural.
+保護	N3	vida_diaria	[道端|みちばた]で[弱|よわ]った[子猫|こねこ]を[保護|ほご]しました。	Rescaté a un gatito debilitado que estaba al borde del camino.	保護する es proteger o poner a salvo.
+餌	N4	vida_diaria	[魚|さかな]に[餌|えさ]をやる[量|りょう]を[減|へ]らしました。	Reduje la cantidad de comida que doy a los peces.	餌 es alimento para animales.
+獲物	N3	cultura	[鷹|たか]は[空|そら]から[獲物|えもの]を[探|さが]していました。	El halcón buscaba presas desde el aire.	獲物 es una presa de caza.
+足跡	N3	ocio	[雪|ゆき]に[残|のこ]った[足跡|あしあと]を[見|み]て、[鹿|しか]だとわかりました。	Por las huellas en la nieve supimos que era un ciervo.	足跡 es la marca que deja un pie o pata.
+鳴き声	N4	vida_diaria	[聞|き]いたことのない[鳴|な]き[声|ごえ]が、[茂|しげ]みからしました。	Del matorral salió un sonido de animal que nunca había oído.	鳴き声 es la voz de un animal.
+遠吠え	N3	cultura	[夜|よる]の[森|もり]から、[狼|おおかみ]の[遠吠|とおぼ]えが[聞|き]こえました。	Desde el bosque nocturno se oía el aullido de un lobo.	遠吠え es un aullido prolongado.
+吠える	N4	vida_diaria	[玄関|げんかん]のベルが[鳴|な]ると、[犬|いぬ]が[吠|ほ]えます。	El perro ladra cuando suena el timbre de la entrada.	吠える significa ladrar o aullar.
+噛む	N4	vida_diaria	[子犬|こいぬ]がスリッパを[噛|か]んでいます。	El cachorro está mordiendo la zapatilla.	噛む es morder o masticar.
+懐く	N3	vida_diaria	[保護|ほご]した[猫|ねこ]が、やっと[私|わたし]に[懐|なつ]きました。	El gato que rescaté por fin me ha tomado cariño.	懐く es adquirir confianza y afecto hacia alguien.
+戯れる	N2	ocio	[子犬|こいぬ]たちが[芝生|しばふ]の[上|うえ]で[戯|たわむ]れています。	Los cachorros juguetean sobre el césped.	戯れる significa jugar o retozar.
+潜る	N3	ocio	[水鳥|みずどり]が[潜|もぐ]った[場所|ばしょ]に、[波紋|はもん]が[広|ひろ]がりました。	Se extendieron ondas donde se había sumergido el ave acuática.	潜る es sumergirse o meterse debajo.
+這う	N3	vida_diaria	[毛虫|けむし]が[塀|へい]をゆっくり[這|は]っています。	Una oruga peluda se arrastra despacio por el muro.	這う es desplazarse pegado a una superficie.
+跳ねる	N3	ocio	[水面|すいめん]で[魚|さかな]が[跳|は]ねました。	Un pez saltó en la superficie del agua.	跳ねる significa dar un salto.
+岸	N3	ocio	[流|なが]されたボールが、[向|む]こうの[岸|きし]に[着|つ]きました。	La pelota arrastrada por la corriente llegó a la otra orilla.	岸 es la orilla de una masa de agua.
+岬	N3	ocio	[岬|みさき]を[回|まわ]ると、[小|ちい]さな[港|みなと]が[見|み]えました。	Al rodear el cabo, apareció un pequeño puerto.	岬 es un cabo costero.
+湾	N3	ocio	[湾|わん]の[内側|うちがわ]は、[波|なみ]が[穏|おだ]やかでした。	Dentro de la bahía el oleaje era suave.	湾 es una bahía.
+沖	N3	ocio	[沖|おき]へ[流|なが]されそうになり、[岸|きし]に[向|む]かって[泳|およ]ぎました。	Estuve a punto de ser arrastrado mar adentro y nadé hacia la orilla.	沖 es la zona del mar alejada de la costa.
+潮	N3	ocio	[潮|しお]が[引|ひ]くと、[岩|いわ]まで[歩|ある]けます。	Cuando baja la marea, se puede caminar hasta las rocas.	潮 significa aquí marea.
+干潮	N2	ocio	[干潮|かんちょう]の[時刻|じこく]を[調|しら]べてから[浜|はま]に[行|い]きました。	Consulté la hora de la bajamar antes de ir a la playa.	干潮 es el momento de marea baja.
+満潮	N2	ocio	[満潮|まんちょう]で、[砂浜|すなはま]がほとんど[隠|かく]れていました。	Con la pleamar, la playa de arena quedaba casi cubierta.	満潮 es el momento de marea alta.
+漂う	N3	ocio	[海面|かいめん]に[木片|もくへん]が[漂|ただよ]っています。	Un trozo de madera flota a la deriva sobre el mar.	漂う es flotar sin rumbo fijo.
+漂着	N2	ocio	[浜辺|はまべ]に[漂着|ひょうちゃく]したごみを[集|あつ]めました。	Recogimos la basura que había llegado a la playa arrastrada por el mar.	漂着 es llegar a tierra flotando a la deriva.
+波打ち際	N3	ocio	[波打|なみう]ち[際|ぎわ]を[裸足|はだし]で[歩|ある]きました。	Caminé descalzo por la orilla donde rompen las olas.	波打ち際 es el borde donde llegan las olas.
+砂利	N3	vida_diaria	[庭|にわ]に[砂利|じゃり]を[敷|し]いて、[泥|どろ]を[減|へ]らしました。	Puse grava en el jardín para reducir el barro.	砂利 es grava.
+泥	N4	vida_diaria	[長靴|ながぐつ]についた[泥|どろ]を[落|お]としてから[入|はい]りました。	Entré después de quitar el barro de las botas de agua.	泥 es barro.
+崖	N3	ocio	[崖|がけ]の[近|ちか]くには、[柵|さく]が[設|もう]けられています。	Hay una valla instalada cerca del precipicio.	崖 es una pared rocosa escarpada.
+斜面	N3	ocio	[北側|きたがわ]の[斜面|しゃめん]には、まだ[雪|ゆき]が[残|のこ]っています。	Todavía queda nieve en la ladera norte.	斜面 es una superficie inclinada.
+尾根	N2	ocio	[尾根|おね]に[出|で]ると、[両側|りょうがわ]の[谷|たに]が[見|み]えました。	Al llegar a la cresta, pude ver los valles de ambos lados.	尾根 es la línea elevada que une cumbres.
+麓	N3	ocio	[山|やま]の[麓|ふもと]まではバスで[行|い]けますが、その[先|さき]は[徒歩|とほ]です。	Se puede llegar en autobús hasta el pie de la montaña, pero desde allí hay que ir a pie.	麓 es la base de una montaña.
+峠	N3	transporte	[峠|とうげ]を[越|こ]えると、[天気|てんき]が[急|きゅう]に[変|か]わりました。	Al cruzar el puerto de montaña, el tiempo cambió de repente.	峠 es un paso de montaña.
+渓谷	N2	ocio	[渓谷|けいこく]に[沿|そ]って、[遊歩道|ゆうほどう]が[続|つづ]いています。	Un sendero de paseo recorre el desfiladero.	渓谷 es un valle profundo y estrecho.
+滝	N4	ocio	[滝|たき]のそばでは、[声|こえ]がほとんど[聞|き]こえません。	Junto a la cascada apenas se oyen las voces.	滝 es una cascada.
+泉	N3	ocio	[岩|いわ]の[間|あいだ]から[泉|いずみ]が[湧|わ]いています。	Brota un manantial entre las rocas.	泉 es un manantial.
+沼	N3	ocio	[沼|ぬま]の[周|まわ]りで、[蛙|かえる]が[鳴|な]いています。	Las ranas croan alrededor de la laguna pantanosa.	沼 es una masa de agua poco profunda y fangosa.
+湿原	N2	ocio	[湿原|しつげん]を[守|まも]るため、[木道|もくどう]を[歩|ある]きます。	Caminamos por la pasarela de madera para proteger el humedal.	湿原 es un terreno húmedo de vegetación baja.
+草原	N3	ocio	[草原|そうげん]には[日陰|ひかげ]がなく、[帽子|ぼうし]が[役立|やくだ]ちました。	En la pradera no había sombra y el sombrero me vino bien.	草原 es una extensión de hierba.
+荒野	N2	cultura	[物語|ものがたり]の[主人公|しゅじんこう]は、[荒野|こうや]を[一人|ひとり]で[旅|たび]します。	El protagonista del relato viaja solo por un paraje desolado.	荒野 es un terreno agreste y deshabitado.
+地平線	N3	ocio	[地平線|ちへいせん]の[近|ちか]くに、[黒|くろ]い[雲|くも]が[見|み]えました。	Se veían nubes negras cerca del horizonte terrestre.	地平線 es la línea aparente entre tierra y cielo.
+水平線	N3	ocio	[船|ふね]が[水平線|すいへいせん]の[向|む]こうに[消|き]えました。	El barco desapareció más allá del horizonte del mar.	水平線 es el horizonte sobre una superficie de agua.
+夕焼け	N4	ocio	[夕焼|ゆうや]けで、[白|しろ]い[壁|かべ]が[赤|あか]く[染|そ]まりました。	La luz del atardecer tiñó de rojo la pared blanca.	夕焼け es el resplandor rojizo del atardecer.
+朝焼け	N3	ocio	[早|はや]い[便|びん]に[乗|の]ったので、[空|そら]から[朝焼|あさや]けを[見|み]ました。	Como tomé un vuelo temprano, vi el resplandor del amanecer desde el aire.	朝焼け es el color rojizo del cielo al amanecer.
+夜明け	N3	ocio	[夜明|よあ]けまでに、[撮影|さつえい]の[準備|じゅんび]を[済|す]ませました。	Dejé preparado el equipo de grabación antes del amanecer.	夜明け es el comienzo del día con la primera luz.
+日没	N3	ocio	[日没|にちぼつ][後|ご]は、[急|きゅう]に[気温|きおん]が[下|さ]がりました。	Después de la puesta de sol, la temperatura bajó de golpe.	日没 es la puesta de sol.
+木陰	N3	ocio	[木陰|こかげ]に[座|すわ]ると、[風|かぜ]が[涼|すず]しく[感|かん]じられました。	Al sentarme a la sombra de los árboles, noté fresca la brisa.	木陰 es la sombra que producen los árboles.
+木漏れ日	N2	cultura	[木漏|こも]れ[日|び]が、[地面|じめん]に[模様|もよう]を[作|つく]っています。	La luz que se filtra entre las hojas dibuja formas en el suelo.	木漏れ日 es la luz solar que atraviesa el follaje.
+霧	N3	transporte	[霧|きり]が[晴|は]れるにつれて、[灯台|とうだい]が[姿|すがた]を[現|あらわ]しました。	A medida que se disipaba la niebla, fue apareciendo el faro.	霧 es niebla.
+霜	N3	vida_diaria	[霜|しも]から[苗|なえ]を[守|まも]るため、[布|ぬの]をかけました。	Cubrí los plantones con una tela para protegerlos de la escarcha.	霜 es escarcha.
+露	N3	ocio	[蜘蛛|くも]の[巣|す]についた[露|つゆ]が、[朝日|あさひ]で[光|ひか]っていました。	El rocío de la telaraña brillaba con el sol de la mañana.	露 se lee つゆ y significa rocío.
+雹	N2	vida_diaria	[雹|ひょう]が[降|ふ]り[始|はじ]めたので、[屋内|おくない]に[逃|に]げました。	Empezó a caer granizo y me refugié dentro.	雹 es granizo.
+みぞれ	N3	vida_diaria	[雨|あめ]がみぞれに[変|か]わり、[道|みち]が[滑|すべ]りやすくなりました。	La lluvia se convirtió en aguanieve y el camino se volvió resbaladizo.	みぞれ es una mezcla de lluvia y nieve.
+吹雪	N3	ocio	[吹雪|ふぶき]が[収|おさ]まるまで、[山小屋|やまごや]に[残|のこ]りました。	Nos quedamos en el refugio hasta que amainó la ventisca.	吹雪 es una tormenta de nieve con viento.
+凪	N2	ocio	[凪|なぎ]の[海|うみ]に、[月|つき]がはっきり[映|うつ]っていました。	La luna se reflejaba con nitidez en el mar en calma.	凪 es la calma del viento y del mar.
+突風	N3	vida_diaria	[突風|とっぷう]で、[干|ほ]していたシーツが[飛|と]びました。	Una ráfaga se llevó la sábana que estaba tendida.	突風 es una ráfaga repentina de viento.

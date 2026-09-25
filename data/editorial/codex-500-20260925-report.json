@@ -1,0 +1,32 @@
+{
+  "requested_pairs_this_block": 500,
+  "accepted_pairs": 500,
+  "exercise_rows": 1000,
+  "cumulative_original_request": 1000,
+  "remaining_original_request": 2000,
+  "api_calls": 0,
+  "api_tokens": 0,
+  "delegated_agents": 0,
+  "baseline_commit": "c76ae9b",
+  "levels": {
+    "N3": 324,
+    "N2": 99,
+    "N4": 76,
+    "N5": 1
+  },
+  "previous_rows_preserved": 10078,
+  "previous_graph_sentences_preserved": 10186,
+  "publication": "pending",
+  "linguistic_review": "Same conversation, not an independent review model",
+  "checks": [
+    "Japanese exact/character/lexical similarity",
+    "Spanish candidate similarity plus manual review",
+    "explicit furigana and morphology evidence",
+    "both directions match",
+    "prior bank/reading/graph preservation"
+  ],
+  "tests": {
+    "passed": 186,
+    "failed": 0
+  }
+}

@@ -1,0 +1,101 @@
+target	level	topic	ruby	spanish	note
+受付	N4	servicios	[受付|うけつけ]で[番号札|ばんごうふだ]を[受|う]け[取|と]りました。	Recogí un número de turno en recepción.	受付 es el punto de recepción.
+窓口	N3	servicios	[相談|そうだん]の[内容|ないよう]によって、[窓口|まどぐち]が[異|こと]なります。	La ventanilla es distinta según el asunto de la consulta.	窓口 es un punto de atención al público.
+整理券	N3	servicios	[整理券|せいりけん]の[配布|はいふ]は、[開店|かいてん][前|まえ]に[終|お]わりました。	Los números de turno se agotaron antes de abrir la tienda.	整理券 organiza el orden de atención o entrada.
+順番	N4	servicios	[席|せき]を[離|はな]れた[間|あいだ]に、[順番|じゅんばん]が[来|き]てしまいました。	Me tocó el turno mientras estaba fuera de mi asiento.	順番 es el turno dentro de una secuencia.
+呼び出し	N3	servicios	[呼|よ]び[出|だ]しの[放送|ほうそう]が[聞|き]こえませんでした。	No oí el aviso por megafonía.	呼び出し es un aviso para que alguien se presente.
+本人	N3	servicios	この[手続|てつづ]きは[本人|ほんにん]が[行|おこな]ってください。	Este trámite debe hacerlo la propia persona interesada.	本人 señala a la persona directamente implicada.
+身分証	N3	servicios	[写真|しゃしん]のついた[身分証|みぶんしょう]を[一|ひと]つ[見|み]せました。	Mostré un documento de identidad con fotografía.	身分証 acredita la identidad.
+有効	N3	servicios	この[券|けん]は[発行|はっこう]から[三日間|みっかかん][有効|ゆうこう]です。	Este billete es válido durante tres días desde su emisión.	有効 expresa validez.
+期限	N3	servicios	[期限|きげん]を[過|す]ぎた[申請|しんせい]は[受|う]け[付|つ]けられません。	No se admiten solicitudes fuera de plazo.	期限 es la fecha límite.
+更新	N3	servicios	[免許|めんきょ]の[更新|こうしん]に[必要|ひつよう]な[写真|しゃしん]を[撮|と]りました。	Me hice las fotos necesarias para renovar el permiso.	更新 es renovar algo cuya vigencia termina.
+紛失	N3	servicios	カードの[紛失|ふんしつ]を[届|とど]けると、すぐに[利用|りよう]が[止|と]まりました。	Al comunicar la pérdida de la tarjeta, se bloqueó su uso de inmediato.	紛失 es la pérdida de un objeto.
+再発行	N3	servicios	[再発行|さいはっこう]には[手数料|てすうりょう]がかかると[言|い]われました。	Me dijeron que emitir un duplicado tenía una tasa.	再発行 es emitir de nuevo un documento o tarjeta.
+手数料	N3	compras	[現金|げんきん]で[払|はら]っても、[手数料|てすうりょう]は[同|おな]じです。	La comisión es la misma aunque pagues en efectivo.	手数料 es un importe cobrado por una gestión.
+控え	N3	servicios	[控|ひか]えの[投手|とうしゅ]が、[急|きゅう]に[登板|とうばん]することになりました。	El lanzador suplente tuvo que salir a jugar de improviso.	控え significa aquí suplente o reserva.
+原本	N3	servicios	コピーではなく、[原本|げんぽん]を[持|も]ってきてください。	Trae el documento original en lugar de una copia.	原本 es el documento original.
+写し	N3	servicios	[証明書|しょうめいしょ]の[写|うつ]しをメールに[添付|てんぷ]しました。	Adjunté una copia del certificado al correo.	写し es una copia de un documento.
+記載	N3	servicios	[封筒|ふうとう]に[記載|きさい]された[住所|じゅうしょ]へ[送|おく]りました。	Lo envié a la dirección que figuraba en el sobre.	記載 es información escrita en un soporte.
+訂正	N3	servicios	[訂正|ていせい]した[箇所|かしょ]に、[日付|ひづけ]を[添|そ]えました。	Añadí la fecha junto al apartado corregido.	訂正 es corregir una información errónea.
+署名	N3	servicios	[署名|しょめい]の[前|まえ]に、[空欄|くうらん]がないか[確|たし]かめました。	Antes de firmar, comprobé que no hubiera casillas vacías.	署名 es la firma personal.
+押印	N2	servicios	この[用紙|ようし]には[押印|おういん]が[不要|ふよう]になりました。	Este formulario ya no necesita sello personal.	押印 es estampar un sello.
+委任状	N2	servicios	[代理人|だいりにん]に[頼|たの]むため、[委任状|いにんじょう]を[用意|ようい]しました。	Preparé una autorización para encargar el trámite a un representante.	委任状 autoriza a otra persona a actuar en nombre propio.
+代理	N3	trabajo	[欠席|けっせき]した[部長|ぶちょう]の[代理|だいり]で、[会議|かいぎ]に[出|で]ました。	Asistí a la reunión en representación del jefe de departamento, que estaba ausente.	代理 es actuar en lugar de otra persona.
+承認	N3	trabajo	[予算|よさん]の[承認|しょうにん]が[下|お]りるまで、[購入|こうにゅう]を[待|ま]ちます。	Esperaremos a que se apruebe el presupuesto antes de comprarlo.	承認が下りる significa recibir aprobación.
+却下	N2	trabajo	[理由|りゆう]が[不明|ふめい]なまま、[提案|ていあん]が[却下|きゃっか]されました。	La propuesta fue rechazada sin que quedara claro el motivo.	却下 es rechazar formalmente una petición o propuesta.
+審査	N3	servicios	[審査|しんさ]の[結果|けっか]は、[郵便|ゆうびん]で[知|し]らせるそうです。	Dicen que comunicarán el resultado de la evaluación por correo postal.	審査 es examinar una solicitud según ciertos criterios.
+不備	N2	servicios	[書類|しょるい]に[不備|ふび]があり、[提出|ていしゅつ]し[直|なお]しました。	La documentación tenía un defecto y tuve que volver a presentarla.	不備 indica que falta algo o no cumple los requisitos.
+添付	N3	tecnologia	[添付|てんぷ]の[写真|しゃしん]が[大|おお]きすぎて、メールが[戻|もど]ってきました。	El correo fue devuelto porque la foto adjunta era demasiado grande.	添付 es adjuntar un archivo.
+記入	N4	servicios	[鉛筆|えんぴつ]での[記入|きにゅう]は[避|さ]けてください。	Evita rellenarlo a lápiz.	記入 es escribir datos en un formulario.
+照合	N2	servicios	[名簿|めいぼ]と[申込書|もうしこみしょ]を[照合|しょうごう]しました。	Cotejé la lista de nombres con los formularios de inscripción.	照合 es comparar fuentes para comprobar que coinciden.
+保管	N3	vida_diaria	[保証書|ほしょうしょ]は、[説明書|せつめいしょ]と[一緒|いっしょ]に[保管|ほかん]しています。	Guardo la garantía junto al manual de instrucciones.	保管 es conservar algo bajo cuidado.
+返却	N3	servicios	[借|か]りた[道具|どうぐ]は、[洗|あら]ってから[返却|へんきゃく]します。	Devolveré las herramientas prestadas después de lavarlas.	返却 es devolver lo que se ha recibido o tomado prestado.
+受領	N2	trabajo	[荷物|にもつ]を[受領|じゅりょう]したら、[担当者|たんとうしゃ]に[連絡|れんらく]してください。	Cuando recibas el paquete, avisa a la persona responsable.	受領 es recibir formalmente algo.
+配布	N3	educacion	[資料|しりょう]の[配布|はいふ]は[授業|じゅぎょう]の[最後|さいご]に[行|おこな]います。	Los documentos se repartirán al final de la clase.	配布 es distribuir algo entre personas.
+掲示	N3	servicios	[運休|うんきゅう]の[知|し]らせが[改札|かいさつ]に[掲示|けいじ]されていました。	En el acceso a los andenes había un aviso de suspensión del servicio.	掲示 es exponer información para que se vea.
+掲示板	N4	educacion	[教室|きょうしつ]の[変更|へんこう]は[掲示板|けいじばん]で[確認|かくにん]できます。	Puedes comprobar los cambios de aula en el tablón de anuncios.	掲示板 es un panel de avisos.
+通知	N3	tecnologia	[夜中|よなか]の[通知|つうち]を[止|と]めて、よく[眠|ねむ]れるようになりました。	Al desactivar las notificaciones nocturnas, empecé a dormir mejor.	通知 es un aviso enviado al usuario.
+通達	N2	trabajo	[新|あたら]しい[規則|きそく]が[全部署|ぜんぶしょ]に[通達|つうたつ]されました。	La nueva normativa se comunicó a todos los departamentos.	通達 es transmitir una instrucción oficial.
+告知	N2	ocio	[中止|ちゅうし]の[告知|こくち]が[遅|おく]れ、[会場|かいじょう]に[人|ひと]が[集|あつ]まりました。	El aviso de cancelación llegó tarde y la gente acudió al recinto.	告知 es anunciar una información al público.
+案内状	N3	vida_diaria	[同窓会|どうそうかい]の[案内状|あんないじょう]が、[実家|じっか]に[届|とど]きました。	La invitación a la reunión de antiguos alumnos llegó a casa de mis padres.	案内状 es una carta de información o invitación.
+宛先	N3	tecnologia	[宛先|あてさき]を[間違|まちが]えたことに、[送信|そうしん][後|ご][気|き]づきました。	Me di cuenta después de enviarlo de que había puesto mal el destinatario.	宛先 es la dirección o persona destinataria.
+差出人	N3	servicios	[差出人|さしだしにん]に[連絡|れんらく]して、[荷物|にもつ]の[中身|なかみ]を[確|たし]かめました。	Contacté con el remitente para confirmar el contenido del paquete.	差出人 es quien envía algo.
+郵便受け	N4	vida_diaria	[郵便受|ゆうびんう]けに[雨水|あまみず]が[入|はい]っていました。	Había entrado agua de lluvia en el buzón.	郵便受け es el buzón donde se recibe el correo.
+宅配	N3	compras	[宅配|たくはい]の[時間|じかん]に[合|あ]わせて、[早|はや]めに[帰|かえ]りました。	Volví antes para estar en casa a la hora del reparto.	宅配 es la entrega a domicilio.
+不在票	N3	servicios	[不在票|ふざいひょう]の[番号|ばんごう]で、[再配達|さいはいたつ]を[頼|たの]みました。	Pedí una nueva entrega usando el número del aviso de ausencia.	不在票 avisa de una entrega intentada sin encontrar al destinatario.
+受取人	N3	servicios	[受取人|うけとりにん]が[不明|ふめい]で、[小包|こづつみ]が[戻|もど]ってきました。	El paquete fue devuelto porque no se pudo identificar al destinatario.	受取人 es quien recibe el envío.
+梱包	N3	compras	[割|わ]れやすい[物|もの]なので、[丁寧|ていねい]に[梱包|こんぽう]しました。	Lo embalé con cuidado porque era frágil.	梱包 es preparar un objeto para su transporte.
+緩衝材	N2	compras	[新聞紙|しんぶんし]を[丸|まる]めて、[緩衝材|かんしょうざい]にしました。	Arrugué papel de periódico para usarlo como material de protección.	緩衝材 amortigua los golpes.
+開封	N3	compras	[開封|かいふう][後|ご]は、[冷蔵庫|れいぞうこ]に[入|い]れてください。	Una vez abierto, guárdalo en el frigorífico.	開封 es abrir un envase cerrado.
+未開封	N3	compras	[未開封|みかいふう]の[箱|はこ]だけ、[返品|へんぴん]できました。	Sólo pudimos devolver las cajas que seguían sin abrir.	未開封 significa que el precinto o envase no se ha abierto.
+送料	N4	compras	[商品|しょうひん]より[送料|そうりょう]のほうが[高|たか]くつきました。	El envío me costó más que el producto.	送料 es el coste del envío.
+着払い	N3	compras	[交換|こうかん]する[商品|しょうひん]は、[着払|ちゃくばら]いで[送|おく]るよう[言|い]われました。	Me indicaron que enviara el producto a cambiar con los portes a cargo del destinatario.	着払い significa que el destinatario paga el transporte.
+代引き	N3	compras	[代引|だいび]きで[注文|ちゅうもん]したので、[現金|げんきん]を[用意|ようい]しました。	Como hice el pedido contra reembolso, preparé dinero en efectivo.	代引き consiste en pagar la mercancía al recibirla.
+追跡	N3	servicios	[追跡|ついせき][番号|ばんごう]を[入力|にゅうりょく]すると、[荷物|にもつ]の[場所|ばしょ]がわかります。	Al introducir el número de seguimiento puedes ver dónde está el paquete.	追跡 es seguir el recorrido de algo.
+配送	N3	compras	[大雪|おおゆき]のため、[一部|いちぶ]の[地域|ちいき]で[配送|はいそう]が[止|と]まっています。	Las entregas están suspendidas en algunas zonas por la intensa nevada.	配送 es la distribución de mercancías.
+集荷	N3	servicios	[重|おも]い[荷物|にもつ]なので、[自宅|じたく]への[集荷|しゅうか]を[頼|たの]みました。	Como el paquete pesaba mucho, pedí que vinieran a recogerlo a casa.	集荷 es la recogida de mercancía por el transportista.
+返金	N3	compras	[返金|へんきん]は[購入|こうにゅう][時|じ]と[同|おな]じカードに[行|おこな]われます。	El reembolso se hará en la misma tarjeta usada para la compra.	返金 es devolver el dinero recibido.
+払い戻し	N3	transporte	[欠航|けっこう]が[決|き]まり、[航空券|こうくうけん]の[払|はら]い[戻|もど]しを[受|う]けました。	Al cancelarse el vuelo, me reembolsaron el billete.	払い戻し es recuperar el importe pagado.
+振込	N3	compras	[振込|ふりこみ]の[名義|めいぎ]を[会社名|かいしゃめい]にしました。	Puse la transferencia a nombre de la empresa.	振込 es una transferencia bancaria.
+残高	N3	vida_diaria	[残高|ざんだか]が[足|た]りず、[定期券|ていきけん]を[買|か]えませんでした。	No tenía saldo suficiente y no pude comprar el abono de transporte.	残高 es el dinero disponible en una cuenta o tarjeta.
+引き落とし	N3	vida_diaria	[家賃|やちん]の[引|ひ]き[落|お]としは[月末|げつまつ]です。	El alquiler se carga en la cuenta a final de mes.	引き落とし es un cargo automático en cuenta.
+明細	N3	compras	[明細|めいさい]を[見|み]ると、[同|おな]じ[料金|りょうきん]が[二重|にじゅう]に[載|の]っていました。	Al revisar el desglose, vi que el mismo cargo aparecía dos veces.	明細 detalla los conceptos de una cuenta.
+領収書	N4	trabajo	[領収書|りょうしゅうしょ]をなくして、[経費|けいひ]の[申請|しんせい]が[遅|おく]れました。	Perdí el recibo y se retrasó mi solicitud de reembolso de gastos.	領収書 acredita un pago.
+請求	N3	servicios	[使|つか]っていないサービスの[料金|りょうきん]を[請求|せいきゅう]されました。	Me cobraron por un servicio que no había utilizado.	請求する es exigir o facturar un pago.
+支払い	N4	compras	[支払|しはら]いは[後|あと]でまとめて[行|おこな]います。	Haremos todos los pagos juntos más tarde.	支払い es el pago de una cantidad.
+分割	N3	compras	[分割|ぶんかつ]にすると、[支払|しはら]いの[総額|そうがく]が[増|ふ]えます。	Si pagas a plazos, aumenta el importe total.	分割 significa dividir; aquí se refiere a pagos fraccionados.
+一括	N3	compras	[家具|かぐ]の[代金|だいきん]を[一括|いっかつ]で[払|はら]いました。	Pagué los muebles de una sola vez.	一括で significa en un único pago o conjunto.
+利息	N3	vida_diaria	[返済|へんさい]が[長引|ながび]くほど、[利息|りそく]も[増|ふ]えます。	Cuanto más se prolonga la devolución del préstamo, más intereses se acumulan.	利息 es el interés de una deuda o depósito.
+保証	N3	compras	[落下|らっか]による[故障|こしょう]は[保証|ほしょう]の[対象外|たいしょうがい]でした。	La avería causada por una caída no estaba cubierta por la garantía.	保証 es garantía; 対象外 significa fuera de cobertura.
+免除	N2	servicios	[一定|いってい]の[条件|じょうけん]を[満|み]たすと、[受講料|じゅこうりょう]が[免除|めんじょ]されます。	Si se cumplen ciertas condiciones, se queda exento de pagar el curso.	免除 es liberar de una obligación.
+減額	N2	vida_diaria	[契約|けいやく]を[見直|みなお]して、[毎月|まいつき]の[料金|りょうきん]を[減額|げんがく]できました。	Al revisar el contrato conseguimos reducir la cuota mensual.	減額 es disminuir un importe.
+追加	N4	comida	[辞書|じしょ]に[新|あたら]しい[用例|ようれい]を[追加|ついか]しました。	Añadí nuevos ejemplos de uso al diccionario.	追加 es agregar elementos a un conjunto.
+変更	N4	transporte	[乗|の]り[継|つ]ぎの[都合|つごう]で、[出発地|しゅっぱつち]を[変更|へんこう]しました。	Cambié el lugar de salida por las conexiones de transporte.	変更 es modificar una decisión o condición.
+取消	N3	servicios	[予約|よやく]の[取消|とりけし]は、[電話|でんわ]でもできます。	También se puede cancelar la reserva por teléfono.	取消 es anular algo previamente acordado.
+延期	N3	ocio	[雨|あめ]で[延期|えんき]された[試合|しあい]は、[明日|あした][行|おこな]われます。	El partido aplazado por la lluvia se jugará mañana.	延期 es mover algo a una fecha posterior.
+繰り上げる	N2	trabajo	[会議|かいぎ]を[一時間|いちじかん][繰|く]り[上|あ]げることになりました。	Se ha decidido adelantar la reunión una hora.	繰り上げる es adelantar una hora o posición.
+繰り下げる	N2	servicios	[開館|かいかん][時刻|じこく]を[三十分|さんじゅっぷん][繰|く]り[下|さ]げます。	Retrasaremos la apertura treinta minutos.	繰り下げる es desplazar algo a más tarde.
+見合わせる	N2	transporte	[強風|きょうふう]のため、[運転|うんてん]を[見合|みあ]わせています。	El servicio está temporalmente suspendido por el viento fuerte.	見合わせる es suspender o posponer una acción.
+再開	N3	ocio	[雨|あめ]が[弱|よわ]まり、[試合|しあい]が[再開|さいかい]されました。	La lluvia amainó y se reanudó el partido.	再開 es volver a comenzar algo interrumpido.
+中断	N3	trabajo	[停電|ていでん]で[作業|さぎょう]が[中断|ちゅうだん]し、[外|そと]で[待|ま]ちました。	Un apagón interrumpió el trabajo y esperamos fuera.	中断 es una interrupción a mitad de una actividad.
+終了	N4	tecnologia	[保存|ほぞん]が[終|お]わるまで、アプリを[終了|しゅうりょう]しないでください。	No cierres la aplicación hasta que termine de guardar.	終了する significa finalizar una actividad o programa.
+締切	N3	cultura	[原稿|げんこう]の[締切|しめきり]は、[印刷|いんさつ]の[一週間|いっしゅうかん][前|まえ]です。	El plazo de entrega del manuscrito termina una semana antes de la impresión.	締切 es el cierre de un plazo.
+先着	N3	ocio	[見学|けんがく]は[先着|せんちゃく][順|じゅん]なので、[早|はや]めに[並|なら]びました。	Como las visitas se admiten por orden de llegada, me puse pronto a la cola.	先着順 significa por orden de llegada.
+抽選	N3	ocio	[希望者|きぼうしゃ]が[多|おお]く、[参加者|さんかしゃ]は[抽選|ちゅうせん]で[決|き]まりました。	Había muchos interesados y los participantes se eligieron por sorteo.	抽選 es elegir al azar mediante un sorteo.
+当選	N3	ocio	[当選|とうせん]の[知|し]らせが[迷惑|めいわく]メールに[入|はい]っていました。	La notificación de que había ganado el sorteo estaba en la carpeta de spam.	当選 es resultar elegido en un sorteo o elección.
+落選	N3	cultura	[作品|さくひん]は[落選|らくせん]しましたが、また[応募|おうぼ]します。	Mi obra no fue seleccionada, pero volveré a presentarme.	落選 es no resultar seleccionado.
+応募	N3	trabajo	[経験|けいけん]がなくても[応募|おうぼ]できる[求人|きゅうじん]です。	Es una oferta de empleo a la que puedes optar sin experiencia.	応募 es presentar una candidatura.
+募集	N3	ocio	[清掃|せいそう]を[手伝|てつだ]うボランティアを[募集|ぼしゅう]しています。	Se buscan voluntarios para ayudar con la limpieza.	募集 es convocar o buscar participantes.
+定員	N3	educacion	[定員|ていいん]に[達|たっ]したため、[受付|うけつけ]は[終了|しゅうりょう]しました。	Se cerró la inscripción porque se alcanzó el número máximo de plazas.	定員 es el aforo o número de plazas establecido.
+欠員	N2	trabajo	[欠員|けついん]を[補|おぎな]うため、[臨時|りんじ]の[職員|しょくいん]を[採用|さいよう]しました。	Contratamos personal temporal para cubrir las vacantes.	欠員 es la falta de personal respecto a la plantilla prevista.
+補欠	N3	ocio	[補欠|ほけつ]だった[選手|せんしゅ]が、[後半|こうはん]から[出場|しゅつじょう]しました。	El jugador suplente entró en la segunda mitad.	補欠 es una persona de reserva.
+優先	N3	servicios	[急|いそ]ぎの[案件|あんけん]を[優先|ゆうせん]して[処理|しょり]します。	Tramitaremos primero los asuntos urgentes.	優先する es dar prioridad.
+対象	N3	educacion	この[講座|こうざ]は、[初心者|しょしんしゃ]を[対象|たいしょう]にしています。	Este curso está dirigido a principiantes.	対象 indica a quién o a qué se dirige algo.
+該当	N2	servicios	[該当|がいとう]する[項目|こうもく]にだけ、[印|しるし]をつけてください。	Marca únicamente los apartados que correspondan.	該当する es cumplir una condición o corresponder a una categoría.
+条件	N3	compras	[返品|へんぴん]の[条件|じょうけん]を[読|よ]まずに[買|か]ってしまいました。	Compré sin leer las condiciones de devolución.	条件 son requisitos o circunstancias.
+規約	N2	tecnologia	[登録|とうろく][前|まえ]に、[利用|りよう][規約|きやく]の[変更点|へんこうてん]を[確認|かくにん]しました。	Antes de registrarme, revisé los cambios en las condiciones de uso.	規約 son reglas pactadas para un servicio.
+同意	N3	tecnologia	[同意|どうい]しなければ、[位置|いち][情報|じょうほう]は[送|おく]られません。	Si no das tu consentimiento, no se enviará tu ubicación.	同意 es dar consentimiento.
+承諾	N2	vida_diaria	[写真|しゃしん]を[公開|こうかい]する[前|まえ]に、[本人|ほんにん]の[承諾|しょうだく]を[得|え]ました。	Obtuve el permiso de la persona antes de publicar su foto.	承諾 es aceptar o autorizar una petición.
+撤回	N2	trabajo	[新|あたら]しい[事実|じじつ]を[知|し]り、[発言|はつげん]を[撤回|てっかい]しました。	Al conocer nuevos hechos, me retracté de lo que había dicho.	撤回 es retirar una declaración o decisión.
+申告	N3	servicios	[持|も]ち[込|こ]んだ[品物|しなもの]を、[税関|ぜいかん]で[申告|しんこく]しました。	Declaré en la aduana los artículos que llevaba.	申告 es comunicar formalmente información a una autoridad.
+照会	N2	servicios	[過去|かこ]の[記録|きろく]について、[担当|たんとう][部署|ぶしょ]に[照会|しょうかい]しました。	Consulté al departamento responsable sobre los registros anteriores.	照会 es solicitar información formalmente.
