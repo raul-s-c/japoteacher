@@ -1,0 +1,156 @@
+{
+  "provenance": "Recovered existing editorial candidates; reviewed in this conversation, no API calls.",
+  "api_calls": 0,
+  "api_tokens": 0,
+  "pairs": 2,
+  "exercises": 4,
+  "levels": {
+    "N2": 1,
+    "N3": 1
+  },
+  "checks": [
+    "schema",
+    "explicit ordered kanji readings",
+    "exact and character similarity vs bank + Sakamoto + batch",
+    "morphology evidence for target",
+    "append-only previous rows and graph"
+  ],
+  "items": [
+    {
+      "id": "JAES-N2-CONVERSATION-RECONCILED-20260930-001",
+      "target": "ものの",
+      "japanese": "時間はあるものの、今日は出かけないの？",
+      "spanish": "Aunque tienes tiempo, ¿hoy no sales?",
+      "estimated_level": "N2",
+      "review_note": "ものの introduce una concesión; pregunta informal. Se clasifica pedagógicamente como N2 por esta construcción.",
+      "authored_ruby": "[時間|じかん]はあるものの、[今日|きょう]は[出|で]かけないの？",
+      "nearest_id": "JAES-N5-EDITORIAL-1115",
+      "nearest_japanese": "なぜ今日はゲームをしないの？",
+      "character_similarity": 0.4,
+      "target_literal_previous_occurrences": 6,
+      "morphology_evidence": [
+        {
+          "term": "時間",
+          "surface": "時間",
+          "start": 0,
+          "end": 2,
+          "reading": "じかん"
+        },
+        {
+          "term": "ある",
+          "surface": "ある",
+          "start": 3,
+          "end": 5,
+          "reading": "ある"
+        },
+        {
+          "term": "今日",
+          "surface": "今日",
+          "start": 9,
+          "end": 11,
+          "reading": "きょう"
+        },
+        {
+          "term": "出かける",
+          "surface": "出かけ",
+          "start": 12,
+          "end": 15,
+          "reading": "でかけ"
+        },
+        {
+          "term": "ものの",
+          "surface": "ものの",
+          "start": 5,
+          "end": 8,
+          "reading": "ものの"
+        }
+      ],
+      "curated_compound": {
+        "term": "ものの",
+        "surface": "ものの",
+        "start": 5,
+        "end": 8,
+        "reading": "ものの"
+      },
+      "nearest_lexical_similarity": 0.3333333333333333,
+      "nearest_lexical_id": "JAES-N5-EDITORIAL-0430",
+      "nearest_lexical_japanese": "今日は仕事がありますか。"
+    },
+    {
+      "id": "JAES-N3-CONVERSATION-RECONCILED-20260930-002",
+      "target": "協力",
+      "japanese": "若者が少ないので、地域で祭りを続けるには協力が必要です。",
+      "spanish": "Como hay pocos jóvenes, para mantener las fiestas en la comunidad hace falta colaboración.",
+      "estimated_level": "N3",
+      "review_note": "続けるには expresa una condición necesaria para continuar una actividad.",
+      "authored_ruby": "[若者|わかもの]が[少|すく]ないので、[地域|ちいき]で[祭|まつ]りを[続|つづ]けるには[協力|きょうりょく]が[必要|ひつよう]です。",
+      "nearest_id": "JAES-N5-EDITORIAL-1008",
+      "nearest_japanese": "交渉がまとまらないので、祭りは中止です。",
+      "character_similarity": 0.4545,
+      "target_literal_previous_occurrences": 4,
+      "morphology_evidence": [
+        {
+          "term": "若者",
+          "surface": "若者",
+          "start": 0,
+          "end": 2,
+          "reading": "わかもの"
+        },
+        {
+          "term": "少ない",
+          "surface": "少ない",
+          "start": 3,
+          "end": 6,
+          "reading": "すくない"
+        },
+        {
+          "term": "地域",
+          "surface": "地域",
+          "start": 9,
+          "end": 11,
+          "reading": "ちいき"
+        },
+        {
+          "term": "祭り",
+          "surface": "祭り",
+          "start": 12,
+          "end": 14,
+          "reading": "まつり"
+        },
+        {
+          "term": "続ける",
+          "surface": "続ける",
+          "start": 15,
+          "end": 18,
+          "reading": "つづける"
+        },
+        {
+          "term": "協力",
+          "surface": "協力",
+          "start": 20,
+          "end": 22,
+          "reading": "きょうりょく"
+        },
+        {
+          "term": "必要",
+          "surface": "必要",
+          "start": 23,
+          "end": 25,
+          "reading": "ひつよう"
+        }
+      ],
+      "nearest_lexical_similarity": 0.25,
+      "nearest_lexical_id": "JAES-N4-EDITORIAL-2124",
+      "nearest_lexical_japanese": "森を守るには、地域の人との連携が必要だから、調査も続けます。"
+    }
+  ],
+  "previous_rows_preserved": 11078,
+  "previous_graph_sentences_preserved": 11186,
+  "total_rows": 11082,
+  "source_slots": [
+    "N4:2175",
+    "N4:2268"
+  ],
+  "excluded_candidates_not_reintroduced": 691,
+  "conversation_pairs_already_present": 1000
+}
