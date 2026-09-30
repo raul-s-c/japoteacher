@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=72">
-  <link rel="stylesheet" href="src/tutor-roads.css?v=1">
+  <link rel="stylesheet" href="src/tutor-roads.css?v=2">
   <title>Japoteacher</title>
 <link rel="stylesheet" href="src/knowledge-map.css?v=1">
 </head>
@@ -97,8 +97,9 @@
         <section class="panel tutor-practice" id="tutorPractice" hidden>
           <div class="tutor-practice-heading"><div><p class="section-kicker" id="tutorPracticeRoad"></p><h3 id="tutorPracticeGoal"></h3><p id="tutorPracticePrompt"></p></div><button class="secondary" id="tutorEndSession" type="button">Guardar y salir</button></div>
           <div class="tutor-session-memory" id="tutorSessionMemory"></div>
+          <p class="tutor-initiative-hint">El tutor inicia en japonés. La traducción queda oculta hasta que la marques; puedes escuchar o mostrar el furigana de cada intervención.</p>
           <div class="tutor-session-thread" id="tutorSessionThread" aria-live="polite"></div>
-          <form id="tutorReplyForm" class="tutor-reply-form"><label class="answer-label" for="tutorReply">Tu respuesta</label><textarea id="tutorReply" rows="3" maxlength="900" placeholder="Responde en japonés; puedes escribir español si necesitas pedir ayuda."></textarea><div class="tutor-reply-options"><label>Japonés en la conversación <select id="tutorJapaneseRatio"><option value="low">Poco, con apoyo</option><option value="balanced" selected>Equilibrado</option><option value="high">Casi todo en japonés</option></select></label><label class="tutor-check"><input id="tutorFurigana" type="checkbox" checked> Mostrar furigana en la respuesta</label></div><div class="answer-actions"><button class="primary" id="tutorSendReply" type="submit">Responder</button></div></form>
+          <form id="tutorReplyForm" class="tutor-reply-form"><label class="answer-label" for="tutorReply">Tu respuesta</label><textarea id="tutorReply" rows="3" maxlength="900" placeholder="Responde en japonés; puedes escribir español si necesitas pedir ayuda."></textarea><div class="tutor-reply-options"><label>Japonés en la conversación <select id="tutorJapaneseRatio"><option value="low">Poco, con apoyo</option><option value="balanced" selected>Equilibrado</option><option value="high">Casi todo en japonés</option></select></label></div><div class="answer-actions"><button class="primary" id="tutorSendReply" type="submit">Responder</button></div></form>
         </section>
         <div class="ai-tutor-layout">
           <section class="panel ai-tutor-input">
@@ -295,7 +296,7 @@
   <script defer src="src/context-explainer.js?v=2"></script>
   <script defer src="src/practice-tools.js?v=5"></script>
   <script defer src="src/ai-tutor.js?v=5"></script>
-  <script defer src="src/tutor-roads.js?v=1"></script>
+  <script defer src="src/tutor-roads.js?v=2"></script>
   <script defer src="src/lens.js?v=8"></script>
   <script defer src="src/daily-news.js?v=8"></script>
   <script defer src="src/manual-adjustments.js?v=10"></script>

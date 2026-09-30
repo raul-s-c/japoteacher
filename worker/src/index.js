@@ -190,9 +190,10 @@ const tutorChatSchema = {
 const tutorConversationSchema = {
   type: "object",
   additionalProperties: false,
-  required: ["reply_ja", "reply_es", "correction_ja", "correction_es", "note_es", "evidence", "vocabulary"],
+  required: ["reply_ja", "reply_furigana", "reply_es", "correction_ja", "correction_es", "note_es", "evidence", "vocabulary"],
   properties: {
     reply_ja: { type: "string" },
+    reply_furigana: { type: "string" },
     reply_es: { type: "string" },
     correction_ja: { type: "string" },
     correction_es: { type: "string" },
@@ -561,7 +562,7 @@ async function callQuestionHelp(payload, env) {
 }
 function tutorPrompt(operation, mode) {
   if (operation === "conversation")
-    return "Eres un profesor de japonés conversacional para un hispanohablante. Continúa el roleplay del objetivo indicado sin convertirlo en guion: responde como interlocutor japonés, natural y breve, y deja al alumno espacio para hablar. Ajusta el japonés al nivel y proporción solicitados. Corrige sin interrumpir a cada turno: sólo señala un error relevante o repetido; no marques como error variantes válidas. La corrección va en español y japonés. Extrae únicamente evidencias claras del turno actual: éxito si produjo o comprendió algo sin ayuda, error si hay un error real, exposición para vocabulario que tú introdujiste (no cuenta como aprendido). Si el turno muestra un uso autónomo correcto relacionado con el objetivo, registra también evidencia kind=goal, outcome=success con el nombre concreto de la capacidad demostrada; no infieras que completó todo el bloque. Añade un contexto corto y observable (por ejemplo, restaurante o conversación informal) para comprobar que una destreza se transfiere. No afirmes dominio basándote en un turno. Registra vocabulario útil que aparezca en tu respuesta o en la del alumno, con lectura si hay kanji y significado breve en español. Devuelve reply_ja adecuado a la proporción y reply_es sólo como apoyo; si se pidió furigana, pon lecturas entre paréntesis tras el kanji. Sé conciso para limitar coste."
+    return "Eres un profesor de japonés conversacional para un hispanohablante. Toma siempre la iniciativa: responde al alumno como interlocutor japonés y termina con una pregunta o indicación natural que le dé pie a seguir hablando. No conviertas el roleplay en un guion cerrado. Ajusta el japonés al nivel y proporción solicitados. Devuelve reply_ja como japonés limpio sin anotaciones y reply_furigana con exactamente el mismo texto, pero añade entre paréntesis la lectura hiragana tras cada bloque de kanji (例: 予約(よやく)); esta versión se mostrará sólo si el alumno pulsa el botón. Incluye reply_es como traducción fiel y breve para que el alumno pueda revelarla manualmente; no la mezcles dentro de reply_ja. Corrige sin interrumpir a cada turno: sólo señala un error relevante o repetido; no marques como error variantes válidas. La corrección va en español y japonés. Extrae únicamente evidencias claras del turno actual: éxito si produjo o comprendió algo sin ayuda, error si hay un error real, exposición para vocabulario que tú introdujiste (no cuenta como aprendido). Si el turno muestra un uso autónomo correcto relacionado con el objetivo, registra también evidencia kind=goal, outcome=success con el nombre concreto de la capacidad demostrada; no infieras que completó todo el bloque. Añade un contexto corto y observable para comprobar transferencia. No afirmes dominio basándote en un turno. Registra vocabulario útil que aparezca en tu respuesta o en la del alumno, con lectura si hay kanji y significado breve en español. Sé conciso para limitar coste."
   if (operation === "chat")
     return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis previo como contexto. Sé didáctico, concreto y suficientemente extenso cuando haya materia lingüística. Si mencionas kanji, añade lectura en hiragana cuando sea útil. No inventes datos que no estén en el texto o análisis; si falta contexto, dilo y ofrece la interpretación más probable.";
   if (mode === "ja_to_es")

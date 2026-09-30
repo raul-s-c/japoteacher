@@ -23,9 +23,29 @@
       ["jp-register", "Sonar adecuado al contexto", "Elegir un tono cercano o cortés y cerrar conversaciones", "registro; fórmulas; turnos; despedidas; matices"],
     ]) },
   ];
+  const openings = {
+    "n4-foundation": ["週末は何をしましたか。少し詳しく教えてください。", "週末(しゅうまつ)は何(なに)をしましたか。少(すこ)し詳(くわ)しく教(おし)えてください。", "¿Qué hiciste el fin de semana? Cuéntame un poco más."],
+    "n4-routine": ["毎朝、何時に起きていますか。", "毎朝(まいあさ)、何時(なんじ)に起(お)きていますか。", "¿A qué hora te levantas cada mañana?"],
+    "n4-plans": ["今年、何をする予定ですか。", "今年(ことし)、何(なに)をする予定(よてい)ですか。", "¿Qué planes tienes para este año?"],
+    "n4-reasons": ["どうして日本語を勉強しているんですか。", "どうして日本語(にほんご)を勉強(べんきょう)しているんですか。", "¿Por qué estudias japonés?"],
+    "n4-requests": ["友達に週末の予定を聞いて、おすすめの場所を一つ教えてください。", "友達(ともだち)に週末(しゅうまつ)の予定(よてい)を聞(き)いて、おすすめの場所(ばしょ)を一(ひと)つ教(おし)えてください。", "Pregunta a un amigo qué planes tiene para el fin de semana y recomiéndale un lugar."],
+    "n4-reading": ["このお知らせを読んで、いつ、どこで何があるか説明してください。", "このお知(し)らせを読(よ)んで、いつ、どこで何(なに)があるか説明(せつめい)してください。", "Lee este aviso y explica cuándo, dónde y qué va a ocurrir."],
+    "n4-checkpoint": ["最近、前よりできるようになったことは何ですか。", "最近(さいきん)、前(まえ)よりできるようになったことは何(なん)ですか。", "¿Qué cosas puedes hacer ahora mejor que antes?"],
+    "n4-ready": ["最近の出来事について、理由や自分の考えも入れて話してください。", "最近(さいきん)の出来事(できごと)について、理由(りゆう)や自分(じぶん)の考(かんが)えも入(い)れて話(はな)してください。", "Háblame de algo reciente e incluye tus razones y lo que piensas."],
+    "jp-first-meet": ["こんにちは。日本にはどのくらい滞在する予定ですか。", "こんにちは。日本(にほん)にはどのくらい滞在(たいざい)する予定(よてい)ですか。", "Hola. ¿Cuánto tiempo tienes pensado quedarte en Japón?"],
+    "jp-smalltalk": ["最近、休みの日は何をしていますか。", "最近(さいきん)、休(やす)みの日(ひ)は何(なに)をしていますか。", "¿Qué sueles hacer últimamente en tus días libres?"],
+    "jp-restaurant": ["いらっしゃいませ。ご注文はお決まりですか。", "いらっしゃいませ。ご注文(ちゅうもん)はお決(き)まりですか。", "Bienvenido. ¿Ya sabe qué va a pedir?"],
+    "jp-transport": ["すみません、浅草へ行きたいんですが、どの電車に乗ればいいですか。", "すみません、浅草(あさくさ)へ行(い)きたいんですが、どの電車(でんしゃ)に乗(の)ればいいですか。", "Perdona, quiero ir a Asakusa. ¿Qué tren debería tomar?"],
+    "jp-shops": ["すみません、この靴のもう少し大きいサイズはありますか。", "すみません、この靴(くつ)のもう少(すこ)し大(おお)きいサイズはありますか。", "Perdone, ¿tienen estos zapatos en una talla un poco más grande?"],
+    "jp-plans": ["今週末、一緒に映画を見に行きませんか。", "今週末(こんしゅうまつ)、一緒(いっしょ)に映画(えいが)を見(み)に行(い)きませんか。", "¿Te apetece ir al cine conmigo este fin de semana?"],
+    "jp-experience": ["今まで行った場所で、一番よかったところはどこですか。", "今(いま)まで行(い)った場所(ばしょ)で、一番(いちばん)よかったところはどこですか。", "De los lugares que has visitado, ¿cuál te gustó más?"],
+    "jp-repair": ["すみません、もう少しゆっくり話していただけますか。", "すみません、もう少(すこ)しゆっくり話(はな)していただけますか。", "Perdona, ¿podrías hablar un poco más despacio?"],
+    "jp-register": ["ご説明ありがとうございます。少し考えてから、またお返事してもよろしいですか。", "ご説明(せつめい)ありがとうございます。少(すこ)し考(かんが)えてから、またお返事(へんじ)してもよろしいですか。", "Gracias por explicármelo. ¿Le parece bien si lo pienso un poco y le respondo después?"],
+  };
   const $ = (selector) => document.querySelector(selector);
   const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const readJson = (value, fallback = []) => { try { return JSON.parse(value || ""); } catch { return fallback; } };
+  const renderFurigana = (value) => esc(value).replace(/([\u3400-\u9fff々〆ヶ]+)\(([ぁ-ゖー]+)\)/g, "<ruby>$1<rt>$2</rt></ruby>");
   const studyDate = () => window.SessionPlanner?.localDate?.() || new Date().toISOString().slice(0, 10);
   const uid = () => crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const state = { roadId: roads[0].id, goalId: "", session: null, activeSessions: {}, evidence: [], settings: {}, busy: false };
@@ -82,25 +102,51 @@
   function renderMessages() {
     const target = $("#tutorSessionThread"), messages = state.session ? readJson(state.session.turns_json) : [];
     if (!target) return;
-    target.innerHTML = messages.length ? messages.map((item) => `<article class="tutor-turn ${item.role}"><span>${item.role === "user" ? "Tú" : "Tutor"}</span><p>${esc(item.content)}</p>${item.note ? `<small>${esc(item.note)}</small>` : ""}</article>`).join("") : `<p class="tutor-welcome">${esc(goal(state.roadId, state.goalId)?.objective || "Empecemos hablando")}. Responde en japonés a tu ritmo; puedes pedir ayuda en español.</p>`;
+    target.innerHTML = messages.length ? messages.map((item, index) => {
+      if (item.role !== "assistant") return `<article class="tutor-turn user"><span>Tú</span><p>${esc(item.content || "")}</p></article>`;
+      if (!item.japanese) return `<article class="tutor-turn assistant"><span>Tutor</span><p>${esc(item.content || "")}</p>${item.note ? `<small>${esc(item.note)}</small>` : ""}</article>`;
+      const jp = item.furigana_visible ? renderFurigana(item.furigana || item.japanese) : esc(item.japanese);
+      return `<article class="tutor-turn assistant"><span>Tutor · japonés</span><p class="tutor-japanese" lang="ja">${jp}</p><div class="tutor-turn-controls"><label><input type="checkbox" data-tutor-translation="${index}" ${item.translation_visible ? "checked" : ""}> Mostrar traducción</label><button type="button" class="tutor-inline-button" data-tutor-furigana="${index}" aria-pressed="${Boolean(item.furigana_visible)}">あ ${item.furigana_visible ? "Ocultar furigana" : "Mostrar furigana"}</button><button type="button" class="tutor-inline-button" data-tutor-speak="${index}">🔊 Escuchar</button></div><p class="tutor-translation" ${item.translation_visible ? "" : "hidden"}>${esc(item.translation || "")}</p>${item.note ? `<small>${esc(item.note)}</small>` : ""}</article>`;
+    }).join("") : `<p class="tutor-welcome">${esc(goal(state.roadId, state.goalId)?.objective || "Empecemos hablando")}. Responde en japonés a tu ritmo; puedes pedir ayuda en español.</p>`;
+    target.querySelectorAll("[data-tutor-translation]").forEach((control) => control.addEventListener("change", () => setTurnOption(Number(control.dataset.tutorTranslation), "translation_visible", control.checked)));
+    target.querySelectorAll("[data-tutor-furigana]").forEach((control) => control.addEventListener("click", () => setTurnOption(Number(control.dataset.tutorFurigana), "furigana_visible", control.getAttribute("aria-pressed") !== "true")));
+    target.querySelectorAll("[data-tutor-speak]").forEach((control) => control.addEventListener("click", () => speakTurn(Number(control.dataset.tutorSpeak), control)));
     target.scrollTop = target.scrollHeight;
+  }
+  async function setTurnOption(index, key, value) {
+    const turns = readJson(state.session?.turns_json), turn = turns[index];
+    if (!turn) return;
+    turn[key] = value; state.session.turns_json = JSON.stringify(turns); state.session.updated_at = new Date().toISOString();
+    await JapoDB.put("tutor_sessions", state.session); renderMessages();
+  }
+  async function speakTurn(index, button) {
+    const turn = readJson(state.session?.turns_json)[index];
+    if (!turn?.japanese) return;
+    try { button.disabled = true; await window.PracticeTools.speakText(turn.japanese); }
+    catch (error) { window.UI?.toast?.(error.message || "No se pudo reproducir el japonés."); }
+    finally { button.disabled = false; }
   }
   async function start(roadId, goalId) {
     if (state.activeSessions[roadId]?.goal_id === goalId) { state.session = state.activeSessions[roadId]; state.roadId = roadId; state.goalId = goalId; showPractice(); return; }
     if (state.activeSessions[roadId]) { state.session = state.activeSessions[roadId]; await finishSession(true); }
     state.roadId = roadId; state.goalId = goalId;
     const now = new Date().toISOString(), item = goal(roadId, goalId);
-    state.session = { session_id: uid(), road_id: roadId, goal_id: goalId, status: "active", created_at: now, updated_at: now, study_date: studyDate(), title: item.title, turns_json: "[]", turn_count: 0 };
+    state.session = { session_id: uid(), road_id: roadId, goal_id: goalId, status: "active", created_at: now, updated_at: now, study_date: studyDate(), title: item.title, turns_json: JSON.stringify([openingTurn(goalId)]), turn_count: 0 };
     state.activeSessions[roadId] = state.session;
     await JapoDB.put("tutor_sessions", state.session);
     showPractice(); renderRoads();
   }
+  function openingTurn(goalId) {
+    const opening = openings[goalId] || ["こんにちは。今日は何について話しましょうか。", "こんにちは。今日(きょう)は何(なに)について話(はな)しましょうか。", "Hola. ¿De qué te gustaría hablar hoy?"];
+    return { role: "assistant", japanese: opening[0], furigana: opening[1], translation: opening[2], translation_visible: false, furigana_visible: false, note: "" };
+  }
   function showPractice() {
     const item = goal(state.roadId, state.goalId), parent = road(state.roadId), panel = $("#tutorPractice");
     if (!item || !panel) return;
+    if (!readJson(state.session.turns_json).length) { state.session.turns_json = JSON.stringify([openingTurn(state.goalId)]); JapoDB.put("tutor_sessions", state.session).catch((error) => console.warn("No se pudo guardar la apertura del tutor:", error)); }
     panel.hidden = false; $("#tutorPracticeRoad").textContent = parent.title; $("#tutorPracticeGoal").textContent = item.title; $("#tutorPracticePrompt").textContent = `${item.objective}. El tutor elegirá cómo practicarlo según tu historial, sin un diálogo prefijado.`;
     $("#tutorSessionMemory").textContent = compactMemory(state.roadId, state.goalId);
-    $("#tutorJapaneseRatio").value = state.settings.tutorJapaneseRatio || "balanced"; $("#tutorFurigana").checked = state.settings.tutorFurigana !== false;
+    $("#tutorJapaneseRatio").value = state.settings.tutorJapaneseRatio || "balanced";
     renderMessages(); panel.scrollIntoView({ behavior: "smooth", block: "start" }); $("#tutorReply")?.focus();
   }
   async function saveEvidence(data) {
@@ -123,7 +169,7 @@
     const turns = readJson(state.session.turns_json);
     const recentTurns = turns.slice(-6);
     if (recentTurns.at(-1)?.role === "user" && recentTurns.at(-1)?.content === text) recentTurns.pop();
-    const recent = recentTurns.map((item) => ({ role: item.role, content: item.content.slice(0, 500) }));
+    const recent = recentTurns.map((item) => ({ role: item.role, content: String(item.content || item.japanese || "").slice(0, 500) }));
     turns.push({ role: "user", content: text.slice(0, 900) });
     state.session.turns_json = JSON.stringify(turns.slice(-18)); state.session.updated_at = new Date().toISOString();
     try {
@@ -131,10 +177,10 @@
       const settings = (await JapoDB.get("settings", "app"))?.value || {}, token = await window.CloudSync?.getAccessToken();
       if (!token) throw new Error("Inicia sesión para usar el Tutor IA.");
       const url = (settings.aiEndpoint || "https://japoteacher-ai.raul-nihongo.workers.dev/evaluate").replace(/\/evaluate$/, "/tutor");
-      const response = await (window.JapoAiTransport?.fetch || fetch)(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, "X-Device-ID": window.CloudSync?.getDeviceId?.() || "" }, body: JSON.stringify({ operation: "conversation", mode: "ja_to_es", user_message: text, conversation: { goal: `${road(state.roadId).title}: ${goal(state.roadId, state.goalId).title}. ${goal(state.roadId, state.goalId).objective}`, memory: compactMemory(state.roadId, state.goalId), japanese_ratio: $("#tutorJapaneseRatio").value, furigana: $("#tutorFurigana").checked, messages: recent } }) });
+      const response = await (window.JapoAiTransport?.fetch || fetch)(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}`, "X-Device-ID": window.CloudSync?.getDeviceId?.() || "" }, body: JSON.stringify({ operation: "conversation", mode: "ja_to_es", user_message: text, conversation: { goal: `${road(state.roadId).title}: ${goal(state.roadId, state.goalId).title}. ${goal(state.roadId, state.goalId).objective}`, memory: compactMemory(state.roadId, state.goalId), japanese_ratio: $("#tutorJapaneseRatio").value, messages: recent } }) });
       const result = await response.json(); if (!response.ok) throw new Error(result.error || `Error HTTP ${response.status}`);
       const answer = result.conversation || {};
-      turns.push({ role: "assistant", content: [answer.reply_ja, answer.reply_es && $("#tutorJapaneseRatio").value !== "high" ? answer.reply_es : ""].filter(Boolean).join("\n"), note: answer.correction_es ? `${answer.correction_ja ? `${answer.correction_ja} · ` : ""}${answer.correction_es}` : answer.note_es || "" });
+      turns.push({ role: "assistant", japanese: answer.reply_ja || "続けてください。", furigana: answer.reply_furigana || answer.reply_ja || "", translation: answer.reply_es || "", translation_visible: false, furigana_visible: false, note: answer.correction_es ? `${answer.correction_ja ? `${answer.correction_ja} · ` : ""}${answer.correction_es}` : answer.note_es || "" });
       state.session.turn_count = (state.session.turn_count || 0) + 1;
       state.session.turns_json = JSON.stringify(turns.slice(-18)); state.session.updated_at = new Date().toISOString();
       await saveEvidence(answer); await JapoDB.put("tutor_sessions", state.session);
@@ -154,7 +200,6 @@
     $("#tutorReplyForm")?.addEventListener("submit", reply);
     $("#tutorEndSession")?.addEventListener("click", () => finishSession(true));
     $("#tutorJapaneseRatio")?.addEventListener("change", async (event) => { state.settings.tutorJapaneseRatio = event.target.value; const row = await JapoDB.get("settings", "app"); if (row) await JapoDB.put("settings", { ...row, value: { ...(row.value || {}), tutorJapaneseRatio: event.target.value } }); });
-    $("#tutorFurigana")?.addEventListener("change", async (event) => { state.settings.tutorFurigana = event.target.checked; const row = await JapoDB.get("settings", "app"); if (row) await JapoDB.put("settings", { ...row, value: { ...(row.value || {}), tutorFurigana: event.target.checked } }); });
     document.addEventListener("japoteacher:navigate", (event) => { if (event.detail?.view === "tutor") { const selectedRoad = state.roadId; loadData().then(() => { renderRoads(); state.session = state.activeSessions[selectedRoad] || null; if (state.session) { state.roadId = state.session.road_id; state.goalId = state.session.goal_id; showPractice(); } else $("#tutorPractice").hidden = true; }); } });
   }
   document.addEventListener("DOMContentLoaded", () => init().catch((error) => { console.warn("Tutor:", error); window.UI?.toast?.("No se pudo cargar el recorrido del tutor."); }));
