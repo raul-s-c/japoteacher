@@ -187,6 +187,20 @@ const tutorChatSchema = {
   required: ["answer_es"],
   properties: { answer_es: { type: "string" } },
 };
+const tutorConversationSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["reply_ja", "reply_es", "correction_ja", "correction_es", "note_es", "evidence", "vocabulary"],
+  properties: {
+    reply_ja: { type: "string" },
+    reply_es: { type: "string" },
+    correction_ja: { type: "string" },
+    correction_es: { type: "string" },
+    note_es: { type: "string" },
+    evidence: { type: "array", items: { type: "object", additionalProperties: false, required: ["outcome", "kind", "concept", "correction", "confidence", "context"], properties: { outcome: { type: "string", enum: ["success", "error", "exposure"] }, kind: { type: "string", enum: ["grammar", "vocabulary", "pragmatics", "goal"] }, concept: { type: "string" }, correction: { type: "string" }, confidence: { type: "string", enum: ["low", "medium", "high"] }, context: { type: "string" } } } },
+    vocabulary: { type: "array", items: { type: "object", additionalProperties: false, required: ["word", "reading", "meaning_es"], properties: { word: { type: "string" }, reading: { type: "string" }, meaning_es: { type: "string" } } } },
+  },
+};
 const lensAnalysisSchema = {
   type: "object",
   additionalProperties: false,
@@ -546,6 +560,8 @@ async function callQuestionHelp(payload, env) {
   });
 }
 function tutorPrompt(operation, mode) {
+  if (operation === "conversation")
+    return "Eres un profesor de japonés conversacional para un hispanohablante. Continúa el roleplay del objetivo indicado sin convertirlo en guion: responde como interlocutor japonés, natural y breve, y deja al alumno espacio para hablar. Ajusta el japonés al nivel y proporción solicitados. Corrige sin interrumpir a cada turno: sólo señala un error relevante o repetido; no marques como error variantes válidas. La corrección va en español y japonés. Extrae únicamente evidencias claras del turno actual: éxito si produjo o comprendió algo sin ayuda, error si hay un error real, exposición para vocabulario que tú introdujiste (no cuenta como aprendido). Si el turno muestra un uso autónomo correcto relacionado con el objetivo, registra también evidencia kind=goal, outcome=success con el nombre concreto de la capacidad demostrada; no infieras que completó todo el bloque. Añade un contexto corto y observable (por ejemplo, restaurante o conversación informal) para comprobar que una destreza se transfiere. No afirmes dominio basándote en un turno. Registra vocabulario útil que aparezca en tu respuesta o en la del alumno, con lectura si hay kanji y significado breve en español. Devuelve reply_ja adecuado a la proporción y reply_es sólo como apoyo; si se pidió furigana, pon lecturas entre paréntesis tras el kanji. Sé conciso para limitar coste."
   if (operation === "chat")
     return "Eres un profesor particular de japonés para hispanohablantes. Responde a la pregunta del alumno usando el análisis previo como contexto. Sé didáctico, concreto y suficientemente extenso cuando haya materia lingüística. Si mencionas kanji, añade lectura en hiragana cuando sea útil. No inventes datos que no estén en el texto o análisis; si falta contexto, dilo y ofrece la interpretación más probable.";
   if (mode === "ja_to_es")
@@ -554,18 +570,19 @@ function tutorPrompt(operation, mode) {
 }
 async function callTutor(payload, env) {
   const operation = payload.operation === "chat" ? "chat" : "analyze",
-    schema = operation === "chat" ? tutorChatSchema : tutorAnalysisSchema,
-    maxOutput = operation === "chat" ? 1200 : 3000;
+    actualOperation = payload.operation === "conversation" ? "conversation" : operation,
+    schema = actualOperation === "conversation" ? tutorConversationSchema : actualOperation === "chat" ? tutorChatSchema : tutorAnalysisSchema,
+    maxOutput = actualOperation === "conversation" ? 900 : actualOperation === "chat" ? 1200 : 3000;
   return fetch(OPENAI_RESPONSES_URL, {
     method: "POST",
     headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "gpt-5.4-mini",
       reasoning: { effort: "none" },
-      instructions: tutorPrompt(operation, payload.mode),
+      instructions: tutorPrompt(actualOperation, payload.mode),
       input: JSON.stringify(payload),
       max_output_tokens: maxOutput,
-      text: { format: { type: "json_schema", name: `japoteacher_tutor_${operation}`, strict: true, schema } },
+      text: { format: { type: "json_schema", name: `japoteacher_tutor_${actualOperation}`, strict: true, schema } },
     }),
   });
 }
@@ -965,21 +982,23 @@ export default {
       if (!(await authenticated(request, env))) return json({ error: "Inicia sesión en el dispositivo activo para usar el Tutor IA." }, 409, origin, env);
       let body;
       try { body = await request.json(); } catch { return json({ error: "Solicitud de tutor inválida." }, 400, origin, env); }
-      const operation = body?.operation === "chat" ? "chat" : "analyze",
+      const operation = ["chat", "conversation"].includes(body?.operation) ? body.operation : "analyze",
         mode = body?.mode === "ja_to_es" ? "ja_to_es" : "es_to_ja",
         text = String(body?.text || "").trim(),
         question = String(body?.question || "").trim(),
-        messages = Array.isArray(body?.messages) ? body.messages.slice(-8).map(item => ({ role: String(item?.role || "").slice(0, 20), content: String(item?.content || "").slice(0, 1200) })) : [],
-        analysis = body?.analysis && typeof body.analysis === "object" ? body.analysis : null;
-      if (!text || text.length > 4000 || (operation === "chat" && (!question || question.length > 900))) return json({ error: "La consulta del tutor no es válida." }, 400, origin, env);
+        messages = (Array.isArray(body?.messages) ? body.messages : Array.isArray(body?.conversation?.messages) ? body.conversation.messages : []).slice(-8).map(item => ({ role: String(item?.role || "").slice(0, 20), content: String(item?.content || "").slice(0, 1200) })),
+        analysis = body?.analysis && typeof body.analysis === "object" ? body.analysis : null,
+        userMessage = String(body?.user_message || "").trim(),
+        conversation = body?.conversation && typeof body.conversation === "object" ? body.conversation : {};
+      if ((operation === "analyze" && (!text || text.length > 4000)) || (operation === "chat" && (!text || text.length > 4000 || !question || question.length > 900)) || (operation === "conversation" && (!userMessage || userMessage.length > 900 || String(conversation.goal || "").length > 180 || String(conversation.memory || "").length > 1800))) return json({ error: "La consulta del tutor no es válida." }, 400, origin, env);
       try {
-        const payload = operation === "chat" ? { operation, mode, text, question, analysis, messages } : { operation, mode, text },
+        const payload = operation === "chat" ? { operation, mode, text, question, analysis, messages } : operation === "conversation" ? { operation, mode, user_message: userMessage, conversation: { goal: String(conversation.goal || "").slice(0, 180), memory: String(conversation.memory || "").slice(0, 1800), japanese_ratio: ["low", "balanced", "high"].includes(conversation.japanese_ratio) ? conversation.japanese_ratio : "balanced", furigana: conversation.furigana === true, messages } } : { operation, mode, text },
           response = await callTutor(payload, env),
           raw = await response.json();
         if (!response.ok) return json({ error: raw?.error?.message || "OpenAI rechazó la consulta del tutor." }, response.status, origin, env);
         const output = outputText(raw);
         if (!output) return json({ error: "OpenAI no devolvió respuesta del tutor." }, 502, origin, env);
-        return json({ [operation === "chat" ? "answer" : "analysis"]: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
+        return json({ [operation === "chat" ? "answer" : operation === "conversation" ? "conversation" : "analysis"]: JSON.parse(output), usage: raw.usage || {}, model: raw.model, response_id: raw.id }, 200, origin, env);
       } catch (error) { return json({ error: error.message || "No se pudo usar el Tutor IA." }, 500, origin, env); }
     }
     if (url.pathname === "/lens" && request.method === "POST") {

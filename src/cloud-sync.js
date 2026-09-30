@@ -73,6 +73,8 @@
     lexical_progress: "progress_id",
     lens_captures: "capture_id",
     lens_messages: "message_id",
+    tutor_sessions: "session_id",
+    tutor_evidence: "evidence_id",
   };
   function status(message, tone = "") {
     const el = $("#cloudStatus");
@@ -220,6 +222,8 @@
         store === "lexical_progress" ||
         store === "lens_captures" ||
         store === "lens_messages"
+        || store === "tutor_sessions"
+        || store === "tutor_evidence"
       )
         out.stores[store] = store==='attempts'?unionRows(l,r,key,mergeAttempt):unionRows(l, r, key);
       else if (store === "exercise_overrides")
