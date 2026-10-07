@@ -1,0 +1,6 @@
+.capture-actions #desktopCamera{background:#a72c24;color:#fff;border-color:#a72c24}
+.camera-dialog{width:min(700px,calc(100vw - 32px));border:1px solid #d7cfc2;border-radius:12px;padding:20px;background:#faf8f3;color:#282621}
+.camera-dialog::backdrop{background:#172027aa}
+.camera-dialog h2{font:24px Georgia,serif;margin:0 0 12px}
+.camera-dialog video{width:100%;max-height:65vh;object-fit:contain;background:#171717;border-radius:8px}
+.camera-dialog .capture-actions{margin-top:12px}

@@ -207,6 +207,13 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.core:core:1.13.1'
     implementation 'androidx.webkit:webkit:1.12.1'
     implementation 'com.google.mlkit:text-recognition-japanese:16.0.1'
+}
+
+configurations.configureEach {
+    // Kotlin 1.8+ already bundles these JDK extensions in kotlin-stdlib.
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
 }

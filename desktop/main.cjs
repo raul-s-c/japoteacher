@@ -6,7 +6,7 @@ const BASE='https://raul-s-c.github.io/japoteacher/';
 const testBase=!app.isPackaged&&process.env.JAPO_LENS_TEST_URL;
 const base=testBase&&/^http:\/\/127\.0\.0\.1:\d+\/$/.test(testBase)?testBase:BASE;
 if(base!==BASE&&process.env.JAPO_LENS_TEST_PROFILE)app.setPath('userData',process.env.JAPO_LENS_TEST_PROFILE);
-let panel,bubble,selector,tray,prefs,quitting=false,capturing=false,shot,queue=[],ready=false,delivered=false,lastClipboard='',ocrWorker,ocrBusy=false;
+let panel,bubble,selector,tray,prefs,quitting=false,capturing=false,shot,queue=[],ready=false,delivered=false,lastClipboard='',ocrWorker,ocrBusy=false,cameraAccessUntil=0;
 const preload=path.join(__dirname,'preload.cjs');
 const prefsPath=()=>path.join(app.getPath('userData'),'lens-settings.json');
 function status(text){panel?.webContents.send('lens:status',text)}
@@ -50,7 +50,8 @@ function endCapture(){if(selector){selector.destroy();selector=null}shot=null;ca
 async function quit(){const {response}=await dialog.showMessageBox(panel,{type:'question',buttons:['Seguir usando la lupa','Cerrar lupa'],defaultId:0,cancelId:0,message:'¿Cerrar la lupa de Windows?',detail:queue.length?'Hay capturas pendientes sin terminar. Se perderán esas imágenes; los análisis ya guardados se conservan.':'Los análisis y las frases candidatas guardadas se conservan.'});if(response===1){quitting=true;app.quit()}}
 function handle(name,fn,kinds=['panel']){ipcMain.handle('lens:'+name,async(event,...args)=>{let ok=false;for(const kind of kinds){try{trusted(event,kind);ok=true;break}catch{}}if(!ok)throw Error('Origen no autorizado');try{return await fn(...args)}catch(error){status(error.message);throw error}})}
 function installIPC(){
-  handle('import',data=>{if(typeof data!=='string'||data.length>35000000||!/^data:image\/(png|jpeg|webp|bmp);base64,[A-Za-z0-9+/=]+$/.test(data))throw Error('Imagen inválida');enqueue(nativeImage.createFromDataURL(data),'Imagen arrastrada')});
+  handle('import',(data,label)=>{if(typeof data!=='string'||data.length>35000000||!/^data:image\/(png|jpeg|webp|bmp);base64,[A-Za-z0-9+/=]+$/.test(data))throw Error('Imagen inválida');enqueue(nativeImage.createFromDataURL(data),typeof label==='string'?label.slice(0,60):'Imagen arrastrada')});
+  handle('camera-access',enabled=>{cameraAccessUntil=enabled?Date.now()+120000:0;return true});
   handle('capture',capture,['panel','bubble']);handle('paste',paste);handle('open',openFile);handle('hide',()=>panel.hide());handle('show',show,['bubble']);handle('quit',quit,['panel','bubble']);
   handle('settings',async value=>{if(value){const next=settings(value);if(next.watch&&!prefs.watch)lastClipboard=digest((await clipboardImage()).toPNG());prefs=next;fs.writeFileSync(prefsPath(),JSON.stringify(prefs));panel.setAlwaysOnTop(prefs.top)}return prefs});
   handle('ready',()=>{ready=true;delivered=false;dispatch();return {pending:queue.length}});
@@ -72,7 +73,13 @@ if(!app.requestSingleInstanceLock())app.quit();else{
   app.on('second-instance',()=>panel&&show());
   app.whenReady().then(async()=>{
     try{prefs=settings(JSON.parse(fs.readFileSync(prefsPath(),'utf8')))}catch{prefs=settings()}
-    const ses=session.fromPartition('persist:japoteacher-lens');ses.setPermissionRequestHandler((_w,_p,cb)=>cb(false));ses.setPermissionCheckHandler(()=>false);
+    const ses=session.fromPartition('persist:japoteacher-lens');
+    const cameraPermission=(permission,details)=>permission==='media'&&(details?.mediaTypes?.length===1&&details.mediaTypes[0]==='video'||details?.mediaType==='video');
+    ses.setPermissionRequestHandler((requestingWindow,permission,callback,details)=>{
+      const trustedPanel=panel&&requestingWindow===panel.webContents&&panelURL(requestingWindow.getURL()),cameraOnly=cameraPermission(permission,details),authorized=Date.now()<=cameraAccessUntil;
+      callback(Boolean(trustedPanel&&cameraOnly&&authorized));
+    });
+    ses.setPermissionCheckHandler((requestingWindow,permission,_origin,details)=>Boolean(panel&&requestingWindow===panel.webContents&&panelURL(requestingWindow.getURL())&&cameraPermission(permission,details)&&Date.now()<=cameraAccessUntil));
     installIPC();
     const area=screen.getPrimaryDisplay().workArea;
     panel=new BrowserWindow(windowOptions({width:490,height:Math.min(850,area.height),minWidth:390,minHeight:500,x:area.x+area.width-560,y:area.y,alwaysOnTop:prefs.top,title:'JapoTeacher · Lupa',autoHideMenuBar:true}));secure(panel,panelURL);

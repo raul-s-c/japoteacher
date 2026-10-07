@@ -3,6 +3,8 @@ package io.github.raul_s_c.japoteacher;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,18 +13,24 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.Window;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.ValueCallback;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import androidx.core.content.FileProvider;
 
 import org.json.JSONObject;
 
 import java.util.Locale;
+import java.io.File;
+import java.util.UUID;
 
 public class LauncherActivity extends Activity {
+    private static final int REQUEST_WEB_FILE = 7301;
     public static final String APP_URL = "https://raul-s-c.github.io/japoteacher/?nativeVersion=1.3.0&nativeCode=10";
     private static WebView webView;
     private ProgressBar progress;
@@ -31,6 +39,8 @@ public class LauncherActivity extends Activity {
     private boolean textToSpeechInitialized;
     private boolean textToSpeechReady;
     private String pendingSpeechText;
+    private ValueCallback<Uri[]> pendingFileChooser;
+    private File cameraCaptureFile;
 
     public static void openWithLensResult(Context context, String text, String imageDataUrl, String contextLabel) {
         Intent intent = new Intent(context, LauncherActivity.class);
@@ -48,6 +58,7 @@ public class LauncherActivity extends Activity {
         buildLayout();
         configureWebView();
         configureTextToSpeech();
+        clearCameraCache();
         handleIntent(getIntent());
         webView.loadUrl(APP_URL + (pendingLensPayload == null ? "#hoy" : "#lupa"));
     }
@@ -86,6 +97,38 @@ public class LauncherActivity extends Activity {
         settings.setUseWideViewPort(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) settings.setSafeBrowsingEnabled(true);
         webView.addJavascriptInterface(new NativeBridge(), "JapoNativeAndroid");
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> callback, FileChooserParams params) {
+                if (pendingFileChooser != null) pendingFileChooser.onReceiveValue(null);
+                pendingFileChooser = callback;
+                try {
+                    Intent intent;
+                    if (params.isCaptureEnabled() && acceptsImages(params.getAcceptTypes())) {
+                        File directory = new File(getCacheDir(), "lens-camera");
+                        if (!directory.exists() && !directory.mkdirs()) throw new IllegalStateException("No se pudo preparar la cámara.");
+                        deleteCameraCapture();
+                        cameraCaptureFile = new File(directory, UUID.randomUUID() + ".jpg");
+                        Uri output = FileProvider.getUriForFile(LauncherActivity.this, getPackageName() + ".camera-files", cameraCaptureFile);
+                        intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                        intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, output);
+                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                        intent.setClipData(ClipData.newRawUri("JapoTeacher camera capture", output));
+                        if (intent.resolveActivity(getPackageManager()) == null) throw new ActivityNotFoundException("No hay una aplicación de cámara disponible.");
+                    } else {
+                        intent = params.createIntent();
+                    }
+                    startActivityForResult(intent, REQUEST_WEB_FILE);
+                    return true;
+                } catch (Exception error) {
+                    if (pendingFileChooser != null) pendingFileChooser.onReceiveValue(null);
+                    pendingFileChooser = null;
+                    deleteCameraCapture();
+                    Toast.makeText(LauncherActivity.this, "No se pudo abrir la cámara o el selector de imágenes.", Toast.LENGTH_LONG).show();
+                    return true;
+                }
+            }
+        });
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -101,6 +144,42 @@ public class LauncherActivity extends Activity {
                 return true;
             }
         });
+    }
+
+    private boolean acceptsImages(String[] types) {
+        if (types == null || types.length == 0) return false;
+        for (String type : types) if (type != null && (type.startsWith("image/") || type.equals("*/*"))) return true;
+        return false;
+    }
+
+    private void deleteCameraCapture() {
+        if (cameraCaptureFile != null) cameraCaptureFile.delete();
+        cameraCaptureFile = null;
+    }
+
+    private void clearCameraCache() {
+        File directory = new File(getCacheDir(), "lens-camera");
+        File[] files = directory.listFiles();
+        if (files != null) for (File file : files) if (file.isFile()) file.delete();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_WEB_FILE) return;
+        if (pendingFileChooser != null) {
+            Uri[] result = null;
+            if (resultCode == RESULT_OK) {
+                if (cameraCaptureFile != null && cameraCaptureFile.isFile() && cameraCaptureFile.length() > 0) {
+                    result = new Uri[] { FileProvider.getUriForFile(this, getPackageName() + ".camera-files", cameraCaptureFile) };
+                } else {
+                    result = WebChromeClient.FileChooserParams.parseResult(resultCode, data);
+                }
+            }
+            pendingFileChooser.onReceiveValue(result);
+            pendingFileChooser = null;
+        }
+        if (resultCode != RESULT_OK) deleteCameraCapture();
     }
 
     private void configureTextToSpeech() {
@@ -123,6 +202,9 @@ public class LauncherActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        if (pendingFileChooser != null) pendingFileChooser.onReceiveValue(null);
+        pendingFileChooser = null;
+        deleteCameraCapture();
         if (textToSpeech != null) {
             textToSpeech.stop();
             textToSpeech.shutdown();
@@ -163,6 +245,7 @@ public class LauncherActivity extends Activity {
     }
 
     public class NativeBridge {
+        @JavascriptInterface public void discardCameraCapture() { runOnUiThread(() -> deleteCameraCapture()); }
         @JavascriptInterface public void openLensSettings() {
             runOnUiThread(() -> startActivity(new Intent(LauncherActivity.this, LensSettingsActivity.class)));
         }

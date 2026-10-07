@@ -1,10 +1,22 @@
 (function(){
   const $=s=>document.querySelector(s),host=window.DesktopLens;
-  let prefs,current=null,processing=false;
+  let prefs,current=null,processing=false,cameraStream=null;
   const status=text=>{$('#desktopStatus').textContent=text};
   window.UI={toast:status};
   const run=fn=>Promise.resolve().then(fn).catch(e=>status(e.message||'No se pudo completar la acción.'));
-  function inputs(disabled){for(const id of ['lensAnalyze','lensClear','lensImageInput','desktopDiscard'])$('#'+id).disabled=disabled}
+  function inputs(disabled){for(const id of ['lensAnalyze','lensClear','lensImageInput','desktopDiscard','desktopCamera'])$('#'+id).disabled=disabled}
+  function closeCamera(){cameraStream?.getTracks().forEach(track=>track.stop());cameraStream=null;$('#desktopCameraPreview').srcObject=null;if($('#desktopCameraDialog').open)$('#desktopCameraDialog').close();Promise.resolve(host?.revokeCamera?.()).catch(()=>{})}
+  async function openCamera(){
+    if(!navigator.mediaDevices?.getUserMedia)throw Error('Este equipo no ofrece acceso a cámara desde la aplicación.');
+    await host.authorizeCamera();
+    try{cameraStream=await navigator.mediaDevices.getUserMedia({audio:false,video:{width:{ideal:1600},height:{ideal:1200}}})}catch(error){await host.revokeCamera();throw error}
+    $('#desktopCameraPreview').srcObject=cameraStream;$('#desktopCameraDialog').showModal();await $('#desktopCameraPreview').play();status('Cámara activa. La vista previa no se guarda.');
+  }
+  async function takeCameraPhoto(){
+    const video=$('#desktopCameraPreview');if(!cameraStream||!video.videoWidth||!video.videoHeight)throw Error('La cámara aún no está lista.');
+    const scale=Math.min(1,1600/Math.max(video.videoWidth,video.videoHeight)),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(video.videoWidth*scale));canvas.height=Math.max(1,Math.round(video.videoHeight*scale));canvas.getContext('2d').drawImage(video,0,0,canvas.width,canvas.height);
+    const imageDataUrl=canvas.toDataURL('image/jpeg',.88);closeCamera();await host.importImage(imageDataUrl,'Foto de cámara');status('Foto capturada en memoria. Se analizará con el modo elegido en ajustes.');
+  }
   async function receive(item){
     if(await JapoDB.get('lens_captures',item.id)){await host.acknowledge(item.id);return}
     current=item;processing=true;inputs(true);
@@ -23,7 +35,9 @@
     for(const [key,id] of Object.entries({auto:'desktopAuto',watch:'desktopWatch',top:'desktopTop',vertical:'desktopVertical'}))$('#'+id).checked=prefs[key];
     $('#desktopMode').value=prefs.mode;
     for(const id of ['desktopAuto','desktopWatch','desktopTop','desktopVertical','desktopMode'])$('#'+id).onchange=()=>run(async()=>{prefs={mode:$('#desktopMode').value,auto:$('#desktopAuto').checked,watch:$('#desktopWatch').checked,top:$('#desktopTop').checked,vertical:$('#desktopVertical').checked};await host.settings(prefs);status(prefs.watch?'Recepción automática del portapapeles activada.':'Ajustes guardados.');if(current&&!processing)$('#desktopRetry').hidden=false});
-    for(const [id,fn] of Object.entries({desktopCapture:()=>host.capture(),desktopPaste:()=>host.paste(),desktopOpen:()=>host.open(),desktopHide:()=>host.hide(),desktopQuit:()=>host.quit()}))$('#'+id).onclick=()=>run(fn);
+    for(const [id,fn] of Object.entries({desktopCapture:()=>host.capture(),desktopPaste:()=>host.paste(),desktopOpen:()=>host.open(),desktopHide:()=>host.hide(),desktopQuit:()=>host.quit(),desktopCamera:openCamera,desktopCameraTake:takeCameraPhoto,desktopCameraCancel:closeCamera}))$('#'+id).onclick=()=>run(fn);
+    $('#desktopCameraDialog').addEventListener('cancel',event=>{event.preventDefault();closeCamera()});
+    window.addEventListener('beforeunload',closeCamera);
     const retry=document.createElement('button');retry.id='desktopRetry';retry.textContent='Reprocesar captura';retry.hidden=true;$('#inputDetails .capture-actions').append(retry);retry.onclick=()=>{if(current&&!processing){retry.hidden=true;run(()=>receive(current))}};
     $('#desktopDiscard').onclick=()=>run(async()=>{if(processing||JapoLens.isBusy())return;if(current){const id=current.id;current=null;retry.hidden=true;await host.acknowledge(id);status('Captura descartada.')}});
     document.addEventListener('japoteacher:lens-started',()=>inputs(true));

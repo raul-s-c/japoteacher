@@ -5,6 +5,7 @@ Aplicación portable para Windows 10/11 x64. Descomprime **toda** la carpeta y e
 Inicia sesión en **Ajustes y cuenta** con tu cuenta de JapoTeacher. El servicio mantiene una sesión activa: si usabas el móvil, puede pedirte traer la sesión a este PC.
 
 - **Ctrl + Mayús + L** o burbuja: recorta una zona de la pantalla donde está el puntero. Arrastra para seleccionar; Esc cancela. Compatible con monitores con diferente escala; cada recorte pertenece a una pantalla.
+- **Cámara**: abre la webcam del PC y toma una foto para analizarla como cualquier otra captura. La vista previa y la foto viven en memoria; la app no crea un archivo. La cámara solo se habilita mientras usas esta opción y el audio permanece bloqueado.
 - **Ctrl + Mayús + V** o Pegar imagen: analiza una imagen del portapapeles. Puedes usar previamente **Win + Mayús + S**.
 - **Abrir imágenes**, arrastrar archivos o pegar una imagen en el panel. Hasta diez capturas en cola, procesadas una a una.
 - Arrastra los tres puntos de la burbuja para moverla. Clic derecho abre los resultados. El panel se mueve y redimensiona como una ventana normal y puede mantenerse encima.

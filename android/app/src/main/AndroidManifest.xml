@@ -15,6 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <provider
+            android:name=".LensCameraFileProvider"
+            android:authorities="${applicationId}.camera-files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
         <activity
             android:name=".LauncherActivity"
             android:alwaysRetainTaskState="true"

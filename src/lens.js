@@ -43,10 +43,10 @@
     const context=canvas.getContext('2d');context.drawImage(bitmap,0,0,canvas.width,canvas.height);
     return canvas.toDataURL('image/jpeg',.82);
   }
-  async function selectImage(file){
+  async function selectImage(file,label=file?.name||'Imagen seleccionada'){
     if(!file)return;
     state.image=await resizeImage(file);
-    $('#lensPreview').innerHTML=`<img src="${state.image}" alt="Imagen seleccionada para analizar"><small>${esc(file.name)} · imagen reducida antes de enviar</small>`;
+    $('#lensPreview').innerHTML=`<img src="${state.image}" alt="Imagen seleccionada para analizar"><small>${esc(label)} · imagen reducida antes de enviar</small>`;
   }
   async function callLens(body){
     const [settings,token]=await Promise.all([JapoDB.get('settings','app'),window.CloudSync?.getAccessToken()]);
@@ -78,7 +78,7 @@
       data.capture_mode=selectedMode;
       renderAnalysis(data);
       await saveCapture(data);
-      saved=true;state.nativeCaptureId=null;
+      saved=true;state.nativeCaptureId=null;state.image=null;$('#lensPreview').innerHTML='';
     }catch(error){target.innerHTML=`<p class="dictionary-ai-error">${esc(error.message||'No se pudo analizar la captura.')}</p>`}
     finally{state.busy=false;setBusy(button,false);document.dispatchEvent(new CustomEvent('japoteacher:lens-finished',{detail:{saved}}))}
     return saved;
@@ -126,6 +126,7 @@
   function clear(){
     state.capture=null;state.messages=[];state.image=null;state.nativeCaptureId=null;
     $('#lensText').value='';$('#lensQuestion').value='';$('#lensContextDetail').value='';$('#lensPreview').innerHTML='';$('#lensAsk').disabled=true;
+    if($('#lensImageInput'))$('#lensImageInput').value='';if($('#lensCameraInput'))$('#lensCameraInput').value='';
     $('#lensOutput').innerHTML='<div class="feedback-empty"><span>⌕</span><h3>La explicación aparecerá aquí</h3><p>Elige solo texto para ahorrar o visión si necesitas OCR de una captura.</p></div>';
     $('#lensThread').innerHTML='<p class="empty">Todavía no hay una captura activa sobre la que preguntar.</p>';
   }
@@ -168,6 +169,7 @@
     $('#lensAnalyze')?.setAttribute('data-label','Analizar');$('#lensAsk')?.setAttribute('data-label','Preguntar');
     document.querySelectorAll('[name="lensMode"]').forEach(radio=>radio.addEventListener('change',updateMode));
     $('#lensImageInput')?.addEventListener('change',event=>selectImage(event.target.files?.[0]).catch(error=>window.UI?.toast?.(error.message||'No se pudo preparar la imagen.')));
+    $('#lensCameraInput')?.addEventListener('change',async event=>{try{const file=event.target.files?.[0];if(!file)return;await selectImage(file,'Foto de cámara');setLensMode('vision')}catch(error){window.UI?.toast?.(error.message||'No se pudo preparar la foto.')}finally{try{nativeBridge()?.discardCameraCapture?.()}catch(_error){}event.target.value=''}});
     $('#lensAnalyze')?.addEventListener('click',analyze);$('#lensAsk')?.addEventListener('click',ask);$('#lensClear')?.addEventListener('click',clear);$('#lensRefreshHistory')?.addEventListener('click',renderHistory);
     for(const id of ['lensNativeSettings','lensSettingsOpen'])$('#'+id)?.addEventListener('click',()=>nativeBridge()?.openLensSettings?.());
     $('#lensNativeWidget')?.addEventListener('click',()=>nativeBridge()?.addLensWidget?.());
