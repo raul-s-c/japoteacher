@@ -12,7 +12,7 @@
   "navigationDividerColorDark": "#000000",
   "backgroundColor": "#F7F5F0",
   "enableNotifications": true,
-  "startUrl": "/japoteacher/?nativeVersion=1.2.1&nativeCode=7",
+  "startUrl": "/japoteacher/?nativeVersion=1.3.1&nativeCode=11",
   "iconUrl": "https://raul-s-c.github.io/japoteacher/assets/app-icon.svg",
   "maskableIconUrl": "https://raul-s-c.github.io/japoteacher/assets/app-icon.svg",
   "splashScreenFadeOutDuration": 300,
@@ -20,8 +20,8 @@
     "path": "C:\\Users\\rauls\\OneDrive\\otros\\nihongo benkyo\\japoteacher\\android\\android.keystore",
     "alias": "japoteacher"
   },
-  "appVersionName": "1.3.0",
-  "appVersionCode": 10,
+  "appVersionName": "1.3.1",
+  "appVersionCode": 11,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://raul-s-c.github.io/japoteacher/manifest.webmanifest",
@@ -43,5 +43,5 @@
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1.3.0"
+  "appVersion": "1.3.1"
 }

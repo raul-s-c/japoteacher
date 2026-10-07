@@ -1,16 +1,13 @@
 {
-  "versionCode": 10,
-  "versionName": "1.3.0",
-  "version": "1.3.0",
-  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.3.0.apk",
-  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.3.0.apk",
-  "sha256": "7e7e6f7bb676bcad8d559a6ba7287516727ec2eabb7804fc443e99dd20a69b8d",
-  "published_at": "2026-09-12T07:09:23.515418+00:00",
+  "versionCode": 11,
+  "versionName": "1.3.1",
+  "version": "1.3.1",
+  "apkUrl": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.3.1.apk",
+  "apk_url": "https://raw.githubusercontent.com/raul-s-c/japoteacher/main/releases/android/JapoTeacher-1.3.1.apk",
+  "sha256": "2ed6738540332dce92c3375ca16d22b4f31a77ca4eabdb82b20a2ea43df23c51",
+  "published_at": "2026-10-07T16:28:56+00:00",
   "notes": [
-    "Widget de lupa con acceso directo a la burbuja y sus ajustes.",
-    "Traducción en una ventana pequeña junto a la burbuja; Siguiente recorte captura de nuevo sin abrir la app principal.",
-    "Mantener pulsada la burbuja abre el menú; cerrar la lupa completa requiere confirmación.",
-    "Modo de lectura continua con OCR o visión guardados: sin preguntas entre recortes.",
-    "Minimizar oculta el resultado y conserva la sesión de captura."
+    "La lupa permite capturar una imagen con la cámara y analizarla sin guardar una copia.",
+    "La actualización conserva la instalación existente y añade soporte nativo para elegir o capturar imágenes."
   ]
 }
